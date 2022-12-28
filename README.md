@@ -2,9 +2,9 @@
 
 Get started with the Microsoft Graph Beta SDK for Ruby by integrating the [Microsoft Graph API](https://learn.microsoft.com/graph/overview) into your Ruby application!
 
-> **Note:** this SDK allows you to build applications using the [beta](https://docs.microsoft.com/en-us/graph/use-the-api#version) of Microsoft Graph. If you want to use the production supported Microsoft Graph APIs under v1.0, use our [v1.0 SDK](https://github.com/microsoftgraph/msgraph-sdk-ruby) instead.
+> **Note:** this SDK allows you to build applications using the [beta](https://docs.microsoft.com/en-us/graph/use-the-api#version) of Microsoft Graph. If you want to use the production supported Microsoft Graph APIs under v1.0, use our [v1.0 SDK](https://github.com/microsoftgraph/msgraph-beta-sdk-ruby) instead.
 >
-> **Note:** the Microsoft Graph Ruby SDK is currently in Community Preview. During this period we're expecting breaking changes to happen to the SDK based on community's feedback. Checkout the [known limitations](https://github.com/microsoftgraph/msgraph-sdk-ruby-core/issues/1).
+> **Note:** the Microsoft Graph Ruby SDK is currently in Community Preview. During this period we're expecting breaking changes to happen to the SDK based on community's feedback. Checkout the [known limitations](https://github.com/microsoftgraph/msgraph-beta-sdk-ruby-core/issues/1).
 
 ## 1. Installation
 
@@ -67,16 +67,16 @@ For more detailed documentation, see:
 * [Overview](https://learn.microsoft.com/graph/overview)
 * [Collections](https://learn.microsoft.com/graph/sdks/paging)
 * [Making requests](https://learn.microsoft.com/graph/sdks/create-requests)
-* [Known issues](https://github.com/MicrosoftGraph/msgraph-sdk-ruby/issues)
-* [Contributions](https://github.com/microsoftgraph/msgraph-sdk-ruby/blob/main/CONTRIBUTING.md)
+* [Known issues](https://github.com/MicrosoftGraph/msgraph-beta-sdk-ruby/issues)
+* [Contributions](https://github.com/microsoftgraph/msgraph-beta-sdk-ruby/blob/main/CONTRIBUTING.md)
 
 ## 6. Issues
 
-For known issues, see [issues](https://github.com/MicrosoftGraph/msgraph-sdk-ruby/issues).
+For known issues, see [issues](https://github.com/MicrosoftGraph/msgraph-beta-sdk-ruby/issues).
 
 ## 7. Contributions
 
-The Microsoft Graph SDK is open for contribution. To contribute to this project, see [Contributing](https://github.com/microsoftgraph/msgraph-sdk-ruby/blob/main/CONTRIBUTING.md).
+The Microsoft Graph SDK is open for contribution. To contribute to this project, see [Contributing](https://github.com/microsoftgraph/msgraph-beta-sdk-ruby/blob/main/CONTRIBUTING.md).
 
 ## 8. License
 
