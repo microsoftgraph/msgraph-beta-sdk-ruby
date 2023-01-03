@@ -1,0 +1,3 @@
+require_relative 'my_requests_response'
+module MicrosoftGraphBeta::PrivilegedApproval::MyRequests
+end

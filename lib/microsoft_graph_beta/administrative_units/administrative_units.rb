@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::AdministrativeUnits
+end

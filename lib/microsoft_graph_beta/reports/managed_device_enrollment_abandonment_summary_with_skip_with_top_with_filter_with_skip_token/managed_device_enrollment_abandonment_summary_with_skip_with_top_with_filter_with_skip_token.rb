@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken
+end

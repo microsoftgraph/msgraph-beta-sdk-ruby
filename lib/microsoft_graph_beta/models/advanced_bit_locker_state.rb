@@ -1,0 +1,23 @@
+module MicrosoftGraphBeta::Models
+    ## 
+    # Provides operations to manage the collection of accessReview entities.
+    AdvancedBitLockerState = {
+        Success: :Success,
+        NoUserConsent: :NoUserConsent,
+        OsVolumeUnprotected: :OsVolumeUnprotected,
+        OsVolumeTpmRequired: :OsVolumeTpmRequired,
+        OsVolumeTpmOnlyRequired: :OsVolumeTpmOnlyRequired,
+        OsVolumeTpmPinRequired: :OsVolumeTpmPinRequired,
+        OsVolumeTpmStartupKeyRequired: :OsVolumeTpmStartupKeyRequired,
+        OsVolumeTpmPinStartupKeyRequired: :OsVolumeTpmPinStartupKeyRequired,
+        OsVolumeEncryptionMethodMismatch: :OsVolumeEncryptionMethodMismatch,
+        RecoveryKeyBackupFailed: :RecoveryKeyBackupFailed,
+        FixedDriveNotEncrypted: :FixedDriveNotEncrypted,
+        FixedDriveEncryptionMethodMismatch: :FixedDriveEncryptionMethodMismatch,
+        LoggedOnUserNonAdmin: :LoggedOnUserNonAdmin,
+        WindowsRecoveryEnvironmentNotConfigured: :WindowsRecoveryEnvironmentNotConfigured,
+        TpmNotAvailable: :TpmNotAvailable,
+        TpmNotReady: :TpmNotReady,
+        NetworkError: :NetworkError,
+    }
+end

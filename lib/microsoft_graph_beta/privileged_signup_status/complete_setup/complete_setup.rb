@@ -1,0 +1,4 @@
+require_relative 'complete_setup_post_request_body'
+require_relative 'complete_setup_response'
+module MicrosoftGraphBeta::PrivilegedSignupStatus::CompleteSetup
+end

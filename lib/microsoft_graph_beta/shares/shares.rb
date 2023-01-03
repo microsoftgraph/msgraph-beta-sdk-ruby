@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Shares
+end

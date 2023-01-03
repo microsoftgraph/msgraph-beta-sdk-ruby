@@ -1,0 +1,3 @@
+require_relative 'wipe_managed_app_registration_by_device_tag_post_request_body'
+module MicrosoftGraphBeta::Users::Item::WipeManagedAppRegistrationByDeviceTag
+end

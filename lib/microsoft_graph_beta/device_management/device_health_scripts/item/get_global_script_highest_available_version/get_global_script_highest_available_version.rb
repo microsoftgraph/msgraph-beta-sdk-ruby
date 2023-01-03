@@ -1,0 +1,3 @@
+require_relative 'get_global_script_highest_available_version_response'
+module MicrosoftGraphBeta::DeviceManagement::DeviceHealthScripts::Item::GetGlobalScriptHighestAvailableVersion
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsBatteryHealthDeviceAppImpact::Item
+end

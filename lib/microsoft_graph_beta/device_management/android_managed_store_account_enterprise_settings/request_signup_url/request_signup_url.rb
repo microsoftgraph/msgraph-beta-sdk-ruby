@@ -1,0 +1,4 @@
+require_relative 'request_signup_url_post_request_body'
+require_relative 'request_signup_url_response'
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAccountEnterpriseSettings::RequestSignupUrl
+end

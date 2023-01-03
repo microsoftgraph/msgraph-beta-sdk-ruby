@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Monitoring
+end

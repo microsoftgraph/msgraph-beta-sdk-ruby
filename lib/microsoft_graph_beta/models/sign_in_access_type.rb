@@ -1,0 +1,12 @@
+module MicrosoftGraphBeta::Models
+    ## 
+    # Provides operations to manage the collection of accessReview entities.
+    SignInAccessType = {
+        None: :None,
+        B2bCollaboration: :B2bCollaboration,
+        B2bDirectConnect: :B2bDirectConnect,
+        MicrosoftSupport: :MicrosoftSupport,
+        ServiceProvider: :ServiceProvider,
+        UnknownFutureValue: :UnknownFutureValue,
+    }
+end

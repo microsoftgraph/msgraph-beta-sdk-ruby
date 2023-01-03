@@ -1,0 +1,3 @@
+require_relative 'update_device_profile_assignment_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::DepOnboardingSettings::Item::EnrollmentProfiles::Item::UpdateDeviceProfileAssignment
+end
