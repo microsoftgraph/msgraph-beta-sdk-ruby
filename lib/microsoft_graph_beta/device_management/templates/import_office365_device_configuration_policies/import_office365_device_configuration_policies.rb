@@ -1,0 +1,3 @@
+require_relative 'import_office365_device_configuration_policies_response'
+module MicrosoftGraphBeta::DeviceManagement::Templates::ImportOffice365DeviceConfigurationPolicies
+end

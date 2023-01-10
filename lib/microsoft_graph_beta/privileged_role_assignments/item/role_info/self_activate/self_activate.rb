@@ -1,0 +1,3 @@
+require_relative 'self_activate_post_request_body'
+module MicrosoftGraphBeta::PrivilegedRoleAssignments::Item::RoleInfo::SelfActivate
+end

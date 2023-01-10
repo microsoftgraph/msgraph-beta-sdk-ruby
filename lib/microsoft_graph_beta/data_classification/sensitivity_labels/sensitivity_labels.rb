@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DataClassification::SensitivityLabels
+end

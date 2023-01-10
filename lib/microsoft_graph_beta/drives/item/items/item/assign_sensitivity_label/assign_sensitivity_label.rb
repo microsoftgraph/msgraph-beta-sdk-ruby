@@ -1,0 +1,3 @@
+require_relative 'assign_sensitivity_label_post_request_body'
+module MicrosoftGraphBeta::Drives::Item::Items::Item::AssignSensitivityLabel
+end

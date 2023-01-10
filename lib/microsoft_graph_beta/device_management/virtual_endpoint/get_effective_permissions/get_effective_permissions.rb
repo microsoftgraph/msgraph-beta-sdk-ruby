@@ -1,0 +1,3 @@
+require_relative 'get_effective_permissions_response'
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::GetEffectivePermissions
+end

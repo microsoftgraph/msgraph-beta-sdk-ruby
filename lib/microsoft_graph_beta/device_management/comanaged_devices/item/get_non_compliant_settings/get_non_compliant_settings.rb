@@ -1,0 +1,3 @@
+require_relative 'get_non_compliant_settings_response'
+module MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::Item::GetNonCompliantSettings
+end

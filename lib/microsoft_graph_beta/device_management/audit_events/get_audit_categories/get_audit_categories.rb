@@ -1,0 +1,3 @@
+require_relative 'get_audit_categories_response'
+module MicrosoftGraphBeta::DeviceManagement::AuditEvents::GetAuditCategories
+end

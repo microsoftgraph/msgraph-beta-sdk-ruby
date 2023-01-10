@@ -1,0 +1,3 @@
+require_relative 'get_supported_properties_response'
+module MicrosoftGraphBeta::DeviceManagement::AssignmentFilters::Item::GetSupportedProperties
+end

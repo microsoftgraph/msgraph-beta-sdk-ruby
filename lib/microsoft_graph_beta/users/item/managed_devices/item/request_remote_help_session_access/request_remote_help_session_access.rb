@@ -1,0 +1,3 @@
+require_relative 'request_remote_help_session_access_post_request_body'
+module MicrosoftGraphBeta::Users::Item::ManagedDevices::Item::RequestRemoteHelpSessionAccess
+end

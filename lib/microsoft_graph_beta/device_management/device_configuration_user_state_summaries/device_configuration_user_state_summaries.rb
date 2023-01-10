@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::DeviceConfigurationUserStateSummaries
+end

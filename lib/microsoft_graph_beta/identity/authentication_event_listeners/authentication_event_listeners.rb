@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Identity::AuthenticationEventListeners
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::InformationProtection::DataLossPreventionPolicies
+end

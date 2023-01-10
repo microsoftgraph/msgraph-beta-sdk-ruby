@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackageResourceRoleScopes::Item::AccessPackageResourceScope::AccessPackageResource::AccessPackageResourceScopes
+end

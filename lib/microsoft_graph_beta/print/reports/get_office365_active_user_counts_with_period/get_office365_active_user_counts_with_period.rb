@@ -1,0 +1,3 @@
+require_relative 'get_office365_active_user_counts_with_period_response'
+module MicrosoftGraphBeta::Print::Reports::GetOffice365ActiveUserCountsWithPeriod
+end

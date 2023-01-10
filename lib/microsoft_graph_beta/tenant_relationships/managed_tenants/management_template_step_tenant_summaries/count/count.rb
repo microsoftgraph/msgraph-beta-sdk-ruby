@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::TenantRelationships::ManagedTenants::ManagementTemplateStepTenantSummaries::Count
+end

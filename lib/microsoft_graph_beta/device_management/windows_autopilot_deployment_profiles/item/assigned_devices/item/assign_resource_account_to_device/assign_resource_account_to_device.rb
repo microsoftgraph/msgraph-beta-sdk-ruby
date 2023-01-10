@@ -1,0 +1,3 @@
+require_relative 'assign_resource_account_to_device_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotDeploymentProfiles::Item::AssignedDevices::Item::AssignResourceAccountToDevice
+end

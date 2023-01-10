@@ -1,0 +1,3 @@
+require_relative 'get_office365_groups_activity_counts_with_period_response'
+module MicrosoftGraphBeta::Print::Reports::GetOffice365GroupsActivityCountsWithPeriod
+end

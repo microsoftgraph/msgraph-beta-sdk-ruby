@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::RiskyUsers
+end

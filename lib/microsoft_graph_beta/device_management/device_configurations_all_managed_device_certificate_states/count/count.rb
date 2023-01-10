@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::DeviceConfigurationsAllManagedDeviceCertificateStates::Count
+end

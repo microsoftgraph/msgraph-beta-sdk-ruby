@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::WindowsInformationProtectionAppLearningSummaries::Count
+end

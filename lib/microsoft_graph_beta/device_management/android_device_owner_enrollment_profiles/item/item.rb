@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::AndroidDeviceOwnerEnrollmentProfiles::Item
+end
