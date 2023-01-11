@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails::Item
+end

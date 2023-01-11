@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentResourceRoles::Item::AccessPackageSubject::ConnectedOrganization
+end

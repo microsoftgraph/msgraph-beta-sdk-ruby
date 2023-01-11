@@ -1,0 +1,3 @@
+require_relative 'get_applicable_policy_requirements_response'
+module MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackages::Item::GetApplicablePolicyRequirements
+end

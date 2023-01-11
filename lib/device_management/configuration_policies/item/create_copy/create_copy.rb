@@ -1,0 +1,3 @@
+require_relative 'create_copy_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::ConfigurationPolicies::Item::CreateCopy
+end

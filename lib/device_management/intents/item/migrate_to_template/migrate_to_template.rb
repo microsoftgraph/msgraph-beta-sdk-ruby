@@ -1,0 +1,3 @@
+require_relative 'migrate_to_template_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Intents::Item::MigrateToTemplate
+end

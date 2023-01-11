@@ -1,0 +1,3 @@
+require_relative 'get_office365_groups_activity_detail_with_date_response'
+module MicrosoftGraphBeta::Reports::GetOffice365GroupsActivityDetailWithDate
+end

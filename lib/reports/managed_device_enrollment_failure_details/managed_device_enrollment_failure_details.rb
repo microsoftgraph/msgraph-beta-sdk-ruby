@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::ManagedDeviceEnrollmentFailureDetails
+end

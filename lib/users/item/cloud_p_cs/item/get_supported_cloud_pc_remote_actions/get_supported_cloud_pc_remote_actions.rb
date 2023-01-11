@@ -1,0 +1,3 @@
+require_relative 'get_supported_cloud_pc_remote_actions_response'
+module MicrosoftGraphBeta::Users::Item::CloudPCs::Item::GetSupportedCloudPcRemoteActions
+end

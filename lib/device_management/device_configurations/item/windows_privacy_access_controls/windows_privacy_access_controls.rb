@@ -1,0 +1,3 @@
+require_relative 'windows_privacy_access_controls_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::DeviceConfigurations::Item::WindowsPrivacyAccessControls
+end

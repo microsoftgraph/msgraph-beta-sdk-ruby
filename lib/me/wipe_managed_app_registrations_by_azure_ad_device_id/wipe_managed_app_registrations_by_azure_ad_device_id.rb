@@ -1,0 +1,3 @@
+require_relative 'wipe_managed_app_registrations_by_azure_ad_device_id_post_request_body'
+module MicrosoftGraphBeta::Me::WipeManagedAppRegistrationsByAzureAdDeviceId
+end

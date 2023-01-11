@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentPolicies::Item::AccessPackageCatalog
+end

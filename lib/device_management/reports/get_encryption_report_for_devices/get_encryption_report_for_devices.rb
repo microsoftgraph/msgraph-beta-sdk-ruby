@@ -1,0 +1,3 @@
+require_relative 'get_encryption_report_for_devices_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetEncryptionReportForDevices
+end

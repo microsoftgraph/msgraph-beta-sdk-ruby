@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::GetEmailAppUsageVersionsUserCountsWithPeriod
+end

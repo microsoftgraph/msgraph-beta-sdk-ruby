@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::PrivilegedSignupStatus
+end

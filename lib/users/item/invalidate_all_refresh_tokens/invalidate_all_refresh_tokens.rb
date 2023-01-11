@@ -1,0 +1,3 @@
+require_relative 'invalidate_all_refresh_tokens_response'
+module MicrosoftGraphBeta::Users::Item::InvalidateAllRefreshTokens
+end

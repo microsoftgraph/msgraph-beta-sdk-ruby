@@ -1,0 +1,3 @@
+require_relative 'delta_response'
+module MicrosoftGraphBeta::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::ExceptionOccurrences::Item::Instances::Delta
+end

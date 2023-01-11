@@ -1,0 +1,3 @@
+require_relative 'get_role_scope_tags_by_resource_with_resource_response'
+module MicrosoftGraphBeta::DeviceManagement::GetRoleScopeTagsByResourceWithResource
+end

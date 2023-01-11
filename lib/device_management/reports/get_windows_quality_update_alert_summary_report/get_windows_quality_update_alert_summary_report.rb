@@ -1,0 +1,3 @@
+require_relative 'get_windows_quality_update_alert_summary_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetWindowsQualityUpdateAlertSummaryReport
+end

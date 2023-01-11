@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::GetTeamsUserActivityCountsWithPeriod
+end

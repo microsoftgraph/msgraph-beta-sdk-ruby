@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::WindowsInformationProtectionAppLearningSummaries::Item
+end

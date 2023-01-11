@@ -1,0 +1,3 @@
+require_relative 'get_zebra_fota_deployment_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetZebraFotaDeploymentReport
+end

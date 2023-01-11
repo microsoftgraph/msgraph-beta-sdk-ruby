@@ -1,0 +1,3 @@
+require_relative 'summarize_device_resource_performance_with_summarize_by_response'
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsResourcePerformance::SummarizeDeviceResourcePerformanceWithSummarizeBy
+end

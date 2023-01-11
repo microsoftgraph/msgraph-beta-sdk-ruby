@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::ManagedDevices::Item::InitiateMobileDeviceManagementKeyRecovery
+end
