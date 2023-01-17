@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::RoleEligibilityScheduleRequests::Count
+end

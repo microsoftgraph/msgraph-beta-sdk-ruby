@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::AdvancedThreatProtectionOnboardingStateSummary::AdvancedThreatProtectionOnboardingDeviceSettingStates::Item
+end

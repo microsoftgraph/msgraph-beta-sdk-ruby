@@ -1,0 +1,12 @@
+module MicrosoftGraphBeta::Models
+    PrintJobProcessingState = {
+        Unknown: :Unknown,
+        Pending: :Pending,
+        Processing: :Processing,
+        Paused: :Paused,
+        Stopped: :Stopped,
+        Completed: :Completed,
+        Canceled: :Canceled,
+        Aborted: :Aborted,
+    }
+end

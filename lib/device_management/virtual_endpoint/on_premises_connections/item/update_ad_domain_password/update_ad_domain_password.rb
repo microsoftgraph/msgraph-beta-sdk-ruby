@@ -1,0 +1,3 @@
+require_relative 'update_ad_domain_password_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::OnPremisesConnections::Item::UpdateAdDomainPassword
+end

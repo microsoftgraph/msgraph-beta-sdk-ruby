@@ -1,0 +1,3 @@
+require_relative 'approve_fota_apps_response'
+module MicrosoftGraphBeta::DeviceManagement::ZebraFotaConnector::ApproveFotaApps
+end

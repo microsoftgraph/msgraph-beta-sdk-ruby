@@ -1,0 +1,3 @@
+require_relative 'revoke_licenses_post_request_body'
+module MicrosoftGraphBeta::DeviceAppManagement::VppTokens::Item::RevokeLicenses
+end

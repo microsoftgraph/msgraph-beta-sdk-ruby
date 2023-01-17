@@ -1,0 +1,3 @@
+require_relative 'activate_service_post_request_body'
+module MicrosoftGraphBeta::Organization::Item::ActivateService
+end

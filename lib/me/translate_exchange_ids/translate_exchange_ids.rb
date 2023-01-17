@@ -1,0 +1,4 @@
+require_relative 'translate_exchange_ids_post_request_body'
+require_relative 'translate_exchange_ids_response'
+module MicrosoftGraphBeta::Me::TranslateExchangeIds
+end

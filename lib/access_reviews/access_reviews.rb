@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::AccessReviews
+end

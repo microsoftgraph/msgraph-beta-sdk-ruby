@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::GetEmailActivityUserCountsWithPeriod
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::UnassignResourceAccountFromDevice
+end

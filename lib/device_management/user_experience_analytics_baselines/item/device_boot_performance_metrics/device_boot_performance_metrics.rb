@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsBaselines::Item::DeviceBootPerformanceMetrics
+end

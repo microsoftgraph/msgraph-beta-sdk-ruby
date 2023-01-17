@@ -1,0 +1,3 @@
+require_relative 'send_custom_notification_to_company_portal_post_request_body'
+module MicrosoftGraphBeta::Me::ManagedDevices::Item::SendCustomNotificationToCompanyPortal
+end

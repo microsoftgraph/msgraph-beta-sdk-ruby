@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::BusinessFlowTemplates
+end

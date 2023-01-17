@@ -1,0 +1,3 @@
+require_relative 'scoped_for_resource_with_resource_response'
+module MicrosoftGraphBeta::DeviceManagement::ScopedForResourceWithResource
+end

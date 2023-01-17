@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::RoleManagement::Directory::RoleEligibilityScheduleRequests
+end

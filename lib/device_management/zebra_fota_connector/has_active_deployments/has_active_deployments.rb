@@ -1,0 +1,3 @@
+require_relative 'has_active_deployments_response'
+module MicrosoftGraphBeta::DeviceManagement::ZebraFotaConnector::HasActiveDeployments
+end

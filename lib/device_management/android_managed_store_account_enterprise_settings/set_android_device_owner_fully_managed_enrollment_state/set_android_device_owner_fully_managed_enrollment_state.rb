@@ -1,0 +1,3 @@
+require_relative 'set_android_device_owner_fully_managed_enrollment_state_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAccountEnterpriseSettings::SetAndroidDeviceOwnerFullyManagedEnrollmentState
+end
