@@ -1,0 +1,3 @@
+require_relative 'get_all_messages_response'
+module MicrosoftGraphBeta::Teamwork::DeletedTeams::GetAllMessages
+end

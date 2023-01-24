@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAccountEnterpriseSettings::SyncApps
+end

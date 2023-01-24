@@ -1,0 +1,3 @@
+require_relative 'get_failed_mobile_apps_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetFailedMobileAppsReport
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAppConfigurationSchemas::Count
+end

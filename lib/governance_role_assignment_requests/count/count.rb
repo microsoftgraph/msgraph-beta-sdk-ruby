@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::GovernanceRoleAssignmentRequests::Count
+end

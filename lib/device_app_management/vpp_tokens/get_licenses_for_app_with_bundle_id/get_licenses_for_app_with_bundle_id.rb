@@ -1,0 +1,3 @@
+require_relative 'get_licenses_for_app_with_bundle_id_response'
+module MicrosoftGraphBeta::DeviceAppManagement::VppTokens::GetLicensesForAppWithBundleId
+end

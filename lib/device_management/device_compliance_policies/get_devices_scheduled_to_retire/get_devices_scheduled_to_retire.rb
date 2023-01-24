@@ -1,0 +1,3 @@
+require_relative 'get_devices_scheduled_to_retire_response'
+module MicrosoftGraphBeta::DeviceManagement::DeviceCompliancePolicies::GetDevicesScheduledToRetire
+end

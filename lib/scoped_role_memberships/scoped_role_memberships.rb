@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::ScopedRoleMemberships
+end

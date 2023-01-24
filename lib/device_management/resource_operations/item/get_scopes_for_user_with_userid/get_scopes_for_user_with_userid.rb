@@ -1,0 +1,3 @@
+require_relative 'get_scopes_for_user_with_userid_response'
+module MicrosoftGraphBeta::DeviceManagement::ResourceOperations::Item::GetScopesForUserWithUserid
+end

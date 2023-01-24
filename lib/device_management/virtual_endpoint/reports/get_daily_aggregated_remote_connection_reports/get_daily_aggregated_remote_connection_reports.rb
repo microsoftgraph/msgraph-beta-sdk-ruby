@@ -1,0 +1,3 @@
+require_relative 'get_daily_aggregated_remote_connection_reports_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetDailyAggregatedRemoteConnectionReports
+end

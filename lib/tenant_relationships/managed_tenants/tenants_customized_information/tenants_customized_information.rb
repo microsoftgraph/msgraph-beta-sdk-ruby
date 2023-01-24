@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::TenantRelationships::ManagedTenants::TenantsCustomizedInformation
+end

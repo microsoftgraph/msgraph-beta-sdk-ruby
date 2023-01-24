@@ -1,0 +1,3 @@
+require_relative 'get_shared_use_license_usage_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetSharedUseLicenseUsageReport
+end

@@ -1,0 +1,3 @@
+require_relative 'get_all_certificates_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetAllCertificatesReport
+end

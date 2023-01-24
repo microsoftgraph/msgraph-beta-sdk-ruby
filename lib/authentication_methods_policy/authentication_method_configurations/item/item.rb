@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Item
+end

@@ -1,0 +1,3 @@
+require_relative 'get_effective_permissions_with_scope_response'
+module MicrosoftGraphBeta::DeviceManagement::GetEffectivePermissionsWithScope
+end

@@ -1,0 +1,3 @@
+require_relative 'summarize_device_remote_connection_with_summarize_by_response'
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsRemoteConnection::SummarizeDeviceRemoteConnectionWithSummarizeBy
+end

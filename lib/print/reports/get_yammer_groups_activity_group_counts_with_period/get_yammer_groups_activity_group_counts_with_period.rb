@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Print::Reports::GetYammerGroupsActivityGroupCountsWithPeriod
+end

@@ -1,0 +1,3 @@
+require_relative 'get_configuration_setting_details_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetConfigurationSettingDetailsReport
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::GovernanceRoleAssignments::Item::LinkedEligibleRoleAssignment
+end

@@ -1,0 +1,3 @@
+require_relative 'get_assignment_filters_status_details_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::GetAssignmentFiltersStatusDetails
+end

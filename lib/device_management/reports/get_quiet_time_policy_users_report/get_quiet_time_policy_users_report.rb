@@ -1,0 +1,3 @@
+require_relative 'get_quiet_time_policy_users_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::GetQuietTimePolicyUsersReport
+end

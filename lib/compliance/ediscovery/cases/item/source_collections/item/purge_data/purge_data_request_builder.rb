@@ -1,0 +1,83 @@
+require 'microsoft_kiota_abstractions'
+require_relative '../../../../../../../microsoft_graph_beta'
+require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../compliance'
+require_relative '../../../../../ediscovery'
+require_relative '../../../../cases'
+require_relative '../../../item'
+require_relative '../../source_collections'
+require_relative '../item'
+require_relative './purge_data'
+
+module MicrosoftGraphBeta::Compliance::Ediscovery::Cases::Item::SourceCollections::Item::PurgeData
+    ## 
+    # Provides operations to call the purgeData method.
+    class PurgeDataRequestBuilder
+        
+        ## 
+        # Path parameters for the request
+        @path_parameters
+        ## 
+        # The request adapter to use to execute the requests.
+        @request_adapter
+        ## 
+        # Url template to use to build the URL for the current request builder
+        @url_template
+        ## 
+        ## Instantiates a new PurgeDataRequestBuilder and sets the default values.
+        ## @param pathParameters Path parameters for the request
+        ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @return a void
+        ## 
+        def initialize(path_parameters, request_adapter)
+            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
+            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
+            @url_template = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/microsoft.graph.ediscovery.purgeData"
+            @request_adapter = request_adapter
+            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
+            @path_parameters = path_parameters if path_parameters.is_a? Hash
+        end
+        ## 
+        ## Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:- eDiscovery solution series: Data spillage scenario - Search and purge- Advanced eDiscovery workflow for content in Microsoft Teams 
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of void
+        ## 
+        def post(request_configuration=nil)
+            request_info = self.to_post_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, nil, error_mapping)
+        end
+        ## 
+        ## Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:- eDiscovery solution series: Data spillage scenario - Search and purge- Advanced eDiscovery workflow for content in Microsoft Teams 
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_post_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :POST
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+
+        ## 
+        # Configuration for the request such as headers, query parameters, and middleware options.
+        class PurgeDataRequestBuilderPostRequestConfiguration
+            
+            ## 
+            # Request headers
+            attr_accessor :headers
+            ## 
+            # Request options
+            attr_accessor :options
+        end
+    end
+end
