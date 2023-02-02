@@ -1,0 +1,4 @@
+require_relative 'get_role_scope_tags_by_id_post_request_body'
+require_relative 'get_role_scope_tags_by_id_response'
+module MicrosoftGraphBeta::DeviceManagement::RoleScopeTags::MicrosoftGraphGetRoleScopeTagsById
+end

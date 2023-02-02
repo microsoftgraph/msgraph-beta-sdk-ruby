@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Policies::DirectoryRoleAccessReviewPolicy
+end

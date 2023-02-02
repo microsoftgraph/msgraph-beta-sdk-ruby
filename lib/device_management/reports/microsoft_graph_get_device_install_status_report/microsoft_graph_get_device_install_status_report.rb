@@ -1,0 +1,3 @@
+require_relative 'get_device_install_status_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::MicrosoftGraphGetDeviceInstallStatusReport
+end

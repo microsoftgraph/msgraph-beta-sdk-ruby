@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::GroupLifecyclePolicies
+end

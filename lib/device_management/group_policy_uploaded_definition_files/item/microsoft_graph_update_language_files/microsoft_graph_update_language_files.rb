@@ -1,0 +1,3 @@
+require_relative 'update_language_files_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::GroupPolicyUploadedDefinitionFiles::Item::MicrosoftGraphUpdateLanguageFiles
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Me::MicrosoftGraphReprocessLicenseAssignment
+end

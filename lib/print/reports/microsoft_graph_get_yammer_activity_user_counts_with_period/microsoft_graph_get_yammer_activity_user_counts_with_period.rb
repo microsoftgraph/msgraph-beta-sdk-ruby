@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Print::Reports::MicrosoftGraphGetYammerActivityUserCountsWithPeriod
+end

@@ -1,0 +1,3 @@
+require_relative 'filter_by_current_user_with_on_response'
+module MicrosoftGraphBeta::Users::Item::PendingAccessReviewInstances::Item::Stages::Item::Decisions::MicrosoftGraphFilterByCurrentUserWithOn
+end

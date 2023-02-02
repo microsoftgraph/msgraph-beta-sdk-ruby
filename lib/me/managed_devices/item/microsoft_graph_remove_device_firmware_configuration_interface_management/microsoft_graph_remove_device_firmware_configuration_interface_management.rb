@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Me::ManagedDevices::Item::MicrosoftGraphRemoveDeviceFirmwareConfigurationInterfaceManagement
+end

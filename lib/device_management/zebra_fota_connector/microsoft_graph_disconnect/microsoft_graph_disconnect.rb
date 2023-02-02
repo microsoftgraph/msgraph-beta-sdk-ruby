@@ -1,0 +1,3 @@
+require_relative 'disconnect_response'
+module MicrosoftGraphBeta::DeviceManagement::ZebraFotaConnector::MicrosoftGraphDisconnect
+end

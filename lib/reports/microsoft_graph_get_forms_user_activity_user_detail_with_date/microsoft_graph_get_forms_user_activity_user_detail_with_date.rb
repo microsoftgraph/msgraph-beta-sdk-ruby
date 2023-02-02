@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::MicrosoftGraphGetFormsUserActivityUserDetailWithDate
+end

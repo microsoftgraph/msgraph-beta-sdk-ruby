@@ -1,0 +1,29 @@
+{
+  "descriptionHash": "71276F5562654C7B7B23A69F49F777E20F7F1C53F48967327291A3FB5FA91386B1E331C806E7931096BB92AA3EAAC0AC614CBDFFE1AF7CDBF9B53D59A0756F8B",
+  "descriptionLocation": "/home/vsts/work/1/s/msgraph-metadata/clean_beta_openapi/openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "0.10.0-preview",
+  "clientClassName": "GraphBaseServiceClient",
+  "clientNamespaceName": "MicrosoftGraphBeta",
+  "language": "Ruby",
+  "usesBackingStore": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain",
+    "application/x-www-form-urlencoded"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

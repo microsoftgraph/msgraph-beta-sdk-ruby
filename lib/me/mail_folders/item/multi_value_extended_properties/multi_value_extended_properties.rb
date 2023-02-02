@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Me::MailFolders::Item::MultiValueExtendedProperties
+end

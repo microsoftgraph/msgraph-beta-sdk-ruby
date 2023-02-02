@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Me::WindowsInformationProtectionDeviceRegistrations::Item
+end

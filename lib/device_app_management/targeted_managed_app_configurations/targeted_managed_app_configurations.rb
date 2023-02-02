@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceAppManagement::TargetedManagedAppConfigurations
+end

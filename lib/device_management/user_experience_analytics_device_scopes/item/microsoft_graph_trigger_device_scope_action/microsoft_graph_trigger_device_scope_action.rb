@@ -1,0 +1,3 @@
+require_relative 'trigger_device_scope_action_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::UserExperienceAnalyticsDeviceScopes::Item::MicrosoftGraphTriggerDeviceScopeAction
+end

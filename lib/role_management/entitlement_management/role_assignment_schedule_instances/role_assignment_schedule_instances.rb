@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::RoleAssignmentScheduleInstances
+end

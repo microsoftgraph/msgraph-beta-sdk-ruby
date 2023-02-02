@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::CrossCloudGovernmentOrganizationMapping
+end

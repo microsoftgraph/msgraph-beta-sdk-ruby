@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Policies::CrossTenantAccessPolicy::Default::MicrosoftGraphResetToSystemDefault
+end

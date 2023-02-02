@@ -1,0 +1,3 @@
+require_relative 'initiate_on_demand_proactive_remediation_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::Item::MicrosoftGraphInitiateOnDemandProactiveRemediation
+end

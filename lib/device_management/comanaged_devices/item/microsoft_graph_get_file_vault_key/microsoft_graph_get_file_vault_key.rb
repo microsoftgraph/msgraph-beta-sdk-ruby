@@ -1,0 +1,3 @@
+require_relative 'get_file_vault_key_response'
+module MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::Item::MicrosoftGraphGetFileVaultKey
+end

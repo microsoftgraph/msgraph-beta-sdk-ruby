@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Identity::ConditionalAccess::AuthenticationStrength::AuthenticationMethodModes
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::PrivilegedRoleAssignmentRequests::Item::RoleInfo::MicrosoftGraphSelfDeactivate
+end
