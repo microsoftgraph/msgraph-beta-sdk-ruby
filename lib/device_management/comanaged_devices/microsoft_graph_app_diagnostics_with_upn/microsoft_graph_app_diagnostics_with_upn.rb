@@ -1,0 +1,3 @@
+require_relative 'app_diagnostics_with_upn_response'
+module MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::MicrosoftGraphAppDiagnosticsWithUpn
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::CertificateBasedAuthConfiguration::Count
+end

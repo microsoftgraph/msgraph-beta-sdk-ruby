@@ -1,0 +1,3 @@
+require_relative 'available_provider_types_response'
+module MicrosoftGraphBeta::Identity::IdentityProviders::MicrosoftGraphAvailableProviderTypes
+end

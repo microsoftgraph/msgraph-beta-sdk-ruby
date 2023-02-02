@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotSettings::MicrosoftGraphSync
+end

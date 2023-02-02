@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Me::WindowsInformationProtectionDeviceRegistrations::Count
+end

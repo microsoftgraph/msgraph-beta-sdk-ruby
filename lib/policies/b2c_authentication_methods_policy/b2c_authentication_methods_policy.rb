@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Policies::B2cAuthenticationMethodsPolicy
+end

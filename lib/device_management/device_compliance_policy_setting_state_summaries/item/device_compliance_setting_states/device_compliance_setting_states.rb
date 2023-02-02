@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates
+end

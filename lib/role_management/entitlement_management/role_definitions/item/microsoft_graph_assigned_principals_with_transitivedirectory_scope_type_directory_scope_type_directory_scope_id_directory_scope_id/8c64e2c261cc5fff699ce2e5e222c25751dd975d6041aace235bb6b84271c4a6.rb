@@ -1,0 +1,3 @@
+require_relative 'ec195e9586bb465c199e20b9281ea7600ae5d758893d5b85df9b945e7995a4c1'
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::RoleDefinitions::Item::MicrosoftGraphAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId
+end

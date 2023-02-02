@@ -1,0 +1,4 @@
+require_relative 'evaluate_removal_post_request_body'
+require_relative 'evaluate_removal_response'
+module MicrosoftGraphBeta::Security::InformationProtection::SensitivityLabels::MicrosoftGraphSecurityEvaluateRemoval
+end

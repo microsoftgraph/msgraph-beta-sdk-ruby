@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::DeviceHealthScripts::MicrosoftGraphAreGlobalScriptsAvailable
+end

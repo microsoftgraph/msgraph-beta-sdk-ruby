@@ -1,0 +1,3 @@
+require_relative 'get_encryption_public_key_response'
+module MicrosoftGraphBeta::DeviceManagement::DepOnboardingSettings::Item::MicrosoftGraphGetEncryptionPublicKey
+end

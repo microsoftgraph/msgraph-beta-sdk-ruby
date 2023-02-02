@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotDeviceIdentities::Count
+end

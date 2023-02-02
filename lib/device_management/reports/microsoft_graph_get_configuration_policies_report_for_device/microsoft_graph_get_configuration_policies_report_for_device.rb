@@ -1,0 +1,3 @@
+require_relative 'get_configuration_policies_report_for_device_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::MicrosoftGraphGetConfigurationPoliciesReportForDevice
+end

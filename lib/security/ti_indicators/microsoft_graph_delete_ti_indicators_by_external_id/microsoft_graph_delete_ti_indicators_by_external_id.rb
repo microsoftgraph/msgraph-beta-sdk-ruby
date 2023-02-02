@@ -1,0 +1,4 @@
+require_relative 'delete_ti_indicators_by_external_id_post_request_body'
+require_relative 'delete_ti_indicators_by_external_id_response'
+module MicrosoftGraphBeta::Security::TiIndicators::MicrosoftGraphDeleteTiIndicatorsByExternalId
+end

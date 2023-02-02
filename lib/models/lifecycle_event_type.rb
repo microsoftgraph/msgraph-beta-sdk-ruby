@@ -1,0 +1,7 @@
+module MicrosoftGraphBeta::Models
+    LifecycleEventType = {
+        Missed: :Missed,
+        SubscriptionRemoved: :SubscriptionRemoved,
+        ReauthorizationRequired: :ReauthorizationRequired,
+    }
+end

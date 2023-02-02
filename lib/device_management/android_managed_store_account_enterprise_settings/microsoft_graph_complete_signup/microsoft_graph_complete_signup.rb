@@ -1,0 +1,3 @@
+require_relative 'complete_signup_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAccountEnterpriseSettings::MicrosoftGraphCompleteSignup
+end
