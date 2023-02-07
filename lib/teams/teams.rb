@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Teams
+end

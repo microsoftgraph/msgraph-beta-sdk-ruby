@@ -1,0 +1,3 @@
+require_relative 'validate_compliance_script_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::DeviceCompliancePolicies::MicrosoftGraphValidateComplianceScript
+end

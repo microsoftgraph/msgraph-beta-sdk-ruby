@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::MacOSSoftwareUpdateAccountSummaries::Item
+end

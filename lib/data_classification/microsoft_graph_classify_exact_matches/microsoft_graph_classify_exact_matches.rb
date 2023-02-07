@@ -1,0 +1,3 @@
+require_relative 'classify_exact_matches_post_request_body'
+module MicrosoftGraphBeta::DataClassification::MicrosoftGraphClassifyExactMatches
+end

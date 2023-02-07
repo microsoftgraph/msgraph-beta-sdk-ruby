@@ -1,0 +1,3 @@
+require_relative 'get_portal_notifications_response'
+module MicrosoftGraphBeta::DeviceManagement::Monitoring::AlertRecords::MicrosoftGraphDeviceManagementGetPortalNotifications
+end

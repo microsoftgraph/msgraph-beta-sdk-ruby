@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::RoleEligibilityScheduleInstances::Item
+end

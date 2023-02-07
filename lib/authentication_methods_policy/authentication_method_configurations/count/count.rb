@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Count
+end

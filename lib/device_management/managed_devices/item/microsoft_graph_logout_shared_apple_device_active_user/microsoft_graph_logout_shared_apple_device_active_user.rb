@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::ManagedDevices::Item::MicrosoftGraphLogoutSharedAppleDeviceActiveUser
+end

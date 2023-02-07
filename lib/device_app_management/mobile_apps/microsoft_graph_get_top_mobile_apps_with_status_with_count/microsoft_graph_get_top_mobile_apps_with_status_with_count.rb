@@ -1,0 +1,3 @@
+require_relative 'get_top_mobile_apps_with_status_with_count_response'
+module MicrosoftGraphBeta::DeviceAppManagement::MobileApps::MicrosoftGraphGetTopMobileAppsWithStatusWithCount
+end

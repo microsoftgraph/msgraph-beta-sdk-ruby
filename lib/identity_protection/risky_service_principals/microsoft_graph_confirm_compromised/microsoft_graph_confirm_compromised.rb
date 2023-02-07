@@ -1,0 +1,3 @@
+require_relative 'confirm_compromised_post_request_body'
+module MicrosoftGraphBeta::IdentityProtection::RiskyServicePrincipals::MicrosoftGraphConfirmCompromised
+end

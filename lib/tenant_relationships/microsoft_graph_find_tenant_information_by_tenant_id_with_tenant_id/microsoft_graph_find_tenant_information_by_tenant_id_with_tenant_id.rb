@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::TenantRelationships::MicrosoftGraphFindTenantInformationByTenantIdWithTenantId
+end

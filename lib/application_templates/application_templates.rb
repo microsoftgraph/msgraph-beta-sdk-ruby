@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::ApplicationTemplates
+end

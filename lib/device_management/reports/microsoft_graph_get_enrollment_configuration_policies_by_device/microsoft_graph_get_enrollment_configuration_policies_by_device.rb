@@ -1,0 +1,3 @@
+require_relative 'get_enrollment_configuration_policies_by_device_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::MicrosoftGraphGetEnrollmentConfigurationPoliciesByDevice
+end

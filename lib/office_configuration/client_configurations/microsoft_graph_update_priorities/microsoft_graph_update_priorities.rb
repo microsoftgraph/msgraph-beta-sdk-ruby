@@ -1,0 +1,3 @@
+require_relative 'update_priorities_post_request_body'
+module MicrosoftGraphBeta::OfficeConfiguration::ClientConfigurations::MicrosoftGraphUpdatePriorities
+end

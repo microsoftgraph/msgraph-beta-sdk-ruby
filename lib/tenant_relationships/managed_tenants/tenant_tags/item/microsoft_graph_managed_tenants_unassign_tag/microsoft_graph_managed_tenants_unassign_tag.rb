@@ -1,0 +1,3 @@
+require_relative 'unassign_tag_post_request_body'
+module MicrosoftGraphBeta::TenantRelationships::ManagedTenants::TenantTags::Item::MicrosoftGraphManagedTenantsUnassignTag
+end

@@ -1,0 +1,3 @@
+require_relative 'add_user_input_log_post_request_body'
+module MicrosoftGraphBeta::TenantRelationships::ManagedTenants::ManagedTenantAlerts::Item::MicrosoftGraphManagedTenantsAddUserInputLog
+end

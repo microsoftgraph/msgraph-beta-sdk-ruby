@@ -1,0 +1,3 @@
+require_relative 'set_mobile_device_management_authority_response'
+module MicrosoftGraphBeta::Organization::Item::MicrosoftGraphSetMobileDeviceManagementAuthority
+end

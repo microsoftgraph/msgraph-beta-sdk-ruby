@@ -1,0 +1,3 @@
+require_relative 'upload_new_version_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::GroupPolicyUploadedDefinitionFiles::Item::MicrosoftGraphUploadNewVersion
+end

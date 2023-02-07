@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Identity::CustomAuthenticationExtensions::Item::MicrosoftGraphValidateAuthenticationConfiguration
+end

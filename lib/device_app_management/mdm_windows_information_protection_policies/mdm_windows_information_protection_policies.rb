@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceAppManagement::MdmWindowsInformationProtectionPolicies
+end
