@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Reports::AuthenticationMethods::MicrosoftGraphUsersRegisteredByMethod
+end

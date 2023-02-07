@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Sites::Item::InformationProtection::Policy::Labels::Count
+end

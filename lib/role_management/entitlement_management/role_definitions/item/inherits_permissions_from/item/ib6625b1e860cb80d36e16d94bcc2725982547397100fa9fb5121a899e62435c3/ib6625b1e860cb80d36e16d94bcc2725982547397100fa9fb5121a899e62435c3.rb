@@ -1,0 +1,3 @@
+require_relative 'ec195e9586bb465c199e20b9281ea7600ae5d758893d5b85df9b945e7995a4c1'
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::RoleDefinitions::Item::InheritsPermissionsFrom::Item::Ib6625b1e860cb80d36e16d94bcc2725982547397100fa9fb5121a899e62435c3
+end

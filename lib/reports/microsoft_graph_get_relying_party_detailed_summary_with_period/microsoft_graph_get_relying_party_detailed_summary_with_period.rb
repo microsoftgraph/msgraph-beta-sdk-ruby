@@ -1,0 +1,3 @@
+require_relative 'get_relying_party_detailed_summary_with_period_response'
+module MicrosoftGraphBeta::Reports::MicrosoftGraphGetRelyingPartyDetailedSummaryWithPeriod
+end

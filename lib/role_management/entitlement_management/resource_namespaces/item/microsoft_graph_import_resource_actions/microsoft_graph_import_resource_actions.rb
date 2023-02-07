@@ -1,0 +1,3 @@
+require_relative 'import_resource_actions_post_request_body'
+module MicrosoftGraphBeta::RoleManagement::EntitlementManagement::ResourceNamespaces::Item::MicrosoftGraphImportResourceActions
+end

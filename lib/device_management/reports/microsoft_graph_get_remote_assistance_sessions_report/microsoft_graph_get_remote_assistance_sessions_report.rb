@@ -1,0 +1,3 @@
+require_relative 'get_remote_assistance_sessions_report_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::Reports::MicrosoftGraphGetRemoteAssistanceSessionsReport
+end

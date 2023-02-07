@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::AndroidForWorkEnrollmentProfiles::Item::MicrosoftGraphRevokeToken
+end

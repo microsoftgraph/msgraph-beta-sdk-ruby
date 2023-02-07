@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DirectoryObjects
+end

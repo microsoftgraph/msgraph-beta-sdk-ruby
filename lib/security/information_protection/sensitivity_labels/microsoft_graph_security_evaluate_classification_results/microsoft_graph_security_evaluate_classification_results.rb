@@ -1,0 +1,4 @@
+require_relative 'evaluate_classification_results_post_request_body'
+require_relative 'evaluate_classification_results_response'
+module MicrosoftGraphBeta::Security::InformationProtection::SensitivityLabels::MicrosoftGraphSecurityEvaluateClassificationResults
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Extensions::Count
+end

@@ -1,0 +1,3 @@
+require_relative 'execute_action_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::MicrosoftGraphExecuteAction
+end

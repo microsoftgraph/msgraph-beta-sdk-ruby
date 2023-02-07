@@ -1,0 +1,3 @@
+require_relative 'generate_download_url_response'
+module MicrosoftGraphBeta::DeviceManagement::MicrosoftTunnelServerLogCollectionResponses::Item::MicrosoftGraphGenerateDownloadUrl
+end

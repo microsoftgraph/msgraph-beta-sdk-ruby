@@ -1,0 +1,3 @@
+require_relative 'create_server_log_collection_request_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::MicrosoftTunnelSites::Item::MicrosoftTunnelServers::Item::MicrosoftGraphCreateServerLogCollectionRequest
+end

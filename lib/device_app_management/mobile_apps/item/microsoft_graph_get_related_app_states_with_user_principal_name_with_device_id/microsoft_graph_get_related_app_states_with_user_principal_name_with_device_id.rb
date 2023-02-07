@@ -1,0 +1,3 @@
+require_relative 'get_related_app_states_with_user_principal_name_with_device_id_response'
+module MicrosoftGraphBeta::DeviceAppManagement::MobileApps::Item::MicrosoftGraphGetRelatedAppStatesWithUserPrincipalNameWithDeviceId
+end

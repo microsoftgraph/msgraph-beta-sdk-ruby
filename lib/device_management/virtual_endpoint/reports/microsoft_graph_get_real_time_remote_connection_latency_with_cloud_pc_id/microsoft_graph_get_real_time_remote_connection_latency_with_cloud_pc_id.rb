@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::MicrosoftGraphGetRealTimeRemoteConnectionLatencyWithCloudPcId
+end

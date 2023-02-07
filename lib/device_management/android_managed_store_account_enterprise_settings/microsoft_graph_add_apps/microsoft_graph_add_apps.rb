@@ -1,0 +1,3 @@
+require_relative 'add_apps_post_request_body'
+module MicrosoftGraphBeta::DeviceManagement::AndroidManagedStoreAccountEnterpriseSettings::MicrosoftGraphAddApps
+end

@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::MessageRecipients
+end

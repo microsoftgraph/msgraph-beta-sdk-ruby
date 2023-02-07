@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::IdentityProtection::ServicePrincipalRiskDetections
+end

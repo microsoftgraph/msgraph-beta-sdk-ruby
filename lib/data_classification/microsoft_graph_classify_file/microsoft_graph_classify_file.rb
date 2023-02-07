@@ -1,0 +1,3 @@
+require_relative 'classify_file_post_request_body'
+module MicrosoftGraphBeta::DataClassification::MicrosoftGraphClassifyFile
+end

@@ -1,0 +1,3 @@
+require_relative 'e0fd24d3713dc1f4b8f073d13dab2e08292d4a2add75e5a0f3bc9d24245fae76'
+module MicrosoftGraphBeta::RoleManagement::Directory::Ie0f680044e93791ab6f3fa46cf4238aca150d2a8b5eea9970699ee490c11ce2f
+end

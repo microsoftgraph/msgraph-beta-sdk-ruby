@@ -1,0 +1,2 @@
+module MicrosoftGraphBeta::DeviceManagement::Monitoring::AlertRecords::Item::MicrosoftGraphDeviceManagementSetPortalNotificationAsSent
+end

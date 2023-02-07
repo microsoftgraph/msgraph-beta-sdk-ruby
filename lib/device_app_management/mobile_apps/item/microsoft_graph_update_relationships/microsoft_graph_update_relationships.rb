@@ -1,0 +1,3 @@
+require_relative 'update_relationships_post_request_body'
+module MicrosoftGraphBeta::DeviceAppManagement::MobileApps::Item::MicrosoftGraphUpdateRelationships
+end
