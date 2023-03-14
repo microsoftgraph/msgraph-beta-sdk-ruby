@@ -1,0 +1,1 @@
+require_relative 'migrate_to_template_post_request_body'

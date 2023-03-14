@@ -1,0 +1,1 @@
+require_relative 'get_apps_install_summary_report_post_request_body'

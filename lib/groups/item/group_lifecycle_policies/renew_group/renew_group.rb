@@ -1,0 +1,2 @@
+require_relative 'renew_group_post_request_body'
+require_relative 'renew_group_response'

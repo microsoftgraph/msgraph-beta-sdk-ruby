@@ -1,0 +1,1 @@
+require_relative 'set_verified_publisher_post_request_body'

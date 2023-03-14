@@ -1,0 +1,2 @@
+require_relative 'update_scope_tags_post_request_body'
+require_relative 'update_scope_tags_response'

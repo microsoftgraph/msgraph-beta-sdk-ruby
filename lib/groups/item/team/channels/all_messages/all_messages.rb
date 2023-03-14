@@ -1,0 +1,1 @@
+require_relative 'all_messages_response'

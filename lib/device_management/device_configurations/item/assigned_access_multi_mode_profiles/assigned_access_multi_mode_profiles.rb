@@ -1,0 +1,1 @@
+require_relative 'assigned_access_multi_mode_profiles_post_request_body'

@@ -1,0 +1,1 @@
+require_relative 'get_attack_simulation_training_user_coverage_response'

@@ -1,0 +1,1 @@
+require_relative 'get_quiet_time_policy_user_summary_report_post_request_body'

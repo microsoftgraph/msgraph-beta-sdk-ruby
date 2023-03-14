@@ -1,0 +1,1 @@
+require_relative 'download_app_diagnostics_post_request_body'

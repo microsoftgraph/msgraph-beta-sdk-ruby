@@ -1,0 +1,6 @@
+require_relative 'image_tagging_choice'
+require_relative 'sharing_capabilities'
+require_relative 'sharing_domain_restriction_mode'
+require_relative 'idle_session_sign_out'
+require_relative 'settings'
+require_relative 'sharepoint'

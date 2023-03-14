@@ -1,0 +1,1 @@
+require_relative 'get_storage_accounts_with_subscription_id_response'
