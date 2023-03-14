@@ -1,0 +1,1 @@
+require_relative 'upload_secret_post_request_body'
