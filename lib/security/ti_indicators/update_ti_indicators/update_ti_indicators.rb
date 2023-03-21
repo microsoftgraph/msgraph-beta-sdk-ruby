@@ -1,0 +1,2 @@
+require_relative 'update_ti_indicators_post_request_body'
+require_relative 'update_ti_indicators_response'

@@ -1,0 +1,1 @@
+require_relative 'bulk_set_cloud_pc_review_status_post_request_body'
