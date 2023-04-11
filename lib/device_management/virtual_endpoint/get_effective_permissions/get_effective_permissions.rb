@@ -1,0 +1,1 @@
+require_relative 'get_effective_permissions_response'

@@ -1,0 +1,1 @@
+require_relative 'get_compliance_settings_report_post_request_body'
