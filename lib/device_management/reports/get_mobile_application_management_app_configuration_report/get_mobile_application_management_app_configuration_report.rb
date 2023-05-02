@@ -1,0 +1,1 @@
+require_relative 'get_mobile_application_management_app_configuration_report_post_request_body'

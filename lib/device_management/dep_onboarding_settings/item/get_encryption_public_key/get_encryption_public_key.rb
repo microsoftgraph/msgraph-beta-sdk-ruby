@@ -1,0 +1,1 @@
+require_relative 'get_encryption_public_key_response'
