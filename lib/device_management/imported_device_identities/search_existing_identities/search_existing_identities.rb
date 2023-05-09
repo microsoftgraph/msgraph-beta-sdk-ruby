@@ -1,0 +1,2 @@
+require_relative 'search_existing_identities_post_request_body'
+require_relative 'search_existing_identities_response'
