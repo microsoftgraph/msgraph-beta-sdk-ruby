@@ -1,0 +1,1 @@
+require_relative 'get_device_status_by_compliace_policy_report_post_request_body'

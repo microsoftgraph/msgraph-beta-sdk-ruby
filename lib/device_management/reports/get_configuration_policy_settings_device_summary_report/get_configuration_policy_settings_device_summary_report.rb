@@ -1,0 +1,1 @@
+require_relative 'get_configuration_policy_settings_device_summary_report_post_request_body'
