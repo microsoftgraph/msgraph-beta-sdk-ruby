@@ -1,0 +1,1 @@
+require_relative 'get_devices_without_compliance_policy_report_post_request_body'
