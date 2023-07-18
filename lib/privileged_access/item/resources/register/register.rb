@@ -1,0 +1,1 @@
+require_relative 'register_post_request_body'

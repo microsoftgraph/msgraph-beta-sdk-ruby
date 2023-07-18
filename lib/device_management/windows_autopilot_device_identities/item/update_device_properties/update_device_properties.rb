@@ -1,0 +1,1 @@
+require_relative 'update_device_properties_post_request_body'
