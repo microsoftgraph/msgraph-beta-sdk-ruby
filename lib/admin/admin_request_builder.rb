@@ -1,0 +1,180 @@
+require 'microsoft_kiota_abstractions'
+require_relative '../microsoft_graph_beta'
+require_relative '../models/admin'
+require_relative '../models/o_data_errors/o_data_error'
+require_relative './admin'
+require_relative './apps_and_services/apps_and_services_request_builder'
+require_relative './dynamics/dynamics_request_builder'
+require_relative './edge/edge_request_builder'
+require_relative './forms/forms_request_builder'
+require_relative './people/people_request_builder'
+require_relative './report_settings/report_settings_request_builder'
+require_relative './service_announcement/service_announcement_request_builder'
+require_relative './sharepoint/sharepoint_request_builder'
+require_relative './todo/todo_request_builder'
+require_relative './windows/windows_request_builder'
+
+module MicrosoftGraphBeta
+    module Admin
+        ## 
+        # Provides operations to manage the admin singleton.
+        class AdminRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
+            
+            ## 
+            # Provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.
+            def apps_and_services()
+                return MicrosoftGraphBeta::Admin::AppsAndServices::AppsAndServicesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the dynamics property of the microsoft.graph.admin entity.
+            def dynamics()
+                return MicrosoftGraphBeta::Admin::Dynamics::DynamicsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the edge property of the microsoft.graph.admin entity.
+            def edge()
+                return MicrosoftGraphBeta::Admin::Edge::EdgeRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the forms property of the microsoft.graph.admin entity.
+            def forms()
+                return MicrosoftGraphBeta::Admin::Forms::FormsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the people property of the microsoft.graph.admin entity.
+            def people()
+                return MicrosoftGraphBeta::Admin::People::PeopleRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
+            def report_settings()
+                return MicrosoftGraphBeta::Admin::ReportSettings::ReportSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
+            def service_announcement()
+                return MicrosoftGraphBeta::Admin::ServiceAnnouncement::ServiceAnnouncementRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
+            def sharepoint()
+                return MicrosoftGraphBeta::Admin::Sharepoint::SharepointRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the todo property of the microsoft.graph.admin entity.
+            def todo()
+                return MicrosoftGraphBeta::Admin::Todo::TodoRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the windows property of the microsoft.graph.admin entity.
+            def windows()
+                return MicrosoftGraphBeta::Admin::Windows::WindowsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Instantiates a new AdminRequestBuilder and sets the default values.
+            ## @param path_parameters Path parameters for the request
+            ## @param request_adapter The request adapter to use to execute the requests.
+            ## @return a void
+            ## 
+            def initialize(path_parameters, request_adapter)
+                super(path_parameters, request_adapter, "{+baseurl}/admin{?%24select,%24expand}")
+            end
+            ## 
+            ## Get admin
+            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+            ## @return a Fiber of admin
+            ## 
+            def get(request_configuration=nil)
+                request_info = self.to_get_request_information(
+                    request_configuration
+                )
+                error_mapping = Hash.new
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Admin.create_from_discriminator_value(pn) }, error_mapping)
+            end
+            ## 
+            ## Update admin
+            ## @param body The request body
+            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+            ## @return a Fiber of admin
+            ## 
+            def patch(body, request_configuration=nil)
+                raise StandardError, 'body cannot be null' if body.nil?
+                request_info = self.to_patch_request_information(
+                    body, request_configuration
+                )
+                error_mapping = Hash.new
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Admin.create_from_discriminator_value(pn) }, error_mapping)
+            end
+            ## 
+            ## Get admin
+            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+            ## @return a request_information
+            ## 
+            def to_get_request_information(request_configuration=nil)
+                request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.add('Accept', 'application/json')
+                unless request_configuration.nil?
+                    request_info.add_headers_from_raw_object(request_configuration.headers)
+                    request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                    request_info.add_request_options(request_configuration.options)
+                end
+                return request_info
+            end
+            ## 
+            ## Update admin
+            ## @param body The request body
+            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+            ## @return a request_information
+            ## 
+            def to_patch_request_information(body, request_configuration=nil)
+                raise StandardError, 'body cannot be null' if body.nil?
+                request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.add('Accept', 'application/json')
+                unless request_configuration.nil?
+                    request_info.add_headers_from_raw_object(request_configuration.headers)
+                    request_info.add_request_options(request_configuration.options)
+                end
+                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                return request_info
+            end
+
+            ## 
+            # Get admin
+            class AdminRequestBuilderGetQueryParameters
+                
+                ## 
+                # Expand related entities
+                attr_accessor :expand
+                ## 
+                # Select properties to be returned
+                attr_accessor :select
+                ## 
+                ## Maps the query parameters names to their encoded names for the URI template parsing.
+                ## @param original_name The original query parameter name in the class.
+                ## @return a string
+                ## 
+                def get_query_parameter(original_name)
+                    raise StandardError, 'original_name cannot be null' if original_name.nil?
+                    case original_name
+                        when "expand"
+                            return "%24expand"
+                        when "select"
+                            return "%24select"
+                        else
+                            return original_name
+                    end
+                end
+            end
+        end
+    end
+end
