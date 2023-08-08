@@ -1,0 +1,1 @@
+require_relative 'send_activity_notification_to_recipients_post_request_body'

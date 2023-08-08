@@ -1,0 +1,1 @@
+require_relative 'upload_url_response'
