@@ -1,0 +1,138 @@
+require 'microsoft_kiota_abstractions'
+require_relative '../../../microsoft_graph_beta'
+require_relative '../../../models/drive_item_collection_response'
+require_relative '../../../models/o_data_errors_o_data_error'
+require_relative '../../drives'
+require_relative '../item'
+require_relative './count/count_request_builder'
+require_relative './item/drive_item_item_request_builder'
+require_relative './special'
+
+module MicrosoftGraphBeta
+    module Drives
+        module Item
+            module Special
+                ## 
+                # Provides operations to manage the special property of the microsoft.graph.drive entity.
+                class SpecialRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
+                    
+                    ## 
+                    # Provides operations to count the resources in the collection.
+                    def count()
+                        return MicrosoftGraphBeta::Drives::Item::Special::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the special property of the microsoft.graph.drive entity.
+                    ## @param drive_item_id The unique identifier of driveItem
+                    ## @return a drive_item_item_request_builder
+                    ## 
+                    def by_drive_item_id(drive_item_id)
+                        raise StandardError, 'drive_item_id cannot be null' if drive_item_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["driveItem%2Did"] = drive_item_id
+                        return MicrosoftGraphBeta::Drives::Item::Special::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
+                    ## Instantiates a new SpecialRequestBuilder and sets the default values.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
+                    ## @return a void
+                    ## 
+                    def initialize(path_parameters, request_adapter)
+                        super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/special{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                    end
+                    ## 
+                    ## Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a Fiber of drive_item_collection_response
+                    ## 
+                    def get(request_configuration=nil)
+                        request_info = self.to_get_request_information(
+                            request_configuration
+                        )
+                        error_mapping = Hash.new
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DriveItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    end
+                    ## 
+                    ## Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a request_information
+                    ## 
+                    def to_get_request_information(request_configuration=nil)
+                        request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.add('Accept', 'application/json')
+                        unless request_configuration.nil?
+                            request_info.add_headers_from_raw_object(request_configuration.headers)
+                            request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                            request_info.add_request_options(request_configuration.options)
+                        end
+                        return request_info
+                    end
+
+                    ## 
+                    # Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
+                    class SpecialRequestBuilderGetQueryParameters
+                        
+                        ## 
+                        # Include count of items
+                        attr_accessor :count
+                        ## 
+                        # Expand related entities
+                        attr_accessor :expand
+                        ## 
+                        # Filter items by property values
+                        attr_accessor :filter
+                        ## 
+                        # Order items by property values
+                        attr_accessor :orderby
+                        ## 
+                        # Search items by search phrases
+                        attr_accessor :search
+                        ## 
+                        # Select properties to be returned
+                        attr_accessor :select
+                        ## 
+                        # Skip the first n items
+                        attr_accessor :skip
+                        ## 
+                        # Show only the first n items
+                        attr_accessor :top
+                        ## 
+                        ## Maps the query parameters names to their encoded names for the URI template parsing.
+                        ## @param original_name The original query parameter name in the class.
+                        ## @return a string
+                        ## 
+                        def get_query_parameter(original_name)
+                            raise StandardError, 'original_name cannot be null' if original_name.nil?
+                            case original_name
+                                when "count"
+                                    return "%24count"
+                                when "expand"
+                                    return "%24expand"
+                                when "filter"
+                                    return "%24filter"
+                                when "orderby"
+                                    return "%24orderby"
+                                when "search"
+                                    return "%24search"
+                                when "select"
+                                    return "%24select"
+                                when "skip"
+                                    return "%24skip"
+                                when "top"
+                                    return "%24top"
+                                else
+                                    return original_name
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end

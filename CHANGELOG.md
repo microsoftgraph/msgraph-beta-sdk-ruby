@@ -10,3 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+
+## [0.11.0] - 2023-08-10
+
+### Added
+
+- Initial release
+
+### Changed
+
+- Weekly generation.
+- BREAKING: models that were in subnamespaces are now in the main model namespace to avoid circular dependencies. e.g. `MicrosoftGraph::Models::CallRecords::CallRecord` in now `MicrosoftGraph::Models::CallRecordsCallRecord`.
