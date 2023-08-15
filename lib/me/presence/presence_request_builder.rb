@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Set a presence status message for a user. An optional expiration date and time can be supplied.
+                ## Get a user's presence information.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of presence
                 ## 
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     return request_info
                 end
                 ## 
-                ## Set a presence status message for a user. An optional expiration date and time can be supplied.
+                ## Get a user's presence information.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -151,7 +151,7 @@ module MicrosoftGraphBeta
                 end
 
                 ## 
-                # Set a presence status message for a user. An optional expiration date and time can be supplied.
+                # Get a user's presence information.
                 class PresenceRequestBuilderGetQueryParameters
                     
                     ## 

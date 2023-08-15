@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/identity/conditionalAccess/namedLocations/{namedLocation%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a namedLocation object.
+                        ## Delete an ipNamedLocation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NamedLocation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of an ipNamedLocation object.
+                        ## Update the properties of a countryNamedLocation object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of named_location
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NamedLocation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a namedLocation object.
+                        ## Delete an ipNamedLocation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Update the properties of an ipNamedLocation object.
+                        ## Update the properties of a countryNamedLocation object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

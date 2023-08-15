@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             # The cloudPCs property
             @cloud_p_cs
             ## 
-            # The cloudRealtimeCommunicationInfo property
+            # Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             @cloud_realtime_communication_info
             ## 
             # The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -302,7 +302,7 @@ module MicrosoftGraphBeta
             # Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
             @on_premises_security_identifier
             ## 
-            # The onPremisesSipInfo property
+            # Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             @on_premises_sip_info
             ## 
             # true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
@@ -344,7 +344,7 @@ module MicrosoftGraphBeta
             # Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
             @people
             ## 
-            # The permissionGrants property
+            # List all resource-specific permission grants of a user.
             @permission_grants
             ## 
             # The user's profile photo. Read-only.
@@ -806,14 +806,14 @@ module MicrosoftGraphBeta
                 @cloud_p_cs = value
             end
             ## 
-            ## Gets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+            ## Gets the cloudRealtimeCommunicationInfo property value. Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             ## @return a cloud_realtime_communication_info
             ## 
             def cloud_realtime_communication_info
                 return @cloud_realtime_communication_info
             end
             ## 
-            ## Sets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+            ## Sets the cloudRealtimeCommunicationInfo property value. Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             ## @param value Value to set for the cloudRealtimeCommunicationInfo property.
             ## @return a void
             ## 
@@ -2107,14 +2107,14 @@ module MicrosoftGraphBeta
                 @on_premises_security_identifier = value
             end
             ## 
-            ## Gets the onPremisesSipInfo property value. The onPremisesSipInfo property
+            ## Gets the onPremisesSipInfo property value. Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             ## @return a on_premises_sip_info
             ## 
             def on_premises_sip_info
                 return @on_premises_sip_info
             end
             ## 
-            ## Sets the onPremisesSipInfo property value. The onPremisesSipInfo property
+            ## Sets the onPremisesSipInfo property value. Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             ## @param value Value to set for the onPremisesSipInfo property.
             ## @return a void
             ## 
@@ -2317,14 +2317,14 @@ module MicrosoftGraphBeta
                 @people = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. List all resource-specific permission grants of a user.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. List all resource-specific permission grants of a user.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 

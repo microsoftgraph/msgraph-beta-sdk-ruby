@@ -12,10 +12,10 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The CFBundleIdentifier.
+            # The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
             @bundle_id
             ## 
-            # The CFBundleVersion.
+            # The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
             @bundle_version
             ## 
             # The OdataType property
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the bundleId property value. The CFBundleIdentifier.
+            ## Gets the bundleId property value. The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @return a string
             ## 
             def bundle_id
                 return @bundle_id
             end
             ## 
-            ## Sets the bundleId property value. The CFBundleIdentifier.
+            ## Sets the bundleId property value. The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @param value Value to set for the bundleId property.
             ## @return a void
             ## 
@@ -51,14 +51,14 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Gets the bundleVersion property value. The CFBundleVersion.
+            ## Gets the bundleVersion property value. The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @return a string
             ## 
             def bundle_version
                 return @bundle_version
             end
             ## 
-            ## Sets the bundleVersion property value. The CFBundleVersion.
+            ## Sets the bundleVersion property value. The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @param value Value to set for the bundleVersion property.
             ## @return a void
             ## 

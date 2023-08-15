@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/attachments{?%24filter,%24count,%24orderby,%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Retrieve a list of attachment objects attached to a message.
+                                            ## Retrieve a list of attachment objects.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of attachment_collection_response
                                             ## 
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Retrieve a list of attachment objects attached to a message.
+                                            ## Retrieve a list of attachment objects.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -130,7 +130,7 @@ module MicrosoftGraphBeta
                                             end
 
                                             ## 
-                                            # Retrieve a list of attachment objects attached to a message.
+                                            # Retrieve a list of attachment objects.
                                             class AttachmentsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

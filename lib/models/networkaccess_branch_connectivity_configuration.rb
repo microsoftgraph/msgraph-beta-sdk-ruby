@@ -4,14 +4,20 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class VirtualAppointmentSettings
+        class NetworkaccessBranchConnectivityConfiguration
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
-            @allow_client_to_join_using_browser
+            # The branchId property
+            @branch_id
+            ## 
+            # The branchName property
+            @branch_name
+            ## 
+            # The links property
+            @links
             ## 
             # The OdataType property
             @odata_type
@@ -31,22 +37,37 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the allowClientToJoinUsingBrowser property value. Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
-            ## @return a boolean
+            ## Gets the branchId property value. The branchId property
+            ## @return a string
             ## 
-            def allow_client_to_join_using_browser
-                return @allow_client_to_join_using_browser
+            def branch_id
+                return @branch_id
             end
             ## 
-            ## Sets the allowClientToJoinUsingBrowser property value. Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.
-            ## @param value Value to set for the allowClientToJoinUsingBrowser property.
+            ## Sets the branchId property value. The branchId property
+            ## @param value Value to set for the branchId property.
             ## @return a void
             ## 
-            def allow_client_to_join_using_browser=(value)
-                @allow_client_to_join_using_browser = value
+            def branch_id=(value)
+                @branch_id = value
             end
             ## 
-            ## Instantiates a new virtualAppointmentSettings and sets the default values.
+            ## Gets the branchName property value. The branchName property
+            ## @return a string
+            ## 
+            def branch_name
+                return @branch_name
+            end
+            ## 
+            ## Sets the branchName property value. The branchName property
+            ## @param value Value to set for the branchName property.
+            ## @return a void
+            ## 
+            def branch_name=(value)
+                @branch_name = value
+            end
+            ## 
+            ## Instantiates a new networkaccessBranchConnectivityConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,11 +76,11 @@ module MicrosoftGraphBeta
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
             ## @param parse_node The parse node to use to read the discriminator value and create the object
-            ## @return a virtual_appointment_settings
+            ## @return a networkaccess_branch_connectivity_configuration
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                return VirtualAppointmentSettings.new
+                return NetworkaccessBranchConnectivityConfiguration.new
             end
             ## 
             ## The deserialization information for the current model
@@ -67,9 +88,26 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "allowClientToJoinUsingBrowser" => lambda {|n| @allow_client_to_join_using_browser = n.get_boolean_value() },
+                    "branchId" => lambda {|n| @branch_id = n.get_string_value() },
+                    "branchName" => lambda {|n| @branch_name = n.get_string_value() },
+                    "links" => lambda {|n| @links = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessConnectivityConfigurationLink.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the links property value. The links property
+            ## @return a networkaccess_connectivity_configuration_link
+            ## 
+            def links
+                return @links
+            end
+            ## 
+            ## Sets the links property value. The links property
+            ## @param value Value to set for the links property.
+            ## @return a void
+            ## 
+            def links=(value)
+                @links = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -93,7 +131,9 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowClientToJoinUsingBrowser", @allow_client_to_join_using_browser)
+                writer.write_string_value("branchId", @branch_id)
+                writer.write_string_value("branchName", @branch_name)
+                writer.write_collection_of_object_values("links", @links)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

@@ -1,38 +1,38 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph_beta'
+require_relative '../../../../../../../models/networkaccess_connectivity_configuration_link'
 require_relative '../../../../../../../models/o_data_errors_o_data_error'
-require_relative '../../../../../../../models/virtual_appointment'
-require_relative '../../../../../../solutions'
-require_relative '../../../../../virtual_events'
-require_relative '../../../../events'
+require_relative '../../../../../../network_access'
+require_relative '../../../../../connectivity'
+require_relative '../../../../branches'
 require_relative '../../../item'
-require_relative '../../sessions'
-require_relative '../item'
-require_relative './virtual_appointment'
+require_relative '../../connectivity_configuration'
+require_relative '../links'
+require_relative './item'
 
 module MicrosoftGraphBeta
-    module Solutions
-        module VirtualEvents
-            module Events
+    module NetworkAccess
+        module Connectivity
+            module Branches
                 module Item
-                    module Sessions
-                        module Item
-                            module VirtualAppointment
+                    module ConnectivityConfiguration
+                        module Links
+                            module Item
                                 ## 
-                                # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                                class VirtualAppointmentRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
+                                # Provides operations to manage the links property of the microsoft.graph.networkaccess.branchConnectivityConfiguration entity.
+                                class ConnectivityConfigurationLinkItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
-                                    ## Instantiates a new VirtualAppointmentRequestBuilder and sets the default values.
+                                    ## Instantiates a new ConnectivityConfigurationLinkItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
                                     ## @return a void
                                     ## 
                                     def initialize(path_parameters, request_adapter)
-                                        super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/virtualAppointment{?%24select,%24expand}")
+                                        super(path_parameters, request_adapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration/links/{connectivityConfigurationLink%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete a virtualAppointment object.
+                                    ## Delete navigation property links for networkAccess
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -46,9 +46,9 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Read the properties and relationships of a virtualAppointment object.
+                                    ## Get links from networkAccess
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of virtual_appointment
+                                    ## @return a Fiber of networkaccess_connectivity_configuration_link
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
@@ -57,13 +57,13 @@ module MicrosoftGraphBeta
                                         error_mapping = Hash.new
                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessConnectivityConfigurationLink.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a new virtualAppointment object.
+                                    ## Update the navigation property links in networkAccess
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of virtual_appointment
+                                    ## @return a Fiber of networkaccess_connectivity_configuration_link
                                     ## 
                                     def patch(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -73,10 +73,10 @@ module MicrosoftGraphBeta
                                         error_mapping = Hash.new
                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessConnectivityConfigurationLink.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete a virtualAppointment object.
+                                    ## Delete navigation property links for networkAccess
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Read the properties and relationships of a virtualAppointment object.
+                                    ## Get links from networkAccess
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a new virtualAppointment object.
+                                    ## Update the navigation property links in networkAccess
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -131,8 +131,8 @@ module MicrosoftGraphBeta
                                     end
 
                                     ## 
-                                    # Read the properties and relationships of a virtualAppointment object.
-                                    class VirtualAppointmentRequestBuilderGetQueryParameters
+                                    # Get links from networkAccess
+                                    class ConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters
                                         
                                         ## 
                                         # Expand related entities

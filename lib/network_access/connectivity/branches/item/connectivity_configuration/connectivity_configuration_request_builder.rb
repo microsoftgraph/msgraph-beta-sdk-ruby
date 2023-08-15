@@ -1,34 +1,40 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph_beta'
+require_relative '../../../../../models/networkaccess_branch_connectivity_configuration'
 require_relative '../../../../../models/o_data_errors_o_data_error'
-require_relative '../../../../../models/virtual_appointment'
-require_relative '../../../../users'
-require_relative '../../../item'
-require_relative '../../online_meetings'
+require_relative '../../../../network_access'
+require_relative '../../../connectivity'
+require_relative '../../branches'
 require_relative '../item'
-require_relative './virtual_appointment'
+require_relative './connectivity_configuration'
+require_relative './links/links_request_builder'
 
 module MicrosoftGraphBeta
-    module Users
-        module Item
-            module OnlineMeetings
+    module NetworkAccess
+        module Connectivity
+            module Branches
                 module Item
-                    module VirtualAppointment
+                    module ConnectivityConfiguration
                         ## 
-                        # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                        class VirtualAppointmentRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
+                        # Provides operations to manage the connectivityConfiguration property of the microsoft.graph.networkaccess.branchSite entity.
+                        class ConnectivityConfigurationRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
-                            ## Instantiates a new VirtualAppointmentRequestBuilder and sets the default values.
+                            # Provides operations to manage the links property of the microsoft.graph.networkaccess.branchConnectivityConfiguration entity.
+                            def links()
+                                return MicrosoftGraphBeta::NetworkAccess::Connectivity::Branches::Item::ConnectivityConfiguration::Links::LinksRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Instantiates a new ConnectivityConfigurationRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/virtualAppointment{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete a virtualAppointment object.
+                            ## Delete navigation property connectivityConfiguration for networkAccess
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,9 +48,9 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Read the properties and relationships of a virtualAppointment object.
+                            ## Get connectivityConfiguration from networkAccess
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of virtual_appointment
+                            ## @return a Fiber of networkaccess_branch_connectivity_configuration
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
@@ -53,13 +59,13 @@ module MicrosoftGraphBeta
                                 error_mapping = Hash.new
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessBranchConnectivityConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new virtualAppointment object.
+                            ## Update the navigation property connectivityConfiguration in networkAccess
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of virtual_appointment
+                            ## @return a Fiber of networkaccess_branch_connectivity_configuration
                             ## 
                             def patch(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -69,10 +75,10 @@ module MicrosoftGraphBeta
                                 error_mapping = Hash.new
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessBranchConnectivityConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete a virtualAppointment object.
+                            ## Delete navigation property connectivityConfiguration for networkAccess
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +94,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Read the properties and relationships of a virtualAppointment object.
+                            ## Get connectivityConfiguration from networkAccess
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +112,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Create a new virtualAppointment object.
+                            ## Update the navigation property connectivityConfiguration in networkAccess
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,8 +133,8 @@ module MicrosoftGraphBeta
                             end
 
                             ## 
-                            # Read the properties and relationships of a virtualAppointment object.
-                            class VirtualAppointmentRequestBuilderGetQueryParameters
+                            # Get connectivityConfiguration from networkAccess
+                            class ConnectivityConfigurationRequestBuilderGetQueryParameters
                                 
                                 ## 
                                 # Expand related entities

@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get people from admin
+                ## Retrieve the properties and relationships of a peopleAdminSettings object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of people_admin_settings
                 ## 
@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
                     return request_info
                 end
                 ## 
-                ## Get people from admin
+                ## Retrieve the properties and relationships of a peopleAdminSettings object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -133,7 +133,7 @@ module MicrosoftGraphBeta
                 end
 
                 ## 
-                # Get people from admin
+                # Retrieve the properties and relationships of a peopleAdminSettings object.
                 class PeopleRequestBuilderGetQueryParameters
                     
                     ## 

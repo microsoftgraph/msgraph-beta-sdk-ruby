@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Retrieve the properties and relationships of conversation object.
+                        ## Get a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation
                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Retrieve the properties and relationships of conversation object.
+                        ## Get a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Retrieve the properties and relationships of conversation object.
+                        # Get a conversation object.
                         class ConversationItemRequestBuilderGetQueryParameters
                             
                             ## 

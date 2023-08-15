@@ -15,7 +15,6 @@ require_relative './recording/recording_request_builder'
 require_relative './recordings/recordings_request_builder'
 require_relative './registration/registration_request_builder'
 require_relative './transcripts/transcripts_request_builder'
-require_relative './virtual_appointment/virtual_appointment_request_builder'
 
 module MicrosoftGraphBeta
     module Communications
@@ -74,11 +73,6 @@ module MicrosoftGraphBeta
                     # Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
                     def transcripts()
                         return MicrosoftGraphBeta::Communications::OnlineMeetings::Item::Transcripts::TranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                    def virtual_appointment()
-                        return MicrosoftGraphBeta::Communications::OnlineMeetings::Item::VirtualAppointment::VirtualAppointmentRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.

@@ -1,32 +1,38 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
 require_relative '../../../../models/o_data_errors_o_data_error'
-require_relative '../../../../models/virtual_appointment'
-require_relative '../../../communications'
-require_relative '../../online_meetings'
-require_relative '../item'
-require_relative './virtual_appointment'
+require_relative '../../../../models/security_whois_history_record'
+require_relative '../../../security'
+require_relative '../../threat_intelligence'
+require_relative '../whois_history_records'
+require_relative './host/host_request_builder'
+require_relative './item'
 
 module MicrosoftGraphBeta
-    module Communications
-        module OnlineMeetings
-            module Item
-                module VirtualAppointment
+    module Security
+        module ThreatIntelligence
+            module WhoisHistoryRecords
+                module Item
                     ## 
-                    # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                    class VirtualAppointmentRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
+                    # Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+                    class WhoisHistoryRecordItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
-                        ## Instantiates a new VirtualAppointmentRequestBuilder and sets the default values.
+                        # Provides operations to manage the host property of the microsoft.graph.security.whoisBaseRecord entity.
+                        def host()
+                            return MicrosoftGraphBeta::Security::ThreatIntelligence::WhoisHistoryRecords::Item::Host::HostRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Instantiates a new WhoisHistoryRecordItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/virtualAppointment{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/security/threatIntelligence/whoisHistoryRecords/{whoisHistoryRecord%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a virtualAppointment object.
+                        ## Delete navigation property whoisHistoryRecords for security
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,9 +46,9 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of a virtualAppointment object.
+                        ## Get whoisHistoryRecords from security
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of virtual_appointment
+                        ## @return a Fiber of security_whois_history_record
                         ## 
                         def get(request_configuration=nil)
                             request_info = self.to_get_request_information(
@@ -51,13 +57,13 @@ module MicrosoftGraphBeta
                             error_mapping = Hash.new
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SecurityWhoisHistoryRecord.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new virtualAppointment object.
+                        ## Update the navigation property whoisHistoryRecords in security
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of virtual_appointment
+                        ## @return a Fiber of security_whois_history_record
                         ## 
                         def patch(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
@@ -67,10 +73,10 @@ module MicrosoftGraphBeta
                             error_mapping = Hash.new
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }, error_mapping)
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SecurityWhoisHistoryRecord.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a virtualAppointment object.
+                        ## Delete navigation property whoisHistoryRecords for security
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +92,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Read the properties and relationships of a virtualAppointment object.
+                        ## Get whoisHistoryRecords from security
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +110,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Create a new virtualAppointment object.
+                        ## Update the navigation property whoisHistoryRecords in security
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,8 +131,8 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Read the properties and relationships of a virtualAppointment object.
-                        class VirtualAppointmentRequestBuilderGetQueryParameters
+                        # Get whoisHistoryRecords from security
+                        class WhoisHistoryRecordItemRequestBuilderGetQueryParameters
                             
                             ## 
                             # Expand related entities

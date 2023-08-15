@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties of a riskDetection object.
+                    ## Retrieve the properties of a collection of riskDetection objects.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of risk_detection
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties of a riskDetection object.
+                    ## Retrieve the properties of a collection of riskDetection objects.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Retrieve the properties of a riskDetection object.
+                    # Retrieve the properties of a collection of riskDetection objects.
                     class RiskDetectionItemRequestBuilderGetQueryParameters
                         
                         ## 

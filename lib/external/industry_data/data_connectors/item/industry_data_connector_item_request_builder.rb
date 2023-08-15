@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete an azureDataLakeConnector object.
+                        ## Delete an industryDataConnector object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of an industryDataConnector object.
+                        ## Read the properties and relationships of an azureDataLakeConnector object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of industry_data_industry_data_connector
                         ## 
@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataConnector.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of an industryDataConnector object.
+                        ## Update the properties of an azureDataLakeConnector object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of industry_data_industry_data_connector
@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataConnector.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete an azureDataLakeConnector object.
+                        ## Delete an industryDataConnector object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Read the properties and relationships of an industryDataConnector object.
+                        ## Read the properties and relationships of an azureDataLakeConnector object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Update the properties of an industryDataConnector object.
+                        ## Update the properties of an azureDataLakeConnector object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -137,7 +137,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Read the properties and relationships of an industryDataConnector object.
+                        # Read the properties and relationships of an azureDataLakeConnector object.
                         class IndustryDataConnectorItemRequestBuilderGetQueryParameters
                             
                             ## 

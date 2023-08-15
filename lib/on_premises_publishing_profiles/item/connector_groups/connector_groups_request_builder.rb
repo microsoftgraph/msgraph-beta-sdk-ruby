@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ConnectorGroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new connectorGroup.
+                    ## Create a connectorGroup object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of connector_group
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Create a new connectorGroup.
+                    ## Create a connectorGroup object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

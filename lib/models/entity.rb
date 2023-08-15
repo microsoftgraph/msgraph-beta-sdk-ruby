@@ -1916,6 +1916,8 @@ module MicrosoftGraphBeta
                             return NetworkaccessConditionalAccessSettings.new
                         when "#microsoft.graph.networkaccess.connectivity"
                             return NetworkaccessConnectivity.new
+                        when "#microsoft.graph.networkaccess.connectivityConfigurationLink"
+                            return NetworkaccessConnectivityConfigurationLink.new
                         when "#microsoft.graph.networkaccess.crossTenantAccessSettings"
                             return NetworkaccessCrossTenantAccessSettings.new
                         when "#microsoft.graph.networkaccess.deviceLink"
@@ -3028,8 +3030,6 @@ module MicrosoftGraphBeta
                             return UserTeamwork.new
                         when "#microsoft.graph.verticalSection"
                             return VerticalSection.new
-                        when "#microsoft.graph.virtualAppointment"
-                            return VirtualAppointment.new
                         when "#microsoft.graph.virtualEndpoint"
                             return VirtualEndpoint.new
                         when "#microsoft.graph.virtualEvent"
