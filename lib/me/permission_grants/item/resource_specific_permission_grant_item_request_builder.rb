@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get permissionGrants from me
+                    ## List all resource-specific permission grants of a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of resource_specific_permission_grant
                     ## 
@@ -114,7 +114,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Get permissionGrants from me
+                    ## List all resource-specific permission grants of a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -153,7 +153,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Get permissionGrants from me
+                    # List all resource-specific permission grants of a user.
                     class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters
                         
                         ## 

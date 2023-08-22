@@ -1916,6 +1916,8 @@ module MicrosoftGraphBeta
                             return NetworkaccessConditionalAccessSettings.new
                         when "#microsoft.graph.networkaccess.connectivity"
                             return NetworkaccessConnectivity.new
+                        when "#microsoft.graph.networkaccess.connectivityConfigurationLink"
+                            return NetworkaccessConnectivityConfigurationLink.new
                         when "#microsoft.graph.networkaccess.crossTenantAccessSettings"
                             return NetworkaccessCrossTenantAccessSettings.new
                         when "#microsoft.graph.networkaccess.deviceLink"
@@ -2296,6 +2298,8 @@ module MicrosoftGraphBeta
                             return ReportRoot.new
                         when "#microsoft.graph.request"
                             return Request.new
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
                         when "#microsoft.graph.resourceOperation"
                             return ResourceOperation.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"
@@ -3028,8 +3032,6 @@ module MicrosoftGraphBeta
                             return UserTeamwork.new
                         when "#microsoft.graph.verticalSection"
                             return VerticalSection.new
-                        when "#microsoft.graph.virtualAppointment"
-                            return VirtualAppointment.new
                         when "#microsoft.graph.virtualEndpoint"
                             return VirtualEndpoint.new
                         when "#microsoft.graph.virtualEvent"
@@ -3276,8 +3278,12 @@ module MicrosoftGraphBeta
                             return WindowsUpdatesDriverUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry"
                             return WindowsUpdatesFeatureUpdateCatalogEntry.new
+                        when "#microsoft.graph.windowsUpdates.knowledgeBaseArticle"
+                            return WindowsUpdatesKnowledgeBaseArticle.new
                         when "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
                             return WindowsUpdatesOperationalInsightsConnection.new
+                        when "#microsoft.graph.windowsUpdates.productRevision"
+                            return WindowsUpdatesProductRevision.new
                         when "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry"
                             return WindowsUpdatesQualityUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.resourceConnection"

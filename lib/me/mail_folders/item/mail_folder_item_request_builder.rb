@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the writable properties of a mailSearchFolder object.
+                    ## Update the properties of mailFolder object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of mail_folder
@@ -138,7 +138,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Update the writable properties of a mailSearchFolder object.
+                    ## Update the properties of mailFolder object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

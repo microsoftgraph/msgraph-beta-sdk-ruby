@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class MacOsLobAppAssignmentSettings < MicrosoftGraphBeta::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+            # Whether or not to uninstall the app when device is removed from Intune.
             @uninstall_on_device_removal
             ## 
             ## Instantiates a new macOsLobAppAssignmentSettings and sets the default values.
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("uninstallOnDeviceRemoval", @uninstall_on_device_removal)
             end
             ## 
-            ## Gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+            ## Gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
             ## @return a boolean
             ## 
             def uninstall_on_device_removal
                 return @uninstall_on_device_removal
             end
             ## 
-            ## Sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+            ## Sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
             ## @param value Value to set for the uninstallOnDeviceRemoval property.
             ## @return a void
             ## 

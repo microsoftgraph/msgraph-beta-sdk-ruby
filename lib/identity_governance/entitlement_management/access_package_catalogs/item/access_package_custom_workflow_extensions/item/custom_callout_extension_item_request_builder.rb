@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+                                ## Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of custom_callout_extension
                                 ## 
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CustomCalloutExtension.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+                                ## Update the properties of an accessPackageAssignmentWorkflowExtension object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of custom_callout_extension
@@ -90,7 +90,7 @@ module MicrosoftGraphBeta
                                     return request_info
                                 end
                                 ## 
-                                ## Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+                                ## Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -108,7 +108,7 @@ module MicrosoftGraphBeta
                                     return request_info
                                 end
                                 ## 
-                                ## Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+                                ## Update the properties of an accessPackageAssignmentWorkflowExtension object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -129,7 +129,7 @@ module MicrosoftGraphBeta
                                 end
 
                                 ## 
-                                # Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+                                # Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
                                 class CustomCalloutExtensionItemRequestBuilderGetQueryParameters
                                     
                                     ## 

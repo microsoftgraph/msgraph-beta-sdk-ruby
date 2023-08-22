@@ -7,29 +7,11 @@ module MicrosoftGraphBeta
         class DlpActionInfo
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The action property
-            @action
-            ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
             # The OdataType property
             @odata_type
-            ## 
-            ## Gets the action property value. The action property
-            ## @return a dlp_action
-            ## 
-            def action
-                return @action
-            end
-            ## 
-            ## Sets the action property value. The action property
-            ## @param value Value to set for the action property.
-            ## @return a void
-            ## 
-            def action=(value)
-                @action = value
-            end
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
@@ -65,8 +47,6 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.blockAccessAction"
                             return BlockAccessAction.new
-                        when "#microsoft.graph.deviceRestrictionAction"
-                            return DeviceRestrictionAction.new
                         when "#microsoft.graph.notifyUserAction"
                             return NotifyUserAction.new
                     end
@@ -79,7 +59,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::DlpAction) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -105,7 +84,6 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("action", @action)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

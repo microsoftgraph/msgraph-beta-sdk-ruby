@@ -21,10 +21,10 @@ module MicrosoftGraphBeta
             # Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
             @is_secret
             ## 
-            # Maximum length of string
+            # Maximum length of string. Valid values 0 to 87516
             @maximum_length
             ## 
-            # Minimum length of string
+            # Minimum length of string. Valid values 0 to 87516
             @minimum_length
             ## 
             ## Instantiates a new deviceManagementConfigurationStringSettingValueDefinition and sets the default values.
@@ -118,14 +118,14 @@ module MicrosoftGraphBeta
                 @is_secret = value
             end
             ## 
-            ## Gets the maximumLength property value. Maximum length of string
+            ## Gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
             ## @return a int64
             ## 
             def maximum_length
                 return @maximum_length
             end
             ## 
-            ## Sets the maximumLength property value. Maximum length of string
+            ## Sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
             ## @param value Value to set for the maximumLength property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @maximum_length = value
             end
             ## 
-            ## Gets the minimumLength property value. Minimum length of string
+            ## Gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
             ## @return a int64
             ## 
             def minimum_length
                 return @minimum_length
             end
             ## 
-            ## Sets the minimumLength property value. Minimum length of string
+            ## Sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
             ## @param value Value to set for the minimumLength property.
             ## @return a void
             ## 

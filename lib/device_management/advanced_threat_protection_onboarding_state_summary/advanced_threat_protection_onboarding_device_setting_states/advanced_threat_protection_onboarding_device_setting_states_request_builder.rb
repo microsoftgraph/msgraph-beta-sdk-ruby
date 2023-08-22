@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/advancedThreatProtectionOnboardingStateSummary/advancedThreatProtectionOnboardingDeviceSettingStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Not yet documented
+                    ## Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of advanced_threat_protection_onboarding_device_setting_state_collection_response
                     ## 
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AdvancedThreatProtectionOnboardingDeviceSettingState.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Not yet documented
+                    ## Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Not yet documented
+                    # Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                     class AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters
                         
                         ## 

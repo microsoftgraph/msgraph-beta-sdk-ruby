@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of a customAuthenticationExtension object.
+                    ## Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of custom_authentication_extension
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of a customAuthenticationExtension object.
+                    ## Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -129,7 +129,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Read the properties and relationships of a customAuthenticationExtension object.
+                    # Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
                     class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters
                         
                         ## 

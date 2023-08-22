@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/admin/people/profileCardProperties{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get profileCardProperties from admin
+                    ## Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of profile_card_property_collection_response
                     ## 
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardPropertyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create new navigation property to profileCardProperties for admin
+                    ## Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of profile_card_property
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardProperty.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get profileCardProperties from admin
+                    ## Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Create new navigation property to profileCardProperties for admin
+                    ## Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Get profileCardProperties from admin
+                    # Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
                     class ProfileCardPropertiesRequestBuilderGetQueryParameters
                         
                         ## 

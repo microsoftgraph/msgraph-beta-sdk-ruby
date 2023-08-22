@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/identityProtection/riskyUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the properties and relationships of a collection of riskyUser objects.
+                ## Retrieve the properties and relationships of a riskyUser object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of risky_user_collection_response
                 ## 
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::RiskyUser.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the properties and relationships of a collection of riskyUser objects.
+                ## Retrieve the properties and relationships of a riskyUser object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -122,7 +122,7 @@ module MicrosoftGraphBeta
                 end
 
                 ## 
-                # Retrieve the properties and relationships of a collection of riskyUser objects.
+                # Retrieve the properties and relationships of a riskyUser object.
                 class RiskyUsersRequestBuilderGetQueryParameters
                     
                     ## 

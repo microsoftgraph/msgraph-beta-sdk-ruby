@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Not yet documented
+                        ## Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of advanced_threat_protection_onboarding_device_setting_state
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Not yet documented
+                        ## Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Not yet documented
+                        # Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
                         class AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetQueryParameters
                             
                             ## 

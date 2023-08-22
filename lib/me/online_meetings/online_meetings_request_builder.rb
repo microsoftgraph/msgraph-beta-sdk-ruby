@@ -6,6 +6,8 @@ require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './get_all_recordings/get_all_recordings_request_builder'
+require_relative './get_all_transcripts/get_all_transcripts_request_builder'
 require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
@@ -25,6 +27,16 @@ module MicrosoftGraphBeta
                 # Provides operations to call the createOrGet method.
                 def create_or_get()
                     return MicrosoftGraphBeta::Me::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getAllRecordings method.
+                def get_all_recordings()
+                    return MicrosoftGraphBeta::Me::OnlineMeetings::GetAllRecordings::GetAllRecordingsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getAllTranscripts method.
+                def get_all_transcripts()
+                    return MicrosoftGraphBeta::Me::OnlineMeetings::GetAllTranscripts::GetAllTranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.

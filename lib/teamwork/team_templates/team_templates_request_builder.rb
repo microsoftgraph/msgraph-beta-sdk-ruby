@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/teamwork/teamTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## List the teamTemplateDefinition objects associated with a teamTemplate. 
+                ## Get the list of teamTemplate objects that are available for a tenant. 
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of team_template_collection_response
                 ## 
@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::TeamTemplate.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## List the teamTemplateDefinition objects associated with a teamTemplate. 
+                ## Get the list of teamTemplate objects that are available for a tenant. 
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                 end
 
                 ## 
-                # List the teamTemplateDefinition objects associated with a teamTemplate. 
+                # Get the list of teamTemplate objects that are available for a tenant. 
                 class TeamTemplatesRequestBuilderGetQueryParameters
                     
                     ## 

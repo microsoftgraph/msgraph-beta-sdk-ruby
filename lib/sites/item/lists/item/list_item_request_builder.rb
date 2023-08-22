@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get the list of richLongRunningOperations associated with a list.
+                        ## Return the metadata for a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of list
                         ## 
@@ -140,7 +140,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Get the list of richLongRunningOperations associated with a list.
+                        ## Return the metadata for a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -179,7 +179,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Get the list of richLongRunningOperations associated with a list.
+                        # Return the metadata for a [list][].
                         class ListItemRequestBuilderGetQueryParameters
                             
                             ## 

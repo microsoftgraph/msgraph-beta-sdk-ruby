@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Read the properties and relationships of a virtualEventSession object.
+                            ## Sessions of the virtual event.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of virtual_event_session_collection_response
                             ## 
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventSession.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Read the properties and relationships of a virtualEventSession object.
+                            ## Sessions of the virtual event.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                             end
 
                             ## 
-                            # Read the properties and relationships of a virtualEventSession object.
+                            # Sessions of the virtual event.
                             class SessionsRequestBuilderGetQueryParameters
                                 
                                 ## 

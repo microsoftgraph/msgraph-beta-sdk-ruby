@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            ## Get profileCardProperties from organization
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of profile_card_property
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            ## Get profileCardProperties from organization
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                             end
 
                             ## 
-                            # Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            # Get profileCardProperties from organization
                             class ProfileCardPropertyItemRequestBuilderGetQueryParameters
                                 
                                 ## 
