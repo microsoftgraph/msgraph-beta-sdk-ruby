@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    ## Retrieve the properties and relationships of organizationSettings object. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of organization_settings
                     ## 
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    ## Retrieve the properties and relationships of organizationSettings object. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -159,7 +159,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    # Retrieve the properties and relationships of organizationSettings object. Nullable.
                     class SettingsRequestBuilderGetQueryParameters
                         
                         ## 

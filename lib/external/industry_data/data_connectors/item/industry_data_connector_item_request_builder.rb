@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataConnector.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of an industryDataConnector object.
+                        ## Update the properties of an azureDataLakeConnector object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of industry_data_industry_data_connector
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Update the properties of an industryDataConnector object.
+                        ## Update the properties of an azureDataLakeConnector object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

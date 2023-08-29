@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            # Setting definition id that is being referred to a setting. Applicable for reusable setting
             @setting_definition_id
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            ## Gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
             ## @return a string
             ## 
             def setting_definition_id
                 return @setting_definition_id
             end
             ## 
-            ## Sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            ## Sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
             ## @param value Value to set for the settingDefinitionId property.
             ## @return a void
             ## 

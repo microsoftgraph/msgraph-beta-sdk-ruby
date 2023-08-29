@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class UnifiedRoleManagementAlert < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            # The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             @alert_configuration
             ## 
             # Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
@@ -38,14 +38,14 @@ module MicrosoftGraphBeta
             # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
             @scope_type
             ## 
-            ## Gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            ## Gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             ## @return a unified_role_management_alert_configuration
             ## 
             def alert_configuration
                 return @alert_configuration
             end
             ## 
-            ## Sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            ## Sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             ## @param value Value to set for the alertConfiguration property.
             ## @return a void
             ## 

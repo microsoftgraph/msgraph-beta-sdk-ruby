@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The operations available to interact with the multi-tenant management platform.
             @managed_tenants
             ## 
-            # The multiTenantOrganization property
+            # Defines an organization with more than one instance of Azure Active Directory (Azure AD).
             @multi_tenant_organization
             ## 
             # The OdataType property
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @managed_tenants = value
             end
             ## 
-            ## Gets the multiTenantOrganization property value. The multiTenantOrganization property
+            ## Gets the multiTenantOrganization property value. Defines an organization with more than one instance of Azure Active Directory (Azure AD).
             ## @return a multi_tenant_organization
             ## 
             def multi_tenant_organization
                 return @multi_tenant_organization
             end
             ## 
-            ## Sets the multiTenantOrganization property value. The multiTenantOrganization property
+            ## Sets the multiTenantOrganization property value. Defines an organization with more than one instance of Azure Active Directory (Azure AD).
             ## @param value Value to set for the multiTenantOrganization property.
             ## @return a void
             ## 

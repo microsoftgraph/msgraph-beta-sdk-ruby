@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get tenants from tenantRelationships
+                    ## List the tenants and their properties in the multi-tenant organization.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of multi_tenant_organization_member_collection_response
                     ## 
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MultiTenantOrganizationMemberCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create new navigation property to tenants for tenantRelationships
+                    ## Add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of multi_tenant_organization_member
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MultiTenantOrganizationMember.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get tenants from tenantRelationships
+                    ## List the tenants and their properties in the multi-tenant organization.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Create new navigation property to tenants for tenantRelationships
+                    ## Add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Get tenants from tenantRelationships
+                    # List the tenants and their properties in the multi-tenant organization.
                     class TenantsRequestBuilderGetQueryParameters
                         
                         ## 

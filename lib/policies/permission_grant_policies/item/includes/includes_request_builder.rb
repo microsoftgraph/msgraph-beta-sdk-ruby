@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/includes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+                        ## Retrieve the condition sets that are *included* in a permissionGrantPolicy.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of permission_grant_condition_set_collection_response
                         ## 
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PermissionGrantConditionSet.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+                        ## Retrieve the condition sets that are *included* in a permissionGrantPolicy.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -114,7 +114,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+                        # Retrieve the condition sets that are *included* in a permissionGrantPolicy.
                         class IncludesRequestBuilderGetQueryParameters
                             
                             ## 

@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+                                    ## Get the externalMeetingRegistration details associated with an onlineMeeting.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of meeting_registration
                                     ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+                                    ## Get the externalMeetingRegistration details associated with an onlineMeeting.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
                                     end
 
                                     ## 
-                                    # Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+                                    # Get the externalMeetingRegistration details associated with an onlineMeeting.
                                     class RegistrationRequestBuilderGetQueryParameters
                                         
                                         ## 

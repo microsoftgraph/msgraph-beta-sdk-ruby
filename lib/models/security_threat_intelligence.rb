@@ -49,6 +49,9 @@ module MicrosoftGraphBeta
             # Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
             @vulnerabilities
             ## 
+            # The whoisHistoryRecords property
+            @whois_history_records
+            ## 
             # The whoisRecords property
             @whois_records
             ## 
@@ -117,6 +120,7 @@ module MicrosoftGraphBeta
                     "sslCertificates" => lambda {|n| @ssl_certificates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySslCertificate.create_from_discriminator_value(pn) }) },
                     "subdomains" => lambda {|n| @subdomains = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubdomain.create_from_discriminator_value(pn) }) },
                     "vulnerabilities" => lambda {|n| @vulnerabilities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityVulnerability.create_from_discriminator_value(pn) }) },
+                    "whoisHistoryRecords" => lambda {|n| @whois_history_records = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityWhoisHistoryRecord.create_from_discriminator_value(pn) }) },
                     "whoisRecords" => lambda {|n| @whois_records = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityWhoisRecord.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -277,6 +281,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("sslCertificates", @ssl_certificates)
                 writer.write_collection_of_object_values("subdomains", @subdomains)
                 writer.write_collection_of_object_values("vulnerabilities", @vulnerabilities)
+                writer.write_collection_of_object_values("whoisHistoryRecords", @whois_history_records)
                 writer.write_collection_of_object_values("whoisRecords", @whois_records)
             end
             ## 
@@ -323,6 +328,21 @@ module MicrosoftGraphBeta
             ## 
             def vulnerabilities=(value)
                 @vulnerabilities = value
+            end
+            ## 
+            ## Gets the whoisHistoryRecords property value. The whoisHistoryRecords property
+            ## @return a security_whois_history_record
+            ## 
+            def whois_history_records
+                return @whois_history_records
+            end
+            ## 
+            ## Sets the whoisHistoryRecords property value. The whoisHistoryRecords property
+            ## @param value Value to set for the whoisHistoryRecords property.
+            ## @return a void
+            ## 
+            def whois_history_records=(value)
+                @whois_history_records = value
             end
             ## 
             ## Gets the whoisRecords property value. The whoisRecords property

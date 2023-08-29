@@ -14,6 +14,9 @@ module MicrosoftGraphBeta
             # The application identifier in Azure Active Directory.  Supports $filter (eq).
             @app_id
             ## 
+            # The appTokenProtectionStatus property
+            @app_token_protection_status
+            ## 
             # A list of conditional access policies that are triggered by the corresponding sign-in activity.
             @applied_conditional_access_policies
             ## 
@@ -104,7 +107,7 @@ module MicrosoftGraphBeta
             # The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             @location
             ## 
-            # Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            # Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             @managed_service_identity
             ## 
             # The mfaDetail property
@@ -115,6 +118,9 @@ module MicrosoftGraphBeta
             ## 
             # The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
             @original_request_id
+            ## 
+            # Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            @original_transfer_method
             ## 
             # Contains information about the Azure AD Private Link policy that is associated with the sign in event.
             @private_link_details
@@ -173,6 +179,9 @@ module MicrosoftGraphBeta
             # The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
             @sign_in_identifier_type
             ## 
+            # Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            @sign_in_token_protection_status
+            ## 
             # The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
             @status
             ## 
@@ -228,6 +237,21 @@ module MicrosoftGraphBeta
             ## 
             def app_id=(value)
                 @app_id = value
+            end
+            ## 
+            ## Gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+            ## @return a token_protection_status
+            ## 
+            def app_token_protection_status
+                return @app_token_protection_status
+            end
+            ## 
+            ## Sets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+            ## @param value Value to set for the appTokenProtectionStatus property.
+            ## @return a void
+            ## 
+            def app_token_protection_status=(value)
+                @app_token_protection_status = value
             end
             ## 
             ## Gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
@@ -583,6 +607,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
+                    "appTokenProtectionStatus" => lambda {|n| @app_token_protection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TokenProtectionStatus) },
                     "appliedConditionalAccessPolicies" => lambda {|n| @applied_conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppliedConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
                     "appliedEventListeners" => lambda {|n| @applied_event_listeners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppliedAuthenticationEventListener.create_from_discriminator_value(pn) }) },
                     "authenticationAppDeviceDetails" => lambda {|n| @authentication_app_device_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationAppDeviceDetails.create_from_discriminator_value(pn) }) },
@@ -617,6 +642,7 @@ module MicrosoftGraphBeta
                     "mfaDetail" => lambda {|n| @mfa_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MfaDetail.create_from_discriminator_value(pn) }) },
                     "networkLocationDetails" => lambda {|n| @network_location_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkLocationDetail.create_from_discriminator_value(pn) }) },
                     "originalRequestId" => lambda {|n| @original_request_id = n.get_string_value() },
+                    "originalTransferMethod" => lambda {|n| @original_transfer_method = n.get_enum_value(MicrosoftGraphBeta::Models::OriginalTransferMethods) },
                     "privateLinkDetails" => lambda {|n| @private_link_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivateLinkDetails.create_from_discriminator_value(pn) }) },
                     "processingTimeInMilliseconds" => lambda {|n| @processing_time_in_milliseconds = n.get_number_value() },
                     "resourceDisplayName" => lambda {|n| @resource_display_name = n.get_string_value() },
@@ -636,6 +662,7 @@ module MicrosoftGraphBeta
                     "signInEventTypes" => lambda {|n| @sign_in_event_types = n.get_collection_of_primitive_values(String) },
                     "signInIdentifier" => lambda {|n| @sign_in_identifier = n.get_string_value() },
                     "signInIdentifierType" => lambda {|n| @sign_in_identifier_type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInIdentifierType) },
+                    "signInTokenProtectionStatus" => lambda {|n| @sign_in_token_protection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TokenProtectionStatus) },
                     "status" => lambda {|n| @status = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInStatus.create_from_discriminator_value(pn) }) },
                     "tokenIssuerName" => lambda {|n| @token_issuer_name = n.get_string_value() },
                     "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraphBeta::Models::TokenIssuerType) },
@@ -768,14 +795,14 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            ## Gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             ## @return a managed_identity
             ## 
             def managed_service_identity
                 return @managed_service_identity
             end
             ## 
-            ## Sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            ## Sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             ## @param value Value to set for the managedServiceIdentity property.
             ## @return a void
             ## 
@@ -826,6 +853,21 @@ module MicrosoftGraphBeta
             ## 
             def original_request_id=(value)
                 @original_request_id = value
+            end
+            ## 
+            ## Gets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            ## @return a original_transfer_methods
+            ## 
+            def original_transfer_method
+                return @original_transfer_method
+            end
+            ## 
+            ## Sets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            ## @param value Value to set for the originalTransferMethod property.
+            ## @return a void
+            ## 
+            def original_transfer_method=(value)
+                @original_transfer_method = value
             end
             ## 
             ## Gets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
@@ -1002,6 +1044,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_string_value("appDisplayName", @app_display_name)
                 writer.write_string_value("appId", @app_id)
+                writer.write_enum_value("appTokenProtectionStatus", @app_token_protection_status)
                 writer.write_collection_of_object_values("appliedConditionalAccessPolicies", @applied_conditional_access_policies)
                 writer.write_collection_of_object_values("appliedEventListeners", @applied_event_listeners)
                 writer.write_object_value("authenticationAppDeviceDetails", @authentication_app_device_details)
@@ -1036,6 +1079,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("mfaDetail", @mfa_detail)
                 writer.write_collection_of_object_values("networkLocationDetails", @network_location_details)
                 writer.write_string_value("originalRequestId", @original_request_id)
+                writer.write_enum_value("originalTransferMethod", @original_transfer_method)
                 writer.write_object_value("privateLinkDetails", @private_link_details)
                 writer.write_number_value("processingTimeInMilliseconds", @processing_time_in_milliseconds)
                 writer.write_string_value("resourceDisplayName", @resource_display_name)
@@ -1055,6 +1099,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("signInEventTypes", @sign_in_event_types)
                 writer.write_string_value("signInIdentifier", @sign_in_identifier)
                 writer.write_enum_value("signInIdentifierType", @sign_in_identifier_type)
+                writer.write_enum_value("signInTokenProtectionStatus", @sign_in_token_protection_status)
                 writer.write_object_value("status", @status)
                 writer.write_string_value("tokenIssuerName", @token_issuer_name)
                 writer.write_enum_value("tokenIssuerType", @token_issuer_type)
@@ -1184,6 +1229,21 @@ module MicrosoftGraphBeta
             ## 
             def sign_in_identifier_type=(value)
                 @sign_in_identifier_type = value
+            end
+            ## 
+            ## Gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            ## @return a token_protection_status
+            ## 
+            def sign_in_token_protection_status
+                return @sign_in_token_protection_status
+            end
+            ## 
+            ## Sets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            ## @param value Value to set for the signInTokenProtectionStatus property.
+            ## @return a void
+            ## 
+            def sign_in_token_protection_status=(value)
+                @sign_in_token_protection_status = value
             end
             ## 
             ## Gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.

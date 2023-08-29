@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property tenants for tenantRelationships
+                        ## Remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get tenants from tenantRelationships
+                        ## Get a tenant and its properties in the multi-tenant organization.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of multi_tenant_organization_member
                         ## 
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MultiTenantOrganizationMember.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property tenants for tenantRelationships
+                        ## Remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Get tenants from tenantRelationships
+                        ## Get a tenant and its properties in the multi-tenant organization.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Get tenants from tenantRelationships
+                        # Get a tenant and its properties in the multi-tenant organization.
                         class MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters
                             
                             ## 

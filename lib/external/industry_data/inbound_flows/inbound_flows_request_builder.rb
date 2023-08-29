@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of the inboundFileFlow objects and their properties.
+                    ## Get a list of the inboundFlow objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of industry_data_inbound_flow_collection_response
                     ## 
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataInboundFlow.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of the inboundFileFlow objects and their properties.
+                    ## Get a list of the inboundFlow objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     end
 
                     ## 
-                    # Get a list of the inboundFileFlow objects and their properties.
+                    # Get a list of the inboundFlow objects and their properties.
                     class InboundFlowsRequestBuilderGetQueryParameters
                         
                         ## 

@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ChatMessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+                        ## Send a new chatMessage in the specified channel or a chat.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of chat_message
@@ -99,7 +99,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+                        ## Send a new chatMessage in the specified channel or a chat.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}")
                         end
                         ## 
-                        ## Delete conversation.
+                        ## Delete a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Retrieve the properties and relationships of conversation object.
+                        ## Get a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation
                         ## 
@@ -60,7 +60,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Conversation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete conversation.
+                        ## Delete a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Retrieve the properties and relationships of conversation object.
+                        ## Get a conversation object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Retrieve the properties and relationships of conversation object.
+                        # Get a conversation object.
                         class ConversationItemRequestBuilderGetQueryParameters
                             
                             ## 

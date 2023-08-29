@@ -18,7 +18,6 @@ require_relative './recordings/recordings_request_builder'
 require_relative './registration/registration_request_builder'
 require_relative './registrations/registrations_request_builder'
 require_relative './transcripts/transcripts_request_builder'
-require_relative './virtual_appointment/virtual_appointment_request_builder'
 
 module MicrosoftGraphBeta
     module Solutions
@@ -82,11 +81,6 @@ module MicrosoftGraphBeta
                                     return MicrosoftGraphBeta::Solutions::VirtualEvents::Webinars::Item::Sessions::Item::Transcripts::TranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                                def virtual_appointment()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Webinars::Item::Sessions::Item::VirtualAppointment::VirtualAppointmentRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 ## Instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -110,7 +104,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Read the properties and relationships of a virtualEventSession object.
+                                ## Sessions of the virtual event.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of virtual_event_session
                                 ## 
@@ -156,7 +150,7 @@ module MicrosoftGraphBeta
                                     return request_info
                                 end
                                 ## 
-                                ## Read the properties and relationships of a virtualEventSession object.
+                                ## Sessions of the virtual event.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -195,7 +189,7 @@ module MicrosoftGraphBeta
                                 end
 
                                 ## 
-                                # Read the properties and relationships of a virtualEventSession object.
+                                # Sessions of the virtual event.
                                 class VirtualEventSessionItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Not yet documented
+                        ## Get deviceComplianceSettingStates from deviceManagement
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_compliance_setting_state_collection_response
                         ## 
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DeviceComplianceSettingState.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Not yet documented
+                        ## Get deviceComplianceSettingStates from deviceManagement
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -114,7 +114,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Not yet documented
+                        # Get deviceComplianceSettingStates from deviceManagement
                         class DeviceComplianceSettingStatesRequestBuilderGetQueryParameters
                             
                             ## 

@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../online_meetings'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './item/call_recording_item_request_builder'
 require_relative './recordings'
 
@@ -25,6 +26,11 @@ module MicrosoftGraphBeta
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraphBeta::Users::Item::OnlineMeetings::Item::Recordings::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the delta method.
+                            def delta()
+                                return MicrosoftGraphBeta::Users::Item::OnlineMeetings::Item::Recordings::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.

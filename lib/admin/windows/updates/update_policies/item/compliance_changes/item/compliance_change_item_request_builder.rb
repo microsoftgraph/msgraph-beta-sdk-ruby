@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                                         super(path_parameters, request_adapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete a complianceChange object.
+                                    ## Delete a contentApproval object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesComplianceChange.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Update the properties of a complianceChange object.
+                                    ## Update the properties of a contentApproval object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of windows_updates_compliance_change
@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesComplianceChange.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete a complianceChange object.
+                                    ## Delete a contentApproval object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the properties of a complianceChange object.
+                                    ## Update the properties of a contentApproval object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

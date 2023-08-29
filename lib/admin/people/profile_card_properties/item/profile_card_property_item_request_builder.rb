@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/admin/people/profileCardProperties/{profileCardProperty%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property profileCardProperties for admin
+                        ## Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get profileCardProperties from admin
+                        ## Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of profile_card_property
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardProperty.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property profileCardProperties in admin
+                        ## Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of profile_card_property
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardProperty.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property profileCardProperties for admin
+                        ## Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Get profileCardProperties from admin
+                        ## Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property profileCardProperties in admin
+                        ## Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Get profileCardProperties from admin
+                        # Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
                         class ProfileCardPropertyItemRequestBuilderGetQueryParameters
                             
                             ## 

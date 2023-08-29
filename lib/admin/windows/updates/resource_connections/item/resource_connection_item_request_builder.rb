@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete a resourceConnection object.
+                            ## Delete an operationalInsightsConnection object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Read the properties and relationships of a resourceConnection object.
+                            ## Read the properties and relationships of an operationalInsightsConnection object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of windows_updates_resource_connection
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesResourceConnection.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete a resourceConnection object.
+                            ## Delete an operationalInsightsConnection object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Read the properties and relationships of a resourceConnection object.
+                            ## Read the properties and relationships of an operationalInsightsConnection object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                             end
 
                             ## 
-                            # Read the properties and relationships of a resourceConnection object.
+                            # Read the properties and relationships of an operationalInsightsConnection object.
                             class ResourceConnectionItemRequestBuilderGetQueryParameters
                                 
                                 ## 

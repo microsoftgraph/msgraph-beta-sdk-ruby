@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Retrieve all files related to an agreement. This includes the default file and all localized files.
+                        ## Retrieve the properties and relationships of an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of agreement
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Retrieve all files related to an agreement. This includes the default file and all localized files.
+                        ## Retrieve the properties and relationships of an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
                         end
 
                         ## 
-                        # Retrieve all files related to an agreement. This includes the default file and all localized files.
+                        # Retrieve the properties and relationships of an agreement object.
                         class AgreementItemRequestBuilderGetQueryParameters
                             
                             ## 
