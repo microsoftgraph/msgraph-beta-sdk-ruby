@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get joinRequest from tenantRelationships
+                    ## Get the status of a tenant joining a multi-tenant organization.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of multi_tenant_organization_join_request_record
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MultiTenantOrganizationJoinRequestRecord.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property joinRequest in tenantRelationships
+                    ## Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of multi_tenant_organization_join_request_record
@@ -84,7 +84,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Get joinRequest from tenantRelationships
+                    ## Get the status of a tenant joining a multi-tenant organization.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property joinRequest in tenantRelationships
+                    ## Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -121,9 +121,18 @@ module MicrosoftGraphBeta
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a join_request_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return JoinRequestRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Get joinRequest from tenantRelationships
+                    # Get the status of a tenant joining a multi-tenant organization.
                     class JoinRequestRequestBuilderGetQueryParameters
                         
                         ## 

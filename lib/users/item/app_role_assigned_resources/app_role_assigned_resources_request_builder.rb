@@ -73,6 +73,15 @@ module MicrosoftGraphBeta
                         end
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a app_role_assigned_resources_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return AppRoleAssignedResourcesRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
                     # Get the service principals to which the user has an app role assignment either directly or through group membership.

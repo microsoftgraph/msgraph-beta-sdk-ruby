@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}/alertConfiguration{?%24select,%24expand}")
                             end
                             ## 
-                            ## The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+                            ## The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of unified_role_management_alert_configuration
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+                            ## The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,9 +59,18 @@ module MicrosoftGraphBeta
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a alert_configuration_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return AlertConfigurationRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+                            # The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
                             class AlertConfigurationRequestBuilderGetQueryParameters
                                 
                                 ## 

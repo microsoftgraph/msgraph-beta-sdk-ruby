@@ -93,6 +93,15 @@ module MicrosoftGraphBeta
                 end
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a sites_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return SitesRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
             # List all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a [$search][] query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
