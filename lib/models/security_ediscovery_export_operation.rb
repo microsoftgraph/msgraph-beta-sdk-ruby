@@ -152,7 +152,7 @@ module MicrosoftGraphBeta
                     "azureBlobToken" => lambda {|n| @azure_blob_token = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "exportFileMetadata" => lambda {|n| @export_file_metadata = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityExportFileMetadata.create_from_discriminator_value(pn) }) },
-                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityExportOptions) },
+                    "exportOptions" => lambda {|n| @export_options = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityExportOptions) },
                     "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityExportFileStructure) },
                     "outputFolderId" => lambda {|n| @output_folder_id = n.get_string_value() },
                     "outputName" => lambda {|n| @output_name = n.get_string_value() },

@@ -79,12 +79,12 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "dlpAction" => lambda {|n| @dlp_action = n.get_enum_value(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationDlpActionTypes) },
+                    "dlpAction" => lambda {|n| @dlp_action = n.get_enum_values(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationDlpActionTypes) },
                     "justificationText" => lambda {|n| @justification_text = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "policyTip" => lambda {|n| @policy_tip = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ChatMessagePolicyViolationPolicyTip.create_from_discriminator_value(pn) }) },
-                    "userAction" => lambda {|n| @user_action = n.get_enum_value(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationUserActionTypes) },
-                    "verdictDetails" => lambda {|n| @verdict_details = n.get_enum_value(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationVerdictDetailsTypes) },
+                    "userAction" => lambda {|n| @user_action = n.get_enum_values(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationUserActionTypes) },
+                    "verdictDetails" => lambda {|n| @verdict_details = n.get_enum_values(MicrosoftGraphBeta::Models::ChatMessagePolicyViolationVerdictDetailsTypes) },
                 }
             end
             ## 

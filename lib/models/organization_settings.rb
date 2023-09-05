@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
             @people_insights
             ## 
-            # Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+            # The profileCardProperties property
             @profile_card_properties
             ## 
             # The pronouns property
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @people_insights = value
             end
             ## 
-            ## Gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+            ## Gets the profileCardProperties property value. The profileCardProperties property
             ## @return a profile_card_property
             ## 
             def profile_card_properties
                 return @profile_card_properties
             end
             ## 
-            ## Sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+            ## Sets the profileCardProperties property value. The profileCardProperties property
             ## @param value Value to set for the profileCardProperties property.
             ## @return a void
             ## 

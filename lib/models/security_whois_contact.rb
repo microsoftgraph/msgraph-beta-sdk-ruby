@@ -10,25 +10,25 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The address property
+            # The physical address of the entity.
             @address
             ## 
-            # The email property
+            # The email of this WHOIS contact.
             @email
             ## 
-            # The fax property
+            # The fax of this WHOIS contact. No format is guaranteed.
             @fax
             ## 
-            # The name property
+            # The name of this WHOIS contact.
             @name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The organization property
+            # The organization of this WHOIS contact.
             @organization
             ## 
-            # The telephone property
+            # The telephone of this WHOIS contact. No format is guaranteed.
             @telephone
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the address property value. The address property
+            ## Gets the address property value. The physical address of the entity.
             ## @return a physical_address
             ## 
             def address
                 return @address
             end
             ## 
-            ## Sets the address property value. The address property
+            ## Sets the address property value. The physical address of the entity.
             ## @param value Value to set for the address property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 return SecurityWhoisContact.new
             end
             ## 
-            ## Gets the email property value. The email property
+            ## Gets the email property value. The email of this WHOIS contact.
             ## @return a string
             ## 
             def email
                 return @email
             end
             ## 
-            ## Sets the email property value. The email property
+            ## Sets the email property value. The email of this WHOIS contact.
             ## @param value Value to set for the email property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @email = value
             end
             ## 
-            ## Gets the fax property value. The fax property
+            ## Gets the fax property value. The fax of this WHOIS contact. No format is guaranteed.
             ## @return a string
             ## 
             def fax
                 return @fax
             end
             ## 
-            ## Sets the fax property value. The fax property
+            ## Sets the fax property value. The fax of this WHOIS contact. No format is guaranteed.
             ## @param value Value to set for the fax property.
             ## @return a void
             ## 
@@ -122,14 +122,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the name property value. The name property
+            ## Gets the name property value. The name of this WHOIS contact.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The name property
+            ## Sets the name property value. The name of this WHOIS contact.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -152,14 +152,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the organization property value. The organization property
+            ## Gets the organization property value. The organization of this WHOIS contact.
             ## @return a string
             ## 
             def organization
                 return @organization
             end
             ## 
-            ## Sets the organization property value. The organization property
+            ## Sets the organization property value. The organization of this WHOIS contact.
             ## @param value Value to set for the organization property.
             ## @return a void
             ## 
@@ -183,14 +183,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the telephone property value. The telephone property
+            ## Gets the telephone property value. The telephone of this WHOIS contact. No format is guaranteed.
             ## @return a string
             ## 
             def telephone
                 return @telephone
             end
             ## 
-            ## Sets the telephone property value. The telephone property
+            ## Sets the telephone property value. The telephone of this WHOIS contact. No format is guaranteed.
             ## @param value Value to set for the telephone property.
             ## @return a void
             ## 

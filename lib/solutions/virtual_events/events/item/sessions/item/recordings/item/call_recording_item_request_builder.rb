@@ -137,6 +137,15 @@ module MicrosoftGraphBeta
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a call_recording_item_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return CallRecordingItemRequestBuilder.new(raw_url, @request_adapter)
+                                        end
 
                                         ## 
                                         # Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.

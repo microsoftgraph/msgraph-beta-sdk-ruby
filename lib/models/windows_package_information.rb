@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "applicableArchitecture" => lambda {|n| @applicable_architecture = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableArchitecture" => lambda {|n| @applicable_architecture = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisher" => lambda {|n| @identity_publisher = n.get_string_value() },

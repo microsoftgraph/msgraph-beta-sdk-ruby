@@ -6,6 +6,8 @@ require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../communications'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './get_all_recordings/get_all_recordings_request_builder'
+require_relative './get_all_transcripts/get_all_transcripts_request_builder'
 require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
@@ -25,6 +27,16 @@ module MicrosoftGraphBeta
                 # Provides operations to call the createOrGet method.
                 def create_or_get()
                     return MicrosoftGraphBeta::Communications::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getAllRecordings method.
+                def get_all_recordings()
+                    return MicrosoftGraphBeta::Communications::OnlineMeetings::GetAllRecordings::GetAllRecordingsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getAllTranscripts method.
+                def get_all_transcripts()
+                    return MicrosoftGraphBeta::Communications::OnlineMeetings::GetAllTranscripts::GetAllTranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
@@ -113,6 +125,15 @@ module MicrosoftGraphBeta
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a online_meetings_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return OnlineMeetingsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

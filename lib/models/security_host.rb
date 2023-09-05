@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityHost < MicrosoftGraphBeta::Models::SecurityArtifact
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+            # The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
             @child_host_pairs
             ## 
             # The hostComponents that are associated with this host.
@@ -47,17 +47,17 @@ module MicrosoftGraphBeta
             # The hostTrackers that are associated with this host.
             @trackers
             ## 
-            # The whois property
+            # The most recent whoisRecord for this host.
             @whois
             ## 
-            ## Gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+            ## Gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
             ## @return a security_host_pair
             ## 
             def child_host_pairs
                 return @child_host_pairs
             end
             ## 
-            ## Sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+            ## Sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
             ## @param value Value to set for the childHostPairs property.
             ## @return a void
             ## 
@@ -317,14 +317,14 @@ module MicrosoftGraphBeta
                 @trackers = value
             end
             ## 
-            ## Gets the whois property value. The whois property
+            ## Gets the whois property value. The most recent whoisRecord for this host.
             ## @return a security_whois_record
             ## 
             def whois
                 return @whois
             end
             ## 
-            ## Sets the whois property value. The whois property
+            ## Sets the whois property value. The most recent whoisRecord for this host.
             ## @param value Value to set for the whois property.
             ## @return a void
             ## 

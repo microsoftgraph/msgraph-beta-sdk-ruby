@@ -133,6 +133,15 @@ module MicrosoftGraphBeta
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a device_management_reusable_policy_setting_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return DeviceManagementReusablePolicySettingItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
                     # List of all reusable settings that can be referred in a policy

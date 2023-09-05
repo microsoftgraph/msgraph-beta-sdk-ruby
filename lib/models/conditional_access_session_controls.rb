@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
             @persistent_browser
             ## 
-            # The secureSignInSession property
+            # Session control to require sign in sessions to be bound to a device.
             @secure_sign_in_session
             ## 
             # Session control to enforce signin frequency.
@@ -171,14 +171,14 @@ module MicrosoftGraphBeta
                 @persistent_browser = value
             end
             ## 
-            ## Gets the secureSignInSession property value. The secureSignInSession property
+            ## Gets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
             ## @return a secure_sign_in_session_control
             ## 
             def secure_sign_in_session
                 return @secure_sign_in_session
             end
             ## 
-            ## Sets the secureSignInSession property value. The secureSignInSession property
+            ## Sets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
             ## @param value Value to set for the secureSignInSession property.
             ## @return a void
             ## 

@@ -61,6 +61,15 @@ module MicrosoftGraphBeta
                                     end
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a authority_template_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return AuthorityTemplateRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
                                 # Specifies the underlying authority that describes the type of content to be retained and its retention schedule.

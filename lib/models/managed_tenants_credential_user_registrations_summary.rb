@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
             @tenant_id
             ## 
-            # The tenantLicenseType property
+            # The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             @tenant_license_type
             ## 
             # The total number of users in the given managed tenant. Optional. Read-only.
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the tenantLicenseType property value. The tenantLicenseType property
+            ## Gets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             ## @return a string
             ## 
             def tenant_license_type
                 return @tenant_license_type
             end
             ## 
-            ## Sets the tenantLicenseType property value. The tenantLicenseType property
+            ## Sets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             ## @param value Value to set for the tenantLicenseType property.
             ## @return a void
             ## 

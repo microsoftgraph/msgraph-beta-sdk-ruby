@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "discoverabilities" => lambda {|n| @discoverabilities = n.get_enum_value(MicrosoftGraphBeta::Models::DirectoryDefinitionDiscoverabilities) },
+                    "discoverabilities" => lambda {|n| @discoverabilities = n.get_enum_values(MicrosoftGraphBeta::Models::DirectoryDefinitionDiscoverabilities) },
                     "discoveryDateTime" => lambda {|n| @discovery_date_time = n.get_date_time_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "objects" => lambda {|n| @objects = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ObjectDefinition.create_from_discriminator_value(pn) }) },

@@ -643,7 +643,7 @@ module MicrosoftGraphBeta
                 return FindRoomsWithRoomListRequestBuilder.new(@path_parameters, @request_adapter, RoomList)
             end
             ## 
-            ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+            ## Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of user
             ## 
@@ -684,7 +684,7 @@ module MicrosoftGraphBeta
                 return ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
             end
             ## 
-            ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+            ## Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -721,9 +721,18 @@ module MicrosoftGraphBeta
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a me_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return MeRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
-            # Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+            # Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
             class MeRequestBuilderGetQueryParameters
                 
                 ## 

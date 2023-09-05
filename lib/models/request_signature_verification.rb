@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "allowedWeakAlgorithms" => lambda {|n| @allowed_weak_algorithms = n.get_enum_value(MicrosoftGraphBeta::Models::WeakAlgorithms) },
+                    "allowedWeakAlgorithms" => lambda {|n| @allowed_weak_algorithms = n.get_enum_values(MicrosoftGraphBeta::Models::WeakAlgorithms) },
                     "isSignedRequestRequired" => lambda {|n| @is_signed_request_required = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }

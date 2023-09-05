@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            ## Get profileCardProperties from organization
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of profile_card_property
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            ## Get profileCardProperties from organization
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -125,9 +125,18 @@ module MicrosoftGraphBeta
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a profile_card_property_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return ProfileCardPropertyItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+                            # Get profileCardProperties from organization
                             class ProfileCardPropertyItemRequestBuilderGetQueryParameters
                                 
                                 ## 

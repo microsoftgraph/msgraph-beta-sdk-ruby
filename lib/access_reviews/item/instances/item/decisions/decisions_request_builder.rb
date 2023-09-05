@@ -114,6 +114,15 @@ module MicrosoftGraphBeta
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a decisions_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return DecisionsRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
                             # In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review.

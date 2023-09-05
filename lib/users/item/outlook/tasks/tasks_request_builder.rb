@@ -112,6 +112,15 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a tasks_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return TasksRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.

@@ -136,6 +136,15 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a updatable_assets_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return UpdatableAssetsRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.

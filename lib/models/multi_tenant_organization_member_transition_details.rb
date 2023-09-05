@@ -10,19 +10,19 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The desiredRole property
+            # Role of the tenant in the multi-tenant organization. The possible values are: owner, member, unknownFutureValue.
             @desired_role
             ## 
-            # The desiredState property
+            # State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             @desired_state
             ## 
-            # The details property
+            # Details that explain the processing status if any. Read-only.
             @details
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The status property
+            # Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             @status
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 return MultiTenantOrganizationMemberTransitionDetails.new
             end
             ## 
-            ## Gets the desiredRole property value. The desiredRole property
+            ## Gets the desiredRole property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member, unknownFutureValue.
             ## @return a multi_tenant_organization_member_role
             ## 
             def desired_role
                 return @desired_role
             end
             ## 
-            ## Sets the desiredRole property value. The desiredRole property
+            ## Sets the desiredRole property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member, unknownFutureValue.
             ## @param value Value to set for the desiredRole property.
             ## @return a void
             ## 
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 @desired_role = value
             end
             ## 
-            ## Gets the desiredState property value. The desiredState property
+            ## Gets the desiredState property value. State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             ## @return a multi_tenant_organization_member_state
             ## 
             def desired_state
                 return @desired_state
             end
             ## 
-            ## Sets the desiredState property value. The desiredState property
+            ## Sets the desiredState property value. State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             ## @param value Value to set for the desiredState property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 @desired_state = value
             end
             ## 
-            ## Gets the details property value. The details property
+            ## Gets the details property value. Details that explain the processing status if any. Read-only.
             ## @return a string
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. The details property
+            ## Sets the details property value. Details that explain the processing status if any. Read-only.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             ## @return a multi_tenant_organization_member_processing_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

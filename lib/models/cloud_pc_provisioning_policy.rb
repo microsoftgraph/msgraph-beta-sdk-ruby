@@ -234,7 +234,7 @@ module MicrosoftGraphBeta
                     "imageId" => lambda {|n| @image_id = n.get_string_value() },
                     "imageType" => lambda {|n| @image_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningPolicyImageType) },
                     "localAdminEnabled" => lambda {|n| @local_admin_enabled = n.get_boolean_value() },
-                    "managedBy" => lambda {|n| @managed_by = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "managedBy" => lambda {|n| @managed_by = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "microsoftManagedDesktop" => lambda {|n| @microsoft_managed_desktop = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftManagedDesktop.create_from_discriminator_value(pn) }) },
                     "onPremisesConnectionId" => lambda {|n| @on_premises_connection_id = n.get_string_value() },
                     "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningType) },

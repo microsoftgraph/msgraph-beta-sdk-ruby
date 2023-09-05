@@ -386,7 +386,7 @@ module MicrosoftGraphBeta
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskRecurrence.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
-                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
+                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_values(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })

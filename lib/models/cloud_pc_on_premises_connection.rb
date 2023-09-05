@@ -162,7 +162,7 @@ module MicrosoftGraphBeta
                     "healthCheckStatus" => lambda {|n| @health_check_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatus) },
                     "healthCheckStatusDetails" => lambda {|n| @health_check_status_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatusDetails.create_from_discriminator_value(pn) }) },
                     "inUse" => lambda {|n| @in_use = n.get_boolean_value() },
-                    "managedBy" => lambda {|n| @managed_by = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "managedBy" => lambda {|n| @managed_by = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "organizationalUnit" => lambda {|n| @organizational_unit = n.get_string_value() },
                     "resourceGroupId" => lambda {|n| @resource_group_id = n.get_string_value() },
                     "subnetId" => lambda {|n| @subnet_id = n.get_string_value() },

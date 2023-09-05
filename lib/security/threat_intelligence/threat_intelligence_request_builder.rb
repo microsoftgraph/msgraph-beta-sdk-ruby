@@ -18,6 +18,7 @@ require_relative './ssl_certificates/ssl_certificates_request_builder'
 require_relative './subdomains/subdomains_request_builder'
 require_relative './threat_intelligence'
 require_relative './vulnerabilities/vulnerabilities_request_builder'
+require_relative './whois_history_records/whois_history_records_request_builder'
 require_relative './whois_records/whois_records_request_builder'
 
 module MicrosoftGraphBeta
@@ -96,6 +97,11 @@ module MicrosoftGraphBeta
                 # Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.
                 def vulnerabilities()
                     return MicrosoftGraphBeta::Security::ThreatIntelligence::Vulnerabilities::VulnerabilitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+                def whois_history_records()
+                    return MicrosoftGraphBeta::Security::ThreatIntelligence::WhoisHistoryRecords::WhoisHistoryRecordsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.
@@ -208,6 +214,15 @@ module MicrosoftGraphBeta
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a threat_intelligence_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ThreatIntelligenceRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

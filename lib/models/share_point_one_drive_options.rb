@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "includeContent" => lambda {|n| @include_content = n.get_enum_value(MicrosoftGraphBeta::Models::SearchContent) },
+                    "includeContent" => lambda {|n| @include_content = n.get_enum_values(MicrosoftGraphBeta::Models::SearchContent) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

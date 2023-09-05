@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 return {
                     "attributeMappings" => lambda {|n| @attribute_mappings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AttributeMapping.create_from_discriminator_value(pn) }) },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
-                    "flowTypes" => lambda {|n| @flow_types = n.get_enum_value(MicrosoftGraphBeta::Models::ObjectFlowTypes) },
+                    "flowTypes" => lambda {|n| @flow_types = n.get_enum_values(MicrosoftGraphBeta::Models::ObjectFlowTypes) },
                     "metadata" => lambda {|n| @metadata = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ObjectMappingMetadataEntry.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
