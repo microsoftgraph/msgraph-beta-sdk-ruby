@@ -129,7 +129,7 @@ module MicrosoftGraphBeta
                     "detectedFiles" => lambda {|n| @detected_files = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubmissionDetectedFile.create_from_discriminator_value(pn) }) },
                     "detectedUrls" => lambda {|n| @detected_urls = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "userMailboxSetting" => lambda {|n| @user_mailbox_setting = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityUserMailboxSetting) },
+                    "userMailboxSetting" => lambda {|n| @user_mailbox_setting = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityUserMailboxSetting) },
                 }
             end
             ## 

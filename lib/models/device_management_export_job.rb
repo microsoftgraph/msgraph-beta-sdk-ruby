@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
         class DeviceManagementExportJob < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Time that the exported report expires
+            # Time that the exported report expires. This property is read-only.
             @expiration_date_time
             ## 
             # Filters applied on the report
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Name of the report
             @report_name
             ## 
-            # Time that the exported report was requested
+            # Time that the exported report was requested. This property is read-only.
             @request_date_time
             ## 
             # Columns selected from the report
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
             # Possible statuses associated with a generated report
             @status
             ## 
-            # Temporary location of the exported report
+            # Temporary location of the exported report. This property is read-only.
             @url
             ## 
             ## Instantiates a new deviceManagementExportJob and sets the default values.
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementExportJob.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Time that the exported report expires
+            ## Gets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Time that the exported report expires
+            ## Sets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -149,14 +149,14 @@ module MicrosoftGraphBeta
                 @report_name = value
             end
             ## 
-            ## Gets the requestDateTime property value. Time that the exported report was requested
+            ## Gets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
             ## @return a date_time
             ## 
             def request_date_time
                 return @request_date_time
             end
             ## 
-            ## Sets the requestDateTime property value. Time that the exported report was requested
+            ## Sets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
             ## @param value Value to set for the requestDateTime property.
             ## @return a void
             ## 
@@ -225,14 +225,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the url property value. Temporary location of the exported report
+            ## Gets the url property value. Temporary location of the exported report. This property is read-only.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. Temporary location of the exported report
+            ## Sets the url property value. Temporary location of the exported report. This property is read-only.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

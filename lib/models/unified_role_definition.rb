@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
             @is_enabled
             ## 
-            # The isPrivileged property
+            # Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             @is_privileged
             ## 
             # List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedPrincipalTypes" => lambda {|n| @allowed_principal_types = n.get_enum_value(MicrosoftGraphBeta::Models::AllowedRolePrincipalTypes) },
+                    "allowedPrincipalTypes" => lambda {|n| @allowed_principal_types = n.get_enum_values(MicrosoftGraphBeta::Models::AllowedRolePrincipalTypes) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "inheritsPermissionsFrom" => lambda {|n| @inherits_permissions_from = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }) },
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 @is_enabled = value
             end
             ## 
-            ## Gets the isPrivileged property value. The isPrivileged property
+            ## Gets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_privileged
                 return @is_privileged
             end
             ## 
-            ## Sets the isPrivileged property value. The isPrivileged property
+            ## Sets the isPrivileged property value. Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @param value Value to set for the isPrivileged property.
             ## @return a void
             ## 

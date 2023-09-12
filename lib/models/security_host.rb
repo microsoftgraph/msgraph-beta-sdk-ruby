@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # Represents a calculated reputation of this host.
             @reputation
             ## 
-            # The sslCertificates property
+            # The hostSslCertificates that are associated with this host.
             @ssl_certificates
             ## 
             # The subdomains that are associated with this host.
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # The hostTrackers that are associated with this host.
             @trackers
             ## 
-            # The whois property
+            # The most recent whoisRecord for this host.
             @whois
             ## 
             ## Gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
@@ -272,14 +272,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("whois", @whois)
             end
             ## 
-            ## Gets the sslCertificates property value. The sslCertificates property
+            ## Gets the sslCertificates property value. The hostSslCertificates that are associated with this host.
             ## @return a security_host_ssl_certificate
             ## 
             def ssl_certificates
                 return @ssl_certificates
             end
             ## 
-            ## Sets the sslCertificates property value. The sslCertificates property
+            ## Sets the sslCertificates property value. The hostSslCertificates that are associated with this host.
             ## @param value Value to set for the sslCertificates property.
             ## @return a void
             ## 
@@ -317,14 +317,14 @@ module MicrosoftGraphBeta
                 @trackers = value
             end
             ## 
-            ## Gets the whois property value. The whois property
+            ## Gets the whois property value. The most recent whoisRecord for this host.
             ## @return a security_whois_record
             ## 
             def whois
                 return @whois
             end
             ## 
-            ## Sets the whois property value. The whois property
+            ## Sets the whois property value. The most recent whoisRecord for this host.
             ## @param value Value to set for the whois property.
             ## @return a void
             ## 

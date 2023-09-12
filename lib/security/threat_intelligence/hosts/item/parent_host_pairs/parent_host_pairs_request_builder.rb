@@ -77,6 +77,15 @@ module MicrosoftGraphBeta
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a parent_host_pairs_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return ParentHostPairsRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
                             # Get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.

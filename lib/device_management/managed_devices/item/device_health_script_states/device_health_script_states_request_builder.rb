@@ -114,6 +114,15 @@ module MicrosoftGraphBeta
                             raise StandardError, 'policy_id cannot be null' if policy_id.nil?
                             return WithIdWithPolicyIdWithDeviceIdRequestBuilder.new(@path_parameters, @request_adapter, deviceId, id, policyId)
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a device_health_script_states_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return DeviceHealthScriptStatesRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Results of device health scripts that ran for this device. Default is empty list. This property is read-only.

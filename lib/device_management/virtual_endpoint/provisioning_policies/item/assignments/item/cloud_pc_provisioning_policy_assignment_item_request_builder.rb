@@ -133,6 +133,15 @@ module MicrosoftGraphBeta
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a cloud_pc_provisioning_policy_assignment_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return CloudPcProvisioningPolicyAssignmentItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
                                 # A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.

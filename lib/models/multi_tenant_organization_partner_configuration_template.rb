@@ -7,35 +7,35 @@ module MicrosoftGraphBeta
         class MultiTenantOrganizationPartnerConfigurationTemplate < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The automaticUserConsentSettings property
+            # Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             @automatic_user_consent_settings
             ## 
-            # The b2bCollaborationInbound property
+            # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             @b2b_collaboration_inbound
             ## 
-            # The b2bCollaborationOutbound property
+            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
             @b2b_collaboration_outbound
             ## 
-            # The b2bDirectConnectInbound property
+            # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
             @b2b_direct_connect_inbound
             ## 
-            # The b2bDirectConnectOutbound property
+            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
             @b2b_direct_connect_outbound
             ## 
-            # The inboundTrust property
+            # Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             @inbound_trust
             ## 
             # The templateApplicationLevel property
             @template_application_level
             ## 
-            ## Gets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+            ## Gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             ## @return a inbound_outbound_policy_configuration
             ## 
             def automatic_user_consent_settings
                 return @automatic_user_consent_settings
             end
             ## 
-            ## Sets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+            ## Sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             ## @param value Value to set for the automaticUserConsentSettings property.
             ## @return a void
             ## 
@@ -43,14 +43,14 @@ module MicrosoftGraphBeta
                 @automatic_user_consent_settings = value
             end
             ## 
-            ## Gets the b2bCollaborationInbound property value. The b2bCollaborationInbound property
+            ## Gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_inbound
                 return @b2b_collaboration_inbound
             end
             ## 
-            ## Sets the b2bCollaborationInbound property value. The b2bCollaborationInbound property
+            ## Sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             ## @param value Value to set for the b2bCollaborationInbound property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraphBeta
                 @b2b_collaboration_inbound = value
             end
             ## 
-            ## Gets the b2bCollaborationOutbound property value. The b2bCollaborationOutbound property
+            ## Gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_outbound
                 return @b2b_collaboration_outbound
             end
             ## 
-            ## Sets the b2bCollaborationOutbound property value. The b2bCollaborationOutbound property
+            ## Sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
             ## @param value Value to set for the b2bCollaborationOutbound property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 @b2b_collaboration_outbound = value
             end
             ## 
-            ## Gets the b2bDirectConnectInbound property value. The b2bDirectConnectInbound property
+            ## Gets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_direct_connect_inbound
                 return @b2b_direct_connect_inbound
             end
             ## 
-            ## Sets the b2bDirectConnectInbound property value. The b2bDirectConnectInbound property
+            ## Sets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
             ## @param value Value to set for the b2bDirectConnectInbound property.
             ## @return a void
             ## 
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 @b2b_direct_connect_inbound = value
             end
             ## 
-            ## Gets the b2bDirectConnectOutbound property value. The b2bDirectConnectOutbound property
+            ## Gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_direct_connect_outbound
                 return @b2b_direct_connect_outbound
             end
             ## 
-            ## Sets the b2bDirectConnectOutbound property value. The b2bDirectConnectOutbound property
+            ## Sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
             ## @param value Value to set for the b2bDirectConnectOutbound property.
             ## @return a void
             ## 
@@ -130,18 +130,18 @@ module MicrosoftGraphBeta
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectOutbound" => lambda {|n| @b2b_direct_connect_outbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "inboundTrust" => lambda {|n| @inbound_trust = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyInboundTrust.create_from_discriminator_value(pn) }) },
-                    "templateApplicationLevel" => lambda {|n| @template_application_level = n.get_enum_value(MicrosoftGraphBeta::Models::TemplateApplicationLevel) },
+                    "templateApplicationLevel" => lambda {|n| @template_application_level = n.get_enum_values(MicrosoftGraphBeta::Models::TemplateApplicationLevel) },
                 })
             end
             ## 
-            ## Gets the inboundTrust property value. The inboundTrust property
+            ## Gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             ## @return a cross_tenant_access_policy_inbound_trust
             ## 
             def inbound_trust
                 return @inbound_trust
             end
             ## 
-            ## Sets the inboundTrust property value. The inboundTrust property
+            ## Sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             ## @param value Value to set for the inboundTrust property.
             ## @return a void
             ## 

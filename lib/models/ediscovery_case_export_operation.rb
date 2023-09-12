@@ -130,7 +130,7 @@ module MicrosoftGraphBeta
                     "azureBlobContainer" => lambda {|n| @azure_blob_container = n.get_string_value() },
                     "azureBlobToken" => lambda {|n| @azure_blob_token = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportOptions) },
+                    "exportOptions" => lambda {|n| @export_options = n.get_enum_values(MicrosoftGraphBeta::Models::EdiscoveryExportOptions) },
                     "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportFileStructure) },
                     "outputFolderId" => lambda {|n| @output_folder_id = n.get_string_value() },
                     "outputName" => lambda {|n| @output_name = n.get_string_value() },

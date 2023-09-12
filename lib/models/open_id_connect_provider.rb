@@ -80,7 +80,7 @@ module MicrosoftGraphBeta
                     "domainHint" => lambda {|n| @domain_hint = n.get_string_value() },
                     "metadataUrl" => lambda {|n| @metadata_url = n.get_string_value() },
                     "responseMode" => lambda {|n| @response_mode = n.get_enum_value(MicrosoftGraphBeta::Models::OpenIdConnectResponseMode) },
-                    "responseType" => lambda {|n| @response_type = n.get_enum_value(MicrosoftGraphBeta::Models::OpenIdConnectResponseTypes) },
+                    "responseType" => lambda {|n| @response_type = n.get_enum_values(MicrosoftGraphBeta::Models::OpenIdConnectResponseTypes) },
                     "scope" => lambda {|n| @scope = n.get_string_value() },
                 })
             end

@@ -440,7 +440,7 @@ module MicrosoftGraphBeta
                     "disableAppPinIfDevicePinIsSet" => lambda {|n| @disable_app_pin_if_device_pin_is_set = n.get_boolean_value() },
                     "fingerprintBlocked" => lambda {|n| @fingerprint_blocked = n.get_boolean_value() },
                     "gracePeriodToBlockAppsDuringOffClockHours" => lambda {|n| @grace_period_to_block_apps_during_off_clock_hours = n.get_duration_value() },
-                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedBrowserType) },
+                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_values(MicrosoftGraphBeta::Models::ManagedBrowserType) },
                     "managedBrowserToOpenLinksRequired" => lambda {|n| @managed_browser_to_open_links_required = n.get_boolean_value() },
                     "maximumAllowedDeviceThreatLevel" => lambda {|n| @maximum_allowed_device_threat_level = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDeviceThreatLevel) },
                     "maximumPinRetries" => lambda {|n| @maximum_pin_retries = n.get_number_value() },

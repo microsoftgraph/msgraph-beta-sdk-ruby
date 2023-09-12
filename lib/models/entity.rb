@@ -1326,6 +1326,8 @@ module MicrosoftGraphBeta
                             return GroupPolicyUploadedDefinitionFile.new
                         when "#microsoft.graph.groupPolicyUploadedPresentation"
                             return GroupPolicyUploadedPresentation.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration"
+                            return HardwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.homeRealmDiscoveryPolicy"
                             return HomeRealmDiscoveryPolicy.new
                         when "#microsoft.graph.horizontalSection"
@@ -1916,6 +1918,8 @@ module MicrosoftGraphBeta
                             return NetworkaccessConditionalAccessSettings.new
                         when "#microsoft.graph.networkaccess.connectivity"
                             return NetworkaccessConnectivity.new
+                        when "#microsoft.graph.networkaccess.connectivityConfigurationLink"
+                            return NetworkaccessConnectivityConfigurationLink.new
                         when "#microsoft.graph.networkaccess.crossTenantAccessSettings"
                             return NetworkaccessCrossTenantAccessSettings.new
                         when "#microsoft.graph.networkaccess.deviceLink"
@@ -2296,6 +2300,8 @@ module MicrosoftGraphBeta
                             return ReportRoot.new
                         when "#microsoft.graph.request"
                             return Request.new
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
                         when "#microsoft.graph.resourceOperation"
                             return ResourceOperation.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"
@@ -3026,10 +3032,10 @@ module MicrosoftGraphBeta
                             return UserSignInInsight.new
                         when "#microsoft.graph.userTeamwork"
                             return UserTeamwork.new
+                        when "#microsoft.graph.userVirtualEventsRoot"
+                            return UserVirtualEventsRoot.new
                         when "#microsoft.graph.verticalSection"
                             return VerticalSection.new
-                        when "#microsoft.graph.virtualAppointment"
-                            return VirtualAppointment.new
                         when "#microsoft.graph.virtualEndpoint"
                             return VirtualEndpoint.new
                         when "#microsoft.graph.virtualEvent"
@@ -3200,6 +3206,8 @@ module MicrosoftGraphBeta
                             return WindowsMalwareInformation.new
                         when "#microsoft.graph.windowsManagedAppProtection"
                             return WindowsManagedAppProtection.new
+                        when "#microsoft.graph.windowsManagedAppRegistration"
+                            return WindowsManagedAppRegistration.new
                         when "#microsoft.graph.windowsManagedDevice"
                             return WindowsManagedDevice.new
                         when "#microsoft.graph.windowsManagementApp"
@@ -3276,8 +3284,12 @@ module MicrosoftGraphBeta
                             return WindowsUpdatesDriverUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry"
                             return WindowsUpdatesFeatureUpdateCatalogEntry.new
+                        when "#microsoft.graph.windowsUpdates.knowledgeBaseArticle"
+                            return WindowsUpdatesKnowledgeBaseArticle.new
                         when "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
                             return WindowsUpdatesOperationalInsightsConnection.new
+                        when "#microsoft.graph.windowsUpdates.productRevision"
+                            return WindowsUpdatesProductRevision.new
                         when "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry"
                             return WindowsUpdatesQualityUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.resourceConnection"

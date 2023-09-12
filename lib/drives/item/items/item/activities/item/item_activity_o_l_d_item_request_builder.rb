@@ -61,6 +61,15 @@ module MicrosoftGraphBeta
                                     end
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a item_activity_o_l_d_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return ItemActivityOLDItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
                                 # The list of recent activities that took place on this item.

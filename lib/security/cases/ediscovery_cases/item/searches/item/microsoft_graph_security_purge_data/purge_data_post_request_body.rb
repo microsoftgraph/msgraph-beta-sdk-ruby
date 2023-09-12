@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "purgeAreas" => lambda {|n| @purge_areas = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityPurgeAreas) },
+                                            "purgeAreas" => lambda {|n| @purge_areas = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityPurgeAreas) },
                                             "purgeType" => lambda {|n| @purge_type = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityPurgeType) },
                                         }
                                     end
