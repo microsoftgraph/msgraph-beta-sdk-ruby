@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The certificateBasedApplicationConfigurationIds property
+            # Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
             @certificate_based_application_configuration_ids
             ## 
             # The maxLifetime property
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+            ## Gets the certificateBasedApplicationConfigurationIds property value. Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
             ## @return a string
             ## 
             def certificate_based_application_configuration_ids
                 return @certificate_based_application_configuration_ids
             end
             ## 
-            ## Sets the certificateBasedApplicationConfigurationIds property value. The certificateBasedApplicationConfigurationIds property
+            ## Sets the certificateBasedApplicationConfigurationIds property value. Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
             ## @param value Value to set for the certificateBasedApplicationConfigurationIds property.
             ## @return a void
             ## 

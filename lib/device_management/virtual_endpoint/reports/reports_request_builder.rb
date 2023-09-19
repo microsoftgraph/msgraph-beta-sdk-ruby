@@ -7,7 +7,9 @@ require_relative '../virtual_endpoint'
 require_relative './export_jobs/export_jobs_request_builder'
 require_relative './get_connection_quality_reports/get_connection_quality_reports_request_builder'
 require_relative './get_daily_aggregated_remote_connection_reports/get_daily_aggregated_remote_connection_reports_request_builder'
+require_relative './get_frontline_report/get_frontline_report_request_builder'
 require_relative './get_inaccessible_cloud_pc_reports/get_inaccessible_cloud_pc_reports_request_builder'
+require_relative './get_raw_remote_connection_reports/get_raw_remote_connection_reports_request_builder'
 require_relative './get_real_time_remote_connection_latency_with_cloud_pc_id/get_real_time_remote_connection_latency_with_cloud_pc_id_request_builder'
 require_relative './get_real_time_remote_connection_status_with_cloud_pc_id/get_real_time_remote_connection_status_with_cloud_pc_id_request_builder'
 require_relative './get_remote_connection_historical_reports/get_remote_connection_historical_reports_request_builder'
@@ -39,9 +41,19 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetDailyAggregatedRemoteConnectionReports::GetDailyAggregatedRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getFrontlineReport method.
+                    def get_frontline_report()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetFrontlineReport::GetFrontlineReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the getInaccessibleCloudPcReports method.
                     def get_inaccessible_cloud_pc_reports()
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetInaccessibleCloudPcReports::GetInaccessibleCloudPcReportsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getRawRemoteConnectionReports method.
+                    def get_raw_remote_connection_reports()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetRawRemoteConnectionReports::GetRawRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getRemoteConnectionHistoricalReports method.
@@ -182,6 +194,15 @@ module MicrosoftGraphBeta
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a reports_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ReportsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

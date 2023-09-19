@@ -115,11 +115,11 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "apiVersion" => lambda {|n| @api_version = n.get_number_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "eligibilityFilteringEnabledEntities" => lambda {|n| @eligibility_filtering_enabled_entities = n.get_enum_value(MicrosoftGraphBeta::Models::EligibilityFilteringEnabledEntities) },
+                    "eligibilityFilteringEnabledEntities" => lambda {|n| @eligibility_filtering_enabled_entities = n.get_enum_values(MicrosoftGraphBeta::Models::EligibilityFilteringEnabledEntities) },
                     "encryption" => lambda {|n| @encryption = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WorkforceIntegrationEncryption.create_from_discriminator_value(pn) }) },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
-                    "supportedEntities" => lambda {|n| @supported_entities = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
-                    "supports" => lambda {|n| @supports = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
+                    "supportedEntities" => lambda {|n| @supported_entities = n.get_enum_values(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
+                    "supports" => lambda {|n| @supports = n.get_enum_values(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 })
             end

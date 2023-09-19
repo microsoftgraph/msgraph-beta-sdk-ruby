@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The includeDeviceStates property
             @include_device_states
             ## 
-            # States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            # States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             @include_devices
             ## 
             # The OdataType property
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @include_device_states = value
             end
             ## 
-            ## Gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            ## Gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             ## @return a string
             ## 
             def include_devices
                 return @include_devices
             end
             ## 
-            ## Sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            ## Sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             ## @param value Value to set for the includeDevices property.
             ## @return a void
             ## 

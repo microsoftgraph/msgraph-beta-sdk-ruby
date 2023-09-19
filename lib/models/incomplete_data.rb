@@ -11,13 +11,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The service does not have source data before the specified time.
+            # The service doesn't have source data before the specified time.
             @missing_data_before_date_time
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Some data was not recorded due to excessive activity.
+            # Some data wasn't recorded due to excessive activity.
             @was_throttled
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+            ## Gets the missingDataBeforeDateTime property value. The service doesn't have source data before the specified time.
             ## @return a date_time
             ## 
             def missing_data_before_date_time
                 return @missing_data_before_date_time
             end
             ## 
-            ## Sets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+            ## Sets the missingDataBeforeDateTime property value. The service doesn't have source data before the specified time.
             ## @param value Value to set for the missingDataBeforeDateTime property.
             ## @return a void
             ## 
@@ -104,14 +104,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the wasThrottled property value. Some data was not recorded due to excessive activity.
+            ## Gets the wasThrottled property value. Some data wasn't recorded due to excessive activity.
             ## @return a boolean
             ## 
             def was_throttled
                 return @was_throttled
             end
             ## 
-            ## Sets the wasThrottled property value. Some data was not recorded due to excessive activity.
+            ## Sets the wasThrottled property value. Some data wasn't recorded due to excessive activity.
             ## @param value Value to set for the wasThrottled property.
             ## @return a void
             ## 

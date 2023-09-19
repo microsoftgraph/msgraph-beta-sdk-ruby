@@ -1,0 +1,1 @@
+require_relative 'get_all_transcripts_response'

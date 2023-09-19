@@ -58,6 +58,15 @@ module MicrosoftGraphBeta
                             end
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a get_provisioned_cloud_p_cs_with_group_id_with_service_plan_id_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Invoke function getProvisionedCloudPCs

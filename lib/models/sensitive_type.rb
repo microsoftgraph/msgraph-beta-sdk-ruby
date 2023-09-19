@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                     "publisherName" => lambda {|n| @publisher_name = n.get_string_value() },
                     "rulePackageId" => lambda {|n| @rule_package_id = n.get_string_value() },
                     "rulePackageType" => lambda {|n| @rule_package_type = n.get_string_value() },
-                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
+                    "scope" => lambda {|n| @scope = n.get_enum_values(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
                     "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeSource) },
                     "state" => lambda {|n| @state = n.get_string_value() },
                 })

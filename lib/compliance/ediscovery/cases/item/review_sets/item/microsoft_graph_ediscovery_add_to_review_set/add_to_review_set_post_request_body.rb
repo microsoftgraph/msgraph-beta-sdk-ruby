@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryAdditionalDataOptions) },
+                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_values(MicrosoftGraphBeta::Models::EdiscoveryAdditionalDataOptions) },
                                             "sourceCollection" => lambda {|n| @source_collection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoverySourceCollection.create_from_discriminator_value(pn) }) },
                                         }
                                     end

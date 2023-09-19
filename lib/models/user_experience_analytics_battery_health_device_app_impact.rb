@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # App publisher. Eg: Microsoft Corporation
             @app_publisher
             ## 
-            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             @battery_usage_percentage
             ## 
             # The unique identifier of the device, Intune DeviceID or SCCM device id.
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @app_publisher = value
             end
             ## 
-            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             ## @return a double
             ## 
             def battery_usage_percentage
                 return @battery_usage_percentage
             end
             ## 
-            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             ## @param value Value to set for the batteryUsagePercentage property.
             ## @return a void
             ## 

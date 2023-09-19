@@ -168,13 +168,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "advancedBitLockerStates" => lambda {|n| @advanced_bit_locker_states = n.get_enum_value(MicrosoftGraphBeta::Models::AdvancedBitLockerState) },
+                    "advancedBitLockerStates" => lambda {|n| @advanced_bit_locker_states = n.get_enum_values(MicrosoftGraphBeta::Models::AdvancedBitLockerState) },
                     "deviceName" => lambda {|n| @device_name = n.get_string_value() },
                     "deviceType" => lambda {|n| @device_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceTypes) },
                     "encryptionPolicySettingState" => lambda {|n| @encryption_policy_setting_state = n.get_enum_value(MicrosoftGraphBeta::Models::ComplianceStatus) },
                     "encryptionReadinessState" => lambda {|n| @encryption_readiness_state = n.get_enum_value(MicrosoftGraphBeta::Models::EncryptionReadinessState) },
                     "encryptionState" => lambda {|n| @encryption_state = n.get_enum_value(MicrosoftGraphBeta::Models::EncryptionState) },
-                    "fileVaultStates" => lambda {|n| @file_vault_states = n.get_enum_value(MicrosoftGraphBeta::Models::FileVaultState) },
+                    "fileVaultStates" => lambda {|n| @file_vault_states = n.get_enum_values(MicrosoftGraphBeta::Models::FileVaultState) },
                     "osVersion" => lambda {|n| @os_version = n.get_string_value() },
                     "policyDetails" => lambda {|n| @policy_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EncryptionReportPolicyDetails.create_from_discriminator_value(pn) }) },
                     "tpmSpecificationVersion" => lambda {|n| @tpm_specification_version = n.get_string_value() },

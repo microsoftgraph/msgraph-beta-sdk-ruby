@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "resetScope" => lambda {|n| @reset_scope = n.get_enum_value(MicrosoftGraphBeta::Models::SynchronizationJobRestartScope) },
+                    "resetScope" => lambda {|n| @reset_scope = n.get_enum_values(MicrosoftGraphBeta::Models::SynchronizationJobRestartScope) },
                 }
             end
             ## 

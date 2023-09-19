@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class Teamwork < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deletedChats property
+            # A collection of deleted chats.
             @deleted_chats
             ## 
             # A collection of deleted teams.
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 return Teamwork.new
             end
             ## 
-            ## Gets the deletedChats property value. The deletedChats property
+            ## Gets the deletedChats property value. A collection of deleted chats.
             ## @return a deleted_chat
             ## 
             def deleted_chats
                 return @deleted_chats
             end
             ## 
-            ## Sets the deletedChats property value. The deletedChats property
+            ## Sets the deletedChats property value. A collection of deleted chats.
             ## @param value Value to set for the deletedChats property.
             ## @return a void
             ## 

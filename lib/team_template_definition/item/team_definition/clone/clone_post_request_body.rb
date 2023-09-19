@@ -121,7 +121,7 @@ module MicrosoftGraphBeta
                                 "description" => lambda {|n| @description = n.get_string_value() },
                                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                                 "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
-                                "partsToClone" => lambda {|n| @parts_to_clone = n.get_enum_value(MicrosoftGraphBeta::Models::ClonableTeamParts) },
+                                "partsToClone" => lambda {|n| @parts_to_clone = n.get_enum_values(MicrosoftGraphBeta::Models::ClonableTeamParts) },
                                 "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::TeamVisibilityType) },
                             }
                         end

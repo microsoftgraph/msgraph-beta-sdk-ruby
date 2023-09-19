@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -9,6 +10,9 @@ module MicrosoftGraphBeta
             ## 
             # Not Supported.
             @alt_sec_id
+            ## 
+            # The cleanupScheduledDateTime property
+            @cleanup_scheduled_date_time
             ## 
             # The connected organization of the subject. Read-only. Nullable.
             @connected_organization
@@ -50,6 +54,21 @@ module MicrosoftGraphBeta
             ## 
             def alt_sec_id=(value)
                 @alt_sec_id = value
+            end
+            ## 
+            ## Gets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+            ## @return a date_time
+            ## 
+            def cleanup_scheduled_date_time
+                return @cleanup_scheduled_date_time
+            end
+            ## 
+            ## Sets the cleanupScheduledDateTime property value. The cleanupScheduledDateTime property
+            ## @param value Value to set for the cleanupScheduledDateTime property.
+            ## @return a void
+            ## 
+            def cleanup_scheduled_date_time=(value)
+                @cleanup_scheduled_date_time = value
             end
             ## 
             ## Gets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
@@ -134,6 +153,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "altSecId" => lambda {|n| @alt_sec_id = n.get_string_value() },
+                    "cleanupScheduledDateTime" => lambda {|n| @cleanup_scheduled_date_time = n.get_date_time_value() },
                     "connectedOrganization" => lambda {|n| @connected_organization = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
                     "connectedOrganizationId" => lambda {|n| @connected_organization_id = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -199,6 +219,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("altSecId", @alt_sec_id)
+                writer.write_date_time_value("cleanupScheduledDateTime", @cleanup_scheduled_date_time)
                 writer.write_object_value("connectedOrganization", @connected_organization)
                 writer.write_string_value("connectedOrganizationId", @connected_organization_id)
                 writer.write_string_value("displayName", @display_name)

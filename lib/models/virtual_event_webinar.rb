@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # To whom the webinar is visible.
             @audience
             ## 
-            # Identity information of co-organizers of the webinar.
+            # Identity information of coorganizers of the webinar.
             @co_organizers
             ## 
             # The registrationConfiguration property
@@ -34,14 +34,14 @@ module MicrosoftGraphBeta
                 @audience = value
             end
             ## 
-            ## Gets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Gets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @return a communications_user_identity
             ## 
             def co_organizers
                 return @co_organizers
             end
             ## 
-            ## Sets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Sets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @param value Value to set for the coOrganizers property.
             ## @return a void
             ## 

@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
         class DeviceManagementCachedReportConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Time that the cached report expires
+            # Time that the cached report expires. This property is read-only.
             @expiration_date_time
             ## 
             # Filters applied on report creation.
             @filter
             ## 
-            # Time that the cached report was last refreshed
+            # Time that the cached report was last refreshed. This property is read-only.
             @last_refresh_date_time
             ## 
             # Caller-managed metadata associated with the report
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Ordering of columns in the report
             @order_by
             ## 
-            # Name of the report
+            # Name of the report. This property is read-only.
             @report_name
             ## 
             # Columns selected from the report
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementCachedReportConfiguration.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Time that the cached report expires
+            ## Gets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Time that the cached report expires
+            ## Sets the expirationDateTime property value. Time that the cached report expires. This property is read-only.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+            ## Gets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
             ## @return a date_time
             ## 
             def last_refresh_date_time
                 return @last_refresh_date_time
             end
             ## 
-            ## Sets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+            ## Sets the lastRefreshDateTime property value. Time that the cached report was last refreshed. This property is read-only.
             ## @param value Value to set for the lastRefreshDateTime property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @order_by = value
             end
             ## 
-            ## Gets the reportName property value. Name of the report
+            ## Gets the reportName property value. Name of the report. This property is read-only.
             ## @return a string
             ## 
             def report_name
                 return @report_name
             end
             ## 
-            ## Sets the reportName property value. Name of the report
+            ## Sets the reportName property value. Name of the report. This property is read-only.
             ## @param value Value to set for the reportName property.
             ## @return a void
             ## 

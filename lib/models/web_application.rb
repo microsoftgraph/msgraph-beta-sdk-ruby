@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
             @implicit_grant_settings
             ## 
-            # Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+            # Specifies the URL that will be used by Microsoft's authorization service to logout a user using front-channel, back-channel or SAML logout protocols.
             @logout_url
             ## 
             # The oauth2AllowImplicitFlow property
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @implicit_grant_settings = value
             end
             ## 
-            ## Gets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+            ## Gets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout a user using front-channel, back-channel or SAML logout protocols.
             ## @return a string
             ## 
             def logout_url
                 return @logout_url
             end
             ## 
-            ## Sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+            ## Sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout a user using front-channel, back-channel or SAML logout protocols.
             ## @param value Value to set for the logoutUrl property.
             ## @return a void
             ## 
