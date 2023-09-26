@@ -13,6 +13,7 @@ require_relative './manager/manager_request_builder'
 require_relative './member_of/member_of_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 require_relative './transitive_reports/transitive_reports_request_builder'
 
@@ -67,6 +68,11 @@ module MicrosoftGraphBeta
                 # Provides operations to call the retryServiceProvisioning method.
                 def retry_service_provisioning()
                     return MicrosoftGraphBeta::Contacts::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # The serviceProvisioningErrors property
+                def service_provisioning_errors()
+                    return MicrosoftGraphBeta::Contacts::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
@@ -184,6 +190,15 @@ module MicrosoftGraphBeta
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a org_contact_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return OrgContactItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

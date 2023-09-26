@@ -52,6 +52,15 @@ module MicrosoftGraphBeta
                     end
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a get_credential_user_registration_count_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return GetCredentialUserRegistrationCountRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
                 # Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.

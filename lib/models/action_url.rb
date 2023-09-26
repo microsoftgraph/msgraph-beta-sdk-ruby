@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The URL to the documentation or Azure portal page.
+            # The URL to the documentation or Microsoft Entra admin center page.
             @url
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the url property value. The URL to the documentation or Azure portal page.
+            ## Gets the url property value. The URL to the documentation or Microsoft Entra admin center page.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. The URL to the documentation or Azure portal page.
+            ## Sets the url property value. The URL to the documentation or Microsoft Entra admin center page.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

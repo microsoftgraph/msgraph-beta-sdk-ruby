@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
                         def get_field_deserializers()
                             return {
                                 "cloudPcIds" => lambda {|n| @cloud_pc_ids = n.get_collection_of_primitive_values(String) },
-                                "policySettings" => lambda {|n| @policy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
+                                "policySettings" => lambda {|n| @policy_settings = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
                             }
                         end
                         ## 

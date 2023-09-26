@@ -209,7 +209,7 @@ module MicrosoftGraphBeta
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryDataSource.create_from_discriminator_value(pn) }) },
-                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryDataSourceScopes) },
+                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_values(MicrosoftGraphBeta::Models::EdiscoveryDataSourceScopes) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryEstimateStatisticsOperation.create_from_discriminator_value(pn) }) },

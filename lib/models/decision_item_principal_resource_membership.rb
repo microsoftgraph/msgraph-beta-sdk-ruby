@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "membershipType" => lambda {|n| @membership_type = n.get_enum_value(MicrosoftGraphBeta::Models::DecisionItemPrincipalResourceMembershipType) },
+                    "membershipType" => lambda {|n| @membership_type = n.get_enum_values(MicrosoftGraphBeta::Models::DecisionItemPrincipalResourceMembershipType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The fallback string, which is used when a requested localization is not available. Required.
+            # The fallback string, which is used when a requested localization isn't available. Required.
             @default_text
             ## 
             # Content represented in a format for a specific locale.
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 return AccessPackageLocalizedContent.new
             end
             ## 
-            ## Gets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
+            ## Gets the defaultText property value. The fallback string, which is used when a requested localization isn't available. Required.
             ## @return a string
             ## 
             def default_text
                 return @default_text
             end
             ## 
-            ## Sets the defaultText property value. The fallback string, which is used when a requested localization is not available. Required.
+            ## Sets the defaultText property value. The fallback string, which is used when a requested localization isn't available. Required.
             ## @param value Value to set for the defaultText property.
             ## @return a void
             ## 

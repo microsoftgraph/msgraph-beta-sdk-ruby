@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             # Microsoft Tunnel site ID.
             @microsoft_tunnel_site_id
             ## 
-            # List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            # List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
             @proxy_exclusion_list
             ## 
             # Proxy server.
@@ -252,14 +252,14 @@ module MicrosoftGraphBeta
                 @microsoft_tunnel_site_id = value
             end
             ## 
-            ## Gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            ## Gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
             ## @return a string
             ## 
             def proxy_exclusion_list
                 return @proxy_exclusion_list
             end
             ## 
-            ## Sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            ## Sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
             ## @param value Value to set for the proxyExclusionList property.
             ## @return a void
             ## 

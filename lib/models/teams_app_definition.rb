@@ -191,7 +191,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
+                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_values(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
                     "authorization" => lambda {|n| @authorization = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppAuthorization.create_from_discriminator_value(pn) }) },
                     "azureADAppId" => lambda {|n| @azure_a_d_app_id = n.get_string_value() },
                     "bot" => lambda {|n| @bot = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamworkBot.create_from_discriminator_value(pn) }) },

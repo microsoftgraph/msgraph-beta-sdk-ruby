@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # To learn more, see Include numbers in themes.
             @ignore_numbers
             ## 
-            # Indicates whether themes is enabled for the case.
+            # Indicates whether themes are enabled for the case.
             @is_enabled
             ## 
             # The OdataType property
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 @ignore_numbers = value
             end
             ## 
-            ## Gets the isEnabled property value. Indicates whether themes is enabled for the case.
+            ## Gets the isEnabled property value. Indicates whether themes are enabled for the case.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. Indicates whether themes is enabled for the case.
+            ## Sets the isEnabled property value. Indicates whether themes are enabled for the case.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 

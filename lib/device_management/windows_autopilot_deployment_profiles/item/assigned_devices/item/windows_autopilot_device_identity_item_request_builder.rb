@@ -6,6 +6,7 @@ require_relative '../../../../device_management'
 require_relative '../../../windows_autopilot_deployment_profiles'
 require_relative '../../item'
 require_relative '../assigned_devices'
+require_relative './allow_next_enrollment/allow_next_enrollment_request_builder'
 require_relative './assign_resource_account_to_device/assign_resource_account_to_device_request_builder'
 require_relative './assign_user_to_device/assign_user_to_device_request_builder'
 require_relative './deployment_profile/deployment_profile_request_builder'
@@ -25,6 +26,11 @@ module MicrosoftGraphBeta
                         # Provides operations to manage the assignedDevices property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.
                         class WindowsAutopilotDeviceIdentityItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
+                            ## 
+                            # Provides operations to call the allowNextEnrollment method.
+                            def allow_next_enrollment()
+                                return MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotDeploymentProfiles::Item::AssignedDevices::Item::AllowNextEnrollment::AllowNextEnrollmentRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             # Provides operations to call the assignResourceAccountToDevice method.
                             def assign_resource_account_to_device()
@@ -166,6 +172,15 @@ module MicrosoftGraphBeta
                                 end
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a windows_autopilot_device_identity_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return WindowsAutopilotDeviceIdentityItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

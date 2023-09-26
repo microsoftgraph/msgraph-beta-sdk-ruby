@@ -92,6 +92,7 @@ require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_buil
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './security/security_request_builder'
 require_relative './send_mail/send_mail_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sponsors/sponsors_request_builder'
 require_relative './teamwork/teamwork_request_builder'
@@ -101,6 +102,7 @@ require_relative './transitive_reports/transitive_reports_request_builder'
 require_relative './translate_exchange_ids/translate_exchange_ids_request_builder'
 require_relative './unblock_managed_apps/unblock_managed_apps_request_builder'
 require_relative './usage_rights/usage_rights_request_builder'
+require_relative './virtual_events/virtual_events_request_builder'
 require_relative './windows_information_protection_device_registrations/windows_information_protection_device_registrations_request_builder'
 require_relative './wipe_and_block_managed_apps/wipe_and_block_managed_apps_request_builder'
 require_relative './wipe_managed_app_registration_by_device_tag/wipe_managed_app_registration_by_device_tag_request_builder'
@@ -544,6 +546,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Me::SendMail::SendMailRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # The serviceProvisioningErrors property
+            def service_provisioning_errors()
+                return MicrosoftGraphBeta::Me::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the settings property of the microsoft.graph.user entity.
             def settings()
                 return MicrosoftGraphBeta::Me::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -587,6 +594,11 @@ module MicrosoftGraphBeta
             # Provides operations to manage the usageRights property of the microsoft.graph.user entity.
             def usage_rights()
                 return MicrosoftGraphBeta::Me::UsageRights::UsageRightsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.
+            def virtual_events()
+                return MicrosoftGraphBeta::Me::VirtualEvents::VirtualEventsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
@@ -720,6 +732,15 @@ module MicrosoftGraphBeta
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a me_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return MeRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

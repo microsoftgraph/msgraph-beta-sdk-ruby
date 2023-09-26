@@ -9,6 +9,7 @@ require_relative '../../../../item'
 require_relative '../../../submissions'
 require_relative '../../item'
 require_relative '../resources'
+require_relative './dependent_resources/dependent_resources_request_builder'
 require_relative './item'
 
 module MicrosoftGraphBeta
@@ -24,6 +25,11 @@ module MicrosoftGraphBeta
                                     # Provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
                                     class EducationSubmissionResourceItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
+                                        ## 
+                                        # Provides operations to manage the dependentResources property of the microsoft.graph.educationSubmissionResource entity.
+                                        def dependent_resources()
+                                            return MicrosoftGraphBeta::Education::Me::Assignments::Item::Submissions::Item::Resources::Item::DependentResources::DependentResourcesRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         ## Instantiates a new EducationSubmissionResourceItemRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
@@ -130,6 +136,15 @@ module MicrosoftGraphBeta
                                             end
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
+                                        end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a education_submission_resource_item_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return EducationSubmissionResourceItemRequestBuilder.new(raw_url, @request_adapter)
                                         end
 
                                         ## 

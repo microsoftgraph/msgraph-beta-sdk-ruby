@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether the downgrade is or is not justified.
+            # Indicates whether the downgrade is or isn't justified.
             @is_downgrade_justified
             ## 
-            # Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+            # Message that indicates why a downgrade is justified. The message appears in administrative logs.
             @justification_message
             ## 
             # The OdataType property
@@ -61,14 +61,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
+            ## Gets the isDowngradeJustified property value. Indicates whether the downgrade is or isn't justified.
             ## @return a boolean
             ## 
             def is_downgrade_justified
                 return @is_downgrade_justified
             end
             ## 
-            ## Sets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
+            ## Sets the isDowngradeJustified property value. Indicates whether the downgrade is or isn't justified.
             ## @param value Value to set for the isDowngradeJustified property.
             ## @return a void
             ## 
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @is_downgrade_justified = value
             end
             ## 
-            ## Gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+            ## Gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message appears in administrative logs.
             ## @return a string
             ## 
             def justification_message
                 return @justification_message
             end
             ## 
-            ## Sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+            ## Sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message appears in administrative logs.
             ## @param value Value to set for the justificationMessage property.
             ## @return a void
             ## 

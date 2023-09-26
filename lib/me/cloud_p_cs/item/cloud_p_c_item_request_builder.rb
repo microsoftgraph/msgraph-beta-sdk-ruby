@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../cloud_p_cs'
 require_relative './change_user_account_type/change_user_account_type_request_builder'
+require_relative './create_snapshot/create_snapshot_request_builder'
 require_relative './end_grace_period/end_grace_period_request_builder'
 require_relative './get_cloud_pc_connectivity_history/get_cloud_pc_connectivity_history_request_builder'
 require_relative './get_cloud_pc_launch_info/get_cloud_pc_launch_info_request_builder'
@@ -16,6 +17,7 @@ require_relative './power_on/power_on_request_builder'
 require_relative './reboot/reboot_request_builder'
 require_relative './rename/rename_request_builder'
 require_relative './reprovision/reprovision_request_builder'
+require_relative './resize/resize_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './retry_partner_agent_installation/retry_partner_agent_installation_request_builder'
 require_relative './start/start_request_builder'
@@ -34,6 +36,11 @@ module MicrosoftGraphBeta
                     # Provides operations to call the changeUserAccountType method.
                     def change_user_account_type()
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::ChangeUserAccountType::ChangeUserAccountTypeRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the createSnapshot method.
+                    def create_snapshot()
+                        return MicrosoftGraphBeta::Me::CloudPCs::Item::CreateSnapshot::CreateSnapshotRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the endGracePeriod method.
@@ -84,6 +91,11 @@ module MicrosoftGraphBeta
                     # Provides operations to call the reprovision method.
                     def reprovision()
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::Reprovision::ReprovisionRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the resize method.
+                    def resize()
+                        return MicrosoftGraphBeta::Me::CloudPCs::Item::Resize::ResizeRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the restore method.
@@ -216,6 +228,15 @@ module MicrosoftGraphBeta
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a cloud_p_c_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return CloudPCItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

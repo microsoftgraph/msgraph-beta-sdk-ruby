@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class WindowsUniversalAppXAppAssignmentSettings < MicrosoftGraphBeta::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+            # Whether or not to use device execution context for Windows Universal AppX mobile app.
             @use_device_context
             ## 
             ## Instantiates a new windowsUniversalAppXAppAssignmentSettings and sets the default values.
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("useDeviceContext", @use_device_context)
             end
             ## 
-            ## Gets the useDeviceContext property value. If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+            ## Gets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
             ## @return a boolean
             ## 
             def use_device_context
                 return @use_device_context
             end
             ## 
-            ## Sets the useDeviceContext property value. If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+            ## Sets the useDeviceContext property value. Whether or not to use device execution context for Windows Universal AppX mobile app.
             ## @param value Value to set for the useDeviceContext property.
             ## @return a void
             ## 

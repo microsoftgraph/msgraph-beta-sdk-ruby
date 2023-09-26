@@ -7,6 +7,7 @@ require_relative '../../../app'
 require_relative '../../online_meetings'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './item/call_transcript_item_request_builder'
 require_relative './transcripts'
 
@@ -23,6 +24,11 @@ module MicrosoftGraphBeta
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraphBeta::App::OnlineMeetings::Item::Transcripts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the delta method.
+                        def delta()
+                            return MicrosoftGraphBeta::App::OnlineMeetings::Item::Transcripts::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
@@ -45,7 +51,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/transcripts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the list of callTranscript objects associated with an onlineMeeting.
+                        ## Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of call_transcript_collection_response
                         ## 
@@ -75,7 +81,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CallTranscript.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the list of callTranscript objects associated with an onlineMeeting.
+                        ## Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -112,9 +118,18 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a transcripts_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return TranscriptsRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Retrieve the list of callTranscript objects associated with an onlineMeeting.
+                        # Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. 
                         class TranscriptsRequestBuilderGetQueryParameters
                             
                             ## 

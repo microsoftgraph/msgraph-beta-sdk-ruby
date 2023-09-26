@@ -59,7 +59,7 @@ module MicrosoftGraphBeta
                 return {
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "sanType" => lambda {|n| @san_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "sanType" => lambda {|n| @san_type = n.get_enum_values(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
                 }
             end
             ## 
