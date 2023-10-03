@@ -11,16 +11,16 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The firstSeenDateTime property
+            # The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @first_seen_date_time
             ## 
-            # The lastSeenDateTime property
+            # The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_seen_date_time
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The port property
+            # The port number.
             @port
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 return SecurityHostSslCertificatePort.new
             end
             ## 
-            ## Gets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Gets the firstSeenDateTime property value. The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def first_seen_date_time
                 return @first_seen_date_time
             end
             ## 
-            ## Sets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Sets the firstSeenDateTime property value. The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the firstSeenDateTime property.
             ## @return a void
             ## 
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Gets the lastSeenDateTime property value. The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_seen_date_time
                 return @last_seen_date_time
             end
             ## 
-            ## Sets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Sets the lastSeenDateTime property value. The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastSeenDateTime property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the port property value. The port property
+            ## Gets the port property value. The port number.
             ## @return a integer
             ## 
             def port
                 return @port
             end
             ## 
-            ## Sets the port property value. The port property
+            ## Sets the port property value. The port number.
             ## @param value Value to set for the port property.
             ## @return a void
             ## 

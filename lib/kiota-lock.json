@@ -1,12 +1,13 @@
 {
-  "descriptionHash": "8125B8F31FD753B7F1991DFCE7834F62D8D92D20BB952989DE8929CD4528A1632F2AA9AC10820852183D494FE2187A45999D976B6B4A577BAA2C6F3DC8A9E29C",
+  "descriptionHash": "47438EC535FCE2B80F2A45EAC1592B2881317DAC26B3A7D7A90B638914CB2859478B1EB4753D7BA10014FE0F2F8AFBF829618B2974202CCEB4AC69A7FA9F0F83",
   "descriptionLocation": "/mnt/vss/_work/1/s/msgraph-metadata/clean_beta_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.6.0",
+  "kiotaVersion": "1.7.0",
   "clientClassName": "GraphBaseServiceClient",
   "clientNamespaceName": "MicrosoftGraphBeta",
   "language": "Ruby",
   "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
   "includeAdditionalData": true,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",

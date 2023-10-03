@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Run campaigns to remind users to setup targeted authentication methods.
+            # Run campaigns to remind users to set up targeted authentication methods.
             @authentication_methods_registration_campaign
             ## 
             # The OdataType property
@@ -31,14 +31,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+            ## Gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
             ## @return a authentication_methods_registration_campaign
             ## 
             def authentication_methods_registration_campaign
                 return @authentication_methods_registration_campaign
             end
             ## 
-            ## Sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+            ## Sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
             ## @param value Value to set for the authenticationMethodsRegistrationCampaign property.
             ## @return a void
             ## 

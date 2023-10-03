@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
             @allowed_to_use_s_s_p_r
             ## 
-            # To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
+            # To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Azure AD Connect or Microsoft Graph.
             @block_msol_power_shell
             ## 
             # The defaultUserRoleOverrides property
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @allowed_to_use_s_s_p_r = value
             end
             ## 
-            ## Gets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
+            ## Gets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Azure AD Connect or Microsoft Graph.
             ## @return a boolean
             ## 
             def block_msol_power_shell
                 return @block_msol_power_shell
             end
             ## 
-            ## Sets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
+            ## Sets the blockMsolPowerShell property value. To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Azure AD Connect or Microsoft Graph.
             ## @param value Value to set for the blockMsolPowerShell property.
             ## @return a void
             ## 

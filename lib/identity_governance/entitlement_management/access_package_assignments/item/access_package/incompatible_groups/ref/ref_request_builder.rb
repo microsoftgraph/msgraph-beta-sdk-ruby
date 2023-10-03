@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/incompatibleGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                                     end
                                     ## 
-                                    ## Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+                                    ## Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of string_collection_response
                                     ## 
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::StringCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+                                    ## Add a group to the list of groups that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
@@ -63,7 +63,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+                                    ## Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Add a group to the list of groups that have been marked as incompatible on an accessPackage.  
+                                    ## Add a group to the list of groups that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -99,9 +99,18 @@ module MicrosoftGraphBeta
                                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a ref_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return RefRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  
+                                    # Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
                                     class RefRequestBuilderGetQueryParameters
                                         
                                         ## 

@@ -19,10 +19,10 @@ module MicrosoftGraphBeta
             # The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
             @recurrence_count
             ## 
-            # How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+            # How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
             @recurrence_end_type
             ## 
-            # The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+            # The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
             @recurrence_type
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @recurrence_count = value
             end
             ## 
-            ## Gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+            ## Gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
             ## @return a string
             ## 
             def recurrence_end_type
                 return @recurrence_end_type
             end
             ## 
-            ## Sets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
+            ## Sets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
             ## @param value Value to set for the recurrenceEndType property.
             ## @return a void
             ## 
@@ -129,14 +129,14 @@ module MicrosoftGraphBeta
                 @recurrence_end_type = value
             end
             ## 
-            ## Gets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+            ## Gets the recurrenceType property value. The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
             ## @return a string
             ## 
             def recurrence_type
                 return @recurrence_type
             end
             ## 
-            ## Sets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
+            ## Sets the recurrenceType property value. The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
             ## @param value Value to set for the recurrenceType property.
             ## @return a void
             ## 

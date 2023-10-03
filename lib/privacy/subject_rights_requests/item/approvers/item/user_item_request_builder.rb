@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../approvers'
 require_relative './item'
 require_relative './mailbox_settings/mailbox_settings_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraphBeta
     module Privacy
@@ -23,6 +24,11 @@ module MicrosoftGraphBeta
                             # The mailboxSettings property
                             def mailbox_settings()
                                 return MicrosoftGraphBeta::Privacy::SubjectRightsRequests::Item::Approvers::Item::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # The serviceProvisioningErrors property
+                            def service_provisioning_errors()
+                                return MicrosoftGraphBeta::Privacy::SubjectRightsRequests::Item::Approvers::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new UserItemRequestBuilder and sets the default values.
@@ -64,6 +70,15 @@ module MicrosoftGraphBeta
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a user_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return UserItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

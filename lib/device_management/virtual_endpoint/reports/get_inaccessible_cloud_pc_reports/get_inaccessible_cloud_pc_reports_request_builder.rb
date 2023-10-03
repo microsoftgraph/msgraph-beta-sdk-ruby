@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getInaccessibleCloudPcReports")
                         end
                         ## 
-                        ## Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
+                        ## Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of binary
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, Binary, error_mapping)
                         end
                         ## 
-                        ## Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
+                        ## Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -58,6 +58,15 @@ module MicrosoftGraphBeta
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a get_inaccessible_cloud_pc_reports_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return GetInaccessibleCloudPcReportsRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

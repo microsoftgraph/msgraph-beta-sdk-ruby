@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.
+            # Time in which the status message expires.If not provided, the status message doesn't expire.expiryDateTime.dateTime shouldn't include time zone.expiryDateTime isn't available when you request the presence of another user.
             @expiry_date_time
             ## 
             # Status message item. The only supported format currently is message.contentType = 'text'.
@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+            # Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
             @published_date_time
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 return PresenceStatusMessage.new
             end
             ## 
-            ## Gets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.
+            ## Gets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message doesn't expire.expiryDateTime.dateTime shouldn't include time zone.expiryDateTime isn't available when you request the presence of another user.
             ## @return a date_time_time_zone
             ## 
             def expiry_date_time
                 return @expiry_date_time
             end
             ## 
-            ## Sets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.
+            ## Sets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message doesn't expire.expiryDateTime.dateTime shouldn't include time zone.expiryDateTime isn't available when you request the presence of another user.
             ## @param value Value to set for the expiryDateTime property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+            ## Gets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
             ## @return a date_time
             ## 
             def published_date_time
                 return @published_date_time
             end
             ## 
-            ## Sets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+            ## Sets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
             ## @param value Value to set for the publishedDateTime property.
             ## @return a void
             ## 

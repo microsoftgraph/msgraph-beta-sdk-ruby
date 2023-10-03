@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            # Whether the printer should collate pages when printing multiple copies of a multi-page document.
             @collate
             ## 
             # The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            ## Gets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
             ## @return a boolean
             ## 
             def collate
                 return @collate
             end
             ## 
-            ## Sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            ## Sets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
             ## @param value Value to set for the collate property.
             ## @return a void
             ## 

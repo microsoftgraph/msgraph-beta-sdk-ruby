@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                                                     super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/{workbookDocumentTask%2Did}/changes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                 end
                                                 ## 
-                                                ## Get changes from drives
+                                                ## A collection of task change histories.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of workbook_document_task_change_collection_response
                                                 ## 
@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::WorkbookDocumentTaskChange.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Get changes from drives
+                                                ## A collection of task change histories.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -134,9 +134,18 @@ module MicrosoftGraphBeta
                                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                     return request_info
                                                 end
+                                                ## 
+                                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                ## @param raw_url The raw URL to use for the request builder.
+                                                ## @return a changes_request_builder
+                                                ## 
+                                                def with_url(raw_url)
+                                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                    return ChangesRequestBuilder.new(raw_url, @request_adapter)
+                                                end
 
                                                 ## 
-                                                # Get changes from drives
+                                                # A collection of task change histories.
                                                 class ChangesRequestBuilderGetQueryParameters
                                                     
                                                     ## 

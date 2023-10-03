@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # A collection of groups that are enabled to use the authentication method.
             @include_targets
             ## 
+            # The issuerHintsConfiguration property
+            @issuer_hints_configuration
+            ## 
             ## Gets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
             ## @return a x509_certificate_authentication_mode_configuration
             ## 
@@ -71,6 +74,7 @@ module MicrosoftGraphBeta
                     "authenticationModeConfiguration" => lambda {|n| @authentication_mode_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::X509CertificateAuthenticationModeConfiguration.create_from_discriminator_value(pn) }) },
                     "certificateUserBindings" => lambda {|n| @certificate_user_bindings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::X509CertificateUserBinding.create_from_discriminator_value(pn) }) },
                     "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationMethodTarget.create_from_discriminator_value(pn) }) },
+                    "issuerHintsConfiguration" => lambda {|n| @issuer_hints_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::X509CertificateIssuerHintsConfiguration.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -89,6 +93,21 @@ module MicrosoftGraphBeta
                 @include_targets = value
             end
             ## 
+            ## Gets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+            ## @return a x509_certificate_issuer_hints_configuration
+            ## 
+            def issuer_hints_configuration
+                return @issuer_hints_configuration
+            end
+            ## 
+            ## Sets the issuerHintsConfiguration property value. The issuerHintsConfiguration property
+            ## @param value Value to set for the issuerHintsConfiguration property.
+            ## @return a void
+            ## 
+            def issuer_hints_configuration=(value)
+                @issuer_hints_configuration = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -99,6 +118,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("authenticationModeConfiguration", @authentication_mode_configuration)
                 writer.write_collection_of_object_values("certificateUserBindings", @certificate_user_bindings)
                 writer.write_collection_of_object_values("includeTargets", @include_targets)
+                writer.write_object_value("issuerHintsConfiguration", @issuer_hints_configuration)
             end
         end
     end

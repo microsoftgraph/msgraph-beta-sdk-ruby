@@ -8,6 +8,7 @@ require_relative '../../../../item'
 require_relative '../../../assignments'
 require_relative '../../item'
 require_relative '../resources'
+require_relative './dependent_resources/dependent_resources_request_builder'
 require_relative './item'
 
 module MicrosoftGraphBeta
@@ -23,6 +24,11 @@ module MicrosoftGraphBeta
                                 class EducationAssignmentResourceItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
+                                    # Provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
+                                    def dependent_resources()
+                                        return MicrosoftGraphBeta::Education::Users::Item::Assignments::Item::Resources::Item::DependentResources::DependentResourcesRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new EducationAssignmentResourceItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -32,7 +38,7 @@ module MicrosoftGraphBeta
                                         super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/resources/{educationAssignmentResource%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'.
+                                    ## Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -46,7 +52,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                    ## Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of education_assignment_resource
                                     ## 
@@ -76,7 +82,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EducationAssignmentResource.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'.
+                                    ## Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers cannot remove resources that are marked as 'distributeToStudents'. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -92,7 +98,7 @@ module MicrosoftGraphBeta
                                         return request_info
                                     end
                                     ## 
-                                    ## Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                    ## Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -129,9 +135,18 @@ module MicrosoftGraphBeta
                                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a education_assignment_resource_item_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return EducationAssignmentResourceItemRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                    # Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                     class EducationAssignmentResourceItemRequestBuilderGetQueryParameters
                                         
                                         ## 

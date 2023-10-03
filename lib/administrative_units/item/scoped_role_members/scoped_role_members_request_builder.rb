@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                    ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of scoped_role_membership_collection_response
                     ## 
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ScopedRoleMembershipCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+                    ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of scoped_role_membership
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                    ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+                    ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -110,9 +110,18 @@ module MicrosoftGraphBeta
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a scoped_role_members_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ScopedRoleMembersRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                    # List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
                     class ScopedRoleMembersRequestBuilderGetQueryParameters
                         
                         ## 

@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The displayName property
+            # Display name of the user.
             @display_name
             ## 
-            # The email property
+            # Email address of the user.
             @email
             ## 
-            # The id property
+            # The unique identifier of the user.
             @id
             ## 
             # The OdataType property
@@ -53,14 +53,14 @@ module MicrosoftGraphBeta
                 return WorkbookEmailIdentity.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Display name of the user.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Display name of the user.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the email property value. The email property
+            ## Gets the email property value. Email address of the user.
             ## @return a string
             ## 
             def email
                 return @email
             end
             ## 
-            ## Sets the email property value. The email property
+            ## Sets the email property value. Email address of the user.
             ## @param value Value to set for the email property.
             ## @return a void
             ## 
@@ -95,14 +95,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the id property value. The id property
+            ## Gets the id property value. The unique identifier of the user.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The id property
+            ## Sets the id property value. The unique identifier of the user.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

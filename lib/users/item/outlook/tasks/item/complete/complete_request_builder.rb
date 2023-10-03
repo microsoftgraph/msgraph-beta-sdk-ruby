@@ -29,9 +29,9 @@ module MicrosoftGraphBeta
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}/complete")
                                 end
                                 ## 
-                                ## Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                                ## Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of complete_response
+                                ## @return a Fiber of complete_post_response
                                 ## 
                                 def post(request_configuration=nil)
                                     request_info = self.to_post_request_information(
@@ -40,10 +40,10 @@ module MicrosoftGraphBeta
                                     error_mapping = Hash.new
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Users::Item::Outlook::Tasks::Item::Complete::CompleteResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Users::Item::Outlook::Tasks::Item::Complete::CompletePostResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                                ## Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -58,6 +58,15 @@ module MicrosoftGraphBeta
                                         request_info.add_request_options(request_configuration.options)
                                     end
                                     return request_info
+                                end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a complete_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return CompleteRequestBuilder.new(raw_url, @request_adapter)
                                 end
                             end
                         end

@@ -8,11 +8,14 @@ module MicrosoftGraphBeta
         class SignIn < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            # The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             @app_display_name
             ## 
             # The application identifier in Azure Active Directory.  Supports $filter (eq).
             @app_id
+            ## 
+            # The appTokenProtectionStatus property
+            @app_token_protection_status
             ## 
             # A list of conditional access policies that are triggered by the corresponding sign-in activity.
             @applied_conditional_access_policies
@@ -29,13 +32,13 @@ module MicrosoftGraphBeta
             # Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
             @authentication_context_class_references
             ## 
-            # The result of the authentication attempt and additional details on the authentication method.
+            # The result of the authentication attempt and more details on the authentication method.
             @authentication_details
             ## 
             # The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
             @authentication_methods_used
             ## 
-            # Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
+            # Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
             @authentication_processing_details
             ## 
             # Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
@@ -68,7 +71,7 @@ module MicrosoftGraphBeta
             # The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
             @created_date_time
             ## 
-            # Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
+            # Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn't cross tenant boundaries, the value is none.
             @cross_tenant_access_type
             ## 
             # The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.
@@ -77,7 +80,7 @@ module MicrosoftGraphBeta
             # Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
             @federated_credential_id
             ## 
-            # During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
+            # During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
             @flagged_for_review
             ## 
             # The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
@@ -86,7 +89,7 @@ module MicrosoftGraphBeta
             # For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
             @home_tenant_name
             ## 
-            # Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+            # Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
             @incoming_token_type
             ## 
             # The IP address of the client from where the sign-in occurred.  Supports $filter (eq, startsWith).
@@ -101,10 +104,10 @@ module MicrosoftGraphBeta
             # Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
             @is_tenant_restricted
             ## 
-            # The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+            # The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             @location
             ## 
-            # Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            # Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             @managed_service_identity
             ## 
             # The mfaDetail property
@@ -115,6 +118,9 @@ module MicrosoftGraphBeta
             ## 
             # The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
             @original_request_id
+            ## 
+            # Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            @original_transfer_method
             ## 
             # Contains information about the Azure AD Private Link policy that is associated with the sign in event.
             @private_link_details
@@ -143,7 +149,7 @@ module MicrosoftGraphBeta
             # The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
             @risk_level_aggregated
             ## 
-            # The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+            # The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
             @risk_level_during_sign_in
             ## 
             # The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
@@ -155,10 +161,10 @@ module MicrosoftGraphBeta
             # The certificate thumbprint of the certificate used by the service principal to authenticate.
             @service_principal_credential_thumbprint
             ## 
-            # The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            # The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             @service_principal_id
             ## 
-            # The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            # The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             @service_principal_name
             ## 
             # Any conditional access session management policies that were applied during the sign-in event.
@@ -173,16 +179,19 @@ module MicrosoftGraphBeta
             # The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
             @sign_in_identifier_type
             ## 
-            # The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            # Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            @sign_in_token_protection_status
+            ## 
+            # The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
             @status
             ## 
             # The name of the identity provider. For example, sts.microsoft.com.  Supports $filter (eq).
             @token_issuer_name
             ## 
-            # The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+            # The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
             @token_issuer_type
             ## 
-            # A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
+            # A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
             @unique_token_identifier
             ## 
             # The user agent information related to sign-in.  Supports $filter (eq, startsWith).
@@ -200,14 +209,14 @@ module MicrosoftGraphBeta
             # Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
             @user_type
             ## 
-            ## Gets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            ## Gets the appDisplayName property value. The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def app_display_name
                 return @app_display_name
             end
             ## 
-            ## Sets the appDisplayName property value. The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            ## Sets the appDisplayName property value. The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
@@ -228,6 +237,21 @@ module MicrosoftGraphBeta
             ## 
             def app_id=(value)
                 @app_id = value
+            end
+            ## 
+            ## Gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+            ## @return a token_protection_status
+            ## 
+            def app_token_protection_status
+                return @app_token_protection_status
+            end
+            ## 
+            ## Sets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+            ## @param value Value to set for the appTokenProtectionStatus property.
+            ## @return a void
+            ## 
+            def app_token_protection_status=(value)
+                @app_token_protection_status = value
             end
             ## 
             ## Gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
@@ -305,14 +329,14 @@ module MicrosoftGraphBeta
                 @authentication_context_class_references = value
             end
             ## 
-            ## Gets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
+            ## Gets the authenticationDetails property value. The result of the authentication attempt and more details on the authentication method.
             ## @return a authentication_detail
             ## 
             def authentication_details
                 return @authentication_details
             end
             ## 
-            ## Sets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
+            ## Sets the authenticationDetails property value. The result of the authentication attempt and more details on the authentication method.
             ## @param value Value to set for the authenticationDetails property.
             ## @return a void
             ## 
@@ -335,14 +359,14 @@ module MicrosoftGraphBeta
                 @authentication_methods_used = value
             end
             ## 
-            ## Gets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
+            ## Gets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
             ## @return a key_value
             ## 
             def authentication_processing_details
                 return @authentication_processing_details
             end
             ## 
-            ## Sets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
+            ## Sets the authenticationProcessingDetails property value. Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.
             ## @param value Value to set for the authenticationProcessingDetails property.
             ## @return a void
             ## 
@@ -516,14 +540,14 @@ module MicrosoftGraphBeta
                 return SignIn.new
             end
             ## 
-            ## Gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
+            ## Gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn't cross tenant boundaries, the value is none.
             ## @return a sign_in_access_type
             ## 
             def cross_tenant_access_type
                 return @cross_tenant_access_type
             end
             ## 
-            ## Sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
+            ## Sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn't cross tenant boundaries, the value is none.
             ## @param value Value to set for the crossTenantAccessType property.
             ## @return a void
             ## 
@@ -561,14 +585,14 @@ module MicrosoftGraphBeta
                 @federated_credential_id = value
             end
             ## 
-            ## Gets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
+            ## Gets the flaggedForReview property value. During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
             ## @return a boolean
             ## 
             def flagged_for_review
                 return @flagged_for_review
             end
             ## 
-            ## Sets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
+            ## Sets the flaggedForReview property value. During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
             ## @param value Value to set for the flaggedForReview property.
             ## @return a void
             ## 
@@ -583,6 +607,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
+                    "appTokenProtectionStatus" => lambda {|n| @app_token_protection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TokenProtectionStatus) },
                     "appliedConditionalAccessPolicies" => lambda {|n| @applied_conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppliedConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
                     "appliedEventListeners" => lambda {|n| @applied_event_listeners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppliedAuthenticationEventListener.create_from_discriminator_value(pn) }) },
                     "authenticationAppDeviceDetails" => lambda {|n| @authentication_app_device_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationAppDeviceDetails.create_from_discriminator_value(pn) }) },
@@ -591,7 +616,7 @@ module MicrosoftGraphBeta
                     "authenticationDetails" => lambda {|n| @authentication_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationDetail.create_from_discriminator_value(pn) }) },
                     "authenticationMethodsUsed" => lambda {|n| @authentication_methods_used = n.get_collection_of_primitive_values(String) },
                     "authenticationProcessingDetails" => lambda {|n| @authentication_processing_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValue.create_from_discriminator_value(pn) }) },
-                    "authenticationProtocol" => lambda {|n| @authentication_protocol = n.get_enum_value(MicrosoftGraphBeta::Models::ProtocolType) },
+                    "authenticationProtocol" => lambda {|n| @authentication_protocol = n.get_enum_values(MicrosoftGraphBeta::Models::ProtocolType) },
                     "authenticationRequirement" => lambda {|n| @authentication_requirement = n.get_string_value() },
                     "authenticationRequirementPolicies" => lambda {|n| @authentication_requirement_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationRequirementPolicy.create_from_discriminator_value(pn) }) },
                     "autonomousSystemNumber" => lambda {|n| @autonomous_system_number = n.get_number_value() },
@@ -601,13 +626,13 @@ module MicrosoftGraphBeta
                     "conditionalAccessStatus" => lambda {|n| @conditional_access_status = n.get_enum_value(MicrosoftGraphBeta::Models::ConditionalAccessStatus) },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                    "crossTenantAccessType" => lambda {|n| @cross_tenant_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInAccessType) },
+                    "crossTenantAccessType" => lambda {|n| @cross_tenant_access_type = n.get_enum_values(MicrosoftGraphBeta::Models::SignInAccessType) },
                     "deviceDetail" => lambda {|n| @device_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceDetail.create_from_discriminator_value(pn) }) },
                     "federatedCredentialId" => lambda {|n| @federated_credential_id = n.get_string_value() },
                     "flaggedForReview" => lambda {|n| @flagged_for_review = n.get_boolean_value() },
                     "homeTenantId" => lambda {|n| @home_tenant_id = n.get_string_value() },
                     "homeTenantName" => lambda {|n| @home_tenant_name = n.get_string_value() },
-                    "incomingTokenType" => lambda {|n| @incoming_token_type = n.get_enum_value(MicrosoftGraphBeta::Models::IncomingTokenType) },
+                    "incomingTokenType" => lambda {|n| @incoming_token_type = n.get_enum_values(MicrosoftGraphBeta::Models::IncomingTokenType) },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "ipAddressFromResourceProvider" => lambda {|n| @ip_address_from_resource_provider = n.get_string_value() },
                     "isInteractive" => lambda {|n| @is_interactive = n.get_boolean_value() },
@@ -617,6 +642,7 @@ module MicrosoftGraphBeta
                     "mfaDetail" => lambda {|n| @mfa_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MfaDetail.create_from_discriminator_value(pn) }) },
                     "networkLocationDetails" => lambda {|n| @network_location_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkLocationDetail.create_from_discriminator_value(pn) }) },
                     "originalRequestId" => lambda {|n| @original_request_id = n.get_string_value() },
+                    "originalTransferMethod" => lambda {|n| @original_transfer_method = n.get_enum_value(MicrosoftGraphBeta::Models::OriginalTransferMethods) },
                     "privateLinkDetails" => lambda {|n| @private_link_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivateLinkDetails.create_from_discriminator_value(pn) }) },
                     "processingTimeInMilliseconds" => lambda {|n| @processing_time_in_milliseconds = n.get_number_value() },
                     "resourceDisplayName" => lambda {|n| @resource_display_name = n.get_string_value() },
@@ -636,6 +662,7 @@ module MicrosoftGraphBeta
                     "signInEventTypes" => lambda {|n| @sign_in_event_types = n.get_collection_of_primitive_values(String) },
                     "signInIdentifier" => lambda {|n| @sign_in_identifier = n.get_string_value() },
                     "signInIdentifierType" => lambda {|n| @sign_in_identifier_type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInIdentifierType) },
+                    "signInTokenProtectionStatus" => lambda {|n| @sign_in_token_protection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TokenProtectionStatus) },
                     "status" => lambda {|n| @status = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInStatus.create_from_discriminator_value(pn) }) },
                     "tokenIssuerName" => lambda {|n| @token_issuer_name = n.get_string_value() },
                     "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraphBeta::Models::TokenIssuerType) },
@@ -678,14 +705,14 @@ module MicrosoftGraphBeta
                 @home_tenant_name = value
             end
             ## 
-            ## Gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+            ## Gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
             ## @return a incoming_token_type
             ## 
             def incoming_token_type
                 return @incoming_token_type
             end
             ## 
-            ## Sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+            ## Sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
             ## @param value Value to set for the incomingTokenType property.
             ## @return a void
             ## 
@@ -753,14 +780,14 @@ module MicrosoftGraphBeta
                 @is_tenant_restricted = value
             end
             ## 
-            ## Gets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+            ## Gets the location property value. The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             ## @return a sign_in_location
             ## 
             def location
                 return @location
             end
             ## 
-            ## Sets the location property value. The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+            ## Sets the location property value. The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             ## @param value Value to set for the location property.
             ## @return a void
             ## 
@@ -768,14 +795,14 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            ## Gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             ## @return a managed_identity
             ## 
             def managed_service_identity
                 return @managed_service_identity
             end
             ## 
-            ## Sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+            ## Sets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
             ## @param value Value to set for the managedServiceIdentity property.
             ## @return a void
             ## 
@@ -826,6 +853,21 @@ module MicrosoftGraphBeta
             ## 
             def original_request_id=(value)
                 @original_request_id = value
+            end
+            ## 
+            ## Gets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            ## @return a original_transfer_methods
+            ## 
+            def original_transfer_method
+                return @original_transfer_method
+            end
+            ## 
+            ## Sets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+            ## @param value Value to set for the originalTransferMethod property.
+            ## @return a void
+            ## 
+            def original_transfer_method=(value)
+                @original_transfer_method = value
             end
             ## 
             ## Gets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
@@ -963,14 +1005,14 @@ module MicrosoftGraphBeta
                 @risk_level_aggregated = value
             end
             ## 
-            ## Gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+            ## Gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
             ## @return a risk_level
             ## 
             def risk_level_during_sign_in
                 return @risk_level_during_sign_in
             end
             ## 
-            ## Sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+            ## Sets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
             ## @param value Value to set for the riskLevelDuringSignIn property.
             ## @return a void
             ## 
@@ -1002,6 +1044,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_string_value("appDisplayName", @app_display_name)
                 writer.write_string_value("appId", @app_id)
+                writer.write_enum_value("appTokenProtectionStatus", @app_token_protection_status)
                 writer.write_collection_of_object_values("appliedConditionalAccessPolicies", @applied_conditional_access_policies)
                 writer.write_collection_of_object_values("appliedEventListeners", @applied_event_listeners)
                 writer.write_object_value("authenticationAppDeviceDetails", @authentication_app_device_details)
@@ -1036,6 +1079,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("mfaDetail", @mfa_detail)
                 writer.write_collection_of_object_values("networkLocationDetails", @network_location_details)
                 writer.write_string_value("originalRequestId", @original_request_id)
+                writer.write_enum_value("originalTransferMethod", @original_transfer_method)
                 writer.write_object_value("privateLinkDetails", @private_link_details)
                 writer.write_number_value("processingTimeInMilliseconds", @processing_time_in_milliseconds)
                 writer.write_string_value("resourceDisplayName", @resource_display_name)
@@ -1055,6 +1099,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("signInEventTypes", @sign_in_event_types)
                 writer.write_string_value("signInIdentifier", @sign_in_identifier)
                 writer.write_enum_value("signInIdentifierType", @sign_in_identifier_type)
+                writer.write_enum_value("signInTokenProtectionStatus", @sign_in_token_protection_status)
                 writer.write_object_value("status", @status)
                 writer.write_string_value("tokenIssuerName", @token_issuer_name)
                 writer.write_enum_value("tokenIssuerType", @token_issuer_type)
@@ -1096,14 +1141,14 @@ module MicrosoftGraphBeta
                 @service_principal_credential_thumbprint = value
             end
             ## 
-            ## Gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            ## Gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def service_principal_id
                 return @service_principal_id
             end
             ## 
-            ## Sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            ## Sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 
@@ -1111,14 +1156,14 @@ module MicrosoftGraphBeta
                 @service_principal_id = value
             end
             ## 
-            ## Gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            ## Gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def service_principal_name
                 return @service_principal_name
             end
             ## 
-            ## Sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
+            ## Sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
             ## @param value Value to set for the servicePrincipalName property.
             ## @return a void
             ## 
@@ -1186,14 +1231,29 @@ module MicrosoftGraphBeta
                 @sign_in_identifier_type = value
             end
             ## 
-            ## Gets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            ## Gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            ## @return a token_protection_status
+            ## 
+            def sign_in_token_protection_status
+                return @sign_in_token_protection_status
+            end
+            ## 
+            ## Sets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+            ## @param value Value to set for the signInTokenProtectionStatus property.
+            ## @return a void
+            ## 
+            def sign_in_token_protection_status=(value)
+                @sign_in_token_protection_status = value
+            end
+            ## 
+            ## Gets the status property value. The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @return a sign_in_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            ## Sets the status property value. The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -1216,14 +1276,14 @@ module MicrosoftGraphBeta
                 @token_issuer_name = value
             end
             ## 
-            ## Gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+            ## Gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
             ## @return a token_issuer_type
             ## 
             def token_issuer_type
                 return @token_issuer_type
             end
             ## 
-            ## Sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+            ## Sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
             ## @param value Value to set for the tokenIssuerType property.
             ## @return a void
             ## 
@@ -1231,14 +1291,14 @@ module MicrosoftGraphBeta
                 @token_issuer_type = value
             end
             ## 
-            ## Gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
+            ## Gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
             ## @return a string
             ## 
             def unique_token_identifier
                 return @unique_token_identifier
             end
             ## 
-            ## Sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
+            ## Sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they're redeemed at resource providers.
             ## @param value Value to set for the uniqueTokenIdentifier property.
             ## @return a void
             ## 

@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/services/{bookingService%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a bookingService object in the specified bookingBusiness.
+                        ## Delete a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+                        ## Get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of booking_service
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::BookingService.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+                        ## Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any, time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of booking_service
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::BookingService.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a bookingService object in the specified bookingBusiness.
+                        ## Delete a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+                        ## Get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+                        ## Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any, time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -123,9 +123,18 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a booking_service_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return BookingServiceItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+                        # Get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
                         class BookingServiceItemRequestBuilderGetQueryParameters
                             
                             ## 

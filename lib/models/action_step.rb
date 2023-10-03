@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ActionStep
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A link to the documentation or Azure portal page that is associated with the action step.
+            # A link to the documentation or Microsoft Entra admin center page that is associated with the action step.
             @action_url
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -22,14 +22,14 @@ module MicrosoftGraphBeta
             # Friendly description of the action to take.
             @text
             ## 
-            ## Gets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
+            ## Gets the actionUrl property value. A link to the documentation or Microsoft Entra admin center page that is associated with the action step.
             ## @return a action_url
             ## 
             def action_url
                 return @action_url
             end
             ## 
-            ## Sets the actionUrl property value. A link to the documentation or Azure portal page that is associated with the action step.
+            ## Sets the actionUrl property value. A link to the documentation or Microsoft Entra admin center page that is associated with the action step.
             ## @param value Value to set for the actionUrl property.
             ## @return a void
             ## 

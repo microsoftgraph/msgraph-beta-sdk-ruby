@@ -25,6 +25,9 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # The permissionsManagement property
+            @permissions_management
+            ## 
             # The privilegedAccess property
             @privileged_access
             ## 
@@ -120,6 +123,7 @@ module MicrosoftGraphBeta
                     "entitlementManagement" => lambda {|n| @entitlement_management = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EntitlementManagement.create_from_discriminator_value(pn) }) },
                     "lifecycleWorkflows" => lambda {|n| @lifecycle_workflows = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentityGovernanceLifecycleWorkflowsContainer.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "permissionsManagement" => lambda {|n| @permissions_management = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PermissionsManagement.create_from_discriminator_value(pn) }) },
                     "privilegedAccess" => lambda {|n| @privileged_access = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegedAccessRoot.create_from_discriminator_value(pn) }) },
                     "roleManagementAlerts" => lambda {|n| @role_management_alerts = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RoleManagementAlert.create_from_discriminator_value(pn) }) },
                     "termsOfUse" => lambda {|n| @terms_of_use = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TermsOfUseContainer.create_from_discriminator_value(pn) }) },
@@ -154,6 +158,21 @@ module MicrosoftGraphBeta
             ## 
             def odata_type=(value)
                 @odata_type = value
+            end
+            ## 
+            ## Gets the permissionsManagement property value. The permissionsManagement property
+            ## @return a permissions_management
+            ## 
+            def permissions_management
+                return @permissions_management
+            end
+            ## 
+            ## Sets the permissionsManagement property value. The permissionsManagement property
+            ## @param value Value to set for the permissionsManagement property.
+            ## @return a void
+            ## 
+            def permissions_management=(value)
+                @permissions_management = value
             end
             ## 
             ## Gets the privilegedAccess property value. The privilegedAccess property
@@ -197,6 +216,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("entitlementManagement", @entitlement_management)
                 writer.write_object_value("lifecycleWorkflows", @lifecycle_workflows)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("permissionsManagement", @permissions_management)
                 writer.write_object_value("privilegedAccess", @privileged_access)
                 writer.write_object_value("roleManagementAlerts", @role_management_alerts)
                 writer.write_object_value("termsOfUse", @terms_of_use)

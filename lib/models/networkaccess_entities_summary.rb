@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The trafficType property
             @traffic_type
             ## 
-            # Count of unique Azure Active Directoy users that were seen.
+            # Count of unique Azure Active Directory users that were seen.
             @user_count
             ## 
             # Count of unique target workloads or hosts that were seen.
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @traffic_type = value
             end
             ## 
-            ## Gets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Gets the userCount property value. Count of unique Azure Active Directory users that were seen.
             ## @return a int64
             ## 
             def user_count
                 return @user_count
             end
             ## 
-            ## Sets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Sets the userCount property value. Count of unique Azure Active Directory users that were seen.
             ## @param value Value to set for the userCount property.
             ## @return a void
             ## 

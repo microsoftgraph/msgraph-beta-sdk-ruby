@@ -21,9 +21,9 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
                 end
                 ## 
-                ## Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+                ## Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of get_credential_user_registration_count_response
+                ## @return a Fiber of get_credential_user_registration_count_get_response
                 ## 
                 def get(request_configuration=nil)
                     request_info = self.to_get_request_information(
@@ -32,10 +32,10 @@ module MicrosoftGraphBeta
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Reports::GetCredentialUserRegistrationCount::GetCredentialUserRegistrationCountResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Reports::GetCredentialUserRegistrationCount::GetCredentialUserRegistrationCountGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+                ## Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -52,9 +52,18 @@ module MicrosoftGraphBeta
                     end
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a get_credential_user_registration_count_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return GetCredentialUserRegistrationCountRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
-                # Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+                # Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
                 class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters
                     
                     ## 

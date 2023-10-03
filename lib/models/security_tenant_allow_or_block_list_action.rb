@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityTenantAllowOrBlockListAction
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
+            # Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
             @action
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Specifies when the tenant allow-block-list expires in date time.
             @expiration_date_time
             ## 
-            # Specifies the note added to the tenant allow block list entry in the format of string.
+            # Specifies the note added to the tenant allow-or-block list entry in the format of string.
             @note
             ## 
             # The OdataType property
@@ -26,14 +26,14 @@ module MicrosoftGraphBeta
             # Contains the result of the submission that lead to the tenant allow-block-list entry creation.
             @results
             ## 
-            ## Gets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
+            ## Gets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
             ## @return a security_tenant_allow_block_list_action
             ## 
             def action
                 return @action
             end
             ## 
-            ## Sets the action property value. Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
+            ## Sets the action property value. Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.
             ## @param value Value to set for the action property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
+            ## Gets the note property value. Specifies the note added to the tenant allow-or-block list entry in the format of string.
             ## @return a string
             ## 
             def note
                 return @note
             end
             ## 
-            ## Sets the note property value. Specifies the note added to the tenant allow block list entry in the format of string.
+            ## Sets the note property value. Specifies the note added to the tenant allow-or-block list entry in the format of string.
             ## @param value Value to set for the note property.
             ## @return a void
             ## 

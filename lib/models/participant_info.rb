@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The client platform ID of the participant. Read-only.
             @platform_id
             ## 
-            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            # The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             @region
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -205,14 +205,14 @@ module MicrosoftGraphBeta
                 @platform_id = value
             end
             ## 
-            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            ## Gets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             ## @return a string
             ## 
             def region
                 return @region
             end
             ## 
-            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            ## Sets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             ## @param value Value to set for the region property.
             ## @return a void
             ## 

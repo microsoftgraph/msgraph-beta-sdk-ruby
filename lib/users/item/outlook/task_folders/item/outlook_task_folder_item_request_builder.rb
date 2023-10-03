@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}{?%24select}")
                             end
                             ## 
-                            ## Delete the specified Outlook task folder.
+                            ## Delete the specified Outlook task folder. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get the properties and relationships of the specified Outlook task folder.
+                            ## Get the properties and relationships of the specified Outlook task folder. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of outlook_task_folder
                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OutlookTaskFolder.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'.
+                            ## Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'. This API is supported in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of outlook_task_folder
@@ -78,7 +78,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OutlookTaskFolder.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete the specified Outlook task folder.
+                            ## Delete the specified Outlook task folder. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Get the properties and relationships of the specified Outlook task folder.
+                            ## Get the properties and relationships of the specified Outlook task folder. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'.
+                            ## Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'. This API is supported in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -131,9 +131,18 @@ module MicrosoftGraphBeta
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a outlook_task_folder_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return OutlookTaskFolderItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Get the properties and relationships of the specified Outlook task folder.
+                            # Get the properties and relationships of the specified Outlook task folder. This API is supported in the following national cloud deployments.
                             class OutlookTaskFolderItemRequestBuilderGetQueryParameters
                                 
                                 ## 

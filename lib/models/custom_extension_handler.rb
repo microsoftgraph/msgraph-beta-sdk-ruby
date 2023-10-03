@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CustomExtensionHandler < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+            # Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
             @custom_extension
             ## 
             # Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
@@ -29,14 +29,14 @@ module MicrosoftGraphBeta
                 return CustomExtensionHandler.new
             end
             ## 
-            ## Gets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+            ## Gets the customExtension property value. Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
             ## @return a custom_access_package_workflow_extension
             ## 
             def custom_extension
                 return @custom_extension
             end
             ## 
-            ## Sets the customExtension property value. Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+            ## Sets the customExtension property value. Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
             ## @param value Value to set for the customExtension property.
             ## @return a void
             ## 

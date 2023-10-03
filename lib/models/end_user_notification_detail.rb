@@ -7,22 +7,22 @@ module MicrosoftGraphBeta
         class EndUserNotificationDetail < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The emailContent property
+            # Email HTML content.
             @email_content
             ## 
-            # The isDefaultLangauge property
+            # Indicates whether this language is default.
             @is_default_langauge
             ## 
-            # The language property
+            # Notification language.
             @language
             ## 
-            # The locale property
+            # Notification locale.
             @locale
             ## 
-            # The sentFrom property
+            # Email details of the sender.
             @sent_from
             ## 
-            # The subject property
+            # Mail subject.
             @subject
             ## 
             ## Instantiates a new endUserNotificationDetail and sets the default values.
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 return EndUserNotificationDetail.new
             end
             ## 
-            ## Gets the emailContent property value. The emailContent property
+            ## Gets the emailContent property value. Email HTML content.
             ## @return a string
             ## 
             def email_content
                 return @email_content
             end
             ## 
-            ## Sets the emailContent property value. The emailContent property
+            ## Sets the emailContent property value. Email HTML content.
             ## @param value Value to set for the emailContent property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Gets the isDefaultLangauge property value. Indicates whether this language is default.
             ## @return a boolean
             ## 
             def is_default_langauge
                 return @is_default_langauge
             end
             ## 
-            ## Sets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Sets the isDefaultLangauge property value. Indicates whether this language is default.
             ## @param value Value to set for the isDefaultLangauge property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @is_default_langauge = value
             end
             ## 
-            ## Gets the language property value. The language property
+            ## Gets the language property value. Notification language.
             ## @return a string
             ## 
             def language
                 return @language
             end
             ## 
-            ## Sets the language property value. The language property
+            ## Sets the language property value. Notification language.
             ## @param value Value to set for the language property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 @language = value
             end
             ## 
-            ## Gets the locale property value. The locale property
+            ## Gets the locale property value. Notification locale.
             ## @return a string
             ## 
             def locale
                 return @locale
             end
             ## 
-            ## Sets the locale property value. The locale property
+            ## Sets the locale property value. Notification locale.
             ## @param value Value to set for the locale property.
             ## @return a void
             ## 
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @locale = value
             end
             ## 
-            ## Gets the sentFrom property value. The sentFrom property
+            ## Gets the sentFrom property value. Email details of the sender.
             ## @return a email_identity
             ## 
             def sent_from
                 return @sent_from
             end
             ## 
-            ## Sets the sentFrom property value. The sentFrom property
+            ## Sets the sentFrom property value. Email details of the sender.
             ## @param value Value to set for the sentFrom property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("subject", @subject)
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. Mail subject.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. Mail subject.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 

@@ -1,1 +1,1 @@
-require_relative 'invalidate_all_refresh_tokens_response'
+require_relative 'invalidate_all_refresh_tokens_post_response'

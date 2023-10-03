@@ -106,8 +106,8 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "deviceMode" => lambda {|n| @device_mode = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationDeviceMode) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "platform" => lambda {|n| @platform = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "platform" => lambda {|n| @platform = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                 }
             end
             ## 

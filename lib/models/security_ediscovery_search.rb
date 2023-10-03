@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                     "addToReviewSetOperation" => lambda {|n| @add_to_review_set_operation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityEdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }) },
                     "additionalSources" => lambda {|n| @additional_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
                     "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
-                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDataSourceScopes) },
+                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityDataSourceScopes) },
                     "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityEdiscoveryEstimateOperation.create_from_discriminator_value(pn) }) },
                     "noncustodialSources" => lambda {|n| @noncustodial_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityEdiscoveryNoncustodialDataSource.create_from_discriminator_value(pn) }) },
                 })

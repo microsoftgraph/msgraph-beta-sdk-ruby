@@ -44,13 +44,13 @@ module MicrosoftGraphBeta
             # Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
             @system_preferred_authentication_methods
             ## 
-            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             @user_display_name
             ## 
             # The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
             @user_preferred_method_for_secondary_authentication
             ## 
-            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             @user_principal_name
             ## 
             # Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
@@ -301,14 +301,14 @@ module MicrosoftGraphBeta
                 @system_preferred_authentication_methods = value
             end
             ## 
-            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_display_name
                 return @user_display_name
             end
             ## 
-            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
@@ -331,14 +331,14 @@ module MicrosoftGraphBeta
                 @user_preferred_method_for_secondary_authentication = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

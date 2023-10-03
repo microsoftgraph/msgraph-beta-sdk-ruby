@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The defaultLanguage property
+            # The default language for the end user notification.
             @default_language
             ## 
             # The endUserNotification property
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 return BaseEndUserNotification.new
             end
             ## 
-            ## Gets the defaultLanguage property value. The defaultLanguage property
+            ## Gets the defaultLanguage property value. The default language for the end user notification.
             ## @return a string
             ## 
             def default_language
                 return @default_language
             end
             ## 
-            ## Sets the defaultLanguage property value. The defaultLanguage property
+            ## Sets the defaultLanguage property value. The default language for the end user notification.
             ## @param value Value to set for the defaultLanguage property.
             ## @return a void
             ## 

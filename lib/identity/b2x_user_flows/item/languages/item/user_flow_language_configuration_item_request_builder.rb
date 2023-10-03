@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_flow_language_configuration
                             ## 
@@ -100,7 +100,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -137,9 +137,18 @@ module MicrosoftGraphBeta
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a user_flow_language_configuration_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return UserFlowLanguageConfigurationItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+                            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
                             class UserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

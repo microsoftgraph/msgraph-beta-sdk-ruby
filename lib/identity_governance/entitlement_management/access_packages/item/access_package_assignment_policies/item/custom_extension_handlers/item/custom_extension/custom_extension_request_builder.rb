@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy%2Did}/customExtensionHandlers/{customExtensionHandler%2Did}/customExtension{?%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+                                            ## Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of custom_access_package_workflow_extension
                                             ## 
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CustomAccessPackageWorkflowExtension.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+                                            ## Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -67,9 +67,18 @@ module MicrosoftGraphBeta
                                                 end
                                                 return request_info
                                             end
+                                            ## 
+                                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                            ## @param raw_url The raw URL to use for the request builder.
+                                            ## @return a custom_extension_request_builder
+                                            ## 
+                                            def with_url(raw_url)
+                                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                return CustomExtensionRequestBuilder.new(raw_url, @request_adapter)
+                                            end
 
                                             ## 
-                                            # Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+                                            # Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
                                             class CustomExtensionRequestBuilderGetQueryParameters
                                                 
                                                 ## 

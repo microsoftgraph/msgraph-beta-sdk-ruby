@@ -25,10 +25,10 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/cloudPCs/validateBulkResize")
                         end
                         ## 
-                        ## Validate that a set of cloudPC devices meet the requirements to be bulk resized.
+                        ## Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of validate_bulk_resize_response
+                        ## @return a Fiber of validate_bulk_resize_post_response
                         ## 
                         def post(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
@@ -38,10 +38,10 @@ module MicrosoftGraphBeta
                             error_mapping = Hash.new
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Users::Item::CloudPCs::ValidateBulkResize::ValidateBulkResizeResponse.create_from_discriminator_value(pn) }, error_mapping)
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Users::Item::CloudPCs::ValidateBulkResize::ValidateBulkResizePostResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Validate that a set of cloudPC devices meet the requirements to be bulk resized.
+                        ## Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -59,6 +59,15 @@ module MicrosoftGraphBeta
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a validate_bulk_resize_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return ValidateBulkResizeRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

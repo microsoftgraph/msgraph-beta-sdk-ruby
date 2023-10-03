@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                                         super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations/{virtualEventRegistration%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get sessions from solutions
+                                    ## Sessions of the webinar.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of virtual_event_session_collection_response
                                     ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventSessionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get sessions from solutions
+                                    ## Sessions of the webinar.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -81,9 +81,18 @@ module MicrosoftGraphBeta
                                         end
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a sessions_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return SessionsRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Get sessions from solutions
+                                    # Sessions of the webinar.
                                     class SessionsRequestBuilderGetQueryParameters
                                         
                                         ## 

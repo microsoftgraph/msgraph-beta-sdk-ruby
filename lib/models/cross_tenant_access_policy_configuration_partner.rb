@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             @inbound_trust
             ## 
-            # The isInMultiTenantOrganization property
+            # Identifies whether a tenant is a member of a multi-tenant organization.
             @is_in_multi_tenant_organization
             ## 
             # Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
@@ -202,14 +202,14 @@ module MicrosoftGraphBeta
                 @inbound_trust = value
             end
             ## 
-            ## Gets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+            ## Gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
             ## @return a boolean
             ## 
             def is_in_multi_tenant_organization
                 return @is_in_multi_tenant_organization
             end
             ## 
-            ## Sets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+            ## Sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multi-tenant organization.
             ## @param value Value to set for the isInMultiTenantOrganization property.
             ## @return a void
             ## 

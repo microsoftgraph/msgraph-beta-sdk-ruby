@@ -1,2 +1,2 @@
 require_relative 'tenant_search_post_request_body'
-require_relative 'tenant_search_response'
+require_relative 'tenant_search_post_response'

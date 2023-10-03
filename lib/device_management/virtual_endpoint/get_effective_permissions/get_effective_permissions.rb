@@ -1,1 +1,1 @@
-require_relative 'get_effective_permissions_response'
+require_relative 'get_effective_permissions_get_response'

@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
                 super(path_parameters, request_adapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}")
             end
             ## 
-            ## Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+            ## Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of void
             ## 
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, nil, error_mapping)
             end
             ## 
-            ## Get the properties and relationships of an application object.
+            ## Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of application
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Application.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Update the properties of an application object.
+            ## Update the properties of an application object. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of application
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Application.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+            ## Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 return request_info
             end
             ## 
-            ## Get the properties and relationships of an application object.
+            ## Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -99,7 +99,7 @@ module MicrosoftGraphBeta
                 return request_info
             end
             ## 
-            ## Update the properties of an application object.
+            ## Update the properties of an application object. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -118,9 +118,18 @@ module MicrosoftGraphBeta
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a applications_with_unique_name_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return ApplicationsWithUniqueNameRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
-            # Get the properties and relationships of an application object.
+            # Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
             class ApplicationsWithUniqueNameRequestBuilderGetQueryParameters
                 
                 ## 

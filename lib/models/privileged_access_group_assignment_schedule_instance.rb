@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue.
             @access_id
             ## 
-            # When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            # When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             @activated_using
             ## 
             # The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required.
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @access_id = value
             end
             ## 
-            ## Gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            ## Gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             ## @return a privileged_access_group_eligibility_schedule_instance
             ## 
             def activated_using
                 return @activated_using
             end
             ## 
-            ## Sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            ## Sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             ## @param value Value to set for the activatedUsing property.
             ## @return a void
             ## 

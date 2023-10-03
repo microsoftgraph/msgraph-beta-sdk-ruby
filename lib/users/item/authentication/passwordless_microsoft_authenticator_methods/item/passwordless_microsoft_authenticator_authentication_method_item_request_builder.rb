@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Deletes a user's Microsoft Authenticator Passwordless Phone Sign-in method object.
+                            ## Deletes a user's Microsoft Authenticator Passwordless Phone Sign-in method object. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object.
+                            ## Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of passwordless_microsoft_authenticator_authentication_method
                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PasswordlessMicrosoftAuthenticatorAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Deletes a user's Microsoft Authenticator Passwordless Phone Sign-in method object.
+                            ## Deletes a user's Microsoft Authenticator Passwordless Phone Sign-in method object. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -78,7 +78,7 @@ module MicrosoftGraphBeta
                                 return request_info
                             end
                             ## 
-                            ## Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object.
+                            ## Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object. This API is supported in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -95,9 +95,18 @@ module MicrosoftGraphBeta
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a passwordless_microsoft_authenticator_authentication_method_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object.
+                            # Retrieve a user's single Microsoft Authenticator Passwordless Phone Sign-in method object. This API is supported in the following national cloud deployments.
                             class PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

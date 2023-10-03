@@ -125,9 +125,6 @@ module MicrosoftGraphBeta
             # The video teleconferencing ID. Read-only.
             @video_teleconference_id
             ## 
-            # The virtualAppointment property
-            @virtual_appointment
-            ## 
             # Specifies whether a watermark should be applied to a content type by the client application.
             @watermark_protection
             ## 
@@ -514,7 +511,6 @@ module MicrosoftGraphBeta
                     "subject" => lambda {|n| @subject = n.get_string_value() },
                     "transcripts" => lambda {|n| @transcripts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CallTranscript.create_from_discriminator_value(pn) }) },
                     "videoTeleconferenceId" => lambda {|n| @video_teleconference_id = n.get_string_value() },
-                    "virtualAppointment" => lambda {|n| @virtual_appointment = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }) },
                     "watermarkProtection" => lambda {|n| @watermark_protection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WatermarkProtectionValues.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -760,7 +756,6 @@ module MicrosoftGraphBeta
                 writer.write_string_value("subject", @subject)
                 writer.write_collection_of_object_values("transcripts", @transcripts)
                 writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
-                writer.write_object_value("virtualAppointment", @virtual_appointment)
                 writer.write_object_value("watermarkProtection", @watermark_protection)
             end
             ## 
@@ -837,21 +832,6 @@ module MicrosoftGraphBeta
             ## 
             def video_teleconference_id=(value)
                 @video_teleconference_id = value
-            end
-            ## 
-            ## Gets the virtualAppointment property value. The virtualAppointment property
-            ## @return a virtual_appointment
-            ## 
-            def virtual_appointment
-                return @virtual_appointment
-            end
-            ## 
-            ## Sets the virtualAppointment property value. The virtualAppointment property
-            ## @param value Value to set for the virtualAppointment property.
-            ## @return a void
-            ## 
-            def virtual_appointment=(value)
-                @virtual_appointment = value
             end
             ## 
             ## Gets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.

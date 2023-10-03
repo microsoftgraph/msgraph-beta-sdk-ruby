@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Offer if the update is recommended by a vendor in the list, otherwise withhold the offer.
             @offer_while_recommended_by
             ## 
-            # Settings for governing safeguard holds on offering content.
+            # Settings for governing safeguard-holds on offering content.
             @safeguard
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -91,14 +91,14 @@ module MicrosoftGraphBeta
                 @offer_while_recommended_by = value
             end
             ## 
-            ## Gets the safeguard property value. Settings for governing safeguard holds on offering content.
+            ## Gets the safeguard property value. Settings for governing safeguard-holds on offering content.
             ## @return a windows_updates_safeguard_settings
             ## 
             def safeguard
                 return @safeguard
             end
             ## 
-            ## Sets the safeguard property value. Settings for governing safeguard holds on offering content.
+            ## Sets the safeguard property value. Settings for governing safeguard-holds on offering content.
             ## @param value Value to set for the safeguard property.
             ## @return a void
             ## 

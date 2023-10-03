@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/reset")
                         end
                         ## 
-                        ## Reset the sync of a specific school data synchronization profile in the tenant.
+                        ## Reset the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Reset the sync of a specific school data synchronization profile in the tenant.
+                        ## Reset the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -53,6 +53,15 @@ module MicrosoftGraphBeta
                                 request_info.add_request_options(request_configuration.options)
                             end
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a reset_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return ResetRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                                     super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get resources from education
+                                ## Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_module_resource_collection_response
                                 ## 
@@ -63,7 +63,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EducationModuleResourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create new navigation property to resources for education
+                                ## Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is supported in the following national cloud deployments.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_module_resource
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EducationModuleResource.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get resources from education
+                                ## Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
                                     return request_info
                                 end
                                 ## 
-                                ## Create new navigation property to resources for education
+                                ## Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is supported in the following national cloud deployments.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -116,9 +116,18 @@ module MicrosoftGraphBeta
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a resources_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return ResourcesRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
-                                # Get resources from education
+                                # Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
                                 class ResourcesRequestBuilderGetQueryParameters
                                     
                                     ## 

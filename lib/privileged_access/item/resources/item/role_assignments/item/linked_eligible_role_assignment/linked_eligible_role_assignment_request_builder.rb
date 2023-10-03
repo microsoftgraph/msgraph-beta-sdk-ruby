@@ -63,6 +63,15 @@ module MicrosoftGraphBeta
                                         end
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a linked_eligible_role_assignment_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return LinkedEligibleRoleAssignmentRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
                                     # Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.

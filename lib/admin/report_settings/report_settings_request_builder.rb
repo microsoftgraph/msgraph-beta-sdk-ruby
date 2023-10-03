@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get the tenant-level settings for Microsoft 365 reports.
+                ## Get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of admin_report_settings
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AdminReportSettings.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update tenant-level settings for Microsoft 365 reports.
+                ## Update tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of admin_report_settings
@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                     return request_info
                 end
                 ## 
-                ## Get the tenant-level settings for Microsoft 365 reports.
+                ## Get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraphBeta
                     return request_info
                 end
                 ## 
-                ## Update tenant-level settings for Microsoft 365 reports.
+                ## Update tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -119,9 +119,18 @@ module MicrosoftGraphBeta
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a report_settings_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ReportSettingsRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
-                # Get the tenant-level settings for Microsoft 365 reports.
+                # Get the tenant-level settings for Microsoft 365 reports. This API is supported in the following national cloud deployments.
                 class ReportSettingsRequestBuilderGetQueryParameters
                     
                     ## 

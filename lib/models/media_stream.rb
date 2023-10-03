@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Indicates whether the media is muted by the server.
+            # Indicates whether the server has muted the media.
             @server_muted
             ## 
             # The source ID.
@@ -148,14 +148,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the serverMuted property value. Indicates whether the media is muted by the server.
+            ## Gets the serverMuted property value. Indicates whether the server has muted the media.
             ## @return a boolean
             ## 
             def server_muted
                 return @server_muted
             end
             ## 
-            ## Sets the serverMuted property value. Indicates whether the media is muted by the server.
+            ## Sets the serverMuted property value. Indicates whether the server has muted the media.
             ## @param value Value to set for the serverMuted property.
             ## @return a void
             ## 

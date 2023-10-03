@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
+            # Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
             @service_instance
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -134,14 +134,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the serviceInstance property value. Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
+            ## Gets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
             ## @return a string
             ## 
             def service_instance
                 return @service_instance
             end
             ## 
-            ## Sets the serviceInstance property value. Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
+            ## Sets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
             ## @param value Value to set for the serviceInstance property.
             ## @return a void
             ## 

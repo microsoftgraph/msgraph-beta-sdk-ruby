@@ -27,10 +27,10 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/me/informationProtection/policy/labels/evaluateApplication")
                             end
                             ## 
-                            ## Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+                            ## Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is supported in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of evaluate_application_response
+                            ## @return a Fiber of evaluate_application_post_response
                             ## 
                             def post(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -40,10 +40,10 @@ module MicrosoftGraphBeta
                                 error_mapping = Hash.new
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Me::InformationProtection::Policy::Labels::EvaluateApplication::EvaluateApplicationResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Me::InformationProtection::Policy::Labels::EvaluateApplication::EvaluateApplicationPostResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+                            ## Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is supported in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -61,6 +61,15 @@ module MicrosoftGraphBeta
                                 end
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a evaluate_application_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return EvaluateApplicationRequestBuilder.new(raw_url, @request_adapter)
                             end
                         end
                     end

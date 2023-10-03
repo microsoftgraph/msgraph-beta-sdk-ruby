@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityFileUrlThreatSubmission < MicrosoftGraphBeta::Models::SecurityFileThreatSubmission
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # It specifies the URL of the file which needs to be submitted.
+            # It specifies the URL of the file that needs to be submitted.
             @file_url
             ## 
             ## Instantiates a new securityFileUrlThreatSubmission and sets the default values.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return SecurityFileUrlThreatSubmission.new
             end
             ## 
-            ## Gets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
+            ## Gets the fileUrl property value. It specifies the URL of the file that needs to be submitted.
             ## @return a string
             ## 
             def file_url
                 return @file_url
             end
             ## 
-            ## Sets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
+            ## Sets the fileUrl property value. It specifies the URL of the file that needs to be submitted.
             ## @param value Value to set for the fileUrl property.
             ## @return a void
             ## 

@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                 return {
                     "detectionValue" => lambda {|n| @detection_value = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
+                    "operator" => lambda {|n| @operator = n.get_enum_values(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
                 }
             end
             ## 

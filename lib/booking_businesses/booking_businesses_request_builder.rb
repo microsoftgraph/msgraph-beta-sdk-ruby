@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 super(path_parameters, request_adapter, "{+baseurl}/bookingBusinesses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.
+            ## Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of booking_business_collection_response
             ## 
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::BookingBusinessCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
+            ## Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of booking_business
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::BookingBusiness.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.
+            ## Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -87,7 +87,7 @@ module MicrosoftGraphBeta
                 return request_info
             end
             ## 
-            ## Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
+            ## Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -106,9 +106,18 @@ module MicrosoftGraphBeta
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a booking_businesses_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return BookingBusinessesRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
-            # Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.
+            # Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2. This API is supported in the following national cloud deployments.
             class BookingBusinessesRequestBuilderGetQueryParameters
                 
                 ## 

@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
                 super(path_parameters, request_adapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24select,%24expand}")
             end
             ## 
-            ## Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
+            ## Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn't applicable to Security groups and Distribution groups that are permanently deleted immediately. To learn more, see deletedItems. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of void
             ## 
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, nil, error_mapping)
             end
             ## 
-            ## Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that are not returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.
+            ## Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of group
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Update the properties of a group object.
+            ## Update the properties of a group object. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of group
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
+            ## Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn't applicable to Security groups and Distribution groups that are permanently deleted immediately. To learn more, see deletedItems. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 return request_info
             end
             ## 
-            ## Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that are not returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.
+            ## Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance. This API is supported in the following national cloud deployments.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -99,7 +99,7 @@ module MicrosoftGraphBeta
                 return request_info
             end
             ## 
-            ## Update the properties of a group object.
+            ## Update the properties of a group object. This API is supported in the following national cloud deployments.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -118,9 +118,18 @@ module MicrosoftGraphBeta
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a groups_with_unique_name_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return GroupsWithUniqueNameRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
-            # Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that are not returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.
+            # Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance. This API is supported in the following national cloud deployments.
             class GroupsWithUniqueNameRequestBuilderGetQueryParameters
                 
                 ## 

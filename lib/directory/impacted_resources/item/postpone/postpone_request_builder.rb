@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/postpone")
                         end
                         ## 
-                        ## Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
+                        ## Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of impacted_resource
@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ImpactedResource.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
+                        ## Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -60,6 +60,15 @@ module MicrosoftGraphBeta
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a postpone_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return PostponeRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

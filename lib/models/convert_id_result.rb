@@ -10,16 +10,16 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+            # An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
             @error_details
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The identifier that was converted. This value is the original, un-converted identifier.
+            # The identifier that was converted. This value is the original, unconverted identifier.
             @source_id
             ## 
-            # The converted identifier. This value is not present if the conversion failed.
+            # The converted identifier. This value isn't present if the conversion failed.
             @target_id
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -53,14 +53,14 @@ module MicrosoftGraphBeta
                 return ConvertIdResult.new
             end
             ## 
-            ## Gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+            ## Gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
             ## @return a generic_error
             ## 
             def error_details
                 return @error_details
             end
             ## 
-            ## Sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+            ## Sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
             ## @param value Value to set for the errorDetails property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
+            ## Gets the sourceId property value. The identifier that was converted. This value is the original, unconverted identifier.
             ## @return a string
             ## 
             def source_id
                 return @source_id
             end
             ## 
-            ## Sets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
+            ## Sets the sourceId property value. The identifier that was converted. This value is the original, unconverted identifier.
             ## @param value Value to set for the sourceId property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 @source_id = value
             end
             ## 
-            ## Gets the targetId property value. The converted identifier. This value is not present if the conversion failed.
+            ## Gets the targetId property value. The converted identifier. This value isn't present if the conversion failed.
             ## @return a string
             ## 
             def target_id
                 return @target_id
             end
             ## 
-            ## Sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
+            ## Sets the targetId property value. The converted identifier. This value isn't present if the conversion failed.
             ## @param value Value to set for the targetId property.
             ## @return a void
             ## 

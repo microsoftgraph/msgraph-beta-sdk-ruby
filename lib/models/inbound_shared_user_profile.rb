@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+            # The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
             @display_name
             ## 
             # The home tenant id of the external user. Read-only.
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 return InboundSharedUserProfile.new
             end
             ## 
-            ## Gets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+            ## Gets the displayName property value. The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+            ## Sets the displayName property value. The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # RSA Key - private exponent. Field cannot be read back.
+            # RSA Key - private exponent. Field can't be read back.
             @d
             ## 
-            # RSA Key - first exponent. Field cannot be read back.
+            # RSA Key - first exponent. Field can't be read back.
             @dp
             ## 
-            # RSA Key - second exponent. Field cannot be read back.
+            # RSA Key - second exponent. Field can't be read back.
             @dq
             ## 
             # RSA Key - public exponent
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
             @exp
             ## 
-            # Symmetric Key for oct key type. Field cannot be read back.
+            # Symmetric Key for oct key type. Field can't be read back.
             @k
             ## 
             # The unique identifier for the key.
@@ -43,13 +43,13 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # RSA Key - first prime. Field cannot be read back.
+            # RSA Key - first prime. Field can't be read back.
             @p
             ## 
-            # RSA Key - second prime. Field cannot be read back.
+            # RSA Key - second prime. Field can't be read back.
             @q
             ## 
-            # RSA Key - Coefficient. Field cannot be read back.
+            # RSA Key - Coefficient. Field can't be read back.
             @qi
             ## 
             # The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             # The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
             @x5c
             ## 
-            # The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            # The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
             @x5t
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 return TrustFrameworkKey.new
             end
             ## 
-            ## Gets the d property value. RSA Key - private exponent. Field cannot be read back.
+            ## Gets the d property value. RSA Key - private exponent. Field can't be read back.
             ## @return a string
             ## 
             def d
                 return @d
             end
             ## 
-            ## Sets the d property value. RSA Key - private exponent. Field cannot be read back.
+            ## Sets the d property value. RSA Key - private exponent. Field can't be read back.
             ## @param value Value to set for the d property.
             ## @return a void
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @d = value
             end
             ## 
-            ## Gets the dp property value. RSA Key - first exponent. Field cannot be read back.
+            ## Gets the dp property value. RSA Key - first exponent. Field can't be read back.
             ## @return a string
             ## 
             def dp
                 return @dp
             end
             ## 
-            ## Sets the dp property value. RSA Key - first exponent. Field cannot be read back.
+            ## Sets the dp property value. RSA Key - first exponent. Field can't be read back.
             ## @param value Value to set for the dp property.
             ## @return a void
             ## 
@@ -122,14 +122,14 @@ module MicrosoftGraphBeta
                 @dp = value
             end
             ## 
-            ## Gets the dq property value. RSA Key - second exponent. Field cannot be read back.
+            ## Gets the dq property value. RSA Key - second exponent. Field can't be read back.
             ## @return a string
             ## 
             def dq
                 return @dq
             end
             ## 
-            ## Sets the dq property value. RSA Key - second exponent. Field cannot be read back.
+            ## Sets the dq property value. RSA Key - second exponent. Field can't be read back.
             ## @param value Value to set for the dq property.
             ## @return a void
             ## 
@@ -192,14 +192,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+            ## Gets the k property value. Symmetric Key for oct key type. Field can't be read back.
             ## @return a string
             ## 
             def k
                 return @k
             end
             ## 
-            ## Sets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+            ## Sets the k property value. Symmetric Key for oct key type. Field can't be read back.
             ## @param value Value to set for the k property.
             ## @return a void
             ## 
@@ -282,14 +282,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the p property value. RSA Key - first prime. Field cannot be read back.
+            ## Gets the p property value. RSA Key - first prime. Field can't be read back.
             ## @return a string
             ## 
             def p
                 return @p
             end
             ## 
-            ## Sets the p property value. RSA Key - first prime. Field cannot be read back.
+            ## Sets the p property value. RSA Key - first prime. Field can't be read back.
             ## @param value Value to set for the p property.
             ## @return a void
             ## 
@@ -297,14 +297,14 @@ module MicrosoftGraphBeta
                 @p = value
             end
             ## 
-            ## Gets the q property value. RSA Key - second prime. Field cannot be read back.
+            ## Gets the q property value. RSA Key - second prime. Field can't be read back.
             ## @return a string
             ## 
             def q
                 return @q
             end
             ## 
-            ## Sets the q property value. RSA Key - second prime. Field cannot be read back.
+            ## Sets the q property value. RSA Key - second prime. Field can't be read back.
             ## @param value Value to set for the q property.
             ## @return a void
             ## 
@@ -312,14 +312,14 @@ module MicrosoftGraphBeta
                 @q = value
             end
             ## 
-            ## Gets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+            ## Gets the qi property value. RSA Key - Coefficient. Field can't be read back.
             ## @return a string
             ## 
             def qi
                 return @qi
             end
             ## 
-            ## Sets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+            ## Sets the qi property value. RSA Key - Coefficient. Field can't be read back.
             ## @param value Value to set for the qi property.
             ## @return a void
             ## 
@@ -383,14 +383,14 @@ module MicrosoftGraphBeta
                 @x5c = value
             end
             ## 
-            ## Gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            ## Gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
             ## @return a string
             ## 
             def x5t
                 return @x5t
             end
             ## 
-            ## Sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            ## Sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
             ## @param value Value to set for the x5t property.
             ## @return a void
             ## 

@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+            # Optional, used to uniquely identity the resource. If passed, the prompt uri is cached against this resourceId as key.
             @resource_id
             ## 
-            # Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+            # Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate is only supported.
             @uri
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the resourceId property value. Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+            ## Gets the resourceId property value. Optional, used to uniquely identity the resource. If passed, the prompt uri is cached against this resourceId as key.
             ## @return a string
             ## 
             def resource_id
                 return @resource_id
             end
             ## 
-            ## Sets the resourceId property value. Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.
+            ## Sets the resourceId property value. Optional, used to uniquely identity the resource. If passed, the prompt uri is cached against this resourceId as key.
             ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+            ## Gets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate is only supported.
             ## @return a string
             ## 
             def uri
                 return @uri
             end
             ## 
-            ## Sets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.
+            ## Sets the uri property value. Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate is only supported.
             ## @param value Value to set for the uri property.
             ## @return a void
             ## 

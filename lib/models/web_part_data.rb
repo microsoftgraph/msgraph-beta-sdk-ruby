@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            # Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             @audiences
             ## 
             # Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 @additional_data = value
             end
             ## 
-            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @return a string
             ## 
             def audiences
                 return @audiences
             end
             ## 
-            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @param value Value to set for the audiences property.
             ## @return a void
             ## 

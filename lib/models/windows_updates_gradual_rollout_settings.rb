@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+            # The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).
             @duration_between_offers
             ## 
             # The OdataType property
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesGradualRolloutSettings.new
             end
             ## 
-            ## Gets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+            ## Gets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def duration_between_offers
                 return @duration_between_offers
             end
             ## 
-            ## Sets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).
+            ## Sets the durationBetweenOffers property value. The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).
             ## @param value Value to set for the durationBetweenOffers property.
             ## @return a void
             ## 

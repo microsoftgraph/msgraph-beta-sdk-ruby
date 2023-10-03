@@ -19,12 +19,6 @@ module MicrosoftGraphBeta
             # Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
             @people_insights
             ## 
-            # Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-            @profile_card_properties
-            ## 
-            # The pronouns property
-            @pronouns
-            ## 
             ## Instantiates a new organizationSettings and sets the default values.
             ## @return a void
             ## 
@@ -65,8 +59,6 @@ module MicrosoftGraphBeta
                     "itemInsights" => lambda {|n| @item_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InsightsSettings.create_from_discriminator_value(pn) }) },
                     "microsoftApplicationDataAccess" => lambda {|n| @microsoft_application_data_access = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftApplicationDataAccessSettings.create_from_discriminator_value(pn) }) },
                     "peopleInsights" => lambda {|n| @people_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InsightsSettings.create_from_discriminator_value(pn) }) },
-                    "profileCardProperties" => lambda {|n| @profile_card_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardProperty.create_from_discriminator_value(pn) }) },
-                    "pronouns" => lambda {|n| @pronouns = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PronounsSettings.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -115,36 +107,6 @@ module MicrosoftGraphBeta
                 @people_insights = value
             end
             ## 
-            ## Gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-            ## @return a profile_card_property
-            ## 
-            def profile_card_properties
-                return @profile_card_properties
-            end
-            ## 
-            ## Sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-            ## @param value Value to set for the profileCardProperties property.
-            ## @return a void
-            ## 
-            def profile_card_properties=(value)
-                @profile_card_properties = value
-            end
-            ## 
-            ## Gets the pronouns property value. The pronouns property
-            ## @return a pronouns_settings
-            ## 
-            def pronouns
-                return @pronouns
-            end
-            ## 
-            ## Sets the pronouns property value. The pronouns property
-            ## @param value Value to set for the pronouns property.
-            ## @return a void
-            ## 
-            def pronouns=(value)
-                @pronouns = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -156,8 +118,6 @@ module MicrosoftGraphBeta
                 writer.write_object_value("itemInsights", @item_insights)
                 writer.write_object_value("microsoftApplicationDataAccess", @microsoft_application_data_access)
                 writer.write_object_value("peopleInsights", @people_insights)
-                writer.write_collection_of_object_values("profileCardProperties", @profile_card_properties)
-                writer.write_object_value("pronouns", @pronouns)
             end
         end
     end

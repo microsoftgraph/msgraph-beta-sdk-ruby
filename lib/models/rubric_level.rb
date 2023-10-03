@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The name of this rubric level.
             @display_name
             ## 
-            # Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            # Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             @grading
             ## 
             # The ID of this resource.
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            ## Gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             ## @return a education_assignment_grade_type
             ## 
             def grading
                 return @grading
             end
             ## 
-            ## Sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            ## Sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             ## @param value Value to set for the grading property.
             ## @return a void
             ## 
