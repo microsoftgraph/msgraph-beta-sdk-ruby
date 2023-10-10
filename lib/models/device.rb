@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
             @alternative_security_ids
             ## 
-            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             @approximate_last_sign_in_date_time
             ## 
             # Set of commands sent to this device.
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # For internal use only.
             @device_version
             ## 
-            # The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             # Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
             @management_type
             ## 
-            # Manufacturer of the device. Read-only.
+            # Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             @manufacturer
             ## 
             # Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
             # Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
             @member_of
             ## 
-            # Model of the device. Read-only.
+            # Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             @model
             ## 
             # Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
@@ -94,6 +94,9 @@ module MicrosoftGraphBeta
             ## 
             # The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
             @on_premises_last_sync_date_time
+            ## 
+            # The onPremisesSecurityIdentifier property
+            @on_premises_security_identifier
             ## 
             # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             @on_premises_sync_enabled
@@ -167,14 +170,14 @@ module MicrosoftGraphBeta
                 @alternative_security_ids = value
             end
             ## 
-            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @return a date_time
             ## 
             def approximate_last_sign_in_date_time
                 return @approximate_last_sign_in_date_time
             end
             ## 
-            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @param value Value to set for the approximateLastSignInDateTime property.
             ## @return a void
             ## 
@@ -304,14 +307,14 @@ module MicrosoftGraphBeta
                 @device_version = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -428,6 +431,7 @@ module MicrosoftGraphBeta
                     "model" => lambda {|n| @model = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
+                    "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "operatingSystem" => lambda {|n| @operating_system = n.get_string_value() },
                     "operatingSystemVersion" => lambda {|n| @operating_system_version = n.get_string_value() },
@@ -550,14 +554,14 @@ module MicrosoftGraphBeta
                 @management_type = value
             end
             ## 
-            ## Gets the manufacturer property value. Manufacturer of the device. Read-only.
+            ## Gets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @return a string
             ## 
             def manufacturer
                 return @manufacturer
             end
             ## 
-            ## Sets the manufacturer property value. Manufacturer of the device. Read-only.
+            ## Sets the manufacturer property value. Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @param value Value to set for the manufacturer property.
             ## @return a void
             ## 
@@ -595,14 +599,14 @@ module MicrosoftGraphBeta
                 @member_of = value
             end
             ## 
-            ## Gets the model property value. Model of the device. Read-only.
+            ## Gets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @return a string
             ## 
             def model
                 return @model
             end
             ## 
-            ## Sets the model property value. Model of the device. Read-only.
+            ## Sets the model property value. Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @param value Value to set for the model property.
             ## @return a void
             ## 
@@ -638,6 +642,21 @@ module MicrosoftGraphBeta
             ## 
             def on_premises_last_sync_date_time=(value)
                 @on_premises_last_sync_date_time = value
+            end
+            ## 
+            ## Gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## @return a string
+            ## 
+            def on_premises_security_identifier
+                return @on_premises_security_identifier
+            end
+            ## 
+            ## Sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
+            ## @return a void
+            ## 
+            def on_premises_security_identifier=(value)
+                @on_premises_security_identifier = value
             end
             ## 
             ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
@@ -811,6 +830,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("model", @model)
                 writer.write_string_value("name", @name)
                 writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
                 writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
                 writer.write_string_value("operatingSystem", @operating_system)
                 writer.write_string_value("operatingSystemVersion", @operating_system_version)

@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # A collection of role assignments for the provider.
             @role_assignments
             ## 
-            # A collection of role defintions for the provider.
+            # A collection of role definitions for the provider.
             @role_definitions
             ## 
             # A collection of role settings for the provider.
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @role_assignments = value
             end
             ## 
-            ## Gets the roleDefinitions property value. A collection of role defintions for the provider.
+            ## Gets the roleDefinitions property value. A collection of role definitions for the provider.
             ## @return a governance_role_definition
             ## 
             def role_definitions
                 return @role_definitions
             end
             ## 
-            ## Sets the roleDefinitions property value. A collection of role defintions for the provider.
+            ## Sets the roleDefinitions property value. A collection of role definitions for the provider.
             ## @param value Value to set for the roleDefinitions property.
             ## @return a void
             ## 

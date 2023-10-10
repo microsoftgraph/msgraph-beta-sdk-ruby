@@ -24,6 +24,7 @@ require_relative './onenote/onenote_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './pages/pages_request_builder'
 require_relative './permissions/permissions_request_builder'
+require_relative './recycle_bin/recycle_bin_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './term_store/term_store_request_builder'
 
@@ -110,6 +111,11 @@ module MicrosoftGraphBeta
                         # Provides operations to manage the permissions property of the microsoft.graph.site entity.
                         def permissions()
                             return MicrosoftGraphBeta::Groups::Item::Sites::Item::Permissions::PermissionsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the recycleBin property of the microsoft.graph.site entity.
+                        def recycle_bin()
+                            return MicrosoftGraphBeta::Groups::Item::Sites::Item::RecycleBin::RecycleBinRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the sites property of the microsoft.graph.site entity.
@@ -228,6 +234,15 @@ module MicrosoftGraphBeta
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a site_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return SiteItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

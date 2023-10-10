@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                             return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                         end
                         ## 
-                        ## Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+                        ## Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_eligibility_schedule_request_collection_response
                         ## 
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleEligibilityScheduleRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+                        ## Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_eligibility_schedule_request
@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleEligibilityScheduleRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+                        ## Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -103,7 +103,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+                        ## Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -122,9 +122,18 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a role_eligibility_schedule_requests_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return RoleEligibilityScheduleRequestsRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+                        # Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
                         class RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters
                             
                             ## 

@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             # True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
             @is_anonymous_join_enabled
             ## 
-            # True means this service is not available to customers for booking.
+            # True means this service isn't available to customers for booking.
             @is_hidden_from_customers
             ## 
             # True indicates that the appointments for the service will be held online. Default value is false.
@@ -249,14 +249,14 @@ module MicrosoftGraphBeta
                 @is_anonymous_join_enabled = value
             end
             ## 
-            ## Gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Gets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
             ## @return a boolean
             ## 
             def is_hidden_from_customers
                 return @is_hidden_from_customers
             end
             ## 
-            ## Sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Sets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
             ## @param value Value to set for the isHiddenFromCustomers property.
             ## @return a void
             ## 

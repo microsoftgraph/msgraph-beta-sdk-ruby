@@ -13,6 +13,7 @@ require_relative './item'
 require_relative './parent_host_pairs/parent_host_pairs_request_builder'
 require_relative './passive_dns/passive_dns_request_builder'
 require_relative './passive_dns_reverse/passive_dns_reverse_request_builder'
+require_relative './ports/ports_request_builder'
 require_relative './reputation/reputation_request_builder'
 require_relative './ssl_certificates/ssl_certificates_request_builder'
 require_relative './subdomains/subdomains_request_builder'
@@ -64,6 +65,11 @@ module MicrosoftGraphBeta
                             return MicrosoftGraphBeta::Security::ThreatIntelligence::Hosts::Item::PassiveDnsReverse::PassiveDnsReverseRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the ports property of the microsoft.graph.security.host entity.
+                        def ports()
+                            return MicrosoftGraphBeta::Security::ThreatIntelligence::Hosts::Item::Ports::PortsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to manage the reputation property of the microsoft.graph.security.host entity.
                         def reputation()
                             return MicrosoftGraphBeta::Security::ThreatIntelligence::Hosts::Item::Reputation::ReputationRequestBuilder.new(@path_parameters, @request_adapter)
@@ -112,7 +118,7 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+                        ## Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of security_host
                         ## 
@@ -158,7 +164,7 @@ module MicrosoftGraphBeta
                             return request_info
                         end
                         ## 
-                        ## Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+                        ## Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -195,9 +201,18 @@ module MicrosoftGraphBeta
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a host_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return HostItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+                        # Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is available in the following national cloud deployments.
                         class HostItemRequestBuilderGetQueryParameters
                             
                             ## 

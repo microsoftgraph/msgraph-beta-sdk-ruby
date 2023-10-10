@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The claim that provides the display name or full name for the user. It is a required propoerty.
+            # The claim that provides the display name or full name for the user. It's a required property.
             @display_name
             ## 
             # The claim that provides the email address of the user.
@@ -25,18 +25,18 @@ module MicrosoftGraphBeta
             # The claim that provides the last name of the user.
             @surname
             ## 
-            # The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+            # The claim that provides the unique identifier for the signed-in user. It is a required property.
             @user_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return ClaimsMapping.new
             end
             ## 
-            ## Gets the displayName property value. The claim that provides the display name or full name for the user. It is a required propoerty.
+            ## Gets the displayName property value. The claim that provides the display name or full name for the user. It's a required property.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The claim that provides the display name or full name for the user. It is a required propoerty.
+            ## Sets the displayName property value. The claim that provides the display name or full name for the user. It's a required property.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 @surname = value
             end
             ## 
-            ## Gets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+            ## Gets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required property.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+            ## Sets the userId property value. The claim that provides the unique identifier for the signed-in user. It is a required property.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

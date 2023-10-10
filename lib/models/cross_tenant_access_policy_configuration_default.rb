@@ -25,6 +25,9 @@ module MicrosoftGraphBeta
             # Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
             @inbound_trust
             ## 
+            # The invitationRedemptionIdentityProviderConfiguration property
+            @invitation_redemption_identity_provider_configuration
+            ## 
             # If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
             @is_service_default
             ## 
@@ -133,6 +136,7 @@ module MicrosoftGraphBeta
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectOutbound" => lambda {|n| @b2b_direct_connect_outbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "inboundTrust" => lambda {|n| @inbound_trust = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyInboundTrust.create_from_discriminator_value(pn) }) },
+                    "invitationRedemptionIdentityProviderConfiguration" => lambda {|n| @invitation_redemption_identity_provider_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DefaultInvitationRedemptionIdentityProviderConfiguration.create_from_discriminator_value(pn) }) },
                     "isServiceDefault" => lambda {|n| @is_service_default = n.get_boolean_value() },
                     "tenantRestrictions" => lambda {|n| @tenant_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyTenantRestrictions.create_from_discriminator_value(pn) }) },
                 })
@@ -151,6 +155,21 @@ module MicrosoftGraphBeta
             ## 
             def inbound_trust=(value)
                 @inbound_trust = value
+            end
+            ## 
+            ## Gets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+            ## @return a default_invitation_redemption_identity_provider_configuration
+            ## 
+            def invitation_redemption_identity_provider_configuration
+                return @invitation_redemption_identity_provider_configuration
+            end
+            ## 
+            ## Sets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+            ## @param value Value to set for the invitationRedemptionIdentityProviderConfiguration property.
+            ## @return a void
+            ## 
+            def invitation_redemption_identity_provider_configuration=(value)
+                @invitation_redemption_identity_provider_configuration = value
             end
             ## 
             ## Gets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
@@ -181,6 +200,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)
                 writer.write_object_value("b2bDirectConnectOutbound", @b2b_direct_connect_outbound)
                 writer.write_object_value("inboundTrust", @inbound_trust)
+                writer.write_object_value("invitationRedemptionIdentityProviderConfiguration", @invitation_redemption_identity_provider_configuration)
                 writer.write_boolean_value("isServiceDefault", @is_service_default)
                 writer.write_object_value("tenantRestrictions", @tenant_restrictions)
             end

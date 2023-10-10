@@ -2,6 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative '../models/external_connectors_external'
 require_relative '../models/o_data_errors_o_data_error'
+require_relative './authorization_systems/authorization_systems_request_builder'
 require_relative './connections/connections_request_builder'
 require_relative './external'
 require_relative './industry_data/industry_data_request_builder'
@@ -12,6 +13,11 @@ module MicrosoftGraphBeta
         # Provides operations to manage the external singleton.
         class ExternalRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            # Provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
+            def authorization_systems()
+                return MicrosoftGraphBeta::External::AuthorizationSystems::AuthorizationSystemsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
             def connections()
@@ -98,6 +104,15 @@ module MicrosoftGraphBeta
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a external_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return ExternalRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

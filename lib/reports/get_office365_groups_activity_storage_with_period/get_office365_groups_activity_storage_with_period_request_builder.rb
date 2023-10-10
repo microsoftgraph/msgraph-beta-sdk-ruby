@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
                 ## 
                 ## Invoke function getOffice365GroupsActivityStorage
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of get_office365_groups_activity_storage_with_period_response
+                ## @return a Fiber of get_office365_groups_activity_storage_with_period_get_response
                 ## 
                 def get(request_configuration=nil)
                     request_info = self.to_get_request_information(
@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Reports::GetOffice365GroupsActivityStorageWithPeriod::GetOffice365GroupsActivityStorageWithPeriodResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Reports::GetOffice365GroupsActivityStorageWithPeriod::GetOffice365GroupsActivityStorageWithPeriodGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Invoke function getOffice365GroupsActivityStorage
@@ -52,6 +52,15 @@ module MicrosoftGraphBeta
                         request_info.add_request_options(request_configuration.options)
                     end
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a get_office365_groups_activity_storage_with_period_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return GetOffice365GroupsActivityStorageWithPeriodRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

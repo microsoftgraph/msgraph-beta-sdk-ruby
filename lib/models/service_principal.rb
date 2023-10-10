@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
             # Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
             @disabled_by_microsoft_status
             ## 
-            # The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
             # Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             @oauth2_permission_grants
             ## 
-            # Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            # Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owned_objects
             ## 
             # Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
@@ -136,6 +136,9 @@ module MicrosoftGraphBeta
             ## 
             # The name of the Azure AD tenant that published the application.
             @publisher_name
+            ## 
+            # The remoteDesktopSecurityConfiguration property
+            @remote_desktop_security_configuration
             ## 
             # The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
             @reply_urls
@@ -478,14 +481,14 @@ module MicrosoftGraphBeta
                 @disabled_by_microsoft_status = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -586,6 +589,7 @@ module MicrosoftGraphBeta
                     "preferredTokenSigningKeyThumbprint" => lambda {|n| @preferred_token_signing_key_thumbprint = n.get_string_value() },
                     "publishedPermissionScopes" => lambda {|n| @published_permission_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PermissionScope.create_from_discriminator_value(pn) }) },
                     "publisherName" => lambda {|n| @publisher_name = n.get_string_value() },
+                    "remoteDesktopSecurityConfiguration" => lambda {|n| @remote_desktop_security_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RemoteDesktopSecurityConfiguration.create_from_discriminator_value(pn) }) },
                     "replyUrls" => lambda {|n| @reply_urls = n.get_collection_of_primitive_values(String) },
                     "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                     "samlSingleSignOnSettings" => lambda {|n| @saml_single_sign_on_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SamlSingleSignOnSettings.create_from_discriminator_value(pn) }) },
@@ -767,14 +771,14 @@ module MicrosoftGraphBeta
                 @oauth2_permission_grants = value
             end
             ## 
-            ## Gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            ## Gets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @return a directory_object
             ## 
             def owned_objects
                 return @owned_objects
             end
             ## 
-            ## Sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            ## Sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @param value Value to set for the ownedObjects property.
             ## @return a void
             ## 
@@ -902,6 +906,21 @@ module MicrosoftGraphBeta
                 @publisher_name = value
             end
             ## 
+            ## Gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+            ## @return a remote_desktop_security_configuration
+            ## 
+            def remote_desktop_security_configuration
+                return @remote_desktop_security_configuration
+            end
+            ## 
+            ## Sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+            ## @param value Value to set for the remoteDesktopSecurityConfiguration property.
+            ## @return a void
+            ## 
+            def remote_desktop_security_configuration=(value)
+                @remote_desktop_security_configuration = value
+            end
+            ## 
             ## Gets the replyUrls property value. The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
             ## @return a string
             ## 
@@ -997,6 +1016,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("preferredTokenSigningKeyThumbprint", @preferred_token_signing_key_thumbprint)
                 writer.write_collection_of_object_values("publishedPermissionScopes", @published_permission_scopes)
                 writer.write_string_value("publisherName", @publisher_name)
+                writer.write_object_value("remoteDesktopSecurityConfiguration", @remote_desktop_security_configuration)
                 writer.write_collection_of_primitive_values("replyUrls", @reply_urls)
                 writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
                 writer.write_object_value("samlSingleSignOnSettings", @saml_single_sign_on_settings)

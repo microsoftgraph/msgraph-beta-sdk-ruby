@@ -10,7 +10,6 @@ require_relative './get_active_malware_summary_report/get_active_malware_summary
 require_relative './get_all_certificates_report/get_all_certificates_report_request_builder'
 require_relative './get_apps_install_summary_report/get_apps_install_summary_report_request_builder'
 require_relative './get_app_status_overview_report/get_app_status_overview_report_request_builder'
-require_relative './get_autopilot_deployment_device_information/get_autopilot_deployment_device_information_request_builder'
 require_relative './get_cached_report/get_cached_report_request_builder'
 require_relative './get_certificates_report/get_certificates_report_request_builder'
 require_relative './get_compliance_policies_report_for_device/get_compliance_policies_report_for_device_request_builder'
@@ -119,11 +118,6 @@ module MicrosoftGraphBeta
                 # Provides operations to call the getAppStatusOverviewReport method.
                 def get_app_status_overview_report()
                     return MicrosoftGraphBeta::DeviceManagement::Reports::GetAppStatusOverviewReport::GetAppStatusOverviewReportRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getAutopilotDeploymentDeviceInformation method.
-                def get_autopilot_deployment_device_information()
-                    return MicrosoftGraphBeta::DeviceManagement::Reports::GetAutopilotDeploymentDeviceInformation::GetAutopilotDeploymentDeviceInformationRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the getCachedReport method.
@@ -556,6 +550,15 @@ module MicrosoftGraphBeta
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a reports_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ReportsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

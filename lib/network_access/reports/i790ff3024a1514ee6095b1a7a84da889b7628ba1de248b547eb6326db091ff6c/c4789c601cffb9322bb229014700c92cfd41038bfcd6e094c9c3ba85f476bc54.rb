@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
                     ## 
                     ## Invoke function getDestinationSummaries
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of get_destination_summaries_with_start_date_time_with_end_date_time_with_aggregated_by_response
+                    ## @return a Fiber of get_destination_summaries_with_start_date_time_with_end_date_time_with_aggregated_by_get_response
                     ## 
                     def get(request_configuration=nil)
                         request_info = self.to_get_request_information(
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                         error_mapping = Hash.new
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::NetworkAccess::Reports::I790ff3024a1514ee6095b1a7a84da889b7628ba1de248b547eb6326db091ff6c::GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse.create_from_discriminator_value(pn) }, error_mapping)
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::NetworkAccess::Reports::I790ff3024a1514ee6095b1a7a84da889b7628ba1de248b547eb6326db091ff6c::GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
                     ## Invoke function getDestinationSummaries
@@ -57,6 +57,15 @@ module MicrosoftGraphBeta
                             request_info.add_request_options(request_configuration.options)
                         end
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a microsoft_graph_networkaccess_get_destination_summaries_with_start_date_time_with_end_date_time_with_aggregated_by_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/evaluateDynamicMembership")
                     end
                     ## 
-                    ## Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
+                    ## Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of evaluate_dynamic_membership_result
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EvaluateDynamicMembershipResult.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
+                    ## Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -58,6 +58,15 @@ module MicrosoftGraphBeta
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a evaluate_dynamic_membership_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return EvaluateDynamicMembershipRequestBuilder.new(raw_url, @request_adapter)
                     end
                 end
             end

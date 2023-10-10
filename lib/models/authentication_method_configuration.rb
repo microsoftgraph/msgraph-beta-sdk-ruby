@@ -34,6 +34,8 @@ module MicrosoftGraphBeta
                             return EmailAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.fido2AuthenticationMethodConfiguration"
                             return Fido2AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration"
+                            return HardwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration"
                             return MicrosoftAuthenticatorAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.smsAuthenticationMethodConfiguration"

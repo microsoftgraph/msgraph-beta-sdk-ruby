@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            # Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             @automatic_user_consent_settings
             ## 
             # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
@@ -25,13 +25,13 @@ module MicrosoftGraphBeta
             # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
             @b2b_direct_connect_outbound
             ## 
-            # Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            # Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             @identity_synchronization
             ## 
             # Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             @inbound_trust
             ## 
-            # The isInMultiTenantOrganization property
+            # Identifies whether a tenant is a member of a multitenant organization.
             @is_in_multi_tenant_organization
             ## 
             # Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
@@ -43,32 +43,32 @@ module MicrosoftGraphBeta
             # The tenant identifier for the partner Azure AD organization. Read-only. Key.
             @tenant_id
             ## 
-            # Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
+            # Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
             @tenant_restrictions
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            ## Gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             ## @return a inbound_outbound_policy_configuration
             ## 
             def automatic_user_consent_settings
                 return @automatic_user_consent_settings
             end
             ## 
-            ## Sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            ## Sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             ## @param value Value to set for the automaticUserConsentSettings property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## Gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             ## @return a cross_tenant_identity_sync_policy_partner
             ## 
             def identity_synchronization
                 return @identity_synchronization
             end
             ## 
-            ## Sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## Sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             ## @param value Value to set for the identitySynchronization property.
             ## @return a void
             ## 
@@ -202,14 +202,14 @@ module MicrosoftGraphBeta
                 @inbound_trust = value
             end
             ## 
-            ## Gets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+            ## Gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
             ## @return a boolean
             ## 
             def is_in_multi_tenant_organization
                 return @is_in_multi_tenant_organization
             end
             ## 
-            ## Sets the isInMultiTenantOrganization property value. The isInMultiTenantOrganization property
+            ## Sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
             ## @param value Value to set for the isInMultiTenantOrganization property.
             ## @return a void
             ## 
@@ -283,14 +283,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
+            ## Gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
             ## @return a cross_tenant_access_policy_tenant_restrictions
             ## 
             def tenant_restrictions
                 return @tenant_restrictions
             end
             ## 
-            ## Sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
+            ## Sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
             ## @param value Value to set for the tenantRestrictions property.
             ## @return a void
             ## 

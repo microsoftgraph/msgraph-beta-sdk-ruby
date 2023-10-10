@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The authorizationSystems property
+            @authorization_systems
+            ## 
             # The connections property
             @connections
             ## 
@@ -19,19 +22,34 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the authorizationSystems property value. The authorizationSystems property
+            ## @return a authorization_system
+            ## 
+            def authorization_systems
+                return @authorization_systems
+            end
+            ## 
+            ## Sets the authorizationSystems property value. The authorizationSystems property
+            ## @param value Value to set for the authorizationSystems property.
+            ## @return a void
+            ## 
+            def authorization_systems=(value)
+                @authorization_systems = value
             end
             ## 
             ## Gets the connections property value. The connections property
@@ -70,6 +88,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "authorizationSystems" => lambda {|n| @authorization_systems = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthorizationSystem.create_from_discriminator_value(pn) }) },
                     "connections" => lambda {|n| @connections = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsExternalConnection.create_from_discriminator_value(pn) }) },
                     "industryData" => lambda {|n| @industry_data = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataRoot.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -112,6 +131,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_collection_of_object_values("authorizationSystems", @authorization_systems)
                 writer.write_collection_of_object_values("connections", @connections)
                 writer.write_object_value("industryData", @industry_data)
                 writer.write_string_value("@odata.type", @odata_type)

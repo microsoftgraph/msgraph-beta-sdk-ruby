@@ -7,10 +7,7 @@ require_relative '../directory'
 require_relative './administrative_units'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './get_user_owned_objects/get_user_owned_objects_request_builder'
 require_relative './item/administrative_unit_item_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraphBeta
     module Directory
@@ -28,21 +25,6 @@ module MicrosoftGraphBeta
                 # Provides operations to call the delta method.
                 def delta()
                     return MicrosoftGraphBeta::Directory::AdministrativeUnits::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getByIds method.
-                def get_by_ids()
-                    return MicrosoftGraphBeta::Directory::AdministrativeUnits::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getUserOwnedObjects method.
-                def get_user_owned_objects()
-                    return MicrosoftGraphBeta::Directory::AdministrativeUnits::GetUserOwnedObjects::GetUserOwnedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the validateProperties method.
-                def validate_properties()
-                    return MicrosoftGraphBeta::Directory::AdministrativeUnits::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
@@ -131,6 +113,15 @@ module MicrosoftGraphBeta
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a administrative_units_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return AdministrativeUnitsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

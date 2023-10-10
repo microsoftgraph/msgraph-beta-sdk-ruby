@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../operations'
 require_relative '../item'
 require_relative './microsoft_graph_ediscovery_case_export_operation'
+require_relative './review_set/review_set_request_builder'
 
 module MicrosoftGraphBeta
     module Compliance
@@ -22,6 +23,11 @@ module MicrosoftGraphBeta
                                 # Casts the previous resource to caseExportOperation.
                                 class MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
+                                    ## 
+                                    # Provides operations to manage the reviewSet property of the microsoft.graph.ediscovery.caseExportOperation entity.
+                                    def review_set()
+                                        return MicrosoftGraphBeta::Compliance::Ediscovery::Cases::Item::Operations::Item::MicrosoftGraphEdiscoveryCaseExportOperation::ReviewSet::ReviewSetRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
                                     ## 
                                     ## Instantiates a new MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
@@ -62,6 +68,15 @@ module MicrosoftGraphBeta
                                             request_info.add_request_options(request_configuration.options)
                                         end
                                         return request_info
+                                    end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a microsoft_graph_ediscovery_case_export_operation_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder.new(raw_url, @request_adapter)
                                     end
 
                                     ## 

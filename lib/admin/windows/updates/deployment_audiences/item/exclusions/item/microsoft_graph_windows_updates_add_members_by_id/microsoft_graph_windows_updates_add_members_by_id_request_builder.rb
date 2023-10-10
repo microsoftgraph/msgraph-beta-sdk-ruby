@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                                             super(path_parameters, request_adapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/exclusions/{updatableAsset%2Did}/microsoft.graph.windowsUpdates.addMembersById")
                                         end
                                         ## 
-                                        ## Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+                                        ## Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
+                                        ## Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -66,6 +66,15 @@ module MicrosoftGraphBeta
                                             end
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
+                                        end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a microsoft_graph_windows_updates_add_members_by_id_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder.new(raw_url, @request_adapter)
                                         end
                                     end
                                 end

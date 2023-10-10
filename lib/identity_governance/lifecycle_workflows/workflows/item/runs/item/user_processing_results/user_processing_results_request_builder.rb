@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get user processing results of a workflow run object.
+                                    ## Get user processing results of a workflow run object. This API is available in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of identity_governance_user_processing_result_collection_response
                                     ## 
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
                                         return MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, startDateTime)
                                     end
                                     ## 
-                                    ## Get user processing results of a workflow run object.
+                                    ## Get user processing results of a workflow run object. This API is available in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -94,9 +94,18 @@ module MicrosoftGraphBeta
                                         end
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a user_processing_results_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return UserProcessingResultsRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Get user processing results of a workflow run object.
+                                    # Get user processing results of a workflow run object. This API is available in the following national cloud deployments.
                                     class UserProcessingResultsRequestBuilderGetQueryParameters
                                         
                                         ## 

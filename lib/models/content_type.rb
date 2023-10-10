@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ContentType < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            # List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
             @associated_hubs_urls
             ## 
             # Parent contentType from which this content type is derived.
@@ -58,20 +58,20 @@ module MicrosoftGraphBeta
             # If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
             @propagate_changes
             ## 
-            # If true, the content type cannot be modified unless this value is first set to false.
+            # If true, the content type can't be modified unless this value is first set to false.
             @read_only
             ## 
-            # If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            # If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             @sealed
             ## 
-            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
             ## @return a string
             ## 
             def associated_hubs_urls
                 return @associated_hubs_urls
             end
             ## 
-            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
             ## @param value Value to set for the associatedHubsUrls property.
             ## @return a void
             ## 
@@ -362,14 +362,14 @@ module MicrosoftGraphBeta
                 @propagate_changes = value
             end
             ## 
-            ## Gets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+            ## Gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
             ## @return a boolean
             ## 
             def read_only
                 return @read_only
             end
             ## 
-            ## Sets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+            ## Sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
             ## @param value Value to set for the readOnly property.
             ## @return a void
             ## 
@@ -377,14 +377,14 @@ module MicrosoftGraphBeta
                 @read_only = value
             end
             ## 
-            ## Gets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            ## Gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             ## @return a boolean
             ## 
             def sealed
                 return @sealed
             end
             ## 
-            ## Sets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            ## Sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             ## @param value Value to set for the sealed property.
             ## @return a void
             ## 

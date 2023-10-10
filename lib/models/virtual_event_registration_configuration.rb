@@ -7,23 +7,23 @@ module MicrosoftGraphBeta
         class VirtualEventRegistrationConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The capacity property
+            # Total capacity of the virtual event.
             @capacity
             ## 
-            # The questions property
+            # Registration questions.
             @questions
             ## 
-            # The registrationWebUrl property
+            # Registration URL of the virtual event.
             @registration_web_url
             ## 
-            ## Gets the capacity property value. The capacity property
+            ## Gets the capacity property value. Total capacity of the virtual event.
             ## @return a integer
             ## 
             def capacity
                 return @capacity
             end
             ## 
-            ## Sets the capacity property value. The capacity property
+            ## Sets the capacity property value. Total capacity of the virtual event.
             ## @param value Value to set for the capacity property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the questions property value. The questions property
+            ## Gets the questions property value. Registration questions.
             ## @return a virtual_event_registration_question
             ## 
             def questions
                 return @questions
             end
             ## 
-            ## Sets the questions property value. The questions property
+            ## Sets the questions property value. Registration questions.
             ## @param value Value to set for the questions property.
             ## @return a void
             ## 
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 @questions = value
             end
             ## 
-            ## Gets the registrationWebUrl property value. The registrationWebUrl property
+            ## Gets the registrationWebUrl property value. Registration URL of the virtual event.
             ## @return a string
             ## 
             def registration_web_url
                 return @registration_web_url
             end
             ## 
-            ## Sets the registrationWebUrl property value. The registrationWebUrl property
+            ## Sets the registrationWebUrl property value. Registration URL of the virtual event.
             ## @param value Value to set for the registrationWebUrl property.
             ## @return a void
             ## 

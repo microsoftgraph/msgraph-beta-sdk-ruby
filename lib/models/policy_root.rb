@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The policy that contains directory-level access review settings.
             @access_review_policy
             ## 
-            # The policy that controls the idle time out for web sessions for applications.
+            # The policy that controls the idle time-out for web sessions for applications.
             @activity_based_timeout_policies
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -22,10 +22,10 @@ module MicrosoftGraphBeta
             # The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
             @app_management_policies
             ## 
-            # The policy configuration of the self-service sign-up experience of external users.
+            # The policy configuration of the self-service sign-up experience of guests.
             @authentication_flows_policy
             ## 
-            # The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             @authentication_methods_policy
             ## 
             # The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
             # The directoryRoleAccessReviewPolicy property
             @directory_role_access_review_policy
             ## 
-            # Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            # Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.
             @external_identities_policy
             ## 
             # The feature rollout policy associated with a directory object.
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             # The policy that represents the security defaults that protect against common attacks.
             @identity_security_defaults_enforcement_policy
             ## 
-            # The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            # The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             @mobile_app_management_policies
             ## 
             # The mobileDeviceManagementPolicies property
@@ -112,14 +112,14 @@ module MicrosoftGraphBeta
                 @access_review_policy = value
             end
             ## 
-            ## Gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+            ## Gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
             ## @return a activity_based_timeout_policy
             ## 
             def activity_based_timeout_policies
                 return @activity_based_timeout_policies
             end
             ## 
-            ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+            ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
             ## @param value Value to set for the activityBasedTimeoutPolicies property.
             ## @return a void
             ## 
@@ -127,15 +127,15 @@ module MicrosoftGraphBeta
                 @activity_based_timeout_policies = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -172,14 +172,14 @@ module MicrosoftGraphBeta
                 @app_management_policies = value
             end
             ## 
-            ## Gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+            ## Gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
             ## @return a authentication_flows_policy
             ## 
             def authentication_flows_policy
                 return @authentication_flows_policy
             end
             ## 
-            ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+            ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
             ## @param value Value to set for the authenticationFlowsPolicy property.
             ## @return a void
             ## 
@@ -187,14 +187,14 @@ module MicrosoftGraphBeta
                 @authentication_flows_policy = value
             end
             ## 
-            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             ## @return a authentication_methods_policy
             ## 
             def authentication_methods_policy
                 return @authentication_methods_policy
             end
             ## 
-            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             ## @param value Value to set for the authenticationMethodsPolicy property.
             ## @return a void
             ## 
@@ -353,14 +353,14 @@ module MicrosoftGraphBeta
                 @directory_role_access_review_policy = value
             end
             ## 
-            ## Gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            ## Gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.
             ## @return a external_identities_policy
             ## 
             def external_identities_policy
                 return @external_identities_policy
             end
             ## 
-            ## Sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            ## Sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.
             ## @param value Value to set for the externalIdentitiesPolicy property.
             ## @return a void
             ## 
@@ -465,14 +465,14 @@ module MicrosoftGraphBeta
                 @identity_security_defaults_enforcement_policy = value
             end
             ## 
-            ## Gets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            ## Gets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             ## @return a mobility_management_policy
             ## 
             def mobile_app_management_policies
                 return @mobile_app_management_policies
             end
             ## 
-            ## Sets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            ## Sets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             ## @param value Value to set for the mobileAppManagementPolicies property.
             ## @return a void
             ## 
