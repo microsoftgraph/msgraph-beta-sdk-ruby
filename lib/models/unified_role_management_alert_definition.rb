@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # The description of the alert.
             @description
             ## 
-            # The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            # The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             @display_name
             ## 
             # Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
             @how_to_prevent
             ## 
-            # true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            # true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
             @is_configurable
             ## 
             # true if the alert can be remediated, and false otherwise.
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            ## Gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            ## Sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 @how_to_prevent = value
             end
             ## 
-            ## Gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            ## Gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
             ## @return a boolean
             ## 
             def is_configurable
                 return @is_configurable
             end
             ## 
-            ## Sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            ## Sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
             ## @param value Value to set for the isConfigurable property.
             ## @return a void
             ## 

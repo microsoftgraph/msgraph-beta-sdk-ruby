@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/landingPage{?%24select,%24expand}")
                             end
                             ## 
-                            ## Get landingPage from security
+                            ## The landing page associated with a simulation during its creation.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of landing_page
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::LandingPage.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get landingPage from security
+                            ## The landing page associated with a simulation during its creation.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,9 +59,18 @@ module MicrosoftGraphBeta
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a landing_page_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return LandingPageRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Get landingPage from security
+                            # The landing page associated with a simulation during its creation.
                             class LandingPageRequestBuilderGetQueryParameters
                                 
                                 ## 

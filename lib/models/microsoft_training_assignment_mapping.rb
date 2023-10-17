@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class MicrosoftTrainingAssignmentMapping < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The assignedTo property
+            # A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             @assigned_to
             ## 
             # The training property
             @training
             ## 
-            ## Gets the assignedTo property value. The assignedTo property
+            ## Gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             ## @return a training_assigned_to
             ## 
             def assigned_to
                 return @assigned_to
             end
             ## 
-            ## Sets the assignedTo property value. The assignedTo property
+            ## Sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 

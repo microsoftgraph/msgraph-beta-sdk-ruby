@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                                                 super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations/{virtualEventRegistration%2Did}/sessions/{virtualEventSession%2Did}/alternativeRecording")
                                             end
                                             ## 
-                                            ## The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+                                            ## Get alternativeRecording for the navigation property sessions from solutions
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of binary
                                             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                                                 return @request_adapter.send_async(request_info, Binary, error_mapping)
                                             end
                                             ## 
-                                            ## The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+                                            ## Update alternativeRecording for the navigation property sessions in solutions
                                             ## @param body Binary request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of binary
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                                                 return @request_adapter.send_async(request_info, Binary, error_mapping)
                                             end
                                             ## 
-                                            ## The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+                                            ## Get alternativeRecording for the navigation property sessions from solutions
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                                                 return request_info
                                             end
                                             ## 
-                                            ## The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+                                            ## Update alternativeRecording for the navigation property sessions in solutions
                                             ## @param body Binary request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -98,6 +98,15 @@ module MicrosoftGraphBeta
                                                 end
                                                 request_info.set_content_from_parsable(@request_adapter, "", body)
                                                 return request_info
+                                            end
+                                            ## 
+                                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                            ## @param raw_url The raw URL to use for the request builder.
+                                            ## @return a alternative_recording_request_builder
+                                            ## 
+                                            def with_url(raw_url)
+                                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                return AlternativeRecordingRequestBuilder.new(raw_url, @request_adapter)
                                             end
                                         end
                                     end

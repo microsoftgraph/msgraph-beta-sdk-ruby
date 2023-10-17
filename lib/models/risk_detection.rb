@@ -35,6 +35,9 @@ module MicrosoftGraphBeta
             # Location of the sign-in.
             @location
             ## 
+            # The mitreTechniqueId property
+            @mitre_technique_id
+            ## 
             # Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
             @request_id
             ## 
@@ -188,6 +191,7 @@ module MicrosoftGraphBeta
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInLocation.create_from_discriminator_value(pn) }) },
+                    "mitreTechniqueId" => lambda {|n| @mitre_technique_id = n.get_string_value() },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
                     "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
@@ -245,6 +249,21 @@ module MicrosoftGraphBeta
             ## 
             def location=(value)
                 @location = value
+            end
+            ## 
+            ## Gets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @return a string
+            ## 
+            def mitre_technique_id
+                return @mitre_technique_id
+            end
+            ## 
+            ## Sets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @param value Value to set for the mitreTechniqueId property.
+            ## @return a void
+            ## 
+            def mitre_technique_id=(value)
+                @mitre_technique_id = value
             end
             ## 
             ## Gets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
@@ -353,6 +372,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("ipAddress", @ip_address)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_object_value("location", @location)
+                writer.write_string_value("mitreTechniqueId", @mitre_technique_id)
                 writer.write_string_value("requestId", @request_id)
                 writer.write_enum_value("riskDetail", @risk_detail)
                 writer.write_string_value("riskEventType", @risk_event_type)

@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Set a presence status message for a user. An optional expiration date and time can be supplied.
+                ## Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of presence
                 ## 
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     return request_info
                 end
                 ## 
-                ## Set a presence status message for a user. An optional expiration date and time can be supplied.
+                ## Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -149,9 +149,18 @@ module MicrosoftGraphBeta
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a presence_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return PresenceRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
-                # Set a presence status message for a user. An optional expiration date and time can be supplied.
+                # Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
                 class PresenceRequestBuilderGetQueryParameters
                     
                     ## 

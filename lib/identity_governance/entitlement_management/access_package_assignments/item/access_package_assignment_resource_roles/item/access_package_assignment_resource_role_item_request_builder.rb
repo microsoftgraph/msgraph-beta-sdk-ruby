@@ -151,6 +151,15 @@ module MicrosoftGraphBeta
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a access_package_assignment_resource_role_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return AccessPackageAssignmentResourceRoleItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
                                 # The resource roles delivered to the target user for this assignment. Read-only. Nullable.

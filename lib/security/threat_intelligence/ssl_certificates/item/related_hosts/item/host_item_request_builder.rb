@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                                     super(path_parameters, request_adapter, "{+baseurl}/security/threatIntelligence/sslCertificates/{sslCertificate%2Did}/relatedHosts/{host%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get relatedHosts from security
+                                ## The hosts related with this sslCertificate.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of security_host
                                 ## 
@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SecurityHost.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get relatedHosts from security
+                                ## The hosts related with this sslCertificate.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -61,9 +61,18 @@ module MicrosoftGraphBeta
                                     end
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a host_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return HostItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
-                                # Get relatedHosts from security
+                                # The hosts related with this sslCertificate.
                                 class HostItemRequestBuilderGetQueryParameters
                                     
                                     ## 

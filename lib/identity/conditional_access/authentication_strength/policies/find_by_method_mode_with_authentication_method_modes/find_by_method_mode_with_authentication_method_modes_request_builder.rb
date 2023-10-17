@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                             ## 
                             ## Invoke function findByMethodMode
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of find_by_method_mode_with_authentication_method_modes_response
+                            ## @return a Fiber of find_by_method_mode_with_authentication_method_modes_get_response
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                                 error_mapping = Hash.new
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Identity::ConditionalAccess::AuthenticationStrength::Policies::FindByMethodModeWithAuthenticationMethodModes::FindByMethodModeWithAuthenticationMethodModesResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Identity::ConditionalAccess::AuthenticationStrength::Policies::FindByMethodModeWithAuthenticationMethodModes::FindByMethodModeWithAuthenticationMethodModesGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Invoke function findByMethodMode
@@ -58,6 +58,15 @@ module MicrosoftGraphBeta
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a find_by_method_mode_with_authentication_method_modes_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return FindByMethodModeWithAuthenticationMethodModesRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

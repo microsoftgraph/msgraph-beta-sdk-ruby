@@ -4,12 +4,7 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/resource_specific_permission_grant'
 require_relative '../../me'
 require_relative '../permission_grants'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
 
 module MicrosoftGraphBeta
     module Me
@@ -19,31 +14,6 @@ module MicrosoftGraphBeta
                 # Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.
                 class ResourceSpecificPermissionGrantItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
-                    ## 
-                    # Provides operations to call the checkMemberGroups method.
-                    def check_member_groups()
-                        return MicrosoftGraphBeta::Me::PermissionGrants::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the checkMemberObjects method.
-                    def check_member_objects()
-                        return MicrosoftGraphBeta::Me::PermissionGrants::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the getMemberGroups method.
-                    def get_member_groups()
-                        return MicrosoftGraphBeta::Me::PermissionGrants::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the getMemberObjects method.
-                    def get_member_objects()
-                        return MicrosoftGraphBeta::Me::PermissionGrants::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the restore method.
-                    def restore()
-                        return MicrosoftGraphBeta::Me::PermissionGrants::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
                     ## 
                     ## Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
@@ -68,7 +38,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get permissionGrants from me
+                    ## List all resource-specific permission grants of a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of resource_specific_permission_grant
                     ## 
@@ -114,7 +84,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Get permissionGrants from me
+                    ## List all resource-specific permission grants of a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -151,9 +121,18 @@ module MicrosoftGraphBeta
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a resource_specific_permission_grant_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ResourceSpecificPermissionGrantItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Get permissionGrants from me
+                    # List all resource-specific permission grants of a user.
                     class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters
                         
                         ## 

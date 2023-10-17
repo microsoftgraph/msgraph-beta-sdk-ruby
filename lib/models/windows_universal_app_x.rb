@@ -18,19 +18,19 @@ module MicrosoftGraphBeta
             # The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
             @committed_contained_apps
             ## 
-            # The Identity Name.
+            # The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'Contoso.DemoApp'.
             @identity_name
             ## 
-            # The Identity Publisher Hash.
+            # The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'AB82CD0XYZ'.
             @identity_publisher_hash
             ## 
-            # The Identity Resource Identifier.
+            # The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'TestResourceId'.
             @identity_resource_identifier
             ## 
-            # The identity version.
+            # The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: '1.0.0.0'.
             @identity_version
             ## 
-            # Whether or not the app is a bundle.
+            # Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.
             @is_bundle
             ## 
             # The minimum operating system required for a Windows mobile app.
@@ -103,8 +103,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
-                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsDeviceType) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsDeviceType) },
                     "committedContainedApps" => lambda {|n| @committed_contained_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileContainedApp.create_from_discriminator_value(pn) }) },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the identityName property value. The Identity Name.
+            ## Gets the identityName property value. The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'Contoso.DemoApp'.
             ## @return a string
             ## 
             def identity_name
                 return @identity_name
             end
             ## 
-            ## Sets the identityName property value. The Identity Name.
+            ## Sets the identityName property value. The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'Contoso.DemoApp'.
             ## @param value Value to set for the identityName property.
             ## @return a void
             ## 
@@ -130,14 +130,14 @@ module MicrosoftGraphBeta
                 @identity_name = value
             end
             ## 
-            ## Gets the identityPublisherHash property value. The Identity Publisher Hash.
+            ## Gets the identityPublisherHash property value. The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'AB82CD0XYZ'.
             ## @return a string
             ## 
             def identity_publisher_hash
                 return @identity_publisher_hash
             end
             ## 
-            ## Sets the identityPublisherHash property value. The Identity Publisher Hash.
+            ## Sets the identityPublisherHash property value. The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'AB82CD0XYZ'.
             ## @param value Value to set for the identityPublisherHash property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraphBeta
                 @identity_publisher_hash = value
             end
             ## 
-            ## Gets the identityResourceIdentifier property value. The Identity Resource Identifier.
+            ## Gets the identityResourceIdentifier property value. The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'TestResourceId'.
             ## @return a string
             ## 
             def identity_resource_identifier
                 return @identity_resource_identifier
             end
             ## 
-            ## Sets the identityResourceIdentifier property value. The Identity Resource Identifier.
+            ## Sets the identityResourceIdentifier property value. The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: 'TestResourceId'.
             ## @param value Value to set for the identityResourceIdentifier property.
             ## @return a void
             ## 
@@ -160,14 +160,14 @@ module MicrosoftGraphBeta
                 @identity_resource_identifier = value
             end
             ## 
-            ## Gets the identityVersion property value. The identity version.
+            ## Gets the identityVersion property value. The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: '1.0.0.0'.
             ## @return a string
             ## 
             def identity_version
                 return @identity_version
             end
             ## 
-            ## Sets the identityVersion property value. The identity version.
+            ## Sets the identityVersion property value. The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: '1.0.0.0'.
             ## @param value Value to set for the identityVersion property.
             ## @return a void
             ## 
@@ -175,14 +175,14 @@ module MicrosoftGraphBeta
                 @identity_version = value
             end
             ## 
-            ## Gets the isBundle property value. Whether or not the app is a bundle.
+            ## Gets the isBundle property value. Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.
             ## @return a boolean
             ## 
             def is_bundle
                 return @is_bundle
             end
             ## 
-            ## Sets the isBundle property value. Whether or not the app is a bundle.
+            ## Sets the isBundle property value. Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.
             ## @param value Value to set for the isBundle property.
             ## @return a void
             ## 

@@ -8,20 +8,20 @@ module MicrosoftGraphBeta
         class MicrosoftManagedTrainingSetting < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The completionDateTime property
+            # The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @completion_date_time
             ## 
-            # The trainingCompletionDuration property
+            # The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
             @training_completion_duration
             ## 
-            ## Gets the completionDateTime property value. The completionDateTime property
+            ## Gets the completionDateTime property value. The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def completion_date_time
                 return @completion_date_time
             end
             ## 
-            ## Sets the completionDateTime property value. The completionDateTime property
+            ## Sets the completionDateTime property value. The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the completionDateTime property.
             ## @return a void
             ## 
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("trainingCompletionDuration", @training_completion_duration)
             end
             ## 
-            ## Gets the trainingCompletionDuration property value. The trainingCompletionDuration property
+            ## Gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
             ## @return a training_completion_duration
             ## 
             def training_completion_duration
                 return @training_completion_duration
             end
             ## 
-            ## Sets the trainingCompletionDuration property value. The trainingCompletionDuration property
+            ## Sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
             ## @param value Value to set for the trainingCompletionDuration property.
             ## @return a void
             ## 

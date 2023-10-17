@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                                                     super(path_parameters, request_adapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}")
                                                 end
                                                 ## 
-                                                ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+                                                ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared. This API is available in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of void
                                                 ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+                                                ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is available in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of shared_with_channel_team_info
                                                 ## 
@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SharedWithChannelTeamInfo.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+                                                ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared. This API is available in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+                                                ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is available in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -147,9 +147,18 @@ module MicrosoftGraphBeta
                                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                     return request_info
                                                 end
+                                                ## 
+                                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                ## @param raw_url The raw URL to use for the request builder.
+                                                ## @return a shared_with_channel_team_info_item_request_builder
+                                                ## 
+                                                def with_url(raw_url)
+                                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                    return SharedWithChannelTeamInfoItemRequestBuilder.new(raw_url, @request_adapter)
+                                                end
 
                                                 ## 
-                                                # Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+                                                # Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is available in the following national cloud deployments.
                                                 class SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters
                                                     
                                                     ## 

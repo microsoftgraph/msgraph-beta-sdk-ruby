@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
+                                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message. This API is available in the following national cloud deployments.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Mention.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
+                                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message. This API is available in the following national cloud deployments.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -94,6 +94,15 @@ module MicrosoftGraphBeta
                                                 request_info.add_request_options(request_configuration.options)
                                             end
                                             return request_info
+                                        end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a mention_item_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return MentionItemRequestBuilder.new(raw_url, @request_adapter)
                                         end
 
                                         ## 

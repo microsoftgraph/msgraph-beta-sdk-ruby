@@ -4,14 +4,9 @@ require_relative '../../../models/administrative_unit'
 require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../directory'
 require_relative '../administrative_units'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './members/members_request_builder'
-require_relative './restore/restore_request_builder'
 require_relative './scoped_role_members/scoped_role_members_request_builder'
 
 module MicrosoftGraphBeta
@@ -23,39 +18,14 @@ module MicrosoftGraphBeta
                 class AdministrativeUnitItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
-                    # Provides operations to call the checkMemberGroups method.
-                    def check_member_groups()
-                        return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the checkMemberObjects method.
-                    def check_member_objects()
-                        return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
                     def extensions()
                         return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to call the getMemberGroups method.
-                    def get_member_groups()
-                        return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the getMemberObjects method.
-                    def get_member_objects()
-                        return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Provides operations to manage the members property of the microsoft.graph.administrativeUnit entity.
                     def members()
                         return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the restore method.
-                    def restore()
-                        return MicrosoftGraphBeta::Directory::AdministrativeUnits::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
@@ -168,6 +138,15 @@ module MicrosoftGraphBeta
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a administrative_unit_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return AdministrativeUnitItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

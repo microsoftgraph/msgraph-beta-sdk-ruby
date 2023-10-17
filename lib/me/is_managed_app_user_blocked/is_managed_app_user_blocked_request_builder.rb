@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
                 ## 
                 ## Gets the blocked state of a managed app user.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of is_managed_app_user_blocked_response
+                ## @return a Fiber of is_managed_app_user_blocked_get_response
                 ## 
                 def get(request_configuration=nil)
                     request_info = self.to_get_request_information(
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Me::IsManagedAppUserBlocked::IsManagedAppUserBlockedResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Me::IsManagedAppUserBlocked::IsManagedAppUserBlockedGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Gets the blocked state of a managed app user.
@@ -50,6 +50,15 @@ module MicrosoftGraphBeta
                         request_info.add_request_options(request_configuration.options)
                     end
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a is_managed_app_user_blocked_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return IsManagedAppUserBlockedRequestBuilder.new(raw_url, @request_adapter)
                 end
             end
         end

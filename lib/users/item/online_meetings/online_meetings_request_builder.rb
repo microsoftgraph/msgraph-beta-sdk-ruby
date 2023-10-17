@@ -7,6 +7,8 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './get_all_recordings/get_all_recordings_request_builder'
+require_relative './get_all_transcripts/get_all_transcripts_request_builder'
 require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
@@ -29,6 +31,16 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::Users::Item::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getAllRecordings method.
+                    def get_all_recordings()
+                        return MicrosoftGraphBeta::Users::Item::OnlineMeetings::GetAllRecordings::GetAllRecordingsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getAllTranscripts method.
+                    def get_all_transcripts()
+                        return MicrosoftGraphBeta::Users::Item::OnlineMeetings::GetAllTranscripts::GetAllTranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
                     ## @param online_meeting_id The unique identifier of onlineMeeting
                     ## @return a online_meeting_item_request_builder
@@ -49,7 +61,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.
+                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions.  This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting_collection_response
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OnlineMeetingCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create an online meeting on behalf of a user. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting
@@ -79,7 +91,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OnlineMeeting.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.
+                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions.  This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -97,7 +109,7 @@ module MicrosoftGraphBeta
                         return request_info
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create an online meeting on behalf of a user. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -116,9 +128,18 @@ module MicrosoftGraphBeta
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a online_meetings_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return OnlineMeetingsRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.
+                    # Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions.  This API is available in the following national cloud deployments.
                     class OnlineMeetingsRequestBuilderGetQueryParameters
                         
                         ## 
