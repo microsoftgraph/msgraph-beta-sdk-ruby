@@ -7,7 +7,9 @@ require_relative '../virtual_endpoint'
 require_relative './export_jobs/export_jobs_request_builder'
 require_relative './get_connection_quality_reports/get_connection_quality_reports_request_builder'
 require_relative './get_daily_aggregated_remote_connection_reports/get_daily_aggregated_remote_connection_reports_request_builder'
+require_relative './get_frontline_report/get_frontline_report_request_builder'
 require_relative './get_inaccessible_cloud_pc_reports/get_inaccessible_cloud_pc_reports_request_builder'
+require_relative './get_raw_remote_connection_reports/get_raw_remote_connection_reports_request_builder'
 require_relative './get_real_time_remote_connection_latency_with_cloud_pc_id/get_real_time_remote_connection_latency_with_cloud_pc_id_request_builder'
 require_relative './get_real_time_remote_connection_status_with_cloud_pc_id/get_real_time_remote_connection_status_with_cloud_pc_id_request_builder'
 require_relative './get_remote_connection_historical_reports/get_remote_connection_historical_reports_request_builder'
@@ -39,9 +41,19 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetDailyAggregatedRemoteConnectionReports::GetDailyAggregatedRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getFrontlineReport method.
+                    def get_frontline_report()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetFrontlineReport::GetFrontlineReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the getInaccessibleCloudPcReports method.
                     def get_inaccessible_cloud_pc_reports()
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetInaccessibleCloudPcReports::GetInaccessibleCloudPcReportsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getRawRemoteConnectionReports method.
+                    def get_raw_remote_connection_reports()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetRawRemoteConnectionReports::GetRawRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getRemoteConnectionHistoricalReports method.
@@ -136,13 +148,13 @@ module MicrosoftGraphBeta
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
                         return request_info
                     end
                     ## 
@@ -152,15 +164,15 @@ module MicrosoftGraphBeta
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -172,16 +184,25 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a reports_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ReportsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

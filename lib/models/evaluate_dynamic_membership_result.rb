@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+            # If a group ID is provided, the value is the membership rule for the group. If a group ID isn't provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
             @membership_rule
             ## 
-            # Provides a detailed anaylsis of the membership evaluation result.
+            # Provides a detailed analysis of the membership evaluation result.
             @membership_rule_evaluation_details
             ## 
             # The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+            ## Gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID isn't provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
             ## @return a string
             ## 
             def membership_rule
                 return @membership_rule
             end
             ## 
-            ## Sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+            ## Sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID isn't provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
             ## @param value Value to set for the membershipRule property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 @membership_rule = value
             end
             ## 
-            ## Gets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
+            ## Gets the membershipRuleEvaluationDetails property value. Provides a detailed analysis of the membership evaluation result.
             ## @return a expression_evaluation_details
             ## 
             def membership_rule_evaluation_details
                 return @membership_rule_evaluation_details
             end
             ## 
-            ## Sets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
+            ## Sets the membershipRuleEvaluationDetails property value. Provides a detailed analysis of the membership evaluation result.
             ## @param value Value to set for the membershipRuleEvaluationDetails property.
             ## @return a void
             ## 

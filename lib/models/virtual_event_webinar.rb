@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # To whom the webinar is visible.
             @audience
             ## 
-            # Identity information of co-organizers of the webinar.
+            # Identity information of coorganizers of the webinar.
             @co_organizers
             ## 
-            # The registrationConfiguration property
+            # Registration configuration of the webinar.
             @registration_configuration
             ## 
-            # The registrations property
+            # Registration records of the webinar.
             @registrations
             ## 
             ## Gets the audience property value. To whom the webinar is visible.
@@ -34,14 +34,14 @@ module MicrosoftGraphBeta
                 @audience = value
             end
             ## 
-            ## Gets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Gets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @return a communications_user_identity
             ## 
             def co_organizers
                 return @co_organizers
             end
             ## 
-            ## Sets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Sets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @param value Value to set for the coOrganizers property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the registrationConfiguration property value. The registrationConfiguration property
+            ## Gets the registrationConfiguration property value. Registration configuration of the webinar.
             ## @return a virtual_event_registration_configuration
             ## 
             def registration_configuration
                 return @registration_configuration
             end
             ## 
-            ## Sets the registrationConfiguration property value. The registrationConfiguration property
+            ## Sets the registrationConfiguration property value. Registration configuration of the webinar.
             ## @param value Value to set for the registrationConfiguration property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @registration_configuration = value
             end
             ## 
-            ## Gets the registrations property value. The registrations property
+            ## Gets the registrations property value. Registration records of the webinar.
             ## @return a virtual_event_registration
             ## 
             def registrations
                 return @registrations
             end
             ## 
-            ## Sets the registrations property value. The registrations property
+            ## Sets the registrations property value. Registration records of the webinar.
             ## @param value Value to set for the registrations property.
             ## @return a void
             ## 

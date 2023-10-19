@@ -6,12 +6,7 @@ require_relative '../../../../team_template_definition'
 require_relative '../../../item'
 require_relative '../../team_definition'
 require_relative '../permission_grants'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
 
 module MicrosoftGraphBeta
     module TeamTemplateDefinition
@@ -23,31 +18,6 @@ module MicrosoftGraphBeta
                         # Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
                         class ResourceSpecificPermissionGrantItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
-                            ## 
-                            # Provides operations to call the checkMemberGroups method.
-                            def check_member_groups()
-                                return MicrosoftGraphBeta::TeamTemplateDefinition::Item::TeamDefinition::PermissionGrants::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the checkMemberObjects method.
-                            def check_member_objects()
-                                return MicrosoftGraphBeta::TeamTemplateDefinition::Item::TeamDefinition::PermissionGrants::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the getMemberGroups method.
-                            def get_member_groups()
-                                return MicrosoftGraphBeta::TeamTemplateDefinition::Item::TeamDefinition::PermissionGrants::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the getMemberObjects method.
-                            def get_member_objects()
-                                return MicrosoftGraphBeta::TeamTemplateDefinition::Item::TeamDefinition::PermissionGrants::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the restore method.
-                            def restore()
-                                return MicrosoftGraphBeta::TeamTemplateDefinition::Item::TeamDefinition::PermissionGrants::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
                             ## 
                             ## Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
@@ -108,13 +78,13 @@ module MicrosoftGraphBeta
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
                                 return request_info
                             end
                             ## 
@@ -124,15 +94,15 @@ module MicrosoftGraphBeta
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
@@ -144,16 +114,25 @@ module MicrosoftGraphBeta
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a resource_specific_permission_grant_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return ResourceSpecificPermissionGrantItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

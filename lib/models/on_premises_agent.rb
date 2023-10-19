@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The external IP address as detected by the service for the agent machine. Read-only
             @external_ip
             ## 
-            # The name of the machine that the aggent is running on. Read-only
+            # The name of the machine that the agent is running on. Read-only
             @machine_name
             ## 
             # The status property
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the machineName property value. The name of the machine that the aggent is running on. Read-only
+            ## Gets the machineName property value. The name of the machine that the agent is running on. Read-only
             ## @return a string
             ## 
             def machine_name
                 return @machine_name
             end
             ## 
-            ## Sets the machineName property value. The name of the machine that the aggent is running on. Read-only
+            ## Sets the machineName property value. The name of the machine that the agent is running on. Read-only
             ## @param value Value to set for the machineName property.
             ## @return a void
             ## 

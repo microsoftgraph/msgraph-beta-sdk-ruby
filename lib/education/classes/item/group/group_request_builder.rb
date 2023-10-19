@@ -6,6 +6,7 @@ require_relative '../../../education'
 require_relative '../../classes'
 require_relative '../item'
 require_relative './group'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraphBeta
     module Education
@@ -17,6 +18,11 @@ module MicrosoftGraphBeta
                     class GroupRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
+                        # The serviceProvisioningErrors property
+                        def service_provisioning_errors()
+                            return MicrosoftGraphBeta::Education::Classes::Item::Group::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new GroupRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -26,7 +32,7 @@ module MicrosoftGraphBeta
                             super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/group{?%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the Microsoft 365 group that corresponds to this educationClass.
+                        ## Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of group
                         ## 
@@ -40,26 +46,35 @@ module MicrosoftGraphBeta
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the Microsoft 365 group that corresponds to this educationClass.
+                        ## Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a group_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return GroupRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 
-                        # Retrieve the Microsoft 365 group that corresponds to this educationClass.
+                        # Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
                         class GroupRequestBuilderGetQueryParameters
                             
                             ## 

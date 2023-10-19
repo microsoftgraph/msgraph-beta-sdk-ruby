@@ -62,6 +62,9 @@ module MicrosoftGraphBeta
             # Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
             @recommendation_type
             ## 
+            # The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            @release_type
+            ## 
             # Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
             @remediation_impact
             ## 
@@ -220,6 +223,7 @@ module MicrosoftGraphBeta
                     "postponeUntilDateTime" => lambda {|n| @postpone_until_date_time = n.get_date_time_value() },
                     "priority" => lambda {|n| @priority = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationPriority) },
                     "recommendationType" => lambda {|n| @recommendation_type = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationType) },
+                    "releaseType" => lambda {|n| @release_type = n.get_string_value() },
                     "remediationImpact" => lambda {|n| @remediation_impact = n.get_string_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationStatus) },
                 })
@@ -390,6 +394,21 @@ module MicrosoftGraphBeta
                 @recommendation_type = value
             end
             ## 
+            ## Gets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @return a string
+            ## 
+            def release_type
+                return @release_type
+            end
+            ## 
+            ## Sets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @param value Value to set for the releaseType property.
+            ## @return a void
+            ## 
+            def release_type=(value)
+                @release_type = value
+            end
+            ## 
             ## Gets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
             ## @return a string
             ## 
@@ -430,6 +449,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("postponeUntilDateTime", @postpone_until_date_time)
                 writer.write_enum_value("priority", @priority)
                 writer.write_enum_value("recommendationType", @recommendation_type)
+                writer.write_string_value("releaseType", @release_type)
                 writer.write_string_value("remediationImpact", @remediation_impact)
                 writer.write_enum_value("status", @status)
             end

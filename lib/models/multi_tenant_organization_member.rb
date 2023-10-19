@@ -8,38 +8,38 @@ module MicrosoftGraphBeta
         class MultiTenantOrganizationMember < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The addedByTenantId property
+            # Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.
             @added_by_tenant_id
             ## 
-            # The addedDateTime property
+            # Date and time when the tenant was added to the multitenant organization. Read-only.
             @added_date_time
             ## 
-            # The displayName property
+            # Display name of the tenant added to the multitenant organization.
             @display_name
             ## 
-            # The joinedDateTime property
+            # Date and time when the tenant joined the multitenant organization. Read-only.
             @joined_date_time
             ## 
-            # The role property
+            # Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.
             @role
             ## 
-            # The state property
+            # State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.
             @state
             ## 
-            # The tenantId property
+            # Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
             @tenant_id
             ## 
-            # The transitionDetails property
+            # Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.
             @transition_details
             ## 
-            ## Gets the addedByTenantId property value. The addedByTenantId property
+            ## Gets the addedByTenantId property value. Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.
             ## @return a guid
             ## 
             def added_by_tenant_id
                 return @added_by_tenant_id
             end
             ## 
-            ## Sets the addedByTenantId property value. The addedByTenantId property
+            ## Sets the addedByTenantId property value. Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.
             ## @param value Value to set for the addedByTenantId property.
             ## @return a void
             ## 
@@ -47,14 +47,14 @@ module MicrosoftGraphBeta
                 @added_by_tenant_id = value
             end
             ## 
-            ## Gets the addedDateTime property value. The addedDateTime property
+            ## Gets the addedDateTime property value. Date and time when the tenant was added to the multitenant organization. Read-only.
             ## @return a date_time
             ## 
             def added_date_time
                 return @added_date_time
             end
             ## 
-            ## Sets the addedDateTime property value. The addedDateTime property
+            ## Sets the addedDateTime property value. Date and time when the tenant was added to the multitenant organization. Read-only.
             ## @param value Value to set for the addedDateTime property.
             ## @return a void
             ## 
@@ -79,14 +79,14 @@ module MicrosoftGraphBeta
                 return MultiTenantOrganizationMember.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Display name of the tenant added to the multitenant organization.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Display name of the tenant added to the multitenant organization.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the joinedDateTime property value. The joinedDateTime property
+            ## Gets the joinedDateTime property value. Date and time when the tenant joined the multitenant organization. Read-only.
             ## @return a date_time
             ## 
             def joined_date_time
                 return @joined_date_time
             end
             ## 
-            ## Sets the joinedDateTime property value. The joinedDateTime property
+            ## Sets the joinedDateTime property value. Date and time when the tenant joined the multitenant organization. Read-only.
             ## @param value Value to set for the joinedDateTime property.
             ## @return a void
             ## 
@@ -125,14 +125,14 @@ module MicrosoftGraphBeta
                 @joined_date_time = value
             end
             ## 
-            ## Gets the role property value. The role property
+            ## Gets the role property value. Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.
             ## @return a multi_tenant_organization_member_role
             ## 
             def role
                 return @role
             end
             ## 
-            ## Sets the role property value. The role property
+            ## Sets the role property value. Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.
             ## @param value Value to set for the role property.
             ## @return a void
             ## 
@@ -157,14 +157,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("transitionDetails", @transition_details)
             end
             ## 
-            ## Gets the state property value. The state property
+            ## Gets the state property value. State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.
             ## @return a multi_tenant_organization_member_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state property
+            ## Sets the state property value. State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.
             ## @param value Value to set for the state property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the tenantId property value. The tenantId property
+            ## Gets the tenantId property value. Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The tenantId property
+            ## Sets the tenantId property value. Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -187,14 +187,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the transitionDetails property value. The transitionDetails property
+            ## Gets the transitionDetails property value. Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.
             ## @return a multi_tenant_organization_member_transition_details
             ## 
             def transition_details
                 return @transition_details
             end
             ## 
-            ## Sets the transitionDetails property value. The transitionDetails property
+            ## Sets the transitionDetails property value. Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.
             ## @param value Value to set for the transitionDetails property.
             ## @return a void
             ## 

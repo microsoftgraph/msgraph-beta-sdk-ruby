@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Specifies who can be a presenter in a meeting.
             @allowed_presenters
             ## 
-            # The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+            # The alternativeRecording property
             @alternative_recording
             ## 
             # Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The attendance reports of an online meeting. Read-only.
             @attendance_reports
             ## 
-            # The content stream of the attendee report of a Teams live event. Read-only.
+            # The attendeeReport property
             @attendee_report
             ## 
             # The phone access (dial-in) information for an online meeting. Read-only.
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             # The broadcastRecording property
             @broadcast_recording
             ## 
-            # Settings related to a live event.
+            # The broadcastSettings property
             @broadcast_settings
             ## 
             # The capabilities property
@@ -71,8 +71,11 @@ module MicrosoftGraphBeta
             # The external ID. A custom ID. Optional.
             @external_id
             ## 
-            # Indicates whether this is a Teams live event.
+            # The isBroadcast property
             @is_broadcast
+            ## 
+            # The isEndToEndEncryptionEnabled property
+            @is_end_to_end_encryption_enabled
             ## 
             # Indicates whether to announce when callers join or leave.
             @is_entry_exit_announced
@@ -101,7 +104,7 @@ module MicrosoftGraphBeta
             # Indicates whether to record the meeting automatically.
             @record_automatically
             ## 
-            # The content stream of the recording of a Teams live event. Read-only.
+            # The recording property
             @recording
             ## 
             # The recordings of an online meeting. Read-only.
@@ -124,9 +127,6 @@ module MicrosoftGraphBeta
             ## 
             # The video teleconferencing ID. Read-only.
             @video_teleconference_id
-            ## 
-            # The virtualAppointment property
-            @virtual_appointment
             ## 
             # Specifies whether a watermark should be applied to a content type by the client application.
             @watermark_protection
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @allowed_presenters = value
             end
             ## 
-            ## Gets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+            ## Gets the alternativeRecording property value. The alternativeRecording property
             ## @return a base64url
             ## 
             def alternative_recording
                 return @alternative_recording
             end
             ## 
-            ## Sets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+            ## Sets the alternativeRecording property value. The alternativeRecording property
             ## @param value Value to set for the alternativeRecording property.
             ## @return a void
             ## 
@@ -296,14 +296,14 @@ module MicrosoftGraphBeta
                 @attendance_reports = value
             end
             ## 
-            ## Gets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+            ## Gets the attendeeReport property value. The attendeeReport property
             ## @return a base64url
             ## 
             def attendee_report
                 return @attendee_report
             end
             ## 
-            ## Sets the attendeeReport property value. The content stream of the attendee report of a Teams live event. Read-only.
+            ## Sets the attendeeReport property value. The attendeeReport property
             ## @param value Value to set for the attendeeReport property.
             ## @return a void
             ## 
@@ -341,14 +341,14 @@ module MicrosoftGraphBeta
                 @broadcast_recording = value
             end
             ## 
-            ## Gets the broadcastSettings property value. Settings related to a live event.
+            ## Gets the broadcastSettings property value. The broadcastSettings property
             ## @return a broadcast_meeting_settings
             ## 
             def broadcast_settings
                 return @broadcast_settings
             end
             ## 
-            ## Sets the broadcastSettings property value. Settings related to a live event.
+            ## Sets the broadcastSettings property value. The broadcastSettings property
             ## @param value Value to set for the broadcastSettings property.
             ## @return a void
             ## 
@@ -497,6 +497,7 @@ module MicrosoftGraphBeta
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
                     "isBroadcast" => lambda {|n| @is_broadcast = n.get_boolean_value() },
+                    "isEndToEndEncryptionEnabled" => lambda {|n| @is_end_to_end_encryption_enabled = n.get_boolean_value() },
                     "isEntryExitAnnounced" => lambda {|n| @is_entry_exit_announced = n.get_boolean_value() },
                     "joinInformation" => lambda {|n| @join_information = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "joinMeetingIdSettings" => lambda {|n| @join_meeting_id_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::JoinMeetingIdSettings.create_from_discriminator_value(pn) }) },
@@ -514,24 +515,38 @@ module MicrosoftGraphBeta
                     "subject" => lambda {|n| @subject = n.get_string_value() },
                     "transcripts" => lambda {|n| @transcripts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CallTranscript.create_from_discriminator_value(pn) }) },
                     "videoTeleconferenceId" => lambda {|n| @video_teleconference_id = n.get_string_value() },
-                    "virtualAppointment" => lambda {|n| @virtual_appointment = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualAppointment.create_from_discriminator_value(pn) }) },
                     "watermarkProtection" => lambda {|n| @watermark_protection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WatermarkProtectionValues.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the isBroadcast property value. Indicates whether this is a Teams live event.
+            ## Gets the isBroadcast property value. The isBroadcast property
             ## @return a boolean
             ## 
             def is_broadcast
                 return @is_broadcast
             end
             ## 
-            ## Sets the isBroadcast property value. Indicates whether this is a Teams live event.
+            ## Sets the isBroadcast property value. The isBroadcast property
             ## @param value Value to set for the isBroadcast property.
             ## @return a void
             ## 
             def is_broadcast=(value)
                 @is_broadcast = value
+            end
+            ## 
+            ## Gets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+            ## @return a boolean
+            ## 
+            def is_end_to_end_encryption_enabled
+                return @is_end_to_end_encryption_enabled
+            end
+            ## 
+            ## Sets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+            ## @param value Value to set for the isEndToEndEncryptionEnabled property.
+            ## @return a void
+            ## 
+            def is_end_to_end_encryption_enabled=(value)
+                @is_end_to_end_encryption_enabled = value
             end
             ## 
             ## Gets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
@@ -669,14 +684,14 @@ module MicrosoftGraphBeta
                 @record_automatically = value
             end
             ## 
-            ## Gets the recording property value. The content stream of the recording of a Teams live event. Read-only.
+            ## Gets the recording property value. The recording property
             ## @return a base64url
             ## 
             def recording
                 return @recording
             end
             ## 
-            ## Sets the recording property value. The content stream of the recording of a Teams live event. Read-only.
+            ## Sets the recording property value. The recording property
             ## @param value Value to set for the recording property.
             ## @return a void
             ## 
@@ -743,6 +758,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("endDateTime", @end_date_time)
                 writer.write_string_value("externalId", @external_id)
                 writer.write_boolean_value("isBroadcast", @is_broadcast)
+                writer.write_boolean_value("isEndToEndEncryptionEnabled", @is_end_to_end_encryption_enabled)
                 writer.write_boolean_value("isEntryExitAnnounced", @is_entry_exit_announced)
                 writer.write_object_value("joinInformation", @join_information)
                 writer.write_object_value("joinMeetingIdSettings", @join_meeting_id_settings)
@@ -760,7 +776,6 @@ module MicrosoftGraphBeta
                 writer.write_string_value("subject", @subject)
                 writer.write_collection_of_object_values("transcripts", @transcripts)
                 writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
-                writer.write_object_value("virtualAppointment", @virtual_appointment)
                 writer.write_object_value("watermarkProtection", @watermark_protection)
             end
             ## 
@@ -837,21 +852,6 @@ module MicrosoftGraphBeta
             ## 
             def video_teleconference_id=(value)
                 @video_teleconference_id = value
-            end
-            ## 
-            ## Gets the virtualAppointment property value. The virtualAppointment property
-            ## @return a virtual_appointment
-            ## 
-            def virtual_appointment
-                return @virtual_appointment
-            end
-            ## 
-            ## Sets the virtualAppointment property value. The virtualAppointment property
-            ## @param value Value to set for the virtualAppointment property.
-            ## @return a void
-            ## 
-            def virtual_appointment=(value)
-                @virtual_appointment = value
             end
             ## 
             ## Gets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.

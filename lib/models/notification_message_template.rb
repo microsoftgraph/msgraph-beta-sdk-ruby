@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_value(MicrosoftGraphBeta::Models::NotificationTemplateBrandingOptions) },
+                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_values(MicrosoftGraphBeta::Models::NotificationTemplateBrandingOptions) },
                     "defaultLocale" => lambda {|n| @default_locale = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },

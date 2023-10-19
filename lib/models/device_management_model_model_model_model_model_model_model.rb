@@ -1595,7 +1595,7 @@ module MicrosoftGraphBeta
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementSettings.create_from_discriminator_value(pn) }) },
                     "softwareUpdateStatusSummary" => lambda {|n| @software_update_status_summary = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SoftwareUpdateStatusSummary.create_from_discriminator_value(pn) }) },
                     "subscriptionState" => lambda {|n| @subscription_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementSubscriptionState) },
-                    "subscriptions" => lambda {|n| @subscriptions = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementSubscriptions) },
+                    "subscriptions" => lambda {|n| @subscriptions = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementSubscriptions) },
                     "telecomExpenseManagementPartners" => lambda {|n| @telecom_expense_management_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TelecomExpenseManagementPartner.create_from_discriminator_value(pn) }) },
                     "templateInsights" => lambda {|n| @template_insights = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementTemplateInsightsDefinition.create_from_discriminator_value(pn) }) },
                     "templateSettings" => lambda {|n| @template_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingTemplate.create_from_discriminator_value(pn) }) },
