@@ -16,15 +16,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -360,6 +360,8 @@ module MicrosoftGraphBeta
                             return AppVulnerabilityMobileApp.new
                         when "#microsoft.graph.appVulnerabilityTask"
                             return AppVulnerabilityTask.new
+                        when "#microsoft.graph.assignedComputeInstanceDetails"
+                            return AssignedComputeInstanceDetails.new
                         when "#microsoft.graph.assignmentFilterEvaluationStatusDetails"
                             return AssignmentFilterEvaluationStatusDetails.new
                         when "#microsoft.graph.associatedTeamInfo"
@@ -420,12 +422,76 @@ module MicrosoftGraphBeta
                             return AuthoredNote.new
                         when "#microsoft.graph.authorizationPolicy"
                             return AuthorizationPolicy.new
+                        when "#microsoft.graph.authorizationSystem"
+                            return AuthorizationSystem.new
+                        when "#microsoft.graph.authorizationSystemIdentity"
+                            return AuthorizationSystemIdentity.new
+                        when "#microsoft.graph.authorizationSystemResource"
+                            return AuthorizationSystemResource.new
+                        when "#microsoft.graph.authorizationSystemTypeAction"
+                            return AuthorizationSystemTypeAction.new
+                        when "#microsoft.graph.authorizationSystemTypeService"
+                            return AuthorizationSystemTypeService.new
+                        when "#microsoft.graph.awsAccessKey"
+                            return AwsAccessKey.new
+                        when "#microsoft.graph.awsAuthorizationSystem"
+                            return AwsAuthorizationSystem.new
+                        when "#microsoft.graph.awsAuthorizationSystemResource"
+                            return AwsAuthorizationSystemResource.new
+                        when "#microsoft.graph.awsAuthorizationSystemTypeAction"
+                            return AwsAuthorizationSystemTypeAction.new
+                        when "#microsoft.graph.awsEc2Instance"
+                            return AwsEc2Instance.new
+                        when "#microsoft.graph.awsExternalSystemAccessFinding"
+                            return AwsExternalSystemAccessFinding.new
+                        when "#microsoft.graph.awsExternalSystemAccessRoleFinding"
+                            return AwsExternalSystemAccessRoleFinding.new
+                        when "#microsoft.graph.awsGroup"
+                            return AwsGroup.new
+                        when "#microsoft.graph.awsIdentity"
+                            return AwsIdentity.new
+                        when "#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding"
+                            return AwsIdentityAccessManagementKeyAgeFinding.new
+                        when "#microsoft.graph.awsIdentityAccessManagementKeyUsageFinding"
+                            return AwsIdentityAccessManagementKeyUsageFinding.new
+                        when "#microsoft.graph.awsLambda"
+                            return AwsLambda.new
+                        when "#microsoft.graph.awsPolicy"
+                            return AwsPolicy.new
+                        when "#microsoft.graph.awsRole"
+                            return AwsRole.new
+                        when "#microsoft.graph.awsSecretInformationAccessFinding"
+                            return AwsSecretInformationAccessFinding.new
+                        when "#microsoft.graph.awsSecurityToolAdministrationFinding"
+                            return AwsSecurityToolAdministrationFinding.new
+                        when "#microsoft.graph.awsUser"
+                            return AwsUser.new
                         when "#microsoft.graph.azureADAuthentication"
                             return AzureADAuthentication.new
                         when "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile"
                             return AzureADWindowsAutopilotDeploymentProfile.new
+                        when "#microsoft.graph.azureAuthorizationSystem"
+                            return AzureAuthorizationSystem.new
+                        when "#microsoft.graph.azureAuthorizationSystemResource"
+                            return AzureAuthorizationSystemResource.new
+                        when "#microsoft.graph.azureAuthorizationSystemTypeAction"
+                            return AzureAuthorizationSystemTypeAction.new
                         when "#microsoft.graph.azureCommunicationServicesUserConversationMember"
                             return AzureCommunicationServicesUserConversationMember.new
+                        when "#microsoft.graph.azureGroup"
+                            return AzureGroup.new
+                        when "#microsoft.graph.azureIdentity"
+                            return AzureIdentity.new
+                        when "#microsoft.graph.azureManagedIdentity"
+                            return AzureManagedIdentity.new
+                        when "#microsoft.graph.azureRoleDefinition"
+                            return AzureRoleDefinition.new
+                        when "#microsoft.graph.azureServerlessFunction"
+                            return AzureServerlessFunction.new
+                        when "#microsoft.graph.azureServicePrincipal"
+                            return AzureServicePrincipal.new
+                        when "#microsoft.graph.azureUser"
+                            return AzureUser.new
                         when "#microsoft.graph.b2cAuthenticationMethodsPolicy"
                             return B2cAuthenticationMethodsPolicy.new
                         when "#microsoft.graph.b2cIdentityUserFlow"
@@ -680,8 +746,14 @@ module MicrosoftGraphBeta
                             return CustomSecurityAttributeAudit.new
                         when "#microsoft.graph.customSecurityAttributeDefinition"
                             return CustomSecurityAttributeDefinition.new
+                        when "#microsoft.graph.dailyInactiveUsersByApplicationMetric"
+                            return DailyInactiveUsersByApplicationMetric.new
+                        when "#microsoft.graph.dailyInactiveUsersMetric"
+                            return DailyInactiveUsersMetric.new
                         when "#microsoft.graph.dataClassificationService"
                             return DataClassificationService.new
+                        when "#microsoft.graph.dataCollectionInfo"
+                            return DataCollectionInfo.new
                         when "#microsoft.graph.dataLossPreventionPolicy"
                             return DataLossPreventionPolicy.new
                         when "#microsoft.graph.dataPolicyOperation"
@@ -1138,6 +1210,12 @@ module MicrosoftGraphBeta
                             return EmbeddedSIMDeviceState.new
                         when "#microsoft.graph.employeeExperienceUser"
                             return EmployeeExperienceUser.new
+                        when "#microsoft.graph.encryptedAwsStorageBucketFinding"
+                            return EncryptedAwsStorageBucketFinding.new
+                        when "#microsoft.graph.encryptedAzureStorageAccountFinding"
+                            return EncryptedAzureStorageAccountFinding.new
+                        when "#microsoft.graph.encryptedGcpStorageBucketFinding"
+                            return EncryptedGcpStorageBucketFinding.new
                         when "#microsoft.graph.endpoint"
                             return Endpoint.new
                         when "#microsoft.graph.endUserNotification"
@@ -1216,6 +1294,12 @@ module MicrosoftGraphBeta
                             return ExternalIdentitiesPolicy.new
                         when "#microsoft.graph.externalItem"
                             return ExternalItem.new
+                        when "#microsoft.graph.externallyAccessibleAwsStorageBucketFinding"
+                            return ExternallyAccessibleAwsStorageBucketFinding.new
+                        when "#microsoft.graph.externallyAccessibleAzureBlobContainerFinding"
+                            return ExternallyAccessibleAzureBlobContainerFinding.new
+                        when "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding"
+                            return ExternallyAccessibleGcpStorageBucketFinding.new
                         when "#microsoft.graph.externalMeetingRegistrant"
                             return ExternalMeetingRegistrant.new
                         when "#microsoft.graph.externalMeetingRegistration"
@@ -1246,8 +1330,28 @@ module MicrosoftGraphBeta
                             return FileSecurityProfile.new
                         when "#microsoft.graph.filterOperatorSchema"
                             return FilterOperatorSchema.new
+                        when "#microsoft.graph.finding"
+                            return Finding.new
                         when "#microsoft.graph.focusActivityStatistics"
                             return FocusActivityStatistics.new
+                        when "#microsoft.graph.gcpAuthorizationSystem"
+                            return GcpAuthorizationSystem.new
+                        when "#microsoft.graph.gcpAuthorizationSystemResource"
+                            return GcpAuthorizationSystemResource.new
+                        when "#microsoft.graph.gcpAuthorizationSystemTypeAction"
+                            return GcpAuthorizationSystemTypeAction.new
+                        when "#microsoft.graph.gcpCloudFunction"
+                            return GcpCloudFunction.new
+                        when "#microsoft.graph.gcpGroup"
+                            return GcpGroup.new
+                        when "#microsoft.graph.gcpIdentity"
+                            return GcpIdentity.new
+                        when "#microsoft.graph.gcpRole"
+                            return GcpRole.new
+                        when "#microsoft.graph.gcpServiceAccount"
+                            return GcpServiceAccount.new
+                        when "#microsoft.graph.gcpUser"
+                            return GcpUser.new
                         when "#microsoft.graph.governanceInsight"
                             return GovernanceInsight.new
                         when "#microsoft.graph.governancePolicyTemplate"
@@ -1326,6 +1430,8 @@ module MicrosoftGraphBeta
                             return GroupPolicyUploadedDefinitionFile.new
                         when "#microsoft.graph.groupPolicyUploadedPresentation"
                             return GroupPolicyUploadedPresentation.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration"
+                            return HardwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.homeRealmDiscoveryPolicy"
                             return HomeRealmDiscoveryPolicy.new
                         when "#microsoft.graph.horizontalSection"
@@ -1340,6 +1446,8 @@ module MicrosoftGraphBeta
                             return IdentityBuiltInUserFlowAttribute.new
                         when "#microsoft.graph.identityCustomUserFlowAttribute"
                             return IdentityCustomUserFlowAttribute.new
+                        when "#microsoft.graph.identityFinding"
+                            return IdentityFinding.new
                         when "#microsoft.graph.identityGovernance.customTaskExtension"
                             return IdentityGovernanceCustomTaskExtension.new
                         when "#microsoft.graph.identityGovernance.lifecycleManagementSettings"
@@ -1386,6 +1494,24 @@ module MicrosoftGraphBeta
                             return ImportedWindowsAutopilotDeviceIdentity.new
                         when "#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload"
                             return ImportedWindowsAutopilotDeviceIdentityUpload.new
+                        when "#microsoft.graph.inactiveAwsResourceFinding"
+                            return InactiveAwsResourceFinding.new
+                        when "#microsoft.graph.inactiveAwsRoleFinding"
+                            return InactiveAwsRoleFinding.new
+                        when "#microsoft.graph.inactiveAzureServicePrincipalFinding"
+                            return InactiveAzureServicePrincipalFinding.new
+                        when "#microsoft.graph.inactiveGcpServiceAccountFinding"
+                            return InactiveGcpServiceAccountFinding.new
+                        when "#microsoft.graph.inactiveGroupFinding"
+                            return InactiveGroupFinding.new
+                        when "#microsoft.graph.inactiveServerlessFunctionFinding"
+                            return InactiveServerlessFunctionFinding.new
+                        when "#microsoft.graph.inactiveUserFinding"
+                            return InactiveUserFinding.new
+                        when "#microsoft.graph.inactiveUsersByApplicationMetricBase"
+                            return InactiveUsersByApplicationMetricBase.new
+                        when "#microsoft.graph.inactiveUsersMetricBase"
+                            return InactiveUsersMetricBase.new
                         when "#microsoft.graph.industryData.azureDataLakeConnector"
                             return IndustryDataAzureDataLakeConnector.new
                         when "#microsoft.graph.industryData.fileDataConnector"
@@ -1888,6 +2014,10 @@ module MicrosoftGraphBeta
                             return MobileThreatDefenseConnector.new
                         when "#microsoft.graph.mobilityManagementPolicy"
                             return MobilityManagementPolicy.new
+                        when "#microsoft.graph.monthlyInactiveUsersByApplicationMetric"
+                            return MonthlyInactiveUsersByApplicationMetric.new
+                        when "#microsoft.graph.monthlyInactiveUsersMetric"
+                            return MonthlyInactiveUsersMetric.new
                         when "#microsoft.graph.multiTenantOrganization"
                             return MultiTenantOrganization.new
                         when "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate"
@@ -1916,6 +2046,8 @@ module MicrosoftGraphBeta
                             return NetworkaccessConditionalAccessSettings.new
                         when "#microsoft.graph.networkaccess.connectivity"
                             return NetworkaccessConnectivity.new
+                        when "#microsoft.graph.networkaccess.connectivityConfigurationLink"
+                            return NetworkaccessConnectivityConfigurationLink.new
                         when "#microsoft.graph.networkaccess.crossTenantAccessSettings"
                             return NetworkaccessCrossTenantAccessSettings.new
                         when "#microsoft.graph.networkaccess.deviceLink"
@@ -2030,10 +2162,14 @@ module MicrosoftGraphBeta
                             return OnTokenIssuanceStartListener.new
                         when "#microsoft.graph.onUserCreateStartListener"
                             return OnUserCreateStartListener.new
+                        when "#microsoft.graph.openAwsSecurityGroupFinding"
+                            return OpenAwsSecurityGroupFinding.new
                         when "#microsoft.graph.openIdConnectIdentityProvider"
                             return OpenIdConnectIdentityProvider.new
                         when "#microsoft.graph.openIdConnectProvider"
                             return OpenIdConnectProvider.new
+                        when "#microsoft.graph.openNetworkAzureSecurityGroupFinding"
+                            return OpenNetworkAzureSecurityGroupFinding.new
                         when "#microsoft.graph.openShift"
                             return OpenShift.new
                         when "#microsoft.graph.openShiftChangeRequest"
@@ -2066,6 +2202,18 @@ module MicrosoftGraphBeta
                             return OutlookTaskGroup.new
                         when "#microsoft.graph.outlookUser"
                             return OutlookUser.new
+                        when "#microsoft.graph.overprovisionedAwsResourceFinding"
+                            return OverprovisionedAwsResourceFinding.new
+                        when "#microsoft.graph.overprovisionedAwsRoleFinding"
+                            return OverprovisionedAwsRoleFinding.new
+                        when "#microsoft.graph.overprovisionedAzureServicePrincipalFinding"
+                            return OverprovisionedAzureServicePrincipalFinding.new
+                        when "#microsoft.graph.overprovisionedGcpServiceAccountFinding"
+                            return OverprovisionedGcpServiceAccountFinding.new
+                        when "#microsoft.graph.overprovisionedServerlessFunctionFinding"
+                            return OverprovisionedServerlessFunctionFinding.new
+                        when "#microsoft.graph.overprovisionedUserFinding"
+                            return OverprovisionedUserFinding.new
                         when "#microsoft.graph.participant"
                             return Participant.new
                         when "#microsoft.graph.participantJoiningNotification"
@@ -2090,6 +2238,22 @@ module MicrosoftGraphBeta
                             return PermissionGrantConditionSet.new
                         when "#microsoft.graph.permissionGrantPolicy"
                             return PermissionGrantPolicy.new
+                        when "#microsoft.graph.permissionsAnalytics"
+                            return PermissionsAnalytics.new
+                        when "#microsoft.graph.permissionsAnalyticsAggregation"
+                            return PermissionsAnalyticsAggregation.new
+                        when "#microsoft.graph.permissionsCreepIndexDistribution"
+                            return PermissionsCreepIndexDistribution.new
+                        when "#microsoft.graph.permissionsDefinitionAwsPolicy"
+                            return PermissionsDefinitionAwsPolicy.new
+                        when "#microsoft.graph.permissionsDefinitionAzureRole"
+                            return PermissionsDefinitionAzureRole.new
+                        when "#microsoft.graph.permissionsDefinitionGcpRole"
+                            return PermissionsDefinitionGcpRole.new
+                        when "#microsoft.graph.permissionsManagement"
+                            return PermissionsManagement.new
+                        when "#microsoft.graph.permissionsRequestChange"
+                            return PermissionsRequestChange.new
                         when "#microsoft.graph.person"
                             return Person.new
                         when "#microsoft.graph.personAnnotation"
@@ -2150,6 +2314,8 @@ module MicrosoftGraphBeta
                             return PlannerTaskDetails.new
                         when "#microsoft.graph.plannerUser"
                             return PlannerUser.new
+                        when "#microsoft.graph.platformCredentialAuthenticationMethod"
+                            return PlatformCredentialAuthenticationMethod.new
                         when "#microsoft.graph.playPromptOperation"
                             return PlayPromptOperation.new
                         when "#microsoft.graph.policyBase"
@@ -2240,6 +2406,18 @@ module MicrosoftGraphBeta
                             return PrivilegedRoleSummary.new
                         when "#microsoft.graph.privilegedSignupStatus"
                             return PrivilegedSignupStatus.new
+                        when "#microsoft.graph.privilegeEscalation"
+                            return PrivilegeEscalation.new
+                        when "#microsoft.graph.privilegeEscalationAwsResourceFinding"
+                            return PrivilegeEscalationAwsResourceFinding.new
+                        when "#microsoft.graph.privilegeEscalationAwsRoleFinding"
+                            return PrivilegeEscalationAwsRoleFinding.new
+                        when "#microsoft.graph.privilegeEscalationFinding"
+                            return PrivilegeEscalationFinding.new
+                        when "#microsoft.graph.privilegeEscalationGcpServiceAccountFinding"
+                            return PrivilegeEscalationGcpServiceAccountFinding.new
+                        when "#microsoft.graph.privilegeEscalationUserFinding"
+                            return PrivilegeEscalationUserFinding.new
                         when "#microsoft.graph.privilegeManagementElevation"
                             return PrivilegeManagementElevation.new
                         when "#microsoft.graph.profile"
@@ -2276,6 +2454,10 @@ module MicrosoftGraphBeta
                             return RecommendationBase.new
                         when "#microsoft.graph.recordOperation"
                             return RecordOperation.new
+                        when "#microsoft.graph.recycleBin"
+                            return RecycleBin.new
+                        when "#microsoft.graph.recycleBinItem"
+                            return RecycleBinItem.new
                         when "#microsoft.graph.redundantAssignmentAlertConfiguration"
                             return RedundantAssignmentAlertConfiguration.new
                         when "#microsoft.graph.redundantAssignmentAlertIncident"
@@ -2292,10 +2474,14 @@ module MicrosoftGraphBeta
                             return RemoteAssistancePartner.new
                         when "#microsoft.graph.remoteAssistanceSettings"
                             return RemoteAssistanceSettings.new
+                        when "#microsoft.graph.remoteDesktopSecurityConfiguration"
+                            return RemoteDesktopSecurityConfiguration.new
                         when "#microsoft.graph.reportRoot"
                             return ReportRoot.new
                         when "#microsoft.graph.request"
                             return Request.new
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
                         when "#microsoft.graph.resourceOperation"
                             return ResourceOperation.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"
@@ -2348,6 +2534,8 @@ module MicrosoftGraphBeta
                             return Schedule.new
                         when "#microsoft.graph.scheduleChangeRequest"
                             return ScheduleChangeRequest.new
+                        when "#microsoft.graph.scheduledPermissionsRequest"
+                            return ScheduledPermissionsRequest.new
                         when "#microsoft.graph.schedulingGroup"
                             return SchedulingGroup.new
                         when "#microsoft.graph.schema"
@@ -2366,6 +2554,14 @@ module MicrosoftGraphBeta
                             return SearchSearchAnswer.new
                         when "#microsoft.graph.searchEntity"
                             return SearchEntity.new
+                        when "#microsoft.graph.secretInformationAccessAwsResourceFinding"
+                            return SecretInformationAccessAwsResourceFinding.new
+                        when "#microsoft.graph.secretInformationAccessAwsRoleFinding"
+                            return SecretInformationAccessAwsRoleFinding.new
+                        when "#microsoft.graph.secretInformationAccessAwsServerlessFunctionFinding"
+                            return SecretInformationAccessAwsServerlessFunctionFinding.new
+                        when "#microsoft.graph.secretInformationAccessAwsUserFinding"
+                            return SecretInformationAccessAwsUserFinding.new
                         when "#microsoft.graph.sectionGroup"
                             return SectionGroup.new
                         when "#microsoft.graph.secureScore"
@@ -2472,6 +2668,8 @@ module MicrosoftGraphBeta
                             return SecurityHostname.new
                         when "#microsoft.graph.security.hostPair"
                             return SecurityHostPair.new
+                        when "#microsoft.graph.security.hostPort"
+                            return SecurityHostPort.new
                         when "#microsoft.graph.security.hostReputation"
                             return SecurityHostReputation.new
                         when "#microsoft.graph.security.hostSslCertificate"
@@ -2568,6 +2766,14 @@ module MicrosoftGraphBeta
                             return SecurityConfigurationTask.new
                         when "#microsoft.graph.securityReportsRoot"
                             return SecurityReportsRoot.new
+                        when "#microsoft.graph.securityToolAwsResourceAdministratorFinding"
+                            return SecurityToolAwsResourceAdministratorFinding.new
+                        when "#microsoft.graph.securityToolAwsRoleAdministratorFinding"
+                            return SecurityToolAwsRoleAdministratorFinding.new
+                        when "#microsoft.graph.securityToolAwsServerlessFunctionAdministratorFinding"
+                            return SecurityToolAwsServerlessFunctionAdministratorFinding.new
+                        when "#microsoft.graph.securityToolAwsUserAdministratorFinding"
+                            return SecurityToolAwsUserAdministratorFinding.new
                         when "#microsoft.graph.sensitiveType"
                             return SensitiveType.new
                         when "#microsoft.graph.sensitivityLabel"
@@ -2682,6 +2888,18 @@ module MicrosoftGraphBeta
                             return SubscribeToToneOperation.new
                         when "#microsoft.graph.subscription"
                             return Subscription.new
+                        when "#microsoft.graph.superAwsResourceFinding"
+                            return SuperAwsResourceFinding.new
+                        when "#microsoft.graph.superAwsRoleFinding"
+                            return SuperAwsRoleFinding.new
+                        when "#microsoft.graph.superAzureServicePrincipalFinding"
+                            return SuperAzureServicePrincipalFinding.new
+                        when "#microsoft.graph.superGcpServiceAccountFinding"
+                            return SuperGcpServiceAccountFinding.new
+                        when "#microsoft.graph.superServerlessFunctionFinding"
+                            return SuperServerlessFunctionFinding.new
+                        when "#microsoft.graph.superUserFinding"
+                            return SuperUserFinding.new
                         when "#microsoft.graph.swapShiftsChangeRequest"
                             return SwapShiftsChangeRequest.new
                         when "#microsoft.graph.symantecCodeSigningCertificate"
@@ -2694,6 +2912,8 @@ module MicrosoftGraphBeta
                             return SynchronizationSchema.new
                         when "#microsoft.graph.synchronizationTemplate"
                             return SynchronizationTemplate.new
+                        when "#microsoft.graph.targetDeviceGroup"
+                            return TargetDeviceGroup.new
                         when "#microsoft.graph.targetedManagedAppConfiguration"
                             return TargetedManagedAppConfiguration.new
                         when "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem"
@@ -2832,6 +3052,8 @@ module MicrosoftGraphBeta
                             return TrustFrameworkKeySet.new
                         when "#microsoft.graph.trustFrameworkPolicy"
                             return TrustFrameworkPolicy.new
+                        when "#microsoft.graph.unenforcedMfaAwsUserFinding"
+                            return UnenforcedMfaAwsUserFinding.new
                         when "#microsoft.graph.unifiedRbacApplication"
                             return UnifiedRbacApplication.new
                         when "#microsoft.graph.unifiedRbacResourceAction"
@@ -3026,10 +3248,10 @@ module MicrosoftGraphBeta
                             return UserSignInInsight.new
                         when "#microsoft.graph.userTeamwork"
                             return UserTeamwork.new
+                        when "#microsoft.graph.userVirtualEventsRoot"
+                            return UserVirtualEventsRoot.new
                         when "#microsoft.graph.verticalSection"
                             return VerticalSection.new
-                        when "#microsoft.graph.virtualAppointment"
-                            return VirtualAppointment.new
                         when "#microsoft.graph.virtualEndpoint"
                             return VirtualEndpoint.new
                         when "#microsoft.graph.virtualEvent"
@@ -3050,6 +3272,8 @@ module MicrosoftGraphBeta
                             return VirtualEventWebinar.new
                         when "#microsoft.graph.virtualEventWebinarRegistrationConfiguration"
                             return VirtualEventWebinarRegistrationConfiguration.new
+                        when "#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding"
+                            return VirtualMachineWithAwsStorageBucketAccessFinding.new
                         when "#microsoft.graph.voiceAuthenticationMethodConfiguration"
                             return VoiceAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.voiceAuthenticationMethodTarget"
@@ -3200,6 +3424,8 @@ module MicrosoftGraphBeta
                             return WindowsMalwareInformation.new
                         when "#microsoft.graph.windowsManagedAppProtection"
                             return WindowsManagedAppProtection.new
+                        when "#microsoft.graph.windowsManagedAppRegistration"
+                            return WindowsManagedAppRegistration.new
                         when "#microsoft.graph.windowsManagedDevice"
                             return WindowsManagedDevice.new
                         when "#microsoft.graph.windowsManagementApp"
@@ -3276,8 +3502,12 @@ module MicrosoftGraphBeta
                             return WindowsUpdatesDriverUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry"
                             return WindowsUpdatesFeatureUpdateCatalogEntry.new
+                        when "#microsoft.graph.windowsUpdates.knowledgeBaseArticle"
+                            return WindowsUpdatesKnowledgeBaseArticle.new
                         when "#microsoft.graph.windowsUpdates.operationalInsightsConnection"
                             return WindowsUpdatesOperationalInsightsConnection.new
+                        when "#microsoft.graph.windowsUpdates.productRevision"
+                            return WindowsUpdatesProductRevision.new
                         when "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry"
                             return WindowsUpdatesQualityUpdateCatalogEntry.new
                         when "#microsoft.graph.windowsUpdates.resourceConnection"

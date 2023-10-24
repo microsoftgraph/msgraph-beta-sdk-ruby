@@ -10,20 +10,23 @@ module MicrosoftGraphBeta
             # Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
             @automatic_user_consent_settings
             ## 
-            # Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            # Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             @b2b_collaboration_inbound
             ## 
-            # Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            # Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             @b2b_collaboration_outbound
             ## 
-            # Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+            # Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.
             @b2b_direct_connect_inbound
             ## 
-            # Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            # Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             @b2b_direct_connect_outbound
             ## 
-            # Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            # Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             @inbound_trust
+            ## 
+            # The invitationRedemptionIdentityProviderConfiguration property
+            @invitation_redemption_identity_provider_configuration
             ## 
             # If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
             @is_service_default
@@ -46,14 +49,14 @@ module MicrosoftGraphBeta
                 @automatic_user_consent_settings = value
             end
             ## 
-            ## Gets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            ## Gets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_inbound
                 return @b2b_collaboration_inbound
             end
             ## 
-            ## Sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            ## Sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             ## @param value Value to set for the b2bCollaborationInbound property.
             ## @return a void
             ## 
@@ -61,14 +64,14 @@ module MicrosoftGraphBeta
                 @b2b_collaboration_inbound = value
             end
             ## 
-            ## Gets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            ## Gets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_outbound
                 return @b2b_collaboration_outbound
             end
             ## 
-            ## Sets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            ## Sets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             ## @param value Value to set for the b2bCollaborationOutbound property.
             ## @return a void
             ## 
@@ -76,14 +79,14 @@ module MicrosoftGraphBeta
                 @b2b_collaboration_outbound = value
             end
             ## 
-            ## Gets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+            ## Gets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_direct_connect_inbound
                 return @b2b_direct_connect_inbound
             end
             ## 
-            ## Sets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+            ## Sets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.
             ## @param value Value to set for the b2bDirectConnectInbound property.
             ## @return a void
             ## 
@@ -91,14 +94,14 @@ module MicrosoftGraphBeta
                 @b2b_direct_connect_inbound = value
             end
             ## 
-            ## Gets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            ## Gets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_direct_connect_outbound
                 return @b2b_direct_connect_outbound
             end
             ## 
-            ## Sets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            ## Sets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             ## @param value Value to set for the b2bDirectConnectOutbound property.
             ## @return a void
             ## 
@@ -133,24 +136,40 @@ module MicrosoftGraphBeta
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectOutbound" => lambda {|n| @b2b_direct_connect_outbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "inboundTrust" => lambda {|n| @inbound_trust = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyInboundTrust.create_from_discriminator_value(pn) }) },
+                    "invitationRedemptionIdentityProviderConfiguration" => lambda {|n| @invitation_redemption_identity_provider_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DefaultInvitationRedemptionIdentityProviderConfiguration.create_from_discriminator_value(pn) }) },
                     "isServiceDefault" => lambda {|n| @is_service_default = n.get_boolean_value() },
                     "tenantRestrictions" => lambda {|n| @tenant_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantAccessPolicyTenantRestrictions.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            ## Gets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             ## @return a cross_tenant_access_policy_inbound_trust
             ## 
             def inbound_trust
                 return @inbound_trust
             end
             ## 
-            ## Sets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            ## Sets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             ## @param value Value to set for the inboundTrust property.
             ## @return a void
             ## 
             def inbound_trust=(value)
                 @inbound_trust = value
+            end
+            ## 
+            ## Gets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+            ## @return a default_invitation_redemption_identity_provider_configuration
+            ## 
+            def invitation_redemption_identity_provider_configuration
+                return @invitation_redemption_identity_provider_configuration
+            end
+            ## 
+            ## Sets the invitationRedemptionIdentityProviderConfiguration property value. The invitationRedemptionIdentityProviderConfiguration property
+            ## @param value Value to set for the invitationRedemptionIdentityProviderConfiguration property.
+            ## @return a void
+            ## 
+            def invitation_redemption_identity_provider_configuration=(value)
+                @invitation_redemption_identity_provider_configuration = value
             end
             ## 
             ## Gets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
@@ -181,6 +200,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)
                 writer.write_object_value("b2bDirectConnectOutbound", @b2b_direct_connect_outbound)
                 writer.write_object_value("inboundTrust", @inbound_trust)
+                writer.write_object_value("invitationRedemptionIdentityProviderConfiguration", @invitation_redemption_identity_provider_configuration)
                 writer.write_boolean_value("isServiceDefault", @is_service_default)
                 writer.write_object_value("tenantRestrictions", @tenant_restrictions)
             end

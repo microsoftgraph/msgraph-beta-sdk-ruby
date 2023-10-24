@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment.
+                    ## Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of azure_a_d_authentication
                     ## 
@@ -74,31 +74,32 @@ module MicrosoftGraphBeta
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json, application/json')
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment.
+                    ## Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
                     end
                     ## 
@@ -110,20 +111,29 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a azure_a_d_authentication_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return AzureADAuthenticationRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment.
+                    # Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
                     class AzureADAuthenticationRequestBuilderGetQueryParameters
                         
                         ## 

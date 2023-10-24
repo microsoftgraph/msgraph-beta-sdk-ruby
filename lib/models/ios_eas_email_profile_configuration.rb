@@ -284,7 +284,7 @@ module MicrosoftGraphBeta
                     "blockSyncingRecentlyUsedEmailAddresses" => lambda {|n| @block_syncing_recently_used_email_addresses = n.get_boolean_value() },
                     "derivedCredentialSettings" => lambda {|n| @derived_credential_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialSettings.create_from_discriminator_value(pn) }) },
                     "durationOfEmailToSync" => lambda {|n| @duration_of_email_to_sync = n.get_enum_value(MicrosoftGraphBeta::Models::EmailSyncDuration) },
-                    "easServices" => lambda {|n| @eas_services = n.get_enum_value(MicrosoftGraphBeta::Models::EasServices) },
+                    "easServices" => lambda {|n| @eas_services = n.get_enum_values(MicrosoftGraphBeta::Models::EasServices) },
                     "easServicesUserOverrideEnabled" => lambda {|n| @eas_services_user_override_enabled = n.get_boolean_value() },
                     "emailAddressSource" => lambda {|n| @email_address_source = n.get_enum_value(MicrosoftGraphBeta::Models::UserEmailSource) },
                     "encryptionCertificateType" => lambda {|n| @encryption_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::EmailCertificateType) },

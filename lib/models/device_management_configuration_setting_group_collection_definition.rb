@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationSettingGroupCollectionDefinition < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingGroupDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Maximum number of setting group count in the collection
+            # Maximum number of setting group count in the collection. Valid values 1 to 100
             @maximum_count
             ## 
-            # Minimum number of setting group count in the collection
+            # Minimum number of setting group count in the collection. Valid values 1 to 100
             @minimum_count
             ## 
             ## Instantiates a new deviceManagementConfigurationSettingGroupCollectionDefinition and sets the default values.
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the maximumCount property value. Maximum number of setting group count in the collection
+            ## Gets the maximumCount property value. Maximum number of setting group count in the collection. Valid values 1 to 100
             ## @return a integer
             ## 
             def maximum_count
                 return @maximum_count
             end
             ## 
-            ## Sets the maximumCount property value. Maximum number of setting group count in the collection
+            ## Sets the maximumCount property value. Maximum number of setting group count in the collection. Valid values 1 to 100
             ## @param value Value to set for the maximumCount property.
             ## @return a void
             ## 
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 @maximum_count = value
             end
             ## 
-            ## Gets the minimumCount property value. Minimum number of setting group count in the collection
+            ## Gets the minimumCount property value. Minimum number of setting group count in the collection. Valid values 1 to 100
             ## @return a integer
             ## 
             def minimum_count
                 return @minimum_count
             end
             ## 
-            ## Sets the minimumCount property value. Minimum number of setting group count in the collection
+            ## Sets the minimumCount property value. Minimum number of setting group count in the collection. Valid values 1 to 100
             ## @param value Value to set for the minimumCount property.
             ## @return a void
             ## 

@@ -13,6 +13,7 @@ module MicrosoftGraphBeta
             AdJoinCheckCredentialsExpired: :AdJoinCheckCredentialsExpired,
             AdJoinCheckAccountLockedOrDisabled: :AdJoinCheckAccountLockedOrDisabled,
             AdJoinCheckAccountQuotaExceeded: :AdJoinCheckAccountQuotaExceeded,
+            AdJoinCheckServerNotOperational: :AdJoinCheckServerNotOperational,
             AdJoinCheckUnknownError: :AdJoinCheckUnknownError,
             EndpointConnectivityCheckCloudPcUrlNotAllowListed: :EndpointConnectivityCheckCloudPcUrlNotAllowListed,
             EndpointConnectivityCheckWVDUrlNotAllowListed: :EndpointConnectivityCheckWVDUrlNotAllowListed,

@@ -8,56 +8,56 @@ module MicrosoftGraphBeta
         class Training < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The availabilityStatus property
+            # Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
             @availability_status
             ## 
-            # The createdBy property
+            # Identity of the user who created the training.
             @created_by
             ## 
-            # The createdDateTime property
+            # Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The description property
+            # The description for the training.
             @description
             ## 
-            # The displayName property
+            # The display name for the training.
             @display_name
             ## 
-            # The durationInMinutes property
+            # Training duration.
             @duration_in_minutes
             ## 
-            # The hasEvaluation property
+            # Indicates whether the training has any evaluation.
             @has_evaluation
             ## 
-            # The languageDetails property
+            # Language specific details on a training.
             @language_details
             ## 
-            # The lastModifiedBy property
+            # Identity of the user who last modified the training.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The source property
+            # Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
             @source
             ## 
-            # The supportedLocales property
+            # Supported locales for content for the associated training.
             @supported_locales
             ## 
-            # The tags property
+            # Training tags.
             @tags
             ## 
-            # The type property
+            # The type of training. Possible values are: unknown, phishing, unknownFutureValue.
             @type
             ## 
-            ## Gets the availabilityStatus property value. The availabilityStatus property
+            ## Gets the availabilityStatus property value. Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
             ## @return a training_availability_status
             ## 
             def availability_status
                 return @availability_status
             end
             ## 
-            ## Sets the availabilityStatus property value. The availabilityStatus property
+            ## Sets the availabilityStatus property value. Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
             ## @param value Value to set for the availabilityStatus property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the training.
             ## @return a email_identity
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the training.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 return Training.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. The description for the training.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. The description for the training.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The display name for the training.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The display name for the training.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the durationInMinutes property value. The durationInMinutes property
+            ## Gets the durationInMinutes property value. Training duration.
             ## @return a integer
             ## 
             def duration_in_minutes
                 return @duration_in_minutes
             end
             ## 
-            ## Sets the durationInMinutes property value. The durationInMinutes property
+            ## Sets the durationInMinutes property value. Training duration.
             ## @param value Value to set for the durationInMinutes property.
             ## @return a void
             ## 
@@ -178,14 +178,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the hasEvaluation property value. The hasEvaluation property
+            ## Gets the hasEvaluation property value. Indicates whether the training has any evaluation.
             ## @return a boolean
             ## 
             def has_evaluation
                 return @has_evaluation
             end
             ## 
-            ## Sets the hasEvaluation property value. The hasEvaluation property
+            ## Sets the hasEvaluation property value. Indicates whether the training has any evaluation.
             ## @param value Value to set for the hasEvaluation property.
             ## @return a void
             ## 
@@ -193,14 +193,14 @@ module MicrosoftGraphBeta
                 @has_evaluation = value
             end
             ## 
-            ## Gets the languageDetails property value. The languageDetails property
+            ## Gets the languageDetails property value. Language specific details on a training.
             ## @return a training_language_detail
             ## 
             def language_details
                 return @language_details
             end
             ## 
-            ## Sets the languageDetails property value. The languageDetails property
+            ## Sets the languageDetails property value. Language specific details on a training.
             ## @param value Value to set for the languageDetails property.
             ## @return a void
             ## 
@@ -208,14 +208,14 @@ module MicrosoftGraphBeta
                 @language_details = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Identity of the user who last modified the training.
             ## @return a email_identity
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Identity of the user who last modified the training.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -223,14 +223,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -261,14 +261,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("type", @type)
             end
             ## 
-            ## Gets the source property value. The source property
+            ## Gets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @return a simulation_content_source
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. The source property
+            ## Sets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -276,14 +276,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the supportedLocales property value. The supportedLocales property
+            ## Gets the supportedLocales property value. Supported locales for content for the associated training.
             ## @return a string
             ## 
             def supported_locales
                 return @supported_locales
             end
             ## 
-            ## Sets the supportedLocales property value. The supportedLocales property
+            ## Sets the supportedLocales property value. Supported locales for content for the associated training.
             ## @param value Value to set for the supportedLocales property.
             ## @return a void
             ## 
@@ -291,14 +291,14 @@ module MicrosoftGraphBeta
                 @supported_locales = value
             end
             ## 
-            ## Gets the tags property value. The tags property
+            ## Gets the tags property value. Training tags.
             ## @return a string
             ## 
             def tags
                 return @tags
             end
             ## 
-            ## Sets the tags property value. The tags property
+            ## Sets the tags property value. Training tags.
             ## @param value Value to set for the tags property.
             ## @return a void
             ## 
@@ -306,14 +306,14 @@ module MicrosoftGraphBeta
                 @tags = value
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
             ## @return a training_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

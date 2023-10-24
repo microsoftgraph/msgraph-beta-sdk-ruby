@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Represents a detailed summary of an application sign-in.
             @application_sign_in_detailed_summary
             ## 
-            # Container for navigation properties for Azure AD authentication methods resources.
+            # Container for navigation properties for Microsoft Entra authentication methods resources.
             @authentication_methods
             ## 
             # Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 @application_sign_in_detailed_summary = value
             end
             ## 
-            ## Gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @return a authentication_methods_root
             ## 
             def authentication_methods
                 return @authentication_methods
             end
             ## 
-            ## Sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @param value Value to set for the authenticationMethods property.
             ## @return a void
             ## 

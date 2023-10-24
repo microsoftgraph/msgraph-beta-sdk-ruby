@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class OnAttributeCollectionListener < MicrosoftGraphBeta::Models::AuthenticationEventListener
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            # Required. Configuration for what to invoke if the event resolves to this listener.
             @handler
             ## 
             ## Instantiates a new onAttributeCollectionListener and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            ## Gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener.
             ## @return a on_attribute_collection_handler
             ## 
             def handler
                 return @handler
             end
             ## 
-            ## Sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            ## Sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener.
             ## @param value Value to set for the handler property.
             ## @return a void
             ## 

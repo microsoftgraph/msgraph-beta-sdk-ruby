@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class AttackSimulationRoot < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The endUserNotifications property
+            # Represents an end user's notification for an attack simulation training.
             @end_user_notifications
             ## 
-            # The landingPages property
+            # Represents an attack simulation training landing page.
             @landing_pages
             ## 
-            # The loginPages property
+            # Represents an attack simulation training login page.
             @login_pages
             ## 
             # Represents an attack simulation training operation.
@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Represents an attack simulation training campaign in a tenant.
             @simulations
             ## 
-            # The trainings property
+            # Represents details about attack simulation trainings.
             @trainings
             ## 
             ## Instantiates a new attackSimulationRoot and sets the default values.
@@ -47,14 +47,14 @@ module MicrosoftGraphBeta
                 return AttackSimulationRoot.new
             end
             ## 
-            ## Gets the endUserNotifications property value. The endUserNotifications property
+            ## Gets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
             ## @return a end_user_notification
             ## 
             def end_user_notifications
                 return @end_user_notifications
             end
             ## 
-            ## Sets the endUserNotifications property value. The endUserNotifications property
+            ## Sets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
             ## @param value Value to set for the endUserNotifications property.
             ## @return a void
             ## 
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the landingPages property value. The landingPages property
+            ## Gets the landingPages property value. Represents an attack simulation training landing page.
             ## @return a landing_page
             ## 
             def landing_pages
                 return @landing_pages
             end
             ## 
-            ## Sets the landingPages property value. The landingPages property
+            ## Sets the landingPages property value. Represents an attack simulation training landing page.
             ## @param value Value to set for the landingPages property.
             ## @return a void
             ## 
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 @landing_pages = value
             end
             ## 
-            ## Gets the loginPages property value. The loginPages property
+            ## Gets the loginPages property value. Represents an attack simulation training login page.
             ## @return a login_page
             ## 
             def login_pages
                 return @login_pages
             end
             ## 
-            ## Sets the loginPages property value. The loginPages property
+            ## Sets the loginPages property value. Represents an attack simulation training login page.
             ## @param value Value to set for the loginPages property.
             ## @return a void
             ## 
@@ -185,14 +185,14 @@ module MicrosoftGraphBeta
                 @simulations = value
             end
             ## 
-            ## Gets the trainings property value. The trainings property
+            ## Gets the trainings property value. Represents details about attack simulation trainings.
             ## @return a training
             ## 
             def trainings
                 return @trainings
             end
             ## 
-            ## Sets the trainings property value. The trainings property
+            ## Sets the trainings property value. Represents details about attack simulation trainings.
             ## @param value Value to set for the trainings property.
             ## @return a void
             ## 

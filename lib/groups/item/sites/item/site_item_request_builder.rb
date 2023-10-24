@@ -24,6 +24,7 @@ require_relative './onenote/onenote_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './pages/pages_request_builder'
 require_relative './permissions/permissions_request_builder'
+require_relative './recycle_bin/recycle_bin_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './term_store/term_store_request_builder'
 
@@ -112,6 +113,11 @@ module MicrosoftGraphBeta
                             return MicrosoftGraphBeta::Groups::Item::Sites::Item::Permissions::PermissionsRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the recycleBin property of the microsoft.graph.site entity.
+                        def recycle_bin()
+                            return MicrosoftGraphBeta::Groups::Item::Sites::Item::RecycleBin::RecycleBinRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to manage the sites property of the microsoft.graph.site entity.
                         def sites()
                             return MicrosoftGraphBeta::Groups::Item::Sites::Item::Sites::SitesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -198,15 +204,15 @@ module MicrosoftGraphBeta
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json;q=1')
                             return request_info
                         end
                         ## 
@@ -218,16 +224,25 @@ module MicrosoftGraphBeta
                         def to_patch_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :PATCH
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :PATCH
+                            request_info.headers.try_add('Accept', 'application/json;q=1')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a site_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return SiteItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 
