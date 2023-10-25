@@ -7,16 +7,16 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationSimpleSettingDefinition < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Default setting value for this setting.
+            # Default setting value for this setting
             @default_value
             ## 
-            # list of child settings that depend on this setting.
+            # list of child settings that depend on this setting
             @depended_on_by
             ## 
-            # list of parent settings this setting is dependent on.
+            # list of parent settings this setting is dependent on
             @dependent_on
             ## 
-            # Definition of the value for this setting.
+            # Definition of the value for this setting
             @value_definition
             ## 
             ## Instantiates a new deviceManagementConfigurationSimpleSettingDefinition and sets the default values.
@@ -43,14 +43,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementConfigurationSimpleSettingDefinition.new
             end
             ## 
-            ## Gets the defaultValue property value. Default setting value for this setting.
+            ## Gets the defaultValue property value. Default setting value for this setting
             ## @return a device_management_configuration_setting_value
             ## 
             def default_value
                 return @default_value
             end
             ## 
-            ## Sets the defaultValue property value. Default setting value for this setting.
+            ## Sets the defaultValue property value. Default setting value for this setting
             ## @param value Value to set for the defaultValue property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraphBeta
                 @default_value = value
             end
             ## 
-            ## Gets the dependedOnBy property value. list of child settings that depend on this setting.
+            ## Gets the dependedOnBy property value. list of child settings that depend on this setting
             ## @return a device_management_configuration_setting_depended_on_by
             ## 
             def depended_on_by
                 return @depended_on_by
             end
             ## 
-            ## Sets the dependedOnBy property value. list of child settings that depend on this setting.
+            ## Sets the dependedOnBy property value. list of child settings that depend on this setting
             ## @param value Value to set for the dependedOnBy property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 @depended_on_by = value
             end
             ## 
-            ## Gets the dependentOn property value. list of parent settings this setting is dependent on.
+            ## Gets the dependentOn property value. list of parent settings this setting is dependent on
             ## @return a device_management_configuration_dependent_on
             ## 
             def dependent_on
                 return @dependent_on
             end
             ## 
-            ## Sets the dependentOn property value. list of parent settings this setting is dependent on.
+            ## Sets the dependentOn property value. list of parent settings this setting is dependent on
             ## @param value Value to set for the dependentOn property.
             ## @return a void
             ## 
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("valueDefinition", @value_definition)
             end
             ## 
-            ## Gets the valueDefinition property value. Definition of the value for this setting.
+            ## Gets the valueDefinition property value. Definition of the value for this setting
             ## @return a device_management_configuration_setting_value_definition
             ## 
             def value_definition
                 return @value_definition
             end
             ## 
-            ## Sets the valueDefinition property value. Definition of the value for this setting.
+            ## Sets the valueDefinition property value. Definition of the value for this setting
             ## @param value Value to set for the valueDefinition property.
             ## @return a void
             ## 

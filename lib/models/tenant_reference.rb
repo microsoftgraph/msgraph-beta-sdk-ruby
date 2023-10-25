@@ -13,18 +13,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The identifier of the Azure AD tenant. Read-only. Key.
+            # The identifier of the Microsoft Entra tenant. Read-only. Key.
             @tenant_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,14 +83,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantId property value. The identifier of the Azure AD tenant. Read-only. Key.
+            ## Gets the tenantId property value. The identifier of the Microsoft Entra tenant. Read-only. Key.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The identifier of the Azure AD tenant. Read-only. Key.
+            ## Sets the tenantId property value. The identifier of the Microsoft Entra tenant. Read-only. Key.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

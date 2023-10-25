@@ -19,15 +19,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The trafficType property
+            @traffic_type
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -88,6 +91,7 @@ module MicrosoftGraphBeta
                     "count" => lambda {|n| @count = n.get_number_value() },
                     "destination" => lambda {|n| @destination = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "trafficType" => lambda {|n| @traffic_type = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessTrafficType) },
                 }
             end
             ## 
@@ -115,7 +119,23 @@ module MicrosoftGraphBeta
                 writer.write_number_value("count", @count)
                 writer.write_string_value("destination", @destination)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_enum_value("trafficType", @traffic_type)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the trafficType property value. The trafficType property
+            ## @return a networkaccess_traffic_type
+            ## 
+            def traffic_type
+                return @traffic_type
+            end
+            ## 
+            ## Sets the trafficType property value. The trafficType property
+            ## @param value Value to set for the trafficType property.
+            ## @return a void
+            ## 
+            def traffic_type=(value)
+                @traffic_type = value
             end
         end
     end

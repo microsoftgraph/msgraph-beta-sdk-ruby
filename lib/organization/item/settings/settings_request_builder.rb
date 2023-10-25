@@ -8,8 +8,6 @@ require_relative './contact_insights/contact_insights_request_builder'
 require_relative './item_insights/item_insights_request_builder'
 require_relative './microsoft_application_data_access/microsoft_application_data_access_request_builder'
 require_relative './people_insights/people_insights_request_builder'
-require_relative './profile_card_properties/profile_card_properties_request_builder'
-require_relative './pronouns/pronouns_request_builder'
 require_relative './settings'
 
 module MicrosoftGraphBeta
@@ -41,16 +39,6 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::Organization::Item::Settings::PeopleInsights::PeopleInsightsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.
-                    def profile_card_properties()
-                        return MicrosoftGraphBeta::Organization::Item::Settings::ProfileCardProperties::ProfileCardPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.
-                    def pronouns()
-                        return MicrosoftGraphBeta::Organization::Item::Settings::Pronouns::PronounsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new SettingsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -74,7 +62,7 @@ module MicrosoftGraphBeta
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    ## Retrieve the properties and relationships of organizationSettings object. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of organization_settings
                     ## 
@@ -110,31 +98,32 @@ module MicrosoftGraphBeta
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json, application/json')
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    ## Retrieve the properties and relationships of organizationSettings object. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
                     end
                     ## 
@@ -146,20 +135,29 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a settings_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return SettingsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+                    # Retrieve the properties and relationships of organizationSettings object. Nullable.
                     class SettingsRequestBuilderGetQueryParameters
                         
                         ## 

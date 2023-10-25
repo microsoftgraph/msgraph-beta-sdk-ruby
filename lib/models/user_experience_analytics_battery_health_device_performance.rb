@@ -9,13 +9,13 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthDevicePerformance < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+            # Estimated battery age. Unit in days. Valid values 0 to 2147483647
             @battery_age_in_days
             ## 
             # Number of batteries in a user device. Valid values 1 to 2147483647
             @device_battery_count
             ## 
-            # A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            # A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             @device_battery_health_score
             ## 
             # The unique identifier of the device, Intune DeviceID.
@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
             # Device friendly name.
             @device_name
             ## 
-            # The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+            # The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
             @estimated_runtime_in_minutes
             ## 
             # Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
@@ -36,20 +36,20 @@ module MicrosoftGraphBeta
             # The manufacturer name of the device.
             @manufacturer
             ## 
-            # Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+            # Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
             @max_capacity_percentage
             ## 
             # The model name of the device.
             @model
             ## 
-            ## Gets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+            ## Gets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_age_in_days
                 return @battery_age_in_days
             end
             ## 
-            ## Sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+            ## Sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryAgeInDays property.
             ## @return a void
             ## 
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 @device_battery_count = value
             end
             ## 
-            ## Gets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Gets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def device_battery_health_score
                 return @device_battery_health_score
             end
             ## 
-            ## Sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @param value Value to set for the deviceBatteryHealthScore property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @device_name = value
             end
             ## 
-            ## Gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def estimated_runtime_in_minutes
                 return @estimated_runtime_in_minutes
             end
             ## 
-            ## Sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
             ## @param value Value to set for the estimatedRuntimeInMinutes property.
             ## @return a void
             ## 
@@ -212,14 +212,14 @@ module MicrosoftGraphBeta
                 @manufacturer = value
             end
             ## 
-            ## Gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def max_capacity_percentage
                 return @max_capacity_percentage
             end
             ## 
-            ## Sets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Sets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
             ## @param value Value to set for the maxCapacityPercentage property.
             ## @return a void
             ## 

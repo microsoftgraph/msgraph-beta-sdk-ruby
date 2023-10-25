@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class VirtualEventSession < MicrosoftGraphBeta::Models::OnlineMeeting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The registrations property
+            # Registration records of this virtual event session.
             @registrations
             ## 
             ## Instantiates a new virtualEventSession and sets the default values.
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the registrations property value. The registrations property
+            ## Gets the registrations property value. Registration records of this virtual event session.
             ## @return a virtual_event_registration
             ## 
             def registrations
                 return @registrations
             end
             ## 
-            ## Sets the registrations property value. The registrations property
+            ## Sets the registrations property value. Registration records of this virtual event session.
             ## @param value Value to set for the registrations property.
             ## @return a void
             ## 

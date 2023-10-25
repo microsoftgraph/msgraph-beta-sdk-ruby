@@ -7,17 +7,17 @@ module MicrosoftGraphBeta
         class NetworkaccessConnectivity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Branch represent locations for connectivity.
+            # Branches represent locations for connectivity.
             @branches
             ## 
-            ## Gets the branches property value. Branch represent locations for connectivity.
+            ## Gets the branches property value. Branches represent locations for connectivity.
             ## @return a networkaccess_branch_site
             ## 
             def branches
                 return @branches
             end
             ## 
-            ## Sets the branches property value. Branch represent locations for connectivity.
+            ## Sets the branches property value. Branches represent locations for connectivity.
             ## @param value Value to set for the branches property.
             ## @return a void
             ## 

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
             @is_multi_valued
             ## 
-            # Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            # Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             @is_synced_from_on_premises
             ## 
             # Name of the extension property. Not nullable. Supports $filter (eq).
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 @is_multi_valued = value
             end
             ## 
-            ## Gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            ## Gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             ## @return a boolean
             ## 
             def is_synced_from_on_premises
                 return @is_synced_from_on_premises
             end
             ## 
-            ## Sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            ## Sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             ## @param value Value to set for the isSyncedFromOnPremises property.
             ## @return a void
             ## 

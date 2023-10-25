@@ -87,7 +87,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "allowDeviceHealthMonitoring" => lambda {|n| @allow_device_health_monitoring = n.get_enum_value(MicrosoftGraphBeta::Models::Enablement) },
                     "configDeviceHealthMonitoringCustomScope" => lambda {|n| @config_device_health_monitoring_custom_scope = n.get_string_value() },
-                    "configDeviceHealthMonitoringScope" => lambda {|n| @config_device_health_monitoring_scope = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsHealthMonitoringScope) },
+                    "configDeviceHealthMonitoringScope" => lambda {|n| @config_device_health_monitoring_scope = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsHealthMonitoringScope) },
                 })
             end
             ## 

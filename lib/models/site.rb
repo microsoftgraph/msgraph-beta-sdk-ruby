@@ -34,6 +34,9 @@ module MicrosoftGraphBeta
             # The informationProtection property
             @information_protection
             ## 
+            # The isPersonalSite property
+            @is_personal_site
+            ## 
             # Used to address any item contained in this site. This collection cannot be enumerated.
             @items
             ## 
@@ -51,6 +54,9 @@ module MicrosoftGraphBeta
             ## 
             # The permissions associated with the site. Nullable.
             @permissions
+            ## 
+            # The collection of recycleBinItems under this site.
+            @recycle_bin
             ## 
             # If present, indicates that this is the root site in the site collection. Read-only.
             @root
@@ -221,12 +227,14 @@ module MicrosoftGraphBeta
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Drive.create_from_discriminator_value(pn) }) },
                     "externalColumns" => lambda {|n| @external_columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ColumnDefinition.create_from_discriminator_value(pn) }) },
                     "informationProtection" => lambda {|n| @information_protection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InformationProtection.create_from_discriminator_value(pn) }) },
+                    "isPersonalSite" => lambda {|n| @is_personal_site = n.get_boolean_value() },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BaseItem.create_from_discriminator_value(pn) }) },
                     "lists" => lambda {|n| @lists = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::List.create_from_discriminator_value(pn) }) },
                     "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Onenote.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RichLongRunningOperation.create_from_discriminator_value(pn) }) },
                     "pages" => lambda {|n| @pages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BaseSitePage.create_from_discriminator_value(pn) }) },
                     "permissions" => lambda {|n| @permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Permission.create_from_discriminator_value(pn) }) },
+                    "recycleBin" => lambda {|n| @recycle_bin = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RecycleBin.create_from_discriminator_value(pn) }) },
                     "root" => lambda {|n| @root = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Root.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SiteSettings.create_from_discriminator_value(pn) }) },
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SharepointIds.create_from_discriminator_value(pn) }) },
@@ -249,6 +257,21 @@ module MicrosoftGraphBeta
             ## 
             def information_protection=(value)
                 @information_protection = value
+            end
+            ## 
+            ## Gets the isPersonalSite property value. The isPersonalSite property
+            ## @return a boolean
+            ## 
+            def is_personal_site
+                return @is_personal_site
+            end
+            ## 
+            ## Sets the isPersonalSite property value. The isPersonalSite property
+            ## @param value Value to set for the isPersonalSite property.
+            ## @return a void
+            ## 
+            def is_personal_site=(value)
+                @is_personal_site = value
             end
             ## 
             ## Gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
@@ -341,6 +364,21 @@ module MicrosoftGraphBeta
                 @permissions = value
             end
             ## 
+            ## Gets the recycleBin property value. The collection of recycleBinItems under this site.
+            ## @return a recycle_bin
+            ## 
+            def recycle_bin
+                return @recycle_bin
+            end
+            ## 
+            ## Sets the recycleBin property value. The collection of recycleBinItems under this site.
+            ## @param value Value to set for the recycleBin property.
+            ## @return a void
+            ## 
+            def recycle_bin=(value)
+                @recycle_bin = value
+            end
+            ## 
             ## Gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
             ## @return a root
             ## 
@@ -372,12 +410,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("drives", @drives)
                 writer.write_collection_of_object_values("externalColumns", @external_columns)
                 writer.write_object_value("informationProtection", @information_protection)
+                writer.write_boolean_value("isPersonalSite", @is_personal_site)
                 writer.write_collection_of_object_values("items", @items)
                 writer.write_collection_of_object_values("lists", @lists)
                 writer.write_object_value("onenote", @onenote)
                 writer.write_collection_of_object_values("operations", @operations)
                 writer.write_collection_of_object_values("pages", @pages)
                 writer.write_collection_of_object_values("permissions", @permissions)
+                writer.write_object_value("recycleBin", @recycle_bin)
                 writer.write_object_value("root", @root)
                 writer.write_object_value("settings", @settings)
                 writer.write_object_value("sharepointIds", @sharepoint_ids)
