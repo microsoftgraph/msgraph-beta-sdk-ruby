@@ -22,21 +22,24 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # The rarelyUsedTenantCount property
+            @rarely_used_tenant_count
+            ## 
             # Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
             @tenant_count
             ## 
             # Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
             @user_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -98,6 +101,7 @@ module MicrosoftGraphBeta
                     "deviceCount" => lambda {|n| @device_count = n.get_number_value() },
                     "newTenantCount" => lambda {|n| @new_tenant_count = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "rarelyUsedTenantCount" => lambda {|n| @rarely_used_tenant_count = n.get_number_value() },
                     "tenantCount" => lambda {|n| @tenant_count = n.get_number_value() },
                     "userCount" => lambda {|n| @user_count = n.get_number_value() },
                 }
@@ -133,6 +137,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+            ## @return a integer
+            ## 
+            def rarely_used_tenant_count
+                return @rarely_used_tenant_count
+            end
+            ## 
+            ## Sets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+            ## @param value Value to set for the rarelyUsedTenantCount property.
+            ## @return a void
+            ## 
+            def rarely_used_tenant_count=(value)
+                @rarely_used_tenant_count = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -143,6 +162,7 @@ module MicrosoftGraphBeta
                 writer.write_number_value("deviceCount", @device_count)
                 writer.write_number_value("newTenantCount", @new_tenant_count)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_number_value("rarelyUsedTenantCount", @rarely_used_tenant_count)
                 writer.write_number_value("tenantCount", @tenant_count)
                 writer.write_number_value("userCount", @user_count)
                 writer.write_additional_data(@additional_data)

@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Details of each property that was modified in this provisioning action on this object.
             @modified_properties
             ## 
-            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             @provisioning_action
             ## 
             # Details of provisioning status. Supports $filter (eq, contains) for status.
@@ -59,7 +59,7 @@ module MicrosoftGraphBeta
             # Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             @target_system
             ## 
-            # Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            # Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             @tenant_id
             ## 
             ## Gets the action property value. The action property
@@ -224,14 +224,14 @@ module MicrosoftGraphBeta
                 @modified_properties = value
             end
             ## 
-            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             ## @return a provisioning_action
             ## 
             def provisioning_action
                 return @provisioning_action
             end
             ## 
-            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             ## @param value Value to set for the provisioningAction property.
             ## @return a void
             ## 
@@ -386,14 +386,14 @@ module MicrosoftGraphBeta
                 @target_system = value
             end
             ## 
-            ## Gets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            ## Gets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            ## Sets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

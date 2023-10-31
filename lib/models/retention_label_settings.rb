@@ -10,50 +10,50 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The behaviorDuringRetentionPeriod property
+            # Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.
             @behavior_during_retention_period
             ## 
-            # The isContentUpdateAllowed property
+            # Specifies whether updates to document content are allowed. Read-only.
             @is_content_update_allowed
             ## 
-            # The isDeleteAllowed property
+            # Specifies whether the document deletion is allowed. Read-only.
             @is_delete_allowed
             ## 
-            # The isLabelUpdateAllowed property
+            # Specifies whether you're allowed to change the retention label on the document. Read-only.
             @is_label_update_allowed
             ## 
-            # The isMetadataUpdateAllowed property
+            # Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
             @is_metadata_update_allowed
             ## 
-            # The isRecordLocked property
+            # Specifies whether the item is locked. Read-write.
             @is_record_locked
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the behaviorDuringRetentionPeriod property value. The behaviorDuringRetentionPeriod property
+            ## Gets the behaviorDuringRetentionPeriod property value. Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.
             ## @return a security_behavior_during_retention_period
             ## 
             def behavior_during_retention_period
                 return @behavior_during_retention_period
             end
             ## 
-            ## Sets the behaviorDuringRetentionPeriod property value. The behaviorDuringRetentionPeriod property
+            ## Sets the behaviorDuringRetentionPeriod property value. Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.
             ## @param value Value to set for the behaviorDuringRetentionPeriod property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the isContentUpdateAllowed property value. The isContentUpdateAllowed property
+            ## Gets the isContentUpdateAllowed property value. Specifies whether updates to document content are allowed. Read-only.
             ## @return a boolean
             ## 
             def is_content_update_allowed
                 return @is_content_update_allowed
             end
             ## 
-            ## Sets the isContentUpdateAllowed property value. The isContentUpdateAllowed property
+            ## Sets the isContentUpdateAllowed property value. Specifies whether updates to document content are allowed. Read-only.
             ## @param value Value to set for the isContentUpdateAllowed property.
             ## @return a void
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @is_content_update_allowed = value
             end
             ## 
-            ## Gets the isDeleteAllowed property value. The isDeleteAllowed property
+            ## Gets the isDeleteAllowed property value. Specifies whether the document deletion is allowed. Read-only.
             ## @return a boolean
             ## 
             def is_delete_allowed
                 return @is_delete_allowed
             end
             ## 
-            ## Sets the isDeleteAllowed property value. The isDeleteAllowed property
+            ## Sets the isDeleteAllowed property value. Specifies whether the document deletion is allowed. Read-only.
             ## @param value Value to set for the isDeleteAllowed property.
             ## @return a void
             ## 
@@ -122,14 +122,14 @@ module MicrosoftGraphBeta
                 @is_delete_allowed = value
             end
             ## 
-            ## Gets the isLabelUpdateAllowed property value. The isLabelUpdateAllowed property
+            ## Gets the isLabelUpdateAllowed property value. Specifies whether you're allowed to change the retention label on the document. Read-only.
             ## @return a boolean
             ## 
             def is_label_update_allowed
                 return @is_label_update_allowed
             end
             ## 
-            ## Sets the isLabelUpdateAllowed property value. The isLabelUpdateAllowed property
+            ## Sets the isLabelUpdateAllowed property value. Specifies whether you're allowed to change the retention label on the document. Read-only.
             ## @param value Value to set for the isLabelUpdateAllowed property.
             ## @return a void
             ## 
@@ -137,14 +137,14 @@ module MicrosoftGraphBeta
                 @is_label_update_allowed = value
             end
             ## 
-            ## Gets the isMetadataUpdateAllowed property value. The isMetadataUpdateAllowed property
+            ## Gets the isMetadataUpdateAllowed property value. Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
             ## @return a boolean
             ## 
             def is_metadata_update_allowed
                 return @is_metadata_update_allowed
             end
             ## 
-            ## Sets the isMetadataUpdateAllowed property value. The isMetadataUpdateAllowed property
+            ## Sets the isMetadataUpdateAllowed property value. Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
             ## @param value Value to set for the isMetadataUpdateAllowed property.
             ## @return a void
             ## 
@@ -152,14 +152,14 @@ module MicrosoftGraphBeta
                 @is_metadata_update_allowed = value
             end
             ## 
-            ## Gets the isRecordLocked property value. The isRecordLocked property
+            ## Gets the isRecordLocked property value. Specifies whether the item is locked. Read-write.
             ## @return a boolean
             ## 
             def is_record_locked
                 return @is_record_locked
             end
             ## 
-            ## Sets the isRecordLocked property value. The isRecordLocked property
+            ## Sets the isRecordLocked property value. Specifies whether the item is locked. Read-write.
             ## @param value Value to set for the isRecordLocked property.
             ## @return a void
             ## 

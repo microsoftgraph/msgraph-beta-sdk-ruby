@@ -22,18 +22,18 @@ module MicrosoftGraphBeta
             # Number of days the user is OOF during a simulation journey/course of a campaign.
             @out_of_office_days
             ## 
-            # The id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            # The id property value of the user resource that represents the user in the Microsoft Entra tenant.
             @user_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            ## Gets the userId property value. The id property value of the user resource that represents the user in the Microsoft Entra tenant.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            ## Sets the userId property value. The id property value of the user resource that represents the user in the Microsoft Entra tenant.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

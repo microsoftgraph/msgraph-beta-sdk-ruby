@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Represents a detailed summary of an application sign-in.
             @application_sign_in_detailed_summary
             ## 
-            # Container for navigation properties for Azure AD authentication methods resources.
+            # Container for navigation properties for Microsoft Entra authentication methods resources.
             @authentication_methods
             ## 
             # Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             # The monthlyPrintUsageSummariesByUser property
             @monthly_print_usage_summaries_by_user
             ## 
-            # Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            # Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
             @security
             ## 
             # Represents a collection of sign-in activities of service principals.
@@ -57,6 +57,9 @@ module MicrosoftGraphBeta
             ## 
             # Represents the self-service password reset (SSPR) usage for a given tenant.
             @user_credential_usage_details
+            ## 
+            # The userInsights property
+            @user_insights
             ## 
             ## Gets the appCredentialSignInActivities property value. Represents a collection of sign-in activities of application credentials.
             ## @return a app_credential_sign_in_activity
@@ -88,14 +91,14 @@ module MicrosoftGraphBeta
                 @application_sign_in_detailed_summary = value
             end
             ## 
-            ## Gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @return a authentication_methods_root
             ## 
             def authentication_methods
                 return @authentication_methods
             end
             ## 
-            ## Sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @param value Value to set for the authenticationMethods property.
             ## @return a void
             ## 
@@ -231,6 +234,7 @@ module MicrosoftGraphBeta
                     "servicePrincipalSignInActivities" => lambda {|n| @service_principal_sign_in_activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ServicePrincipalSignInActivity.create_from_discriminator_value(pn) }) },
                     "sla" => lambda {|n| @sla = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServiceLevelAgreementRoot.create_from_discriminator_value(pn) }) },
                     "userCredentialUsageDetails" => lambda {|n| @user_credential_usage_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UserCredentialUsageDetails.create_from_discriminator_value(pn) }) },
+                    "userInsights" => lambda {|n| @user_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::UserInsightsRoot.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -294,14 +298,14 @@ module MicrosoftGraphBeta
                 @monthly_print_usage_summaries_by_user = value
             end
             ## 
-            ## Gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            ## Gets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
             ## @return a security_reports_root
             ## 
             def security
                 return @security
             end
             ## 
-            ## Sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            ## Sets the security property value. Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
             ## @param value Value to set for the security property.
             ## @return a void
             ## 
@@ -333,6 +337,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("servicePrincipalSignInActivities", @service_principal_sign_in_activities)
                 writer.write_object_value("sla", @sla)
                 writer.write_collection_of_object_values("userCredentialUsageDetails", @user_credential_usage_details)
+                writer.write_object_value("userInsights", @user_insights)
             end
             ## 
             ## Gets the servicePrincipalSignInActivities property value. Represents a collection of sign-in activities of service principals.
@@ -378,6 +383,21 @@ module MicrosoftGraphBeta
             ## 
             def user_credential_usage_details=(value)
                 @user_credential_usage_details = value
+            end
+            ## 
+            ## Gets the userInsights property value. The userInsights property
+            ## @return a user_insights_root
+            ## 
+            def user_insights
+                return @user_insights
+            end
+            ## 
+            ## Sets the userInsights property value. The userInsights property
+            ## @param value Value to set for the userInsights property.
+            ## @return a void
+            ## 
+            def user_insights=(value)
+                @user_insights = value
             end
         end
     end

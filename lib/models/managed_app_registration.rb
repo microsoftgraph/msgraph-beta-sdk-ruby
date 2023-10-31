@@ -163,6 +163,8 @@ module MicrosoftGraphBeta
                             return AndroidManagedAppRegistration.new
                         when "#microsoft.graph.iosManagedAppRegistration"
                             return IosManagedAppRegistration.new
+                        when "#microsoft.graph.windowsManagedAppRegistration"
+                            return WindowsManagedAppRegistration.new
                     end
                 end
                 return ManagedAppRegistration.new

@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class CloudPcOnPremisesConnectionHealthCheck
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details about the health check or the recommended action.
+            # More details about the health check or the recommended action.
             @additional_details
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -38,29 +38,29 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the additionalDetails property value. Additional details about the health check or the recommended action.
+            ## Gets the additionalDetails property value. More details about the health check or the recommended action.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details about the health check or the recommended action.
+            ## Sets the additionalDetails property value. More details about the health check or the recommended action.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 

@@ -42,15 +42,15 @@ module MicrosoftGraphBeta
                                     # The visibility property
                                     @visibility
                                     ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                                             "description" => lambda {|n| @description = n.get_string_value() },
                                             "displayName" => lambda {|n| @display_name = n.get_string_value() },
                                             "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
-                                            "partsToClone" => lambda {|n| @parts_to_clone = n.get_enum_value(MicrosoftGraphBeta::Models::ClonableTeamParts) },
+                                            "partsToClone" => lambda {|n| @parts_to_clone = n.get_enum_values(MicrosoftGraphBeta::Models::ClonableTeamParts) },
                                             "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::TeamVisibilityType) },
                                         }
                                     end

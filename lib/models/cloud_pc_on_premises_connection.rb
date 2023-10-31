@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             @health_check_status_details
             ## 
-            # When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            # When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             @in_use
             ## 
             # The managedBy property
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
             # The name of the target Azure subscription. Read-only.
             @subscription_name
             ## 
-            # Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            # Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
             @type
             ## 
             # The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
@@ -162,7 +162,7 @@ module MicrosoftGraphBeta
                     "healthCheckStatus" => lambda {|n| @health_check_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatus) },
                     "healthCheckStatusDetails" => lambda {|n| @health_check_status_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatusDetails.create_from_discriminator_value(pn) }) },
                     "inUse" => lambda {|n| @in_use = n.get_boolean_value() },
-                    "managedBy" => lambda {|n| @managed_by = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "managedBy" => lambda {|n| @managed_by = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "organizationalUnit" => lambda {|n| @organizational_unit = n.get_string_value() },
                     "resourceGroupId" => lambda {|n| @resource_group_id = n.get_string_value() },
                     "subnetId" => lambda {|n| @subnet_id = n.get_string_value() },
@@ -204,14 +204,14 @@ module MicrosoftGraphBeta
                 @health_check_status_details = value
             end
             ## 
-            ## Gets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## Gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             ## @return a boolean
             ## 
             def in_use
                 return @in_use
             end
             ## 
-            ## Sets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## Sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             ## @param value Value to set for the inUse property.
             ## @return a void
             ## 
@@ -335,14 +335,14 @@ module MicrosoftGraphBeta
                 @subscription_name = value
             end
             ## 
-            ## Gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            ## Gets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
             ## @return a cloud_pc_on_premises_connection_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            ## Sets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class InsightsSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+            # The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
             @disabled_for_group
             ## 
             # true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
@@ -29,14 +29,14 @@ module MicrosoftGraphBeta
                 return InsightsSettings.new
             end
             ## 
-            ## Gets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+            ## Gets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
             ## @return a string
             ## 
             def disabled_for_group
                 return @disabled_for_group
             end
             ## 
-            ## Sets the disabledForGroup property value. The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+            ## Sets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
             ## @param value Value to set for the disabledForGroup property.
             ## @return a void
             ## 

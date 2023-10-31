@@ -18,6 +18,12 @@ module MicrosoftGraphBeta
             # The value for the minimum applicable operating system.
             @minimum_supported_operating_system
             ## 
+            # ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            @post_install_script
+            ## 
+            # ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            @pre_install_script
+            ## 
             # The primary CFBundleIdentifier of the .pkg.
             @primary_bundle_id
             ## 
@@ -49,6 +55,8 @@ module MicrosoftGraphBeta
                     "ignoreVersionDetection" => lambda {|n| @ignore_version_detection = n.get_boolean_value() },
                     "includedApps" => lambda {|n| @included_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MacOSIncludedApp.create_from_discriminator_value(pn) }) },
                     "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
+                    "postInstallScript" => lambda {|n| @post_install_script = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSAppScript.create_from_discriminator_value(pn) }) },
+                    "preInstallScript" => lambda {|n| @pre_install_script = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSAppScript.create_from_discriminator_value(pn) }) },
                     "primaryBundleId" => lambda {|n| @primary_bundle_id = n.get_string_value() },
                     "primaryBundleVersion" => lambda {|n| @primary_bundle_version = n.get_string_value() },
                 })
@@ -99,6 +107,36 @@ module MicrosoftGraphBeta
                 @minimum_supported_operating_system = value
             end
             ## 
+            ## Gets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @return a mac_o_s_app_script
+            ## 
+            def post_install_script
+                return @post_install_script
+            end
+            ## 
+            ## Sets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @param value Value to set for the postInstallScript property.
+            ## @return a void
+            ## 
+            def post_install_script=(value)
+                @post_install_script = value
+            end
+            ## 
+            ## Gets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @return a mac_o_s_app_script
+            ## 
+            def pre_install_script
+                return @pre_install_script
+            end
+            ## 
+            ## Sets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @param value Value to set for the preInstallScript property.
+            ## @return a void
+            ## 
+            def pre_install_script=(value)
+                @pre_install_script = value
+            end
+            ## 
             ## Gets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
             ## @return a string
             ## 
@@ -139,6 +177,8 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection)
                 writer.write_collection_of_object_values("includedApps", @included_apps)
                 writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
+                writer.write_object_value("postInstallScript", @post_install_script)
+                writer.write_object_value("preInstallScript", @pre_install_script)
                 writer.write_string_value("primaryBundleId", @primary_bundle_id)
                 writer.write_string_value("primaryBundleVersion", @primary_bundle_version)
             end

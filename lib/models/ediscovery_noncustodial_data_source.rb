@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class EdiscoveryNoncustodialDataSource < MicrosoftGraphBeta::Models::EdiscoveryDataSourceContainer
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+            # Indicates if hold is applied to noncustodial data source (such as mailbox or site).
             @apply_hold_to_source
             ## 
-            # User source or SharePoint site data source as non-custodial data source.
+            # User source or SharePoint site data source as noncustodial data source.
             @data_source
             ## 
-            ## Gets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+            ## Gets the applyHoldToSource property value. Indicates if hold is applied to noncustodial data source (such as mailbox or site).
             ## @return a boolean
             ## 
             def apply_hold_to_source
                 return @apply_hold_to_source
             end
             ## 
-            ## Sets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+            ## Sets the applyHoldToSource property value. Indicates if hold is applied to noncustodial data source (such as mailbox or site).
             ## @param value Value to set for the applyHoldToSource property.
             ## @return a void
             ## 
@@ -45,14 +45,14 @@ module MicrosoftGraphBeta
                 return EdiscoveryNoncustodialDataSource.new
             end
             ## 
-            ## Gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+            ## Gets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
             ## @return a ediscovery_data_source
             ## 
             def data_source
                 return @data_source
             end
             ## 
-            ## Sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+            ## Sets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
             ## @param value Value to set for the dataSource property.
             ## @return a void
             ## 

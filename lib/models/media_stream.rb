@@ -22,21 +22,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Indicates whether the media is muted by the server.
+            # Indicates whether the server has muted the media.
             @server_muted
             ## 
             # The source ID.
             @source_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -148,14 +148,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the serverMuted property value. Indicates whether the media is muted by the server.
+            ## Gets the serverMuted property value. Indicates whether the server has muted the media.
             ## @return a boolean
             ## 
             def server_muted
                 return @server_muted
             end
             ## 
-            ## Sets the serverMuted property value. Indicates whether the media is muted by the server.
+            ## Sets the serverMuted property value. Indicates whether the server has muted the media.
             ## @param value Value to set for the serverMuted property.
             ## @return a void
             ## 

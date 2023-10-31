@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class CertificateBasedApplicationConfiguration < MicrosoftGraphBeta::Models::TrustedCertificateAuthorityAsEntityBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The description property
+            # The description of the trusted certificate authorities.
             @description
             ## 
-            # The displayName property
+            # The display name of the trusted certificate authorities.
             @display_name
             ## 
             ## Instantiates a new certificateBasedApplicationConfiguration and sets the default values.
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return CertificateBasedApplicationConfiguration.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. The description of the trusted certificate authorities.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. The description of the trusted certificate authorities.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -45,14 +45,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The display name of the trusted certificate authorities.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The display name of the trusted certificate authorities.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

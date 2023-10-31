@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Connectivity represents all the connectivity components in Global Secure Access.
             @connectivity
             ## 
-            # A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            # A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             @forwarding_policies
             ## 
             # A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
             @forwarding_profiles
             ## 
-            # Represnts network connections that are routed through Global Secure Access.
+            # Represents network connections that are routed through Global Secure Access.
             @logs
             ## 
             # Represents the status of the Global Secure Access services for the tenant.
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return NetworkaccessNetworkAccessRoot.new
             end
             ## 
-            ## Gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            ## Gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             ## @return a networkaccess_forwarding_policy
             ## 
             def forwarding_policies
                 return @forwarding_policies
             end
             ## 
-            ## Sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            ## Sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             ## @param value Value to set for the forwardingPolicies property.
             ## @return a void
             ## 
@@ -104,14 +104,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the logs property value. Represnts network connections that are routed through Global Secure Access.
+            ## Gets the logs property value. Represents network connections that are routed through Global Secure Access.
             ## @return a networkaccess_logs
             ## 
             def logs
                 return @logs
             end
             ## 
-            ## Sets the logs property value. Represnts network connections that are routed through Global Secure Access.
+            ## Sets the logs property value. Represents network connections that are routed through Global Secure Access.
             ## @param value Value to set for the logs property.
             ## @return a void
             ## 

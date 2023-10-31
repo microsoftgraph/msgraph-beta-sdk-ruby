@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The display name for the managed tenant. Required. Read-only.
             @tenant_display_name
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             @tenant_id
             ## 
             # The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @tenant_display_name = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

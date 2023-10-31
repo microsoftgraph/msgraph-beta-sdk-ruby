@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The display name of this object.
             @display_name
             ## 
-            # Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            # Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             @is_default_environment
             ## 
             # The display name of the entity that last modified this object.
@@ -166,14 +166,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            ## Gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             ## @return a boolean
             ## 
             def is_default_environment
                 return @is_default_environment
             end
             ## 
-            ## Sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            ## Sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             ## @param value Value to set for the isDefaultEnvironment property.
             ## @return a void
             ## 
