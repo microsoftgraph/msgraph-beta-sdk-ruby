@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class UnifiedRoleManagementAlert < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            # The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             @alert_configuration
             ## 
             # Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The identifier of an alert definition. Supports $filter (eq, ne).
             @alert_definition_id
             ## 
-            # Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+            # Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
             @alert_incidents
             ## 
             # The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.
@@ -35,17 +35,17 @@ module MicrosoftGraphBeta
             # The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
             @scope_id
             ## 
-            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             @scope_type
             ## 
-            ## Gets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            ## Gets the alertConfiguration property value. The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             ## @return a unified_role_management_alert_configuration
             ## 
             def alert_configuration
                 return @alert_configuration
             end
             ## 
-            ## Sets the alertConfiguration property value. The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.
+            ## Sets the alertConfiguration property value. The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
             ## @param value Value to set for the alertConfiguration property.
             ## @return a void
             ## 
@@ -83,14 +83,14 @@ module MicrosoftGraphBeta
                 @alert_definition_id = value
             end
             ## 
-            ## Gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+            ## Gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
             ## @return a unified_role_management_alert_incident
             ## 
             def alert_incidents
                 return @alert_incidents
             end
             ## 
-            ## Sets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
+            ## Sets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
             ## @param value Value to set for the alertIncidents property.
             ## @return a void
             ## 
@@ -207,14 +207,14 @@ module MicrosoftGraphBeta
                 @scope_id = value
             end
             ## 
-            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @return a string
             ## 
             def scope_type
                 return @scope_type
             end
             ## 
-            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 

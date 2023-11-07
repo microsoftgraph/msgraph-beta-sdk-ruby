@@ -24,6 +24,7 @@ require_relative './cloud_p_cs/cloud_p_cs_request_builder'
 require_relative './contact_folders/contact_folders_request_builder'
 require_relative './contacts/contacts_request_builder'
 require_relative './created_objects/created_objects_request_builder'
+require_relative './delete_password_single_sign_on_credentials/delete_password_single_sign_on_credentials_request_builder'
 require_relative './device_enrollment_configurations/device_enrollment_configurations_request_builder'
 require_relative './device_management_troubleshooting_events/device_management_troubleshooting_events_request_builder'
 require_relative './devices/devices_request_builder'
@@ -50,6 +51,7 @@ require_relative './get_managed_devices_with_app_failures/get_managed_devices_wi
 require_relative './get_managed_devices_with_failed_or_pending_apps/get_managed_devices_with_failed_or_pending_apps_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
+require_relative './get_password_single_sign_on_credentials/get_password_single_sign_on_credentials_request_builder'
 require_relative './inference_classification/inference_classification_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './insights/insights_request_builder'
@@ -93,6 +95,7 @@ require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_buil
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './security/security_request_builder'
 require_relative './send_mail/send_mail_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sponsors/sponsors_request_builder'
 require_relative './teamwork/teamwork_request_builder'
@@ -102,6 +105,7 @@ require_relative './transitive_reports/transitive_reports_request_builder'
 require_relative './translate_exchange_ids/translate_exchange_ids_request_builder'
 require_relative './unblock_managed_apps/unblock_managed_apps_request_builder'
 require_relative './usage_rights/usage_rights_request_builder'
+require_relative './virtual_events/virtual_events_request_builder'
 require_relative './windows_information_protection_device_registrations/windows_information_protection_device_registrations_request_builder'
 require_relative './wipe_and_block_managed_apps/wipe_and_block_managed_apps_request_builder'
 require_relative './wipe_managed_app_registration_by_device_tag/wipe_managed_app_registration_by_device_tag_request_builder'
@@ -219,6 +223,11 @@ module MicrosoftGraphBeta
                 # Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
                 def created_objects()
                     return MicrosoftGraphBeta::Users::Item::CreatedObjects::CreatedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the deletePasswordSingleSignOnCredentials method.
+                def delete_password_single_sign_on_credentials()
+                    return MicrosoftGraphBeta::Users::Item::DeletePasswordSingleSignOnCredentials::DeletePasswordSingleSignOnCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
@@ -339,6 +348,11 @@ module MicrosoftGraphBeta
                 # Provides operations to call the getMemberObjects method.
                 def get_member_objects()
                     return MicrosoftGraphBeta::Users::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getPasswordSingleSignOnCredentials method.
+                def get_password_single_sign_on_credentials()
+                    return MicrosoftGraphBeta::Users::Item::GetPasswordSingleSignOnCredentials::GetPasswordSingleSignOnCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
@@ -546,6 +560,11 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::SendMail::SendMailRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # The serviceProvisioningErrors property
+                def service_provisioning_errors()
+                    return MicrosoftGraphBeta::Users::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the settings property of the microsoft.graph.user entity.
                 def settings()
                     return MicrosoftGraphBeta::Users::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -591,6 +610,11 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::UsageRights::UsageRightsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.
+                def virtual_events()
+                    return MicrosoftGraphBeta::Users::Item::VirtualEvents::VirtualEventsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
                 def windows_information_protection_device_registrations()
                     return MicrosoftGraphBeta::Users::Item::WindowsInformationProtectionDeviceRegistrations::WindowsInformationProtectionDeviceRegistrationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -625,7 +649,7 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}")
                 end
                 ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
@@ -659,7 +683,7 @@ module MicrosoftGraphBeta
                     return FindRoomsWithRoomListRequestBuilder.new(@path_parameters, @request_adapter, RoomList)
                 end
                 ## 
-                ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+                ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
                 ## 
@@ -673,7 +697,7 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is available in the following national cloud deployments.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
@@ -700,41 +724,42 @@ module MicrosoftGraphBeta
                     return ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
                 end
                 ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
+                    request_info.headers.try_add('Accept', 'application/json, application/json')
                     return request_info
                 end
                 ## 
-                ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+                ## Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json;q=1')
                     return request_info
                 end
                 ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is available in the following national cloud deployments.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -742,20 +767,29 @@ module MicrosoftGraphBeta
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json;q=1')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a user_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return UserItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 
-                # Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+                # Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
                 class UserItemRequestBuilderGetQueryParameters
                     
                     ## 

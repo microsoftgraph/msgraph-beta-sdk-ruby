@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class Pkcs12Certificate < MicrosoftGraphBeta::Models::ApiAuthenticationConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+            # Specifies the password for the pfx file. Required. If no password is used, must still provide a value of ''.
             @password
             ## 
-            # This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+            # Specifies the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
             @pkcs12_value
             ## 
             ## Instantiates a new pkcs12Certificate and sets the default values.
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+            ## Gets the password property value. Specifies the password for the pfx file. Required. If no password is used, must still provide a value of ''.
             ## @return a string
             ## 
             def password
                 return @password
             end
             ## 
-            ## Sets the password property value. This is the password for the pfx file. Required. If no password is used, must still provide a value of ''.
+            ## Sets the password property value. Specifies the password for the pfx file. Required. If no password is used, must still provide a value of ''.
             ## @param value Value to set for the password property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 @password = value
             end
             ## 
-            ## Gets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+            ## Gets the pkcs12Value property value. Specifies the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
             ## @return a string
             ## 
             def pkcs12_value
                 return @pkcs12_value
             end
             ## 
-            ## Sets the pkcs12Value property value. This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
+            ## Sets the pkcs12Value property value. Specifies the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.
             ## @param value Value to set for the pkcs12Value property.
             ## @return a void
             ## 

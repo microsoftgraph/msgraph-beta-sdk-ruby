@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
                     "processingStatus" => lambda {|n| @processing_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityFileProcessingStatus) },
                     "senderOrAuthors" => lambda {|n| @sender_or_authors = n.get_collection_of_primitive_values(String) },
                     "size" => lambda {|n| @size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
-                    "sourceType" => lambda {|n| @source_type = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySourceType) },
+                    "sourceType" => lambda {|n| @source_type = n.get_enum_values(MicrosoftGraphBeta::Models::SecuritySourceType) },
                     "subjectTitle" => lambda {|n| @subject_title = n.get_string_value() },
                 })
             end

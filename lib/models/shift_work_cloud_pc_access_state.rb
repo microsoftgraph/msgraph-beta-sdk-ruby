@@ -6,7 +6,6 @@ module MicrosoftGraphBeta
             ActivationFailed: :ActivationFailed,
             Active: :Active,
             Activating: :Activating,
-            Waitlisted: :Waitlisted,
             UnknownFutureValue: :UnknownFutureValue,
             StandbyMode: :StandbyMode,
         }

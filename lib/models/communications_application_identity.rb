@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class CommunicationsApplicationIdentity < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # First party Microsoft application presenting this identity.
+            # First-party Microsoft application that presents this identity.
             @application_type
             ## 
-            # True if the participant would not like to be shown in other participants' rosters.
+            # True if the participant shouldn't be shown in other participants' rosters.
             @hidden
             ## 
-            ## Gets the applicationType property value. First party Microsoft application presenting this identity.
+            ## Gets the applicationType property value. First-party Microsoft application that presents this identity.
             ## @return a string
             ## 
             def application_type
                 return @application_type
             end
             ## 
-            ## Sets the applicationType property value. First party Microsoft application presenting this identity.
+            ## Sets the applicationType property value. First-party Microsoft application that presents this identity.
             ## @param value Value to set for the applicationType property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+            ## Gets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
             ## @return a boolean
             ## 
             def hidden
                 return @hidden
             end
             ## 
-            ## Sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+            ## Sets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
             ## @param value Value to set for the hidden property.
             ## @return a void
             ## 

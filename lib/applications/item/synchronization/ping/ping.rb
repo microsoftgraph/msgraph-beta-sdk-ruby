@@ -1,1 +1,1 @@
-require_relative 'ping_response'
+require_relative 'ping_get_response'

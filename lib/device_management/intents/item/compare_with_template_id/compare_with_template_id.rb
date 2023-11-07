@@ -1,1 +1,1 @@
-require_relative 'compare_with_template_id_response'
+require_relative 'compare_with_template_id_get_response'

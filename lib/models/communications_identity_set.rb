@@ -19,16 +19,16 @@ module MicrosoftGraphBeta
             # The encrypted user associated with this action.
             @encrypted
             ## 
-            # Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+            # Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
             @endpoint_type
             ## 
             # The guest user associated with this action.
             @guest
             ## 
-            # The Skype for Business On-Premises user associated with this action.
+            # The Skype for Business on-premises user associated with this action.
             @on_premises
             ## 
-            # Inherited from identitySet. The phone user associated with this action.
+            # The phone user associated with this action.
             @phone
             ## 
             ## Gets the applicationInstance property value. The application instance associated with this action.
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 @encrypted = value
             end
             ## 
-            ## Gets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+            ## Gets the endpointType property value. Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
             ## @return a endpoint_type
             ## 
             def endpoint_type
                 return @endpoint_type
             end
             ## 
-            ## Sets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+            ## Sets the endpointType property value. Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
             ## @param value Value to set for the endpointType property.
             ## @return a void
             ## 
@@ -154,14 +154,14 @@ module MicrosoftGraphBeta
                 @guest = value
             end
             ## 
-            ## Gets the onPremises property value. The Skype for Business On-Premises user associated with this action.
+            ## Gets the onPremises property value. The Skype for Business on-premises user associated with this action.
             ## @return a identity
             ## 
             def on_premises
                 return @on_premises
             end
             ## 
-            ## Sets the onPremises property value. The Skype for Business On-Premises user associated with this action.
+            ## Sets the onPremises property value. The Skype for Business on-premises user associated with this action.
             ## @param value Value to set for the onPremises property.
             ## @return a void
             ## 
@@ -169,14 +169,14 @@ module MicrosoftGraphBeta
                 @on_premises = value
             end
             ## 
-            ## Gets the phone property value. Inherited from identitySet. The phone user associated with this action.
+            ## Gets the phone property value. The phone user associated with this action.
             ## @return a identity
             ## 
             def phone
                 return @phone
             end
             ## 
-            ## Sets the phone property value. Inherited from identitySet. The phone user associated with this action.
+            ## Sets the phone property value. The phone user associated with this action.
             ## @param value Value to set for the phone property.
             ## @return a void
             ## 

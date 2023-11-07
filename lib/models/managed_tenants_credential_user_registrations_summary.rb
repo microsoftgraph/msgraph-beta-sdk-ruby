@@ -35,10 +35,10 @@ module MicrosoftGraphBeta
             # The display name for the managed tenant. Required. Read-only.
             @tenant_display_name
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             @tenant_id
             ## 
-            # The tenantLicenseType property
+            # The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             @tenant_license_type
             ## 
             # The total number of users in the given managed tenant. Optional. Read-only.
@@ -236,14 +236,14 @@ module MicrosoftGraphBeta
                 @tenant_display_name = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the tenantLicenseType property value. The tenantLicenseType property
+            ## Gets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             ## @return a string
             ## 
             def tenant_license_type
                 return @tenant_license_type
             end
             ## 
-            ## Sets the tenantLicenseType property value. The tenantLicenseType property
+            ## Sets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
             ## @param value Value to set for the tenantLicenseType property.
             ## @return a void
             ## 

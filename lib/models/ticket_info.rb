@@ -13,21 +13,27 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # The ticketApproverIdentityId property
+            @ticket_approver_identity_id
+            ## 
             # The ticket number.
             @ticket_number
+            ## 
+            # The ticketSubmitterIdentityId property
+            @ticket_submitter_identity_id
             ## 
             # The description of the ticket system.
             @ticket_system
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +62,9 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "ticketApproverIdentityId" => lambda {|n| @ticket_approver_identity_id = n.get_string_value() },
                     "ticketNumber" => lambda {|n| @ticket_number = n.get_string_value() },
+                    "ticketSubmitterIdentityId" => lambda {|n| @ticket_submitter_identity_id = n.get_string_value() },
                     "ticketSystem" => lambda {|n| @ticket_system = n.get_string_value() },
                 }
             end
@@ -83,9 +91,26 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("ticketApproverIdentityId", @ticket_approver_identity_id)
                 writer.write_string_value("ticketNumber", @ticket_number)
+                writer.write_string_value("ticketSubmitterIdentityId", @ticket_submitter_identity_id)
                 writer.write_string_value("ticketSystem", @ticket_system)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+            ## @return a string
+            ## 
+            def ticket_approver_identity_id
+                return @ticket_approver_identity_id
+            end
+            ## 
+            ## Sets the ticketApproverIdentityId property value. The ticketApproverIdentityId property
+            ## @param value Value to set for the ticketApproverIdentityId property.
+            ## @return a void
+            ## 
+            def ticket_approver_identity_id=(value)
+                @ticket_approver_identity_id = value
             end
             ## 
             ## Gets the ticketNumber property value. The ticket number.
@@ -101,6 +126,21 @@ module MicrosoftGraphBeta
             ## 
             def ticket_number=(value)
                 @ticket_number = value
+            end
+            ## 
+            ## Gets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+            ## @return a string
+            ## 
+            def ticket_submitter_identity_id
+                return @ticket_submitter_identity_id
+            end
+            ## 
+            ## Sets the ticketSubmitterIdentityId property value. The ticketSubmitterIdentityId property
+            ## @param value Value to set for the ticketSubmitterIdentityId property.
+            ## @return a void
+            ## 
+            def ticket_submitter_identity_id=(value)
+                @ticket_submitter_identity_id = value
             end
             ## 
             ## Gets the ticketSystem property value. The description of the ticket system.

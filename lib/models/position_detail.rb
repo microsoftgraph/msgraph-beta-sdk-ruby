@@ -23,6 +23,12 @@ module MicrosoftGraphBeta
             # The title held when in that position.
             @job_title
             ## 
+            # The layer property
+            @layer
+            ## 
+            # The level property
+            @level
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -35,15 +41,15 @@ module MicrosoftGraphBeta
             # Short summary of the position.
             @summary
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -120,6 +126,8 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "endMonthYear" => lambda {|n| @end_month_year = n.get_date_value() },
                     "jobTitle" => lambda {|n| @job_title = n.get_string_value() },
+                    "layer" => lambda {|n| @layer = n.get_number_value() },
+                    "level" => lambda {|n| @level = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "role" => lambda {|n| @role = n.get_string_value() },
                     "startMonthYear" => lambda {|n| @start_month_year = n.get_date_value() },
@@ -140,6 +148,36 @@ module MicrosoftGraphBeta
             ## 
             def job_title=(value)
                 @job_title = value
+            end
+            ## 
+            ## Gets the layer property value. The layer property
+            ## @return a integer
+            ## 
+            def layer
+                return @layer
+            end
+            ## 
+            ## Sets the layer property value. The layer property
+            ## @param value Value to set for the layer property.
+            ## @return a void
+            ## 
+            def layer=(value)
+                @layer = value
+            end
+            ## 
+            ## Gets the level property value. The level property
+            ## @return a string
+            ## 
+            def level
+                return @level
+            end
+            ## 
+            ## Sets the level property value. The level property
+            ## @param value Value to set for the level property.
+            ## @return a void
+            ## 
+            def level=(value)
+                @level = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -182,6 +220,8 @@ module MicrosoftGraphBeta
                 writer.write_string_value("description", @description)
                 writer.write_date_value("endMonthYear", @end_month_year)
                 writer.write_string_value("jobTitle", @job_title)
+                writer.write_number_value("layer", @layer)
+                writer.write_string_value("level", @level)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("role", @role)
                 writer.write_date_value("startMonthYear", @start_month_year)

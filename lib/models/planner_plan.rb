@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Collection of buckets in the plan. Read-only. Nullable.
             @buckets
             ## 
-            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             @container
             ## 
             # Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             ## @return a planner_plan_container
             ## 
             def container
                 return @container
             end
             ## 
-            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             ## @param value Value to set for the container property.
             ## @return a void
             ## 

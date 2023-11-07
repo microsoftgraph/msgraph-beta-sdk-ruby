@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            # Whether the printer should collate pages when printing multiple copies of a multi-page document.
             @collate
             ## 
             # The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
@@ -70,29 +70,29 @@ module MicrosoftGraphBeta
             # Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
             @scaling
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            ## Gets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
             ## @return a boolean
             ## 
             def collate
                 return @collate
             end
             ## 
-            ## Sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            ## Sets the collate property value. Whether the printer should collate pages when printing multiple copies of a multi-page document.
             ## @param value Value to set for the collate property.
             ## @return a void
             ## 
