@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class CloudPC < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            # The Microsoft Entra device ID of the Cloud PC.
             @aad_device_id
             ## 
             # The connectionSettings property
@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The display name of the Cloud PC.
             @display_name
             ## 
-            # The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            # The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @grace_period_end_date_time
             ## 
             # Name of the OS image that's on the Cloud PC.
@@ -65,6 +65,9 @@ module MicrosoftGraphBeta
             # The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
             @provisioning_type
             ## 
+            # The scopeIds property
+            @scope_ids
+            ## 
             # The service plan ID of the Cloud PC.
             @service_plan_id
             ## 
@@ -86,14 +89,14 @@ module MicrosoftGraphBeta
             # The user principal name (UPN) of the user assigned to the Cloud PC.
             @user_principal_name
             ## 
-            ## Gets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            ## Gets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
             ## @return a string
             ## 
             def aad_device_id
                 return @aad_device_id
             end
             ## 
-            ## Sets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            ## Sets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
             ## @param value Value to set for the aadDeviceId property.
             ## @return a void
             ## 
@@ -201,6 +204,7 @@ module MicrosoftGraphBeta
                     "provisioningPolicyId" => lambda {|n| @provisioning_policy_id = n.get_string_value() },
                     "provisioningPolicyName" => lambda {|n| @provisioning_policy_name = n.get_string_value() },
                     "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningType) },
+                    "scopeIds" => lambda {|n| @scope_ids = n.get_collection_of_primitive_values(String) },
                     "servicePlanId" => lambda {|n| @service_plan_id = n.get_string_value() },
                     "servicePlanName" => lambda {|n| @service_plan_name = n.get_string_value() },
                     "servicePlanType" => lambda {|n| @service_plan_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcServicePlanType) },
@@ -211,14 +215,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def grace_period_end_date_time
                 return @grace_period_end_date_time
             end
             ## 
-            ## Sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the gracePeriodEndDateTime property.
             ## @return a void
             ## 
@@ -421,6 +425,21 @@ module MicrosoftGraphBeta
                 @provisioning_type = value
             end
             ## 
+            ## Gets the scopeIds property value. The scopeIds property
+            ## @return a string
+            ## 
+            def scope_ids
+                return @scope_ids
+            end
+            ## 
+            ## Sets the scopeIds property value. The scopeIds property
+            ## @param value Value to set for the scopeIds property.
+            ## @return a void
+            ## 
+            def scope_ids=(value)
+                @scope_ids = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -447,6 +466,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("provisioningPolicyId", @provisioning_policy_id)
                 writer.write_string_value("provisioningPolicyName", @provisioning_policy_name)
                 writer.write_enum_value("provisioningType", @provisioning_type)
+                writer.write_collection_of_primitive_values("scopeIds", @scope_ids)
                 writer.write_string_value("servicePlanId", @service_plan_id)
                 writer.write_string_value("servicePlanName", @service_plan_name)
                 writer.write_enum_value("servicePlanType", @service_plan_type)

@@ -19,21 +19,21 @@ module MicrosoftGraphBeta
             # The trafficType property
             @traffic_type
             ## 
-            # Count of unique Azure Active Directoy users that were seen.
+            # Count of unique Microsoft Entra users that were seen.
             @user_count
             ## 
             # Count of unique target workloads or hosts that were seen.
             @workload_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @traffic_type = value
             end
             ## 
-            ## Gets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Gets the userCount property value. Count of unique Microsoft Entra users that were seen.
             ## @return a int64
             ## 
             def user_count
                 return @user_count
             end
             ## 
-            ## Sets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Sets the userCount property value. Count of unique Microsoft Entra users that were seen.
             ## @param value Value to set for the userCount property.
             ## @return a void
             ## 

@@ -63,6 +63,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.virtualEventTownhall"
+                            return VirtualEventTownhall.new
                         when "#microsoft.graph.virtualEventWebinar"
                             return VirtualEventWebinar.new
                     end
@@ -71,7 +73,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the description property value. Description of the virtual event.
-            ## @return a string
+            ## @return a item_body
             ## 
             def description
                 return @description
@@ -121,7 +123,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CommunicationsIdentitySet.create_from_discriminator_value(pn) }) },
-                    "description" => lambda {|n| @description = n.get_string_value() },
+                    "description" => lambda {|n| @description = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "presenters" => lambda {|n| @presenters = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventPresenter.create_from_discriminator_value(pn) }) },
@@ -154,7 +156,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("description", @description)
+                writer.write_object_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("endDateTime", @end_date_time)
                 writer.write_collection_of_object_values("presenters", @presenters)

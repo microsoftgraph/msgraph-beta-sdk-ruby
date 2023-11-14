@@ -40,6 +40,12 @@ module MicrosoftGraphBeta
             # The size of the file after encryption.
             @size_encrypted
             ## 
+            # Indicates the size of the file after encryption, in bytes.
+            @size_encrypted_in_bytes
+            ## 
+            # Indicates the original size of the file, in bytes.
+            @size_in_bytes
+            ## 
             # Contains properties for upload request states.
             @upload_state
             ## 
@@ -119,6 +125,8 @@ module MicrosoftGraphBeta
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "size" => lambda {|n| @size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "sizeEncrypted" => lambda {|n| @size_encrypted = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "sizeEncryptedInBytes" => lambda {|n| @size_encrypted_in_bytes = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "sizeInBytes" => lambda {|n| @size_in_bytes = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "uploadState" => lambda {|n| @upload_state = n.get_enum_value(MicrosoftGraphBeta::Models::MobileAppContentFileUploadState) },
                 })
             end
@@ -215,6 +223,8 @@ module MicrosoftGraphBeta
                 writer.write_string_value("name", @name)
                 writer.write_object_value("size", @size)
                 writer.write_object_value("sizeEncrypted", @size_encrypted)
+                writer.write_object_value("sizeEncryptedInBytes", @size_encrypted_in_bytes)
+                writer.write_object_value("sizeInBytes", @size_in_bytes)
                 writer.write_enum_value("uploadState", @upload_state)
             end
             ## 
@@ -246,6 +256,36 @@ module MicrosoftGraphBeta
             ## 
             def size_encrypted=(value)
                 @size_encrypted = value
+            end
+            ## 
+            ## Gets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes.
+            ## @return a int64
+            ## 
+            def size_encrypted_in_bytes
+                return @size_encrypted_in_bytes
+            end
+            ## 
+            ## Sets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes.
+            ## @param value Value to set for the sizeEncryptedInBytes property.
+            ## @return a void
+            ## 
+            def size_encrypted_in_bytes=(value)
+                @size_encrypted_in_bytes = value
+            end
+            ## 
+            ## Gets the sizeInBytes property value. Indicates the original size of the file, in bytes.
+            ## @return a int64
+            ## 
+            def size_in_bytes
+                return @size_in_bytes
+            end
+            ## 
+            ## Sets the sizeInBytes property value. Indicates the original size of the file, in bytes.
+            ## @param value Value to set for the sizeInBytes property.
+            ## @return a void
+            ## 
+            def size_in_bytes=(value)
+                @size_in_bytes = value
             end
             ## 
             ## Gets the uploadState property value. Contains properties for upload request states.

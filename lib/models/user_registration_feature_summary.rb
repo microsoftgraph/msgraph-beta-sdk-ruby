@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Total number of users accounts, excluding those that are blocked.
             @total_user_count
             ## 
-            # Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
+            # Number of users registered or capable for multifactor authentication, self-service password reset, and passwordless authentication.
             @user_registration_feature_counts
             ## 
             # The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # User type. Possible values are: all, member, guest, unknownFutureValue.
             @user_types
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 @total_user_count = value
             end
             ## 
-            ## Gets the userRegistrationFeatureCounts property value. Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
+            ## Gets the userRegistrationFeatureCounts property value. Number of users registered or capable for multifactor authentication, self-service password reset, and passwordless authentication.
             ## @return a user_registration_feature_count
             ## 
             def user_registration_feature_counts
                 return @user_registration_feature_counts
             end
             ## 
-            ## Sets the userRegistrationFeatureCounts property value. Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
+            ## Sets the userRegistrationFeatureCounts property value. Number of users registered or capable for multifactor authentication, self-service password reset, and passwordless authentication.
             ## @param value Value to set for the userRegistrationFeatureCounts property.
             ## @return a void
             ## 

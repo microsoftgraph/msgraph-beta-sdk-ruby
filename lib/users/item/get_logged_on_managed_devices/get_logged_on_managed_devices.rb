@@ -1,1 +1,1 @@
-require_relative 'get_logged_on_managed_devices_response'
+require_relative 'get_logged_on_managed_devices_get_response'

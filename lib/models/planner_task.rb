@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             # Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @due_date_time
             ## 
-            # Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            # Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             @has_description
             ## 
             # Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -386,20 +386,20 @@ module MicrosoftGraphBeta
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskRecurrence.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
-                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
+                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_values(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @return a boolean
             ## 
             def has_description
                 return @has_description
             end
             ## 
-            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @param value Value to set for the hasDescription property.
             ## @return a void
             ## 

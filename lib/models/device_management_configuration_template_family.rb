@@ -18,6 +18,7 @@ module MicrosoftGraphBeta
             UnknownFutureValue: :UnknownFutureValue,
             DeviceConfigurationScripts: :DeviceConfigurationScripts,
             DeviceConfigurationPolicies: :DeviceConfigurationPolicies,
+            CompanyPortal: :CompanyPortal,
         }
     end
 end

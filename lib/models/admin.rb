@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The people property
+            # Represents a setting to control people-related admin settings in the tenant.
             @people
             ## 
             # A container for administrative resources to manage reports.
@@ -43,15 +43,15 @@ module MicrosoftGraphBeta
             # A container for all Windows administrator functionalities. Read-only.
             @windows
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -168,14 +168,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the people property value. The people property
+            ## Gets the people property value. Represents a setting to control people-related admin settings in the tenant.
             ## @return a people_admin_settings
             ## 
             def people
                 return @people
             end
             ## 
-            ## Sets the people property value. The people property
+            ## Sets the people property value. Represents a setting to control people-related admin settings in the tenant.
             ## @param value Value to set for the people property.
             ## @return a void
             ## 
