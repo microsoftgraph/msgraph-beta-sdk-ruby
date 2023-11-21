@@ -57,6 +57,8 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.attackSimulationOperation"
                             return AttackSimulationOperation.new
+                        when "#microsoft.graph.goalsExportJob"
+                            return GoalsExportJob.new
                         when "#microsoft.graph.industryData.fileValidateOperation"
                             return IndustryDataFileValidateOperation.new
                         when "#microsoft.graph.industryData.validateOperation"

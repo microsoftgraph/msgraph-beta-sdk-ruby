@@ -11,6 +11,9 @@ module MicrosoftGraphBeta
             # Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
             @bandwidth_capacity
             ## 
+            # Specifies the connectivity details of all device links associated with a branch.
+            @connectivity_configuration
+            ## 
             # Determines the branch site status. The possible values are: pending, connected, inactive, error.
             @connectivity_state
             ## 
@@ -48,6 +51,21 @@ module MicrosoftGraphBeta
             ## 
             def bandwidth_capacity=(value)
                 @bandwidth_capacity = value
+            end
+            ## 
+            ## Gets the connectivityConfiguration property value. Specifies the connectivity details of all device links associated with a branch.
+            ## @return a networkaccess_branch_connectivity_configuration
+            ## 
+            def connectivity_configuration
+                return @connectivity_configuration
+            end
+            ## 
+            ## Sets the connectivityConfiguration property value. Specifies the connectivity details of all device links associated with a branch.
+            ## @param value Value to set for the connectivityConfiguration property.
+            ## @return a void
+            ## 
+            def connectivity_configuration=(value)
+                @connectivity_configuration = value
             end
             ## 
             ## Gets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
@@ -132,6 +150,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "bandwidthCapacity" => lambda {|n| @bandwidth_capacity = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "connectivityConfiguration" => lambda {|n| @connectivity_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessBranchConnectivityConfiguration.create_from_discriminator_value(pn) }) },
                     "connectivityState" => lambda {|n| @connectivity_state = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessConnectivityState) },
                     "country" => lambda {|n| @country = n.get_string_value() },
                     "deviceLinks" => lambda {|n| @device_links = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessDeviceLink.create_from_discriminator_value(pn) }) },
@@ -196,6 +215,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("bandwidthCapacity", @bandwidth_capacity)
+                writer.write_object_value("connectivityConfiguration", @connectivity_configuration)
                 writer.write_enum_value("connectivityState", @connectivity_state)
                 writer.write_string_value("country", @country)
                 writer.write_collection_of_object_values("deviceLinks", @device_links)

@@ -1,1 +1,1 @@
-require_relative 'complete_response'
+require_relative 'complete_post_response'

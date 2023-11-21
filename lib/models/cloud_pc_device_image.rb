@@ -26,6 +26,9 @@ module MicrosoftGraphBeta
             # The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
             @os_status
             ## 
+            # The scopeIds property
+            @scope_ids
+            ## 
             # The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
             @source_image_resource_id
             ## 
@@ -95,6 +98,7 @@ module MicrosoftGraphBeta
                     "operatingSystem" => lambda {|n| @operating_system = n.get_string_value() },
                     "osBuildNumber" => lambda {|n| @os_build_number = n.get_string_value() },
                     "osStatus" => lambda {|n| @os_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageOsStatus) },
+                    "scopeIds" => lambda {|n| @scope_ids = n.get_collection_of_primitive_values(String) },
                     "sourceImageResourceId" => lambda {|n| @source_image_resource_id = n.get_string_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageStatus) },
                     "statusDetails" => lambda {|n| @status_details = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageStatusDetails) },
@@ -162,6 +166,21 @@ module MicrosoftGraphBeta
                 @os_status = value
             end
             ## 
+            ## Gets the scopeIds property value. The scopeIds property
+            ## @return a string
+            ## 
+            def scope_ids
+                return @scope_ids
+            end
+            ## 
+            ## Sets the scopeIds property value. The scopeIds property
+            ## @param value Value to set for the scopeIds property.
+            ## @return a void
+            ## 
+            def scope_ids=(value)
+                @scope_ids = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -175,6 +194,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("operatingSystem", @operating_system)
                 writer.write_string_value("osBuildNumber", @os_build_number)
                 writer.write_enum_value("osStatus", @os_status)
+                writer.write_collection_of_primitive_values("scopeIds", @scope_ids)
                 writer.write_string_value("sourceImageResourceId", @source_image_resource_id)
                 writer.write_enum_value("status", @status)
                 writer.write_enum_value("statusDetails", @status_details)

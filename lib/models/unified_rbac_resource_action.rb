@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The isAuthenticationContextSettable property
             @is_authentication_context_settable
             ## 
-            # The isPrivileged property
+            # Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             @is_privileged
             ## 
             # Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
@@ -142,14 +142,14 @@ module MicrosoftGraphBeta
                 @is_authentication_context_settable = value
             end
             ## 
-            ## Gets the isPrivileged property value. The isPrivileged property
+            ## Gets the isPrivileged property value. Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_privileged
                 return @is_privileged
             end
             ## 
-            ## Sets the isPrivileged property value. The isPrivileged property
+            ## Sets the isPrivileged property value. Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @param value Value to set for the isPrivileged property.
             ## @return a void
             ## 

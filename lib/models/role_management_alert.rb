@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class RoleManagementAlert < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+            # The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
             @alert_configurations
             ## 
             # Defines an alert, its impact, and measures to mitigate or prevent it.
@@ -19,14 +19,14 @@ module MicrosoftGraphBeta
             # Represents operations on resources that take a long time to complete and can run in the background until completion.
             @operations
             ## 
-            ## Gets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+            ## Gets the alertConfigurations property value. The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
             ## @return a unified_role_management_alert_configuration
             ## 
             def alert_configurations
                 return @alert_configurations
             end
             ## 
-            ## Sets the alertConfigurations property value. The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+            ## Sets the alertConfigurations property value. The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
             ## @param value Value to set for the alertConfigurations property.
             ## @return a void
             ## 

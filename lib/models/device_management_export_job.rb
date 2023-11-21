@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
         class DeviceManagementExportJob < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Time that the exported report expires
+            # Time that the exported report expires. This property is read-only.
             @expiration_date_time
             ## 
             # Filters applied on the report
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Name of the report
             @report_name
             ## 
-            # Time that the exported report was requested
+            # Time that the exported report was requested. This property is read-only.
             @request_date_time
             ## 
             # Columns selected from the report
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
             # Possible statuses associated with a generated report
             @status
             ## 
-            # Temporary location of the exported report
+            # Temporary location of the exported report. This property is read-only.
             @url
             ## 
             ## Instantiates a new deviceManagementExportJob and sets the default values.
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementExportJob.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Time that the exported report expires
+            ## Gets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Time that the exported report expires
+            ## Sets the expirationDateTime property value. Time that the exported report expires. This property is read-only.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -149,14 +149,14 @@ module MicrosoftGraphBeta
                 @report_name = value
             end
             ## 
-            ## Gets the requestDateTime property value. Time that the exported report was requested
+            ## Gets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
             ## @return a date_time
             ## 
             def request_date_time
                 return @request_date_time
             end
             ## 
-            ## Sets the requestDateTime property value. Time that the exported report was requested
+            ## Sets the requestDateTime property value. Time that the exported report was requested. This property is read-only.
             ## @param value Value to set for the requestDateTime property.
             ## @return a void
             ## 
@@ -186,13 +186,16 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
                 writer.write_string_value("filter", @filter)
                 writer.write_enum_value("format", @format)
                 writer.write_enum_value("localizationType", @localization_type)
                 writer.write_string_value("reportName", @report_name)
+                writer.write_date_time_value("requestDateTime", @request_date_time)
                 writer.write_collection_of_primitive_values("select", @select)
                 writer.write_string_value("snapshotId", @snapshot_id)
                 writer.write_enum_value("status", @status)
+                writer.write_string_value("url", @url)
             end
             ## 
             ## Gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
@@ -225,14 +228,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the url property value. Temporary location of the exported report
+            ## Gets the url property value. Temporary location of the exported report. This property is read-only.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. Temporary location of the exported report
+            ## Sets the url property value. Temporary location of the exported report. This property is read-only.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

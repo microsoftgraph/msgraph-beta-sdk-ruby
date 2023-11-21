@@ -6,6 +6,7 @@ require_relative '../../item'
 require_relative '../included_groups'
 require_relative './item'
 require_relative './ref/ref_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraphBeta
     module Policies
@@ -21,6 +22,11 @@ module MicrosoftGraphBeta
                             # Provides operations to manage the collection of policyRoot entities.
                             def ref()
                                 return MicrosoftGraphBeta::Policies::MobileAppManagementPolicies::Item::IncludedGroups::Item::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # The serviceProvisioningErrors property
+                            def service_provisioning_errors()
+                                return MicrosoftGraphBeta::Policies::MobileAppManagementPolicies::Item::IncludedGroups::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new GroupItemRequestBuilder and sets the default values.

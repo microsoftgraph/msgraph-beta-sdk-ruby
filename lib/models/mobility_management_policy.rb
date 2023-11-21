@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Display name of the mobility management application.
             @display_name
             ## 
-            # Azure AD groups under the scope of the mobility management application if appliesTo is selected
+            # Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
             @included_groups
             ## 
             # Whether policy is valid. Invalid policies may not be updated and should be deleted.
@@ -138,14 +138,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+            ## Gets the includedGroups property value. Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
             ## @return a group
             ## 
             def included_groups
                 return @included_groups
             end
             ## 
-            ## Sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
+            ## Sets the includedGroups property value. Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
             ## @param value Value to set for the includedGroups property.
             ## @return a void
             ## 

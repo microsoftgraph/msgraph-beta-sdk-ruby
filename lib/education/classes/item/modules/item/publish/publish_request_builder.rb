@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                                     super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}/publish")
                                 end
                                 ## 
-                                ## Invoke action publish
+                                ## Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students won't see the module. When you call this API, the module appears in the student's class work list. This API is available in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_module
                                 ## 
@@ -44,21 +44,30 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EducationModule.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Invoke action publish
+                                ## Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students won't see the module. When you call this API, the module appears in the student's class work list. This API is available in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_post_request_information(request_configuration=nil)
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :POST
-                                    request_info.headers.add('Accept', 'application/json')
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.add_request_options(request_configuration.options)
                                     end
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :POST
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
+                                end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a publish_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return PublishRequestBuilder.new(raw_url, @request_adapter)
                                 end
                             end
                         end

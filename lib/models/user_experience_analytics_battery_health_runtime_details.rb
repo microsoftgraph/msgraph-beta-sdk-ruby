@@ -10,29 +10,29 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthRuntimeDetails < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            # Number of active devices within the tenant. Valid values 0 to 2147483647
             @active_devices
             ## 
-            # Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+            # Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
             @battery_runtime_fair
             ## 
-            # Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+            # Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
             @battery_runtime_good
             ## 
-            # Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+            # Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
             @battery_runtime_poor
             ## 
             # Recorded date time of this runtime details instance.
             @last_refreshed_date_time
             ## 
-            ## Gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 @active_devices = value
             end
             ## 
-            ## Gets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+            ## Gets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_runtime_fair
                 return @battery_runtime_fair
             end
             ## 
-            ## Sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+            ## Sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryRuntimeFair property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 @battery_runtime_fair = value
             end
             ## 
-            ## Gets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+            ## Gets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_runtime_good
                 return @battery_runtime_good
             end
             ## 
-            ## Sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+            ## Sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryRuntimeGood property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 @battery_runtime_good = value
             end
             ## 
-            ## Gets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+            ## Gets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_runtime_poor
                 return @battery_runtime_poor
             end
             ## 
-            ## Sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+            ## Sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryRuntimePoor property.
             ## @return a void
             ## 

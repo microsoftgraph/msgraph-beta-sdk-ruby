@@ -10,6 +10,7 @@ module MicrosoftGraphBeta
             AppleRemoteManagement: :AppleRemoteManagement,
             MicrosoftSense: :MicrosoftSense,
             ExchangeOnline: :ExchangeOnline,
+            MobileApplicationManagement: :MobileApplicationManagement,
             LinuxMdm: :LinuxMdm,
             Enrollment: :Enrollment,
             EndpointPrivilegeManagement: :EndpointPrivilegeManagement,

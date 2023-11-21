@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # The business segment associated with the managed tenant. Optional. Read-only.
             @segment_name
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant.
+            # The Microsoft Entra tenant identifier for the managed tenant.
             @tenant_id
             ## 
             # The vertical associated with the managed tenant. Optional. Read-only.
@@ -210,14 +210,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("verticalName", @vertical_name)
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

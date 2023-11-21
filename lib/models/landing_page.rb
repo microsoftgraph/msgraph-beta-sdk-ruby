@@ -8,37 +8,37 @@ module MicrosoftGraphBeta
         class LandingPage < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdBy property
+            # Identity of the user who created the landing page.
             @created_by
             ## 
-            # The createdDateTime property
+            # Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The description property
+            # Description of the landing page as defined by the user.
             @description
             ## 
-            # The details property
+            # The detail information for a landing page associated with a simulation during its creation.
             @details
             ## 
-            # The displayName property
+            # The display name of the landing page.
             @display_name
             ## 
-            # The lastModifiedBy property
+            # Email identity of the user who last modified the landing page.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The locale property
+            # Content locale.
             @locale
             ## 
-            # The source property
+            # The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             @source
             ## 
-            # The status property
+            # The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             @status
             ## 
-            # The supportedLocales property
+            # Supported locales.
             @supported_locales
             ## 
             ## Instantiates a new landingPage and sets the default values.
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the landing page.
             ## @return a email_identity
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the landing page.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 return LandingPage.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the landing page as defined by the user.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the landing page as defined by the user.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -102,14 +102,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the details property value. The details property
+            ## Gets the details property value. The detail information for a landing page associated with a simulation during its creation.
             ## @return a landing_page_detail
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. The details property
+            ## Sets the details property value. The detail information for a landing page associated with a simulation during its creation.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -117,14 +117,14 @@ module MicrosoftGraphBeta
                 @details = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The display name of the landing page.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The display name of the landing page.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -151,14 +151,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Email identity of the user who last modified the landing page.
             ## @return a email_identity
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Email identity of the user who last modified the landing page.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -181,14 +181,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the locale property value. The locale property
+            ## Gets the locale property value. Content locale.
             ## @return a string
             ## 
             def locale
                 return @locale
             end
             ## 
-            ## Sets the locale property value. The locale property
+            ## Sets the locale property value. Content locale.
             ## @param value Value to set for the locale property.
             ## @return a void
             ## 
@@ -216,14 +216,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("supportedLocales", @supported_locales)
             end
             ## 
-            ## Gets the source property value. The source property
+            ## Gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @return a simulation_content_source
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. The source property
+            ## Sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @return a simulation_content_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the supportedLocales property value. The supportedLocales property
+            ## Gets the supportedLocales property value. Supported locales.
             ## @return a string
             ## 
             def supported_locales
                 return @supported_locales
             end
             ## 
-            ## Sets the supportedLocales property value. The supportedLocales property
+            ## Sets the supportedLocales property value. Supported locales.
             ## @param value Value to set for the supportedLocales property.
             ## @return a void
             ## 

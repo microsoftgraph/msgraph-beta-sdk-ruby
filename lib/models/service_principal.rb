@@ -23,13 +23,13 @@ module MicrosoftGraphBeta
             # The display name exposed by the associated application.
             @app_display_name
             ## 
-            # The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+            # The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
             @app_id
             ## 
             # The appManagementPolicy applied to this service principal.
             @app_management_policies
             ## 
-            # Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+            # Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
             @app_owner_organization_id
             ## 
             # App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # App role assignment for another app or service, granted to this service principal. Supports $expand.
             @app_role_assignments
             ## 
-            # The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            # The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             @app_roles
             ## 
             # Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
             # Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
             @disabled_by_microsoft_status
             ## 
-            # The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
             # Home page or landing page of the application.
             @homepage
             ## 
-            # Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+            # Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
             @info
             ## 
             # The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
@@ -92,7 +92,7 @@ module MicrosoftGraphBeta
             # The licenseDetails property
             @license_details
             ## 
-            # Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+            # Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
             @login_url
             ## 
             # Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             # Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
             @notes
             ## 
-            # Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+            # Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
             @notification_email_addresses
             ## 
             # Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
@@ -113,7 +113,7 @@ module MicrosoftGraphBeta
             # Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owned_objects
             ## 
-            # Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+            # Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owners
             ## 
             # The collection of password credentials associated with the service principal. Not nullable.
@@ -122,7 +122,7 @@ module MicrosoftGraphBeta
             # The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.
             @password_single_sign_on_settings
             ## 
-            # Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+            # Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
             @preferred_single_sign_on_mode
             ## 
             # Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
@@ -134,8 +134,11 @@ module MicrosoftGraphBeta
             # The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
             @published_permission_scopes
             ## 
-            # The name of the Azure AD tenant that published the application.
+            # The name of the Microsoft Entra tenant that published the application.
             @publisher_name
+            ## 
+            # The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
+            @remote_desktop_security_configuration
             ## 
             # The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
             @reply_urls
@@ -146,22 +149,22 @@ module MicrosoftGraphBeta
             # The collection for settings related to saml single sign-on.
             @saml_single_sign_on_settings
             ## 
-            # Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+            # Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
             @service_principal_names
             ## 
-            # Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+            # Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
             @service_principal_type
             ## 
-            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             @sign_in_audience
             ## 
-            # Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            # Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
             @synchronization
             ## 
             # Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
             @tags
             ## 
-            # Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+            # Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
             @token_encryption_key_id
             ## 
             # The tokenIssuancePolicies assigned to this service principal. Supports $expand.
@@ -251,14 +254,14 @@ module MicrosoftGraphBeta
                 @app_display_name = value
             end
             ## 
-            ## Gets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+            ## Gets the appId property value. The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+            ## Sets the appId property value. The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -281,14 +284,14 @@ module MicrosoftGraphBeta
                 @app_management_policies = value
             end
             ## 
-            ## Gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+            ## Gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
             ## @return a guid
             ## 
             def app_owner_organization_id
                 return @app_owner_organization_id
             end
             ## 
-            ## Sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+            ## Sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
             ## @param value Value to set for the appOwnerOrganizationId property.
             ## @return a void
             ## 
@@ -341,14 +344,14 @@ module MicrosoftGraphBeta
                 @app_role_assignments = value
             end
             ## 
-            ## Gets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            ## Gets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             ## @return a app_role
             ## 
             def app_roles
                 return @app_roles
             end
             ## 
-            ## Sets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            ## Sets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             ## @param value Value to set for the appRoles property.
             ## @return a void
             ## 
@@ -478,14 +481,14 @@ module MicrosoftGraphBeta
                 @disabled_by_microsoft_status = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -586,6 +589,7 @@ module MicrosoftGraphBeta
                     "preferredTokenSigningKeyThumbprint" => lambda {|n| @preferred_token_signing_key_thumbprint = n.get_string_value() },
                     "publishedPermissionScopes" => lambda {|n| @published_permission_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PermissionScope.create_from_discriminator_value(pn) }) },
                     "publisherName" => lambda {|n| @publisher_name = n.get_string_value() },
+                    "remoteDesktopSecurityConfiguration" => lambda {|n| @remote_desktop_security_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RemoteDesktopSecurityConfiguration.create_from_discriminator_value(pn) }) },
                     "replyUrls" => lambda {|n| @reply_urls = n.get_collection_of_primitive_values(String) },
                     "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                     "samlSingleSignOnSettings" => lambda {|n| @saml_single_sign_on_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SamlSingleSignOnSettings.create_from_discriminator_value(pn) }) },
@@ -632,14 +636,14 @@ module MicrosoftGraphBeta
                 @homepage = value
             end
             ## 
-            ## Gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+            ## Gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
             ## @return a informational_url
             ## 
             def info
                 return @info
             end
             ## 
-            ## Sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+            ## Sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
             ## @param value Value to set for the info property.
             ## @return a void
             ## 
@@ -677,14 +681,14 @@ module MicrosoftGraphBeta
                 @license_details = value
             end
             ## 
-            ## Gets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+            ## Gets the loginUrl property value. Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
             ## @return a string
             ## 
             def login_url
                 return @login_url
             end
             ## 
-            ## Sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+            ## Sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
             ## @param value Value to set for the loginUrl property.
             ## @return a void
             ## 
@@ -737,14 +741,14 @@ module MicrosoftGraphBeta
                 @notes = value
             end
             ## 
-            ## Gets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+            ## Gets the notificationEmailAddresses property value. Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
             ## @return a string
             ## 
             def notification_email_addresses
                 return @notification_email_addresses
             end
             ## 
-            ## Sets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+            ## Sets the notificationEmailAddresses property value. Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
             ## @param value Value to set for the notificationEmailAddresses property.
             ## @return a void
             ## 
@@ -782,14 +786,14 @@ module MicrosoftGraphBeta
                 @owned_objects = value
             end
             ## 
-            ## Gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+            ## Gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @return a directory_object
             ## 
             def owners
                 return @owners
             end
             ## 
-            ## Sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+            ## Sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @param value Value to set for the owners property.
             ## @return a void
             ## 
@@ -827,14 +831,14 @@ module MicrosoftGraphBeta
                 @password_single_sign_on_settings = value
             end
             ## 
-            ## Gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+            ## Gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
             ## @return a string
             ## 
             def preferred_single_sign_on_mode
                 return @preferred_single_sign_on_mode
             end
             ## 
-            ## Sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+            ## Sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
             ## @param value Value to set for the preferredSingleSignOnMode property.
             ## @return a void
             ## 
@@ -887,19 +891,34 @@ module MicrosoftGraphBeta
                 @published_permission_scopes = value
             end
             ## 
-            ## Gets the publisherName property value. The name of the Azure AD tenant that published the application.
+            ## Gets the publisherName property value. The name of the Microsoft Entra tenant that published the application.
             ## @return a string
             ## 
             def publisher_name
                 return @publisher_name
             end
             ## 
-            ## Sets the publisherName property value. The name of the Azure AD tenant that published the application.
+            ## Sets the publisherName property value. The name of the Microsoft Entra tenant that published the application.
             ## @param value Value to set for the publisherName property.
             ## @return a void
             ## 
             def publisher_name=(value)
                 @publisher_name = value
+            end
+            ## 
+            ## Gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
+            ## @return a remote_desktop_security_configuration
+            ## 
+            def remote_desktop_security_configuration
+                return @remote_desktop_security_configuration
+            end
+            ## 
+            ## Sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
+            ## @param value Value to set for the remoteDesktopSecurityConfiguration property.
+            ## @return a void
+            ## 
+            def remote_desktop_security_configuration=(value)
+                @remote_desktop_security_configuration = value
             end
             ## 
             ## Gets the replyUrls property value. The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
@@ -997,6 +1016,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("preferredTokenSigningKeyThumbprint", @preferred_token_signing_key_thumbprint)
                 writer.write_collection_of_object_values("publishedPermissionScopes", @published_permission_scopes)
                 writer.write_string_value("publisherName", @publisher_name)
+                writer.write_object_value("remoteDesktopSecurityConfiguration", @remote_desktop_security_configuration)
                 writer.write_collection_of_primitive_values("replyUrls", @reply_urls)
                 writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
                 writer.write_object_value("samlSingleSignOnSettings", @saml_single_sign_on_settings)
@@ -1012,14 +1032,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("verifiedPublisher", @verified_publisher)
             end
             ## 
-            ## Gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+            ## Gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
             ## @return a string
             ## 
             def service_principal_names
                 return @service_principal_names
             end
             ## 
-            ## Sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+            ## Sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
             ## @param value Value to set for the servicePrincipalNames property.
             ## @return a void
             ## 
@@ -1027,14 +1047,14 @@ module MicrosoftGraphBeta
                 @service_principal_names = value
             end
             ## 
-            ## Gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+            ## Gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
             ## @return a string
             ## 
             def service_principal_type
                 return @service_principal_type
             end
             ## 
-            ## Sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+            ## Sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
             ## @param value Value to set for the servicePrincipalType property.
             ## @return a void
             ## 
@@ -1042,14 +1062,14 @@ module MicrosoftGraphBeta
                 @service_principal_type = value
             end
             ## 
-            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             ## @return a string
             ## 
             def sign_in_audience
                 return @sign_in_audience
             end
             ## 
-            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             ## @param value Value to set for the signInAudience property.
             ## @return a void
             ## 
@@ -1057,14 +1077,14 @@ module MicrosoftGraphBeta
                 @sign_in_audience = value
             end
             ## 
-            ## Gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## Gets the synchronization property value. Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
             ## @return a synchronization
             ## 
             def synchronization
                 return @synchronization
             end
             ## 
-            ## Sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## Sets the synchronization property value. Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
             ## @param value Value to set for the synchronization property.
             ## @return a void
             ## 
@@ -1087,14 +1107,14 @@ module MicrosoftGraphBeta
                 @tags = value
             end
             ## 
-            ## Gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+            ## Gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
             ## @return a guid
             ## 
             def token_encryption_key_id
                 return @token_encryption_key_id
             end
             ## 
-            ## Sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+            ## Sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
             ## @param value Value to set for the tokenEncryptionKeyId property.
             ## @return a void
             ## 
