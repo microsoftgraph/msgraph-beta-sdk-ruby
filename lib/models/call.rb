@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # The context associated with an incoming call. Read-only. Server generated.
@@ -248,14 +248,14 @@ module MicrosoftGraphBeta
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 

@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class CallRecordsParticipantEndpoint < MicrosoftGraphBeta::Models::CallRecordsEndpoint
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Identity associated with the endpoint.
+            @associated_identity
+            ## 
             # CPU number of cores used by the media endpoint.
             @cpu_cores_count
             ## 
@@ -19,11 +22,26 @@ module MicrosoftGraphBeta
             # The feedback provided by the user of this endpoint about the quality of the session.
             @feedback
             ## 
-            # Identity associated with the endpoint.
+            # The identity property
             @identity
             ## 
             # Name of the device used by the media endpoint.
             @name
+            ## 
+            ## Gets the associatedIdentity property value. Identity associated with the endpoint.
+            ## @return a call_records_user_identity
+            ## 
+            def associated_identity
+                return @associated_identity
+            end
+            ## 
+            ## Sets the associatedIdentity property value. Identity associated with the endpoint.
+            ## @param value Value to set for the associatedIdentity property.
+            ## @return a void
+            ## 
+            def associated_identity=(value)
+                @associated_identity = value
+            end
             ## 
             ## Instantiates a new callRecordsParticipantEndpoint and sets the default values.
             ## @return a void
@@ -107,6 +125,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "associatedIdentity" => lambda {|n| @associated_identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CallRecordsUserIdentity.create_from_discriminator_value(pn) }) },
                     "cpuCoresCount" => lambda {|n| @cpu_cores_count = n.get_number_value() },
                     "cpuName" => lambda {|n| @cpu_name = n.get_string_value() },
                     "cpuProcessorSpeedInMhz" => lambda {|n| @cpu_processor_speed_in_mhz = n.get_number_value() },
@@ -116,14 +135,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the identity property value. Identity associated with the endpoint.
+            ## Gets the identity property value. The identity property
             ## @return a identity_set
             ## 
             def identity
                 return @identity
             end
             ## 
-            ## Sets the identity property value. Identity associated with the endpoint.
+            ## Sets the identity property value. The identity property
             ## @param value Value to set for the identity property.
             ## @return a void
             ## 
@@ -153,6 +172,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("associatedIdentity", @associated_identity)
                 writer.write_number_value("cpuCoresCount", @cpu_cores_count)
                 writer.write_string_value("cpuName", @cpu_name)
                 writer.write_number_value("cpuProcessorSpeedInMhz", @cpu_processor_speed_in_mhz)

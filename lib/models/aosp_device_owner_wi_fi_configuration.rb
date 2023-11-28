@@ -24,6 +24,21 @@ module MicrosoftGraphBeta
             # This is the pre-shared key for WPA Personal Wi-Fi network.
             @pre_shared_key_is_set
             ## 
+            # Specify the proxy server configuration script URL.
+            @proxy_automatic_configuration_url
+            ## 
+            # List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            @proxy_exclusion_list
+            ## 
+            # Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+            @proxy_manual_address
+            ## 
+            # Specify the proxy server port.
+            @proxy_manual_port
+            ## 
+            # Wi-Fi Proxy Settings.
+            @proxy_setting
+            ## 
             # This is the name of the Wi-Fi network that is broadcast to all devices.
             @ssid
             ## 
@@ -95,6 +110,11 @@ module MicrosoftGraphBeta
                     "networkName" => lambda {|n| @network_name = n.get_string_value() },
                     "preSharedKey" => lambda {|n| @pre_shared_key = n.get_string_value() },
                     "preSharedKeyIsSet" => lambda {|n| @pre_shared_key_is_set = n.get_boolean_value() },
+                    "proxyAutomaticConfigurationUrl" => lambda {|n| @proxy_automatic_configuration_url = n.get_string_value() },
+                    "proxyExclusionList" => lambda {|n| @proxy_exclusion_list = n.get_collection_of_primitive_values(String) },
+                    "proxyManualAddress" => lambda {|n| @proxy_manual_address = n.get_string_value() },
+                    "proxyManualPort" => lambda {|n| @proxy_manual_port = n.get_number_value() },
+                    "proxySetting" => lambda {|n| @proxy_setting = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiProxySetting) },
                     "ssid" => lambda {|n| @ssid = n.get_string_value() },
                     "wiFiSecurityType" => lambda {|n| @wi_fi_security_type = n.get_enum_value(MicrosoftGraphBeta::Models::AospDeviceOwnerWiFiSecurityType) },
                 })
@@ -145,6 +165,81 @@ module MicrosoftGraphBeta
                 @pre_shared_key_is_set = value
             end
             ## 
+            ## Gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+            ## @return a string
+            ## 
+            def proxy_automatic_configuration_url
+                return @proxy_automatic_configuration_url
+            end
+            ## 
+            ## Sets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+            ## @param value Value to set for the proxyAutomaticConfigurationUrl property.
+            ## @return a void
+            ## 
+            def proxy_automatic_configuration_url=(value)
+                @proxy_automatic_configuration_url = value
+            end
+            ## 
+            ## Gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            ## @return a string
+            ## 
+            def proxy_exclusion_list
+                return @proxy_exclusion_list
+            end
+            ## 
+            ## Sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.
+            ## @param value Value to set for the proxyExclusionList property.
+            ## @return a void
+            ## 
+            def proxy_exclusion_list=(value)
+                @proxy_exclusion_list = value
+            end
+            ## 
+            ## Gets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+            ## @return a string
+            ## 
+            def proxy_manual_address
+                return @proxy_manual_address
+            end
+            ## 
+            ## Sets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+            ## @param value Value to set for the proxyManualAddress property.
+            ## @return a void
+            ## 
+            def proxy_manual_address=(value)
+                @proxy_manual_address = value
+            end
+            ## 
+            ## Gets the proxyManualPort property value. Specify the proxy server port.
+            ## @return a integer
+            ## 
+            def proxy_manual_port
+                return @proxy_manual_port
+            end
+            ## 
+            ## Sets the proxyManualPort property value. Specify the proxy server port.
+            ## @param value Value to set for the proxyManualPort property.
+            ## @return a void
+            ## 
+            def proxy_manual_port=(value)
+                @proxy_manual_port = value
+            end
+            ## 
+            ## Gets the proxySetting property value. Wi-Fi Proxy Settings.
+            ## @return a wi_fi_proxy_setting
+            ## 
+            def proxy_setting
+                return @proxy_setting
+            end
+            ## 
+            ## Sets the proxySetting property value. Wi-Fi Proxy Settings.
+            ## @param value Value to set for the proxySetting property.
+            ## @return a void
+            ## 
+            def proxy_setting=(value)
+                @proxy_setting = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -157,6 +252,11 @@ module MicrosoftGraphBeta
                 writer.write_string_value("networkName", @network_name)
                 writer.write_string_value("preSharedKey", @pre_shared_key)
                 writer.write_boolean_value("preSharedKeyIsSet", @pre_shared_key_is_set)
+                writer.write_string_value("proxyAutomaticConfigurationUrl", @proxy_automatic_configuration_url)
+                writer.write_collection_of_primitive_values("proxyExclusionList", @proxy_exclusion_list)
+                writer.write_string_value("proxyManualAddress", @proxy_manual_address)
+                writer.write_number_value("proxyManualPort", @proxy_manual_port)
+                writer.write_enum_value("proxySetting", @proxy_setting)
                 writer.write_string_value("ssid", @ssid)
                 writer.write_enum_value("wiFiSecurityType", @wi_fi_security_type)
             end

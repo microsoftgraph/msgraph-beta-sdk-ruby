@@ -96,6 +96,12 @@ module MicrosoftGraphBeta
             # Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
             @keyboards_restricted
             ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            @messaging_redirect_app_display_name
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            @messaging_redirect_app_package_id
+            ## 
             # Minimum version of the Company portal that must be installed on the device or app access will be blocked
             @minimum_required_company_portal_version
             ## 
@@ -609,6 +615,8 @@ module MicrosoftGraphBeta
                     "exemptedAppPackages" => lambda {|n| @exempted_app_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
                     "fingerprintAndBiometricEnabled" => lambda {|n| @fingerprint_and_biometric_enabled = n.get_boolean_value() },
                     "keyboardsRestricted" => lambda {|n| @keyboards_restricted = n.get_boolean_value() },
+                    "messagingRedirectAppDisplayName" => lambda {|n| @messaging_redirect_app_display_name = n.get_string_value() },
+                    "messagingRedirectAppPackageId" => lambda {|n| @messaging_redirect_app_package_id = n.get_string_value() },
                     "minimumRequiredCompanyPortalVersion" => lambda {|n| @minimum_required_company_portal_version = n.get_string_value() },
                     "minimumRequiredPatchVersion" => lambda {|n| @minimum_required_patch_version = n.get_string_value() },
                     "minimumWarningCompanyPortalVersion" => lambda {|n| @minimum_warning_company_portal_version = n.get_string_value() },
@@ -639,6 +647,36 @@ module MicrosoftGraphBeta
             ## 
             def keyboards_restricted=(value)
                 @keyboards_restricted = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_display_name
+                return @messaging_redirect_app_display_name
+            end
+            ## 
+            ## Sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppDisplayName property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_display_name=(value)
+                @messaging_redirect_app_display_name = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_package_id
+                return @messaging_redirect_app_package_id
+            end
+            ## 
+            ## Sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppPackageId property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_package_id=(value)
+                @messaging_redirect_app_package_id = value
             end
             ## 
             ## Gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -857,6 +895,8 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("exemptedAppPackages", @exempted_app_packages)
                 writer.write_boolean_value("fingerprintAndBiometricEnabled", @fingerprint_and_biometric_enabled)
                 writer.write_boolean_value("keyboardsRestricted", @keyboards_restricted)
+                writer.write_string_value("messagingRedirectAppDisplayName", @messaging_redirect_app_display_name)
+                writer.write_string_value("messagingRedirectAppPackageId", @messaging_redirect_app_package_id)
                 writer.write_string_value("minimumRequiredCompanyPortalVersion", @minimum_required_company_portal_version)
                 writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version)
                 writer.write_string_value("minimumWarningCompanyPortalVersion", @minimum_warning_company_portal_version)

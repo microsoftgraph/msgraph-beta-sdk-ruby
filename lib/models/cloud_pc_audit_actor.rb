@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Name of the application.
             @application_display_name
             ## 
-            # Azure AD application ID.
+            # Microsoft Entra application ID.
             @application_id
             ## 
             # IP address.
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            # Azure AD user ID.
+            # Microsoft Entra user ID.
             @user_id
             ## 
             # List of user permissions and application permissions when the audit event was performed.
@@ -46,15 +46,15 @@ module MicrosoftGraphBeta
             # List of role scope tags.
             @user_role_scope_tags
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @application_display_name = value
             end
             ## 
-            ## Gets the applicationId property value. Azure AD application ID.
+            ## Gets the applicationId property value. Microsoft Entra application ID.
             ## @return a string
             ## 
             def application_id
                 return @application_id
             end
             ## 
-            ## Sets the applicationId property value. Azure AD application ID.
+            ## Sets the applicationId property value. Microsoft Entra application ID.
             ## @param value Value to set for the applicationId property.
             ## @return a void
             ## 
@@ -238,14 +238,14 @@ module MicrosoftGraphBeta
                 @type = value
             end
             ## 
-            ## Gets the userId property value. Azure AD user ID.
+            ## Gets the userId property value. Microsoft Entra user ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. Azure AD user ID.
+            ## Sets the userId property value. Microsoft Entra user ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

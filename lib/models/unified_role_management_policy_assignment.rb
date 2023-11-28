@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The id of the policy. Inherited from entity.
             @policy_id
             ## 
-            # For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+            # For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             @role_definition_id
             ## 
             # The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 @policy_id = value
             end
             ## 
-            ## Gets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+            ## Gets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             ## @return a string
             ## 
             def role_definition_id
                 return @role_definition_id
             end
             ## 
-            ## Sets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+            ## Sets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             ## @param value Value to set for the roleDefinitionId property.
             ## @return a void
             ## 

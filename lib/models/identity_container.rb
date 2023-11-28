@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The authenticationEventListeners property
             @authentication_event_listeners
             ## 
-            # Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            # Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
             @authentication_events_flows
             ## 
             # Represents entry point for B2C identity userflows.
@@ -46,15 +46,15 @@ module MicrosoftGraphBeta
             # The userFlows property
             @user_flows
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -91,14 +91,14 @@ module MicrosoftGraphBeta
                 @authentication_event_listeners = value
             end
             ## 
-            ## Gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            ## Gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
             ## @return a authentication_events_flow
             ## 
             def authentication_events_flows
                 return @authentication_events_flows
             end
             ## 
-            ## Sets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            ## Sets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
             ## @param value Value to set for the authenticationEventsFlows property.
             ## @return a void
             ## 

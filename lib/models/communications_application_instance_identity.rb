@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class CommunicationsApplicationInstanceIdentity < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # True if the participant would not like to be shown in other participants' rosters.
+            # True if the participant shouldn't be shown in other participants' rosters.
             @hidden
             ## 
-            # The application's tenant ID.
+            # The tenant ID of the application.
             @tenant_id
             ## 
             ## Instantiates a new communicationsApplicationInstanceIdentity and sets the default values.
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+            ## Gets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
             ## @return a boolean
             ## 
             def hidden
                 return @hidden
             end
             ## 
-            ## Sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
+            ## Sets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
             ## @param value Value to set for the hidden property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("tenantId", @tenant_id)
             end
             ## 
-            ## Gets the tenantId property value. The application's tenant ID.
+            ## Gets the tenantId property value. The tenant ID of the application.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The application's tenant ID.
+            ## Sets the tenantId property value. The tenant ID of the application.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

@@ -5,10 +5,7 @@ require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../me'
 require_relative './delta/delta_request_builder'
 require_relative './evaluate_dynamic_membership/evaluate_dynamic_membership_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './get_user_owned_objects/get_user_owned_objects_request_builder'
 require_relative './joined_groups'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraphBeta
     module Me
@@ -26,21 +23,6 @@ module MicrosoftGraphBeta
                 # Provides operations to call the evaluateDynamicMembership method.
                 def evaluate_dynamic_membership()
                     return MicrosoftGraphBeta::Me::JoinedGroups::EvaluateDynamicMembership::EvaluateDynamicMembershipRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getByIds method.
-                def get_by_ids()
-                    return MicrosoftGraphBeta::Me::JoinedGroups::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getUserOwnedObjects method.
-                def get_user_owned_objects()
-                    return MicrosoftGraphBeta::Me::JoinedGroups::GetUserOwnedObjects::GetUserOwnedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the validateProperties method.
-                def validate_properties()
-                    return MicrosoftGraphBeta::Me::JoinedGroups::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
@@ -72,16 +54,25 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a joined_groups_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return JoinedGroupsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PeopleAdminSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The profileCardProperties property
+            # Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             @profile_card_properties
             ## 
             # Represents administrator settings that manage the support of pronouns in an organization.
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the profileCardProperties property value. The profileCardProperties property
+            ## Gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             ## @return a profile_card_property
             ## 
             def profile_card_properties
                 return @profile_card_properties
             end
             ## 
-            ## Sets the profileCardProperties property value. The profileCardProperties property
+            ## Sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             ## @param value Value to set for the profileCardProperties property.
             ## @return a void
             ## 

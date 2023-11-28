@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessPolicyDetail.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "scenarios" => lambda {|n| @scenarios = n.get_enum_value(MicrosoftGraphBeta::Models::TemplateScenarios) },
+                    "scenarios" => lambda {|n| @scenarios = n.get_enum_values(MicrosoftGraphBeta::Models::TemplateScenarios) },
                 })
             end
             ## 

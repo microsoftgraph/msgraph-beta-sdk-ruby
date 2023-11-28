@@ -35,6 +35,9 @@ module MicrosoftGraphBeta
             OtherExternalUser: :OtherExternalUser,
             ServiceProvider: :ServiceProvider,
             MicrosoftAdminPortals: :MicrosoftAdminPortals,
+            DeviceCodeFlow: :DeviceCodeFlow,
+            AuthenticationTransfer: :AuthenticationTransfer,
+            InsiderRisk: :InsiderRisk,
         }
     end
 end

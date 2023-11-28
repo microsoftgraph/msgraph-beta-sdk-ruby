@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class Schedule < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The dayNotes property
+            @day_notes
+            ## 
             # Indicates whether the schedule is enabled for the team. Required.
             @enabled
             ## 
@@ -86,6 +89,21 @@ module MicrosoftGraphBeta
                 return Schedule.new
             end
             ## 
+            ## Gets the dayNotes property value. The dayNotes property
+            ## @return a day_note
+            ## 
+            def day_notes
+                return @day_notes
+            end
+            ## 
+            ## Sets the dayNotes property value. The dayNotes property
+            ## @param value Value to set for the dayNotes property.
+            ## @return a void
+            ## 
+            def day_notes=(value)
+                @day_notes = value
+            end
+            ## 
             ## Gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
             ## @return a boolean
             ## 
@@ -106,6 +124,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "dayNotes" => lambda {|n| @day_notes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DayNote.create_from_discriminator_value(pn) }) },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
                     "offerShiftRequests" => lambda {|n| @offer_shift_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OfferShiftRequest.create_from_discriminator_value(pn) }) },
                     "offerShiftRequestsEnabled" => lambda {|n| @offer_shift_requests_enabled = n.get_boolean_value() },
@@ -257,6 +276,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("dayNotes", @day_notes)
                 writer.write_boolean_value("enabled", @enabled)
                 writer.write_collection_of_object_values("offerShiftRequests", @offer_shift_requests)
                 writer.write_boolean_value("offerShiftRequestsEnabled", @offer_shift_requests_enabled)

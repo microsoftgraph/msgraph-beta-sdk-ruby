@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             # All users in the class. Nullable.
             @members
             ## 
-            # The modules property
+            # All modules in the class. Nullable.
             @modules
             ## 
             # All schools that this class is associated with. Nullable.
@@ -370,14 +370,14 @@ module MicrosoftGraphBeta
                 @members = value
             end
             ## 
-            ## Gets the modules property value. The modules property
+            ## Gets the modules property value. All modules in the class. Nullable.
             ## @return a education_module
             ## 
             def modules
                 return @modules
             end
             ## 
-            ## Sets the modules property value. The modules property
+            ## Sets the modules property value. All modules in the class. Nullable.
             ## @param value Value to set for the modules property.
             ## @return a void
             ## 
