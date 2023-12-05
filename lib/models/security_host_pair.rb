@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
             @last_seen_date_time
             ## 
-            # The reason the two hosts are identified as hostPairs.
+            # The reason that two hosts are identified as hostPair.
             @link_kind
             ## 
             # The parentHost property
@@ -97,14 +97,14 @@ module MicrosoftGraphBeta
                 @last_seen_date_time = value
             end
             ## 
-            ## Gets the linkKind property value. The reason the two hosts are identified as hostPairs.
+            ## Gets the linkKind property value. The reason that two hosts are identified as hostPair.
             ## @return a string
             ## 
             def link_kind
                 return @link_kind
             end
             ## 
-            ## Sets the linkKind property value. The reason the two hosts are identified as hostPairs.
+            ## Sets the linkKind property value. The reason that two hosts are identified as hostPair.
             ## @param value Value to set for the linkKind property.
             ## @return a void
             ## 

@@ -35,13 +35,13 @@ module MicrosoftGraphBeta
             # True if the resource is not yet available for assignment. Read-only.
             @is_pending_onboarding
             ## 
-            # The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            # The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             @origin_id
             ## 
             # The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
             @origin_system
             ## 
-            # The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            # The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             @resource_type
             ## 
             # A unique resource locator for the resource, such as the URL for signing a user into an application.
@@ -219,14 +219,14 @@ module MicrosoftGraphBeta
                 @is_pending_onboarding = value
             end
             ## 
-            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             ## @return a string
             ## 
             def origin_id
                 return @origin_id
             end
             ## 
-            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             ## @param value Value to set for the originId property.
             ## @return a void
             ## 
@@ -249,14 +249,14 @@ module MicrosoftGraphBeta
                 @origin_system = value
             end
             ## 
-            ## Gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            ## Gets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             ## @return a string
             ## 
             def resource_type
                 return @resource_type
             end
             ## 
-            ## Sets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            ## Sets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             ## @param value Value to set for the resourceType property.
             ## @return a void
             ## 

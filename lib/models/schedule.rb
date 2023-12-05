@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class Schedule < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The dayNotes property
+            @day_notes
+            ## 
             # Indicates whether the schedule is enabled for the team. Required.
             @enabled
             ## 
@@ -49,7 +52,7 @@ module MicrosoftGraphBeta
             # Indicates whether time clock is enabled for the schedule.
             @time_clock_enabled
             ## 
-            # The timeClockSettings property
+            # The time clock location settings for this schedule.
             @time_clock_settings
             ## 
             # The set of reasons for a time off in the schedule.
@@ -67,7 +70,7 @@ module MicrosoftGraphBeta
             # The instances of times off in the schedule.
             @times_off
             ## 
-            # The workforceIntegrationIds property
+            # The Ids for the workforce integrations associated with this schedule.
             @workforce_integration_ids
             ## 
             ## Instantiates a new schedule and sets the default values.
@@ -84,6 +87,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return Schedule.new
+            end
+            ## 
+            ## Gets the dayNotes property value. The dayNotes property
+            ## @return a day_note
+            ## 
+            def day_notes
+                return @day_notes
+            end
+            ## 
+            ## Sets the dayNotes property value. The dayNotes property
+            ## @param value Value to set for the dayNotes property.
+            ## @return a void
+            ## 
+            def day_notes=(value)
+                @day_notes = value
             end
             ## 
             ## Gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
@@ -106,6 +124,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "dayNotes" => lambda {|n| @day_notes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DayNote.create_from_discriminator_value(pn) }) },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
                     "offerShiftRequests" => lambda {|n| @offer_shift_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OfferShiftRequest.create_from_discriminator_value(pn) }) },
                     "offerShiftRequestsEnabled" => lambda {|n| @offer_shift_requests_enabled = n.get_boolean_value() },
@@ -257,6 +276,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("dayNotes", @day_notes)
                 writer.write_boolean_value("enabled", @enabled)
                 writer.write_collection_of_object_values("offerShiftRequests", @offer_shift_requests)
                 writer.write_boolean_value("offerShiftRequestsEnabled", @offer_shift_requests_enabled)
@@ -353,14 +373,14 @@ module MicrosoftGraphBeta
                 @time_clock_enabled = value
             end
             ## 
-            ## Gets the timeClockSettings property value. The timeClockSettings property
+            ## Gets the timeClockSettings property value. The time clock location settings for this schedule.
             ## @return a time_clock_settings
             ## 
             def time_clock_settings
                 return @time_clock_settings
             end
             ## 
-            ## Sets the timeClockSettings property value. The timeClockSettings property
+            ## Sets the timeClockSettings property value. The time clock location settings for this schedule.
             ## @param value Value to set for the timeClockSettings property.
             ## @return a void
             ## 
@@ -443,14 +463,14 @@ module MicrosoftGraphBeta
                 @times_off = value
             end
             ## 
-            ## Gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Gets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
             ## @return a string
             ## 
             def workforce_integration_ids
                 return @workforce_integration_ids
             end
             ## 
-            ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Sets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
             ## @param value Value to set for the workforceIntegrationIds property.
             ## @return a void
             ## 

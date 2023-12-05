@@ -1,1 +1,1 @@
-require_relative 'export_mobile_config_response'
+require_relative 'export_mobile_config_get_response'

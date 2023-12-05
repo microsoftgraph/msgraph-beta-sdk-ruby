@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Counts of active and inactive groups processed by the inbound flow.
             @groups
             ## 
-            # Number of people matched to an Azure Active Directory user, by role.
+            # Number of people matched to a Microsoft Entra user, by role.
             @matched_people_by_role
             ## 
             # Counts of active and inactive memberships processed by the inbound flow.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Counts of active and inactive people processed by the inbound flow.
             @people
             ## 
-            # Number of people not matched to an Azure Active Directory user, by role.
+            # Number of people not matched to a Microsoft Entra user, by role.
             @unmatched_people_by_role
             ## 
             # Number of warnings encountered while processing the inbound flow.
@@ -94,14 +94,14 @@ module MicrosoftGraphBeta
                 @groups = value
             end
             ## 
-            ## Gets the matchedPeopleByRole property value. Number of people matched to an Azure Active Directory user, by role.
+            ## Gets the matchedPeopleByRole property value. Number of people matched to a Microsoft Entra user, by role.
             ## @return a industry_data_industry_data_run_role_count_metric
             ## 
             def matched_people_by_role
                 return @matched_people_by_role
             end
             ## 
-            ## Sets the matchedPeopleByRole property value. Number of people matched to an Azure Active Directory user, by role.
+            ## Sets the matchedPeopleByRole property value. Number of people matched to a Microsoft Entra user, by role.
             ## @param value Value to set for the matchedPeopleByRole property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the unmatchedPeopleByRole property value. Number of people not matched to an Azure Active Directory user, by role.
+            ## Gets the unmatchedPeopleByRole property value. Number of people not matched to a Microsoft Entra user, by role.
             ## @return a industry_data_industry_data_run_role_count_metric
             ## 
             def unmatched_people_by_role
                 return @unmatched_people_by_role
             end
             ## 
-            ## Sets the unmatchedPeopleByRole property value. Number of people not matched to an Azure Active Directory user, by role.
+            ## Sets the unmatchedPeopleByRole property value. Number of people not matched to a Microsoft Entra user, by role.
             ## @param value Value to set for the unmatchedPeopleByRole property.
             ## @return a void
             ## 

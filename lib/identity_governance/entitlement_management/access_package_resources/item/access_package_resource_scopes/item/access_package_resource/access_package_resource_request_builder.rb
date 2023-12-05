@@ -11,6 +11,7 @@ require_relative '../item'
 require_relative './access_package_resource_environment/access_package_resource_environment_request_builder'
 require_relative './access_package_resource_roles/access_package_resource_roles_request_builder'
 require_relative './access_package_resource'
+require_relative './refresh/refresh_request_builder'
 
 module MicrosoftGraphBeta
     module IdentityGovernance
@@ -33,6 +34,11 @@ module MicrosoftGraphBeta
                                     # Provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageResource entity.
                                     def access_package_resource_roles()
                                         return MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackageResources::Item::AccessPackageResourceScopes::Item::AccessPackageResource::AccessPackageResourceRoles::AccessPackageResourceRolesRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    # Provides operations to call the refresh method.
+                                    def refresh()
+                                        return MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackageResources::Item::AccessPackageResourceScopes::Item::AccessPackageResource::Refresh::RefreshRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new AccessPackageResourceRequestBuilder and sets the default values.
@@ -94,13 +100,14 @@ module MicrosoftGraphBeta
                                     ## 
                                     def to_delete_request_information(request_configuration=nil)
                                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                        request_info.url_template = @url_template
-                                        request_info.path_parameters = @path_parameters
-                                        request_info.http_method = :DELETE
                                         unless request_configuration.nil?
                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                             request_info.add_request_options(request_configuration.options)
                                         end
+                                        request_info.url_template = @url_template
+                                        request_info.path_parameters = @path_parameters
+                                        request_info.http_method = :DELETE
+                                        request_info.headers.try_add('Accept', 'application/json')
                                         return request_info
                                     end
                                     ## 
@@ -110,15 +117,15 @@ module MicrosoftGraphBeta
                                     ## 
                                     def to_get_request_information(request_configuration=nil)
                                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                        request_info.url_template = @url_template
-                                        request_info.path_parameters = @path_parameters
-                                        request_info.http_method = :GET
-                                        request_info.headers.add('Accept', 'application/json')
                                         unless request_configuration.nil?
                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                             request_info.add_request_options(request_configuration.options)
                                         end
+                                        request_info.url_template = @url_template
+                                        request_info.path_parameters = @path_parameters
+                                        request_info.http_method = :GET
+                                        request_info.headers.try_add('Accept', 'application/json')
                                         return request_info
                                     end
                                     ## 
@@ -130,16 +137,25 @@ module MicrosoftGraphBeta
                                     def to_patch_request_information(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
                                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                        request_info.url_template = @url_template
-                                        request_info.path_parameters = @path_parameters
-                                        request_info.http_method = :PATCH
-                                        request_info.headers.add('Accept', 'application/json')
                                         unless request_configuration.nil?
                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                             request_info.add_request_options(request_configuration.options)
                                         end
                                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                        request_info.url_template = @url_template
+                                        request_info.path_parameters = @path_parameters
+                                        request_info.http_method = :PATCH
+                                        request_info.headers.try_add('Accept', 'application/json')
                                         return request_info
+                                    end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a access_package_resource_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return AccessPackageResourceRequestBuilder.new(raw_url, @request_adapter)
                                     end
 
                                     ## 

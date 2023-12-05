@@ -9,23 +9,23 @@ module MicrosoftGraphBeta
         class MacOSWebClip < MicrosoftGraphBeta::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The web app URL starting with http:// or https://, such as https://learn.microsoft.com/en-us/mem/.
+            # The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.
             @app_url
             ## 
             # Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app.
             @full_screen_enabled
             ## 
-            # Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding "shine" to the icon. If FALSE, SpringBoard can add "shine".
+            # Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
             @pre_composed_icon_enabled
             ## 
-            ## Gets the appUrl property value. The web app URL starting with http:// or https://, such as https://learn.microsoft.com/en-us/mem/.
+            ## Gets the appUrl property value. The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.
             ## @return a string
             ## 
             def app_url
                 return @app_url
             end
             ## 
-            ## Sets the appUrl property value. The web app URL starting with http:// or https://, such as https://learn.microsoft.com/en-us/mem/.
+            ## Sets the appUrl property value. The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.
             ## @param value Value to set for the appUrl property.
             ## @return a void
             ## 
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding "shine" to the icon. If FALSE, SpringBoard can add "shine".
+            ## Gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
             ## @return a boolean
             ## 
             def pre_composed_icon_enabled
                 return @pre_composed_icon_enabled
             end
             ## 
-            ## Sets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding "shine" to the icon. If FALSE, SpringBoard can add "shine".
+            ## Sets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
             ## @param value Value to set for the preComposedIconEnabled property.
             ## @return a void
             ## 

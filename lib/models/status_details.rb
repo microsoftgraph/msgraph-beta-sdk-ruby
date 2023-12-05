@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class StatusDetails < MicrosoftGraphBeta::Models::StatusBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details in case of error.
+            # Additional details if there is an error.
             @additional_details
             ## 
             # Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
@@ -22,14 +22,14 @@ module MicrosoftGraphBeta
             # Provides the resolution for the corresponding error.
             @recommended_action
             ## 
-            ## Gets the additionalDetails property value. Additional details in case of error.
+            ## Gets the additionalDetails property value. Additional details if there is an error.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details in case of error.
+            ## Sets the additionalDetails property value. Additional details if there is an error.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 

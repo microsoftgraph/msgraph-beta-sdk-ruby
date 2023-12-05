@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedAudiences" => lambda {|n| @allowed_audiences = n.get_enum_value(MicrosoftGraphBeta::Models::AllowedAudiences) },
+                    "allowedAudiences" => lambda {|n| @allowed_audiences = n.get_enum_values(MicrosoftGraphBeta::Models::AllowedAudiences) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "inference" => lambda {|n| @inference = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InferenceData.create_from_discriminator_value(pn) }) },

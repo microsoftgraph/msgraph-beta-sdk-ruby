@@ -19,21 +19,21 @@ module MicrosoftGraphBeta
             # The operations available to interact with the multi-tenant management platform.
             @managed_tenants
             ## 
-            # The multiTenantOrganization property
+            # Defines an organization with more than one instance of Microsoft Entra ID.
             @multi_tenant_organization
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @managed_tenants = value
             end
             ## 
-            ## Gets the multiTenantOrganization property value. The multiTenantOrganization property
+            ## Gets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
             ## @return a multi_tenant_organization
             ## 
             def multi_tenant_organization
                 return @multi_tenant_organization
             end
             ## 
-            ## Sets the multiTenantOrganization property value. The multiTenantOrganization property
+            ## Sets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
             ## @param value Value to set for the multiTenantOrganization property.
             ## @return a void
             ## 

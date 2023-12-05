@@ -45,6 +45,15 @@ module MicrosoftGraphBeta
             # Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
             @early_launch_anti_malware_driver_enabled
             ## 
+            # When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+            @firmware_protection_enabled
+            ## 
+            # When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+            @kernel_dma_protection_enabled
+            ## 
+            # When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+            @memory_integrity_enabled
+            ## 
             # Maximum Windows Phone version.
             @mobile_os_maximum_version
             ## 
@@ -104,6 +113,9 @@ module MicrosoftGraphBeta
             ## 
             # The valid operating system build ranges on Windows devices. This collection can contain a maximum of 10000 elements.
             @valid_operating_system_build_ranges
+            ## 
+            # When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+            @virtualization_based_security_enabled
             ## 
             ## Gets the activeFirewallRequired property value. Require active firewall on Windows devices.
             ## @return a boolean
@@ -302,6 +314,21 @@ module MicrosoftGraphBeta
                 @early_launch_anti_malware_driver_enabled = value
             end
             ## 
+            ## Gets the firmwareProtectionEnabled property value. When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+            ## @return a boolean
+            ## 
+            def firmware_protection_enabled
+                return @firmware_protection_enabled
+            end
+            ## 
+            ## Sets the firmwareProtectionEnabled property value. When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+            ## @param value Value to set for the firmwareProtectionEnabled property.
+            ## @return a void
+            ## 
+            def firmware_protection_enabled=(value)
+                @firmware_protection_enabled = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -319,6 +346,9 @@ module MicrosoftGraphBeta
                     "deviceThreatProtectionEnabled" => lambda {|n| @device_threat_protection_enabled = n.get_boolean_value() },
                     "deviceThreatProtectionRequiredSecurityLevel" => lambda {|n| @device_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceThreatProtectionLevel) },
                     "earlyLaunchAntiMalwareDriverEnabled" => lambda {|n| @early_launch_anti_malware_driver_enabled = n.get_boolean_value() },
+                    "firmwareProtectionEnabled" => lambda {|n| @firmware_protection_enabled = n.get_boolean_value() },
+                    "kernelDmaProtectionEnabled" => lambda {|n| @kernel_dma_protection_enabled = n.get_boolean_value() },
+                    "memoryIntegrityEnabled" => lambda {|n| @memory_integrity_enabled = n.get_boolean_value() },
                     "mobileOsMaximumVersion" => lambda {|n| @mobile_os_maximum_version = n.get_string_value() },
                     "mobileOsMinimumVersion" => lambda {|n| @mobile_os_minimum_version = n.get_string_value() },
                     "osMaximumVersion" => lambda {|n| @os_maximum_version = n.get_string_value() },
@@ -339,7 +369,38 @@ module MicrosoftGraphBeta
                     "storageRequireEncryption" => lambda {|n| @storage_require_encryption = n.get_boolean_value() },
                     "tpmRequired" => lambda {|n| @tpm_required = n.get_boolean_value() },
                     "validOperatingSystemBuildRanges" => lambda {|n| @valid_operating_system_build_ranges = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OperatingSystemVersionRange.create_from_discriminator_value(pn) }) },
+                    "virtualizationBasedSecurityEnabled" => lambda {|n| @virtualization_based_security_enabled = n.get_boolean_value() },
                 })
+            end
+            ## 
+            ## Gets the kernelDmaProtectionEnabled property value. When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+            ## @return a boolean
+            ## 
+            def kernel_dma_protection_enabled
+                return @kernel_dma_protection_enabled
+            end
+            ## 
+            ## Sets the kernelDmaProtectionEnabled property value. When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+            ## @param value Value to set for the kernelDmaProtectionEnabled property.
+            ## @return a void
+            ## 
+            def kernel_dma_protection_enabled=(value)
+                @kernel_dma_protection_enabled = value
+            end
+            ## 
+            ## Gets the memoryIntegrityEnabled property value. When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+            ## @return a boolean
+            ## 
+            def memory_integrity_enabled
+                return @memory_integrity_enabled
+            end
+            ## 
+            ## Sets the memoryIntegrityEnabled property value. When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+            ## @param value Value to set for the memoryIntegrityEnabled property.
+            ## @return a void
+            ## 
+            def memory_integrity_enabled=(value)
+                @memory_integrity_enabled = value
             end
             ## 
             ## Gets the mobileOsMaximumVersion property value. Maximum Windows Phone version.
@@ -601,6 +662,9 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled)
                 writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level)
                 writer.write_boolean_value("earlyLaunchAntiMalwareDriverEnabled", @early_launch_anti_malware_driver_enabled)
+                writer.write_boolean_value("firmwareProtectionEnabled", @firmware_protection_enabled)
+                writer.write_boolean_value("kernelDmaProtectionEnabled", @kernel_dma_protection_enabled)
+                writer.write_boolean_value("memoryIntegrityEnabled", @memory_integrity_enabled)
                 writer.write_string_value("mobileOsMaximumVersion", @mobile_os_maximum_version)
                 writer.write_string_value("mobileOsMinimumVersion", @mobile_os_minimum_version)
                 writer.write_string_value("osMaximumVersion", @os_maximum_version)
@@ -621,6 +685,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
                 writer.write_boolean_value("tpmRequired", @tpm_required)
                 writer.write_collection_of_object_values("validOperatingSystemBuildRanges", @valid_operating_system_build_ranges)
+                writer.write_boolean_value("virtualizationBasedSecurityEnabled", @virtualization_based_security_enabled)
             end
             ## 
             ## Gets the signatureOutOfDate property value. Require Windows Defender Antimalware Signature to be up to date on Windows devices.
@@ -681,6 +746,21 @@ module MicrosoftGraphBeta
             ## 
             def valid_operating_system_build_ranges=(value)
                 @valid_operating_system_build_ranges = value
+            end
+            ## 
+            ## Gets the virtualizationBasedSecurityEnabled property value. When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+            ## @return a boolean
+            ## 
+            def virtualization_based_security_enabled
+                return @virtualization_based_security_enabled
+            end
+            ## 
+            ## Sets the virtualizationBasedSecurityEnabled property value. When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+            ## @param value Value to set for the virtualizationBasedSecurityEnabled property.
+            ## @return a void
+            ## 
+            def virtualization_based_security_enabled=(value)
+                @virtualization_based_security_enabled = value
             end
         end
     end

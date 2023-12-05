@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class SecurityIpEvidence < MicrosoftGraphBeta::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            # The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).
             @country_letter_code
             ## 
-            # The value of the IP Address, can be either in V4 address or V6 address format.
+            # The value of the IP Address can be either in V4 address or V6 address format.
             @ip_address
             ## 
             ## Instantiates a new securityIpEvidence and sets the default values.
@@ -21,14 +21,14 @@ module MicrosoftGraphBeta
                 @odata_type = "#microsoft.graph.security.ipEvidence"
             end
             ## 
-            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).
             ## @return a string
             ## 
             def country_letter_code
                 return @country_letter_code
             end
             ## 
-            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).
             ## @param value Value to set for the countryLetterCode property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
+            ## Gets the ipAddress property value. The value of the IP Address can be either in V4 address or V6 address format.
             ## @return a string
             ## 
             def ip_address
                 return @ip_address
             end
             ## 
-            ## Sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
+            ## Sets the ipAddress property value. The value of the IP Address can be either in V4 address or V6 address format.
             ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 

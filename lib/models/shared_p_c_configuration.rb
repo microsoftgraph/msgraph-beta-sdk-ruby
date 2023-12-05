@@ -223,7 +223,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "accountManagerPolicy" => lambda {|n| @account_manager_policy = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SharedPCAccountManagerPolicy.create_from_discriminator_value(pn) }) },
                     "allowLocalStorage" => lambda {|n| @allow_local_storage = n.get_boolean_value() },
-                    "allowedAccounts" => lambda {|n| @allowed_accounts = n.get_enum_value(MicrosoftGraphBeta::Models::SharedPCAllowedAccountType) },
+                    "allowedAccounts" => lambda {|n| @allowed_accounts = n.get_enum_values(MicrosoftGraphBeta::Models::SharedPCAllowedAccountType) },
                     "disableAccountManager" => lambda {|n| @disable_account_manager = n.get_boolean_value() },
                     "disableEduPolicies" => lambda {|n| @disable_edu_policies = n.get_boolean_value() },
                     "disablePowerPolicies" => lambda {|n| @disable_power_policies = n.get_boolean_value() },

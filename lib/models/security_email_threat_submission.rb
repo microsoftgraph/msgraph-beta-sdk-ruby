@@ -8,10 +8,10 @@ module MicrosoftGraphBeta
         class SecurityEmailThreatSubmission < MicrosoftGraphBeta::Models::SecurityThreatSubmission
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If the email is phishing simulation, this field will not be null.
+            # If the email is phishing simulation, this field won't be null.
             @attack_simulation_info
             ## 
-            # Specifies the internet message id of the email being submitted. This information is present in the email header.
+            # Specifies the internet message ID of the email being submitted. This information is present in the email header.
             @internet_message_id
             ## 
             # The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
@@ -29,20 +29,20 @@ module MicrosoftGraphBeta
             # Specifies the IP address of the sender.
             @sender_i_p
             ## 
-            # Specifies the subject of the email .
+            # Specifies the subject of the email.
             @subject
             ## 
-            # It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+            # It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
             @tenant_allow_or_block_list_action
             ## 
-            ## Gets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
+            ## Gets the attackSimulationInfo property value. If the email is phishing simulation, this field won't be null.
             ## @return a security_attack_simulation_info
             ## 
             def attack_simulation_info
                 return @attack_simulation_info
             end
             ## 
-            ## Sets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
+            ## Sets the attackSimulationInfo property value. If the email is phishing simulation, this field won't be null.
             ## @param value Value to set for the attackSimulationInfo property.
             ## @return a void
             ## 
@@ -94,14 +94,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
+            ## Gets the internetMessageId property value. Specifies the internet message ID of the email being submitted. This information is present in the email header.
             ## @return a string
             ## 
             def internet_message_id
                 return @internet_message_id
             end
             ## 
-            ## Sets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
+            ## Sets the internetMessageId property value. Specifies the internet message ID of the email being submitted. This information is present in the email header.
             ## @param value Value to set for the internetMessageId property.
             ## @return a void
             ## 
@@ -202,14 +202,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("tenantAllowOrBlockListAction", @tenant_allow_or_block_list_action)
             end
             ## 
-            ## Gets the subject property value. Specifies the subject of the email .
+            ## Gets the subject property value. Specifies the subject of the email.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. Specifies the subject of the email .
+            ## Sets the subject property value. Specifies the subject of the email.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 
@@ -217,14 +217,14 @@ module MicrosoftGraphBeta
                 @subject = value
             end
             ## 
-            ## Gets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+            ## Gets the tenantAllowOrBlockListAction property value. It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
             ## @return a security_tenant_allow_or_block_list_action
             ## 
             def tenant_allow_or_block_list_action
                 return @tenant_allow_or_block_list_action
             end
             ## 
-            ## Sets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+            ## Sets the tenantAllowOrBlockListAction property value. It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
             ## @param value Value to set for the tenantAllowOrBlockListAction property.
             ## @return a void
             ## 
