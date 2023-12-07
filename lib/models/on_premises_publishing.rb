@@ -10,16 +10,16 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
+            # If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
             @alternate_url
             ## 
-            # The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+            # The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
             @application_server_timeout
             ## 
             # Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
             @application_type
             ## 
-            # Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
+            # Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
             @external_authentication_type
             ## 
             # The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
@@ -31,16 +31,19 @@ module MicrosoftGraphBeta
             # The isAccessibleViaZTNAClient property
             @is_accessible_via_z_t_n_a_client
             ## 
-            # Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+            # Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
             @is_backend_certificate_validation_enabled
+            ## 
+            # The isDnsResolutionEnabled property
+            @is_dns_resolution_enabled
             ## 
             # Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
             @is_http_only_cookie_enabled
             ## 
-            # Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+            # Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
             @is_on_prem_publishing_enabled
             ## 
-            # Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+            # Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
             @is_persistent_cookie_enabled
             ## 
             # Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
@@ -49,7 +52,7 @@ module MicrosoftGraphBeta
             # Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
             @is_state_session_enabled
             ## 
-            # Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+            # Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
             @is_translate_host_header_enabled
             ## 
             # Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
@@ -61,7 +64,7 @@ module MicrosoftGraphBeta
             # The onPremisesApplicationSegments property
             @on_premises_application_segments
             ## 
-            # Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
+            # Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
             @segments_configuration
             ## 
             # Represents the single sign-on configuration for the on-premises application.
@@ -79,29 +82,29 @@ module MicrosoftGraphBeta
             # The associated password credential for the custom domain used.
             @verified_custom_domain_password_credential
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
+            ## Gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
             ## @return a string
             ## 
             def alternate_url
                 return @alternate_url
             end
             ## 
-            ## Sets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
+            ## Sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
             ## @param value Value to set for the alternateUrl property.
             ## @return a void
             ## 
@@ -109,14 +112,14 @@ module MicrosoftGraphBeta
                 @alternate_url = value
             end
             ## 
-            ## Gets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+            ## Gets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
             ## @return a string
             ## 
             def application_server_timeout
                 return @application_server_timeout
             end
             ## 
-            ## Sets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+            ## Sets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
             ## @param value Value to set for the applicationServerTimeout property.
             ## @return a void
             ## 
@@ -155,14 +158,14 @@ module MicrosoftGraphBeta
                 return OnPremisesPublishing.new
             end
             ## 
-            ## Gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
+            ## Gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
             ## @return a external_authentication_type
             ## 
             def external_authentication_type
                 return @external_authentication_type
             end
             ## 
-            ## Sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
+            ## Sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
             ## @param value Value to set for the externalAuthenticationType property.
             ## @return a void
             ## 
@@ -198,6 +201,7 @@ module MicrosoftGraphBeta
                     "internalUrl" => lambda {|n| @internal_url = n.get_string_value() },
                     "isAccessibleViaZTNAClient" => lambda {|n| @is_accessible_via_z_t_n_a_client = n.get_boolean_value() },
                     "isBackendCertificateValidationEnabled" => lambda {|n| @is_backend_certificate_validation_enabled = n.get_boolean_value() },
+                    "isDnsResolutionEnabled" => lambda {|n| @is_dns_resolution_enabled = n.get_boolean_value() },
                     "isHttpOnlyCookieEnabled" => lambda {|n| @is_http_only_cookie_enabled = n.get_boolean_value() },
                     "isOnPremPublishingEnabled" => lambda {|n| @is_on_prem_publishing_enabled = n.get_boolean_value() },
                     "isPersistentCookieEnabled" => lambda {|n| @is_persistent_cookie_enabled = n.get_boolean_value() },
@@ -246,19 +250,34 @@ module MicrosoftGraphBeta
                 @is_accessible_via_z_t_n_a_client = value
             end
             ## 
-            ## Gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+            ## Gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
             ## @return a boolean
             ## 
             def is_backend_certificate_validation_enabled
                 return @is_backend_certificate_validation_enabled
             end
             ## 
-            ## Sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
+            ## Sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
             ## @param value Value to set for the isBackendCertificateValidationEnabled property.
             ## @return a void
             ## 
             def is_backend_certificate_validation_enabled=(value)
                 @is_backend_certificate_validation_enabled = value
+            end
+            ## 
+            ## Gets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+            ## @return a boolean
+            ## 
+            def is_dns_resolution_enabled
+                return @is_dns_resolution_enabled
+            end
+            ## 
+            ## Sets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+            ## @param value Value to set for the isDnsResolutionEnabled property.
+            ## @return a void
+            ## 
+            def is_dns_resolution_enabled=(value)
+                @is_dns_resolution_enabled = value
             end
             ## 
             ## Gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
@@ -276,14 +295,14 @@ module MicrosoftGraphBeta
                 @is_http_only_cookie_enabled = value
             end
             ## 
-            ## Gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+            ## Gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
             ## @return a boolean
             ## 
             def is_on_prem_publishing_enabled
                 return @is_on_prem_publishing_enabled
             end
             ## 
-            ## Sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
+            ## Sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
             ## @param value Value to set for the isOnPremPublishingEnabled property.
             ## @return a void
             ## 
@@ -291,14 +310,14 @@ module MicrosoftGraphBeta
                 @is_on_prem_publishing_enabled = value
             end
             ## 
-            ## Gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+            ## Gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
             ## @return a boolean
             ## 
             def is_persistent_cookie_enabled
                 return @is_persistent_cookie_enabled
             end
             ## 
-            ## Sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
+            ## Sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
             ## @param value Value to set for the isPersistentCookieEnabled property.
             ## @return a void
             ## 
@@ -336,14 +355,14 @@ module MicrosoftGraphBeta
                 @is_state_session_enabled = value
             end
             ## 
-            ## Gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+            ## Gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
             ## @return a boolean
             ## 
             def is_translate_host_header_enabled
                 return @is_translate_host_header_enabled
             end
             ## 
-            ## Sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+            ## Sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
             ## @param value Value to set for the isTranslateHostHeaderEnabled property.
             ## @return a void
             ## 
@@ -396,14 +415,14 @@ module MicrosoftGraphBeta
                 @on_premises_application_segments = value
             end
             ## 
-            ## Gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
+            ## Gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
             ## @return a segment_configuration
             ## 
             def segments_configuration
                 return @segments_configuration
             end
             ## 
-            ## Sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
+            ## Sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
             ## @param value Value to set for the segmentsConfiguration property.
             ## @return a void
             ## 
@@ -425,6 +444,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("internalUrl", @internal_url)
                 writer.write_boolean_value("isAccessibleViaZTNAClient", @is_accessible_via_z_t_n_a_client)
                 writer.write_boolean_value("isBackendCertificateValidationEnabled", @is_backend_certificate_validation_enabled)
+                writer.write_boolean_value("isDnsResolutionEnabled", @is_dns_resolution_enabled)
                 writer.write_boolean_value("isHttpOnlyCookieEnabled", @is_http_only_cookie_enabled)
                 writer.write_boolean_value("isOnPremPublishingEnabled", @is_on_prem_publishing_enabled)
                 writer.write_boolean_value("isPersistentCookieEnabled", @is_persistent_cookie_enabled)

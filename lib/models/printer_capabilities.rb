@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # A list of supported bottom margins(in microns) for the printer.
             @bottom_margins
             ## 
-            # True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            # True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             @collation
             ## 
             # The color modes supported by the printer. Valid values are described in the following table.
             @color_modes
             ## 
-            # A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            # A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             @content_types
             ## 
             # The range of copies per job supported by the printer.
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             # A list of supported left margins(in microns) for the printer.
             @left_margins
             ## 
-            # The media (i.e., paper) colors supported by the printer.
+            # The media (that is, paper) colors supported by the printer.
             @media_colors
             ## 
             # The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
@@ -130,15 +130,15 @@ module MicrosoftGraphBeta
             # A list of supported top margins(in microns) for the printer.
             @top_margins
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -160,14 +160,14 @@ module MicrosoftGraphBeta
                 @bottom_margins = value
             end
             ## 
-            ## Gets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            ## Gets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             ## @return a boolean
             ## 
             def collation
                 return @collation
             end
             ## 
-            ## Sets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            ## Sets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             ## @param value Value to set for the collation property.
             ## @return a void
             ## 
@@ -197,14 +197,14 @@ module MicrosoftGraphBeta
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            ## Gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             ## @return a string
             ## 
             def content_types
                 return @content_types
             end
             ## 
-            ## Sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            ## Sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
@@ -419,14 +419,14 @@ module MicrosoftGraphBeta
                 @left_margins = value
             end
             ## 
-            ## Gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+            ## Gets the mediaColors property value. The media (that is, paper) colors supported by the printer.
             ## @return a string
             ## 
             def media_colors
                 return @media_colors
             end
             ## 
-            ## Sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+            ## Sets the mediaColors property value. The media (that is, paper) colors supported by the printer.
             ## @param value Value to set for the mediaColors property.
             ## @return a void
             ## 

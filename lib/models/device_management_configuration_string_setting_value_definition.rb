@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Supported file types for this setting.
             @file_types
             ## 
-            # The format property
+            # Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
             @format
             ## 
             # Regular expression or any xml or json schema that the input string should match
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 @file_types = value
             end
             ## 
-            ## Gets the format property value. The format property
+            ## Gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
             ## @return a device_management_configuration_string_format
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. The format property
+            ## Sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 

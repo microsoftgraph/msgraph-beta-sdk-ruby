@@ -67,6 +67,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.dayNote"
+                            return DayNote.new
                         when "#microsoft.graph.offerShiftRequest"
                             return OfferShiftRequest.new
                         when "#microsoft.graph.openShift"

@@ -14,10 +14,10 @@ module MicrosoftGraphBeta
             # Additional information unique to the impactedResource to help contextualize the recommendation.
             @additional_details
             ## 
-            # The URL link to the corresponding Azure AD resource.
+            # The URL link to the corresponding Microsoft Entra resource.
             @api_url
             ## 
-            # Friendly name of the Azure AD resource.
+            # Friendly name of the Microsoft Entra resource.
             @display_name
             ## 
             # Name of the user or service that last updated the status.
@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The user responsible for maintaining the resource.
             @owner
             ## 
-            # The URL link to the corresponding Azure AD portal page of the resource.
+            # The URL link to the corresponding Microsoft Entra admin center page of the resource.
             @portal_url
             ## 
             # The future date and time when the status of a postponed impactedResource will be active again.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The unique identifier of the recommendation that the resource is associated with.
             @recommendation_id
             ## 
-            # Indicates the type of Azure AD resource. Examples include user, application.
+            # Indicates the type of Microsoft Entra resource. Examples include user, application.
             @resource_type
             ## 
             # The status property
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 @additional_details = value
             end
             ## 
-            ## Gets the apiUrl property value. The URL link to the corresponding Azure AD resource.
+            ## Gets the apiUrl property value. The URL link to the corresponding Microsoft Entra resource.
             ## @return a string
             ## 
             def api_url
                 return @api_url
             end
             ## 
-            ## Sets the apiUrl property value. The URL link to the corresponding Azure AD resource.
+            ## Sets the apiUrl property value. The URL link to the corresponding Microsoft Entra resource.
             ## @param value Value to set for the apiUrl property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 return ImpactedResource.new
             end
             ## 
-            ## Gets the displayName property value. Friendly name of the Azure AD resource.
+            ## Gets the displayName property value. Friendly name of the Microsoft Entra resource.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Friendly name of the Azure AD resource.
+            ## Sets the displayName property value. Friendly name of the Microsoft Entra resource.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -193,14 +193,14 @@ module MicrosoftGraphBeta
                 @owner = value
             end
             ## 
-            ## Gets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
+            ## Gets the portalUrl property value. The URL link to the corresponding Microsoft Entra admin center page of the resource.
             ## @return a string
             ## 
             def portal_url
                 return @portal_url
             end
             ## 
-            ## Sets the portalUrl property value. The URL link to the corresponding Azure AD portal page of the resource.
+            ## Sets the portalUrl property value. The URL link to the corresponding Microsoft Entra admin center page of the resource.
             ## @param value Value to set for the portalUrl property.
             ## @return a void
             ## 
@@ -253,14 +253,14 @@ module MicrosoftGraphBeta
                 @recommendation_id = value
             end
             ## 
-            ## Gets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
+            ## Gets the resourceType property value. Indicates the type of Microsoft Entra resource. Examples include user, application.
             ## @return a string
             ## 
             def resource_type
                 return @resource_type
             end
             ## 
-            ## Sets the resourceType property value. Indicates the type of Azure AD resource. Examples include user, application.
+            ## Sets the resourceType property value. Indicates the type of Microsoft Entra resource. Examples include user, application.
             ## @param value Value to set for the resourceType property.
             ## @return a void
             ## 

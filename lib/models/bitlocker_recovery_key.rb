@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class BitlockerRecoveryKey < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time when the key was originally backed up to Azure Active Directory.
+            # The date and time when the key was originally backed up to Microsoft Entra ID.
             @created_date_time
             ## 
             # ID of the device the BitLocker key is originally backed up from.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
+            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
+            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 

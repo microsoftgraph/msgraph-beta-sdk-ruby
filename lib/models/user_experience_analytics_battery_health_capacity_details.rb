@@ -10,29 +10,29 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthCapacityDetails < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            # Number of active devices within the tenant. Valid values 0 to 2147483647
             @active_devices
             ## 
-            # Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+            # Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
             @battery_capacity_fair
             ## 
-            # Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+            # Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
             @battery_capacity_good
             ## 
-            # Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+            # Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
             @battery_capacity_poor
             ## 
             # Recorded date time of this capacity details instance.
             @last_refreshed_date_time
             ## 
-            ## Gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 @active_devices = value
             end
             ## 
-            ## Gets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+            ## Gets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_capacity_fair
                 return @battery_capacity_fair
             end
             ## 
-            ## Sets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+            ## Sets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryCapacityFair property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 @battery_capacity_fair = value
             end
             ## 
-            ## Gets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+            ## Gets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_capacity_good
                 return @battery_capacity_good
             end
             ## 
-            ## Sets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+            ## Sets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryCapacityGood property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 @battery_capacity_good = value
             end
             ## 
-            ## Gets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+            ## Gets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def battery_capacity_poor
                 return @battery_capacity_poor
             end
             ## 
-            ## Sets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+            ## Sets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
             ## @param value Value to set for the batteryCapacityPoor property.
             ## @return a void
             ## 

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Display name of the virtual event
             @display_name
             ## 
-            # End time of the virtual event.
+            # End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             @end_date_time
             ## 
             # Presenters' information of the virtual event.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Sessions of the virtual event.
             @sessions
             ## 
-            # Start time of the virtual event.
+            # Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             @start_date_time
             ## 
             # Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.
@@ -63,6 +63,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.virtualEventTownhall"
+                            return VirtualEventTownhall.new
                         when "#microsoft.graph.virtualEventWebinar"
                             return VirtualEventWebinar.new
                     end
@@ -71,7 +73,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the description property value. Description of the virtual event.
-            ## @return a string
+            ## @return a item_body
             ## 
             def description
                 return @description
@@ -100,14 +102,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the endDateTime property value. End time of the virtual event.
+            ## Gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             ## @return a date_time_time_zone
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. End time of the virtual event.
+            ## Sets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -121,7 +123,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CommunicationsIdentitySet.create_from_discriminator_value(pn) }) },
-                    "description" => lambda {|n| @description = n.get_string_value() },
+                    "description" => lambda {|n| @description = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "presenters" => lambda {|n| @presenters = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventPresenter.create_from_discriminator_value(pn) }) },
@@ -154,7 +156,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("description", @description)
+                writer.write_object_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("endDateTime", @end_date_time)
                 writer.write_collection_of_object_values("presenters", @presenters)
@@ -178,14 +180,14 @@ module MicrosoftGraphBeta
                 @sessions = value
             end
             ## 
-            ## Gets the startDateTime property value. Start time of the virtual event.
+            ## Gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             ## @return a date_time_time_zone
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. Start time of the virtual event.
+            ## Sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 

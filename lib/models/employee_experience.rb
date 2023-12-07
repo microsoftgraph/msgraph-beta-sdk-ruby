@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # Represents a collection of goals in a Viva Goals organization.
+            @goals
+            ## 
             # The learningCourseActivities property
             @learning_course_activities
             ## 
@@ -19,15 +22,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,10 +58,26 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "goals" => lambda {|n| @goals = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Goals.create_from_discriminator_value(pn) }) },
                     "learningCourseActivities" => lambda {|n| @learning_course_activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LearningCourseActivity.create_from_discriminator_value(pn) }) },
                     "learningProviders" => lambda {|n| @learning_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LearningProvider.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the goals property value. Represents a collection of goals in a Viva Goals organization.
+            ## @return a goals
+            ## 
+            def goals
+                return @goals
+            end
+            ## 
+            ## Sets the goals property value. Represents a collection of goals in a Viva Goals organization.
+            ## @param value Value to set for the goals property.
+            ## @return a void
+            ## 
+            def goals=(value)
+                @goals = value
             end
             ## 
             ## Gets the learningCourseActivities property value. The learningCourseActivities property
@@ -112,6 +131,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("goals", @goals)
                 writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities)
                 writer.write_collection_of_object_values("learningProviders", @learning_providers)
                 writer.write_string_value("@odata.type", @odata_type)

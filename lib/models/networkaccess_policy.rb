@@ -36,6 +36,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.networkaccess.filteringPolicy"
+                            return NetworkaccessFilteringPolicy.new
                         when "#microsoft.graph.networkaccess.forwardingPolicy"
                             return NetworkaccessForwardingPolicy.new
                     end

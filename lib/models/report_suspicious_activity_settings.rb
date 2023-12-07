@@ -19,18 +19,18 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            # Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.
+            # Specifies the number the user enters on their phone to report the MFA prompt as suspicious.
             @voice_reporting_code
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the voiceReportingCode property value. Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.
+            ## Gets the voiceReportingCode property value. Specifies the number the user enters on their phone to report the MFA prompt as suspicious.
             ## @return a integer
             ## 
             def voice_reporting_code
                 return @voice_reporting_code
             end
             ## 
-            ## Sets the voiceReportingCode property value. Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.
+            ## Sets the voiceReportingCode property value. Specifies the number the user enters on their phone to report the MFA prompt as suspicious.
             ## @param value Value to set for the voiceReportingCode property.
             ## @return a void
             ## 

@@ -5,12 +5,8 @@ require_relative '../../models/resource_specific_permission_grant'
 require_relative '../../models/resource_specific_permission_grant_collection_response'
 require_relative '../me'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './get_user_owned_objects/get_user_owned_objects_request_builder'
 require_relative './item/resource_specific_permission_grant_item_request_builder'
 require_relative './permission_grants'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraphBeta
     module Me
@@ -23,26 +19,6 @@ module MicrosoftGraphBeta
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraphBeta::Me::PermissionGrants::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the delta method.
-                def delta()
-                    return MicrosoftGraphBeta::Me::PermissionGrants::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getByIds method.
-                def get_by_ids()
-                    return MicrosoftGraphBeta::Me::PermissionGrants::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getUserOwnedObjects method.
-                def get_user_owned_objects()
-                    return MicrosoftGraphBeta::Me::PermissionGrants::GetUserOwnedObjects::GetUserOwnedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the validateProperties method.
-                def validate_properties()
-                    return MicrosoftGraphBeta::Me::PermissionGrants::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.
@@ -65,7 +41,7 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/me/permissionGrants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get permissionGrants from me
+                ## List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of resource_specific_permission_grant_collection_response
                 ## 
@@ -95,21 +71,21 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ResourceSpecificPermissionGrant.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get permissionGrants from me
+                ## List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -121,20 +97,29 @@ module MicrosoftGraphBeta
                 def to_post_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :POST
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :POST
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a permission_grants_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return PermissionGrantsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 
-                # Get permissionGrants from me
+                # List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
                 class PermissionGrantsRequestBuilderGetQueryParameters
                     
                     ## 

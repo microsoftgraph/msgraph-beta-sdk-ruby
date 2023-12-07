@@ -11,10 +11,10 @@ module MicrosoftGraphBeta
             # Collection of buckets in the plan. Read-only. Nullable.
             @buckets
             ## 
-            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            # Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             @container
             ## 
-            # Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            # Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             @contexts
             ## 
             # Read-only. The user who created the plan.
@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # Contains information about the origin of the plan.
             @creation_source
             ## 
-            # Additional details about the plan. Read-only. Nullable.
+            # Extra details about the plan. Read-only. Nullable.
             @details
             ## 
             # The owner property
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Gets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             ## @return a planner_plan_container
             ## 
             def container
                 return @container
             end
             ## 
-            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Sets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             ## @param value Value to set for the container property.
             ## @return a void
             ## 
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 @container = value
             end
             ## 
-            ## Gets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            ## Gets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             ## @return a planner_plan_context_collection
             ## 
             def contexts
                 return @contexts
             end
             ## 
-            ## Sets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            ## Sets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             ## @param value Value to set for the contexts property.
             ## @return a void
             ## 
@@ -147,14 +147,14 @@ module MicrosoftGraphBeta
                 @creation_source = value
             end
             ## 
-            ## Gets the details property value. Additional details about the plan. Read-only. Nullable.
+            ## Gets the details property value. Extra details about the plan. Read-only. Nullable.
             ## @return a planner_plan_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Additional details about the plan. Read-only. Nullable.
+            ## Sets the details property value. Extra details about the plan. Read-only. Nullable.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 

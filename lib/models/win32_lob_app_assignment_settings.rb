@@ -9,6 +9,9 @@ module MicrosoftGraphBeta
         class Win32LobAppAssignmentSettings < MicrosoftGraphBeta::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The auto-update settings to apply for this app assignment.
+            @auto_update_settings
+            ## 
             # Contains value for delivery optimization priority.
             @delivery_optimization_priority
             ## 
@@ -20,6 +23,21 @@ module MicrosoftGraphBeta
             ## 
             # The reboot settings to apply for this app assignment.
             @restart_settings
+            ## 
+            ## Gets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+            ## @return a win32_lob_app_auto_update_settings
+            ## 
+            def auto_update_settings
+                return @auto_update_settings
+            end
+            ## 
+            ## Sets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+            ## @param value Value to set for the autoUpdateSettings property.
+            ## @return a void
+            ## 
+            def auto_update_settings=(value)
+                @auto_update_settings = value
+            end
             ## 
             ## Instantiates a new win32LobAppAssignmentSettings and sets the default values.
             ## @return a void
@@ -35,6 +53,14 @@ module MicrosoftGraphBeta
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.win32CatalogAppAssignmentSettings"
+                            return Win32CatalogAppAssignmentSettings.new
+                    end
+                end
                 return Win32LobAppAssignmentSettings.new
             end
             ## 
@@ -58,6 +84,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "autoUpdateSettings" => lambda {|n| @auto_update_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Win32LobAppAutoUpdateSettings.create_from_discriminator_value(pn) }) },
                     "deliveryOptimizationPriority" => lambda {|n| @delivery_optimization_priority = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppDeliveryOptimizationPriority) },
                     "installTimeSettings" => lambda {|n| @install_time_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppInstallTimeSettings.create_from_discriminator_value(pn) }) },
                     "notifications" => lambda {|n| @notifications = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppNotification) },
@@ -117,6 +144,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("autoUpdateSettings", @auto_update_settings)
                 writer.write_enum_value("deliveryOptimizationPriority", @delivery_optimization_priority)
                 writer.write_object_value("installTimeSettings", @install_time_settings)
                 writer.write_enum_value("notifications", @notifications)

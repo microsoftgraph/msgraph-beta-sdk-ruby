@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class AppCredentialSignInActivity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            # The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             @app_id
             ## 
             # The ID of the credential application instance.
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
             # The signInActivity property
             @sign_in_activity
             ## 
-            ## Gets the appId property value. The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            ## Gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            ## Sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 

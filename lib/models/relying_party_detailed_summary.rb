@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The migrationStatus property
             @migration_status
             ## 
-            # Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            # Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             @migration_validation_details
             ## 
             # This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @migration_status = value
             end
             ## 
-            ## Gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            ## Gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             ## @return a key_value_pair
             ## 
             def migration_validation_details
                 return @migration_validation_details
             end
             ## 
-            ## Sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            ## Sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             ## @param value Value to set for the migrationValidationDetails property.
             ## @return a void
             ## 

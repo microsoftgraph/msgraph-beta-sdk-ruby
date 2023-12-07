@@ -10,28 +10,46 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The blockAzureADGraphAccess property
+            @block_azure_a_d_graph_access
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            # Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+            # Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
             @remove_unverified_email_claim
             ## 
-            # The requireClientServicePrincipal property
+            # Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
             @require_client_service_principal
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the blockAzureADGraphAccess property value. The blockAzureADGraphAccess property
+            ## @return a boolean
+            ## 
+            def block_azure_a_d_graph_access
+                return @block_azure_a_d_graph_access
+            end
+            ## 
+            ## Sets the blockAzureADGraphAccess property value. The blockAzureADGraphAccess property
+            ## @param value Value to set for the blockAzureADGraphAccess property.
+            ## @return a void
+            ## 
+            def block_azure_a_d_graph_access=(value)
+                @block_azure_a_d_graph_access = value
             end
             ## 
             ## Instantiates a new authenticationBehaviors and sets the default values.
@@ -55,6 +73,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "blockAzureADGraphAccess" => lambda {|n| @block_azure_a_d_graph_access = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "removeUnverifiedEmailClaim" => lambda {|n| @remove_unverified_email_claim = n.get_boolean_value() },
                     "requireClientServicePrincipal" => lambda {|n| @require_client_service_principal = n.get_boolean_value() },
@@ -76,14 +95,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+            ## Gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
             ## @return a boolean
             ## 
             def remove_unverified_email_claim
                 return @remove_unverified_email_claim
             end
             ## 
-            ## Sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+            ## Sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
             ## @param value Value to set for the removeUnverifiedEmailClaim property.
             ## @return a void
             ## 
@@ -91,14 +110,14 @@ module MicrosoftGraphBeta
                 @remove_unverified_email_claim = value
             end
             ## 
-            ## Gets the requireClientServicePrincipal property value. The requireClientServicePrincipal property
+            ## Gets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
             ## @return a boolean
             ## 
             def require_client_service_principal
                 return @require_client_service_principal
             end
             ## 
-            ## Sets the requireClientServicePrincipal property value. The requireClientServicePrincipal property
+            ## Sets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
             ## @param value Value to set for the requireClientServicePrincipal property.
             ## @return a void
             ## 
@@ -112,6 +131,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_boolean_value("blockAzureADGraphAccess", @block_azure_a_d_graph_access)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_boolean_value("removeUnverifiedEmailClaim", @remove_unverified_email_claim)
                 writer.write_boolean_value("requireClientServicePrincipal", @require_client_service_principal)
