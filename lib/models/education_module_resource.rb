@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class EducationModuleResource < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The resource property
+            # Resource object that has been associated with this module.
             @resource
             ## 
             ## Instantiates a new educationModuleResource and sets the default values.
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the resource property value. The resource property
+            ## Gets the resource property value. Resource object that has been associated with this module.
             ## @return a education_resource
             ## 
             def resource
                 return @resource
             end
             ## 
-            ## Sets the resource property value. The resource property
+            ## Sets the resource property value. Resource object that has been associated with this module.
             ## @param value Value to set for the resource property.
             ## @return a void
             ## 

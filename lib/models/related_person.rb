@@ -19,18 +19,21 @@ module MicrosoftGraphBeta
             # Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
             @relationship
             ## 
-            # Email address or reference to person within organization.
+            # The user's directory object ID (Microsoft Entra ID or CID).
+            @user_id
+            ## 
+            # Email address or reference to person within the organization.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,6 +79,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "relationship" => lambda {|n| @relationship = n.get_enum_value(MicrosoftGraphBeta::Models::PersonRelationship) },
+                    "userId" => lambda {|n| @user_id = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                 }
             end
@@ -119,18 +123,34 @@ module MicrosoftGraphBeta
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_enum_value("relationship", @relationship)
+                writer.write_string_value("userId", @user_id)
                 writer.write_string_value("userPrincipalName", @user_principal_name)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userPrincipalName property value. Email address or reference to person within organization.
+            ## Gets the userId property value. The user's directory object ID (Microsoft Entra ID or CID).
+            ## @return a string
+            ## 
+            def user_id
+                return @user_id
+            end
+            ## 
+            ## Sets the userId property value. The user's directory object ID (Microsoft Entra ID or CID).
+            ## @param value Value to set for the userId property.
+            ## @return a void
+            ## 
+            def user_id=(value)
+                @user_id = value
+            end
+            ## 
+            ## Gets the userPrincipalName property value. Email address or reference to person within the organization.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. Email address or reference to person within organization.
+            ## Sets the userPrincipalName property value. Email address or reference to person within the organization.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

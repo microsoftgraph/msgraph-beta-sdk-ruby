@@ -10,35 +10,35 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The aprroved location of the timeClock.
+            # The approved location of the timeClock.
             @approved_location
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the approvedLocation property value. The aprroved location of the timeClock.
+            ## Gets the approvedLocation property value. The approved location of the timeClock.
             ## @return a geo_coordinates
             ## 
             def approved_location
                 return @approved_location
             end
             ## 
-            ## Sets the approvedLocation property value. The aprroved location of the timeClock.
+            ## Sets the approvedLocation property value. The approved location of the timeClock.
             ## @param value Value to set for the approvedLocation property.
             ## @return a void
             ## 

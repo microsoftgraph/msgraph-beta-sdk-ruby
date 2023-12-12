@@ -3,6 +3,7 @@ require_relative '../microsoft_graph_beta'
 require_relative '../models/employee_experience'
 require_relative '../models/o_data_errors_o_data_error'
 require_relative './employee_experience'
+require_relative './goals/goals_request_builder'
 require_relative './learning_course_activities/learning_course_activities_request_builder'
 require_relative './learning_providers/learning_providers_request_builder'
 
@@ -12,6 +13,11 @@ module MicrosoftGraphBeta
         # Provides operations to manage the employeeExperience singleton.
         class EmployeeExperienceRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            # Provides operations to manage the goals property of the microsoft.graph.employeeExperience entity.
+            def goals()
+                return MicrosoftGraphBeta::EmployeeExperience::Goals::GoalsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
             def learning_course_activities()
@@ -29,7 +35,7 @@ module MicrosoftGraphBeta
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/employeeExperience{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/employeeExperience{?%24select}")
             end
             ## 
             ## Get employeeExperience
@@ -68,15 +74,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -88,25 +94,31 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a employee_experience_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return EmployeeExperienceRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 
             # Get employeeExperience
             class EmployeeExperienceRequestBuilderGetQueryParameters
                 
-                ## 
-                # Expand related entities
-                attr_accessor :expand
                 ## 
                 # Select properties to be returned
                 attr_accessor :select
@@ -118,8 +130,6 @@ module MicrosoftGraphBeta
                 def get_query_parameter(original_name)
                     raise StandardError, 'original_name cannot be null' if original_name.nil?
                     case original_name
-                        when "expand"
-                            return "%24expand"
                         when "select"
                             return "%24select"
                         else

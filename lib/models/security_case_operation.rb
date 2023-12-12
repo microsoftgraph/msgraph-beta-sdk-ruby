@@ -118,6 +118,8 @@ module MicrosoftGraphBeta
                             return SecurityEdiscoveryIndexOperation.new
                         when "#microsoft.graph.security.ediscoveryPurgeDataOperation"
                             return SecurityEdiscoveryPurgeDataOperation.new
+                        when "#microsoft.graph.security.ediscoverySearchExportOperation"
+                            return SecurityEdiscoverySearchExportOperation.new
                         when "#microsoft.graph.security.ediscoveryTagOperation"
                             return SecurityEdiscoveryTagOperation.new
                     end

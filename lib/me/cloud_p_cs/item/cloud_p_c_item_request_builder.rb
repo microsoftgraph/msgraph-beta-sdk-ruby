@@ -5,9 +5,11 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../cloud_p_cs'
 require_relative './change_user_account_type/change_user_account_type_request_builder'
+require_relative './create_snapshot/create_snapshot_request_builder'
 require_relative './end_grace_period/end_grace_period_request_builder'
 require_relative './get_cloud_pc_connectivity_history/get_cloud_pc_connectivity_history_request_builder'
 require_relative './get_cloud_pc_launch_info/get_cloud_pc_launch_info_request_builder'
+require_relative './get_frontline_cloud_pc_access_state/get_frontline_cloud_pc_access_state_request_builder'
 require_relative './get_shift_work_cloud_pc_access_state/get_shift_work_cloud_pc_access_state_request_builder'
 require_relative './get_supported_cloud_pc_remote_actions/get_supported_cloud_pc_remote_actions_request_builder'
 require_relative './item'
@@ -16,6 +18,7 @@ require_relative './power_on/power_on_request_builder'
 require_relative './reboot/reboot_request_builder'
 require_relative './rename/rename_request_builder'
 require_relative './reprovision/reprovision_request_builder'
+require_relative './resize/resize_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './retry_partner_agent_installation/retry_partner_agent_installation_request_builder'
 require_relative './start/start_request_builder'
@@ -36,6 +39,11 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::ChangeUserAccountType::ChangeUserAccountTypeRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the createSnapshot method.
+                    def create_snapshot()
+                        return MicrosoftGraphBeta::Me::CloudPCs::Item::CreateSnapshot::CreateSnapshotRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the endGracePeriod method.
                     def end_grace_period()
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::EndGracePeriod::EndGracePeriodRequestBuilder.new(@path_parameters, @request_adapter)
@@ -49,6 +57,11 @@ module MicrosoftGraphBeta
                     # Provides operations to call the getCloudPcLaunchInfo method.
                     def get_cloud_pc_launch_info()
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::GetCloudPcLaunchInfo::GetCloudPcLaunchInfoRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getFrontlineCloudPcAccessState method.
+                    def get_frontline_cloud_pc_access_state()
+                        return MicrosoftGraphBeta::Me::CloudPCs::Item::GetFrontlineCloudPcAccessState::GetFrontlineCloudPcAccessStateRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getShiftWorkCloudPcAccessState method.
@@ -84,6 +97,11 @@ module MicrosoftGraphBeta
                     # Provides operations to call the reprovision method.
                     def reprovision()
                         return MicrosoftGraphBeta::Me::CloudPCs::Item::Reprovision::ReprovisionRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the resize method.
+                    def resize()
+                        return MicrosoftGraphBeta::Me::CloudPCs::Item::Resize::ResizeRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the restore method.
@@ -170,13 +188,14 @@ module MicrosoftGraphBeta
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -186,15 +205,15 @@ module MicrosoftGraphBeta
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -206,16 +225,25 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a cloud_p_c_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return CloudPCItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

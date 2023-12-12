@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                     "identityVersion" => lambda {|n| @identity_version = n.get_string_value() },
                     "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
                     "packageId" => lambda {|n| @package_id = n.get_string_value() },
-                    "targetedPlatforms" => lambda {|n| @targeted_platforms = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidTargetedPlatforms) },
+                    "targetedPlatforms" => lambda {|n| @targeted_platforms = n.get_enum_values(MicrosoftGraphBeta::Models::AndroidTargetedPlatforms) },
                     "versionCode" => lambda {|n| @version_code = n.get_string_value() },
                     "versionName" => lambda {|n| @version_name = n.get_string_value() },
                 })
