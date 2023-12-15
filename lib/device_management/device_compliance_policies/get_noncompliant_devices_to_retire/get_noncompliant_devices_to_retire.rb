@@ -1,1 +1,0 @@
-require_relative 'get_noncompliant_devices_to_retire_post_request_body'

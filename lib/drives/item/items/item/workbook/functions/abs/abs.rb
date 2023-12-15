@@ -1,1 +1,0 @@
-require_relative 'abs_post_request_body'

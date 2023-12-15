@@ -1,1 +1,0 @@
-require_relative 'rate_post_request_body'

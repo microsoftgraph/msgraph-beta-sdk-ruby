@@ -1,1 +1,0 @@
-require_relative 'tbill_eq_post_request_body'

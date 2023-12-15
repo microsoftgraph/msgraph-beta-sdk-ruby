@@ -1,1 +1,0 @@
-require_relative 'hyp_geom_dist_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'update_ad_domain_password_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'hour_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'apply_config_post_request_body'

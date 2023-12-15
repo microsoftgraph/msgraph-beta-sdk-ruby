@@ -1,2 +1,0 @@
-require_relative 'get_targeted_users_and_devices_post_request_body'
-require_relative 'get_targeted_users_and_devices_response'

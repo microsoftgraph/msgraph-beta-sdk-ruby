@@ -1,1 +1,0 @@
-require_relative 'get_compliance_policies_report_for_device_post_request_body'

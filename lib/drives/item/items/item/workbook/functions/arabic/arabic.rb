@@ -1,1 +1,0 @@
-require_relative 'arabic_post_request_body'

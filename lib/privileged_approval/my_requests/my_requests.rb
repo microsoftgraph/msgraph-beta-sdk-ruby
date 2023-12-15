@@ -1,1 +1,0 @@
-require_relative 'my_requests_response'

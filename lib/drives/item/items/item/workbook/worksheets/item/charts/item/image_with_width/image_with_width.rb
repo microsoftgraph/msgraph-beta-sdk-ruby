@@ -1,1 +1,0 @@
-require_relative 'image_with_width_response'

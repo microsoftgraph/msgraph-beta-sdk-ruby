@@ -1,1 +1,0 @@
-require_relative 'error_type_post_request_body'

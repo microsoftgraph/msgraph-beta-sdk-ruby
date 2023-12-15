@@ -1,1 +1,0 @@
-require_relative 'right_post_request_body'

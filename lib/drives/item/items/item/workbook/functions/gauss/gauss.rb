@@ -1,1 +1,0 @@
-require_relative 'gauss_post_request_body'

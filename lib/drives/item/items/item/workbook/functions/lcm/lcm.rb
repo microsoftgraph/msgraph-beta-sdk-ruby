@@ -1,1 +1,0 @@
-require_relative 'lcm_post_request_body'

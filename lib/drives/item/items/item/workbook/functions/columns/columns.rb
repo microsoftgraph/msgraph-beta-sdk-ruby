@@ -1,1 +1,0 @@
-require_relative 'columns_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'beta_inv_post_request_body'

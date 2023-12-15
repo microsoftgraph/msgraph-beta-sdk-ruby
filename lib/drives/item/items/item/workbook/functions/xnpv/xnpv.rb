@@ -1,1 +1,0 @@
-require_relative 'xnpv_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'publish_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'is_published_response'

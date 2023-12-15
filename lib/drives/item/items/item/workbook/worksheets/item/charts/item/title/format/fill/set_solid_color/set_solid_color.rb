@@ -1,1 +1,0 @@
-require_relative 'set_solid_color_post_request_body'

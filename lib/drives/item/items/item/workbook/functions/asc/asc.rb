@@ -1,1 +1,0 @@
-require_relative 'asc_post_request_body'

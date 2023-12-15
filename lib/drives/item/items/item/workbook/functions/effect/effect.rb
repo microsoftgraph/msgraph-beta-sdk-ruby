@@ -1,1 +1,0 @@
-require_relative 'effect_post_request_body'

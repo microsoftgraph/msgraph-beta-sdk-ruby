@@ -1,1 +1,0 @@
-require_relative 'get_unhealthy_firewall_summary_report_post_request_body'

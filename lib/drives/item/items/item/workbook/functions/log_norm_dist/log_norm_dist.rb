@@ -1,1 +1,0 @@
-require_relative 'log_norm_dist_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'validate_password_post_request_body'

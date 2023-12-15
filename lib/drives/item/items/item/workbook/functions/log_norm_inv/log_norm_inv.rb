@@ -1,1 +1,0 @@
-require_relative 'log_norm_inv_post_request_body'

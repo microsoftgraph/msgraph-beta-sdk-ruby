@@ -1,1 +1,0 @@
-require_relative 'update_settings_post_request_body'

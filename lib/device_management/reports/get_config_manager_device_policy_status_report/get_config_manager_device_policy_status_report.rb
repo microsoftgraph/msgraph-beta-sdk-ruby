@@ -1,1 +1,0 @@
-require_relative 'get_config_manager_device_policy_status_report_post_request_body'

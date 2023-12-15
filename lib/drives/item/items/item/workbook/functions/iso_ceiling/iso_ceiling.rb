@@ -1,1 +1,0 @@
-require_relative 'iso_ceiling_post_request_body'

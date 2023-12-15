@@ -1,1 +1,0 @@
-require_relative 'confidence_t_post_request_body'

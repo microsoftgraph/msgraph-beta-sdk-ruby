@@ -1,1 +1,0 @@
-require_relative 'create_device_log_collection_request_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'get_policy_non_compliance_metadata_post_request_body'

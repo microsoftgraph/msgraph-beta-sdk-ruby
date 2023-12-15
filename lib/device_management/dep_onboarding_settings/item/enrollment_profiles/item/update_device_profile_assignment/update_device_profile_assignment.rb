@@ -1,1 +1,0 @@
-require_relative 'update_device_profile_assignment_post_request_body'

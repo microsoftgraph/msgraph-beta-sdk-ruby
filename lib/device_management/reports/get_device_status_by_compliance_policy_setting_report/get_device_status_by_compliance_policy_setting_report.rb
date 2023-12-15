@@ -1,1 +1,0 @@
-require_relative 'get_device_status_by_compliance_policy_setting_report_post_request_body'

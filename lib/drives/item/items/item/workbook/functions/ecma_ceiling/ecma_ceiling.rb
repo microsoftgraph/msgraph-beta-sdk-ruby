@@ -1,1 +1,0 @@
-require_relative 'ecma_ceiling_post_request_body'
