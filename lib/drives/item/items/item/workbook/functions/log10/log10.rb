@@ -1,1 +1,0 @@
-require_relative 'log10_post_request_body'

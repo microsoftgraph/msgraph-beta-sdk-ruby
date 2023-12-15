@@ -1,1 +1,0 @@
-require_relative 'cos_post_request_body'

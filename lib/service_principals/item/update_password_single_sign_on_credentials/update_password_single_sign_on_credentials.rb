@@ -1,1 +1,0 @@
-require_relative 'update_password_single_sign_on_credentials_post_request_body'

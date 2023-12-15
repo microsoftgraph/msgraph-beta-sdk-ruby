@@ -1,1 +1,0 @@
-require_relative 'combina_post_request_body'

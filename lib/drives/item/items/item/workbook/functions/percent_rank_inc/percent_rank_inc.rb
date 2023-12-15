@@ -1,1 +1,0 @@
-require_relative 'percent_rank_inc_post_request_body'

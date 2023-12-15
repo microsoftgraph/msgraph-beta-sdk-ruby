@@ -1,1 +1,0 @@
-require_relative 'get_remote_connection_historical_reports_post_request_body'

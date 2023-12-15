@@ -1,1 +1,0 @@
-require_relative 'protect_post_request_body'

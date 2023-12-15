@@ -1,2 +1,0 @@
-require_relative 'create_google_play_web_token_post_request_body'
-require_relative 'create_google_play_web_token_response'

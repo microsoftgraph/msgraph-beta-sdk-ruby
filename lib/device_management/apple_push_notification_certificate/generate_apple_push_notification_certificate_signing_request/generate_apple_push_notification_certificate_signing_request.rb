@@ -1,1 +1,0 @@
-require_relative 'generate_apple_push_notification_certificate_signing_request_response'

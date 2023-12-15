@@ -1,1 +1,0 @@
-require_relative 'coth_post_request_body'

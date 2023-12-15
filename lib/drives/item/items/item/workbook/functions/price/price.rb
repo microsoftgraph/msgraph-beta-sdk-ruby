@@ -1,1 +1,0 @@
-require_relative 'price_post_request_body'

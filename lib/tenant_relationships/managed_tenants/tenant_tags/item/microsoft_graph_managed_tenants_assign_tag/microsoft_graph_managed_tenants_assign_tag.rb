@@ -1,1 +1,0 @@
-require_relative 'assign_tag_post_request_body'

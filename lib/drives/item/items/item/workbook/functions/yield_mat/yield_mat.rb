@@ -1,1 +1,0 @@
-require_relative 'yield_mat_post_request_body'

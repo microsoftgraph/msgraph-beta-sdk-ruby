@@ -1,1 +1,0 @@
-require_relative 'generate_server_log_collection_request_post_request_body'

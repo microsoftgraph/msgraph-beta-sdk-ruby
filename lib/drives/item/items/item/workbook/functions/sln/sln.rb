@@ -1,1 +1,0 @@
-require_relative 'sln_post_request_body'

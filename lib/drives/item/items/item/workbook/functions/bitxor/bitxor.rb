@@ -1,1 +1,0 @@
-require_relative 'bitxor_post_request_body'

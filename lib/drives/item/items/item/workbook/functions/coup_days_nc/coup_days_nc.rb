@@ -1,1 +1,0 @@
-require_relative 'coup_days_nc_post_request_body'

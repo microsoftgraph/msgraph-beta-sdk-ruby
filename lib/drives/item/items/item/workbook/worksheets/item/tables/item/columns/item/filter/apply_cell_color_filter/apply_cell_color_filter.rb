@@ -1,1 +1,0 @@
-require_relative 'apply_cell_color_filter_post_request_body'

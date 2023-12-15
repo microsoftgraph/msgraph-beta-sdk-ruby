@@ -1,1 +1,0 @@
-require_relative 'record_response_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'sign_post_request_body'

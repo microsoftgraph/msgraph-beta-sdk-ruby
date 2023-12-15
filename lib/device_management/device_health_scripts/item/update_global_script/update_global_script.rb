@@ -1,2 +1,0 @@
-require_relative 'update_global_script_post_request_body'
-require_relative 'update_global_script_response'

@@ -1,1 +1,0 @@
-require_relative 'im_sinh_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'can_sign_up_response'

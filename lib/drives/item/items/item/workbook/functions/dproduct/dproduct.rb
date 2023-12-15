@@ -1,1 +1,0 @@
-require_relative 'dproduct_post_request_body'

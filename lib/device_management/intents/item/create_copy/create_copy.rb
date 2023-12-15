@@ -1,1 +1,0 @@
-require_relative 'create_copy_post_request_body'

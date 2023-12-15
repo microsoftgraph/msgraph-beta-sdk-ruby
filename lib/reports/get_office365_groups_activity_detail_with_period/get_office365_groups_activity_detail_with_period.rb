@@ -1,1 +1,0 @@
-require_relative 'get_office365_groups_activity_detail_with_period_response'

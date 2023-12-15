@@ -1,1 +1,0 @@
-require_relative 'complete_signup_post_request_body'

@@ -1,1 +1,0 @@
-require_relative 'confidence_norm_post_request_body'

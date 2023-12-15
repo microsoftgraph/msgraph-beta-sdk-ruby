@@ -1,1 +1,0 @@
-require_relative 'get_global_script_highest_available_version_response'

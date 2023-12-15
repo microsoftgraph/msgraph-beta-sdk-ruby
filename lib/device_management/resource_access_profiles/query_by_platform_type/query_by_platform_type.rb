@@ -1,2 +1,0 @@
-require_relative 'query_by_platform_type_post_request_body'
-require_relative 'query_by_platform_type_response'

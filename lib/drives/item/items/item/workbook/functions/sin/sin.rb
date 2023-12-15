@@ -1,1 +1,0 @@
-require_relative 'sin_post_request_body'

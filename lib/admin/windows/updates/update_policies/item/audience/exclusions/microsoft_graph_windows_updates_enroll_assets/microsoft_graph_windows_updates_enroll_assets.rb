@@ -1,1 +1,0 @@
-require_relative 'enroll_assets_post_request_body'

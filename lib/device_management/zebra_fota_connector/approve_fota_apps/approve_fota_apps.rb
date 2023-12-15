@@ -1,1 +1,0 @@
-require_relative 'approve_fota_apps_response'
