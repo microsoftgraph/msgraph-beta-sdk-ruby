@@ -5,6 +5,7 @@ require_relative '../models/security_model_model_model_model_model_model_model'
 require_relative './alerts/alerts_request_builder'
 require_relative './alerts_v2/alerts_v2_request_builder'
 require_relative './attack_simulation/attack_simulation_request_builder'
+require_relative './audit_log/audit_log_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './cloud_app_security_profiles/cloud_app_security_profiles_request_builder'
 require_relative './domain_security_profiles/domain_security_profiles_request_builder'
@@ -48,6 +49,11 @@ module MicrosoftGraphBeta
             # Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
             def attack_simulation()
                 return MicrosoftGraphBeta::Security::AttackSimulation::AttackSimulationRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the auditLog property of the microsoft.graph.security entity.
+            def audit_log()
+                return MicrosoftGraphBeta::Security::AuditLog::AuditLogRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -200,15 +206,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -220,16 +226,25 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a security_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return SecurityRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

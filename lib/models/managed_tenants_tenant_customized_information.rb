@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The display name for the managed tenant. Required. Read-only.
             @display_name
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             @tenant_id
             ## 
             # The website for the managed tenant. Required.
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("website", @website)
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

@@ -1,2 +1,2 @@
 require_relative 'delete_ti_indicators_by_external_id_post_request_body'
-require_relative 'delete_ti_indicators_by_external_id_response'
+require_relative 'delete_ti_indicators_by_external_id_post_response'

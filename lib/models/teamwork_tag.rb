@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class TeamworkTag < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            # Tag description as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             @description
             ## 
-            # Tag name as it will appear to the user in Microsoft Teams.
+            # Tag name as it appears to the user in Microsoft Teams.
             @display_name
             ## 
             # The number of users assigned to the tag.
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 return TeamworkTag.new
             end
             ## 
-            ## Gets the description property value. Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            ## Gets the description property value. Tag description as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            ## Sets the description property value. Tag description as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
+            ## Gets the displayName property value. Tag name as it appears to the user in Microsoft Teams.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
+            ## Sets the displayName property value. Tag name as it appears to the user in Microsoft Teams.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

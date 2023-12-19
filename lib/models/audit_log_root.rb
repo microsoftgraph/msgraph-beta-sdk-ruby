@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The customSecurityAttributeAudits property
+            # Represents a custom security attribute audit log.
             @custom_security_attribute_audits
             ## 
             # The directoryAudits property
@@ -22,21 +22,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The provisioning property
+            # Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             @provisioning
             ## 
             # The signIns property
             @sign_ins
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return AuditLogRoot.new
             end
             ## 
-            ## Gets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+            ## Gets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
             ## @return a custom_security_attribute_audit
             ## 
             def custom_security_attribute_audits
                 return @custom_security_attribute_audits
             end
             ## 
-            ## Sets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+            ## Sets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
             ## @param value Value to set for the customSecurityAttributeAudits property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the provisioning property value. The provisioning property
+            ## Gets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             ## @return a provisioning_object_summary
             ## 
             def provisioning
                 return @provisioning
             end
             ## 
-            ## Sets the provisioning property value. The provisioning property
+            ## Sets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             ## @param value Value to set for the provisioning property.
             ## @return a void
             ## 

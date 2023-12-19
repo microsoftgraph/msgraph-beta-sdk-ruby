@@ -16,7 +16,10 @@ module MicrosoftGraphBeta
             # Description of the task.
             @description
             ## 
-            # Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            # The forms property
+            @forms
+            ## 
+            # Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             @notes
             ## 
             # This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
@@ -86,6 +89,21 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
+            ## Gets the forms property value. The forms property
+            ## @return a planner_forms_dictionary
+            ## 
+            def forms
+                return @forms
+            end
+            ## 
+            ## Sets the forms property value. The forms property
+            ## @param value Value to set for the forms property.
+            ## @return a void
+            ## 
+            def forms=(value)
+                @forms = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -94,20 +112,21 @@ module MicrosoftGraphBeta
                     "checklist" => lambda {|n| @checklist = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerChecklistItems.create_from_discriminator_value(pn) }) },
                     "completionRequirements" => lambda {|n| @completion_requirements = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirementDetails.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
+                    "forms" => lambda {|n| @forms = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerFormsDictionary.create_from_discriminator_value(pn) }) },
                     "notes" => lambda {|n| @notes = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPreviewType) },
                     "references" => lambda {|n| @references = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerExternalReferences.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            ## Gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             ## @return a item_body
             ## 
             def notes
                 return @notes
             end
             ## 
-            ## Sets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            ## Sets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             ## @param value Value to set for the notes property.
             ## @return a void
             ## 
@@ -155,6 +174,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("checklist", @checklist)
                 writer.write_object_value("completionRequirements", @completion_requirements)
                 writer.write_string_value("description", @description)
+                writer.write_object_value("forms", @forms)
                 writer.write_object_value("notes", @notes)
                 writer.write_enum_value("previewType", @preview_type)
                 writer.write_object_value("references", @references)

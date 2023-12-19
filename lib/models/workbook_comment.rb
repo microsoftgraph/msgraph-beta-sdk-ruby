@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The replies property
             @replies
             ## 
-            # The task property
+            # The task associated with the comment. Read-only. Nullable.
             @task
             ## 
             ## Instantiates a new workbookComment and sets the default values.
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("task", @task)
             end
             ## 
-            ## Gets the task property value. The task property
+            ## Gets the task property value. The task associated with the comment. Read-only. Nullable.
             ## @return a workbook_document_task
             ## 
             def task
                 return @task
             end
             ## 
-            ## Sets the task property value. The task property
+            ## Sets the task property value. The task associated with the comment. Read-only. Nullable.
             ## @param value Value to set for the task property.
             ## @return a void
             ## 

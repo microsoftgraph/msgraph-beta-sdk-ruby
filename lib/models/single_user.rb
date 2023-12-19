@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class SingleUser < MicrosoftGraphBeta::Models::UserSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the user in Azure AD. Read only.
+            # The name of the user in Microsoft Entra ID. Read only.
             @description
             ## 
-            # The ID of the user in Azure AD.
+            # The ID of the user in Microsoft Entra ID.
             @id
             ## 
             ## Instantiates a new singleUser and sets the default values.
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return SingleUser.new
             end
             ## 
-            ## Gets the description property value. The name of the user in Azure AD. Read only.
+            ## Gets the description property value. The name of the user in Microsoft Entra ID. Read only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The name of the user in Azure AD. Read only.
+            ## Sets the description property value. The name of the user in Microsoft Entra ID. Read only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the id property value. The ID of the user in Azure AD.
+            ## Gets the id property value. The ID of the user in Microsoft Entra ID.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The ID of the user in Azure AD.
+            ## Sets the id property value. The ID of the user in Microsoft Entra ID.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

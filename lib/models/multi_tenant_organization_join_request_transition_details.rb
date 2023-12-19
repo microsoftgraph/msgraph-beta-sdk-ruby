@@ -10,27 +10,27 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The desiredMemberState property
+            # State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             @desired_member_state
             ## 
-            # The details property
+            # Details that explain the processing status if any. Read-only.
             @details
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The status property
+            # Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,14 +53,14 @@ module MicrosoftGraphBeta
                 return MultiTenantOrganizationJoinRequestTransitionDetails.new
             end
             ## 
-            ## Gets the desiredMemberState property value. The desiredMemberState property
+            ## Gets the desiredMemberState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             ## @return a multi_tenant_organization_member_state
             ## 
             def desired_member_state
                 return @desired_member_state
             end
             ## 
-            ## Sets the desiredMemberState property value. The desiredMemberState property
+            ## Sets the desiredMemberState property value. State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.
             ## @param value Value to set for the desiredMemberState property.
             ## @return a void
             ## 
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @desired_member_state = value
             end
             ## 
-            ## Gets the details property value. The details property
+            ## Gets the details property value. Details that explain the processing status if any. Read-only.
             ## @return a string
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. The details property
+            ## Sets the details property value. Details that explain the processing status if any. Read-only.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             ## @return a multi_tenant_organization_member_processing_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

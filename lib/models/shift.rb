@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # The isStagedForDeletion property
             @is_staged_for_deletion
             ## 
-            # The schedulingGroupId property
+            # ID of the scheduling group the shift is part of. Required.
             @scheduling_group_id
             ## 
-            # The sharedShift property
+            # The shared version of this shift that is viewable by both employees and managers. Required.
             @shared_shift
             ## 
-            # The userId property
+            # ID of the user assigned to the shift. Required.
             @user_id
             ## 
             ## Instantiates a new shift and sets the default values.
@@ -82,14 +82,14 @@ module MicrosoftGraphBeta
                 @is_staged_for_deletion = value
             end
             ## 
-            ## Gets the schedulingGroupId property value. The schedulingGroupId property
+            ## Gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
             ## @return a string
             ## 
             def scheduling_group_id
                 return @scheduling_group_id
             end
             ## 
-            ## Sets the schedulingGroupId property value. The schedulingGroupId property
+            ## Sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
             ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the sharedShift property value. The sharedShift property
+            ## Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
             ## @return a shift_item
             ## 
             def shared_shift
                 return @shared_shift
             end
             ## 
-            ## Sets the sharedShift property value. The sharedShift property
+            ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
             ## @param value Value to set for the sharedShift property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @shared_shift = value
             end
             ## 
-            ## Gets the userId property value. The userId property
+            ## Gets the userId property value. ID of the user assigned to the shift. Required.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The userId property
+            ## Sets the userId property value. ID of the user assigned to the shift. Required.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

@@ -91,6 +91,9 @@ module MicrosoftGraphBeta
             # Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
             @device_health_script_states
             ## 
+            # Indicates the attestation status of the managed device. And in which way. Default: Unknown.
+            @device_identity_attestation_detail
+            ## 
             # Name of the device. This property is read-only.
             @device_name
             ## 
@@ -718,6 +721,21 @@ module MicrosoftGraphBeta
                 @device_health_script_states = value
             end
             ## 
+            ## Gets the deviceIdentityAttestationDetail property value. Indicates the attestation status of the managed device. And in which way. Default: Unknown.
+            ## @return a device_identity_attestation_detail
+            ## 
+            def device_identity_attestation_detail
+                return @device_identity_attestation_detail
+            end
+            ## 
+            ## Sets the deviceIdentityAttestationDetail property value. Indicates the attestation status of the managed device. And in which way. Default: Unknown.
+            ## @param value Value to set for the deviceIdentityAttestationDetail property.
+            ## @return a void
+            ## 
+            def device_identity_attestation_detail=(value)
+                @device_identity_attestation_detail = value
+            end
+            ## 
             ## Gets the deviceName property value. Name of the device. This property is read-only.
             ## @return a string
             ## 
@@ -960,6 +978,7 @@ module MicrosoftGraphBeta
                     "deviceFirmwareConfigurationInterfaceManaged" => lambda {|n| @device_firmware_configuration_interface_managed = n.get_boolean_value() },
                     "deviceHealthAttestationState" => lambda {|n| @device_health_attestation_state = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceHealthAttestationState.create_from_discriminator_value(pn) }) },
                     "deviceHealthScriptStates" => lambda {|n| @device_health_script_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceHealthScriptPolicyState.create_from_discriminator_value(pn) }) },
+                    "deviceIdentityAttestationDetail" => lambda {|n| @device_identity_attestation_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceIdentityAttestationDetail.create_from_discriminator_value(pn) }) },
                     "deviceName" => lambda {|n| @device_name = n.get_string_value() },
                     "deviceRegistrationState" => lambda {|n| @device_registration_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceRegistrationState) },
                     "deviceType" => lambda {|n| @device_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceType) },
@@ -1605,6 +1624,7 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("deviceEnrollmentType", @device_enrollment_type)
                 writer.write_boolean_value("deviceFirmwareConfigurationInterfaceManaged", @device_firmware_configuration_interface_managed)
                 writer.write_collection_of_object_values("deviceHealthScriptStates", @device_health_script_states)
+                writer.write_object_value("deviceIdentityAttestationDetail", @device_identity_attestation_detail)
                 writer.write_enum_value("deviceRegistrationState", @device_registration_state)
                 writer.write_enum_value("deviceType", @device_type)
                 writer.write_enum_value("exchangeAccessState", @exchange_access_state)

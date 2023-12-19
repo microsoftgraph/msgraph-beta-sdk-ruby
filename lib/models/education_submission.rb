@@ -8,6 +8,12 @@ module MicrosoftGraphBeta
         class EducationSubmission < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The excusedBy property
+            @excused_by
+            ## 
+            # The excusedDateTime property
+            @excused_date_time
+            ## 
             # The outcomes property
             @outcomes
             ## 
@@ -69,11 +75,43 @@ module MicrosoftGraphBeta
                 return EducationSubmission.new
             end
             ## 
+            ## Gets the excusedBy property value. The excusedBy property
+            ## @return a identity_set
+            ## 
+            def excused_by
+                return @excused_by
+            end
+            ## 
+            ## Sets the excusedBy property value. The excusedBy property
+            ## @param value Value to set for the excusedBy property.
+            ## @return a void
+            ## 
+            def excused_by=(value)
+                @excused_by = value
+            end
+            ## 
+            ## Gets the excusedDateTime property value. The excusedDateTime property
+            ## @return a date_time
+            ## 
+            def excused_date_time
+                return @excused_date_time
+            end
+            ## 
+            ## Sets the excusedDateTime property value. The excusedDateTime property
+            ## @param value Value to set for the excusedDateTime property.
+            ## @return a void
+            ## 
+            def excused_date_time=(value)
+                @excused_date_time = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "excusedBy" => lambda {|n| @excused_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
+                    "excusedDateTime" => lambda {|n| @excused_date_time = n.get_date_time_value() },
                     "outcomes" => lambda {|n| @outcomes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationOutcome.create_from_discriminator_value(pn) }) },
                     "reassignedBy" => lambda {|n| @reassigned_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "reassignedDateTime" => lambda {|n| @reassigned_date_time = n.get_date_time_value() },

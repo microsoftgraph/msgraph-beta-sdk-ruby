@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The RefUserMatchTarget for matching a user from the source with an Azure Active Directory user object.
+            # The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.
             @match_target
             ## 
             # The OdataType property
@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # The sourceIdentifier property
             @source_identifier
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,14 +69,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with an Azure Active Directory user object.
+            ## Gets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.
             ## @return a industry_data_user_match_target_reference_value
             ## 
             def match_target
                 return @match_target
             end
             ## 
-            ## Sets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with an Azure Active Directory user object.
+            ## Sets the matchTarget property value. The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.
             ## @param value Value to set for the matchTarget property.
             ## @return a void
             ## 

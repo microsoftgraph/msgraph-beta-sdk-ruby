@@ -1,12 +1,13 @@
 {
-  "descriptionHash": "8125B8F31FD753B7F1991DFCE7834F62D8D92D20BB952989DE8929CD4528A1632F2AA9AC10820852183D494FE2187A45999D976B6B4A577BAA2C6F3DC8A9E29C",
-  "descriptionLocation": "/mnt/vss/_work/1/s/msgraph-metadata/clean_beta_openapi/openapi.yaml",
+  "descriptionHash": "16191D3BD2C02717F56F431CFC515B97524823B60770FDDB3FA4192303A914FED84C21755DE87075EA546F09ECD719E7E2F5D916580247464AC6962EE81D1FE6",
+  "descriptionLocation": "../../msgraph-metadata/clean_beta_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.6.0",
+  "kiotaVersion": "1.10.0",
   "clientClassName": "GraphBaseServiceClient",
   "clientNamespaceName": "MicrosoftGraphBeta",
   "language": "Ruby",
   "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
   "includeAdditionalData": true,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
@@ -21,11 +22,14 @@
   ],
   "structuredMimeTypes": [
     "application/json",
-    "text/plain",
-    "application/x-www-form-urlencoded",
-    "multipart/form-data"
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
   ],
   "includePatterns": [],
-  "excludePatterns": [],
+  "excludePatterns": [
+    "/me",
+    "/me/**"
+  ],
   "disabledValidationRules": []
 }

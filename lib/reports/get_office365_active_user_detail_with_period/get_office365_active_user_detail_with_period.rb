@@ -1,1 +1,1 @@
-require_relative 'get_office365_active_user_detail_with_period_response'
+require_relative 'get_office365_active_user_detail_with_period_get_response'

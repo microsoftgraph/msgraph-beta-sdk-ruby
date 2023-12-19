@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AzureAdTokenAuthentication < MicrosoftGraphBeta::Models::CustomExtensionAuthenticationConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
+            # The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.
             @resource_id
             ## 
             ## Instantiates a new azureAdTokenAuthentication and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
+            ## Gets the resourceId property value. The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.
             ## @return a string
             ## 
             def resource_id
                 return @resource_id
             end
             ## 
-            ## Sets the resourceId property value. The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
+            ## Sets the resourceId property value. The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.
             ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 

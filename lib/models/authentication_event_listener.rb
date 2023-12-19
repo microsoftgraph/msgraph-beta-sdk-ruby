@@ -65,6 +65,10 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.onAttributeCollectionListener"
                             return OnAttributeCollectionListener.new
+                        when "#microsoft.graph.onAttributeCollectionStartListener"
+                            return OnAttributeCollectionStartListener.new
+                        when "#microsoft.graph.onAttributeCollectionSubmitListener"
+                            return OnAttributeCollectionSubmitListener.new
                         when "#microsoft.graph.onAuthenticationMethodLoadStartListener"
                             return OnAuthenticationMethodLoadStartListener.new
                         when "#microsoft.graph.onInteractiveAuthFlowStartListener"

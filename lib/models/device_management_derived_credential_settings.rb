@@ -63,7 +63,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "helpUrl" => lambda {|n| @help_url = n.get_string_value() },
                     "issuer" => lambda {|n| @issuer = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialIssuer) },
-                    "notificationType" => lambda {|n| @notification_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialNotificationType) },
+                    "notificationType" => lambda {|n| @notification_type = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialNotificationType) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
                 })
             end

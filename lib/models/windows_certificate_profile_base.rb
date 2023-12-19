@@ -101,7 +101,7 @@ module MicrosoftGraphBeta
                     "certificateValidityPeriodValue" => lambda {|n| @certificate_validity_period_value = n.get_number_value() },
                     "keyStorageProvider" => lambda {|n| @key_storage_provider = n.get_enum_value(MicrosoftGraphBeta::Models::KeyStorageProviderOption) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
-                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_values(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
                     "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectNameFormat) },
                 })
             end

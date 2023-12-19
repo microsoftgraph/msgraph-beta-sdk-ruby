@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
+            @enforce_registration_after_allowed_snoozes
+            ## 
             # Users and groups of users that are excluded from being prompted to set up the authentication method.
             @exclude_targets
             ## 
@@ -19,21 +22,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+            # Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
             @snooze_duration_in_days
             ## 
             # The state property
             @state
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,6 +59,21 @@ module MicrosoftGraphBeta
                 return AuthenticationMethodsRegistrationCampaign.new
             end
             ## 
+            ## Gets the enforceRegistrationAfterAllowedSnoozes property value. Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
+            ## @return a boolean
+            ## 
+            def enforce_registration_after_allowed_snoozes
+                return @enforce_registration_after_allowed_snoozes
+            end
+            ## 
+            ## Sets the enforceRegistrationAfterAllowedSnoozes property value. Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
+            ## @param value Value to set for the enforceRegistrationAfterAllowedSnoozes property.
+            ## @return a void
+            ## 
+            def enforce_registration_after_allowed_snoozes=(value)
+                @enforce_registration_after_allowed_snoozes = value
+            end
+            ## 
             ## Gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
             ## @return a exclude_target
             ## 
@@ -76,6 +94,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "enforceRegistrationAfterAllowedSnoozes" => lambda {|n| @enforce_registration_after_allowed_snoozes = n.get_boolean_value() },
                     "excludeTargets" => lambda {|n| @exclude_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExcludeTarget.create_from_discriminator_value(pn) }) },
                     "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationMethodsRegistrationCampaignIncludeTarget.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -120,6 +139,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_boolean_value("enforceRegistrationAfterAllowedSnoozes", @enforce_registration_after_allowed_snoozes)
                 writer.write_collection_of_object_values("excludeTargets", @exclude_targets)
                 writer.write_collection_of_object_values("includeTargets", @include_targets)
                 writer.write_string_value("@odata.type", @odata_type)
@@ -128,14 +148,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+            ## Gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
             ## @return a integer
             ## 
             def snooze_duration_in_days
                 return @snooze_duration_in_days
             end
             ## 
-            ## Sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+            ## Sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
             ## @param value Value to set for the snoozeDurationInDays property.
             ## @return a void
             ## 

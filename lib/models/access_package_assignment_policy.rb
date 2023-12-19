@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Identifier of the access package.
             @access_package_id
             ## 
-            # Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
+            # Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
             @access_review_settings
             ## 
             # Indicates whether a user can extend the access package assignment duration after approval.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The display name of the policy. Supports $filter (eq).
             @display_name
             ## 
-            # The number of days in which assignments from this policy last until they are expired.
+            # The number of days in which assignments from this policy last until they're expired.
             @duration_in_days
             ## 
             # The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # Who can request this access package from this policy.
             @requestor_settings
             ## 
-            # Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+            # Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
             @verifiable_credential_settings
             ## 
             ## Gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 @access_package_id = value
             end
             ## 
-            ## Gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
+            ## Gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
             ## @return a assignment_review_settings
             ## 
             def access_review_settings
                 return @access_review_settings
             end
             ## 
-            ## Sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
+            ## Sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
             ## @param value Value to set for the accessReviewSettings property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
+            ## Gets the durationInDays property value. The number of days in which assignments from this policy last until they're expired.
             ## @return a integer
             ## 
             def duration_in_days
                 return @duration_in_days
             end
             ## 
-            ## Sets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
+            ## Sets the durationInDays property value. The number of days in which assignments from this policy last until they're expired.
             ## @param value Value to set for the durationInDays property.
             ## @return a void
             ## 
@@ -406,14 +406,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("verifiableCredentialSettings", @verifiable_credential_settings)
             end
             ## 
-            ## Gets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+            ## Gets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
             ## @return a verifiable_credential_settings
             ## 
             def verifiable_credential_settings
                 return @verifiable_credential_settings
             end
             ## 
-            ## Sets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+            ## Sets the verifiableCredentialSettings property value. Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
             ## @param value Value to set for the verifiableCredentialSettings property.
             ## @return a void
             ## 

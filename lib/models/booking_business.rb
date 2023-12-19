@@ -5,7 +5,7 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Represents a Microsot Bookings Business.
+        # Represents a Microsoft Bookings Business.
         class BookingBusiness < MicrosoftGraphBeta::Models::BookingNamedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
