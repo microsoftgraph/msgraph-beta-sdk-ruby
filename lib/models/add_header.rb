@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             @margin
             ## 
             ## Gets the alignment property value. The alignment property
-            ## @return a alignment
+            ## @return a add_header_alignment
             ## 
             def alignment
                 return @alignment
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "alignment" => lambda {|n| @alignment = n.get_enum_value(MicrosoftGraphBeta::Models::Alignment) },
+                    "alignment" => lambda {|n| @alignment = n.get_enum_value(MicrosoftGraphBeta::Models::AddHeaderAlignment) },
                     "margin" => lambda {|n| @margin = n.get_number_value() },
                 })
             end

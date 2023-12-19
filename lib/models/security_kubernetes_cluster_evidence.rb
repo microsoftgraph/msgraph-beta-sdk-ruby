@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
                     "cloudResource" => lambda {|n| @cloud_resource = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAlertEvidence.create_from_discriminator_value(pn) }) },
                     "distribution" => lambda {|n| @distribution = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "platform" => lambda {|n| @platform = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityKubernetesPlatform) },
+                    "platform" => lambda {|n| @platform = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityKubernetesClusterEvidencePlatform) },
                     "version" => lambda {|n| @version = n.get_string_value() },
                 })
             end
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
-            ## @return a security_kubernetes_platform
+            ## @return a security_kubernetes_cluster_evidence_platform
             ## 
             def platform
                 return @platform

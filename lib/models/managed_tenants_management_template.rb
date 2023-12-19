@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
             @workload_actions
             ## 
             ## Gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-            ## @return a managed_tenants_management_category
+            ## @return a managed_tenants_management_template_category
             ## 
             def category
                 return @category
@@ -152,7 +152,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagementCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagementTemplateCategory) },
                     "createdByUserId" => lambda {|n| @created_by_user_id = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },

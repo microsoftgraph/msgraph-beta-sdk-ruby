@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             @subject_name_format_string
             ## 
             ## Gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-            ## @return a android_device_owner_certificate_access_type
+            ## @return a android_device_owner_pkcs_certificate_profile_certificate_access_type
             ## 
             def certificate_access_type
                 return @certificate_access_type
@@ -169,7 +169,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCertificateAccessType) },
+                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerPkcsCertificateProfileCertificateAccessType) },
                     "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
                     "certificateTemplateName" => lambda {|n| @certificate_template_name = n.get_string_value() },
                     "certificationAuthority" => lambda {|n| @certification_authority = n.get_string_value() },

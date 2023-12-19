@@ -172,7 +172,7 @@ module MicrosoftGraphBeta
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Extension.create_from_discriminator_value(pn) }) },
                     "from" => lambda {|n| @from = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::Importance) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::PostImportance) },
                     "inReplyTo" => lambda {|n| @in_reply_to = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Post.create_from_discriminator_value(pn) }) },
                     "mentions" => lambda {|n| @mentions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Mention.create_from_discriminator_value(pn) }) },
                     "multiValueExtendedProperties" => lambda {|n| @multi_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MultiValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
@@ -199,7 +199,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the importance property value. The importance of a group post: low, normal, high.
-            ## @return a importance
+            ## @return a post_importance
             ## 
             def importance
                 return @importance

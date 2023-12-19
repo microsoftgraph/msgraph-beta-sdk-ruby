@@ -112,8 +112,8 @@ module MicrosoftGraphBeta
                     "extendedKeyUsages" => lambda {|n| @extended_key_usages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExtendedKeyUsage.create_from_discriminator_value(pn) }) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
                     "rootCertificate" => lambda {|n| @root_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AospDeviceOwnerTrustedRootCertificate.create_from_discriminator_value(pn) }) },
-                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
-                    "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectNameFormat) },
+                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::AospDeviceOwnerCertificateProfileBaseSubjectAlternativeNameType) },
+                    "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::AospDeviceOwnerCertificateProfileBaseSubjectNameFormat) },
                 })
             end
             ## 
@@ -164,7 +164,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-            ## @return a subject_alternative_name_type
+            ## @return a aosp_device_owner_certificate_profile_base_subject_alternative_name_type
             ## 
             def subject_alternative_name_type
                 return @subject_alternative_name_type
@@ -179,7 +179,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
-            ## @return a subject_name_format
+            ## @return a aosp_device_owner_certificate_profile_base_subject_name_format
             ## 
             def subject_name_format
                 return @subject_name_format

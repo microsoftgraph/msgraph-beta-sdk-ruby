@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
-require_relative '../../../../models/authentication_method_modes'
 require_relative '../../../policies'
 require_relative '../../authentication_strength_policies'
 require_relative '../item'
@@ -20,15 +19,15 @@ module MicrosoftGraphBeta
                         # The allowedCombinations property
                         @allowed_combinations
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -36,7 +35,7 @@ module MicrosoftGraphBeta
                         end
                         ## 
                         ## Gets the allowedCombinations property value. The allowedCombinations property
-                        ## @return a authentication_method_modes
+                        ## @return a update_allowed_combinations_post_request_body_allowed_combinations
                         ## 
                         def allowed_combinations
                             return @allowed_combinations
@@ -71,7 +70,7 @@ module MicrosoftGraphBeta
                         ## 
                         def get_field_deserializers()
                             return {
-                                "allowedCombinations" => lambda {|n| @allowed_combinations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationMethodModes.create_from_discriminator_value(pn) }) },
+                                "allowedCombinations" => lambda {|n| @allowed_combinations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Policies::AuthenticationStrengthPolicies::Item::UpdateAllowedCombinations::UpdateAllowedCombinationsPostRequestBodyAllowedCombinations.create_from_discriminator_value(pn) }) },
                             }
                         end
                         ## 

@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # The description of the alert.
             @description
             ## 
-            # The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            # The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             @display_name
             ## 
             # Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
             @how_to_prevent
             ## 
-            # true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            # true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
             @is_configurable
             ## 
             # true if the alert can be remediated, and false otherwise.
@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
             @scope_id
             ## 
-            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
+            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             @scope_type
             ## 
             # Security impact of the alert. For example, it could be information leaks or unauthorized access.
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            ## Gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
+            ## Sets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
                     "scopeId" => lambda {|n| @scope_id = n.get_string_value() },
                     "scopeType" => lambda {|n| @scope_type = n.get_string_value() },
                     "securityImpact" => lambda {|n| @security_impact = n.get_string_value() },
-                    "severityLevel" => lambda {|n| @severity_level = n.get_enum_value(MicrosoftGraphBeta::Models::AlertSeverity) },
+                    "severityLevel" => lambda {|n| @severity_level = n.get_enum_value(MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertDefinitionSeverityLevel) },
                 })
             end
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 @how_to_prevent = value
             end
             ## 
-            ## Gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            ## Gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
             ## @return a boolean
             ## 
             def is_configurable
                 return @is_configurable
             end
             ## 
-            ## Sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
+            ## Sets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
             ## @param value Value to set for the isConfigurable property.
             ## @return a void
             ## 
@@ -176,14 +176,14 @@ module MicrosoftGraphBeta
                 @scope_id = value
             end
             ## 
-            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
+            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @return a string
             ## 
             def scope_type
                 return @scope_type
             end
             ## 
-            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
+            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 
@@ -226,7 +226,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
-            ## @return a alert_severity
+            ## @return a unified_role_management_alert_definition_severity_level
             ## 
             def severity_level
                 return @severity_level

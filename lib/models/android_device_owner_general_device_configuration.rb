@@ -63,6 +63,9 @@ module MicrosoftGraphBeta
             # Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
             @detailed_help_text
             ## 
+            # Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+            @device_location_mode
+            ## 
             # Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
             @device_owner_lock_screen_message
             ## 
@@ -330,6 +333,9 @@ module MicrosoftGraphBeta
             # Indicates whether or not verify apps is required.
             @security_require_verify_apps
             ## 
+            # Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            @share_device_location_disabled
+            ## 
             # Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
             @short_help_text
             ## 
@@ -466,7 +472,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
-            ## @return a android_device_owner_app_auto_update_policy_type
+            ## @return a android_device_owner_general_device_configuration_apps_auto_update_policy
             ## 
             def apps_auto_update_policy
                 return @apps_auto_update_policy
@@ -481,7 +487,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
-            ## @return a android_device_owner_default_app_permission_policy_type
+            ## @return a android_device_owner_general_device_configuration_apps_default_permission_policy
             ## 
             def apps_default_permission_policy
                 return @apps_default_permission_policy
@@ -633,7 +639,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
-            ## @return a android_device_owner_cross_profile_data_sharing
+            ## @return a android_device_owner_general_device_configuration_cross_profile_policies_allow_data_sharing
             ## 
             def cross_profile_policies_allow_data_sharing
                 return @cross_profile_policies_allow_data_sharing
@@ -707,6 +713,21 @@ module MicrosoftGraphBeta
                 @detailed_help_text = value
             end
             ## 
+            ## Gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+            ## @return a android_device_owner_general_device_configuration_device_location_mode
+            ## 
+            def device_location_mode
+                return @device_location_mode
+            end
+            ## 
+            ## Sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)
+            ## @param value Value to set for the deviceLocationMode property.
+            ## @return a void
+            ## 
+            def device_location_mode=(value)
+                @device_location_mode = value
+            end
+            ## 
             ## Gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
             ## @return a android_device_owner_user_facing_message
             ## 
@@ -775,8 +796,8 @@ module MicrosoftGraphBeta
                     "accountsBlockModification" => lambda {|n| @accounts_block_modification = n.get_boolean_value() },
                     "androidDeviceOwnerDelegatedScopeAppSettings" => lambda {|n| @android_device_owner_delegated_scope_app_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerDelegatedScopeAppSetting.create_from_discriminator_value(pn) }) },
                     "appsAllowInstallFromUnknownSources" => lambda {|n| @apps_allow_install_from_unknown_sources = n.get_boolean_value() },
-                    "appsAutoUpdatePolicy" => lambda {|n| @apps_auto_update_policy = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerAppAutoUpdatePolicyType) },
-                    "appsDefaultPermissionPolicy" => lambda {|n| @apps_default_permission_policy = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerDefaultAppPermissionPolicyType) },
+                    "appsAutoUpdatePolicy" => lambda {|n| @apps_auto_update_policy = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationAppsAutoUpdatePolicy) },
+                    "appsDefaultPermissionPolicy" => lambda {|n| @apps_default_permission_policy = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationAppsDefaultPermissionPolicy) },
                     "appsRecommendSkippingFirstUseHints" => lambda {|n| @apps_recommend_skipping_first_use_hints = n.get_boolean_value() },
                     "azureAdSharedDeviceDataClearApps" => lambda {|n| @azure_ad_shared_device_data_clear_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppListItem.create_from_discriminator_value(pn) }) },
                     "bluetoothBlockConfiguration" => lambda {|n| @bluetooth_block_configuration = n.get_boolean_value() },
@@ -785,11 +806,12 @@ module MicrosoftGraphBeta
                     "cellularBlockWiFiTethering" => lambda {|n| @cellular_block_wi_fi_tethering = n.get_boolean_value() },
                     "certificateCredentialConfigurationDisabled" => lambda {|n| @certificate_credential_configuration_disabled = n.get_boolean_value() },
                     "crossProfilePoliciesAllowCopyPaste" => lambda {|n| @cross_profile_policies_allow_copy_paste = n.get_boolean_value() },
-                    "crossProfilePoliciesAllowDataSharing" => lambda {|n| @cross_profile_policies_allow_data_sharing = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCrossProfileDataSharing) },
+                    "crossProfilePoliciesAllowDataSharing" => lambda {|n| @cross_profile_policies_allow_data_sharing = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationCrossProfilePoliciesAllowDataSharing) },
                     "crossProfilePoliciesShowWorkContactsInPersonalProfile" => lambda {|n| @cross_profile_policies_show_work_contacts_in_personal_profile = n.get_boolean_value() },
                     "dataRoamingBlocked" => lambda {|n| @data_roaming_blocked = n.get_boolean_value() },
                     "dateTimeConfigurationBlocked" => lambda {|n| @date_time_configuration_blocked = n.get_boolean_value() },
                     "detailedHelpText" => lambda {|n| @detailed_help_text = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
+                    "deviceLocationMode" => lambda {|n| @device_location_mode = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationDeviceLocationMode) },
                     "deviceOwnerLockScreenMessage" => lambda {|n| @device_owner_lock_screen_message = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
                     "enrollmentProfile" => lambda {|n| @enrollment_profile = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerEnrollmentProfileType) },
                     "factoryResetBlocked" => lambda {|n| @factory_reset_blocked = n.get_boolean_value() },
@@ -798,9 +820,9 @@ module MicrosoftGraphBeta
                     "googleAccountsBlocked" => lambda {|n| @google_accounts_blocked = n.get_boolean_value() },
                     "kioskCustomizationDeviceSettingsBlocked" => lambda {|n| @kiosk_customization_device_settings_blocked = n.get_boolean_value() },
                     "kioskCustomizationPowerButtonActionsBlocked" => lambda {|n| @kiosk_customization_power_button_actions_blocked = n.get_boolean_value() },
-                    "kioskCustomizationStatusBar" => lambda {|n| @kiosk_customization_status_bar = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskCustomizationStatusBar) },
+                    "kioskCustomizationStatusBar" => lambda {|n| @kiosk_customization_status_bar = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskCustomizationStatusBar) },
                     "kioskCustomizationSystemErrorWarnings" => lambda {|n| @kiosk_customization_system_error_warnings = n.get_boolean_value() },
-                    "kioskCustomizationSystemNavigation" => lambda {|n| @kiosk_customization_system_navigation = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskCustomizationSystemNavigation) },
+                    "kioskCustomizationSystemNavigation" => lambda {|n| @kiosk_customization_system_navigation = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskCustomizationSystemNavigation) },
                     "kioskModeAppOrderEnabled" => lambda {|n| @kiosk_mode_app_order_enabled = n.get_boolean_value() },
                     "kioskModeAppPositions" => lambda {|n| @kiosk_mode_app_positions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeAppPositionItem.create_from_discriminator_value(pn) }) },
                     "kioskModeApps" => lambda {|n| @kiosk_mode_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppListItem.create_from_discriminator_value(pn) }) },
@@ -809,16 +831,16 @@ module MicrosoftGraphBeta
                     "kioskModeDebugMenuEasyAccessEnabled" => lambda {|n| @kiosk_mode_debug_menu_easy_access_enabled = n.get_boolean_value() },
                     "kioskModeExitCode" => lambda {|n| @kiosk_mode_exit_code = n.get_string_value() },
                     "kioskModeFlashlightConfigurationEnabled" => lambda {|n| @kiosk_mode_flashlight_configuration_enabled = n.get_boolean_value() },
-                    "kioskModeFolderIcon" => lambda {|n| @kiosk_mode_folder_icon = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeFolderIcon) },
+                    "kioskModeFolderIcon" => lambda {|n| @kiosk_mode_folder_icon = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeFolderIcon) },
                     "kioskModeGridHeight" => lambda {|n| @kiosk_mode_grid_height = n.get_number_value() },
                     "kioskModeGridWidth" => lambda {|n| @kiosk_mode_grid_width = n.get_number_value() },
-                    "kioskModeIconSize" => lambda {|n| @kiosk_mode_icon_size = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeIconSize) },
+                    "kioskModeIconSize" => lambda {|n| @kiosk_mode_icon_size = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeIconSize) },
                     "kioskModeLockHomeScreen" => lambda {|n| @kiosk_mode_lock_home_screen = n.get_boolean_value() },
                     "kioskModeManagedFolders" => lambda {|n| @kiosk_mode_managed_folders = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeManagedFolder.create_from_discriminator_value(pn) }) },
                     "kioskModeManagedHomeScreenAutoSignout" => lambda {|n| @kiosk_mode_managed_home_screen_auto_signout = n.get_boolean_value() },
                     "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds" => lambda {|n| @kiosk_mode_managed_home_screen_inactive_sign_out_delay_in_seconds = n.get_number_value() },
                     "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds" => lambda {|n| @kiosk_mode_managed_home_screen_inactive_sign_out_notice_in_seconds = n.get_number_value() },
-                    "kioskModeManagedHomeScreenPinComplexity" => lambda {|n| @kiosk_mode_managed_home_screen_pin_complexity = n.get_enum_value(MicrosoftGraphBeta::Models::KioskModeManagedHomeScreenPinComplexity) },
+                    "kioskModeManagedHomeScreenPinComplexity" => lambda {|n| @kiosk_mode_managed_home_screen_pin_complexity = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeManagedHomeScreenPinComplexity) },
                     "kioskModeManagedHomeScreenPinRequired" => lambda {|n| @kiosk_mode_managed_home_screen_pin_required = n.get_boolean_value() },
                     "kioskModeManagedHomeScreenPinRequiredToResume" => lambda {|n| @kiosk_mode_managed_home_screen_pin_required_to_resume = n.get_boolean_value() },
                     "kioskModeManagedHomeScreenSignInBackground" => lambda {|n| @kiosk_mode_managed_home_screen_sign_in_background = n.get_string_value() },
@@ -826,7 +848,7 @@ module MicrosoftGraphBeta
                     "kioskModeManagedHomeScreenSignInEnabled" => lambda {|n| @kiosk_mode_managed_home_screen_sign_in_enabled = n.get_boolean_value() },
                     "kioskModeManagedSettingsEntryDisabled" => lambda {|n| @kiosk_mode_managed_settings_entry_disabled = n.get_boolean_value() },
                     "kioskModeMediaVolumeConfigurationEnabled" => lambda {|n| @kiosk_mode_media_volume_configuration_enabled = n.get_boolean_value() },
-                    "kioskModeScreenOrientation" => lambda {|n| @kiosk_mode_screen_orientation = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeScreenOrientation) },
+                    "kioskModeScreenOrientation" => lambda {|n| @kiosk_mode_screen_orientation = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeScreenOrientation) },
                     "kioskModeScreenSaverConfigurationEnabled" => lambda {|n| @kiosk_mode_screen_saver_configuration_enabled = n.get_boolean_value() },
                     "kioskModeScreenSaverDetectMediaDisabled" => lambda {|n| @kiosk_mode_screen_saver_detect_media_disabled = n.get_boolean_value() },
                     "kioskModeScreenSaverDisplayTimeInSeconds" => lambda {|n| @kiosk_mode_screen_saver_display_time_in_seconds = n.get_number_value() },
@@ -834,9 +856,9 @@ module MicrosoftGraphBeta
                     "kioskModeScreenSaverStartDelayInSeconds" => lambda {|n| @kiosk_mode_screen_saver_start_delay_in_seconds = n.get_number_value() },
                     "kioskModeShowAppNotificationBadge" => lambda {|n| @kiosk_mode_show_app_notification_badge = n.get_boolean_value() },
                     "kioskModeShowDeviceInfo" => lambda {|n| @kiosk_mode_show_device_info = n.get_boolean_value() },
-                    "kioskModeUseManagedHomeScreenApp" => lambda {|n| @kiosk_mode_use_managed_home_screen_app = n.get_enum_value(MicrosoftGraphBeta::Models::KioskModeType) },
+                    "kioskModeUseManagedHomeScreenApp" => lambda {|n| @kiosk_mode_use_managed_home_screen_app = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeUseManagedHomeScreenApp) },
                     "kioskModeVirtualHomeButtonEnabled" => lambda {|n| @kiosk_mode_virtual_home_button_enabled = n.get_boolean_value() },
-                    "kioskModeVirtualHomeButtonType" => lambda {|n| @kiosk_mode_virtual_home_button_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerVirtualHomeButtonType) },
+                    "kioskModeVirtualHomeButtonType" => lambda {|n| @kiosk_mode_virtual_home_button_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationKioskModeVirtualHomeButtonType) },
                     "kioskModeWallpaperUrl" => lambda {|n| @kiosk_mode_wallpaper_url = n.get_string_value() },
                     "kioskModeWiFiConfigurationEnabled" => lambda {|n| @kiosk_mode_wi_fi_configuration_enabled = n.get_boolean_value() },
                     "kioskModeWifiAllowedSsids" => lambda {|n| @kiosk_mode_wifi_allowed_ssids = n.get_collection_of_primitive_values(String) },
@@ -848,10 +870,10 @@ module MicrosoftGraphBeta
                     "microsoftLauncherCustomWallpaperEnabled" => lambda {|n| @microsoft_launcher_custom_wallpaper_enabled = n.get_boolean_value() },
                     "microsoftLauncherCustomWallpaperImageUrl" => lambda {|n| @microsoft_launcher_custom_wallpaper_image_url = n.get_string_value() },
                     "microsoftLauncherDockPresenceAllowUserModification" => lambda {|n| @microsoft_launcher_dock_presence_allow_user_modification = n.get_boolean_value() },
-                    "microsoftLauncherDockPresenceConfiguration" => lambda {|n| @microsoft_launcher_dock_presence_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftLauncherDockPresence) },
+                    "microsoftLauncherDockPresenceConfiguration" => lambda {|n| @microsoft_launcher_dock_presence_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationMicrosoftLauncherDockPresenceConfiguration) },
                     "microsoftLauncherFeedAllowUserModification" => lambda {|n| @microsoft_launcher_feed_allow_user_modification = n.get_boolean_value() },
                     "microsoftLauncherFeedEnabled" => lambda {|n| @microsoft_launcher_feed_enabled = n.get_boolean_value() },
-                    "microsoftLauncherSearchBarPlacementConfiguration" => lambda {|n| @microsoft_launcher_search_bar_placement_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftLauncherSearchBarPlacement) },
+                    "microsoftLauncherSearchBarPlacementConfiguration" => lambda {|n| @microsoft_launcher_search_bar_placement_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationMicrosoftLauncherSearchBarPlacementConfiguration) },
                     "networkEscapeHatchAllowed" => lambda {|n| @network_escape_hatch_allowed = n.get_boolean_value() },
                     "nfcBlockOutgoingBeam" => lambda {|n| @nfc_block_outgoing_beam = n.get_boolean_value() },
                     "passwordBlockKeyguard" => lambda {|n| @password_block_keyguard = n.get_boolean_value() },
@@ -866,19 +888,20 @@ module MicrosoftGraphBeta
                     "passwordMinimumUpperCaseCharacters" => lambda {|n| @password_minimum_upper_case_characters = n.get_number_value() },
                     "passwordMinutesOfInactivityBeforeScreenTimeout" => lambda {|n| @password_minutes_of_inactivity_before_screen_timeout = n.get_number_value() },
                     "passwordPreviousPasswordCountToBlock" => lambda {|n| @password_previous_password_count_to_block = n.get_number_value() },
-                    "passwordRequireUnlock" => lambda {|n| @password_require_unlock = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordUnlock) },
-                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "passwordRequireUnlock" => lambda {|n| @password_require_unlock = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationPasswordRequireUnlock) },
+                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationPasswordRequiredType) },
                     "passwordSignInFailureCountBeforeFactoryReset" => lambda {|n| @password_sign_in_failure_count_before_factory_reset = n.get_number_value() },
                     "personalProfileAppsAllowInstallFromUnknownSources" => lambda {|n| @personal_profile_apps_allow_install_from_unknown_sources = n.get_boolean_value() },
                     "personalProfileCameraBlocked" => lambda {|n| @personal_profile_camera_blocked = n.get_boolean_value() },
                     "personalProfilePersonalApplications" => lambda {|n| @personal_profile_personal_applications = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AppListItem.create_from_discriminator_value(pn) }) },
-                    "personalProfilePlayStoreMode" => lambda {|n| @personal_profile_play_store_mode = n.get_enum_value(MicrosoftGraphBeta::Models::PersonalProfilePersonalPlayStoreMode) },
+                    "personalProfilePlayStoreMode" => lambda {|n| @personal_profile_play_store_mode = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationPersonalProfilePlayStoreMode) },
                     "personalProfileScreenCaptureBlocked" => lambda {|n| @personal_profile_screen_capture_blocked = n.get_boolean_value() },
-                    "playStoreMode" => lambda {|n| @play_store_mode = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerPlayStoreMode) },
+                    "playStoreMode" => lambda {|n| @play_store_mode = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationPlayStoreMode) },
                     "screenCaptureBlocked" => lambda {|n| @screen_capture_blocked = n.get_boolean_value() },
                     "securityCommonCriteriaModeEnabled" => lambda {|n| @security_common_criteria_mode_enabled = n.get_boolean_value() },
                     "securityDeveloperSettingsEnabled" => lambda {|n| @security_developer_settings_enabled = n.get_boolean_value() },
                     "securityRequireVerifyApps" => lambda {|n| @security_require_verify_apps = n.get_boolean_value() },
+                    "shareDeviceLocationDisabled" => lambda {|n| @share_device_location_disabled = n.get_boolean_value() },
                     "shortHelpText" => lambda {|n| @short_help_text = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
                     "statusBarBlocked" => lambda {|n| @status_bar_blocked = n.get_boolean_value() },
                     "stayOnModes" => lambda {|n| @stay_on_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerBatteryPluggedMode.create_from_discriminator_value(pn) }) },
@@ -886,7 +909,7 @@ module MicrosoftGraphBeta
                     "storageBlockExternalMedia" => lambda {|n| @storage_block_external_media = n.get_boolean_value() },
                     "storageBlockUsbFileTransfer" => lambda {|n| @storage_block_usb_file_transfer = n.get_boolean_value() },
                     "systemUpdateFreezePeriods" => lambda {|n| @system_update_freeze_periods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerSystemUpdateFreezePeriod.create_from_discriminator_value(pn) }) },
-                    "systemUpdateInstallType" => lambda {|n| @system_update_install_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerSystemUpdateInstallType) },
+                    "systemUpdateInstallType" => lambda {|n| @system_update_install_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationSystemUpdateInstallType) },
                     "systemUpdateWindowEndMinutesAfterMidnight" => lambda {|n| @system_update_window_end_minutes_after_midnight = n.get_number_value() },
                     "systemUpdateWindowStartMinutesAfterMidnight" => lambda {|n| @system_update_window_start_minutes_after_midnight = n.get_number_value() },
                     "systemWindowsBlocked" => lambda {|n| @system_windows_blocked = n.get_boolean_value() },
@@ -906,8 +929,8 @@ module MicrosoftGraphBeta
                     "workProfilePasswordMinimumSymbolCharacters" => lambda {|n| @work_profile_password_minimum_symbol_characters = n.get_number_value() },
                     "workProfilePasswordMinimumUpperCaseCharacters" => lambda {|n| @work_profile_password_minimum_upper_case_characters = n.get_number_value() },
                     "workProfilePasswordPreviousPasswordCountToBlock" => lambda {|n| @work_profile_password_previous_password_count_to_block = n.get_number_value() },
-                    "workProfilePasswordRequireUnlock" => lambda {|n| @work_profile_password_require_unlock = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordUnlock) },
-                    "workProfilePasswordRequiredType" => lambda {|n| @work_profile_password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "workProfilePasswordRequireUnlock" => lambda {|n| @work_profile_password_require_unlock = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationWorkProfilePasswordRequireUnlock) },
+                    "workProfilePasswordRequiredType" => lambda {|n| @work_profile_password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerGeneralDeviceConfigurationWorkProfilePasswordRequiredType) },
                     "workProfilePasswordSignInFailureCountBeforeFactoryReset" => lambda {|n| @work_profile_password_sign_in_failure_count_before_factory_reset = n.get_number_value() },
                 })
             end
@@ -973,7 +996,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
-            ## @return a android_device_owner_kiosk_customization_status_bar
+            ## @return a android_device_owner_general_device_configuration_kiosk_customization_status_bar
             ## 
             def kiosk_customization_status_bar
                 return @kiosk_customization_status_bar
@@ -1003,7 +1026,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
-            ## @return a android_device_owner_kiosk_customization_system_navigation
+            ## @return a android_device_owner_general_device_configuration_kiosk_customization_system_navigation
             ## 
             def kiosk_customization_system_navigation
                 return @kiosk_customization_system_navigation
@@ -1138,7 +1161,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
-            ## @return a android_device_owner_kiosk_mode_folder_icon
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_folder_icon
             ## 
             def kiosk_mode_folder_icon
                 return @kiosk_mode_folder_icon
@@ -1183,7 +1206,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
-            ## @return a android_device_owner_kiosk_mode_icon_size
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_icon_size
             ## 
             def kiosk_mode_icon_size
                 return @kiosk_mode_icon_size
@@ -1273,7 +1296,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
-            ## @return a kiosk_mode_managed_home_screen_pin_complexity
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_managed_home_screen_pin_complexity
             ## 
             def kiosk_mode_managed_home_screen_pin_complexity
                 return @kiosk_mode_managed_home_screen_pin_complexity
@@ -1393,7 +1416,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
-            ## @return a android_device_owner_kiosk_mode_screen_orientation
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_screen_orientation
             ## 
             def kiosk_mode_screen_orientation
                 return @kiosk_mode_screen_orientation
@@ -1513,7 +1536,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
-            ## @return a kiosk_mode_type
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_use_managed_home_screen_app
             ## 
             def kiosk_mode_use_managed_home_screen_app
                 return @kiosk_mode_use_managed_home_screen_app
@@ -1543,7 +1566,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
-            ## @return a android_device_owner_virtual_home_button_type
+            ## @return a android_device_owner_general_device_configuration_kiosk_mode_virtual_home_button_type
             ## 
             def kiosk_mode_virtual_home_button_type
                 return @kiosk_mode_virtual_home_button_type
@@ -1723,7 +1746,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
-            ## @return a microsoft_launcher_dock_presence
+            ## @return a android_device_owner_general_device_configuration_microsoft_launcher_dock_presence_configuration
             ## 
             def microsoft_launcher_dock_presence_configuration
                 return @microsoft_launcher_dock_presence_configuration
@@ -1768,7 +1791,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
-            ## @return a microsoft_launcher_search_bar_placement
+            ## @return a android_device_owner_general_device_configuration_microsoft_launcher_search_bar_placement_configuration
             ## 
             def microsoft_launcher_search_bar_placement_configuration
                 return @microsoft_launcher_search_bar_placement_configuration
@@ -1993,7 +2016,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-            ## @return a android_device_owner_required_password_unlock
+            ## @return a android_device_owner_general_device_configuration_password_require_unlock
             ## 
             def password_require_unlock
                 return @password_require_unlock
@@ -2008,7 +2031,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-            ## @return a android_device_owner_required_password_type
+            ## @return a android_device_owner_general_device_configuration_password_required_type
             ## 
             def password_required_type
                 return @password_required_type
@@ -2083,7 +2106,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
-            ## @return a personal_profile_personal_play_store_mode
+            ## @return a android_device_owner_general_device_configuration_personal_profile_play_store_mode
             ## 
             def personal_profile_play_store_mode
                 return @personal_profile_play_store_mode
@@ -2113,7 +2136,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
-            ## @return a android_device_owner_play_store_mode
+            ## @return a android_device_owner_general_device_configuration_play_store_mode
             ## 
             def play_store_mode
                 return @play_store_mode
@@ -2212,6 +2235,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("dataRoamingBlocked", @data_roaming_blocked)
                 writer.write_boolean_value("dateTimeConfigurationBlocked", @date_time_configuration_blocked)
                 writer.write_object_value("detailedHelpText", @detailed_help_text)
+                writer.write_enum_value("deviceLocationMode", @device_location_mode)
                 writer.write_object_value("deviceOwnerLockScreenMessage", @device_owner_lock_screen_message)
                 writer.write_enum_value("enrollmentProfile", @enrollment_profile)
                 writer.write_boolean_value("factoryResetBlocked", @factory_reset_blocked)
@@ -2301,6 +2325,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("securityCommonCriteriaModeEnabled", @security_common_criteria_mode_enabled)
                 writer.write_boolean_value("securityDeveloperSettingsEnabled", @security_developer_settings_enabled)
                 writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
+                writer.write_boolean_value("shareDeviceLocationDisabled", @share_device_location_disabled)
                 writer.write_object_value("shortHelpText", @short_help_text)
                 writer.write_boolean_value("statusBarBlocked", @status_bar_blocked)
                 writer.write_collection_of_object_values("stayOnModes", @stay_on_modes)
@@ -2331,6 +2356,21 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("workProfilePasswordRequireUnlock", @work_profile_password_require_unlock)
                 writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type)
                 writer.write_number_value("workProfilePasswordSignInFailureCountBeforeFactoryReset", @work_profile_password_sign_in_failure_count_before_factory_reset)
+            end
+            ## 
+            ## Gets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            ## @return a boolean
+            ## 
+            def share_device_location_disabled
+                return @share_device_location_disabled
+            end
+            ## 
+            ## Sets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            ## @param value Value to set for the shareDeviceLocationDisabled property.
+            ## @return a void
+            ## 
+            def share_device_location_disabled=(value)
+                @share_device_location_disabled = value
             end
             ## 
             ## Gets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
@@ -2439,7 +2479,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
-            ## @return a android_device_owner_system_update_install_type
+            ## @return a android_device_owner_general_device_configuration_system_update_install_type
             ## 
             def system_update_install_type
                 return @system_update_install_type
@@ -2739,7 +2779,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
-            ## @return a android_device_owner_required_password_unlock
+            ## @return a android_device_owner_general_device_configuration_work_profile_password_require_unlock
             ## 
             def work_profile_password_require_unlock
                 return @work_profile_password_require_unlock
@@ -2754,7 +2794,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-            ## @return a android_device_owner_required_password_type
+            ## @return a android_device_owner_general_device_configuration_work_profile_password_required_type
             ## 
             def work_profile_password_required_type
                 return @work_profile_password_required_type

@@ -34,13 +34,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "matchTolerance" => lambda {|n| @match_tolerance = n.get_enum_value(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
+                    "matchTolerance" => lambda {|n| @match_tolerance = n.get_enum_value(MicrosoftGraphBeta::Models::MachineLearningDetectedSensitiveContentMatchTolerance) },
                     "modelVersion" => lambda {|n| @model_version = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the matchTolerance property value. The matchTolerance property
-            ## @return a ml_classification_match_tolerance
+            ## @return a machine_learning_detected_sensitive_content_match_tolerance
             ## 
             def match_tolerance
                 return @match_tolerance

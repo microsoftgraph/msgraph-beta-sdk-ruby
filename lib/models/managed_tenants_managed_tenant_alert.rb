@@ -281,8 +281,8 @@ module MicrosoftGraphBeta
                     "lastActionByUserId" => lambda {|n| @last_action_by_user_id = n.get_string_value() },
                     "lastActionDateTime" => lambda {|n| @last_action_date_time = n.get_date_time_value() },
                     "message" => lambda {|n| @message = n.get_string_value() },
-                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsAlertSeverity) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsAlertStatus) },
+                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertSeverity) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertStatus) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
@@ -362,7 +362,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the severity property value. The severity property
-            ## @return a managed_tenants_alert_severity
+            ## @return a managed_tenants_managed_tenant_alert_severity
             ## 
             def severity
                 return @severity
@@ -377,7 +377,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a managed_tenants_alert_status
+            ## @return a managed_tenants_managed_tenant_alert_status
             ## 
             def status
                 return @status

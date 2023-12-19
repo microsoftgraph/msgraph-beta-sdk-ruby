@@ -1,1 +1,2 @@
+require_relative 'wipe_post_request_body_obliteration_behavior'
 require_relative 'wipe_post_request_body'

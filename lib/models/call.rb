@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # The context associated with an incoming call. Read-only. Server generated.
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
             @transcription
             ## 
             ## Gets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-            ## @return a modality
+            ## @return a call_active_modalities
             ## 
             def active_modalities
                 return @active_modalities
@@ -248,14 +248,14 @@ module MicrosoftGraphBeta
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 
@@ -268,7 +268,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "activeModalities" => lambda {|n| @active_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Modality.create_from_discriminator_value(pn) }) },
+                    "activeModalities" => lambda {|n| @active_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CallActiveModalities.create_from_discriminator_value(pn) }) },
                     "answeredBy" => lambda {|n| @answered_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ParticipantInfo.create_from_discriminator_value(pn) }) },
                     "audioRoutingGroups" => lambda {|n| @audio_routing_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AudioRoutingGroup.create_from_discriminator_value(pn) }) },
                     "callChainId" => lambda {|n| @call_chain_id = n.get_string_value() },
@@ -286,10 +286,10 @@ module MicrosoftGraphBeta
                     "myParticipantId" => lambda {|n| @my_participant_id = n.get_string_value() },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CommsOperation.create_from_discriminator_value(pn) }) },
                     "participants" => lambda {|n| @participants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Participant.create_from_discriminator_value(pn) }) },
-                    "requestedModalities" => lambda {|n| @requested_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Modality.create_from_discriminator_value(pn) }) },
+                    "requestedModalities" => lambda {|n| @requested_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CallRequestedModalities.create_from_discriminator_value(pn) }) },
                     "resultInfo" => lambda {|n| @result_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ResultInfo.create_from_discriminator_value(pn) }) },
                     "ringingTimeoutInSeconds" => lambda {|n| @ringing_timeout_in_seconds = n.get_number_value() },
-                    "routingPolicies" => lambda {|n| @routing_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RoutingPolicy.create_from_discriminator_value(pn) }) },
+                    "routingPolicies" => lambda {|n| @routing_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CallRoutingPolicies.create_from_discriminator_value(pn) }) },
                     "source" => lambda {|n| @source = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ParticipantInfo.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::CallState) },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
@@ -422,7 +422,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the requestedModalities property value. The requestedModalities property
-            ## @return a modality
+            ## @return a call_requested_modalities
             ## 
             def requested_modalities
                 return @requested_modalities
@@ -467,7 +467,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the routingPolicies property value. The routingPolicies property
-            ## @return a routing_policy
+            ## @return a call_routing_policies
             ## 
             def routing_policies
                 return @routing_policies

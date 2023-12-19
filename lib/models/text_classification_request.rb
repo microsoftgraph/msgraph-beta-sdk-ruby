@@ -78,15 +78,15 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "contentMetaData" => lambda {|n| @content_meta_data = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ClassificationRequestContentMetaData.create_from_discriminator_value(pn) }) },
                     "fileExtension" => lambda {|n| @file_extension = n.get_string_value() },
-                    "matchTolerancesToInclude" => lambda {|n| @match_tolerances_to_include = n.get_enum_value(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
-                    "scopesToRun" => lambda {|n| @scopes_to_run = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
+                    "matchTolerancesToInclude" => lambda {|n| @match_tolerances_to_include = n.get_enum_value(MicrosoftGraphBeta::Models::TextClassificationRequestMatchTolerancesToInclude) },
+                    "scopesToRun" => lambda {|n| @scopes_to_run = n.get_enum_value(MicrosoftGraphBeta::Models::TextClassificationRequestScopesToRun) },
                     "sensitiveTypeIds" => lambda {|n| @sensitive_type_ids = n.get_collection_of_primitive_values(String) },
                     "text" => lambda {|n| @text = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
-            ## @return a ml_classification_match_tolerance
+            ## @return a text_classification_request_match_tolerances_to_include
             ## 
             def match_tolerances_to_include
                 return @match_tolerances_to_include
@@ -101,7 +101,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the scopesToRun property value. The scopesToRun property
-            ## @return a sensitive_type_scope
+            ## @return a text_classification_request_scopes_to_run
             ## 
             def scopes_to_run
                 return @scopes_to_run

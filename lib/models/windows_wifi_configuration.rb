@@ -142,20 +142,20 @@ module MicrosoftGraphBeta
                     "connectToPreferredNetwork" => lambda {|n| @connect_to_preferred_network = n.get_boolean_value() },
                     "connectWhenNetworkNameIsHidden" => lambda {|n| @connect_when_network_name_is_hidden = n.get_boolean_value() },
                     "forceFIPSCompliance" => lambda {|n| @force_f_i_p_s_compliance = n.get_boolean_value() },
-                    "meteredConnectionLimit" => lambda {|n| @metered_connection_limit = n.get_enum_value(MicrosoftGraphBeta::Models::MeteredConnectionLimitType) },
+                    "meteredConnectionLimit" => lambda {|n| @metered_connection_limit = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiConfigurationMeteredConnectionLimit) },
                     "networkName" => lambda {|n| @network_name = n.get_string_value() },
                     "preSharedKey" => lambda {|n| @pre_shared_key = n.get_string_value() },
                     "proxyAutomaticConfigurationUrl" => lambda {|n| @proxy_automatic_configuration_url = n.get_string_value() },
                     "proxyManualAddress" => lambda {|n| @proxy_manual_address = n.get_string_value() },
                     "proxyManualPort" => lambda {|n| @proxy_manual_port = n.get_number_value() },
-                    "proxySetting" => lambda {|n| @proxy_setting = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiProxySetting) },
+                    "proxySetting" => lambda {|n| @proxy_setting = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiConfigurationProxySetting) },
                     "ssid" => lambda {|n| @ssid = n.get_string_value() },
-                    "wifiSecurityType" => lambda {|n| @wifi_security_type = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiSecurityType) },
+                    "wifiSecurityType" => lambda {|n| @wifi_security_type = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiConfigurationWifiSecurityType) },
                 })
             end
             ## 
             ## Gets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
-            ## @return a metered_connection_limit_type
+            ## @return a windows_wifi_configuration_metered_connection_limit
             ## 
             def metered_connection_limit
                 return @metered_connection_limit
@@ -245,7 +245,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
-            ## @return a wi_fi_proxy_setting
+            ## @return a windows_wifi_configuration_proxy_setting
             ## 
             def proxy_setting
                 return @proxy_setting
@@ -297,7 +297,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
-            ## @return a wi_fi_security_type
+            ## @return a windows_wifi_configuration_wifi_security_type
             ## 
             def wifi_security_type
                 return @wifi_security_type

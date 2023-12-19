@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
-require_relative '../../../../models/obliteration_behavior'
 require_relative '../../../device_management'
 require_relative '../../comanaged_devices'
 require_relative '../item'
@@ -35,15 +34,15 @@ module MicrosoftGraphBeta
                         # The useProtectedWipe property
                         @use_protected_wipe
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -74,7 +73,7 @@ module MicrosoftGraphBeta
                                 "keepEnrollmentData" => lambda {|n| @keep_enrollment_data = n.get_boolean_value() },
                                 "keepUserData" => lambda {|n| @keep_user_data = n.get_boolean_value() },
                                 "macOsUnlockCode" => lambda {|n| @mac_os_unlock_code = n.get_string_value() },
-                                "obliterationBehavior" => lambda {|n| @obliteration_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::ObliterationBehavior) },
+                                "obliterationBehavior" => lambda {|n| @obliteration_behavior = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::Item::Wipe::WipePostRequestBodyObliterationBehavior) },
                                 "persistEsimDataPlan" => lambda {|n| @persist_esim_data_plan = n.get_boolean_value() },
                                 "useProtectedWipe" => lambda {|n| @use_protected_wipe = n.get_boolean_value() },
                             }
@@ -126,7 +125,7 @@ module MicrosoftGraphBeta
                         end
                         ## 
                         ## Gets the obliterationBehavior property value. The obliterationBehavior property
-                        ## @return a obliteration_behavior
+                        ## @return a wipe_post_request_body_obliteration_behavior
                         ## 
                         def obliteration_behavior
                             return @obliteration_behavior

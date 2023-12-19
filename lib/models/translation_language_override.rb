@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The translation override behavior for the language, if any.Returned by default. Not nullable.
             @translation_behavior
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 return {
                     "languageTag" => lambda {|n| @language_tag = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "translationBehavior" => lambda {|n| @translation_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::TranslationBehavior) },
+                    "translationBehavior" => lambda {|n| @translation_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::TranslationLanguageOverrideTranslationBehavior) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
-            ## @return a translation_behavior
+            ## @return a translation_language_override_translation_behavior
             ## 
             def translation_behavior
                 return @translation_behavior

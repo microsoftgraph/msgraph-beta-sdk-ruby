@@ -63,6 +63,9 @@ module MicrosoftGraphBeta
             # Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
             @password_required_type
             ## 
+            # Require device to have no pending Android system updates.
+            @require_no_pending_system_updates
+            ## 
             # If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
             @security_require_intune_app_integrity
             ## 
@@ -76,7 +79,7 @@ module MicrosoftGraphBeta
             @storage_require_encryption
             ## 
             ## Gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-            ## @return a device_threat_protection_level
+            ## @return a android_device_owner_compliance_policy_advanced_threat_protection_required_security_level
             ## 
             def advanced_threat_protection_required_security_level
                 return @advanced_threat_protection_required_security_level
@@ -123,7 +126,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
-            ## @return a device_threat_protection_level
+            ## @return a android_device_owner_compliance_policy_device_threat_protection_required_security_level
             ## 
             def device_threat_protection_required_security_level
                 return @device_threat_protection_required_security_level
@@ -142,9 +145,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "advancedThreatProtectionRequiredSecurityLevel" => lambda {|n| @advanced_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceThreatProtectionLevel) },
+                    "advancedThreatProtectionRequiredSecurityLevel" => lambda {|n| @advanced_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCompliancePolicyAdvancedThreatProtectionRequiredSecurityLevel) },
                     "deviceThreatProtectionEnabled" => lambda {|n| @device_threat_protection_enabled = n.get_boolean_value() },
-                    "deviceThreatProtectionRequiredSecurityLevel" => lambda {|n| @device_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceThreatProtectionLevel) },
+                    "deviceThreatProtectionRequiredSecurityLevel" => lambda {|n| @device_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCompliancePolicyDeviceThreatProtectionRequiredSecurityLevel) },
                     "minAndroidSecurityPatchLevel" => lambda {|n| @min_android_security_patch_level = n.get_string_value() },
                     "osMaximumVersion" => lambda {|n| @os_maximum_version = n.get_string_value() },
                     "osMinimumVersion" => lambda {|n| @os_minimum_version = n.get_string_value() },
@@ -159,7 +162,8 @@ module MicrosoftGraphBeta
                     "passwordMinutesOfInactivityBeforeLock" => lambda {|n| @password_minutes_of_inactivity_before_lock = n.get_number_value() },
                     "passwordPreviousPasswordCountToBlock" => lambda {|n| @password_previous_password_count_to_block = n.get_number_value() },
                     "passwordRequired" => lambda {|n| @password_required = n.get_boolean_value() },
-                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCompliancePolicyPasswordRequiredType) },
+                    "requireNoPendingSystemUpdates" => lambda {|n| @require_no_pending_system_updates = n.get_boolean_value() },
                     "securityRequireIntuneAppIntegrity" => lambda {|n| @security_require_intune_app_integrity = n.get_boolean_value() },
                     "securityRequireSafetyNetAttestationBasicIntegrity" => lambda {|n| @security_require_safety_net_attestation_basic_integrity = n.get_boolean_value() },
                     "securityRequireSafetyNetAttestationCertifiedDevice" => lambda {|n| @security_require_safety_net_attestation_certified_device = n.get_boolean_value() },
@@ -378,7 +382,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-            ## @return a android_device_owner_required_password_type
+            ## @return a android_device_owner_compliance_policy_password_required_type
             ## 
             def password_required_type
                 return @password_required_type
@@ -390,6 +394,21 @@ module MicrosoftGraphBeta
             ## 
             def password_required_type=(value)
                 @password_required_type = value
+            end
+            ## 
+            ## Gets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+            ## @return a boolean
+            ## 
+            def require_no_pending_system_updates
+                return @require_no_pending_system_updates
+            end
+            ## 
+            ## Sets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+            ## @param value Value to set for the requireNoPendingSystemUpdates property.
+            ## @return a void
+            ## 
+            def require_no_pending_system_updates=(value)
+                @require_no_pending_system_updates = value
             end
             ## 
             ## Gets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
@@ -462,6 +481,7 @@ module MicrosoftGraphBeta
                 writer.write_number_value("passwordPreviousPasswordCountToBlock", @password_previous_password_count_to_block)
                 writer.write_boolean_value("passwordRequired", @password_required)
                 writer.write_enum_value("passwordRequiredType", @password_required_type)
+                writer.write_boolean_value("requireNoPendingSystemUpdates", @require_no_pending_system_updates)
                 writer.write_boolean_value("securityRequireIntuneAppIntegrity", @security_require_intune_app_integrity)
                 writer.write_boolean_value("securityRequireSafetyNetAttestationBasicIntegrity", @security_require_safety_net_attestation_basic_integrity)
                 writer.write_boolean_value("securityRequireSafetyNetAttestationCertifiedDevice", @security_require_safety_net_attestation_certified_device)

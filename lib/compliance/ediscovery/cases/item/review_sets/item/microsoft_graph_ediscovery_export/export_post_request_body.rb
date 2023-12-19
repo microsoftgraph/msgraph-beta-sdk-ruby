@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph_beta'
 require_relative '../../../../../../../models/ediscovery_export_file_structure'
-require_relative '../../../../../../../models/ediscovery_export_options'
 require_relative '../../../../../../compliance'
 require_relative '../../../../../ediscovery'
 require_relative '../../../../cases'
@@ -42,15 +41,15 @@ module MicrosoftGraphBeta
                                     # The outputName property
                                     @output_name
                                     ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -119,7 +118,7 @@ module MicrosoftGraphBeta
                                     end
                                     ## 
                                     ## Gets the exportOptions property value. The exportOptions property
-                                    ## @return a ediscovery_export_options
+                                    ## @return a export_post_request_body_export_options
                                     ## 
                                     def export_options
                                         return @export_options
@@ -156,7 +155,7 @@ module MicrosoftGraphBeta
                                             "azureBlobContainer" => lambda {|n| @azure_blob_container = n.get_string_value() },
                                             "azureBlobToken" => lambda {|n| @azure_blob_token = n.get_string_value() },
                                             "description" => lambda {|n| @description = n.get_string_value() },
-                                            "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportOptions) },
+                                            "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Compliance::Ediscovery::Cases::Item::ReviewSets::Item::MicrosoftGraphEdiscoveryExport::ExportPostRequestBodyExportOptions) },
                                             "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportFileStructure) },
                                             "outputName" => lambda {|n| @output_name = n.get_string_value() },
                                         }

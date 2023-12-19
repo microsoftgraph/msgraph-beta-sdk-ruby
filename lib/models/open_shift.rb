@@ -16,8 +16,17 @@ module MicrosoftGraphBeta
             # ID for the scheduling group that the open shift belongs to.
             @scheduling_group_id
             ## 
+            # The schedulingGroupName property
+            @scheduling_group_name
+            ## 
             # A published open shift.
             @shared_open_shift
+            ## 
+            # The teamId property
+            @team_id
+            ## 
+            # The teamName property
+            @team_name
             ## 
             ## Instantiates a new openShift and sets the default values.
             ## @return a void
@@ -59,7 +68,10 @@ module MicrosoftGraphBeta
                     "draftOpenShift" => lambda {|n| @draft_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
                     "isStagedForDeletion" => lambda {|n| @is_staged_for_deletion = n.get_boolean_value() },
                     "schedulingGroupId" => lambda {|n| @scheduling_group_id = n.get_string_value() },
+                    "schedulingGroupName" => lambda {|n| @scheduling_group_name = n.get_string_value() },
                     "sharedOpenShift" => lambda {|n| @shared_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
+                    "teamId" => lambda {|n| @team_id = n.get_string_value() },
+                    "teamName" => lambda {|n| @team_name = n.get_string_value() },
                 })
             end
             ## 
@@ -93,6 +105,21 @@ module MicrosoftGraphBeta
                 @scheduling_group_id = value
             end
             ## 
+            ## Gets the schedulingGroupName property value. The schedulingGroupName property
+            ## @return a string
+            ## 
+            def scheduling_group_name
+                return @scheduling_group_name
+            end
+            ## 
+            ## Sets the schedulingGroupName property value. The schedulingGroupName property
+            ## @param value Value to set for the schedulingGroupName property.
+            ## @return a void
+            ## 
+            def scheduling_group_name=(value)
+                @scheduling_group_name = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -119,6 +146,36 @@ module MicrosoftGraphBeta
             ## 
             def shared_open_shift=(value)
                 @shared_open_shift = value
+            end
+            ## 
+            ## Gets the teamId property value. The teamId property
+            ## @return a string
+            ## 
+            def team_id
+                return @team_id
+            end
+            ## 
+            ## Sets the teamId property value. The teamId property
+            ## @param value Value to set for the teamId property.
+            ## @return a void
+            ## 
+            def team_id=(value)
+                @team_id = value
+            end
+            ## 
+            ## Gets the teamName property value. The teamName property
+            ## @return a string
+            ## 
+            def team_name
+                return @team_name
+            end
+            ## 
+            ## Sets the teamName property value. The teamName property
+            ## @param value Value to set for the teamName property.
+            ## @return a void
+            ## 
+            def team_name=(value)
+                @team_name = value
             end
         end
     end

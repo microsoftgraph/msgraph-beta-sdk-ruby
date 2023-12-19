@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::AttendeeType) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::AttendeeBaseType) },
                 })
             end
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the type property value. The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-            ## @return a attendee_type
+            ## @return a attendee_base_type
             ## 
             def type
                 return @type

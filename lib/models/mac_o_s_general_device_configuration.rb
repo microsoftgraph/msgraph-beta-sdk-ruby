@@ -524,7 +524,7 @@ module MicrosoftGraphBeta
                     "softwareUpdatesEnforcedDelayInDays" => lambda {|n| @software_updates_enforced_delay_in_days = n.get_number_value() },
                     "spotlightBlockInternetResults" => lambda {|n| @spotlight_block_internet_results = n.get_boolean_value() },
                     "touchIdTimeoutInHours" => lambda {|n| @touch_id_timeout_in_hours = n.get_number_value() },
-                    "updateDelayPolicy" => lambda {|n| @update_delay_policy = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateDelayPolicy) },
+                    "updateDelayPolicy" => lambda {|n| @update_delay_policy = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSGeneralDeviceConfigurationUpdateDelayPolicy) },
                     "wallpaperModificationBlocked" => lambda {|n| @wallpaper_modification_blocked = n.get_boolean_value() },
                 })
             end
@@ -1214,7 +1214,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the updateDelayPolicy property value. Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
-            ## @return a mac_o_s_software_update_delay_policy
+            ## @return a mac_o_s_general_device_configuration_update_delay_policy
             ## 
             def update_delay_policy
                 return @update_delay_policy

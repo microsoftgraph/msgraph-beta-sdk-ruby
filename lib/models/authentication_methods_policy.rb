@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The date and time of the last update to the policy.
             @last_modified_date_time
             ## 
-            # The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+            # The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
             @policy_migration_state
             ## 
             # The version of the policy in use.
@@ -108,7 +108,7 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "policyMigrationState" => lambda {|n| @policy_migration_state = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodsPolicyMigrationState) },
+                    "policyMigrationState" => lambda {|n| @policy_migration_state = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodsPolicyPolicyMigrationState) },
                     "policyVersion" => lambda {|n| @policy_version = n.get_string_value() },
                     "reconfirmationInDays" => lambda {|n| @reconfirmation_in_days = n.get_number_value() },
                     "registrationEnforcement" => lambda {|n| @registration_enforcement = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RegistrationEnforcement.create_from_discriminator_value(pn) }) },
@@ -132,14 +132,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
-            ## @return a authentication_methods_policy_migration_state
+            ## Gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
+            ## @return a authentication_methods_policy_policy_migration_state
             ## 
             def policy_migration_state
                 return @policy_migration_state
             end
             ## 
-            ## Sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+            ## Sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
             ## @param value Value to set for the policyMigrationState property.
             ## @return a void
             ## 

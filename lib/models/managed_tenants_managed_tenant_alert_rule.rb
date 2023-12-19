@@ -189,9 +189,9 @@ module MicrosoftGraphBeta
                     "lastActionByUserId" => lambda {|n| @last_action_by_user_id = n.get_string_value() },
                     "lastActionDateTime" => lambda {|n| @last_action_date_time = n.get_date_time_value() },
                     "lastRunDateTime" => lambda {|n| @last_run_date_time = n.get_date_time_value() },
-                    "notificationFinalDestinations" => lambda {|n| @notification_final_destinations = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsNotificationDestination) },
+                    "notificationFinalDestinations" => lambda {|n| @notification_final_destinations = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertRuleNotificationFinalDestinations) },
                     "ruleDefinition" => lambda {|n| @rule_definition = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertRuleDefinition.create_from_discriminator_value(pn) }) },
-                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsAlertSeverity) },
+                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertRuleSeverity) },
                     "targets" => lambda {|n| @targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsNotificationTarget.create_from_discriminator_value(pn) }) },
                     "tenantIds" => lambda {|n| @tenant_ids = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsTenantInfo.create_from_discriminator_value(pn) }) },
                 })
@@ -243,7 +243,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the notificationFinalDestinations property value. The notificationFinalDestinations property
-            ## @return a managed_tenants_notification_destination
+            ## @return a managed_tenants_managed_tenant_alert_rule_notification_final_destinations
             ## 
             def notification_final_destinations
                 return @notification_final_destinations
@@ -297,7 +297,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the severity property value. The severity property
-            ## @return a managed_tenants_alert_severity
+            ## @return a managed_tenants_managed_tenant_alert_rule_severity
             ## 
             def severity
                 return @severity

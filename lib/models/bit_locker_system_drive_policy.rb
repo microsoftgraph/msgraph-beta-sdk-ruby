@@ -51,15 +51,15 @@ module MicrosoftGraphBeta
             # Possible values of the ConfigurationUsage list.
             @startup_authentication_tpm_usage
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the encryptionMethod property value. Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-            ## @return a bit_locker_encryption_method
+            ## @return a bit_locker_system_drive_policy_encryption_method
             ## 
             def encryption_method
                 return @encryption_method
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraphBeta::Models::BitLockerEncryptionMethod) },
+                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraphBeta::Models::BitLockerSystemDrivePolicyEncryptionMethod) },
                     "minimumPinLength" => lambda {|n| @minimum_pin_length = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "prebootRecoveryEnableMessageAndUrl" => lambda {|n| @preboot_recovery_enable_message_and_url = n.get_boolean_value() },

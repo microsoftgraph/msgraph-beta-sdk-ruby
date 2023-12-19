@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the displayLinkType property value. Specifies how an application should display the link to the associated plannerExternalTaskSource. The possible values are: none, default.
-            ## @return a planner_external_task_source_display_type
+            ## @return a planner_external_task_source_display_link_type
             ## 
             def display_link_type
                 return @display_link_type
@@ -141,7 +141,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "contextScenarioId" => lambda {|n| @context_scenario_id = n.get_string_value() },
-                    "displayLinkType" => lambda {|n| @display_link_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerExternalTaskSourceDisplayType) },
+                    "displayLinkType" => lambda {|n| @display_link_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerExternalTaskSourceDisplayLinkType) },
                     "displayNameSegments" => lambda {|n| @display_name_segments = n.get_collection_of_primitive_values(String) },
                     "externalContextId" => lambda {|n| @external_context_id = n.get_string_value() },
                     "externalObjectId" => lambda {|n| @external_object_id = n.get_string_value() },

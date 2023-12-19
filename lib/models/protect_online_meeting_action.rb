@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             @lobby_bypass_settings
             ## 
             ## Gets the allowedForwarders property value. The allowedForwarders property
-            ## @return a online_meeting_forwarders
+            ## @return a protect_online_meeting_action_allowed_forwarders
             ## 
             def allowed_forwarders
                 return @allowed_forwarders
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the allowedPresenters property value. The allowedPresenters property
-            ## @return a online_meeting_presenters
+            ## @return a protect_online_meeting_action_allowed_presenters
             ## 
             def allowed_presenters
                 return @allowed_presenters
@@ -74,8 +74,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedForwarders" => lambda {|n| @allowed_forwarders = n.get_enum_value(MicrosoftGraphBeta::Models::OnlineMeetingForwarders) },
-                    "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraphBeta::Models::OnlineMeetingPresenters) },
+                    "allowedForwarders" => lambda {|n| @allowed_forwarders = n.get_enum_value(MicrosoftGraphBeta::Models::ProtectOnlineMeetingActionAllowedForwarders) },
+                    "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraphBeta::Models::ProtectOnlineMeetingActionAllowedPresenters) },
                     "isCopyToClipboardEnabled" => lambda {|n| @is_copy_to_clipboard_enabled = n.get_boolean_value() },
                     "isLobbyEnabled" => lambda {|n| @is_lobby_enabled = n.get_boolean_value() },
                     "lobbyBypassSettings" => lambda {|n| @lobby_bypass_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::LobbyBypassSettings.create_from_discriminator_value(pn) }) },

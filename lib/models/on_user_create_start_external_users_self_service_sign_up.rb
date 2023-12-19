@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "userTypeToCreate" => lambda {|n| @user_type_to_create = n.get_enum_value(MicrosoftGraphBeta::Models::UserType) },
+                    "userTypeToCreate" => lambda {|n| @user_type_to_create = n.get_enum_value(MicrosoftGraphBeta::Models::OnUserCreateStartExternalUsersSelfServiceSignUpUserTypeToCreate) },
                 })
             end
             ## 
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userTypeToCreate property value. The type of user object to create. The possible values are: member, guest, unknownFutureValue.
-            ## @return a user_type
+            ## @return a on_user_create_start_external_users_self_service_sign_up_user_type_to_create
             ## 
             def user_type_to_create
                 return @user_type_to_create

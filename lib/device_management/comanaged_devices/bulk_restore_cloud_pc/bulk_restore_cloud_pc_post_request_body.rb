@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph_beta'
-require_relative '../../../models/restore_time_range'
 require_relative '../../device_management'
 require_relative '../comanaged_devices'
 require_relative './bulk_restore_cloud_pc'
@@ -25,15 +24,15 @@ module MicrosoftGraphBeta
                     # The timeRange property
                     @time_range
                     ## 
-                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                     ## @return a i_dictionary
                     ## 
                     def additional_data
                         return @additional_data
                     end
                     ## 
-                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the additionalData property.
+                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## @param value Value to set for the AdditionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -63,7 +62,7 @@ module MicrosoftGraphBeta
                         return {
                             "managedDeviceIds" => lambda {|n| @managed_device_ids = n.get_collection_of_primitive_values(String) },
                             "restorePointDateTime" => lambda {|n| @restore_point_date_time = n.get_date_time_value() },
-                            "timeRange" => lambda {|n| @time_range = n.get_enum_value(MicrosoftGraphBeta::Models::RestoreTimeRange) },
+                            "timeRange" => lambda {|n| @time_range = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::ComanagedDevices::BulkRestoreCloudPc::BulkRestoreCloudPcPostRequestBodyTimeRange) },
                         }
                     end
                     ## 
@@ -110,7 +109,7 @@ module MicrosoftGraphBeta
                     end
                     ## 
                     ## Gets the timeRange property value. The timeRange property
-                    ## @return a restore_time_range
+                    ## @return a bulk_restore_cloud_pc_post_request_body_time_range
                     ## 
                     def time_range
                         return @time_range

@@ -37,15 +37,15 @@ module MicrosoftGraphBeta
             # The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
             @severity
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the alertRuleTemplate property value. The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-            ## @return a device_management_alert_rule_template
+            ## @return a device_management_portal_notification_alert_rule_template
             ## 
             def alert_rule_template
                 return @alert_rule_template
@@ -152,11 +152,11 @@ module MicrosoftGraphBeta
                     "alertRecordId" => lambda {|n| @alert_record_id = n.get_string_value() },
                     "alertRuleId" => lambda {|n| @alert_rule_id = n.get_string_value() },
                     "alertRuleName" => lambda {|n| @alert_rule_name = n.get_string_value() },
-                    "alertRuleTemplate" => lambda {|n| @alert_rule_template = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRuleTemplate) },
+                    "alertRuleTemplate" => lambda {|n| @alert_rule_template = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementPortalNotificationAlertRuleTemplate) },
                     "id" => lambda {|n| @id = n.get_string_value() },
                     "isPortalNotificationSent" => lambda {|n| @is_portal_notification_sent = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementRuleSeverityType) },
+                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementPortalNotificationSeverity) },
                 }
             end
             ## 
@@ -224,7 +224,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the severity property value. The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-            ## @return a device_management_rule_severity_type
+            ## @return a device_management_portal_notification_severity
             ## 
             def severity
                 return @severity

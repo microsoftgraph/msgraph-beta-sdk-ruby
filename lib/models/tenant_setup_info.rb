@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
                     "defaultRolesSettings" => lambda {|n| @default_roles_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegedRoleSettings.create_from_discriminator_value(pn) }) },
                     "firstTimeSetup" => lambda {|n| @first_time_setup = n.get_boolean_value() },
                     "relevantRolesSettings" => lambda {|n| @relevant_roles_settings = n.get_collection_of_primitive_values(String) },
-                    "setupStatus" => lambda {|n| @setup_status = n.get_enum_value(MicrosoftGraphBeta::Models::SetupStatus) },
+                    "setupStatus" => lambda {|n| @setup_status = n.get_enum_value(MicrosoftGraphBeta::Models::TenantSetupInfoSetupStatus) },
                     "skipSetup" => lambda {|n| @skip_setup = n.get_boolean_value() },
                     "userRolesActions" => lambda {|n| @user_roles_actions = n.get_string_value() },
                 })
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the setupStatus property value. The setupStatus property
-            ## @return a setup_status
+            ## @return a tenant_setup_info_setup_status
             ## 
             def setup_status
                 return @setup_status

@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class CloudPC < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            # The Microsoft Entra device ID of the Cloud PC.
             @aad_device_id
             ## 
             # The connectionSettings property
@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The display name of the Cloud PC.
             @display_name
             ## 
-            # The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            # The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @grace_period_end_date_time
             ## 
             # Name of the OS image that's on the Cloud PC.
@@ -65,6 +65,9 @@ module MicrosoftGraphBeta
             # The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
             @provisioning_type
             ## 
+            # The scopeIds property
+            @scope_ids
+            ## 
             # The service plan ID of the Cloud PC.
             @service_plan_id
             ## 
@@ -86,14 +89,14 @@ module MicrosoftGraphBeta
             # The user principal name (UPN) of the user assigned to the Cloud PC.
             @user_principal_name
             ## 
-            ## Gets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            ## Gets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
             ## @return a string
             ## 
             def aad_device_id
                 return @aad_device_id
             end
             ## 
-            ## Sets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            ## Sets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
             ## @param value Value to set for the aadDeviceId property.
             ## @return a void
             ## 
@@ -148,7 +151,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
-            ## @return a cloud_pc_disk_encryption_state
+            ## @return a cloud_p_c_disk_encryption_state
             ## 
             def disk_encryption_state
                 return @disk_encryption_state
@@ -185,7 +188,7 @@ module MicrosoftGraphBeta
                     "aadDeviceId" => lambda {|n| @aad_device_id = n.get_string_value() },
                     "connectionSettings" => lambda {|n| @connection_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcConnectionSettings.create_from_discriminator_value(pn) }) },
                     "connectivityResult" => lambda {|n| @connectivity_result = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcConnectivityResult.create_from_discriminator_value(pn) }) },
-                    "diskEncryptionState" => lambda {|n| @disk_encryption_state = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDiskEncryptionState) },
+                    "diskEncryptionState" => lambda {|n| @disk_encryption_state = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCDiskEncryptionState) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "gracePeriodEndDateTime" => lambda {|n| @grace_period_end_date_time = n.get_date_time_value() },
                     "imageDisplayName" => lambda {|n| @image_display_name = n.get_string_value() },
@@ -195,30 +198,31 @@ module MicrosoftGraphBeta
                     "managedDeviceId" => lambda {|n| @managed_device_id = n.get_string_value() },
                     "managedDeviceName" => lambda {|n| @managed_device_name = n.get_string_value() },
                     "onPremisesConnectionName" => lambda {|n| @on_premises_connection_name = n.get_string_value() },
-                    "osVersion" => lambda {|n| @os_version = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOperatingSystem) },
+                    "osVersion" => lambda {|n| @os_version = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCOsVersion) },
                     "partnerAgentInstallResults" => lambda {|n| @partner_agent_install_results = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcPartnerAgentInstallResult.create_from_discriminator_value(pn) }) },
-                    "powerState" => lambda {|n| @power_state = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPowerState) },
+                    "powerState" => lambda {|n| @power_state = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCPowerState) },
                     "provisioningPolicyId" => lambda {|n| @provisioning_policy_id = n.get_string_value() },
                     "provisioningPolicyName" => lambda {|n| @provisioning_policy_name = n.get_string_value() },
-                    "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningType) },
+                    "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCProvisioningType) },
+                    "scopeIds" => lambda {|n| @scope_ids = n.get_collection_of_primitive_values(String) },
                     "servicePlanId" => lambda {|n| @service_plan_id = n.get_string_value() },
                     "servicePlanName" => lambda {|n| @service_plan_name = n.get_string_value() },
-                    "servicePlanType" => lambda {|n| @service_plan_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcServicePlanType) },
+                    "servicePlanType" => lambda {|n| @service_plan_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCServicePlanType) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcStatus) },
                     "statusDetails" => lambda {|n| @status_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcStatusDetails.create_from_discriminator_value(pn) }) },
-                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcUserAccountType) },
+                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCUserAccountType) },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def grace_period_end_date_time
                 return @grace_period_end_date_time
             end
             ## 
-            ## Sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the gracePeriodEndDateTime property.
             ## @return a void
             ## 
@@ -332,7 +336,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
-            ## @return a cloud_pc_operating_system
+            ## @return a cloud_p_c_os_version
             ## 
             def os_version
                 return @os_version
@@ -362,7 +366,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
-            ## @return a cloud_pc_power_state
+            ## @return a cloud_p_c_power_state
             ## 
             def power_state
                 return @power_state
@@ -407,7 +411,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
-            ## @return a cloud_pc_provisioning_type
+            ## @return a cloud_p_c_provisioning_type
             ## 
             def provisioning_type
                 return @provisioning_type
@@ -419,6 +423,21 @@ module MicrosoftGraphBeta
             ## 
             def provisioning_type=(value)
                 @provisioning_type = value
+            end
+            ## 
+            ## Gets the scopeIds property value. The scopeIds property
+            ## @return a string
+            ## 
+            def scope_ids
+                return @scope_ids
+            end
+            ## 
+            ## Sets the scopeIds property value. The scopeIds property
+            ## @param value Value to set for the scopeIds property.
+            ## @return a void
+            ## 
+            def scope_ids=(value)
+                @scope_ids = value
             end
             ## 
             ## Serializes information the current object
@@ -447,6 +466,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("provisioningPolicyId", @provisioning_policy_id)
                 writer.write_string_value("provisioningPolicyName", @provisioning_policy_name)
                 writer.write_enum_value("provisioningType", @provisioning_type)
+                writer.write_collection_of_primitive_values("scopeIds", @scope_ids)
                 writer.write_string_value("servicePlanId", @service_plan_id)
                 writer.write_string_value("servicePlanName", @service_plan_name)
                 writer.write_enum_value("servicePlanType", @service_plan_type)
@@ -487,7 +507,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the servicePlanType property value. The service plan type of the Cloud PC.
-            ## @return a cloud_pc_service_plan_type
+            ## @return a cloud_p_c_service_plan_type
             ## 
             def service_plan_type
                 return @service_plan_type
@@ -532,7 +552,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
-            ## @return a cloud_pc_user_account_type
+            ## @return a cloud_p_c_user_account_type
             ## 
             def user_account_type
                 return @user_account_type

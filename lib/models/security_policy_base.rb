@@ -124,7 +124,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityPolicyStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityPolicyBaseStatus) },
                 })
             end
             ## 
@@ -175,7 +175,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a security_policy_status
+            ## @return a security_policy_base_status
             ## 
             def status
                 return @status

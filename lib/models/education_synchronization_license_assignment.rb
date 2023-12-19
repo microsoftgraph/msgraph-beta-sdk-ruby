@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # Represents the SKU identifiers of the licenses to assign.
             @sku_ids
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
-            ## @return a education_user_role
+            ## @return a education_synchronization_license_assignment_applies_to
             ## 
             def applies_to
                 return @applies_to
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "appliesTo" => lambda {|n| @applies_to = n.get_enum_value(MicrosoftGraphBeta::Models::EducationUserRole) },
+                    "appliesTo" => lambda {|n| @applies_to = n.get_enum_value(MicrosoftGraphBeta::Models::EducationSynchronizationLicenseAssignmentAppliesTo) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "skuIds" => lambda {|n| @sku_ids = n.get_collection_of_primitive_values(String) },
                 }

@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             @is_required
             ## 
             ## Gets the answerInputType property value. Answer input type of the custom registration question.
-            ## @return a answer_input_type
+            ## @return a meeting_registration_question_answer_input_type
             ## 
             def answer_input_type
                 return @answer_input_type
@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraphBeta::Models::AnswerInputType) },
+                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingRegistrationQuestionAnswerInputType) },
                     "answerOptions" => lambda {|n| @answer_options = n.get_collection_of_primitive_values(String) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isRequired" => lambda {|n| @is_required = n.get_boolean_value() },

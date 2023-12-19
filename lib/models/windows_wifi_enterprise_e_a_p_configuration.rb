@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
             @user_based_virtual_lan
             ## 
             ## Gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.
-            ## @return a wi_fi_authentication_method
+            ## @return a windows_wifi_enterprise_e_a_p_configuration_authentication_method
             ## 
             def authentication_method
                 return @authentication_method
@@ -136,7 +136,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.
-            ## @return a wifi_authentication_type
+            ## @return a windows_wifi_enterprise_e_a_p_configuration_authentication_type
             ## 
             def authentication_type
                 return @authentication_type
@@ -262,10 +262,10 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiAuthenticationMethod) },
+                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiEnterpriseEAPConfigurationAuthenticationMethod) },
                     "authenticationPeriodInSeconds" => lambda {|n| @authentication_period_in_seconds = n.get_number_value() },
                     "authenticationRetryDelayPeriodInSeconds" => lambda {|n| @authentication_retry_delay_period_in_seconds = n.get_number_value() },
-                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::WifiAuthenticationType) },
+                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiEnterpriseEAPConfigurationAuthenticationType) },
                     "cacheCredentials" => lambda {|n| @cache_credentials = n.get_boolean_value() },
                     "disableUserPromptForServerValidation" => lambda {|n| @disable_user_prompt_for_server_validation = n.get_boolean_value() },
                     "eapType" => lambda {|n| @eap_type = n.get_enum_value(MicrosoftGraphBeta::Models::EapType) },
@@ -273,14 +273,14 @@ module MicrosoftGraphBeta
                     "enablePairwiseMasterKeyCaching" => lambda {|n| @enable_pairwise_master_key_caching = n.get_boolean_value() },
                     "enablePreAuthentication" => lambda {|n| @enable_pre_authentication = n.get_boolean_value() },
                     "identityCertificateForClientAuthentication" => lambda {|n| @identity_certificate_for_client_authentication = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsCertificateProfileBase.create_from_discriminator_value(pn) }) },
-                    "innerAuthenticationProtocolForEAPTTLS" => lambda {|n| @inner_authentication_protocol_for_e_a_p_t_t_l_s = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForEapTtlsType) },
+                    "innerAuthenticationProtocolForEAPTTLS" => lambda {|n| @inner_authentication_protocol_for_e_a_p_t_t_l_s = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiEnterpriseEAPConfigurationInnerAuthenticationProtocolForEAPTTLS) },
                     "maximumAuthenticationFailures" => lambda {|n| @maximum_authentication_failures = n.get_number_value() },
                     "maximumAuthenticationTimeoutInSeconds" => lambda {|n| @maximum_authentication_timeout_in_seconds = n.get_number_value() },
                     "maximumEAPOLStartMessages" => lambda {|n| @maximum_e_a_p_o_l_start_messages = n.get_number_value() },
                     "maximumNumberOfPairwiseMasterKeysInCache" => lambda {|n| @maximum_number_of_pairwise_master_keys_in_cache = n.get_number_value() },
                     "maximumPairwiseMasterKeyCacheTimeInMinutes" => lambda {|n| @maximum_pairwise_master_key_cache_time_in_minutes = n.get_number_value() },
                     "maximumPreAuthenticationAttempts" => lambda {|n| @maximum_pre_authentication_attempts = n.get_number_value() },
-                    "networkSingleSignOn" => lambda {|n| @network_single_sign_on = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkSingleSignOnType) },
+                    "networkSingleSignOn" => lambda {|n| @network_single_sign_on = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWifiEnterpriseEAPConfigurationNetworkSingleSignOn) },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
                     "performServerValidation" => lambda {|n| @perform_server_validation = n.get_boolean_value() },
                     "promptForAdditionalAuthenticationCredentials" => lambda {|n| @prompt_for_additional_authentication_credentials = n.get_boolean_value() },
@@ -308,7 +308,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-            ## @return a non_eap_authentication_method_for_eap_ttls_type
+            ## @return a windows_wifi_enterprise_e_a_p_configuration_inner_authentication_protocol_for_e_a_p_t_t_l_s
             ## 
             def inner_authentication_protocol_for_e_a_p_t_t_l_s
                 return @inner_authentication_protocol_for_e_a_p_t_t_l_s
@@ -413,7 +413,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the networkSingleSignOn property value. Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.
-            ## @return a network_single_sign_on_type
+            ## @return a windows_wifi_enterprise_e_a_p_configuration_network_single_sign_on
             ## 
             def network_single_sign_on
                 return @network_single_sign_on

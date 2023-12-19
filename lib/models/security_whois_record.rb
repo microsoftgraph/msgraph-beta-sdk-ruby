@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityWhoisRecord < MicrosoftGraphBeta::Models::SecurityWhoisBaseRecord
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The history property
+            # The collection of historical records associated to this WHOIS object.
             @history
             ## 
             ## Instantiates a new securityWhoisRecord and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the history property value. The history property
+            ## Gets the history property value. The collection of historical records associated to this WHOIS object.
             ## @return a security_whois_history_record
             ## 
             def history
                 return @history
             end
             ## 
-            ## Sets the history property value. The history property
+            ## Sets the history property value. The collection of historical records associated to this WHOIS object.
             ## @param value Value to set for the history property.
             ## @return a void
             ## 

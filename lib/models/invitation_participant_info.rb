@@ -31,15 +31,15 @@ module MicrosoftGraphBeta
             # Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
             @replaces_call_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
-            ## @return a endpoint_type
+            ## @return a invitation_participant_info_endpoint_type
             ## 
             def endpoint_type
                 return @endpoint_type
@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraphBeta::Models::EndpointType) },
+                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraphBeta::Models::InvitationParticipantInfoEndpointType) },
                     "hidden" => lambda {|n| @hidden = n.get_boolean_value() },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

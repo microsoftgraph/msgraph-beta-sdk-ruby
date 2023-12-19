@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
                     "lastRestoredDateTime" => lambda {|n| @last_restored_date_time = n.get_date_time_value() },
-                    "snapshotType" => lambda {|n| @snapshot_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSnapshotType) },
+                    "snapshotType" => lambda {|n| @snapshot_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSnapshotSnapshotType) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSnapshotStatus) },
                 })
             end
@@ -132,7 +132,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
-            ## @return a cloud_pc_snapshot_type
+            ## @return a cloud_pc_snapshot_snapshot_type
             ## 
             def snapshot_type
                 return @snapshot_type

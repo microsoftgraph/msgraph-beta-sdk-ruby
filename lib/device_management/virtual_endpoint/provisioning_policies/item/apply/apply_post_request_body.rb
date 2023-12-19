@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph_beta'
-require_relative '../../../../../models/cloud_pc_policy_setting_type'
 require_relative '../../../../device_management'
 require_relative '../../../virtual_endpoint'
 require_relative '../../provisioning_policies'
@@ -22,15 +21,15 @@ module MicrosoftGraphBeta
                             # The policySettings property
                             @policy_settings
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -58,12 +57,12 @@ module MicrosoftGraphBeta
                             ## 
                             def get_field_deserializers()
                                 return {
-                                    "policySettings" => lambda {|n| @policy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
+                                    "policySettings" => lambda {|n| @policy_settings = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::ProvisioningPolicies::Item::Apply::ApplyPostRequestBodyPolicySettings) },
                                 }
                             end
                             ## 
                             ## Gets the policySettings property value. The policySettings property
-                            ## @return a cloud_pc_policy_setting_type
+                            ## @return a apply_post_request_body_policy_settings
                             ## 
                             def policy_settings
                                 return @policy_settings

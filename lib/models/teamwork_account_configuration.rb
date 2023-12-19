@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
             @supported_client
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "onPremisesCalendarSyncConfiguration" => lambda {|n| @on_premises_calendar_sync_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamworkOnPremisesCalendarSyncConfiguration.create_from_discriminator_value(pn) }) },
-                    "supportedClient" => lambda {|n| @supported_client = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkSupportedClient) },
+                    "supportedClient" => lambda {|n| @supported_client = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkAccountConfigurationSupportedClient) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the supportedClient property value. The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
-            ## @return a teamwork_supported_client
+            ## @return a teamwork_account_configuration_supported_client
             ## 
             def supported_client
                 return @supported_client

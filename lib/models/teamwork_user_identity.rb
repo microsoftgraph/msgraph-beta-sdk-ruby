@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "userIdentityType" => lambda {|n| @user_identity_type = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkUserIdentityType) },
+                    "userIdentityType" => lambda {|n| @user_identity_type = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkUserIdentityUserIdentityType) },
                 })
             end
             ## 
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.
-            ## @return a teamwork_user_identity_type
+            ## @return a teamwork_user_identity_user_identity_type
             ## 
             def user_identity_type
                 return @user_identity_type

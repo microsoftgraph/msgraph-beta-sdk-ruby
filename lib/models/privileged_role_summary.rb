@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                     "elevatedCount" => lambda {|n| @elevated_count = n.get_number_value() },
                     "managedCount" => lambda {|n| @managed_count = n.get_number_value() },
                     "mfaEnabled" => lambda {|n| @mfa_enabled = n.get_boolean_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::RoleSummaryStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedRoleSummaryStatus) },
                     "usersCount" => lambda {|n| @users_count = n.get_number_value() },
                 })
             end
@@ -111,7 +111,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a role_summary_status
+            ## @return a privileged_role_summary_status
             ## 
             def status
                 return @status

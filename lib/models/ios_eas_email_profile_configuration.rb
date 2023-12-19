@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
-            ## @return a eas_authentication_method
+            ## @return a ios_eas_email_profile_configuration_authentication_method
             ## 
             def authentication_method
                 return @authentication_method
@@ -213,7 +213,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
-            ## @return a eas_services
+            ## @return a ios_eas_email_profile_configuration_eas_services
             ## 
             def eas_services
                 return @eas_services
@@ -258,7 +258,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
-            ## @return a email_certificate_type
+            ## @return a ios_eas_email_profile_configuration_encryption_certificate_type
             ## 
             def encryption_certificate_type
                 return @encryption_certificate_type
@@ -278,22 +278,22 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "accountName" => lambda {|n| @account_name = n.get_string_value() },
-                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::EasAuthenticationMethod) },
+                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::IosEasEmailProfileConfigurationAuthenticationMethod) },
                     "blockMovingMessagesToOtherEmailAccounts" => lambda {|n| @block_moving_messages_to_other_email_accounts = n.get_boolean_value() },
                     "blockSendingEmailFromThirdPartyApps" => lambda {|n| @block_sending_email_from_third_party_apps = n.get_boolean_value() },
                     "blockSyncingRecentlyUsedEmailAddresses" => lambda {|n| @block_syncing_recently_used_email_addresses = n.get_boolean_value() },
                     "derivedCredentialSettings" => lambda {|n| @derived_credential_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialSettings.create_from_discriminator_value(pn) }) },
                     "durationOfEmailToSync" => lambda {|n| @duration_of_email_to_sync = n.get_enum_value(MicrosoftGraphBeta::Models::EmailSyncDuration) },
-                    "easServices" => lambda {|n| @eas_services = n.get_enum_value(MicrosoftGraphBeta::Models::EasServices) },
+                    "easServices" => lambda {|n| @eas_services = n.get_enum_value(MicrosoftGraphBeta::Models::IosEasEmailProfileConfigurationEasServices) },
                     "easServicesUserOverrideEnabled" => lambda {|n| @eas_services_user_override_enabled = n.get_boolean_value() },
                     "emailAddressSource" => lambda {|n| @email_address_source = n.get_enum_value(MicrosoftGraphBeta::Models::UserEmailSource) },
-                    "encryptionCertificateType" => lambda {|n| @encryption_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::EmailCertificateType) },
+                    "encryptionCertificateType" => lambda {|n| @encryption_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::IosEasEmailProfileConfigurationEncryptionCertificateType) },
                     "hostName" => lambda {|n| @host_name = n.get_string_value() },
                     "identityCertificate" => lambda {|n| @identity_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IosCertificateProfileBase.create_from_discriminator_value(pn) }) },
                     "perAppVPNProfileId" => lambda {|n| @per_app_v_p_n_profile_id = n.get_string_value() },
                     "requireSmime" => lambda {|n| @require_smime = n.get_boolean_value() },
                     "requireSsl" => lambda {|n| @require_ssl = n.get_boolean_value() },
-                    "signingCertificateType" => lambda {|n| @signing_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::EmailCertificateType) },
+                    "signingCertificateType" => lambda {|n| @signing_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::IosEasEmailProfileConfigurationSigningCertificateType) },
                     "smimeEnablePerMessageSwitch" => lambda {|n| @smime_enable_per_message_switch = n.get_boolean_value() },
                     "smimeEncryptByDefaultEnabled" => lambda {|n| @smime_encrypt_by_default_enabled = n.get_boolean_value() },
                     "smimeEncryptByDefaultUserOverrideEnabled" => lambda {|n| @smime_encrypt_by_default_user_override_enabled = n.get_boolean_value() },
@@ -419,7 +419,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
-            ## @return a email_certificate_type
+            ## @return a ios_eas_email_profile_configuration_signing_certificate_type
             ## 
             def signing_certificate_type
                 return @signing_certificate_type

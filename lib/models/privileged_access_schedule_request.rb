@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             @ticket_info
             ## 
             ## Gets the action property value. Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.
-            ## @return a schedule_request_actions
+            ## @return a privileged_access_schedule_request_action
             ## 
             def action
                 return @action
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::ScheduleRequestActions) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessScheduleRequestAction) },
                     "isValidationOnly" => lambda {|n| @is_validation_only = n.get_boolean_value() },
                     "justification" => lambda {|n| @justification = n.get_string_value() },
                     "scheduleInfo" => lambda {|n| @schedule_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RequestSchedule.create_from_discriminator_value(pn) }) },

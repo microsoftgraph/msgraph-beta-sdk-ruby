@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # The number of items in the group mailbox.
             @exchange_mailbox_total_item_count
             ## 
-            # The number of email that the group mailbox received.
+            # The number of emails that the group mailbox received.
             @exchange_received_email_count
             ## 
             # The group external member count.
@@ -117,14 +117,14 @@ module MicrosoftGraphBeta
                 @exchange_mailbox_total_item_count = value
             end
             ## 
-            ## Gets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
+            ## Gets the exchangeReceivedEmailCount property value. The number of emails that the group mailbox received.
             ## @return a int64
             ## 
             def exchange_received_email_count
                 return @exchange_received_email_count
             end
             ## 
-            ## Sets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
+            ## Sets the exchangeReceivedEmailCount property value. The number of emails that the group mailbox received.
             ## @param value Value to set for the exchangeReceivedEmailCount property.
             ## @return a void
             ## 

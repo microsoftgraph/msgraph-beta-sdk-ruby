@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "pageLayout" => lambda {|n| @page_layout = n.get_enum_value(MicrosoftGraphBeta::Models::PageLayoutType) },
+                    "pageLayout" => lambda {|n| @page_layout = n.get_enum_value(MicrosoftGraphBeta::Models::BaseSitePagePageLayout) },
                     "publishingState" => lambda {|n| @publishing_state = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PublicationFacet.create_from_discriminator_value(pn) }) },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
-            ## @return a page_layout_type
+            ## @return a base_site_page_page_layout
             ## 
             def page_layout
                 return @page_layout

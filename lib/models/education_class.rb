@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             # All users in the class. Nullable.
             @members
             ## 
-            # The modules property
+            # All modules in the class. Nullable.
             @modules
             ## 
             # All schools that this class is associated with. Nullable.
@@ -252,7 +252,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
-            ## @return a education_external_source
+            ## @return a education_class_external_source
             ## 
             def external_source
                 return @external_source
@@ -297,7 +297,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
                     "externalName" => lambda {|n| @external_name = n.get_string_value() },
-                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraphBeta::Models::EducationExternalSource) },
+                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraphBeta::Models::EducationClassExternalSource) },
                     "externalSourceDetail" => lambda {|n| @external_source_detail = n.get_string_value() },
                     "grade" => lambda {|n| @grade = n.get_string_value() },
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }) },
@@ -370,14 +370,14 @@ module MicrosoftGraphBeta
                 @members = value
             end
             ## 
-            ## Gets the modules property value. The modules property
+            ## Gets the modules property value. All modules in the class. Nullable.
             ## @return a education_module
             ## 
             def modules
                 return @modules
             end
             ## 
-            ## Sets the modules property value. The modules property
+            ## Sets the modules property value. All modules in the class. Nullable.
             ## @param value Value to set for the modules property.
             ## @return a void
             ## 

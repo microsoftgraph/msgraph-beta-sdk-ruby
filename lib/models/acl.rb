@@ -40,15 +40,15 @@ module MicrosoftGraphBeta
                 @access_type = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "accessType" => lambda {|n| @access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AccessType) },
-                    "identitySource" => lambda {|n| @identity_source = n.get_enum_value(MicrosoftGraphBeta::Models::IdentitySourceType) },
+                    "identitySource" => lambda {|n| @identity_source = n.get_enum_value(MicrosoftGraphBeta::Models::AclIdentitySource) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::AclType) },
                     "value" => lambda {|n| @value = n.get_string_value() },
@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the identitySource property value. The identitySource property
-            ## @return a identity_source_type
+            ## @return a acl_identity_source
             ## 
             def identity_source
                 return @identity_source

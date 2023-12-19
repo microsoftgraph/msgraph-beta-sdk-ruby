@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             @registrants
             ## 
             ## Gets the allowedRegistrant property value. Specifies who can register for the meeting.
-            ## @return a meeting_audience
+            ## @return a meeting_registration_base_allowed_registrant
             ## 
             def allowed_registrant
                 return @allowed_registrant
@@ -59,7 +59,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedRegistrant" => lambda {|n| @allowed_registrant = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingAudience) },
+                    "allowedRegistrant" => lambda {|n| @allowed_registrant = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingRegistrationBaseAllowedRegistrant) },
                     "registrants" => lambda {|n| @registrants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MeetingRegistrantBase.create_from_discriminator_value(pn) }) },
                 })
             end

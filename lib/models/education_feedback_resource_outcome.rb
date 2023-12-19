@@ -51,12 +51,12 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "feedbackResource" => lambda {|n| @feedback_resource = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationResource.create_from_discriminator_value(pn) }) },
-                    "resourceStatus" => lambda {|n| @resource_status = n.get_enum_value(MicrosoftGraphBeta::Models::EducationFeedbackResourceOutcomeStatus) },
+                    "resourceStatus" => lambda {|n| @resource_status = n.get_enum_value(MicrosoftGraphBeta::Models::EducationFeedbackResourceOutcomeResourceStatus) },
                 })
             end
             ## 
             ## Gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
-            ## @return a education_feedback_resource_outcome_status
+            ## @return a education_feedback_resource_outcome_resource_status
             ## 
             def resource_status
                 return @resource_status

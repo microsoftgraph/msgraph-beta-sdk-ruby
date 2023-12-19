@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             @value
             ## 
             ## Gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-            ## @return a sign_in_frequency_authentication_type
+            ## @return a sign_in_frequency_session_control_authentication_type
             ## 
             def authentication_type
                 return @authentication_type
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
-            ## @return a sign_in_frequency_interval
+            ## @return a sign_in_frequency_session_control_frequency_interval
             ## 
             def frequency_interval
                 return @frequency_interval
@@ -71,9 +71,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInFrequencyAuthenticationType) },
-                    "frequencyInterval" => lambda {|n| @frequency_interval = n.get_enum_value(MicrosoftGraphBeta::Models::SignInFrequencyInterval) },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::SigninFrequencyType) },
+                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInFrequencySessionControlAuthenticationType) },
+                    "frequencyInterval" => lambda {|n| @frequency_interval = n.get_enum_value(MicrosoftGraphBeta::Models::SignInFrequencySessionControlFrequencyInterval) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::SignInFrequencySessionControlType) },
                     "value" => lambda {|n| @value = n.get_number_value() },
                 })
             end
@@ -92,7 +92,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
-            ## @return a signin_frequency_type
+            ## @return a sign_in_frequency_session_control_type
             ## 
             def type
                 return @type

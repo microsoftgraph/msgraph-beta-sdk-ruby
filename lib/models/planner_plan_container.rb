@@ -16,21 +16,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project and driveItem. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem. Optional.
+            # The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, and user. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem, and user. Optional.
             @type
             ## 
             # The full canonical URL of the container. Optional.
             @url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                 return {
                     "containerId" => lambda {|n| @container_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerContainerType) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPlanContainerType) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 }
             end
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project and driveItem. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem. Optional.
-            ## @return a planner_container_type
+            ## Gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, and user. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem, and user. Optional.
+            ## @return a planner_plan_container_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project and driveItem. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem. Optional.
+            ## Sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, and user. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem, and user. Optional.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

@@ -7,26 +7,26 @@ module MicrosoftGraphBeta
         class MultiTenantOrganizationJoinRequestRecord < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The addedByTenantId property
+            # Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
             @added_by_tenant_id
             ## 
-            # The memberState property
+            # State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
             @member_state
             ## 
-            # The role property
+            # Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
             @role
             ## 
-            # The transitionDetails property
+            # Details of the processing status for a tenant joining a multi-tenant organization. Read-only.
             @transition_details
             ## 
-            ## Gets the addedByTenantId property value. The addedByTenantId property
+            ## Gets the addedByTenantId property value. Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
             ## @return a string
             ## 
             def added_by_tenant_id
                 return @added_by_tenant_id
             end
             ## 
-            ## Sets the addedByTenantId property value. The addedByTenantId property
+            ## Sets the addedByTenantId property value. Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
             ## @param value Value to set for the addedByTenantId property.
             ## @return a void
             ## 
@@ -56,20 +56,20 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "addedByTenantId" => lambda {|n| @added_by_tenant_id = n.get_string_value() },
-                    "memberState" => lambda {|n| @member_state = n.get_enum_value(MicrosoftGraphBeta::Models::MultiTenantOrganizationMemberState) },
-                    "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::MultiTenantOrganizationMemberRole) },
+                    "memberState" => lambda {|n| @member_state = n.get_enum_value(MicrosoftGraphBeta::Models::MultiTenantOrganizationJoinRequestRecordMemberState) },
+                    "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::MultiTenantOrganizationJoinRequestRecordRole) },
                     "transitionDetails" => lambda {|n| @transition_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MultiTenantOrganizationJoinRequestTransitionDetails.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the memberState property value. The memberState property
-            ## @return a multi_tenant_organization_member_state
+            ## Gets the memberState property value. State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
+            ## @return a multi_tenant_organization_join_request_record_member_state
             ## 
             def member_state
                 return @member_state
             end
             ## 
-            ## Sets the memberState property value. The memberState property
+            ## Sets the memberState property value. State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
             ## @param value Value to set for the memberState property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 @member_state = value
             end
             ## 
-            ## Gets the role property value. The role property
-            ## @return a multi_tenant_organization_member_role
+            ## Gets the role property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
+            ## @return a multi_tenant_organization_join_request_record_role
             ## 
             def role
                 return @role
             end
             ## 
-            ## Sets the role property value. The role property
+            ## Sets the role property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
             ## @param value Value to set for the role property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("transitionDetails", @transition_details)
             end
             ## 
-            ## Gets the transitionDetails property value. The transitionDetails property
+            ## Gets the transitionDetails property value. Details of the processing status for a tenant joining a multi-tenant organization. Read-only.
             ## @return a multi_tenant_organization_join_request_transition_details
             ## 
             def transition_details
                 return @transition_details
             end
             ## 
-            ## Sets the transitionDetails property value. The transitionDetails property
+            ## Sets the transitionDetails property value. Details of the processing status for a tenant joining a multi-tenant organization. Read-only.
             ## @param value Value to set for the transitionDetails property.
             ## @return a void
             ## 

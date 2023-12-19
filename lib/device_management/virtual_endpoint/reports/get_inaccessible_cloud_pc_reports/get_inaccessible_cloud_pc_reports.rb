@@ -1,1 +1,2 @@
+require_relative 'get_inaccessible_cloud_pc_reports_post_request_body_report_name'
 require_relative 'get_inaccessible_cloud_pc_reports_post_request_body'

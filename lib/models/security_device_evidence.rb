@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityDeviceEvidence < MicrosoftGraphBeta::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            # A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             @azure_ad_device_id
             ## 
             # State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The date and time when the device was first seen.
             @first_seen_date_time
             ## 
-            # The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            # The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             @health_status
             ## 
             # Ip interfaces of the device during the time of the alert.
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
             @mde_device_id
             ## 
-            # The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            # The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             @onboarding_status
             ## 
             # The build version for the operating system the device is running.
@@ -41,10 +41,10 @@ module MicrosoftGraphBeta
             # The operating system platform the device is running.
             @os_platform
             ## 
-            # The ID of the role-based access control (RBAC) device group.
+            # The ID of the role-based access control device group.
             @rbac_group_id
             ## 
-            # The name of the RBAC device group.
+            # The name of the role-based access control device group.
             @rbac_group_name
             ## 
             # Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
             # Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
             @vm_metadata
             ## 
-            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @return a string
             ## 
             def azure_ad_device_id
                 return @azure_ad_device_id
             end
             ## 
-            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @param value Value to set for the azureAdDeviceId property.
             ## @return a void
             ## 
@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
-            ## @return a security_defender_av_status
+            ## @return a security_device_evidence_defender_av_status
             ## 
             def defender_av_status
                 return @defender_av_status
@@ -139,32 +139,32 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "azureAdDeviceId" => lambda {|n| @azure_ad_device_id = n.get_string_value() },
-                    "defenderAvStatus" => lambda {|n| @defender_av_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDefenderAvStatus) },
+                    "defenderAvStatus" => lambda {|n| @defender_av_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceEvidenceDefenderAvStatus) },
                     "deviceDnsName" => lambda {|n| @device_dns_name = n.get_string_value() },
                     "firstSeenDateTime" => lambda {|n| @first_seen_date_time = n.get_date_time_value() },
-                    "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceHealthStatus) },
+                    "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceEvidenceHealthStatus) },
                     "ipInterfaces" => lambda {|n| @ip_interfaces = n.get_collection_of_primitive_values(String) },
                     "loggedOnUsers" => lambda {|n| @logged_on_users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityLoggedOnUser.create_from_discriminator_value(pn) }) },
                     "mdeDeviceId" => lambda {|n| @mde_device_id = n.get_string_value() },
-                    "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityOnboardingStatus) },
+                    "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceEvidenceOnboardingStatus) },
                     "osBuild" => lambda {|n| @os_build = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "osPlatform" => lambda {|n| @os_platform = n.get_string_value() },
                     "rbacGroupId" => lambda {|n| @rbac_group_id = n.get_number_value() },
                     "rbacGroupName" => lambda {|n| @rbac_group_name = n.get_string_value() },
-                    "riskScore" => lambda {|n| @risk_score = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceRiskScore) },
+                    "riskScore" => lambda {|n| @risk_score = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceEvidenceRiskScore) },
                     "version" => lambda {|n| @version = n.get_string_value() },
                     "vmMetadata" => lambda {|n| @vm_metadata = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityVmMetadata.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
-            ## @return a security_device_health_status
+            ## Gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## @return a security_device_evidence_health_status
             ## 
             def health_status
                 return @health_status
             end
             ## 
-            ## Sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## Sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             ## @param value Value to set for the healthStatus property.
             ## @return a void
             ## 
@@ -217,14 +217,14 @@ module MicrosoftGraphBeta
                 @mde_device_id = value
             end
             ## 
-            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
-            ## @return a security_onboarding_status
+            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## @return a security_device_evidence_onboarding_status
             ## 
             def onboarding_status
                 return @onboarding_status
             end
             ## 
-            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             ## @param value Value to set for the onboardingStatus property.
             ## @return a void
             ## 
@@ -262,14 +262,14 @@ module MicrosoftGraphBeta
                 @os_platform = value
             end
             ## 
-            ## Gets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+            ## Gets the rbacGroupId property value. The ID of the role-based access control device group.
             ## @return a integer
             ## 
             def rbac_group_id
                 return @rbac_group_id
             end
             ## 
-            ## Sets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+            ## Sets the rbacGroupId property value. The ID of the role-based access control device group.
             ## @param value Value to set for the rbacGroupId property.
             ## @return a void
             ## 
@@ -277,14 +277,14 @@ module MicrosoftGraphBeta
                 @rbac_group_id = value
             end
             ## 
-            ## Gets the rbacGroupName property value. The name of the RBAC device group.
+            ## Gets the rbacGroupName property value. The name of the role-based access control device group.
             ## @return a string
             ## 
             def rbac_group_name
                 return @rbac_group_name
             end
             ## 
-            ## Sets the rbacGroupName property value. The name of the RBAC device group.
+            ## Sets the rbacGroupName property value. The name of the role-based access control device group.
             ## @param value Value to set for the rbacGroupName property.
             ## @return a void
             ## 
@@ -293,7 +293,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
-            ## @return a security_device_risk_score
+            ## @return a security_device_evidence_risk_score
             ## 
             def risk_score
                 return @risk_score

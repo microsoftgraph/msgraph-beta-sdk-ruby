@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
-require_relative '../../../../models/call_disposition'
 require_relative '../../../../models/invitation_participant_info'
 require_relative '../../../app'
 require_relative '../../calls'
@@ -36,15 +35,15 @@ module MicrosoftGraphBeta
                         # The timeout property
                         @timeout
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -90,7 +89,7 @@ module MicrosoftGraphBeta
                                 "callbackUri" => lambda {|n| @callback_uri = n.get_string_value() },
                                 "maskCallee" => lambda {|n| @mask_callee = n.get_boolean_value() },
                                 "maskCaller" => lambda {|n| @mask_caller = n.get_boolean_value() },
-                                "targetDisposition" => lambda {|n| @target_disposition = n.get_enum_value(MicrosoftGraphBeta::Models::CallDisposition) },
+                                "targetDisposition" => lambda {|n| @target_disposition = n.get_enum_value(MicrosoftGraphBeta::App::Calls::Item::Redirect::RedirectPostRequestBodyTargetDisposition) },
                                 "targets" => lambda {|n| @targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::InvitationParticipantInfo.create_from_discriminator_value(pn) }) },
                                 "timeout" => lambda {|n| @timeout = n.get_number_value() },
                             }
@@ -142,7 +141,7 @@ module MicrosoftGraphBeta
                         end
                         ## 
                         ## Gets the targetDisposition property value. The targetDisposition property
-                        ## @return a call_disposition
+                        ## @return a redirect_post_request_body_target_disposition
                         ## 
                         def target_disposition
                             return @target_disposition

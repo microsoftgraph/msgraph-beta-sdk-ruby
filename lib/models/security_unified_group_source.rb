@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }) },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityUnifiedGroupSourceIncludedSources) },
                 })
             end
             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-            ## @return a security_source_type
+            ## @return a security_unified_group_source_included_sources
             ## 
             def included_sources
                 return @included_sources

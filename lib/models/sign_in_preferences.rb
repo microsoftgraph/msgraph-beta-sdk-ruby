@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
             @user_preferred_method_for_secondary_authentication
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 return {
                     "isSystemPreferredAuthenticationMethodEnabled" => lambda {|n| @is_system_preferred_authentication_method_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "userPreferredMethodForSecondaryAuthentication" => lambda {|n| @user_preferred_method_for_secondary_authentication = n.get_enum_value(MicrosoftGraphBeta::Models::UserDefaultAuthenticationMethodType) },
+                    "userPreferredMethodForSecondaryAuthentication" => lambda {|n| @user_preferred_method_for_secondary_authentication = n.get_enum_value(MicrosoftGraphBeta::Models::SignInPreferencesUserPreferredMethodForSecondaryAuthentication) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userPreferredMethodForSecondaryAuthentication property value. The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
-            ## @return a user_default_authentication_method_type
+            ## @return a sign_in_preferences_user_preferred_method_for_secondary_authentication
             ## 
             def user_preferred_method_for_secondary_authentication
                 return @user_preferred_method_for_secondary_authentication

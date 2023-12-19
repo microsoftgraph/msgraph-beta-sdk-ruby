@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
             @user_new_message_restriction
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,8 +94,8 @@ module MicrosoftGraphBeta
                     "allowNewMessageFromBots" => lambda {|n| @allow_new_message_from_bots = n.get_boolean_value() },
                     "allowNewMessageFromConnectors" => lambda {|n| @allow_new_message_from_connectors = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "replyRestriction" => lambda {|n| @reply_restriction = n.get_enum_value(MicrosoftGraphBeta::Models::ReplyRestriction) },
-                    "userNewMessageRestriction" => lambda {|n| @user_new_message_restriction = n.get_enum_value(MicrosoftGraphBeta::Models::UserNewMessageRestriction) },
+                    "replyRestriction" => lambda {|n| @reply_restriction = n.get_enum_value(MicrosoftGraphBeta::Models::ChannelModerationSettingsReplyRestriction) },
+                    "userNewMessageRestriction" => lambda {|n| @user_new_message_restriction = n.get_enum_value(MicrosoftGraphBeta::Models::ChannelModerationSettingsUserNewMessageRestriction) },
                 }
             end
             ## 
@@ -115,7 +115,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
-            ## @return a reply_restriction
+            ## @return a channel_moderation_settings_reply_restriction
             ## 
             def reply_restriction
                 return @reply_restriction
@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
-            ## @return a user_new_message_restriction
+            ## @return a channel_moderation_settings_user_new_message_restriction
             ## 
             def user_new_message_restriction
                 return @user_new_message_restriction

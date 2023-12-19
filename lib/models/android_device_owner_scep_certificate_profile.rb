@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             @subject_name_format_string
             ## 
             ## Gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-            ## @return a android_device_owner_certificate_access_type
+            ## @return a android_device_owner_scep_certificate_profile_certificate_access_type
             ## 
             def certificate_access_type
                 return @certificate_access_type
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-            ## @return a certificate_store
+            ## @return a android_device_owner_scep_certificate_profile_certificate_store
             ## 
             def certificate_store
                 return @certificate_store
@@ -109,12 +109,12 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCertificateAccessType) },
-                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
+                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerScepCertificateProfileCertificateAccessType) },
+                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerScepCertificateProfileCertificateStore) },
                     "customSubjectAlternativeNames" => lambda {|n| @custom_subject_alternative_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSubjectAlternativeName.create_from_discriminator_value(pn) }) },
-                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::HashAlgorithms) },
+                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_values(MicrosoftGraphBeta::Models::HashAlgorithms) },
                     "keySize" => lambda {|n| @key_size = n.get_enum_value(MicrosoftGraphBeta::Models::KeySize) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "scepServerUrls" => lambda {|n| @scep_server_urls = n.get_collection_of_primitive_values(String) },
                     "silentCertificateAccessDetails" => lambda {|n| @silent_certificate_access_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerSilentCertificateAccess.create_from_discriminator_value(pn) }) },

@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # The target threshold value.
             @target
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the aggregation property value. Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
-            ## @return a device_management_aggregation_type
+            ## @return a device_management_rule_threshold_aggregation
             ## 
             def aggregation
                 return @aggregation
@@ -73,9 +73,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "aggregation" => lambda {|n| @aggregation = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAggregationType) },
+                    "aggregation" => lambda {|n| @aggregation = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementRuleThresholdAggregation) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementOperatorType) },
+                    "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementRuleThresholdOperator) },
                     "target" => lambda {|n| @target = n.get_number_value() },
                 }
             end
@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the operator property value. Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
-            ## @return a device_management_operator_type
+            ## @return a device_management_rule_threshold_operator
             ## 
             def operator
                 return @operator

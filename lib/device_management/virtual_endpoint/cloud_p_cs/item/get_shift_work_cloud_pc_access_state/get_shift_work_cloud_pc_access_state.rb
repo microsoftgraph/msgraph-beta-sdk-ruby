@@ -1,0 +1,1 @@
+require_relative 'get_shift_work_cloud_pc_access_state_get_response'

@@ -7,16 +7,16 @@ module MicrosoftGraphBeta
         class DeviceRegistrationPolicy < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
+            # Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
             @azure_a_d_join
             ## 
-            # Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
+            # Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
             @azure_a_d_registration
             ## 
-            # The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+            # The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
             @description
             ## 
-            # The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
+            # The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
             @display_name
             ## 
             # Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
@@ -25,17 +25,17 @@ module MicrosoftGraphBeta
             # The multiFactorAuthConfiguration property
             @multi_factor_auth_configuration
             ## 
-            # Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
+            # Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
             @user_device_quota
             ## 
-            ## Gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
-            ## @return a azure_ad_join_policy
+            ## Gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
+            ## @return a azure_a_d_join_policy
             ## 
             def azure_a_d_join
                 return @azure_a_d_join
             end
             ## 
-            ## Sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
+            ## Sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
             ## @param value Value to set for the azureADJoin property.
             ## @return a void
             ## 
@@ -43,14 +43,14 @@ module MicrosoftGraphBeta
                 @azure_a_d_join = value
             end
             ## 
-            ## Gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
+            ## Gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
             ## @return a azure_a_d_registration_policy
             ## 
             def azure_a_d_registration
                 return @azure_a_d_registration
             end
             ## 
-            ## Sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
+            ## Sets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
             ## @param value Value to set for the azureADRegistration property.
             ## @return a void
             ## 
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 return DeviceRegistrationPolicy.new
             end
             ## 
-            ## Gets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+            ## Gets the description property value. The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+            ## Sets the description property value. The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
+            ## Gets the displayName property value. The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
+            ## Sets the displayName property value. The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -109,7 +109,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "azureADJoin" => lambda {|n| @azure_a_d_join = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AzureAdJoinPolicy.create_from_discriminator_value(pn) }) },
+                    "azureADJoin" => lambda {|n| @azure_a_d_join = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AzureADJoinPolicy.create_from_discriminator_value(pn) }) },
                     "azureADRegistration" => lambda {|n| @azure_a_d_registration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AzureADRegistrationPolicy.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 writer.write_number_value("userDeviceQuota", @user_device_quota)
             end
             ## 
-            ## Gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
+            ## Gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
             ## @return a integer
             ## 
             def user_device_quota
                 return @user_device_quota
             end
             ## 
-            ## Sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
+            ## Sets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
             ## @param value Value to set for the userDeviceQuota property.
             ## @return a void
             ## 

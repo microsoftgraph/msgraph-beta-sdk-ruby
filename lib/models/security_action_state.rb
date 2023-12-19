@@ -26,15 +26,15 @@ module MicrosoftGraphBeta
             # The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
             @user
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
                 return {
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::OperationStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityActionStateStatus) },
                     "updatedDateTime" => lambda {|n| @updated_date_time = n.get_date_time_value() },
                     "user" => lambda {|n| @user = n.get_string_value() },
                 }
@@ -115,7 +115,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
-            ## @return a operation_status
+            ## @return a security_action_state_status
             ## 
             def status
                 return @status

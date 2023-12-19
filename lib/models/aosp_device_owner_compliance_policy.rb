@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                     "passwordMinimumLength" => lambda {|n| @password_minimum_length = n.get_number_value() },
                     "passwordMinutesOfInactivityBeforeLock" => lambda {|n| @password_minutes_of_inactivity_before_lock = n.get_number_value() },
                     "passwordRequired" => lambda {|n| @password_required = n.get_boolean_value() },
-                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AospDeviceOwnerCompliancePolicyPasswordRequiredType) },
                     "securityBlockJailbrokenDevices" => lambda {|n| @security_block_jailbroken_devices = n.get_boolean_value() },
                     "storageRequireEncryption" => lambda {|n| @storage_require_encryption = n.get_boolean_value() },
                 })
@@ -161,7 +161,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-            ## @return a android_device_owner_required_password_type
+            ## @return a aosp_device_owner_compliance_policy_password_required_type
             ## 
             def password_required_type
                 return @password_required_type

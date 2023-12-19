@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
-            ## @return a external_connectors_content_experience_type
+            ## @return a external_connectors_external_connection_enabled_content_experiences
             ## 
             def enabled_content_experiences
                 return @enabled_content_experiences
@@ -168,7 +168,7 @@ module MicrosoftGraphBeta
                     "configuration" => lambda {|n| @configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsConfiguration.create_from_discriminator_value(pn) }) },
                     "connectorId" => lambda {|n| @connector_id = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "enabledContentExperiences" => lambda {|n| @enabled_content_experiences = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsContentExperienceType) },
+                    "enabledContentExperiences" => lambda {|n| @enabled_content_experiences = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsExternalConnectionEnabledContentExperiences) },
                     "groups" => lambda {|n| @groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsExternalGroup.create_from_discriminator_value(pn) }) },
                     "ingestedItemsCount" => lambda {|n| @ingested_items_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsExternalItem.create_from_discriminator_value(pn) }) },
@@ -177,7 +177,7 @@ module MicrosoftGraphBeta
                     "quota" => lambda {|n| @quota = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsConnectionQuota.create_from_discriminator_value(pn) }) },
                     "schema" => lambda {|n| @schema = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsSchema.create_from_discriminator_value(pn) }) },
                     "searchSettings" => lambda {|n| @search_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsSearchSettings.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsConnectionState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsExternalConnectionState) },
                 })
             end
             ## 
@@ -325,7 +325,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
-            ## @return a external_connectors_connection_state
+            ## @return a external_connectors_external_connection_state
             ## 
             def state
                 return @state

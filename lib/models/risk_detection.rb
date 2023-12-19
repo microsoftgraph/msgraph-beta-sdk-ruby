@@ -35,16 +35,19 @@ module MicrosoftGraphBeta
             # Location of the sign-in.
             @location
             ## 
+            # The mitreTechniqueId property
+            @mitre_technique_id
+            ## 
             # Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
             @request_id
             ## 
-            # Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
+            # Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
             @risk_detail
             ## 
             # The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
             @risk_event_type
             ## 
-            # Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
+            # Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
             @risk_level
             ## 
             # The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
@@ -69,7 +72,7 @@ module MicrosoftGraphBeta
             @user_principal_name
             ## 
             ## Gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
-            ## @return a activity_type
+            ## @return a risk_detection_activity
             ## 
             def activity
                 return @activity
@@ -160,7 +163,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-            ## @return a risk_detection_timing_type
+            ## @return a risk_detection_detection_timing_type
             ## 
             def detection_timing_type
                 return @detection_timing_type
@@ -179,23 +182,24 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraphBeta::Models::ActivityType) },
+                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionActivity) },
                     "activityDateTime" => lambda {|n| @activity_date_time = n.get_date_time_value() },
                     "additionalInfo" => lambda {|n| @additional_info = n.get_string_value() },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "detectedDateTime" => lambda {|n| @detected_date_time = n.get_date_time_value() },
-                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionTimingType) },
+                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionDetectionTimingType) },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInLocation.create_from_discriminator_value(pn) }) },
+                    "mitreTechniqueId" => lambda {|n| @mitre_technique_id = n.get_string_value() },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionRiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
-                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraphBeta::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraphBeta::Models::RiskState) },
-                    "riskType" => lambda {|n| @risk_type = n.get_enum_value(MicrosoftGraphBeta::Models::RiskEventType) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionRiskLevel) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionRiskState) },
+                    "riskType" => lambda {|n| @risk_type = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionRiskType) },
                     "source" => lambda {|n| @source = n.get_string_value() },
-                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraphBeta::Models::TokenIssuerType) },
+                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetectionTokenIssuerType) },
                     "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
                     "userId" => lambda {|n| @user_id = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
@@ -247,6 +251,21 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
+            ## Gets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @return a string
+            ## 
+            def mitre_technique_id
+                return @mitre_technique_id
+            end
+            ## 
+            ## Sets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @param value Value to set for the mitreTechniqueId property.
+            ## @return a void
+            ## 
+            def mitre_technique_id=(value)
+                @mitre_technique_id = value
+            end
+            ## 
             ## Gets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
             ## @return a string
             ## 
@@ -262,14 +281,14 @@ module MicrosoftGraphBeta
                 @request_id = value
             end
             ## 
-            ## Gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
-            ## @return a risk_detail
+            ## Gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
+            ## @return a risk_detection_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
             end
             ## 
-            ## Sets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
+            ## Sets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
             ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
@@ -292,14 +311,14 @@ module MicrosoftGraphBeta
                 @risk_event_type = value
             end
             ## 
-            ## Gets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
-            ## @return a risk_level
+            ## Gets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
+            ## @return a risk_detection_risk_level
             ## 
             def risk_level
                 return @risk_level
             end
             ## 
-            ## Sets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
+            ## Sets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
             ## @param value Value to set for the riskLevel property.
             ## @return a void
             ## 
@@ -308,7 +327,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the riskState property value. The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
-            ## @return a risk_state
+            ## @return a risk_detection_risk_state
             ## 
             def risk_state
                 return @risk_state
@@ -323,7 +342,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the riskType property value. The riskType property
-            ## @return a risk_event_type
+            ## @return a risk_detection_risk_type
             ## 
             def risk_type
                 return @risk_type
@@ -353,6 +372,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("ipAddress", @ip_address)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_object_value("location", @location)
+                writer.write_string_value("mitreTechniqueId", @mitre_technique_id)
                 writer.write_string_value("requestId", @request_id)
                 writer.write_enum_value("riskDetail", @risk_detail)
                 writer.write_string_value("riskEventType", @risk_event_type)
@@ -382,7 +402,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are AzureAD, ADFederationServices, and unknownFutureValue.
-            ## @return a token_issuer_type
+            ## @return a risk_detection_token_issuer_type
             ## 
             def token_issuer_type
                 return @token_issuer_type

@@ -1492,7 +1492,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
-            ## @return a defender_potentially_unwanted_app_action
+            ## @return a windows10_general_configuration_defender_potentially_unwanted_app_action
             ## 
             def defender_potentially_unwanted_app_action
                 return @defender_potentially_unwanted_app_action
@@ -1807,7 +1807,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-            ## @return a defender_submit_samples_consent_type
+            ## @return a windows10_general_configuration_defender_submit_samples_consent_type
             ## 
             def defender_submit_samples_consent_type
                 return @defender_submit_samples_consent_type
@@ -2902,7 +2902,7 @@ module MicrosoftGraphBeta
                     "defenderFileExtensionsToExclude" => lambda {|n| @defender_file_extensions_to_exclude = n.get_collection_of_primitive_values(String) },
                     "defenderFilesAndFoldersToExclude" => lambda {|n| @defender_files_and_folders_to_exclude = n.get_collection_of_primitive_values(String) },
                     "defenderMonitorFileActivity" => lambda {|n| @defender_monitor_file_activity = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderMonitorFileActivity) },
-                    "defenderPotentiallyUnwantedAppAction" => lambda {|n| @defender_potentially_unwanted_app_action = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderPotentiallyUnwantedAppAction) },
+                    "defenderPotentiallyUnwantedAppAction" => lambda {|n| @defender_potentially_unwanted_app_action = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10GeneralConfigurationDefenderPotentiallyUnwantedAppAction) },
                     "defenderPotentiallyUnwantedAppActionSetting" => lambda {|n| @defender_potentially_unwanted_app_action_setting = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderProcessesToExclude" => lambda {|n| @defender_processes_to_exclude = n.get_collection_of_primitive_values(String) },
                     "defenderPromptForSampleSubmission" => lambda {|n| @defender_prompt_for_sample_submission = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderPromptForSampleSubmission) },
@@ -2923,7 +2923,7 @@ module MicrosoftGraphBeta
                     "defenderScheduledQuickScanTime" => lambda {|n| @defender_scheduled_quick_scan_time = n.get_time_value() },
                     "defenderScheduledScanTime" => lambda {|n| @defender_scheduled_scan_time = n.get_time_value() },
                     "defenderSignatureUpdateIntervalInHours" => lambda {|n| @defender_signature_update_interval_in_hours = n.get_number_value() },
-                    "defenderSubmitSamplesConsentType" => lambda {|n| @defender_submit_samples_consent_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderSubmitSamplesConsentType) },
+                    "defenderSubmitSamplesConsentType" => lambda {|n| @defender_submit_samples_consent_type = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10GeneralConfigurationDefenderSubmitSamplesConsentType) },
                     "defenderSystemScanSchedule" => lambda {|n| @defender_system_scan_schedule = n.get_enum_value(MicrosoftGraphBeta::Models::WeeklySchedule) },
                     "developerUnlockSetting" => lambda {|n| @developer_unlock_setting = n.get_enum_value(MicrosoftGraphBeta::Models::StateManagementSetting) },
                     "deviceManagementBlockFactoryResetOnMobile" => lambda {|n| @device_management_block_factory_reset_on_mobile = n.get_boolean_value() },
@@ -3087,7 +3087,7 @@ module MicrosoftGraphBeta
                     "smartScreenBlockPromptOverrideForFiles" => lambda {|n| @smart_screen_block_prompt_override_for_files = n.get_boolean_value() },
                     "smartScreenEnableAppInstallControl" => lambda {|n| @smart_screen_enable_app_install_control = n.get_boolean_value() },
                     "startBlockUnpinningAppsFromTaskbar" => lambda {|n| @start_block_unpinning_apps_from_taskbar = n.get_boolean_value() },
-                    "startMenuAppListVisibility" => lambda {|n| @start_menu_app_list_visibility = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsStartMenuAppListVisibilityType) },
+                    "startMenuAppListVisibility" => lambda {|n| @start_menu_app_list_visibility = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsStartMenuAppListVisibilityType) },
                     "startMenuHideChangeAccountSettings" => lambda {|n| @start_menu_hide_change_account_settings = n.get_boolean_value() },
                     "startMenuHideFrequentlyUsedApps" => lambda {|n| @start_menu_hide_frequently_used_apps = n.get_boolean_value() },
                     "startMenuHideHibernate" => lambda {|n| @start_menu_hide_hibernate = n.get_boolean_value() },

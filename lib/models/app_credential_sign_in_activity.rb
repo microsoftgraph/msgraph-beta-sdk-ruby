@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class AppCredentialSignInActivity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            # The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             @app_id
             ## 
             # The ID of the credential application instance.
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
             # The signInActivity property
             @sign_in_activity
             ## 
-            ## Gets the appId property value. The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            ## Gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The globally unique appId (also called client ID on the Azure portal) of the credential application.
+            ## Sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -143,8 +143,8 @@ module MicrosoftGraphBeta
                     "credentialOrigin" => lambda {|n| @credential_origin = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationKeyOrigin) },
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
                     "keyId" => lambda {|n| @key_id = n.get_string_value() },
-                    "keyType" => lambda {|n| @key_type = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationKeyType) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationKeyUsage) },
+                    "keyType" => lambda {|n| @key_type = n.get_enum_value(MicrosoftGraphBeta::Models::AppCredentialSignInActivityKeyType) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::AppCredentialSignInActivityKeyUsage) },
                     "resourceId" => lambda {|n| @resource_id = n.get_string_value() },
                     "servicePrincipalObjectId" => lambda {|n| @service_principal_object_id = n.get_string_value() },
                     "signInActivity" => lambda {|n| @sign_in_activity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInActivity.create_from_discriminator_value(pn) }) },
@@ -167,7 +167,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the keyType property value. Specifies the key type. The possible values are: clientSecret, certificate, unknownFutureValue.
-            ## @return a application_key_type
+            ## @return a app_credential_sign_in_activity_key_type
             ## 
             def key_type
                 return @key_type
@@ -182,7 +182,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the keyUsage property value. Specifies what the key was used for. The possible values are: sign, verify, unknownFutureValue.
-            ## @return a application_key_usage
+            ## @return a app_credential_sign_in_activity_key_usage
             ## 
             def key_usage
                 return @key_usage

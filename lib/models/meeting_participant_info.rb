@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # User principal name of the participant.
             @upn
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
                 return {
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::OnlineMeetingRole) },
+                    "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingParticipantInfoRole) },
                     "upn" => lambda {|n| @upn = n.get_string_value() },
                 }
             end
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the role property value. Specifies the participant's role in the meeting.
-            ## @return a online_meeting_role
+            ## @return a meeting_participant_info_role
             ## 
             def role
                 return @role

@@ -171,7 +171,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
-            ## @return a vpn_dead_peer_detection_rate
+            ## @return a iosik_ev2_vpn_configuration_dead_peer_detection_rate
             ## 
             def dead_peer_detection_rate
                 return @dead_peer_detection_rate
@@ -300,7 +300,7 @@ module MicrosoftGraphBeta
                     "alwaysOnConfiguration" => lambda {|n| @always_on_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AppleVpnAlwaysOnConfiguration.create_from_discriminator_value(pn) }) },
                     "childSecurityAssociationParameters" => lambda {|n| @child_security_association_parameters = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IosVpnSecurityAssociationParameters.create_from_discriminator_value(pn) }) },
                     "clientAuthenticationType" => lambda {|n| @client_authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::VpnClientAuthenticationType) },
-                    "deadPeerDetectionRate" => lambda {|n| @dead_peer_detection_rate = n.get_enum_value(MicrosoftGraphBeta::Models::VpnDeadPeerDetectionRate) },
+                    "deadPeerDetectionRate" => lambda {|n| @dead_peer_detection_rate = n.get_enum_value(MicrosoftGraphBeta::Models::IosikEv2VpnConfigurationDeadPeerDetectionRate) },
                     "disableMobilityAndMultihoming" => lambda {|n| @disable_mobility_and_multihoming = n.get_boolean_value() },
                     "disableRedirect" => lambda {|n| @disable_redirect = n.get_boolean_value() },
                     "enableAlwaysOnConfiguration" => lambda {|n| @enable_always_on_configuration = n.get_boolean_value() },
@@ -314,7 +314,7 @@ module MicrosoftGraphBeta
                     "securityAssociationParameters" => lambda {|n| @security_association_parameters = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IosVpnSecurityAssociationParameters.create_from_discriminator_value(pn) }) },
                     "serverCertificateCommonName" => lambda {|n| @server_certificate_common_name = n.get_string_value() },
                     "serverCertificateIssuerCommonName" => lambda {|n| @server_certificate_issuer_common_name = n.get_string_value() },
-                    "serverCertificateType" => lambda {|n| @server_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::VpnServerCertificateType) },
+                    "serverCertificateType" => lambda {|n| @server_certificate_type = n.get_enum_value(MicrosoftGraphBeta::Models::IosikEv2VpnConfigurationServerCertificateType) },
                     "sharedSecret" => lambda {|n| @shared_secret = n.get_string_value() },
                     "tlsMaximumVersion" => lambda {|n| @tls_maximum_version = n.get_string_value() },
                     "tlsMinimumVersion" => lambda {|n| @tls_minimum_version = n.get_string_value() },
@@ -444,7 +444,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
-            ## @return a vpn_server_certificate_type
+            ## @return a iosik_ev2_vpn_configuration_server_certificate_type
             ## 
             def server_certificate_type
                 return @server_certificate_type

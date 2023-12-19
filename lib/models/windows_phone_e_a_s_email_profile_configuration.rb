@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
-            ## @return a user_email_source
+            ## @return a windows_phone_e_a_s_email_profile_configuration_email_address_source
             ## 
             def email_address_source
                 return @email_address_source
@@ -139,7 +139,7 @@ module MicrosoftGraphBeta
                     "accountName" => lambda {|n| @account_name = n.get_string_value() },
                     "applyOnlyToWindowsPhone81" => lambda {|n| @apply_only_to_windows_phone81 = n.get_boolean_value() },
                     "durationOfEmailToSync" => lambda {|n| @duration_of_email_to_sync = n.get_enum_value(MicrosoftGraphBeta::Models::EmailSyncDuration) },
-                    "emailAddressSource" => lambda {|n| @email_address_source = n.get_enum_value(MicrosoftGraphBeta::Models::UserEmailSource) },
+                    "emailAddressSource" => lambda {|n| @email_address_source = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsPhoneEASEmailProfileConfigurationEmailAddressSource) },
                     "emailSyncSchedule" => lambda {|n| @email_sync_schedule = n.get_enum_value(MicrosoftGraphBeta::Models::EmailSyncSchedule) },
                     "hostName" => lambda {|n| @host_name = n.get_string_value() },
                     "requireSsl" => lambda {|n| @require_ssl = n.get_boolean_value() },

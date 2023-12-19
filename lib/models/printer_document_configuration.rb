@@ -73,15 +73,15 @@ module MicrosoftGraphBeta
             # The scaling property
             @scaling
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the colorMode property value. The colorMode property
-            ## @return a print_color_mode
+            ## @return a printer_document_configuration_color_mode
             ## 
             def color_mode
                 return @color_mode
@@ -165,7 +165,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the duplexMode property value. The duplexMode property
-            ## @return a print_duplex_mode
+            ## @return a printer_document_configuration_duplex_mode
             ## 
             def duplex_mode
                 return @duplex_mode
@@ -180,7 +180,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the feedDirection property value. The feedDirection property
-            ## @return a printer_feed_direction
+            ## @return a printer_document_configuration_feed_direction
             ## 
             def feed_direction
                 return @feed_direction
@@ -195,7 +195,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the feedOrientation property value. The feedOrientation property
-            ## @return a printer_feed_orientation
+            ## @return a printer_document_configuration_feed_orientation
             ## 
             def feed_orientation
                 return @feed_orientation
@@ -210,7 +210,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the finishings property value. The finishings property
-            ## @return a print_finishing
+            ## @return a printer_document_configuration_finishings
             ## 
             def finishings
                 return @finishings
@@ -245,26 +245,26 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "collate" => lambda {|n| @collate = n.get_boolean_value() },
-                    "colorMode" => lambda {|n| @color_mode = n.get_enum_value(MicrosoftGraphBeta::Models::PrintColorMode) },
+                    "colorMode" => lambda {|n| @color_mode = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationColorMode) },
                     "copies" => lambda {|n| @copies = n.get_number_value() },
                     "dpi" => lambda {|n| @dpi = n.get_number_value() },
-                    "duplexMode" => lambda {|n| @duplex_mode = n.get_enum_value(MicrosoftGraphBeta::Models::PrintDuplexMode) },
-                    "feedDirection" => lambda {|n| @feed_direction = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterFeedDirection) },
-                    "feedOrientation" => lambda {|n| @feed_orientation = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterFeedOrientation) },
-                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintFinishing.create_from_discriminator_value(pn) }) },
+                    "duplexMode" => lambda {|n| @duplex_mode = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationDuplexMode) },
+                    "feedDirection" => lambda {|n| @feed_direction = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationFeedDirection) },
+                    "feedOrientation" => lambda {|n| @feed_orientation = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationFeedOrientation) },
+                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterDocumentConfigurationFinishings.create_from_discriminator_value(pn) }) },
                     "fitPdfToPage" => lambda {|n| @fit_pdf_to_page = n.get_boolean_value() },
                     "inputBin" => lambda {|n| @input_bin = n.get_string_value() },
                     "margin" => lambda {|n| @margin = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrintMargin.create_from_discriminator_value(pn) }) },
                     "mediaSize" => lambda {|n| @media_size = n.get_string_value() },
                     "mediaType" => lambda {|n| @media_type = n.get_string_value() },
-                    "multipageLayout" => lambda {|n| @multipage_layout = n.get_enum_value(MicrosoftGraphBeta::Models::PrintMultipageLayout) },
+                    "multipageLayout" => lambda {|n| @multipage_layout = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationMultipageLayout) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraphBeta::Models::PrintOrientation) },
+                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationOrientation) },
                     "outputBin" => lambda {|n| @output_bin = n.get_string_value() },
                     "pageRanges" => lambda {|n| @page_ranges = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IntegerRange.create_from_discriminator_value(pn) }) },
                     "pagesPerSheet" => lambda {|n| @pages_per_sheet = n.get_number_value() },
-                    "quality" => lambda {|n| @quality = n.get_enum_value(MicrosoftGraphBeta::Models::PrintQuality) },
-                    "scaling" => lambda {|n| @scaling = n.get_enum_value(MicrosoftGraphBeta::Models::PrintScaling) },
+                    "quality" => lambda {|n| @quality = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationQuality) },
+                    "scaling" => lambda {|n| @scaling = n.get_enum_value(MicrosoftGraphBeta::Models::PrinterDocumentConfigurationScaling) },
                 }
             end
             ## 
@@ -329,7 +329,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the multipageLayout property value. The multipageLayout property
-            ## @return a print_multipage_layout
+            ## @return a printer_document_configuration_multipage_layout
             ## 
             def multipage_layout
                 return @multipage_layout
@@ -359,7 +359,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the orientation property value. The orientation property
-            ## @return a print_orientation
+            ## @return a printer_document_configuration_orientation
             ## 
             def orientation
                 return @orientation
@@ -419,7 +419,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the quality property value. The quality property
-            ## @return a print_quality
+            ## @return a printer_document_configuration_quality
             ## 
             def quality
                 return @quality
@@ -434,7 +434,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the scaling property value. The scaling property
-            ## @return a print_scaling
+            ## @return a printer_document_configuration_scaling
             ## 
             def scaling
                 return @scaling

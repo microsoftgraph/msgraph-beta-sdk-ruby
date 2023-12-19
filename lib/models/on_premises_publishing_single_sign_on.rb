@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
             @single_sign_on_mode
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 return {
                     "kerberosSignOnSettings" => lambda {|n| @kerberos_sign_on_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::KerberosSignOnSettings.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "singleSignOnMode" => lambda {|n| @single_sign_on_mode = n.get_enum_value(MicrosoftGraphBeta::Models::SingleSignOnMode) },
+                    "singleSignOnMode" => lambda {|n| @single_sign_on_mode = n.get_enum_value(MicrosoftGraphBeta::Models::OnPremisesPublishingSingleSignOnSingleSignOnMode) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
-            ## @return a single_sign_on_mode
+            ## @return a on_premises_publishing_single_sign_on_single_sign_on_mode
             ## 
             def single_sign_on_mode
                 return @single_sign_on_mode

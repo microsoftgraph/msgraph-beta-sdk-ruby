@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "otherLabel" => lambda {|n| @other_label = n.get_string_value() },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::EmailType) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::TypedEmailAddressType) },
                 })
             end
             ## 
@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-            ## @return a email_type
+            ## @return a typed_email_address_type
             ## 
             def type
                 return @type

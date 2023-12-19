@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             @conditional_access_protection_level_id
             ## 
             ## Gets the accessType property value. The accessType property
-            ## @return a site_access_type
+            ## @return a protect_site_access_type
             ## 
             def access_type
                 return @access_type
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessType" => lambda {|n| @access_type = n.get_enum_value(MicrosoftGraphBeta::Models::SiteAccessType) },
+                    "accessType" => lambda {|n| @access_type = n.get_enum_value(MicrosoftGraphBeta::Models::ProtectSiteAccessType) },
                     "conditionalAccessProtectionLevelId" => lambda {|n| @conditional_access_protection_level_id = n.get_string_value() },
                 })
             end

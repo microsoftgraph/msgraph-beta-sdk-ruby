@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-            ## @return a certificate_store
+            ## @return a mac_o_s_scep_certificate_profile_certificate_store
             ## 
             def certificate_store
                 return @certificate_store
@@ -128,12 +128,12 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowAllAppsAccess" => lambda {|n| @allow_all_apps_access = n.get_boolean_value() },
-                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
+                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSScepCertificateProfileCertificateStore) },
                     "customSubjectAlternativeNames" => lambda {|n| @custom_subject_alternative_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSubjectAlternativeName.create_from_discriminator_value(pn) }) },
                     "extendedKeyUsages" => lambda {|n| @extended_key_usages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExtendedKeyUsage.create_from_discriminator_value(pn) }) },
-                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::HashAlgorithms) },
+                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSScepCertificateProfileHashAlgorithm) },
                     "keySize" => lambda {|n| @key_size = n.get_enum_value(MicrosoftGraphBeta::Models::KeySize) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "rootCertificate" => lambda {|n| @root_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSTrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "scepServerUrls" => lambda {|n| @scep_server_urls = n.get_collection_of_primitive_values(String) },
@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
-            ## @return a hash_algorithms
+            ## @return a mac_o_s_scep_certificate_profile_hash_algorithm
             ## 
             def hash_algorithm
                 return @hash_algorithm

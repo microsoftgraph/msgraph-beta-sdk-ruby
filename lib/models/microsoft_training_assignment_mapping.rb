@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class MicrosoftTrainingAssignmentMapping < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The assignedTo property
+            # A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             @assigned_to
             ## 
             # The training property
             @training
             ## 
-            ## Gets the assignedTo property value. The assignedTo property
-            ## @return a training_assigned_to
+            ## Gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
+            ## @return a microsoft_training_assignment_mapping_assigned_to
             ## 
             def assigned_to
                 return @assigned_to
             end
             ## 
-            ## Sets the assignedTo property value. The assignedTo property
+            ## Sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "assignedTo" => lambda {|n| @assigned_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TrainingAssignedTo.create_from_discriminator_value(pn) }) },
+                    "assignedTo" => lambda {|n| @assigned_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftTrainingAssignmentMappingAssignedTo.create_from_discriminator_value(pn) }) },
                     "training" => lambda {|n| @training = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Training.create_from_discriminator_value(pn) }) },
                 })
             end

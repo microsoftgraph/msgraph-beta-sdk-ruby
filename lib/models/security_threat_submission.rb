@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityThreatSubmission < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            # Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             @admin_review
             ## 
             # The category property
@@ -35,17 +35,17 @@ module MicrosoftGraphBeta
             # Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
             @status
             ## 
-            # Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            # Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             @tenant_id
             ## 
-            ## Gets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            ## Gets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             ## @return a security_submission_admin_review
             ## 
             def admin_review
                 return @admin_review
             end
             ## 
-            ## Sets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            ## Sets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             ## @param value Value to set for the adminReview property.
             ## @return a void
             ## 
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
-            ## @return a security_submission_client_source
+            ## @return a security_threat_submission_client_source
             ## 
             def client_source
                 return @client_source
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
-            ## @return a security_submission_content_type
+            ## @return a security_threat_submission_content_type
             ## 
             def content_type
                 return @content_type
@@ -171,13 +171,13 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "adminReview" => lambda {|n| @admin_review = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubmissionAdminReview.create_from_discriminator_value(pn) }) },
                     "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySubmissionCategory) },
-                    "clientSource" => lambda {|n| @client_source = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySubmissionClientSource) },
-                    "contentType" => lambda {|n| @content_type = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySubmissionContentType) },
+                    "clientSource" => lambda {|n| @client_source = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityThreatSubmissionClientSource) },
+                    "contentType" => lambda {|n| @content_type = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityThreatSubmissionContentType) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubmissionUserIdentity.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "result" => lambda {|n| @result = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubmissionResult.create_from_discriminator_value(pn) }) },
-                    "source" => lambda {|n| @source = n.get_enum_value(MicrosoftGraphBeta::Models::SecuritySubmissionSource) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityLongRunningOperationStatus) },
+                    "source" => lambda {|n| @source = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityThreatSubmissionSource) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityThreatSubmissionStatus) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                 })
             end
@@ -217,7 +217,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
-            ## @return a security_submission_source
+            ## @return a security_threat_submission_source
             ## 
             def source
                 return @source
@@ -232,7 +232,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
-            ## @return a security_long_running_operation_status
+            ## @return a security_threat_submission_status
             ## 
             def status
                 return @status
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            ## Gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            ## Sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

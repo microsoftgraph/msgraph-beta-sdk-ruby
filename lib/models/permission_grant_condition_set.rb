@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
             @client_application_publisher_ids
             ## 
-            # A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            # A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             @client_application_tenant_ids
             ## 
             # Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
@@ -79,14 +79,14 @@ module MicrosoftGraphBeta
                 @client_application_publisher_ids = value
             end
             ## 
-            ## Gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            ## Gets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             ## @return a string
             ## 
             def client_application_tenant_ids
                 return @client_application_tenant_ids
             end
             ## 
-            ## Sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            ## Sets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             ## @param value Value to set for the clientApplicationTenantIds property.
             ## @return a void
             ## 
@@ -136,7 +136,7 @@ module MicrosoftGraphBeta
                     "clientApplicationTenantIds" => lambda {|n| @client_application_tenant_ids = n.get_collection_of_primitive_values(String) },
                     "clientApplicationsFromVerifiedPublisherOnly" => lambda {|n| @client_applications_from_verified_publisher_only = n.get_boolean_value() },
                     "permissionClassification" => lambda {|n| @permission_classification = n.get_string_value() },
-                    "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraphBeta::Models::PermissionType) },
+                    "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraphBeta::Models::PermissionGrantConditionSetPermissionType) },
                     "permissions" => lambda {|n| @permissions = n.get_collection_of_primitive_values(String) },
                     "resourceApplication" => lambda {|n| @resource_application = n.get_string_value() },
                 })
@@ -158,7 +158,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-            ## @return a permission_type
+            ## @return a permission_grant_condition_set_permission_type
             ## 
             def permission_type
                 return @permission_type

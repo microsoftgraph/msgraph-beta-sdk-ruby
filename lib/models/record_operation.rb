@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             @recording_location
             ## 
             ## Gets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
-            ## @return a record_completion_reason
+            ## @return a record_operation_completion_reason
             ## 
             def completion_reason
                 return @completion_reason
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "completionReason" => lambda {|n| @completion_reason = n.get_enum_value(MicrosoftGraphBeta::Models::RecordCompletionReason) },
+                    "completionReason" => lambda {|n| @completion_reason = n.get_enum_value(MicrosoftGraphBeta::Models::RecordOperationCompletionReason) },
                     "recordingAccessToken" => lambda {|n| @recording_access_token = n.get_string_value() },
                     "recordingLocation" => lambda {|n| @recording_location = n.get_string_value() },
                 })

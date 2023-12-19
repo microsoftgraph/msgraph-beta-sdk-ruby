@@ -1,1 +1,3 @@
+require_relative 'reprovision_post_request_body_os_version'
+require_relative 'reprovision_post_request_body_user_account_type'
 require_relative 'reprovision_post_request_body'

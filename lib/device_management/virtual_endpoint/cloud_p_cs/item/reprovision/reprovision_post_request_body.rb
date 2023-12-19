@@ -1,7 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph_beta'
-require_relative '../../../../../models/cloud_pc_operating_system'
-require_relative '../../../../../models/cloud_pc_user_account_type'
 require_relative '../../../../device_management'
 require_relative '../../../virtual_endpoint'
 require_relative '../../cloud_p_cs'
@@ -26,15 +24,15 @@ module MicrosoftGraphBeta
                             # The userAccountType property
                             @user_account_type
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -62,13 +60,13 @@ module MicrosoftGraphBeta
                             ## 
                             def get_field_deserializers()
                                 return {
-                                    "osVersion" => lambda {|n| @os_version = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOperatingSystem) },
-                                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcUserAccountType) },
+                                    "osVersion" => lambda {|n| @os_version = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::CloudPCs::Item::Reprovision::ReprovisionPostRequestBodyOsVersion) },
+                                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::CloudPCs::Item::Reprovision::ReprovisionPostRequestBodyUserAccountType) },
                                 }
                             end
                             ## 
                             ## Gets the osVersion property value. The osVersion property
-                            ## @return a cloud_pc_operating_system
+                            ## @return a reprovision_post_request_body_os_version
                             ## 
                             def os_version
                                 return @os_version
@@ -94,7 +92,7 @@ module MicrosoftGraphBeta
                             end
                             ## 
                             ## Gets the userAccountType property value. The userAccountType property
-                            ## @return a cloud_pc_user_account_type
+                            ## @return a reprovision_post_request_body_user_account_type
                             ## 
                             def user_account_type
                                 return @user_account_type

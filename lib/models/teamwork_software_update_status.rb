@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
             @software_freshness
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                     "availableVersion" => lambda {|n| @available_version = n.get_string_value() },
                     "currentVersion" => lambda {|n| @current_version = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "softwareFreshness" => lambda {|n| @software_freshness = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkSoftwareFreshness) },
+                    "softwareFreshness" => lambda {|n| @software_freshness = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkSoftwareUpdateStatusSoftwareFreshness) },
                 }
             end
             ## 
@@ -124,7 +124,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
-            ## @return a teamwork_software_freshness
+            ## @return a teamwork_software_update_status_software_freshness
             ## 
             def software_freshness
                 return @software_freshness

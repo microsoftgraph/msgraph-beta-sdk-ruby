@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             # Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
-            # The moduleUrl property
+            # The URL of the module from which to access the assignment.
             @module_url
             ## 
             # Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
@@ -93,7 +93,7 @@ module MicrosoftGraphBeta
             @web_url
             ## 
             ## Gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-            ## @return a education_add_to_calendar_options
+            ## @return a education_assignment_add_to_calendar_action
             ## 
             def add_to_calendar_action
                 return @add_to_calendar_action
@@ -108,7 +108,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-            ## @return a education_added_student_action
+            ## @return a education_assignment_added_student_action
             ## 
             def added_student_action
                 return @added_student_action
@@ -338,8 +338,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraphBeta::Models::EducationAddToCalendarOptions) },
-                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraphBeta::Models::EducationAddedStudentAction) },
+                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraphBeta::Models::EducationAssignmentAddToCalendarAction) },
+                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraphBeta::Models::EducationAssignmentAddedStudentAction) },
                     "allowLateSubmissions" => lambda {|n| @allow_late_submissions = n.get_boolean_value() },
                     "allowStudentsToAddResourcesToSubmission" => lambda {|n| @allow_students_to_add_resources_to_submission = n.get_boolean_value() },
                     "assignDateTime" => lambda {|n| @assign_date_time = n.get_date_time_value() },
@@ -444,14 +444,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the moduleUrl property value. The moduleUrl property
+            ## Gets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @return a string
             ## 
             def module_url
                 return @module_url
             end
             ## 
-            ## Sets the moduleUrl property value. The moduleUrl property
+            ## Sets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @param value Value to set for the moduleUrl property.
             ## @return a void
             ## 

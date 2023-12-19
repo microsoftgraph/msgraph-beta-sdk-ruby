@@ -155,7 +155,7 @@ module MicrosoftGraphBeta
                     "factoryResetBlocked" => lambda {|n| @factory_reset_blocked = n.get_boolean_value() },
                     "passwordMinimumLength" => lambda {|n| @password_minimum_length = n.get_number_value() },
                     "passwordMinutesOfInactivityBeforeScreenTimeout" => lambda {|n| @password_minutes_of_inactivity_before_screen_timeout = n.get_number_value() },
-                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AospDeviceOwnerDeviceConfigurationPasswordRequiredType) },
                     "passwordSignInFailureCountBeforeFactoryReset" => lambda {|n| @password_sign_in_failure_count_before_factory_reset = n.get_number_value() },
                     "screenCaptureBlocked" => lambda {|n| @screen_capture_blocked = n.get_boolean_value() },
                     "securityAllowDebuggingFeatures" => lambda {|n| @security_allow_debugging_features = n.get_boolean_value() },
@@ -196,7 +196,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
-            ## @return a android_device_owner_required_password_type
+            ## @return a aosp_device_owner_device_configuration_password_required_type
             ## 
             def password_required_type
                 return @password_required_type

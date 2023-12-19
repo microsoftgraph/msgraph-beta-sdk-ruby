@@ -334,7 +334,7 @@ module MicrosoftGraphBeta
                     "term" => lambda {|n| @term = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TermColumn.create_from_discriminator_value(pn) }) },
                     "text" => lambda {|n| @text = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TextColumn.create_from_discriminator_value(pn) }) },
                     "thumbnail" => lambda {|n| @thumbnail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ThumbnailColumn.create_from_discriminator_value(pn) }) },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::ColumnTypes) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::ColumnDefinitionType) },
                     "validation" => lambda {|n| @validation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ColumnValidation.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -651,7 +651,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the type property value. For site columns, the type of column. Read-only.
-            ## @return a column_types
+            ## @return a column_definition_type
             ## 
             def type
                 return @type

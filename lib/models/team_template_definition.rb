@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
             @team_definition
             ## 
             ## Gets the audience property value. Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
-            ## @return a team_template_audience
+            ## @return a team_template_definition_audience
             ## 
             def audience
                 return @audience
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "audience" => lambda {|n| @audience = n.get_enum_value(MicrosoftGraphBeta::Models::TeamTemplateAudience) },
+                    "audience" => lambda {|n| @audience = n.get_enum_value(MicrosoftGraphBeta::Models::TeamTemplateDefinitionAudience) },
                     "categories" => lambda {|n| @categories = n.get_collection_of_primitive_values(String) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },

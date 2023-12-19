@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.
             @teams_publication_info
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the creationSourceKind property value. Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
-            ## @return a planner_creation_source_kind
+            ## @return a planner_task_creation_creation_source_kind
             ## 
             def creation_source_kind
                 return @creation_source_kind
@@ -80,7 +80,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "creationSourceKind" => lambda {|n| @creation_source_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerCreationSourceKind) },
+                    "creationSourceKind" => lambda {|n| @creation_source_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCreationCreationSourceKind) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "teamsPublicationInfo" => lambda {|n| @teams_publication_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTeamsPublicationInfo.create_from_discriminator_value(pn) }) },
                 }

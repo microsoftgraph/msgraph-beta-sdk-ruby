@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
-            ## @return a country_lookup_method_type
+            ## @return a country_named_location_country_lookup_method
             ## 
             def country_lookup_method
                 return @country_lookup_method
@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "countriesAndRegions" => lambda {|n| @countries_and_regions = n.get_collection_of_primitive_values(String) },
-                    "countryLookupMethod" => lambda {|n| @country_lookup_method = n.get_enum_value(MicrosoftGraphBeta::Models::CountryLookupMethodType) },
+                    "countryLookupMethod" => lambda {|n| @country_lookup_method = n.get_enum_value(MicrosoftGraphBeta::Models::CountryNamedLocationCountryLookupMethod) },
                     "includeUnknownCountriesAndRegions" => lambda {|n| @include_unknown_countries_and_regions = n.get_boolean_value() },
                 })
             end

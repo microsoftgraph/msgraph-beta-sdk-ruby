@@ -95,14 +95,14 @@ module MicrosoftGraphBeta
                     "categories" => lambda {|n| @categories = n.get_collection_of_primitive_values(String) },
                     "collaborationTags" => lambda {|n| @collaboration_tags = n.get_collection_of_primitive_values(String) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "proficiency" => lambda {|n| @proficiency = n.get_enum_value(MicrosoftGraphBeta::Models::SkillProficiencyLevel) },
+                    "proficiency" => lambda {|n| @proficiency = n.get_enum_value(MicrosoftGraphBeta::Models::SkillProficiencyProficiency) },
                     "thumbnailUrl" => lambda {|n| @thumbnail_url = n.get_string_value() },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
-            ## @return a skill_proficiency_level
+            ## @return a skill_proficiency_proficiency
             ## 
             def proficiency
                 return @proficiency

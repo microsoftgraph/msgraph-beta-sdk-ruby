@@ -19,15 +19,18 @@ module MicrosoftGraphBeta
             # The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
             @x509_certificate_authentication_default_mode
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
+            @x509_certificate_default_required_affinity_level
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +60,8 @@ module MicrosoftGraphBeta
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rules" => lambda {|n| @rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::X509CertificateRule.create_from_discriminator_value(pn) }) },
-                    "x509CertificateAuthenticationDefaultMode" => lambda {|n| @x509_certificate_authentication_default_mode = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateAuthenticationMode) },
+                    "x509CertificateAuthenticationDefaultMode" => lambda {|n| @x509_certificate_authentication_default_mode = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateAuthenticationModeConfigurationX509CertificateAuthenticationDefaultMode) },
+                    "x509CertificateDefaultRequiredAffinityLevel" => lambda {|n| @x509_certificate_default_required_affinity_level = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateAuthenticationModeConfigurationX509CertificateDefaultRequiredAffinityLevel) },
                 }
             end
             ## 
@@ -100,11 +104,12 @@ module MicrosoftGraphBeta
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("rules", @rules)
                 writer.write_enum_value("x509CertificateAuthenticationDefaultMode", @x509_certificate_authentication_default_mode)
+                writer.write_enum_value("x509CertificateDefaultRequiredAffinityLevel", @x509_certificate_default_required_affinity_level)
                 writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-            ## @return a x509_certificate_authentication_mode
+            ## @return a x509_certificate_authentication_mode_configuration_x509_certificate_authentication_default_mode
             ## 
             def x509_certificate_authentication_default_mode
                 return @x509_certificate_authentication_default_mode
@@ -116,6 +121,21 @@ module MicrosoftGraphBeta
             ## 
             def x509_certificate_authentication_default_mode=(value)
                 @x509_certificate_authentication_default_mode = value
+            end
+            ## 
+            ## Gets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
+            ## @return a x509_certificate_authentication_mode_configuration_x509_certificate_default_required_affinity_level
+            ## 
+            def x509_certificate_default_required_affinity_level
+                return @x509_certificate_default_required_affinity_level
+            end
+            ## 
+            ## Sets the x509CertificateDefaultRequiredAffinityLevel property value. Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.
+            ## @param value Value to set for the x509CertificateDefaultRequiredAffinityLevel property.
+            ## @return a void
+            ## 
+            def x509_certificate_default_required_affinity_level=(value)
+                @x509_certificate_default_required_affinity_level = value
             end
         end
     end

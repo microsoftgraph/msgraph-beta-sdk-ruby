@@ -164,17 +164,17 @@ module MicrosoftGraphBeta
                     "completedDateTime" => lambda {|n| @completed_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "dueDateTime" => lambda {|n| @due_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::Importance) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::OutlookTaskImportance) },
                     "isReminderOn" => lambda {|n| @is_reminder_on = n.get_boolean_value() },
                     "multiValueExtendedProperties" => lambda {|n| @multi_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MultiValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "owner" => lambda {|n| @owner = n.get_string_value() },
                     "parentFolderId" => lambda {|n| @parent_folder_id = n.get_string_value() },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PatternedRecurrence.create_from_discriminator_value(pn) }) },
                     "reminderDateTime" => lambda {|n| @reminder_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
-                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraphBeta::Models::Sensitivity) },
+                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraphBeta::Models::OutlookTaskSensitivity) },
                     "singleValueExtendedProperties" => lambda {|n| @single_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SingleValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::TaskStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::OutlookTaskStatus) },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
                 })
             end
@@ -195,7 +195,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the importance property value. The importance property
-            ## @return a importance
+            ## @return a outlook_task_importance
             ## 
             def importance
                 return @importance
@@ -300,7 +300,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the sensitivity property value. The sensitivity property
-            ## @return a sensitivity
+            ## @return a outlook_task_sensitivity
             ## 
             def sensitivity
                 return @sensitivity
@@ -372,7 +372,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a task_status
+            ## @return a outlook_task_status
             ## 
             def status
                 return @status

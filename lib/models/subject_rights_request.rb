@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # Collection of history change events.
             @history
             ## 
-            # Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            # Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             @include_all_versions
             ## 
             # Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
@@ -65,20 +65,20 @@ module MicrosoftGraphBeta
             # The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The mailboxlocations property
-            @mailboxlocations
+            # The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            @mailbox_locations
             ## 
             # List of notes associated with the request.
             @notes
             ## 
-            # Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            # Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             @pause_after_estimate
             ## 
-            # List of regulations that this request will fulfill.
+            # List of regulations that this request fulfills.
             @regulations
             ## 
-            # The sitelocations property
-            @sitelocations
+            # The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            @site_locations
             ## 
             # Information about the different stages for the request.
             @stages
@@ -229,7 +229,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
-            ## @return a data_subject_type
+            ## @return a subject_rights_request_data_subject_type
             ## 
             def data_subject_type
                 return @data_subject_type
@@ -301,7 +301,7 @@ module MicrosoftGraphBeta
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "dataSubject" => lambda {|n| @data_subject = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DataSubject.create_from_discriminator_value(pn) }) },
-                    "dataSubjectType" => lambda {|n| @data_subject_type = n.get_enum_value(MicrosoftGraphBeta::Models::DataSubjectType) },
+                    "dataSubjectType" => lambda {|n| @data_subject_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectRightsRequestDataSubjectType) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
@@ -312,11 +312,11 @@ module MicrosoftGraphBeta
                     "internalDueDateTime" => lambda {|n| @internal_due_date_time = n.get_date_time_value() },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "mailboxlocations" => lambda {|n| @mailboxlocations = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SubjectRightsRequestMailboxLocation.create_from_discriminator_value(pn) }) },
+                    "mailboxLocations" => lambda {|n| @mailbox_locations = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SubjectRightsRequestMailboxLocation.create_from_discriminator_value(pn) }) },
                     "notes" => lambda {|n| @notes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthoredNote.create_from_discriminator_value(pn) }) },
                     "pauseAfterEstimate" => lambda {|n| @pause_after_estimate = n.get_boolean_value() },
                     "regulations" => lambda {|n| @regulations = n.get_collection_of_primitive_values(String) },
-                    "sitelocations" => lambda {|n| @sitelocations = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SubjectRightsRequestSiteLocation.create_from_discriminator_value(pn) }) },
+                    "siteLocations" => lambda {|n| @site_locations = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SubjectRightsRequestSiteLocation.create_from_discriminator_value(pn) }) },
                     "stages" => lambda {|n| @stages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SubjectRightsRequestStageDetail.create_from_discriminator_value(pn) }) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectRightsRequestStatus) },
                     "team" => lambda {|n| @team = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Team.create_from_discriminator_value(pn) }) },
@@ -339,14 +339,14 @@ module MicrosoftGraphBeta
                 @history = value
             end
             ## 
-            ## Gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## Gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @return a boolean
             ## 
             def include_all_versions
                 return @include_all_versions
             end
             ## 
-            ## Sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## Sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @param value Value to set for the includeAllVersions property.
             ## @return a void
             ## 
@@ -429,19 +429,19 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the mailboxlocations property value. The mailboxlocations property
+            ## Gets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @return a subject_rights_request_mailbox_location
             ## 
-            def mailboxlocations
-                return @mailboxlocations
+            def mailbox_locations
+                return @mailbox_locations
             end
             ## 
-            ## Sets the mailboxlocations property value. The mailboxlocations property
-            ## @param value Value to set for the mailboxlocations property.
+            ## Sets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## @param value Value to set for the mailboxLocations property.
             ## @return a void
             ## 
-            def mailboxlocations=(value)
-                @mailboxlocations = value
+            def mailbox_locations=(value)
+                @mailbox_locations = value
             end
             ## 
             ## Gets the notes property value. List of notes associated with the request.
@@ -459,14 +459,14 @@ module MicrosoftGraphBeta
                 @notes = value
             end
             ## 
-            ## Gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## Gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @return a boolean
             ## 
             def pause_after_estimate
                 return @pause_after_estimate
             end
             ## 
-            ## Sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## Sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @param value Value to set for the pauseAfterEstimate property.
             ## @return a void
             ## 
@@ -474,14 +474,14 @@ module MicrosoftGraphBeta
                 @pause_after_estimate = value
             end
             ## 
-            ## Gets the regulations property value. List of regulations that this request will fulfill.
+            ## Gets the regulations property value. List of regulations that this request fulfills.
             ## @return a string
             ## 
             def regulations
                 return @regulations
             end
             ## 
-            ## Sets the regulations property value. List of regulations that this request will fulfill.
+            ## Sets the regulations property value. List of regulations that this request fulfills.
             ## @param value Value to set for the regulations property.
             ## @return a void
             ## 
@@ -515,30 +515,30 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("internalDueDateTime", @internal_due_date_time)
                 writer.write_object_value("lastModifiedBy", @last_modified_by)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_object_value("mailboxlocations", @mailboxlocations)
+                writer.write_object_value("mailboxLocations", @mailbox_locations)
                 writer.write_collection_of_object_values("notes", @notes)
                 writer.write_boolean_value("pauseAfterEstimate", @pause_after_estimate)
                 writer.write_collection_of_primitive_values("regulations", @regulations)
-                writer.write_object_value("sitelocations", @sitelocations)
+                writer.write_object_value("siteLocations", @site_locations)
                 writer.write_collection_of_object_values("stages", @stages)
                 writer.write_enum_value("status", @status)
                 writer.write_object_value("team", @team)
                 writer.write_enum_value("type", @type)
             end
             ## 
-            ## Gets the sitelocations property value. The sitelocations property
+            ## Gets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
             ## @return a subject_rights_request_site_location
             ## 
-            def sitelocations
-                return @sitelocations
+            def site_locations
+                return @site_locations
             end
             ## 
-            ## Sets the sitelocations property value. The sitelocations property
-            ## @param value Value to set for the sitelocations property.
+            ## Sets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+            ## @param value Value to set for the siteLocations property.
             ## @return a void
             ## 
-            def sitelocations=(value)
-                @sitelocations = value
+            def site_locations=(value)
+                @site_locations = value
             end
             ## 
             ## Gets the stages property value. Information about the different stages for the request.

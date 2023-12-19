@@ -37,15 +37,15 @@ module MicrosoftGraphBeta
             # The supportUrl property
             @support_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the companyType property value. The companyType property
-            ## @return a partner_tenant_type
+            ## @return a partner_information_company_type
             ## 
             def company_type
                 return @company_type
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 return {
                     "commerceUrl" => lambda {|n| @commerce_url = n.get_string_value() },
                     "companyName" => lambda {|n| @company_name = n.get_string_value() },
-                    "companyType" => lambda {|n| @company_type = n.get_enum_value(MicrosoftGraphBeta::Models::PartnerTenantType) },
+                    "companyType" => lambda {|n| @company_type = n.get_enum_value(MicrosoftGraphBeta::Models::PartnerInformationCompanyType) },
                     "helpUrl" => lambda {|n| @help_url = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "partnerTenantId" => lambda {|n| @partner_tenant_id = n.get_string_value() },

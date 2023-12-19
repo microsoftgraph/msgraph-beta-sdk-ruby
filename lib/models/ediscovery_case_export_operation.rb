@@ -16,10 +16,10 @@ module MicrosoftGraphBeta
             # The description provided for the export.
             @description
             ## 
-            # The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+            # The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
             @export_options
             ## 
-            # The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+            # The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
             @export_structure
             ## 
             # The outputFolderId property
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
-            ## @return a ediscovery_export_options
+            ## Gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+            ## @return a ediscovery_case_export_operation_export_options
             ## 
             def export_options
                 return @export_options
             end
             ## 
-            ## Sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+            ## Sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
             ## @param value Value to set for the exportOptions property.
             ## @return a void
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @export_options = value
             end
             ## 
-            ## Gets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
-            ## @return a ediscovery_export_file_structure
+            ## Gets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+            ## @return a ediscovery_case_export_operation_export_structure
             ## 
             def export_structure
                 return @export_structure
             end
             ## 
-            ## Sets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+            ## Sets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
             ## @param value Value to set for the exportStructure property.
             ## @return a void
             ## 
@@ -130,8 +130,8 @@ module MicrosoftGraphBeta
                     "azureBlobContainer" => lambda {|n| @azure_blob_container = n.get_string_value() },
                     "azureBlobToken" => lambda {|n| @azure_blob_token = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportOptions) },
-                    "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryExportFileStructure) },
+                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryCaseExportOperationExportOptions) },
+                    "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryCaseExportOperationExportStructure) },
                     "outputFolderId" => lambda {|n| @output_folder_id = n.get_string_value() },
                     "outputName" => lambda {|n| @output_name = n.get_string_value() },
                     "reviewSet" => lambda {|n| @review_set = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryReviewSet.create_from_discriminator_value(pn) }) },

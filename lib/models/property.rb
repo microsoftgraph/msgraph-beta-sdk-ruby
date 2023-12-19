@@ -37,15 +37,15 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraphBeta
                     "isRefinable" => lambda {|n| @is_refinable = n.get_boolean_value() },
                     "isRetrievable" => lambda {|n| @is_retrievable = n.get_boolean_value() },
                     "isSearchable" => lambda {|n| @is_searchable = n.get_boolean_value() },
-                    "labels" => lambda {|n| @labels = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Label.create_from_discriminator_value(pn) }) },
+                    "labels" => lambda {|n| @labels = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PropertyLabels.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::PropertyType) },
@@ -161,7 +161,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the labels property value. The labels property
-            ## @return a label
+            ## @return a property_labels
             ## 
             def labels
                 return @labels

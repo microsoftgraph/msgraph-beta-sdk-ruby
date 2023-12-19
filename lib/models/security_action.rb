@@ -187,7 +187,7 @@ module MicrosoftGraphBeta
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "parameters" => lambda {|n| @parameters = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
                     "states" => lambda {|n| @states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityActionState.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::OperationStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityActionStatus) },
                     "user" => lambda {|n| @user = n.get_string_value() },
                     "vendorInformation" => lambda {|n| @vendor_information = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityVendorInformation.create_from_discriminator_value(pn) }) },
                 })
@@ -277,7 +277,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
-            ## @return a operation_status
+            ## @return a security_action_status
             ## 
             def status
                 return @status

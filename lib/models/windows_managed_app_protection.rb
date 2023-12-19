@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a windows_managed_app_protection_app_action_if_unable_to_authenticate_user
             ## 
             def app_action_if_unable_to_authenticate_user
                 return @app_action_if_unable_to_authenticate_user
@@ -211,7 +211,7 @@ module MicrosoftGraphBeta
                     "allowedInboundDataTransferSources" => lambda {|n| @allowed_inbound_data_transfer_sources = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsManagedAppDataTransferLevel) },
                     "allowedOutboundClipboardSharingLevel" => lambda {|n| @allowed_outbound_clipboard_sharing_level = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsManagedAppClipboardSharingLevel) },
                     "allowedOutboundDataTransferDestinations" => lambda {|n| @allowed_outbound_data_transfer_destinations = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsManagedAppDataTransferLevel) },
-                    "appActionIfUnableToAuthenticateUser" => lambda {|n| @app_action_if_unable_to_authenticate_user = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
+                    "appActionIfUnableToAuthenticateUser" => lambda {|n| @app_action_if_unable_to_authenticate_user = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsManagedAppProtectionAppActionIfUnableToAuthenticateUser) },
                     "apps" => lambda {|n| @apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedMobileApp.create_from_discriminator_value(pn) }) },
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TargetedManagedAppPolicyAssignment.create_from_discriminator_value(pn) }) },
                     "deployedAppCount" => lambda {|n| @deployed_app_count = n.get_number_value() },

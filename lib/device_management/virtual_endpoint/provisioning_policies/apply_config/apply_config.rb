@@ -1,1 +1,2 @@
+require_relative 'apply_config_post_request_body_policy_settings'
 require_relative 'apply_config_post_request_body'

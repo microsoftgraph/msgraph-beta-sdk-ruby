@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConnectionOperation.create_from_discriminator_value(pn) }) },
                     "schema" => lambda {|n| @schema = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Schema.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::ConnectionState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectionState) },
                 })
             end
             ## 
@@ -185,7 +185,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the state property value. The state property
-            ## @return a connection_state
+            ## @return a external_connection_state
             ## 
             def state
                 return @state

@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             @odata_type
             ## 
             ## Gets the actionCapability property value. Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.
-            ## @return a action_capability
+            ## @return a cloud_pc_remote_action_capability_action_capability
             ## 
             def action_capability
                 return @action_capability
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the actionName property value. The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
-            ## @return a cloud_pc_remote_action_name
+            ## @return a cloud_pc_remote_action_capability_action_name
             ## 
             def action_name
                 return @action_name
@@ -49,15 +49,15 @@ module MicrosoftGraphBeta
                 @action_name = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -85,8 +85,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "actionCapability" => lambda {|n| @action_capability = n.get_enum_value(MicrosoftGraphBeta::Models::ActionCapability) },
-                    "actionName" => lambda {|n| @action_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRemoteActionName) },
+                    "actionCapability" => lambda {|n| @action_capability = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRemoteActionCapabilityActionCapability) },
+                    "actionName" => lambda {|n| @action_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRemoteActionCapabilityActionName) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

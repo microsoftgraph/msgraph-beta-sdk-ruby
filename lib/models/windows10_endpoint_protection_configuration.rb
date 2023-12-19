@@ -1336,7 +1336,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
-            ## @return a defender_cloud_block_level_type
+            ## @return a windows10_endpoint_protection_configuration_defender_cloud_block_level
             ## 
             def defender_cloud_block_level
                 return @defender_cloud_block_level
@@ -1891,7 +1891,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
-            ## @return a defender_protection_type
+            ## @return a windows10_endpoint_protection_configuration_defender_potentially_unwanted_app_action
             ## 
             def defender_potentially_unwanted_app_action
                 return @defender_potentially_unwanted_app_action
@@ -1966,7 +1966,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
-            ## @return a defender_realtime_scan_direction
+            ## @return a windows10_endpoint_protection_configuration_defender_scan_direction
             ## 
             def defender_scan_direction
                 return @defender_scan_direction
@@ -1996,7 +1996,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
-            ## @return a defender_scan_type
+            ## @return a windows10_endpoint_protection_configuration_defender_scan_type
             ## 
             def defender_scan_type
                 return @defender_scan_type
@@ -2026,7 +2026,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
-            ## @return a weekly_schedule
+            ## @return a windows10_endpoint_protection_configuration_defender_scheduled_scan_day
             ## 
             def defender_scheduled_scan_day
                 return @defender_scheduled_scan_day
@@ -2431,7 +2431,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
-            ## @return a defender_submit_samples_consent_type
+            ## @return a windows10_endpoint_protection_configuration_defender_submit_samples_consent_type
             ## 
             def defender_submit_samples_consent_type
                 return @defender_submit_samples_consent_type
@@ -2867,7 +2867,7 @@ module MicrosoftGraphBeta
                     "defenderBlockEndUserAccess" => lambda {|n| @defender_block_end_user_access = n.get_boolean_value() },
                     "defenderBlockPersistenceThroughWmiType" => lambda {|n| @defender_block_persistence_through_wmi_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderAttackSurfaceType) },
                     "defenderCheckForSignaturesBeforeRunningScan" => lambda {|n| @defender_check_for_signatures_before_running_scan = n.get_boolean_value() },
-                    "defenderCloudBlockLevel" => lambda {|n| @defender_cloud_block_level = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderCloudBlockLevelType) },
+                    "defenderCloudBlockLevel" => lambda {|n| @defender_cloud_block_level = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderCloudBlockLevel) },
                     "defenderCloudExtendedTimeoutInSeconds" => lambda {|n| @defender_cloud_extended_timeout_in_seconds = n.get_number_value() },
                     "defenderDaysBeforeDeletingQuarantinedMalware" => lambda {|n| @defender_days_before_deleting_quarantined_malware = n.get_number_value() },
                     "defenderDetectedMalwareActions" => lambda {|n| @defender_detected_malware_actions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DefenderDetectedMalwareActions.create_from_discriminator_value(pn) }) },
@@ -2904,16 +2904,16 @@ module MicrosoftGraphBeta
                     "defenderOfficeCommunicationAppsLaunchChildProcess" => lambda {|n| @defender_office_communication_apps_launch_child_process = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderOfficeMacroCodeAllowWin32Imports" => lambda {|n| @defender_office_macro_code_allow_win32_imports = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderOfficeMacroCodeAllowWin32ImportsType" => lambda {|n| @defender_office_macro_code_allow_win32_imports_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderAttackSurfaceType) },
-                    "defenderPotentiallyUnwantedAppAction" => lambda {|n| @defender_potentially_unwanted_app_action = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
+                    "defenderPotentiallyUnwantedAppAction" => lambda {|n| @defender_potentially_unwanted_app_action = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderPotentiallyUnwantedAppAction) },
                     "defenderPreventCredentialStealingType" => lambda {|n| @defender_prevent_credential_stealing_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderProcessCreation" => lambda {|n| @defender_process_creation = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderProcessCreationType" => lambda {|n| @defender_process_creation_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderAttackSurfaceType) },
                     "defenderProcessesToExclude" => lambda {|n| @defender_processes_to_exclude = n.get_collection_of_primitive_values(String) },
-                    "defenderScanDirection" => lambda {|n| @defender_scan_direction = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderRealtimeScanDirection) },
+                    "defenderScanDirection" => lambda {|n| @defender_scan_direction = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderScanDirection) },
                     "defenderScanMaxCpuPercentage" => lambda {|n| @defender_scan_max_cpu_percentage = n.get_number_value() },
-                    "defenderScanType" => lambda {|n| @defender_scan_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderScanType) },
+                    "defenderScanType" => lambda {|n| @defender_scan_type = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderScanType) },
                     "defenderScheduledQuickScanTime" => lambda {|n| @defender_scheduled_quick_scan_time = n.get_time_value() },
-                    "defenderScheduledScanDay" => lambda {|n| @defender_scheduled_scan_day = n.get_enum_value(MicrosoftGraphBeta::Models::WeeklySchedule) },
+                    "defenderScheduledScanDay" => lambda {|n| @defender_scheduled_scan_day = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderScheduledScanDay) },
                     "defenderScheduledScanTime" => lambda {|n| @defender_scheduled_scan_time = n.get_time_value() },
                     "defenderScriptDownloadedPayloadExecution" => lambda {|n| @defender_script_downloaded_payload_execution = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderScriptDownloadedPayloadExecutionType" => lambda {|n| @defender_script_downloaded_payload_execution_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderAttackSurfaceType) },
@@ -2940,7 +2940,7 @@ module MicrosoftGraphBeta
                     "defenderSecurityCenterNotificationsFromApp" => lambda {|n| @defender_security_center_notifications_from_app = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderSecurityCenterNotificationsFromAppType) },
                     "defenderSecurityCenterOrganizationDisplayName" => lambda {|n| @defender_security_center_organization_display_name = n.get_string_value() },
                     "defenderSignatureUpdateIntervalInHours" => lambda {|n| @defender_signature_update_interval_in_hours = n.get_number_value() },
-                    "defenderSubmitSamplesConsentType" => lambda {|n| @defender_submit_samples_consent_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderSubmitSamplesConsentType) },
+                    "defenderSubmitSamplesConsentType" => lambda {|n| @defender_submit_samples_consent_type = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10EndpointProtectionConfigurationDefenderSubmitSamplesConsentType) },
                     "defenderUntrustedExecutable" => lambda {|n| @defender_untrusted_executable = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },
                     "defenderUntrustedExecutableType" => lambda {|n| @defender_untrusted_executable_type = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderAttackSurfaceType) },
                     "defenderUntrustedUSBProcess" => lambda {|n| @defender_untrusted_u_s_b_process = n.get_enum_value(MicrosoftGraphBeta::Models::DefenderProtectionType) },

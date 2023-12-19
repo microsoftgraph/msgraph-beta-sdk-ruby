@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
-            ## @return a attestation_level
+            ## @return a fido2_authentication_method_attestation_level
             ## 
             def attestation_level
                 return @attestation_level
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "aaGuid" => lambda {|n| @aa_guid = n.get_string_value() },
                     "attestationCertificates" => lambda {|n| @attestation_certificates = n.get_collection_of_primitive_values(String) },
-                    "attestationLevel" => lambda {|n| @attestation_level = n.get_enum_value(MicrosoftGraphBeta::Models::AttestationLevel) },
+                    "attestationLevel" => lambda {|n| @attestation_level = n.get_enum_value(MicrosoftGraphBeta::Models::Fido2AuthenticationMethodAttestationLevel) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "model" => lambda {|n| @model = n.get_string_value() },

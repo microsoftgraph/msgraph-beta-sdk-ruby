@@ -27,15 +27,15 @@ module MicrosoftGraphBeta
             # Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
             @security_integrity_algorithm
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -66,8 +66,8 @@ module MicrosoftGraphBeta
                     "lifetimeInMinutes" => lambda {|n| @lifetime_in_minutes = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "securityDiffieHellmanGroup" => lambda {|n| @security_diffie_hellman_group = n.get_number_value() },
-                    "securityEncryptionAlgorithm" => lambda {|n| @security_encryption_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::VpnEncryptionAlgorithmType) },
-                    "securityIntegrityAlgorithm" => lambda {|n| @security_integrity_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::VpnIntegrityAlgorithmType) },
+                    "securityEncryptionAlgorithm" => lambda {|n| @security_encryption_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::IosVpnSecurityAssociationParametersSecurityEncryptionAlgorithm) },
+                    "securityIntegrityAlgorithm" => lambda {|n| @security_integrity_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::IosVpnSecurityAssociationParametersSecurityIntegrityAlgorithm) },
                 }
             end
             ## 
@@ -117,7 +117,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-            ## @return a vpn_encryption_algorithm_type
+            ## @return a ios_vpn_security_association_parameters_security_encryption_algorithm
             ## 
             def security_encryption_algorithm
                 return @security_encryption_algorithm
@@ -132,7 +132,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-            ## @return a vpn_integrity_algorithm_type
+            ## @return a ios_vpn_security_association_parameters_security_integrity_algorithm
             ## 
             def security_integrity_algorithm
                 return @security_integrity_algorithm

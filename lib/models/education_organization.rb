@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
-            ## @return a education_external_source
+            ## @return a education_organization_external_source
             ## 
             def external_source
                 return @external_source
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraphBeta::Models::EducationExternalSource) },
+                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraphBeta::Models::EducationOrganizationExternalSource) },
                     "externalSourceDetail" => lambda {|n| @external_source_detail = n.get_string_value() },
                 })
             end

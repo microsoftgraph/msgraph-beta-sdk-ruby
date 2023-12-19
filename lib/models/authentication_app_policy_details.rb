@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
-            ## @return a authentication_app_admin_configuration
+            ## @return a authentication_app_policy_details_admin_configuration
             ## 
             def admin_configuration
                 return @admin_configuration
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
-            ## @return a authentication_app_evaluation
+            ## @return a authentication_app_policy_details_authentication_evaluation
             ## 
             def authentication_evaluation
                 return @authentication_evaluation
@@ -91,11 +91,11 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "adminConfiguration" => lambda {|n| @admin_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppAdminConfiguration) },
-                    "authenticationEvaluation" => lambda {|n| @authentication_evaluation = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppEvaluation) },
+                    "adminConfiguration" => lambda {|n| @admin_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppPolicyDetailsAdminConfiguration) },
+                    "authenticationEvaluation" => lambda {|n| @authentication_evaluation = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppPolicyDetailsAuthenticationEvaluation) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "policyName" => lambda {|n| @policy_name = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppPolicyStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationAppPolicyDetailsStatus) },
                 }
             end
             ## 
@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
-            ## @return a authentication_app_policy_status
+            ## @return a authentication_app_policy_details_status
             ## 
             def status
                 return @status

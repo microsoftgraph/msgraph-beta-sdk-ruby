@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # Custodian sources that are included in the sourceCollection.
             @custodian_sources
             ## 
-            # When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+            # When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
             @data_source_scopes
             ## 
             # The description of the sourceCollection.
@@ -153,14 +153,14 @@ module MicrosoftGraphBeta
                 @custodian_sources = value
             end
             ## 
-            ## Gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-            ## @return a ediscovery_data_source_scopes
+            ## Gets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+            ## @return a ediscovery_source_collection_data_source_scopes
             ## 
             def data_source_scopes
                 return @data_source_scopes
             end
             ## 
-            ## Sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+            ## Sets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
             ## @param value Value to set for the dataSourceScopes property.
             ## @return a void
             ## 
@@ -209,7 +209,7 @@ module MicrosoftGraphBeta
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryDataSource.create_from_discriminator_value(pn) }) },
-                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryDataSourceScopes) },
+                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoverySourceCollectionDataSourceScopes) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryEstimateStatisticsOperation.create_from_discriminator_value(pn) }) },

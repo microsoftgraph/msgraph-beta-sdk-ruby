@@ -32,15 +32,15 @@ module MicrosoftGraphBeta
             # Student Number.
             @student_number
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the gender property value. Possible values are: female, male, other.
-            ## @return a education_gender
+            ## @return a education_student_gender
             ## 
             def gender
                 return @gender
@@ -115,7 +115,7 @@ module MicrosoftGraphBeta
                 return {
                     "birthDate" => lambda {|n| @birth_date = n.get_date_value() },
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
-                    "gender" => lambda {|n| @gender = n.get_enum_value(MicrosoftGraphBeta::Models::EducationGender) },
+                    "gender" => lambda {|n| @gender = n.get_enum_value(MicrosoftGraphBeta::Models::EducationStudentGender) },
                     "grade" => lambda {|n| @grade = n.get_string_value() },
                     "graduationYear" => lambda {|n| @graduation_year = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

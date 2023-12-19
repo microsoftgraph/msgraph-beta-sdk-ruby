@@ -54,13 +54,13 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoverySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryUserSourceIncludedSources) },
                     "siteWebUrl" => lambda {|n| @site_web_url = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-            ## @return a ediscovery_source_type
+            ## @return a ediscovery_user_source_included_sources
             ## 
             def included_sources
                 return @included_sources

@@ -139,7 +139,7 @@ module MicrosoftGraphBeta
                     "customUpdateTimeWindows" => lambda {|n| @custom_update_time_windows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomUpdateTimeWindow.create_from_discriminator_value(pn) }) },
                     "firmwareUpdateBehavior" => lambda {|n| @firmware_update_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateBehavior) },
                     "maxUserDeferralsCount" => lambda {|n| @max_user_deferrals_count = n.get_number_value() },
-                    "priority" => lambda {|n| @priority = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSPriority) },
+                    "priority" => lambda {|n| @priority = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateConfigurationPriority) },
                     "updateScheduleType" => lambda {|n| @update_schedule_type = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateScheduleType) },
                     "updateTimeWindowUtcOffsetInMinutes" => lambda {|n| @update_time_window_utc_offset_in_minutes = n.get_number_value() },
                 })
@@ -161,7 +161,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
-            ## @return a mac_o_s_priority
+            ## @return a mac_o_s_software_update_configuration_priority
             ## 
             def priority
                 return @priority

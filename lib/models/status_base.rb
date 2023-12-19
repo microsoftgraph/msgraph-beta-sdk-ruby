@@ -16,15 +16,15 @@ module MicrosoftGraphBeta
             # Possible values are: success, warning, failure, skipped, unknownFutureValue. Supports $filter (eq, contains).
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::ProvisioningResult) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::StatusBaseStatus) },
                 }
             end
             ## 
@@ -92,7 +92,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue. Supports $filter (eq, contains).
-            ## @return a provisioning_result
+            ## @return a status_base_status
             ## 
             def status
                 return @status

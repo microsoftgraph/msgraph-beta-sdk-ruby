@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, and chat.
-            ## @return a teamwork_conversation_identity_type
+            ## @return a teamwork_conversation_identity_conversation_identity_type
             ## 
             def conversation_identity_type
                 return @conversation_identity_type
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "conversationIdentityType" => lambda {|n| @conversation_identity_type = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkConversationIdentityType) },
+                    "conversationIdentityType" => lambda {|n| @conversation_identity_type = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkConversationIdentityConversationIdentityType) },
                 })
             end
             ## 

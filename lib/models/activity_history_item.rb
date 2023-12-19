@@ -123,7 +123,7 @@ module MicrosoftGraphBeta
                     "lastActiveDateTime" => lambda {|n| @last_active_date_time = n.get_date_time_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "startedDateTime" => lambda {|n| @started_date_time = n.get_date_time_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::Status) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::ActivityHistoryItemStatus) },
                     "userTimezone" => lambda {|n| @user_timezone = n.get_string_value() },
                 })
             end
@@ -192,7 +192,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a status
+            ## @return a activity_history_item_status
             ## 
             def status
                 return @status

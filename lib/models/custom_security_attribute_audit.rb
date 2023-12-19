@@ -148,7 +148,7 @@ module MicrosoftGraphBeta
                     "initiatedBy" => lambda {|n| @initiated_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AuditActivityInitiator.create_from_discriminator_value(pn) }) },
                     "loggedByService" => lambda {|n| @logged_by_service = n.get_string_value() },
                     "operationType" => lambda {|n| @operation_type = n.get_string_value() },
-                    "result" => lambda {|n| @result = n.get_enum_value(MicrosoftGraphBeta::Models::OperationResult) },
+                    "result" => lambda {|n| @result = n.get_enum_value(MicrosoftGraphBeta::Models::CustomSecurityAttributeAuditResult) },
                     "resultReason" => lambda {|n| @result_reason = n.get_string_value() },
                     "targetResources" => lambda {|n| @target_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TargetResource.create_from_discriminator_value(pn) }) },
                     "userAgent" => lambda {|n| @user_agent = n.get_string_value() },
@@ -201,7 +201,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the result property value. The result property
-            ## @return a operation_result
+            ## @return a custom_security_attribute_audit_result
             ## 
             def result
                 return @result

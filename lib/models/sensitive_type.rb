@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             @state
             ## 
             ## Gets the classificationMethod property value. The classificationMethod property
-            ## @return a classification_method
+            ## @return a sensitive_type_classification_method
             ## 
             def classification_method
                 return @classification_method
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "classificationMethod" => lambda {|n| @classification_method = n.get_enum_value(MicrosoftGraphBeta::Models::ClassificationMethod) },
+                    "classificationMethod" => lambda {|n| @classification_method = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeClassificationMethod) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "publisherName" => lambda {|n| @publisher_name = n.get_string_value() },
                     "rulePackageId" => lambda {|n| @rule_package_id = n.get_string_value() },
                     "rulePackageType" => lambda {|n| @rule_package_type = n.get_string_value() },
                     "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
-                    "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeSource) },
+                    "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeSensitiveTypeSource) },
                     "state" => lambda {|n| @state = n.get_string_value() },
                 })
             end
@@ -173,7 +173,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the sensitiveTypeSource property value. The sensitiveTypeSource property
-            ## @return a sensitive_type_source
+            ## @return a sensitive_type_sensitive_type_source
             ## 
             def sensitive_type_source
                 return @sensitive_type_source

@@ -341,7 +341,7 @@ module MicrosoftGraphBeta
                     "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "partnerInformation" => lambda {|n| @partner_information = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PartnerInformation.create_from_discriminator_value(pn) }) },
-                    "partnerTenantType" => lambda {|n| @partner_tenant_type = n.get_enum_value(MicrosoftGraphBeta::Models::PartnerTenantType) },
+                    "partnerTenantType" => lambda {|n| @partner_tenant_type = n.get_enum_value(MicrosoftGraphBeta::Models::OrganizationPartnerTenantType) },
                     "postalCode" => lambda {|n| @postal_code = n.get_string_value() },
                     "preferredLanguage" => lambda {|n| @preferred_language = n.get_string_value() },
                     "privacyProfile" => lambda {|n| @privacy_profile = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivacyProfile.create_from_discriminator_value(pn) }) },
@@ -462,7 +462,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
-            ## @return a partner_tenant_type
+            ## @return a organization_partner_tenant_type
             ## 
             def partner_tenant_type
                 return @partner_tenant_type

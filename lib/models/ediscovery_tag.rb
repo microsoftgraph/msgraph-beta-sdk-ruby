@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
             @parent
             ## 
             ## Gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-            ## @return a ediscovery_child_selectability
+            ## @return a ediscovery_tag_child_selectability
             ## 
             def child_selectability
                 return @child_selectability
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "childSelectability" => lambda {|n| @child_selectability = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryChildSelectability) },
+                    "childSelectability" => lambda {|n| @child_selectability = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoveryTagChildSelectability) },
                     "childTags" => lambda {|n| @child_tags = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EdiscoveryTag.create_from_discriminator_value(pn) }) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },

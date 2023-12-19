@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             @tool_tip
             ## 
             ## Gets the applicableTo property value. The applicableTo property
-            ## @return a sensitivity_label_target
+            ## @return a sensitivity_label_applicable_to
             ## 
             def applicable_to
                 return @applicable_to
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the applicationMode property value. The applicationMode property
-            ## @return a application_mode
+            ## @return a sensitivity_label_application_mode
             ## 
             def application_mode
                 return @application_mode
@@ -157,8 +157,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelTarget) },
-                    "applicationMode" => lambda {|n| @application_mode = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationMode) },
+                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelApplicableTo) },
+                    "applicationMode" => lambda {|n| @application_mode = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelApplicationMode) },
                     "assignedPolicies" => lambda {|n| @assigned_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LabelPolicy.create_from_discriminator_value(pn) }) },
                     "autoLabeling" => lambda {|n| @auto_labeling = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AutoLabeling.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },

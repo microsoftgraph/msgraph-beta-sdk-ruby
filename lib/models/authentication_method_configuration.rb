@@ -34,6 +34,8 @@ module MicrosoftGraphBeta
                             return EmailAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.fido2AuthenticationMethodConfiguration"
                             return Fido2AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration"
+                            return HardwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration"
                             return MicrosoftAuthenticatorAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.smsAuthenticationMethodConfiguration"
@@ -72,7 +74,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "excludeTargets" => lambda {|n| @exclude_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExcludeTarget.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodConfigurationState) },
                 })
             end
             ## 
@@ -88,7 +90,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the state property value. The state of the policy. Possible values are: enabled, disabled.
-            ## @return a authentication_method_state
+            ## @return a authentication_method_configuration_state
             ## 
             def state
                 return @state

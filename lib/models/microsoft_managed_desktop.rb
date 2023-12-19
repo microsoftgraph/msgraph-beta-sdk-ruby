@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The managedType property
+            @managed_type
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -19,15 +22,15 @@ module MicrosoftGraphBeta
             # Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,10 +58,26 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "managedType" => lambda {|n| @managed_type = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftManagedDesktopManagedType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "profile" => lambda {|n| @profile = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftManagedDesktopType) },
                 }
+            end
+            ## 
+            ## Gets the managedType property value. The managedType property
+            ## @return a microsoft_managed_desktop_managed_type
+            ## 
+            def managed_type
+                return @managed_type
+            end
+            ## 
+            ## Sets the managedType property value. The managedType property
+            ## @param value Value to set for the managedType property.
+            ## @return a void
+            ## 
+            def managed_type=(value)
+                @managed_type = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -97,6 +116,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_enum_value("managedType", @managed_type)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("profile", @profile)
                 writer.write_enum_value("type", @type)

@@ -33,15 +33,15 @@ module MicrosoftGraphBeta
             # Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
             @pfs_group
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
-            ## @return a authentication_transform_constant
+            ## @return a cryptography_suite_authentication_transform_constants
             ## 
             def authentication_transform_constants
                 return @authentication_transform_constants
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-            ## @return a vpn_encryption_algorithm_type
+            ## @return a cryptography_suite_cipher_transform_constants
             ## 
             def cipher_transform_constants
                 return @cipher_transform_constants
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
-            ## @return a diffie_hellman_group
+            ## @return a cryptography_suite_dh_group
             ## 
             def dh_group
                 return @dh_group
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
-            ## @return a vpn_encryption_algorithm_type
+            ## @return a cryptography_suite_encryption_method
             ## 
             def encryption_method
                 return @encryption_method
@@ -129,18 +129,18 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "authenticationTransformConstants" => lambda {|n| @authentication_transform_constants = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationTransformConstant) },
-                    "cipherTransformConstants" => lambda {|n| @cipher_transform_constants = n.get_enum_value(MicrosoftGraphBeta::Models::VpnEncryptionAlgorithmType) },
-                    "dhGroup" => lambda {|n| @dh_group = n.get_enum_value(MicrosoftGraphBeta::Models::DiffieHellmanGroup) },
-                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraphBeta::Models::VpnEncryptionAlgorithmType) },
-                    "integrityCheckMethod" => lambda {|n| @integrity_check_method = n.get_enum_value(MicrosoftGraphBeta::Models::VpnIntegrityAlgorithmType) },
+                    "authenticationTransformConstants" => lambda {|n| @authentication_transform_constants = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuiteAuthenticationTransformConstants) },
+                    "cipherTransformConstants" => lambda {|n| @cipher_transform_constants = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuiteCipherTransformConstants) },
+                    "dhGroup" => lambda {|n| @dh_group = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuiteDhGroup) },
+                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuiteEncryptionMethod) },
+                    "integrityCheckMethod" => lambda {|n| @integrity_check_method = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuiteIntegrityCheckMethod) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "pfsGroup" => lambda {|n| @pfs_group = n.get_enum_value(MicrosoftGraphBeta::Models::PerfectForwardSecrecyGroup) },
+                    "pfsGroup" => lambda {|n| @pfs_group = n.get_enum_value(MicrosoftGraphBeta::Models::CryptographySuitePfsGroup) },
                 }
             end
             ## 
             ## Gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
-            ## @return a vpn_integrity_algorithm_type
+            ## @return a cryptography_suite_integrity_check_method
             ## 
             def integrity_check_method
                 return @integrity_check_method
@@ -170,7 +170,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
-            ## @return a perfect_forward_secrecy_group
+            ## @return a cryptography_suite_pfs_group
             ## 
             def pfs_group
                 return @pfs_group

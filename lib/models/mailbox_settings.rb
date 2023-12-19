@@ -43,15 +43,15 @@ module MicrosoftGraphBeta
             # The days of the week and hours in a specific time zone that the user works.
             @working_hours
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
-            ## @return a delegate_meeting_message_delivery_options
+            ## @return a mailbox_settings_delegate_meeting_message_delivery_options
             ## 
             def delegate_meeting_message_delivery_options
                 return @delegate_meeting_message_delivery_options
@@ -142,13 +142,13 @@ module MicrosoftGraphBeta
                     "archiveFolder" => lambda {|n| @archive_folder = n.get_string_value() },
                     "automaticRepliesSetting" => lambda {|n| @automatic_replies_setting = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AutomaticRepliesSetting.create_from_discriminator_value(pn) }) },
                     "dateFormat" => lambda {|n| @date_format = n.get_string_value() },
-                    "delegateMeetingMessageDeliveryOptions" => lambda {|n| @delegate_meeting_message_delivery_options = n.get_enum_value(MicrosoftGraphBeta::Models::DelegateMeetingMessageDeliveryOptions) },
+                    "delegateMeetingMessageDeliveryOptions" => lambda {|n| @delegate_meeting_message_delivery_options = n.get_enum_value(MicrosoftGraphBeta::Models::MailboxSettingsDelegateMeetingMessageDeliveryOptions) },
                     "language" => lambda {|n| @language = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::LocaleInfo.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "timeFormat" => lambda {|n| @time_format = n.get_string_value() },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
-                    "userPurpose" => lambda {|n| @user_purpose = n.get_enum_value(MicrosoftGraphBeta::Models::UserPurpose) },
-                    "userPurposeV2" => lambda {|n| @user_purpose_v2 = n.get_enum_value(MicrosoftGraphBeta::Models::MailboxRecipientType) },
+                    "userPurpose" => lambda {|n| @user_purpose = n.get_enum_value(MicrosoftGraphBeta::Models::MailboxSettingsUserPurpose) },
+                    "userPurposeV2" => lambda {|n| @user_purpose_v2 = n.get_enum_value(MicrosoftGraphBeta::Models::MailboxSettingsUserPurposeV2) },
                     "workingHours" => lambda {|n| @working_hours = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WorkingHours.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -234,7 +234,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
-            ## @return a user_purpose
+            ## @return a mailbox_settings_user_purpose
             ## 
             def user_purpose
                 return @user_purpose
@@ -249,7 +249,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userPurposeV2 property value. The userPurposeV2 property
-            ## @return a mailbox_recipient_type
+            ## @return a mailbox_settings_user_purpose_v2
             ## 
             def user_purpose_v2
                 return @user_purpose_v2

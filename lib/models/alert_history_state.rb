@@ -35,15 +35,15 @@ module MicrosoftGraphBeta
             # UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
             @user
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
-            ## @return a alert_feedback
+            ## @return a alert_history_state_feedback
             ## 
             def feedback
                 return @feedback
@@ -134,9 +134,9 @@ module MicrosoftGraphBeta
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
                     "assignedTo" => lambda {|n| @assigned_to = n.get_string_value() },
                     "comments" => lambda {|n| @comments = n.get_collection_of_primitive_values(String) },
-                    "feedback" => lambda {|n| @feedback = n.get_enum_value(MicrosoftGraphBeta::Models::AlertFeedback) },
+                    "feedback" => lambda {|n| @feedback = n.get_enum_value(MicrosoftGraphBeta::Models::AlertHistoryStateFeedback) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AlertStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AlertHistoryStateStatus) },
                     "updatedDateTime" => lambda {|n| @updated_date_time = n.get_date_time_value() },
                     "user" => lambda {|n| @user = n.get_string_value() },
                 }
@@ -175,7 +175,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
-            ## @return a alert_status
+            ## @return a alert_history_state_status
             ## 
             def status
                 return @status

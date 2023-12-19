@@ -71,8 +71,8 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "customDomainName" => lambda {|n| @custom_domain_name = n.get_string_value() },
-                    "userDomainNameSource" => lambda {|n| @user_domain_name_source = n.get_enum_value(MicrosoftGraphBeta::Models::DomainNameSource) },
-                    "usernameAADSource" => lambda {|n| @username_a_a_d_source = n.get_enum_value(MicrosoftGraphBeta::Models::UsernameSource) },
+                    "userDomainNameSource" => lambda {|n| @user_domain_name_source = n.get_enum_value(MicrosoftGraphBeta::Models::EasEmailProfileConfigurationBaseUserDomainNameSource) },
+                    "usernameAADSource" => lambda {|n| @username_a_a_d_source = n.get_enum_value(MicrosoftGraphBeta::Models::EasEmailProfileConfigurationBaseUsernameAADSource) },
                     "usernameSource" => lambda {|n| @username_source = n.get_enum_value(MicrosoftGraphBeta::Models::UserEmailSource) },
                 })
             end
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
-            ## @return a domain_name_source
+            ## @return a eas_email_profile_configuration_base_user_domain_name_source
             ## 
             def user_domain_name_source
                 return @user_domain_name_source
@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
-            ## @return a username_source
+            ## @return a eas_email_profile_configuration_base_username_a_a_d_source
             ## 
             def username_a_a_d_source
                 return @username_a_a_d_source

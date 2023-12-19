@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
             @tunnel_configuration
             ## 
             ## Gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
-            ## @return a networkaccess_bandwidth_capacity_in_mbps
+            ## @return a networkaccess_device_link_bandwidth_capacity_in_mbps
             ## 
             def bandwidth_capacity_in_mbps
                 return @bandwidth_capacity_in_mbps
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "bandwidthCapacityInMbps" => lambda {|n| @bandwidth_capacity_in_mbps = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessBandwidthCapacityInMbps) },
+                    "bandwidthCapacityInMbps" => lambda {|n| @bandwidth_capacity_in_mbps = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessDeviceLinkBandwidthCapacityInMbps) },
                     "bgpConfiguration" => lambda {|n| @bgp_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessBgpConfiguration.create_from_discriminator_value(pn) }) },
                     "deviceVendor" => lambda {|n| @device_vendor = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessDeviceVendor) },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },

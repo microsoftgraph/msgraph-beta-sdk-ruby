@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The format of the exported report.
             @format
             ## 
-            # The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport.
+            # The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
             @report_name
             ## 
             # The date and time when the export job was requested.
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the exportJobStatus property value. The status of the export job. The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
-            ## @return a cloud_pc_export_job_status
+            ## @return a cloud_pc_export_job_export_job_status
             ## 
             def export_job_status
                 return @export_job_status
@@ -129,24 +129,24 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
-                    "exportJobStatus" => lambda {|n| @export_job_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcExportJobStatus) },
+                    "exportJobStatus" => lambda {|n| @export_job_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcExportJobExportJobStatus) },
                     "exportUrl" => lambda {|n| @export_url = n.get_string_value() },
                     "filter" => lambda {|n| @filter = n.get_string_value() },
                     "format" => lambda {|n| @format = n.get_string_value() },
-                    "reportName" => lambda {|n| @report_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcReportName) },
+                    "reportName" => lambda {|n| @report_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcExportJobReportName) },
                     "requestDateTime" => lambda {|n| @request_date_time = n.get_date_time_value() },
                     "select" => lambda {|n| @select = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
-            ## Gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport.
-            ## @return a cloud_pc_report_name
+            ## Gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
+            ## @return a cloud_pc_export_job_report_name
             ## 
             def report_name
                 return @report_name
             end
             ## 
-            ## Sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport.
+            ## Sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
             ## @param value Value to set for the reportName property.
             ## @return a void
             ## 

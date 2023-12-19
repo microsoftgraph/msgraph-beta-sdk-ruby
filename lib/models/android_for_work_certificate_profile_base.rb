@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                     "extendedKeyUsages" => lambda {|n| @extended_key_usages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExtendedKeyUsage.create_from_discriminator_value(pn) }) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
                     "rootCertificate" => lambda {|n| @root_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidForWorkTrustedRootCertificate.create_from_discriminator_value(pn) }) },
-                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidForWorkCertificateProfileBaseSubjectAlternativeNameType) },
                     "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectNameFormat) },
                 })
             end
@@ -164,7 +164,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-            ## @return a subject_alternative_name_type
+            ## @return a android_for_work_certificate_profile_base_subject_alternative_name_type
             ## 
             def subject_alternative_name_type
                 return @subject_alternative_name_type

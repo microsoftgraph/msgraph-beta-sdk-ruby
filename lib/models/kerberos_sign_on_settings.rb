@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "kerberosServicePrincipalName" => lambda {|n| @kerberos_service_principal_name = n.get_string_value() },
-                    "kerberosSignOnMappingAttributeType" => lambda {|n| @kerberos_sign_on_mapping_attribute_type = n.get_enum_value(MicrosoftGraphBeta::Models::KerberosSignOnMappingAttributeType) },
+                    "kerberosSignOnMappingAttributeType" => lambda {|n| @kerberos_sign_on_mapping_attribute_type = n.get_enum_value(MicrosoftGraphBeta::Models::KerberosSignOnSettingsKerberosSignOnMappingAttributeType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
-            ## @return a kerberos_sign_on_mapping_attribute_type
+            ## @return a kerberos_sign_on_settings_kerberos_sign_on_mapping_attribute_type
             ## 
             def kerberos_sign_on_mapping_attribute_type
                 return @kerberos_sign_on_mapping_attribute_type

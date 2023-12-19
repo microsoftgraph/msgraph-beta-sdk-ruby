@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The riskEventTypes property
             @risk_event_types
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without that license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-            ## @return a risk_detail
+            ## @return a risk_service_principal_activity_detail
             ## 
             def detail
                 return @detail
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "detail" => lambda {|n| @detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
+                    "detail" => lambda {|n| @detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskServicePrincipalActivityDetail) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "riskEventTypes" => lambda {|n| @risk_event_types = n.get_collection_of_primitive_values(String) },
                 }

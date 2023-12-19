@@ -23,15 +23,15 @@ module MicrosoftGraphBeta
             # Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
                     "errorMessage" => lambda {|n| @error_message = n.get_string_value() },
                     "lastMembershipUpdated" => lambda {|n| @last_membership_updated = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::MembershipRuleProcessingStatusDetails) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::MembershipRuleProcessingStatusStatus) },
                 }
             end
             ## 
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
-            ## @return a membership_rule_processing_status_details
+            ## @return a membership_rule_processing_status_status
             ## 
             def status
                 return @status

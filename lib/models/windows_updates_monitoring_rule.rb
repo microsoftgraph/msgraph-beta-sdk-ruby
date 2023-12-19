@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesMonitoringRule
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
+            # The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
             @action
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -16,20 +16,20 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The signal to monitor. Possible values are: rollback, unknownFutureValue.
+            # The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
             @signal
             ## 
-            # The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+            # The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
             @threshold
             ## 
-            ## Gets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
-            ## @return a windows_updates_monitoring_action
+            ## Gets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
+            ## @return a windows_updates_monitoring_rule_action
             ## 
             def action
                 return @action
             end
             ## 
-            ## Sets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
+            ## Sets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
             ## @param value Value to set for the action property.
             ## @return a void
             ## 
@@ -37,15 +37,15 @@ module MicrosoftGraphBeta
                 @action = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,9 +73,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsUpdatesMonitoringAction) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsUpdatesMonitoringRuleAction) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "signal" => lambda {|n| @signal = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsUpdatesMonitoringSignal) },
+                    "signal" => lambda {|n| @signal = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsUpdatesMonitoringRuleSignal) },
                     "threshold" => lambda {|n| @threshold = n.get_number_value() },
                 }
             end
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
-            ## @return a windows_updates_monitoring_signal
+            ## Gets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
+            ## @return a windows_updates_monitoring_rule_signal
             ## 
             def signal
                 return @signal
             end
             ## 
-            ## Sets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
+            ## Sets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
             ## @param value Value to set for the signal property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 @signal = value
             end
             ## 
-            ## Gets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+            ## Gets the threshold property value. The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
             ## @return a integer
             ## 
             def threshold
                 return @threshold
             end
             ## 
-            ## Sets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+            ## Sets the threshold property value. The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
             ## @param value Value to set for the threshold property.
             ## @return a void
             ## 

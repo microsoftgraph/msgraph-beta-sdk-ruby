@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-            ## @return a security_detection_status
+            ## @return a security_file_evidence_detection_status
             ## 
             def detection_status
                 return @detection_status
@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "detectionStatus" => lambda {|n| @detection_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDetectionStatus) },
+                    "detectionStatus" => lambda {|n| @detection_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityFileEvidenceDetectionStatus) },
                     "fileDetails" => lambda {|n| @file_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFileDetails.create_from_discriminator_value(pn) }) },
                     "mdeDeviceId" => lambda {|n| @mde_device_id = n.get_string_value() },
                 })

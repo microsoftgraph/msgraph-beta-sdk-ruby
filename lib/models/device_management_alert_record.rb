@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
-            ## @return a device_management_alert_rule_template
+            ## @return a device_management_alert_record_alert_rule_template
             ## 
             def alert_rule_template
                 return @alert_rule_template
@@ -133,13 +133,13 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "alertImpact" => lambda {|n| @alert_impact = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementAlertImpact.create_from_discriminator_value(pn) }) },
                     "alertRuleId" => lambda {|n| @alert_rule_id = n.get_string_value() },
-                    "alertRuleTemplate" => lambda {|n| @alert_rule_template = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRuleTemplate) },
+                    "alertRuleTemplate" => lambda {|n| @alert_rule_template = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRecordAlertRuleTemplate) },
                     "detectedDateTime" => lambda {|n| @detected_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "resolvedDateTime" => lambda {|n| @resolved_date_time = n.get_date_time_value() },
-                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementRuleSeverityType) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertStatusType) },
+                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRecordSeverity) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRecordStatus) },
                 })
             end
             ## 
@@ -192,7 +192,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the severity property value. The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
-            ## @return a device_management_rule_severity_type
+            ## @return a device_management_alert_record_severity
             ## 
             def severity
                 return @severity
@@ -207,7 +207,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
-            ## @return a device_management_alert_status_type
+            ## @return a device_management_alert_record_status
             ## 
             def status
                 return @status

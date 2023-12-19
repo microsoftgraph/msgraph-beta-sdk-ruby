@@ -60,7 +60,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the category property value. The category property
-            ## @return a managed_tenants_management_category
+            ## @return a managed_tenants_management_template_step_category
             ## 
             def category
                 return @category
@@ -156,7 +156,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "acceptedVersion" => lambda {|n| @accepted_version = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsManagementTemplateStepVersion.create_from_discriminator_value(pn) }) },
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagementCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsManagementTemplateStepCategory) },
                     "createdByUserId" => lambda {|n| @created_by_user_id = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },

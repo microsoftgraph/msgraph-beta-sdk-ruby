@@ -20,15 +20,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
-            ## @return a teamwork_connection_status
+            ## @return a teamwork_connection_connection_status
             ## 
             def connection_status
                 return @connection_status
@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "connectionStatus" => lambda {|n| @connection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkConnectionStatus) },
+                    "connectionStatus" => lambda {|n| @connection_status = n.get_enum_value(MicrosoftGraphBeta::Models::TeamworkConnectionConnectionStatus) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }

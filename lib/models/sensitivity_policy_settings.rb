@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             @is_mandatory
             ## 
             ## Gets the applicableTo property value. The applicableTo property
-            ## @return a sensitivity_label_target
+            ## @return a sensitivity_policy_settings_applicable_to
             ## 
             def applicable_to
                 return @applicable_to
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelTarget) },
+                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityPolicySettingsApplicableTo) },
                     "downgradeSensitivityRequiresJustification" => lambda {|n| @downgrade_sensitivity_requires_justification = n.get_boolean_value() },
                     "helpWebUrl" => lambda {|n| @help_web_url = n.get_string_value() },
                     "isMandatory" => lambda {|n| @is_mandatory = n.get_boolean_value() },

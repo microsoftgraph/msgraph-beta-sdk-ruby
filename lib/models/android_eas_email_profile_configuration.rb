@@ -187,7 +187,7 @@ module MicrosoftGraphBeta
                     "syncContacts" => lambda {|n| @sync_contacts = n.get_boolean_value() },
                     "syncNotes" => lambda {|n| @sync_notes = n.get_boolean_value() },
                     "syncTasks" => lambda {|n| @sync_tasks = n.get_boolean_value() },
-                    "userDomainNameSource" => lambda {|n| @user_domain_name_source = n.get_enum_value(MicrosoftGraphBeta::Models::DomainNameSource) },
+                    "userDomainNameSource" => lambda {|n| @user_domain_name_source = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidEasEmailProfileConfigurationUserDomainNameSource) },
                     "usernameSource" => lambda {|n| @username_source = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidUsernameSource) },
                 })
             end
@@ -354,7 +354,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
-            ## @return a domain_name_source
+            ## @return a android_eas_email_profile_configuration_user_domain_name_source
             ## 
             def user_domain_name_source
                 return @user_domain_name_source

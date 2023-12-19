@@ -68,10 +68,10 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningType) },
+                    "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcServicePlanProvisioningType) },
                     "ramInGB" => lambda {|n| @ram_in_g_b = n.get_number_value() },
                     "storageInGB" => lambda {|n| @storage_in_g_b = n.get_number_value() },
-                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcServicePlanType) },
                     "userProfileInGB" => lambda {|n| @user_profile_in_g_b = n.get_number_value() },
                     "vCpuCount" => lambda {|n| @v_cpu_count = n.get_number_value() },
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
-            ## @return a cloud_pc_provisioning_type
+            ## @return a cloud_pc_service_plan_provisioning_type
             ## 
             def provisioning_type
                 return @provisioning_type

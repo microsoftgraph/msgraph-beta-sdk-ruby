@@ -10,41 +10,41 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The appScope property
+            # App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
             @app_scope
             ## 
-            # The displayLogo property
+            # App display logo.
             @display_logo
             ## 
-            # The displayName property
+            # App name.
             @display_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the appScope property value. The appScope property
-            ## @return a o_auth_app_scope
+            ## Gets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
+            ## @return a o_auth_consent_app_detail_app_scope
             ## 
             def app_scope
                 return @app_scope
             end
             ## 
-            ## Sets the appScope property value. The appScope property
+            ## Sets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
             ## @param value Value to set for the appScope property.
             ## @return a void
             ## 
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 return OAuthConsentAppDetail.new
             end
             ## 
-            ## Gets the displayLogo property value. The displayLogo property
+            ## Gets the displayLogo property value. App display logo.
             ## @return a string
             ## 
             def display_logo
                 return @display_logo
             end
             ## 
-            ## Sets the displayLogo property value. The displayLogo property
+            ## Sets the displayLogo property value. App display logo.
             ## @param value Value to set for the displayLogo property.
             ## @return a void
             ## 
@@ -83,14 +83,14 @@ module MicrosoftGraphBeta
                 @display_logo = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. App name.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. App name.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -103,7 +103,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "appScope" => lambda {|n| @app_scope = n.get_enum_value(MicrosoftGraphBeta::Models::OAuthAppScope) },
+                    "appScope" => lambda {|n| @app_scope = n.get_enum_value(MicrosoftGraphBeta::Models::OAuthConsentAppDetailAppScope) },
                     "displayLogo" => lambda {|n| @display_logo = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

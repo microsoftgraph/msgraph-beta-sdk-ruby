@@ -26,15 +26,15 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the errorCode property value. The errorCode property
-            ## @return a security_hunting_rule_error_code
+            ## @return a security_run_details_error_code
             ## 
             def error_code
                 return @error_code
@@ -92,11 +92,11 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "errorCode" => lambda {|n| @error_code = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityHuntingRuleErrorCode) },
+                    "errorCode" => lambda {|n| @error_code = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRunDetailsErrorCode) },
                     "failureReason" => lambda {|n| @failure_reason = n.get_string_value() },
                     "lastRunDateTime" => lambda {|n| @last_run_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityHuntingRuleRunStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRunDetailsStatus) },
                 }
             end
             ## 
@@ -145,7 +145,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a security_hunting_rule_run_status
+            ## @return a security_run_details_status
             ## 
             def status
                 return @status

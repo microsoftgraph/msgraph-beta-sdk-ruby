@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
             # Generic representation of a team template definition for a team with a specific structure and configuration.
             @template_definition
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # The visibility of the group and team. Defaults to Public.
@@ -275,7 +275,7 @@ module MicrosoftGraphBeta
                     "template" => lambda {|n| @template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsTemplate.create_from_discriminator_value(pn) }) },
                     "templateDefinition" => lambda {|n| @template_definition = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamTemplateDefinition.create_from_discriminator_value(pn) }) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
-                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::TeamVisibilityType) },
+                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::TeamVisibility) },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
@@ -636,14 +636,14 @@ module MicrosoftGraphBeta
                 @template_definition = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -652,7 +652,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the visibility property value. The visibility of the group and team. Defaults to Public.
-            ## @return a team_visibility_type
+            ## @return a team_visibility
             ## 
             def visibility
                 return @visibility

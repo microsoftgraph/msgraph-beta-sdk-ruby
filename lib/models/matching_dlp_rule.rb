@@ -52,15 +52,15 @@ module MicrosoftGraphBeta
                 @actions = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                     "policyName" => lambda {|n| @policy_name = n.get_string_value() },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
                     "ruleId" => lambda {|n| @rule_id = n.get_string_value() },
-                    "ruleMode" => lambda {|n| @rule_mode = n.get_enum_value(MicrosoftGraphBeta::Models::RuleMode) },
+                    "ruleMode" => lambda {|n| @rule_mode = n.get_enum_value(MicrosoftGraphBeta::Models::MatchingDlpRuleRuleMode) },
                     "ruleName" => lambda {|n| @rule_name = n.get_string_value() },
                 }
             end
@@ -191,7 +191,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the ruleMode property value. The ruleMode property
-            ## @return a rule_mode
+            ## @return a matching_dlp_rule_rule_mode
             ## 
             def rule_mode
                 return @rule_mode

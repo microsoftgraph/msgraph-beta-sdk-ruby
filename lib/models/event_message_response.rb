@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "proposedNewTime" => lambda {|n| @proposed_new_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeSlot.create_from_discriminator_value(pn) }) },
-                    "responseType" => lambda {|n| @response_type = n.get_enum_value(MicrosoftGraphBeta::Models::ResponseType) },
+                    "responseType" => lambda {|n| @response_type = n.get_enum_value(MicrosoftGraphBeta::Models::EventMessageResponseResponseType) },
                 })
             end
             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the responseType property value. The responseType property
-            ## @return a response_type
+            ## @return a event_message_response_response_type
             ## 
             def response_type
                 return @response_type

@@ -141,6 +141,9 @@ module MicrosoftGraphBeta
             # Indicates whether printing is allowed from managed apps.
             @print_blocked
             ## 
+            # Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            @protected_messaging_redirect_app_type
+            ## 
             # Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
             @save_as_blocked
             ## 
@@ -268,7 +271,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a managed_app_protection_app_action_if_unable_to_authenticate_user
             ## 
             def app_action_if_unable_to_authenticate_user
                 return @app_action_if_unable_to_authenticate_user
@@ -431,7 +434,7 @@ module MicrosoftGraphBeta
                     "allowedOutboundDataTransferDestinations" => lambda {|n| @allowed_outbound_data_transfer_destinations = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDataTransferLevel) },
                     "appActionIfDeviceComplianceRequired" => lambda {|n| @app_action_if_device_compliance_required = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfMaximumPinRetriesExceeded" => lambda {|n| @app_action_if_maximum_pin_retries_exceeded = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
-                    "appActionIfUnableToAuthenticateUser" => lambda {|n| @app_action_if_unable_to_authenticate_user = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
+                    "appActionIfUnableToAuthenticateUser" => lambda {|n| @app_action_if_unable_to_authenticate_user = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppProtectionAppActionIfUnableToAuthenticateUser) },
                     "blockDataIngestionIntoOrganizationDocuments" => lambda {|n| @block_data_ingestion_into_organization_documents = n.get_boolean_value() },
                     "contactSyncBlocked" => lambda {|n| @contact_sync_blocked = n.get_boolean_value() },
                     "dataBackupBlocked" => lambda {|n| @data_backup_blocked = n.get_boolean_value() },
@@ -440,7 +443,7 @@ module MicrosoftGraphBeta
                     "disableAppPinIfDevicePinIsSet" => lambda {|n| @disable_app_pin_if_device_pin_is_set = n.get_boolean_value() },
                     "fingerprintBlocked" => lambda {|n| @fingerprint_blocked = n.get_boolean_value() },
                     "gracePeriodToBlockAppsDuringOffClockHours" => lambda {|n| @grace_period_to_block_apps_during_off_clock_hours = n.get_duration_value() },
-                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedBrowserType) },
+                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_values(MicrosoftGraphBeta::Models::ManagedBrowserType) },
                     "managedBrowserToOpenLinksRequired" => lambda {|n| @managed_browser_to_open_links_required = n.get_boolean_value() },
                     "maximumAllowedDeviceThreatLevel" => lambda {|n| @maximum_allowed_device_threat_level = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDeviceThreatLevel) },
                     "maximumPinRetries" => lambda {|n| @maximum_pin_retries = n.get_number_value() },
@@ -454,7 +457,7 @@ module MicrosoftGraphBeta
                     "minimumWarningOsVersion" => lambda {|n| @minimum_warning_os_version = n.get_string_value() },
                     "minimumWipeAppVersion" => lambda {|n| @minimum_wipe_app_version = n.get_string_value() },
                     "minimumWipeOsVersion" => lambda {|n| @minimum_wipe_os_version = n.get_string_value() },
-                    "mobileThreatDefensePartnerPriority" => lambda {|n| @mobile_threat_defense_partner_priority = n.get_enum_value(MicrosoftGraphBeta::Models::MobileThreatDefensePartnerPriority) },
+                    "mobileThreatDefensePartnerPriority" => lambda {|n| @mobile_threat_defense_partner_priority = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppProtectionMobileThreatDefensePartnerPriority) },
                     "mobileThreatDefenseRemediationAction" => lambda {|n| @mobile_threat_defense_remediation_action = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "notificationRestriction" => lambda {|n| @notification_restriction = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppNotificationRestriction) },
                     "organizationalCredentialsRequired" => lambda {|n| @organizational_credentials_required = n.get_boolean_value() },
@@ -467,6 +470,7 @@ module MicrosoftGraphBeta
                     "pinRequiredInsteadOfBiometricTimeout" => lambda {|n| @pin_required_instead_of_biometric_timeout = n.get_duration_value() },
                     "previousPinBlockCount" => lambda {|n| @previous_pin_block_count = n.get_number_value() },
                     "printBlocked" => lambda {|n| @print_blocked = n.get_boolean_value() },
+                    "protectedMessagingRedirectAppType" => lambda {|n| @protected_messaging_redirect_app_type = n.get_enum_value(MicrosoftGraphBeta::Models::MessagingRedirectAppType) },
                     "saveAsBlocked" => lambda {|n| @save_as_blocked = n.get_boolean_value() },
                     "simplePinBlocked" => lambda {|n| @simple_pin_blocked = n.get_boolean_value() },
                 })
@@ -698,7 +702,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
-            ## @return a mobile_threat_defense_partner_priority
+            ## @return a managed_app_protection_mobile_threat_defense_partner_priority
             ## 
             def mobile_threat_defense_partner_priority
                 return @mobile_threat_defense_partner_priority
@@ -892,6 +896,21 @@ module MicrosoftGraphBeta
                 @print_blocked = value
             end
             ## 
+            ## Gets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            ## @return a messaging_redirect_app_type
+            ## 
+            def protected_messaging_redirect_app_type
+                return @protected_messaging_redirect_app_type
+            end
+            ## 
+            ## Sets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            ## @param value Value to set for the protectedMessagingRedirectAppType property.
+            ## @return a void
+            ## 
+            def protected_messaging_redirect_app_type=(value)
+                @protected_messaging_redirect_app_type = value
+            end
+            ## 
             ## Gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
             ## @return a boolean
             ## 
@@ -958,6 +977,7 @@ module MicrosoftGraphBeta
                 writer.write_duration_value("pinRequiredInsteadOfBiometricTimeout", @pin_required_instead_of_biometric_timeout)
                 writer.write_number_value("previousPinBlockCount", @previous_pin_block_count)
                 writer.write_boolean_value("printBlocked", @print_blocked)
+                writer.write_enum_value("protectedMessagingRedirectAppType", @protected_messaging_redirect_app_type)
                 writer.write_boolean_value("saveAsBlocked", @save_as_blocked)
                 writer.write_boolean_value("simplePinBlocked", @simple_pin_blocked)
             end

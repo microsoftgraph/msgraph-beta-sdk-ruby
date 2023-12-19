@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # A list of supported bottom margins(in microns) for the printer.
             @bottom_margins
             ## 
-            # True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            # True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             @collation
             ## 
             # The color modes supported by the printer. Valid values are described in the following table.
             @color_modes
             ## 
-            # A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            # A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             @content_types
             ## 
             # The range of copies per job supported by the printer.
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             # A list of supported left margins(in microns) for the printer.
             @left_margins
             ## 
-            # The media (i.e., paper) colors supported by the printer.
+            # The media (that is, paper) colors supported by the printer.
             @media_colors
             ## 
             # The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
@@ -130,15 +130,15 @@ module MicrosoftGraphBeta
             # A list of supported top margins(in microns) for the printer.
             @top_margins
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -160,14 +160,14 @@ module MicrosoftGraphBeta
                 @bottom_margins = value
             end
             ## 
-            ## Gets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            ## Gets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             ## @return a boolean
             ## 
             def collation
                 return @collation
             end
             ## 
-            ## Sets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            ## Sets the collation property value. True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
             ## @param value Value to set for the collation property.
             ## @return a void
             ## 
@@ -176,7 +176,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-            ## @return a print_color_mode
+            ## @return a printer_capabilities_color_modes
             ## 
             def color_modes
                 return @color_modes
@@ -197,14 +197,14 @@ module MicrosoftGraphBeta
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            ## Gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             ## @return a string
             ## 
             def content_types
                 return @content_types
             end
             ## 
-            ## Sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            ## Sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
             ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
@@ -252,7 +252,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-            ## @return a print_duplex_mode
+            ## @return a printer_capabilities_duplex_modes
             ## 
             def duplex_modes
                 return @duplex_modes
@@ -267,7 +267,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the feedDirections property value. The feedDirections property
-            ## @return a printer_feed_direction
+            ## @return a printer_capabilities_feed_directions
             ## 
             def feed_directions
                 return @feed_directions
@@ -282,7 +282,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-            ## @return a printer_feed_orientation
+            ## @return a printer_capabilities_feed_orientations
             ## 
             def feed_orientations
                 return @feed_orientations
@@ -297,7 +297,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the finishings property value. Finishing processes the printer supports for a printed document.
-            ## @return a print_finishing
+            ## @return a printer_capabilities_finishings
             ## 
             def finishings
                 return @finishings
@@ -318,14 +318,14 @@ module MicrosoftGraphBeta
                 return {
                     "bottomMargins" => lambda {|n| @bottom_margins = n.get_collection_of_primitive_values(Integer) },
                     "collation" => lambda {|n| @collation = n.get_boolean_value() },
-                    "colorModes" => lambda {|n| @color_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintColorMode.create_from_discriminator_value(pn) }) },
+                    "colorModes" => lambda {|n| @color_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesColorModes.create_from_discriminator_value(pn) }) },
                     "contentTypes" => lambda {|n| @content_types = n.get_collection_of_primitive_values(String) },
                     "copiesPerJob" => lambda {|n| @copies_per_job = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IntegerRange.create_from_discriminator_value(pn) }) },
                     "dpis" => lambda {|n| @dpis = n.get_collection_of_primitive_values(Integer) },
-                    "duplexModes" => lambda {|n| @duplex_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintDuplexMode.create_from_discriminator_value(pn) }) },
-                    "feedDirections" => lambda {|n| @feed_directions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterFeedDirection.create_from_discriminator_value(pn) }) },
-                    "feedOrientations" => lambda {|n| @feed_orientations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterFeedOrientation.create_from_discriminator_value(pn) }) },
-                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintFinishing.create_from_discriminator_value(pn) }) },
+                    "duplexModes" => lambda {|n| @duplex_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesDuplexModes.create_from_discriminator_value(pn) }) },
+                    "feedDirections" => lambda {|n| @feed_directions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesFeedDirections.create_from_discriminator_value(pn) }) },
+                    "feedOrientations" => lambda {|n| @feed_orientations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesFeedOrientations.create_from_discriminator_value(pn) }) },
+                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesFinishings.create_from_discriminator_value(pn) }) },
                     "inputBins" => lambda {|n| @input_bins = n.get_collection_of_primitive_values(String) },
                     "isColorPrintingSupported" => lambda {|n| @is_color_printing_supported = n.get_boolean_value() },
                     "isPageRangeSupported" => lambda {|n| @is_page_range_supported = n.get_boolean_value() },
@@ -333,14 +333,14 @@ module MicrosoftGraphBeta
                     "mediaColors" => lambda {|n| @media_colors = n.get_collection_of_primitive_values(String) },
                     "mediaSizes" => lambda {|n| @media_sizes = n.get_collection_of_primitive_values(String) },
                     "mediaTypes" => lambda {|n| @media_types = n.get_collection_of_primitive_values(String) },
-                    "multipageLayouts" => lambda {|n| @multipage_layouts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintMultipageLayout.create_from_discriminator_value(pn) }) },
+                    "multipageLayouts" => lambda {|n| @multipage_layouts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesMultipageLayouts.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "orientations" => lambda {|n| @orientations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintOrientation.create_from_discriminator_value(pn) }) },
+                    "orientations" => lambda {|n| @orientations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesOrientations.create_from_discriminator_value(pn) }) },
                     "outputBins" => lambda {|n| @output_bins = n.get_collection_of_primitive_values(String) },
                     "pagesPerSheet" => lambda {|n| @pages_per_sheet = n.get_collection_of_primitive_values(Integer) },
-                    "qualities" => lambda {|n| @qualities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintQuality.create_from_discriminator_value(pn) }) },
+                    "qualities" => lambda {|n| @qualities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesQualities.create_from_discriminator_value(pn) }) },
                     "rightMargins" => lambda {|n| @right_margins = n.get_collection_of_primitive_values(Integer) },
-                    "scalings" => lambda {|n| @scalings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintScaling.create_from_discriminator_value(pn) }) },
+                    "scalings" => lambda {|n| @scalings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrinterCapabilitiesScalings.create_from_discriminator_value(pn) }) },
                     "supportedColorConfigurations" => lambda {|n| @supported_color_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintColorConfiguration.create_from_discriminator_value(pn) }) },
                     "supportedCopiesPerJob" => lambda {|n| @supported_copies_per_job = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IntegerRange.create_from_discriminator_value(pn) }) },
                     "supportedDocumentMimeTypes" => lambda {|n| @supported_document_mime_types = n.get_collection_of_primitive_values(String) },
@@ -419,14 +419,14 @@ module MicrosoftGraphBeta
                 @left_margins = value
             end
             ## 
-            ## Gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+            ## Gets the mediaColors property value. The media (that is, paper) colors supported by the printer.
             ## @return a string
             ## 
             def media_colors
                 return @media_colors
             end
             ## 
-            ## Sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+            ## Sets the mediaColors property value. The media (that is, paper) colors supported by the printer.
             ## @param value Value to set for the mediaColors property.
             ## @return a void
             ## 
@@ -465,7 +465,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-            ## @return a print_multipage_layout
+            ## @return a printer_capabilities_multipage_layouts
             ## 
             def multipage_layouts
                 return @multipage_layouts
@@ -495,7 +495,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
-            ## @return a print_orientation
+            ## @return a printer_capabilities_orientations
             ## 
             def orientations
                 return @orientations
@@ -540,7 +540,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the qualities property value. The print qualities supported by the printer.
-            ## @return a print_quality
+            ## @return a printer_capabilities_qualities
             ## 
             def qualities
                 return @qualities
@@ -570,7 +570,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the scalings property value. Supported print scalings.
-            ## @return a print_scaling
+            ## @return a printer_capabilities_scalings
             ## 
             def scalings
                 return @scalings

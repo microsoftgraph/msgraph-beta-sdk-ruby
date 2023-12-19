@@ -64,15 +64,15 @@ module MicrosoftGraphBeta
             # Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
             @trim_duplicates
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
-            ## @return a entity_type
+            ## @return a search_request_entity_types
             ## 
             def entity_types
                 return @entity_types
@@ -225,7 +225,7 @@ module MicrosoftGraphBeta
                     "collapseProperties" => lambda {|n| @collapse_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CollapseProperty.create_from_discriminator_value(pn) }) },
                     "contentSources" => lambda {|n| @content_sources = n.get_collection_of_primitive_values(String) },
                     "enableTopResults" => lambda {|n| @enable_top_results = n.get_boolean_value() },
-                    "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EntityType.create_from_discriminator_value(pn) }) },
+                    "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SearchRequestEntityTypes.create_from_discriminator_value(pn) }) },
                     "fields" => lambda {|n| @fields = n.get_collection_of_primitive_values(String) },
                     "from" => lambda {|n| @from = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

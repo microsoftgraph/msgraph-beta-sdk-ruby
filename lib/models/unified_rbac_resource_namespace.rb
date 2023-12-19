@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
             @name
             ## 
-            # Operations that an authorized principal are allowed to perform.
+            # Operations that an authorized principal is allowed to perform.
             @resource_actions
             ## 
             ## Instantiates a new unifiedRbacResourceNamespace and sets the default values.
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 @name = value
             end
             ## 
-            ## Gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
+            ## Gets the resourceActions property value. Operations that an authorized principal is allowed to perform.
             ## @return a unified_rbac_resource_action
             ## 
             def resource_actions
                 return @resource_actions
             end
             ## 
-            ## Sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
+            ## Sets the resourceActions property value. Operations that an authorized principal is allowed to perform.
             ## @param value Value to set for the resourceActions property.
             ## @return a void
             ## 

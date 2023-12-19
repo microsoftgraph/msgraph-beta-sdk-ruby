@@ -16,15 +16,15 @@ module MicrosoftGraphBeta
             # Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
             @rule_kind
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "ruleKind" => lambda {|n| @rule_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerRuleKind) },
+                    "ruleKind" => lambda {|n| @rule_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPropertyRuleRuleKind) },
                 }
             end
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the ruleKind property value. Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
-            ## @return a planner_rule_kind
+            ## @return a planner_property_rule_rule_kind
             ## 
             def rule_kind
                 return @rule_kind

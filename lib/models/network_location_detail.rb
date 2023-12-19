@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "networkNames" => lambda {|n| @network_names = n.get_collection_of_primitive_values(String) },
-                    "networkType" => lambda {|n| @network_type = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkType) },
+                    "networkType" => lambda {|n| @network_type = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkLocationDetailNetworkType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
-            ## @return a network_type
+            ## @return a network_location_detail_network_type
             ## 
             def network_type
                 return @network_type

@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                     "certificateValidityPeriodScale" => lambda {|n| @certificate_validity_period_scale = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateValidityPeriodScale) },
                     "certificateValidityPeriodValue" => lambda {|n| @certificate_validity_period_value = n.get_number_value() },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
-                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::IosCertificateProfileBaseSubjectAlternativeNameType) },
                     "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::AppleSubjectNameFormat) },
                 })
             end
@@ -124,7 +124,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
-            ## @return a subject_alternative_name_type
+            ## @return a ios_certificate_profile_base_subject_alternative_name_type
             ## 
             def subject_alternative_name_type
                 return @subject_alternative_name_type

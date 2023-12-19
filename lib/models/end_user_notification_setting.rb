@@ -10,27 +10,27 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The notificationPreference property
+            # Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
             @notification_preference
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The positiveReinforcement property
+            # Positive reinforcement detail.
             @positive_reinforcement
             ## 
-            # The settingType property
+            # End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
             @setting_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -68,21 +68,21 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "notificationPreference" => lambda {|n| @notification_preference = n.get_enum_value(MicrosoftGraphBeta::Models::EndUserNotificationPreference) },
+                    "notificationPreference" => lambda {|n| @notification_preference = n.get_enum_value(MicrosoftGraphBeta::Models::EndUserNotificationSettingNotificationPreference) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "positiveReinforcement" => lambda {|n| @positive_reinforcement = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PositiveReinforcementNotification.create_from_discriminator_value(pn) }) },
-                    "settingType" => lambda {|n| @setting_type = n.get_enum_value(MicrosoftGraphBeta::Models::EndUserNotificationSettingType) },
+                    "settingType" => lambda {|n| @setting_type = n.get_enum_value(MicrosoftGraphBeta::Models::EndUserNotificationSettingSettingType) },
                 }
             end
             ## 
-            ## Gets the notificationPreference property value. The notificationPreference property
-            ## @return a end_user_notification_preference
+            ## Gets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
+            ## @return a end_user_notification_setting_notification_preference
             ## 
             def notification_preference
                 return @notification_preference
             end
             ## 
-            ## Sets the notificationPreference property value. The notificationPreference property
+            ## Sets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
             ## @param value Value to set for the notificationPreference property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the positiveReinforcement property value. The positiveReinforcement property
+            ## Gets the positiveReinforcement property value. Positive reinforcement detail.
             ## @return a positive_reinforcement_notification
             ## 
             def positive_reinforcement
                 return @positive_reinforcement
             end
             ## 
-            ## Sets the positiveReinforcement property value. The positiveReinforcement property
+            ## Sets the positiveReinforcement property value. Positive reinforcement detail.
             ## @param value Value to set for the positiveReinforcement property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the settingType property value. The settingType property
-            ## @return a end_user_notification_setting_type
+            ## Gets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
+            ## @return a end_user_notification_setting_setting_type
             ## 
             def setting_type
                 return @setting_type
             end
             ## 
-            ## Sets the settingType property value. The settingType property
+            ## Sets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
             ## @param value Value to set for the settingType property.
             ## @return a void
             ## 

@@ -8,23 +8,23 @@ module MicrosoftGraphBeta
         class MicrosoftCustomTrainingSetting < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The completionDateTime property
+            # The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @completion_date_time
             ## 
-            # The trainingAssignmentMappings property
+            # The mapping details of the associated training.
             @training_assignment_mappings
             ## 
-            # The trainingCompletionDuration property
+            # The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
             @training_completion_duration
             ## 
-            ## Gets the completionDateTime property value. The completionDateTime property
+            ## Gets the completionDateTime property value. The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def completion_date_time
                 return @completion_date_time
             end
             ## 
-            ## Sets the completionDateTime property value. The completionDateTime property
+            ## Sets the completionDateTime property value. The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the completionDateTime property.
             ## @return a void
             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "completionDateTime" => lambda {|n| @completion_date_time = n.get_date_time_value() },
                     "trainingAssignmentMappings" => lambda {|n| @training_assignment_mappings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftTrainingAssignmentMapping.create_from_discriminator_value(pn) }) },
-                    "trainingCompletionDuration" => lambda {|n| @training_completion_duration = n.get_enum_value(MicrosoftGraphBeta::Models::TrainingCompletionDuration) },
+                    "trainingCompletionDuration" => lambda {|n| @training_completion_duration = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftCustomTrainingSettingTrainingCompletionDuration) },
                 })
             end
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("trainingCompletionDuration", @training_completion_duration)
             end
             ## 
-            ## Gets the trainingAssignmentMappings property value. The trainingAssignmentMappings property
+            ## Gets the trainingAssignmentMappings property value. The mapping details of the associated training.
             ## @return a microsoft_training_assignment_mapping
             ## 
             def training_assignment_mappings
                 return @training_assignment_mappings
             end
             ## 
-            ## Sets the trainingAssignmentMappings property value. The trainingAssignmentMappings property
+            ## Sets the trainingAssignmentMappings property value. The mapping details of the associated training.
             ## @param value Value to set for the trainingAssignmentMappings property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 @training_assignment_mappings = value
             end
             ## 
-            ## Gets the trainingCompletionDuration property value. The trainingCompletionDuration property
-            ## @return a training_completion_duration
+            ## Gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
+            ## @return a microsoft_custom_training_setting_training_completion_duration
             ## 
             def training_completion_duration
                 return @training_completion_duration
             end
             ## 
-            ## Sets the trainingCompletionDuration property value. The trainingCompletionDuration property
+            ## Sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
             ## @param value Value to set for the trainingCompletionDuration property.
             ## @return a void
             ## 

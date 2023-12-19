@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
-require_relative '../../../../models/cloud_pc_report_name'
 require_relative '../../../device_management'
 require_relative '../../virtual_endpoint'
 require_relative '../reports'
@@ -41,15 +40,15 @@ module MicrosoftGraphBeta
                         # The top property
                         @top
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -95,7 +94,7 @@ module MicrosoftGraphBeta
                                 "filter" => lambda {|n| @filter = n.get_string_value() },
                                 "groupBy" => lambda {|n| @group_by = n.get_collection_of_primitive_values(String) },
                                 "orderBy" => lambda {|n| @order_by = n.get_collection_of_primitive_values(String) },
-                                "reportName" => lambda {|n| @report_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcReportName) },
+                                "reportName" => lambda {|n| @report_name = n.get_enum_value(MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetSharedUseLicenseUsageReport::GetSharedUseLicenseUsageReportPostRequestBodyReportName) },
                                 "search" => lambda {|n| @search = n.get_string_value() },
                                 "select" => lambda {|n| @select = n.get_collection_of_primitive_values(String) },
                                 "skip" => lambda {|n| @skip = n.get_number_value() },
@@ -134,7 +133,7 @@ module MicrosoftGraphBeta
                         end
                         ## 
                         ## Gets the reportName property value. The reportName property
-                        ## @return a cloud_pc_report_name
+                        ## @return a get_shared_use_license_usage_report_post_request_body_report_name
                         ## 
                         def report_name
                             return @report_name

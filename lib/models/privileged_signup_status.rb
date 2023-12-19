@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "isRegistered" => lambda {|n| @is_registered = n.get_boolean_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SetupStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedSignupStatusStatus) },
                 })
             end
             ## 
@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a setup_status
+            ## @return a privileged_signup_status_status
             ## 
             def status
                 return @status

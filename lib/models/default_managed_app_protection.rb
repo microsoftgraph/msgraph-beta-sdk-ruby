@@ -117,6 +117,15 @@ module MicrosoftGraphBeta
             # Indicate to the client to enable both biometrics and fingerprints for the app.
             @fingerprint_and_biometric_enabled
             ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            @messaging_redirect_app_display_name
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            @messaging_redirect_app_package_id
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            @messaging_redirect_app_url_scheme
+            ## 
             # Minimum version of the Company portal that must be installed on the device or app access will be blocked
             @minimum_required_company_portal_version
             ## 
@@ -220,7 +229,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a default_managed_app_protection_app_action_if_account_is_clocked_out
             ## 
             def app_action_if_account_is_clocked_out
                 return @app_action_if_account_is_clocked_out
@@ -310,7 +319,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a default_managed_app_protection_app_action_if_device_passcode_complexity_less_than_high
             ## 
             def app_action_if_device_passcode_complexity_less_than_high
                 return @app_action_if_device_passcode_complexity_less_than_high
@@ -325,7 +334,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a default_managed_app_protection_app_action_if_device_passcode_complexity_less_than_low
             ## 
             def app_action_if_device_passcode_complexity_less_than_low
                 return @app_action_if_device_passcode_complexity_less_than_low
@@ -340,7 +349,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
-            ## @return a managed_app_remediation_action
+            ## @return a default_managed_app_protection_app_action_if_device_passcode_complexity_less_than_medium
             ## 
             def app_action_if_device_passcode_complexity_less_than_medium
                 return @app_action_if_device_passcode_complexity_less_than_medium
@@ -739,15 +748,15 @@ module MicrosoftGraphBeta
                     "allowedAndroidDeviceManufacturers" => lambda {|n| @allowed_android_device_manufacturers = n.get_string_value() },
                     "allowedAndroidDeviceModels" => lambda {|n| @allowed_android_device_models = n.get_collection_of_primitive_values(String) },
                     "allowedIosDeviceModels" => lambda {|n| @allowed_ios_device_models = n.get_string_value() },
-                    "appActionIfAccountIsClockedOut" => lambda {|n| @app_action_if_account_is_clocked_out = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
+                    "appActionIfAccountIsClockedOut" => lambda {|n| @app_action_if_account_is_clocked_out = n.get_enum_value(MicrosoftGraphBeta::Models::DefaultManagedAppProtectionAppActionIfAccountIsClockedOut) },
                     "appActionIfAndroidDeviceManufacturerNotAllowed" => lambda {|n| @app_action_if_android_device_manufacturer_not_allowed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfAndroidDeviceModelNotAllowed" => lambda {|n| @app_action_if_android_device_model_not_allowed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfAndroidSafetyNetAppsVerificationFailed" => lambda {|n| @app_action_if_android_safety_net_apps_verification_failed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfAndroidSafetyNetDeviceAttestationFailed" => lambda {|n| @app_action_if_android_safety_net_device_attestation_failed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfDeviceLockNotSet" => lambda {|n| @app_action_if_device_lock_not_set = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
-                    "appActionIfDevicePasscodeComplexityLessThanHigh" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_high = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
-                    "appActionIfDevicePasscodeComplexityLessThanLow" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_low = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
-                    "appActionIfDevicePasscodeComplexityLessThanMedium" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_medium = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
+                    "appActionIfDevicePasscodeComplexityLessThanHigh" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_high = n.get_enum_value(MicrosoftGraphBeta::Models::DefaultManagedAppProtectionAppActionIfDevicePasscodeComplexityLessThanHigh) },
+                    "appActionIfDevicePasscodeComplexityLessThanLow" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_low = n.get_enum_value(MicrosoftGraphBeta::Models::DefaultManagedAppProtectionAppActionIfDevicePasscodeComplexityLessThanLow) },
+                    "appActionIfDevicePasscodeComplexityLessThanMedium" => lambda {|n| @app_action_if_device_passcode_complexity_less_than_medium = n.get_enum_value(MicrosoftGraphBeta::Models::DefaultManagedAppProtectionAppActionIfDevicePasscodeComplexityLessThanMedium) },
                     "appActionIfIosDeviceModelNotAllowed" => lambda {|n| @app_action_if_ios_device_model_not_allowed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appDataEncryptionType" => lambda {|n| @app_data_encryption_type = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDataEncryptionType) },
                     "apps" => lambda {|n| @apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedMobileApp.create_from_discriminator_value(pn) }) },
@@ -772,6 +781,9 @@ module MicrosoftGraphBeta
                     "faceIdBlocked" => lambda {|n| @face_id_blocked = n.get_boolean_value() },
                     "filterOpenInToOnlyManagedApps" => lambda {|n| @filter_open_in_to_only_managed_apps = n.get_boolean_value() },
                     "fingerprintAndBiometricEnabled" => lambda {|n| @fingerprint_and_biometric_enabled = n.get_boolean_value() },
+                    "messagingRedirectAppDisplayName" => lambda {|n| @messaging_redirect_app_display_name = n.get_string_value() },
+                    "messagingRedirectAppPackageId" => lambda {|n| @messaging_redirect_app_package_id = n.get_string_value() },
+                    "messagingRedirectAppUrlScheme" => lambda {|n| @messaging_redirect_app_url_scheme = n.get_string_value() },
                     "minimumRequiredCompanyPortalVersion" => lambda {|n| @minimum_required_company_portal_version = n.get_string_value() },
                     "minimumRequiredPatchVersion" => lambda {|n| @minimum_required_patch_version = n.get_string_value() },
                     "minimumRequiredSdkVersion" => lambda {|n| @minimum_required_sdk_version = n.get_string_value() },
@@ -792,6 +804,51 @@ module MicrosoftGraphBeta
                     "warnAfterCompanyPortalUpdateDeferralInDays" => lambda {|n| @warn_after_company_portal_update_deferral_in_days = n.get_number_value() },
                     "wipeAfterCompanyPortalUpdateDeferralInDays" => lambda {|n| @wipe_after_company_portal_update_deferral_in_days = n.get_number_value() },
                 })
+            end
+            ## 
+            ## Gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_display_name
+                return @messaging_redirect_app_display_name
+            end
+            ## 
+            ## Sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppDisplayName property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_display_name=(value)
+                @messaging_redirect_app_display_name = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_package_id
+                return @messaging_redirect_app_package_id
+            end
+            ## 
+            ## Sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppPackageId property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_package_id=(value)
+                @messaging_redirect_app_package_id = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_url_scheme
+                return @messaging_redirect_app_url_scheme
+            end
+            ## 
+            ## Sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppUrlScheme property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_url_scheme=(value)
+                @messaging_redirect_app_url_scheme = value
             end
             ## 
             ## Gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -1077,6 +1134,9 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
                 writer.write_boolean_value("filterOpenInToOnlyManagedApps", @filter_open_in_to_only_managed_apps)
                 writer.write_boolean_value("fingerprintAndBiometricEnabled", @fingerprint_and_biometric_enabled)
+                writer.write_string_value("messagingRedirectAppDisplayName", @messaging_redirect_app_display_name)
+                writer.write_string_value("messagingRedirectAppPackageId", @messaging_redirect_app_package_id)
+                writer.write_string_value("messagingRedirectAppUrlScheme", @messaging_redirect_app_url_scheme)
                 writer.write_string_value("minimumRequiredCompanyPortalVersion", @minimum_required_company_portal_version)
                 writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version)
                 writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)

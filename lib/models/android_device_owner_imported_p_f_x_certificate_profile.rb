@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             @silent_certificate_access_details
             ## 
             ## Gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
-            ## @return a android_device_owner_certificate_access_type
+            ## @return a android_device_owner_imported_p_f_x_certificate_profile_certificate_access_type
             ## 
             def certificate_access_type
                 return @certificate_access_type
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerCertificateAccessType) },
+                    "certificateAccessType" => lambda {|n| @certificate_access_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerImportedPFXCertificateProfileCertificateAccessType) },
                     "intendedPurpose" => lambda {|n| @intended_purpose = n.get_enum_value(MicrosoftGraphBeta::Models::IntendedPurpose) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "silentCertificateAccessDetails" => lambda {|n| @silent_certificate_access_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerSilentCertificateAccess.create_from_discriminator_value(pn) }) },

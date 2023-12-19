@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the approvalState property value. The approvalState property
-            ## @return a approval_state
+            ## @return a privileged_approval_approval_state
             ## 
             def approval_state
                 return @approval_state
@@ -138,7 +138,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "approvalDuration" => lambda {|n| @approval_duration = n.get_duration_value() },
-                    "approvalState" => lambda {|n| @approval_state = n.get_enum_value(MicrosoftGraphBeta::Models::ApprovalState) },
+                    "approvalState" => lambda {|n| @approval_state = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedApprovalApprovalState) },
                     "approvalType" => lambda {|n| @approval_type = n.get_string_value() },
                     "approverReason" => lambda {|n| @approver_reason = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },

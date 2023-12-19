@@ -164,7 +164,7 @@ module MicrosoftGraphBeta
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "manifest" => lambda {|n| @manifest = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "permissionsRequired" => lambda {|n| @permissions_required = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationPermissionsRequired) },
+                    "permissionsRequired" => lambda {|n| @permissions_required = n.get_enum_value(MicrosoftGraphBeta::Models::CloudAppSecurityProfilePermissionsRequired) },
                     "platform" => lambda {|n| @platform = n.get_string_value() },
                     "policyName" => lambda {|n| @policy_name = n.get_string_value() },
                     "publisher" => lambda {|n| @publisher = n.get_string_value() },
@@ -236,7 +236,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the permissionsRequired property value. The permissionsRequired property
-            ## @return a application_permissions_required
+            ## @return a cloud_app_security_profile_permissions_required
             ## 
             def permissions_required
                 return @permissions_required

@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                     "errorCount" => lambda {|n| @error_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "lastActivityDateTime" => lambda {|n| @last_activity_date_time = n.get_date_time_value() },
                     "lastSynchronizationDateTime" => lambda {|n| @last_synchronization_date_time = n.get_date_time_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::EducationSynchronizationStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::EducationSynchronizationProfileStatusStatus) },
                     "statusMessage" => lambda {|n| @status_message = n.get_string_value() },
                 })
             end
@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
-            ## @return a education_synchronization_status
+            ## @return a education_synchronization_profile_status_status
             ## 
             def status
                 return @status

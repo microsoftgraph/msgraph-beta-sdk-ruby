@@ -70,12 +70,12 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "allowEmailFromGuestUsers" => lambda {|n| @allow_email_from_guest_users = n.get_boolean_value() },
                     "allowGuestUsers" => lambda {|n| @allow_guest_users = n.get_boolean_value() },
-                    "privacy" => lambda {|n| @privacy = n.get_enum_value(MicrosoftGraphBeta::Models::GroupPrivacy) },
+                    "privacy" => lambda {|n| @privacy = n.get_enum_value(MicrosoftGraphBeta::Models::ProtectGroupPrivacy) },
                 })
             end
             ## 
             ## Gets the privacy property value. The privacy property
-            ## @return a group_privacy
+            ## @return a protect_group_privacy
             ## 
             def privacy
                 return @privacy

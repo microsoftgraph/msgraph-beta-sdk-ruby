@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
             @single_value_extended_properties
             ## 
             ## Gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-            ## @return a online_meeting_provider_type
+            ## @return a calendar_allowed_online_meeting_providers
             ## 
             def allowed_online_meeting_providers
                 return @allowed_online_meeting_providers
@@ -222,7 +222,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-            ## @return a online_meeting_provider_type
+            ## @return a calendar_default_online_meeting_provider
             ## 
             def default_online_meeting_provider
                 return @default_online_meeting_provider
@@ -256,7 +256,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedOnlineMeetingProviders" => lambda {|n| @allowed_online_meeting_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OnlineMeetingProviderType.create_from_discriminator_value(pn) }) },
+                    "allowedOnlineMeetingProviders" => lambda {|n| @allowed_online_meeting_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CalendarAllowedOnlineMeetingProviders.create_from_discriminator_value(pn) }) },
                     "calendarGroupId" => lambda {|n| @calendar_group_id = n.get_string_value() },
                     "calendarPermissions" => lambda {|n| @calendar_permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CalendarPermission.create_from_discriminator_value(pn) }) },
                     "calendarView" => lambda {|n| @calendar_view = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Event.create_from_discriminator_value(pn) }) },
@@ -265,7 +265,7 @@ module MicrosoftGraphBeta
                     "canViewPrivateItems" => lambda {|n| @can_view_private_items = n.get_boolean_value() },
                     "changeKey" => lambda {|n| @change_key = n.get_string_value() },
                     "color" => lambda {|n| @color = n.get_enum_value(MicrosoftGraphBeta::Models::CalendarColor) },
-                    "defaultOnlineMeetingProvider" => lambda {|n| @default_online_meeting_provider = n.get_enum_value(MicrosoftGraphBeta::Models::OnlineMeetingProviderType) },
+                    "defaultOnlineMeetingProvider" => lambda {|n| @default_online_meeting_provider = n.get_enum_value(MicrosoftGraphBeta::Models::CalendarDefaultOnlineMeetingProvider) },
                     "events" => lambda {|n| @events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Event.create_from_discriminator_value(pn) }) },
                     "hexColor" => lambda {|n| @hex_color = n.get_string_value() },
                     "isDefaultCalendar" => lambda {|n| @is_default_calendar = n.get_boolean_value() },

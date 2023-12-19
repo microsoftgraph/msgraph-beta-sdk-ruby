@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "intent" => lambda {|n| @intent = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceConfigAssignmentIntent) },
+                    "intent" => lambda {|n| @intent = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceConfigurationAssignmentIntent) },
                     "source" => lambda {|n| @source = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceAndAppManagementAssignmentSource) },
                     "sourceId" => lambda {|n| @source_id = n.get_string_value() },
                     "target" => lambda {|n| @target = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceAndAppManagementAssignmentTarget.create_from_discriminator_value(pn) }) },
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
-            ## @return a device_config_assignment_intent
+            ## @return a device_configuration_assignment_intent
             ## 
             def intent
                 return @intent

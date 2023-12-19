@@ -25,6 +25,9 @@ module MicrosoftGraphBeta
             # Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
             @due_date
             ## 
+            # The forms property
+            @forms
+            ## 
             # Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
             @move
             ## 
@@ -159,6 +162,21 @@ module MicrosoftGraphBeta
                 @due_date = value
             end
             ## 
+            ## Gets the forms property value. The forms property
+            ## @return a planner_field_rules
+            ## 
+            def forms
+                return @forms
+            end
+            ## 
+            ## Sets the forms property value. The forms property
+            ## @param value Value to set for the forms property.
+            ## @return a void
+            ## 
+            def forms=(value)
+                @forms = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -170,6 +188,7 @@ module MicrosoftGraphBeta
                     "completionRequirements" => lambda {|n| @completion_requirements = n.get_collection_of_primitive_values(String) },
                     "delete" => lambda {|n| @delete = n.get_collection_of_primitive_values(String) },
                     "dueDate" => lambda {|n| @due_date = n.get_collection_of_primitive_values(String) },
+                    "forms" => lambda {|n| @forms = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerFieldRules.create_from_discriminator_value(pn) }) },
                     "move" => lambda {|n| @move = n.get_collection_of_primitive_values(String) },
                     "notes" => lambda {|n| @notes = n.get_collection_of_primitive_values(String) },
                     "order" => lambda {|n| @order = n.get_collection_of_primitive_values(String) },
@@ -300,6 +319,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("completionRequirements", @completion_requirements)
                 writer.write_collection_of_primitive_values("delete", @delete)
                 writer.write_collection_of_primitive_values("dueDate", @due_date)
+                writer.write_object_value("forms", @forms)
                 writer.write_collection_of_primitive_values("move", @move)
                 writer.write_collection_of_primitive_values("notes", @notes)
                 writer.write_collection_of_primitive_values("order", @order)

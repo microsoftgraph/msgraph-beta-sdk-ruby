@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,8 +94,8 @@ module MicrosoftGraphBeta
                     "customExtensionId" => lambda {|n| @custom_extension_id = n.get_string_value() },
                     "externalCorrelationId" => lambda {|n| @external_correlation_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraphBeta::Models::AccessPackageCustomExtensionStage) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AccessPackageCustomExtensionHandlerStatus) },
+                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraphBeta::Models::CustomExtensionHandlerInstanceStage) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CustomExtensionHandlerInstanceStatus) },
                 }
             end
             ## 
@@ -129,7 +129,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-            ## @return a access_package_custom_extension_stage
+            ## @return a custom_extension_handler_instance_stage
             ## 
             def stage
                 return @stage
@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
-            ## @return a access_package_custom_extension_handler_status
+            ## @return a custom_extension_handler_instance_status
             ## 
             def status
                 return @status

@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the classificationMethod property value. The classificationMethod property
-            ## @return a classification_method
+            ## @return a detected_sensitive_content_classification_method
             ## 
             def classification_method
                 return @classification_method
@@ -82,10 +82,10 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "classificationAttributes" => lambda {|n| @classification_attributes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ClassificationAttribute.create_from_discriminator_value(pn) }) },
-                    "classificationMethod" => lambda {|n| @classification_method = n.get_enum_value(MicrosoftGraphBeta::Models::ClassificationMethod) },
+                    "classificationMethod" => lambda {|n| @classification_method = n.get_enum_value(MicrosoftGraphBeta::Models::DetectedSensitiveContentClassificationMethod) },
                     "matches" => lambda {|n| @matches = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SensitiveContentLocation.create_from_discriminator_value(pn) }) },
-                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
-                    "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeSource) },
+                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::DetectedSensitiveContentScope) },
+                    "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::DetectedSensitiveContentSensitiveTypeSource) },
                 })
             end
             ## 
@@ -105,7 +105,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the scope property value. The scope property
-            ## @return a sensitive_type_scope
+            ## @return a detected_sensitive_content_scope
             ## 
             def scope
                 return @scope
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the sensitiveTypeSource property value. The sensitiveTypeSource property
-            ## @return a sensitive_type_source
+            ## @return a detected_sensitive_content_sensitive_type_source
             ## 
             def sensitive_type_source
                 return @sensitive_type_source

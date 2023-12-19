@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "parentSiteId" => lambda {|n| @parent_site_id = n.get_string_value() },
-                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::TermStoreTermGroupScope) },
+                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::TermStoreGroupScope) },
                     "sets" => lambda {|n| @sets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TermStoreSet.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -117,7 +117,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
-            ## @return a term_store_term_group_scope
+            ## @return a term_store_group_scope
             ## 
             def scope
                 return @scope

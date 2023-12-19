@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "canvasLayout" => lambda {|n| @canvas_layout = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CanvasLayout.create_from_discriminator_value(pn) }) },
-                    "promotionKind" => lambda {|n| @promotion_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PagePromotionType) },
+                    "promotionKind" => lambda {|n| @promotion_kind = n.get_enum_value(MicrosoftGraphBeta::Models::SitePagePromotionKind) },
                     "reactions" => lambda {|n| @reactions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ReactionsFacet.create_from_discriminator_value(pn) }) },
                     "showComments" => lambda {|n| @show_comments = n.get_boolean_value() },
                     "showRecommendedPages" => lambda {|n| @show_recommended_pages = n.get_boolean_value() },
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
-            ## @return a page_promotion_type
+            ## @return a site_page_promotion_kind
             ## 
             def promotion_kind
                 return @promotion_kind

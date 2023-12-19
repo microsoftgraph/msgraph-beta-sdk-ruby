@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             @trusted_server_certificate_names
             ## 
             ## Gets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-            ## @return a wi_fi_authentication_method
+            ## @return a android_work_profile_enterprise_wi_fi_configuration_authentication_method
             ## 
             def authentication_method
                 return @authentication_method
@@ -91,11 +91,11 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiAuthenticationMethod) },
+                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidWorkProfileEnterpriseWiFiConfigurationAuthenticationMethod) },
                     "eapType" => lambda {|n| @eap_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidEapType) },
                     "identityCertificateForClientAuthentication" => lambda {|n| @identity_certificate_for_client_authentication = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidWorkProfileCertificateProfileBase.create_from_discriminator_value(pn) }) },
-                    "innerAuthenticationProtocolForEapTtls" => lambda {|n| @inner_authentication_protocol_for_eap_ttls = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForEapTtlsType) },
-                    "innerAuthenticationProtocolForPeap" => lambda {|n| @inner_authentication_protocol_for_peap = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForPeap) },
+                    "innerAuthenticationProtocolForEapTtls" => lambda {|n| @inner_authentication_protocol_for_eap_ttls = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidWorkProfileEnterpriseWiFiConfigurationInnerAuthenticationProtocolForEapTtls) },
+                    "innerAuthenticationProtocolForPeap" => lambda {|n| @inner_authentication_protocol_for_peap = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidWorkProfileEnterpriseWiFiConfigurationInnerAuthenticationProtocolForPeap) },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
                     "proxyAutomaticConfigurationUrl" => lambda {|n| @proxy_automatic_configuration_url = n.get_string_value() },
                     "proxySettings" => lambda {|n| @proxy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiProxySetting) },
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-            ## @return a non_eap_authentication_method_for_eap_ttls_type
+            ## @return a android_work_profile_enterprise_wi_fi_configuration_inner_authentication_protocol_for_eap_ttls
             ## 
             def inner_authentication_protocol_for_eap_ttls
                 return @inner_authentication_protocol_for_eap_ttls
@@ -135,7 +135,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
-            ## @return a non_eap_authentication_method_for_peap
+            ## @return a android_work_profile_enterprise_wi_fi_configuration_inner_authentication_protocol_for_peap
             ## 
             def inner_authentication_protocol_for_peap
                 return @inner_authentication_protocol_for_peap

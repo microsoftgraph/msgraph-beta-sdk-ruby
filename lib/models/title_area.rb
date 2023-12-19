@@ -43,15 +43,15 @@ module MicrosoftGraphBeta
             # Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
             @text_alignment
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -112,14 +112,14 @@ module MicrosoftGraphBeta
                     "alternativeText" => lambda {|n| @alternative_text = n.get_string_value() },
                     "enableGradientEffect" => lambda {|n| @enable_gradient_effect = n.get_boolean_value() },
                     "imageWebUrl" => lambda {|n| @image_web_url = n.get_string_value() },
-                    "layout" => lambda {|n| @layout = n.get_enum_value(MicrosoftGraphBeta::Models::TitleAreaLayoutType) },
+                    "layout" => lambda {|n| @layout = n.get_enum_value(MicrosoftGraphBeta::Models::TitleAreaLayout) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "serverProcessedContent" => lambda {|n| @server_processed_content = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServerProcessedContent.create_from_discriminator_value(pn) }) },
                     "showAuthor" => lambda {|n| @show_author = n.get_boolean_value() },
                     "showPublishedDate" => lambda {|n| @show_published_date = n.get_boolean_value() },
                     "showTextBlockAboveTitle" => lambda {|n| @show_text_block_above_title = n.get_boolean_value() },
                     "textAboveTitle" => lambda {|n| @text_above_title = n.get_string_value() },
-                    "textAlignment" => lambda {|n| @text_alignment = n.get_enum_value(MicrosoftGraphBeta::Models::TitleAreaTextAlignmentType) },
+                    "textAlignment" => lambda {|n| @text_alignment = n.get_enum_value(MicrosoftGraphBeta::Models::TitleAreaTextAlignment) },
                 }
             end
             ## 
@@ -139,7 +139,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the layout property value. Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.
-            ## @return a title_area_layout_type
+            ## @return a title_area_layout
             ## 
             def layout
                 return @layout
@@ -264,7 +264,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the textAlignment property value. Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.
-            ## @return a title_area_text_alignment_type
+            ## @return a title_area_text_alignment
             ## 
             def text_alignment
                 return @text_alignment

@@ -57,8 +57,8 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "regionGroup" => lambda {|n| @region_group = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRegionGroup) },
-                    "regionStatus" => lambda {|n| @region_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSupportedRegionStatus) },
-                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "regionStatus" => lambda {|n| @region_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSupportedRegionRegionStatus) },
+                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                 })
             end
             ## 
@@ -78,7 +78,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
-            ## @return a cloud_pc_supported_region_status
+            ## @return a cloud_pc_supported_region_region_status
             ## 
             def region_status
                 return @region_status

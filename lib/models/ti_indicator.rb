@@ -14,10 +14,10 @@ module MicrosoftGraphBeta
             # The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
             @activity_group_names
             ## 
-            # A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+            # A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
             @additional_information
             ## 
-            # Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+            # Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
             @azure_tenant_id
             ## 
             # An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
             @expiration_date_time
             ## 
-            # An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+            # An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
             @external_id
             ## 
             # The fileCompileDateTime property
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
             # The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_reported_date_time
             ## 
-            # The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+            # The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
             @malware_family_names
             ## 
             # The networkCidrBlock property
@@ -158,10 +158,10 @@ module MicrosoftGraphBeta
             # The networkSourcePort property
             @network_source_port
             ## 
-            # Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+            # Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
             @passive_only
             ## 
-            # An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+            # An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
             @severity
             ## 
             # A JSON array of strings that stores arbitrary tags/keywords.
@@ -183,7 +183,7 @@ module MicrosoftGraphBeta
             @user_agent
             ## 
             ## Gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
-            ## @return a ti_action
+            ## @return a ti_indicator_action
             ## 
             def action
                 return @action
@@ -212,14 +212,14 @@ module MicrosoftGraphBeta
                 @activity_group_names = value
             end
             ## 
-            ## Gets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+            ## Gets the additionalInformation property value. A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
             ## @return a string
             ## 
             def additional_information
                 return @additional_information
             end
             ## 
-            ## Sets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+            ## Sets the additionalInformation property value. A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
             ## @param value Value to set for the additionalInformation property.
             ## @return a void
             ## 
@@ -227,14 +227,14 @@ module MicrosoftGraphBeta
                 @additional_information = value
             end
             ## 
-            ## Gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+            ## Gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
             ## @return a string
             ## 
             def azure_tenant_id
                 return @azure_tenant_id
             end
             ## 
-            ## Sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+            ## Sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
             ## @param value Value to set for the azureTenantId property.
             ## @return a void
             ## 
@@ -289,7 +289,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
-            ## @return a diamond_model
+            ## @return a ti_indicator_diamond_model
             ## 
             def diamond_model
                 return @diamond_model
@@ -468,14 +468,14 @@ module MicrosoftGraphBeta
                 @expiration_date_time = value
             end
             ## 
-            ## Gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+            ## Gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
             ## @return a string
             ## 
             def external_id
                 return @external_id
             end
             ## 
-            ## Sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+            ## Sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
             ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
@@ -514,7 +514,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the fileHashType property value. The fileHashType property
-            ## @return a file_hash_type
+            ## @return a ti_indicator_file_hash_type
             ## 
             def file_hash_type
                 return @file_hash_type
@@ -638,13 +638,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::TiAction) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::TiIndicatorAction) },
                     "activityGroupNames" => lambda {|n| @activity_group_names = n.get_collection_of_primitive_values(String) },
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                     "azureTenantId" => lambda {|n| @azure_tenant_id = n.get_string_value() },
                     "confidence" => lambda {|n| @confidence = n.get_number_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "diamondModel" => lambda {|n| @diamond_model = n.get_enum_value(MicrosoftGraphBeta::Models::DiamondModel) },
+                    "diamondModel" => lambda {|n| @diamond_model = n.get_enum_value(MicrosoftGraphBeta::Models::TiIndicatorDiamondModel) },
                     "domainName" => lambda {|n| @domain_name = n.get_string_value() },
                     "emailEncoding" => lambda {|n| @email_encoding = n.get_string_value() },
                     "emailLanguage" => lambda {|n| @email_language = n.get_string_value() },
@@ -659,7 +659,7 @@ module MicrosoftGraphBeta
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
                     "fileCompileDateTime" => lambda {|n| @file_compile_date_time = n.get_date_time_value() },
                     "fileCreatedDateTime" => lambda {|n| @file_created_date_time = n.get_date_time_value() },
-                    "fileHashType" => lambda {|n| @file_hash_type = n.get_enum_value(MicrosoftGraphBeta::Models::FileHashType) },
+                    "fileHashType" => lambda {|n| @file_hash_type = n.get_enum_value(MicrosoftGraphBeta::Models::TiIndicatorFileHashType) },
                     "fileHashValue" => lambda {|n| @file_hash_value = n.get_string_value() },
                     "fileMutexName" => lambda {|n| @file_mutex_name = n.get_string_value() },
                     "fileName" => lambda {|n| @file_name = n.get_string_value() },
@@ -693,7 +693,7 @@ module MicrosoftGraphBeta
                     "tags" => lambda {|n| @tags = n.get_collection_of_primitive_values(String) },
                     "targetProduct" => lambda {|n| @target_product = n.get_string_value() },
                     "threatType" => lambda {|n| @threat_type = n.get_string_value() },
-                    "tlpLevel" => lambda {|n| @tlp_level = n.get_enum_value(MicrosoftGraphBeta::Models::TlpLevel) },
+                    "tlpLevel" => lambda {|n| @tlp_level = n.get_enum_value(MicrosoftGraphBeta::Models::TiIndicatorTlpLevel) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                     "userAgent" => lambda {|n| @user_agent = n.get_string_value() },
                 })
@@ -774,14 +774,14 @@ module MicrosoftGraphBeta
                 @last_reported_date_time = value
             end
             ## 
-            ## Gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+            ## Gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
             ## @return a string
             ## 
             def malware_family_names
                 return @malware_family_names
             end
             ## 
-            ## Sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+            ## Sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
             ## @param value Value to set for the malwareFamilyNames property.
             ## @return a void
             ## 
@@ -1014,14 +1014,14 @@ module MicrosoftGraphBeta
                 @network_source_port = value
             end
             ## 
-            ## Gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+            ## Gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
             ## @return a boolean
             ## 
             def passive_only
                 return @passive_only
             end
             ## 
-            ## Sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+            ## Sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
             ## @param value Value to set for the passiveOnly property.
             ## @return a void
             ## 
@@ -1096,14 +1096,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userAgent", @user_agent)
             end
             ## 
-            ## Gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+            ## Gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
             ## @return a integer
             ## 
             def severity
                 return @severity
             end
             ## 
-            ## Sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+            ## Sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
             ## @param value Value to set for the severity property.
             ## @return a void
             ## 
@@ -1157,7 +1157,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-            ## @return a tlp_level
+            ## @return a ti_indicator_tlp_level
             ## 
             def tlp_level
                 return @tlp_level

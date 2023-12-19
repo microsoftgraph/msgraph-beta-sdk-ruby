@@ -1,0 +1,2 @@
+require_relative 'send_virtual_appointment_reminder_sms_post_request_body_remind_before_time_in_minutes_type'
+require_relative 'send_virtual_appointment_reminder_sms_post_request_body'

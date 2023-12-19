@@ -327,7 +327,7 @@ module MicrosoftGraphBeta
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Extension.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
                     "hideAttendees" => lambda {|n| @hide_attendees = n.get_boolean_value() },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::Importance) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::EventImportance) },
                     "instances" => lambda {|n| @instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Event.create_from_discriminator_value(pn) }) },
                     "isAllDay" => lambda {|n| @is_all_day = n.get_boolean_value() },
                     "isCancelled" => lambda {|n| @is_cancelled = n.get_boolean_value() },
@@ -340,7 +340,7 @@ module MicrosoftGraphBeta
                     "multiValueExtendedProperties" => lambda {|n| @multi_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MultiValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "occurrenceId" => lambda {|n| @occurrence_id = n.get_string_value() },
                     "onlineMeeting" => lambda {|n| @online_meeting = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnlineMeetingInfo.create_from_discriminator_value(pn) }) },
-                    "onlineMeetingProvider" => lambda {|n| @online_meeting_provider = n.get_enum_value(MicrosoftGraphBeta::Models::OnlineMeetingProviderType) },
+                    "onlineMeetingProvider" => lambda {|n| @online_meeting_provider = n.get_enum_value(MicrosoftGraphBeta::Models::EventOnlineMeetingProvider) },
                     "onlineMeetingUrl" => lambda {|n| @online_meeting_url = n.get_string_value() },
                     "organizer" => lambda {|n| @organizer = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "originalEndTimeZone" => lambda {|n| @original_end_time_zone = n.get_string_value() },
@@ -350,9 +350,9 @@ module MicrosoftGraphBeta
                     "reminderMinutesBeforeStart" => lambda {|n| @reminder_minutes_before_start = n.get_number_value() },
                     "responseRequested" => lambda {|n| @response_requested = n.get_boolean_value() },
                     "responseStatus" => lambda {|n| @response_status = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ResponseStatus.create_from_discriminator_value(pn) }) },
-                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraphBeta::Models::Sensitivity) },
+                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraphBeta::Models::EventSensitivity) },
                     "seriesMasterId" => lambda {|n| @series_master_id = n.get_string_value() },
-                    "showAs" => lambda {|n| @show_as = n.get_enum_value(MicrosoftGraphBeta::Models::FreeBusyStatus) },
+                    "showAs" => lambda {|n| @show_as = n.get_enum_value(MicrosoftGraphBeta::Models::EventShowAs) },
                     "singleValueExtendedProperties" => lambda {|n| @single_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SingleValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "start" => lambda {|n| @start = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
@@ -394,7 +394,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the importance property value. The importance property
-            ## @return a importance
+            ## @return a event_importance
             ## 
             def importance
                 return @importance
@@ -589,7 +589,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the onlineMeetingProvider property value. The onlineMeetingProvider property
-            ## @return a online_meeting_provider_type
+            ## @return a event_online_meeting_provider
             ## 
             def online_meeting_provider
                 return @online_meeting_provider
@@ -739,7 +739,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the sensitivity property value. The sensitivity property
-            ## @return a sensitivity
+            ## @return a event_sensitivity
             ## 
             def sensitivity
                 return @sensitivity
@@ -823,7 +823,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the showAs property value. The showAs property
-            ## @return a free_busy_status
+            ## @return a event_show_as
             ## 
             def show_as
                 return @show_as

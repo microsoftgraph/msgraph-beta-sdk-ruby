@@ -1,0 +1,5 @@
+require_relative 'export_result_post_request_body_additional_options'
+require_relative 'export_result_post_request_body_export_criteria'
+require_relative 'export_result_post_request_body_export_format'
+require_relative 'export_result_post_request_body_export_location'
+require_relative 'export_result_post_request_body'

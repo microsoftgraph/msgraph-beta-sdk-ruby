@@ -305,7 +305,7 @@ module MicrosoftGraphBeta
                     "loginGroupOrDomain" => lambda {|n| @login_group_or_domain = n.get_string_value() },
                     "onDemandRules" => lambda {|n| @on_demand_rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VpnOnDemandRule.create_from_discriminator_value(pn) }) },
                     "optInToDeviceIdSharing" => lambda {|n| @opt_in_to_device_id_sharing = n.get_boolean_value() },
-                    "providerType" => lambda {|n| @provider_type = n.get_enum_value(MicrosoftGraphBeta::Models::VpnProviderType) },
+                    "providerType" => lambda {|n| @provider_type = n.get_enum_value(MicrosoftGraphBeta::Models::AppleVpnConfigurationProviderType) },
                     "proxyServer" => lambda {|n| @proxy_server = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VpnProxyServer.create_from_discriminator_value(pn) }) },
                     "realm" => lambda {|n| @realm = n.get_string_value() },
                     "role" => lambda {|n| @role = n.get_string_value() },
@@ -375,7 +375,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
-            ## @return a vpn_provider_type
+            ## @return a apple_vpn_configuration_provider_type
             ## 
             def provider_type
                 return @provider_type

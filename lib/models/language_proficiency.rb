@@ -66,17 +66,17 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "proficiency" => lambda {|n| @proficiency = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyLevel) },
-                    "reading" => lambda {|n| @reading = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyLevel) },
-                    "spoken" => lambda {|n| @spoken = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyLevel) },
+                    "proficiency" => lambda {|n| @proficiency = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyProficiency) },
+                    "reading" => lambda {|n| @reading = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyReading) },
+                    "spoken" => lambda {|n| @spoken = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencySpoken) },
                     "tag" => lambda {|n| @tag = n.get_string_value() },
                     "thumbnailUrl" => lambda {|n| @thumbnail_url = n.get_string_value() },
-                    "written" => lambda {|n| @written = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyLevel) },
+                    "written" => lambda {|n| @written = n.get_enum_value(MicrosoftGraphBeta::Models::LanguageProficiencyWritten) },
                 })
             end
             ## 
             ## Gets the proficiency property value. The proficiency property
-            ## @return a language_proficiency_level
+            ## @return a language_proficiency_proficiency
             ## 
             def proficiency
                 return @proficiency
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-            ## @return a language_proficiency_level
+            ## @return a language_proficiency_reading
             ## 
             def reading
                 return @reading
@@ -122,7 +122,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-            ## @return a language_proficiency_level
+            ## @return a language_proficiency_spoken
             ## 
             def spoken
                 return @spoken
@@ -167,7 +167,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-            ## @return a language_proficiency_level
+            ## @return a language_proficiency_written
             ## 
             def written
                 return @written

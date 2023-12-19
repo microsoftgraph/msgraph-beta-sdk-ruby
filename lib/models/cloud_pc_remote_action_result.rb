@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
-            ## @return a action_state
+            ## @return a cloud_pc_remote_action_result_action_state
             ## 
             def action_state
                 return @action_state
@@ -65,15 +65,15 @@ module MicrosoftGraphBeta
                 @action_state = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "actionName" => lambda {|n| @action_name = n.get_string_value() },
-                    "actionState" => lambda {|n| @action_state = n.get_enum_value(MicrosoftGraphBeta::Models::ActionState) },
+                    "actionState" => lambda {|n| @action_state = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRemoteActionResultActionState) },
                     "cloudPcId" => lambda {|n| @cloud_pc_id = n.get_string_value() },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "managedDeviceId" => lambda {|n| @managed_device_id = n.get_string_value() },

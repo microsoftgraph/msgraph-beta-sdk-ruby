@@ -14,6 +14,9 @@ module MicrosoftGraphBeta
             # The categories to which the task has been applied. See applied Categories for possible values.
             @applied_categories
             ## 
+            # The archivalInfo property
+            @archival_info
+            ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
             @assigned_to_task_board_format
             ## 
@@ -56,8 +59,17 @@ module MicrosoftGraphBeta
             # Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @due_date_time
             ## 
-            # Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            # Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             @has_description
+            ## 
+            # The isArchived property
+            @is_archived
+            ## 
+            # The isOnMyDay property
+            @is_on_my_day
+            ## 
+            # The isOnMyDayLastModifiedDate property
+            @is_on_my_day_last_modified_date
             ## 
             # Hint used to order items of this type in a list view. The format is defined as outlined here.
             @order_hint
@@ -120,6 +132,21 @@ module MicrosoftGraphBeta
             ## 
             def applied_categories=(value)
                 @applied_categories = value
+            end
+            ## 
+            ## Gets the archivalInfo property value. The archivalInfo property
+            ## @return a planner_archival_info
+            ## 
+            def archival_info
+                return @archival_info
+            end
+            ## 
+            ## Sets the archivalInfo property value. The archivalInfo property
+            ## @param value Value to set for the archivalInfo property.
+            ## @return a void
+            ## 
+            def archival_info=(value)
+                @archival_info = value
             end
             ## 
             ## Gets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
@@ -363,6 +390,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "activeChecklistItemCount" => lambda {|n| @active_checklist_item_count = n.get_number_value() },
                     "appliedCategories" => lambda {|n| @applied_categories = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAppliedCategories.create_from_discriminator_value(pn) }) },
+                    "archivalInfo" => lambda {|n| @archival_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerArchivalInfo.create_from_discriminator_value(pn) }) },
                     "assignedToTaskBoardFormat" => lambda {|n| @assigned_to_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignedToTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "assigneePriority" => lambda {|n| @assignee_priority = n.get_string_value() },
                     "assignments" => lambda {|n| @assignments = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignments.create_from_discriminator_value(pn) }) },
@@ -378,33 +406,81 @@ module MicrosoftGraphBeta
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskDetails.create_from_discriminator_value(pn) }) },
                     "dueDateTime" => lambda {|n| @due_date_time = n.get_date_time_value() },
                     "hasDescription" => lambda {|n| @has_description = n.get_boolean_value() },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
+                    "isOnMyDay" => lambda {|n| @is_on_my_day = n.get_boolean_value() },
+                    "isOnMyDayLastModifiedDate" => lambda {|n| @is_on_my_day_last_modified_date = n.get_date_value() },
                     "orderHint" => lambda {|n| @order_hint = n.get_string_value() },
                     "percentComplete" => lambda {|n| @percent_complete = n.get_number_value() },
                     "planId" => lambda {|n| @plan_id = n.get_string_value() },
-                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPreviewType) },
+                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskPreviewType) },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskRecurrence.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
-                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
+                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskSpecifiedCompletionRequirements) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @return a boolean
             ## 
             def has_description
                 return @has_description
             end
             ## 
-            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @param value Value to set for the hasDescription property.
             ## @return a void
             ## 
             def has_description=(value)
                 @has_description = value
+            end
+            ## 
+            ## Gets the isArchived property value. The isArchived property
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. The isArchived property
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
+            end
+            ## 
+            ## Gets the isOnMyDay property value. The isOnMyDay property
+            ## @return a boolean
+            ## 
+            def is_on_my_day
+                return @is_on_my_day
+            end
+            ## 
+            ## Sets the isOnMyDay property value. The isOnMyDay property
+            ## @param value Value to set for the isOnMyDay property.
+            ## @return a void
+            ## 
+            def is_on_my_day=(value)
+                @is_on_my_day = value
+            end
+            ## 
+            ## Gets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+            ## @return a date
+            ## 
+            def is_on_my_day_last_modified_date
+                return @is_on_my_day_last_modified_date
+            end
+            ## 
+            ## Sets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+            ## @param value Value to set for the isOnMyDayLastModifiedDate property.
+            ## @return a void
+            ## 
+            def is_on_my_day_last_modified_date=(value)
+                @is_on_my_day_last_modified_date = value
             end
             ## 
             ## Gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -453,7 +529,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
-            ## @return a planner_preview_type
+            ## @return a planner_task_preview_type
             ## 
             def preview_type
                 return @preview_type
@@ -536,6 +612,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_number_value("activeChecklistItemCount", @active_checklist_item_count)
                 writer.write_object_value("appliedCategories", @applied_categories)
+                writer.write_object_value("archivalInfo", @archival_info)
                 writer.write_object_value("assignedToTaskBoardFormat", @assigned_to_task_board_format)
                 writer.write_string_value("assigneePriority", @assignee_priority)
                 writer.write_object_value("assignments", @assignments)
@@ -551,6 +628,9 @@ module MicrosoftGraphBeta
                 writer.write_object_value("details", @details)
                 writer.write_date_time_value("dueDateTime", @due_date_time)
                 writer.write_boolean_value("hasDescription", @has_description)
+                writer.write_boolean_value("isArchived", @is_archived)
+                writer.write_boolean_value("isOnMyDay", @is_on_my_day)
+                writer.write_date_value("isOnMyDayLastModifiedDate", @is_on_my_day_last_modified_date)
                 writer.write_string_value("orderHint", @order_hint)
                 writer.write_number_value("percentComplete", @percent_complete)
                 writer.write_string_value("planId", @plan_id)
@@ -565,7 +645,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
-            ## @return a planner_task_completion_requirements
+            ## @return a planner_task_specified_completion_requirements
             ## 
             def specified_completion_requirements
                 return @specified_completion_requirements

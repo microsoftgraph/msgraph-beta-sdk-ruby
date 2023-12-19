@@ -16,15 +16,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the creationSourceKind property value. Specifies what kind of creation source the plan is created with. The possible values are: external, publication and unknownFutureValue.
-            ## @return a planner_creation_source_kind
+            ## @return a planner_plan_creation_creation_source_kind
             ## 
             def creation_source_kind
                 return @creation_source_kind
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "creationSourceKind" => lambda {|n| @creation_source_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerCreationSourceKind) },
+                    "creationSourceKind" => lambda {|n| @creation_source_kind = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPlanCreationCreationSourceKind) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

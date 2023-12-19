@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-            ## @return a section_emphasis_type
+            ## @return a horizontal_section_emphasis
             ## 
             def emphasis
                 return @emphasis
@@ -68,13 +68,13 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "columns" => lambda {|n| @columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::HorizontalSectionColumn.create_from_discriminator_value(pn) }) },
-                    "emphasis" => lambda {|n| @emphasis = n.get_enum_value(MicrosoftGraphBeta::Models::SectionEmphasisType) },
-                    "layout" => lambda {|n| @layout = n.get_enum_value(MicrosoftGraphBeta::Models::HorizontalSectionLayoutType) },
+                    "emphasis" => lambda {|n| @emphasis = n.get_enum_value(MicrosoftGraphBeta::Models::HorizontalSectionEmphasis) },
+                    "layout" => lambda {|n| @layout = n.get_enum_value(MicrosoftGraphBeta::Models::HorizontalSectionLayout) },
                 })
             end
             ## 
             ## Gets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
-            ## @return a horizontal_section_layout_type
+            ## @return a horizontal_section_layout
             ## 
             def layout
                 return @layout

@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-            ## @return a wired_network_authentication_method
+            ## @return a windows_wired_network_configuration_authentication_method
             ## 
             def authentication_method
                 return @authentication_method
@@ -142,7 +142,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
-            ## @return a wired_network_authentication_type
+            ## @return a windows_wired_network_configuration_authentication_type
             ## 
             def authentication_type
                 return @authentication_type
@@ -269,10 +269,10 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "authenticationBlockPeriodInMinutes" => lambda {|n| @authentication_block_period_in_minutes = n.get_number_value() },
-                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiredNetworkAuthenticationMethod) },
+                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWiredNetworkConfigurationAuthenticationMethod) },
                     "authenticationPeriodInSeconds" => lambda {|n| @authentication_period_in_seconds = n.get_number_value() },
                     "authenticationRetryDelayPeriodInSeconds" => lambda {|n| @authentication_retry_delay_period_in_seconds = n.get_number_value() },
-                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::WiredNetworkAuthenticationType) },
+                    "authenticationType" => lambda {|n| @authentication_type = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWiredNetworkConfigurationAuthenticationType) },
                     "cacheCredentials" => lambda {|n| @cache_credentials = n.get_boolean_value() },
                     "disableUserPromptForServerValidation" => lambda {|n| @disable_user_prompt_for_server_validation = n.get_boolean_value() },
                     "eapType" => lambda {|n| @eap_type = n.get_enum_value(MicrosoftGraphBeta::Models::EapType) },
@@ -280,7 +280,7 @@ module MicrosoftGraphBeta
                     "enforce8021X" => lambda {|n| @enforce8021_x = n.get_boolean_value() },
                     "forceFIPSCompliance" => lambda {|n| @force_f_i_p_s_compliance = n.get_boolean_value() },
                     "identityCertificateForClientAuthentication" => lambda {|n| @identity_certificate_for_client_authentication = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsCertificateProfileBase.create_from_discriminator_value(pn) }) },
-                    "innerAuthenticationProtocolForEAPTTLS" => lambda {|n| @inner_authentication_protocol_for_e_a_p_t_t_l_s = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForEapTtlsType) },
+                    "innerAuthenticationProtocolForEAPTTLS" => lambda {|n| @inner_authentication_protocol_for_e_a_p_t_t_l_s = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWiredNetworkConfigurationInnerAuthenticationProtocolForEAPTTLS) },
                     "maximumAuthenticationFailures" => lambda {|n| @maximum_authentication_failures = n.get_number_value() },
                     "maximumEAPOLStartMessages" => lambda {|n| @maximum_e_a_p_o_l_start_messages = n.get_number_value() },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
@@ -288,7 +288,7 @@ module MicrosoftGraphBeta
                     "requireCryptographicBinding" => lambda {|n| @require_cryptographic_binding = n.get_boolean_value() },
                     "rootCertificateForClientValidation" => lambda {|n| @root_certificate_for_client_validation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Windows81TrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "rootCertificatesForServerValidation" => lambda {|n| @root_certificates_for_server_validation = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Windows81TrustedRootCertificate.create_from_discriminator_value(pn) }) },
-                    "secondaryAuthenticationMethod" => lambda {|n| @secondary_authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiredNetworkAuthenticationMethod) },
+                    "secondaryAuthenticationMethod" => lambda {|n| @secondary_authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsWiredNetworkConfigurationSecondaryAuthenticationMethod) },
                     "secondaryIdentityCertificateForClientAuthentication" => lambda {|n| @secondary_identity_certificate_for_client_authentication = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsCertificateProfileBase.create_from_discriminator_value(pn) }) },
                     "secondaryRootCertificateForClientValidation" => lambda {|n| @secondary_root_certificate_for_client_validation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Windows81TrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "trustedServerCertificateNames" => lambda {|n| @trusted_server_certificate_names = n.get_collection_of_primitive_values(String) },
@@ -311,7 +311,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-            ## @return a non_eap_authentication_method_for_eap_ttls_type
+            ## @return a windows_wired_network_configuration_inner_authentication_protocol_for_e_a_p_t_t_l_s
             ## 
             def inner_authentication_protocol_for_e_a_p_t_t_l_s
                 return @inner_authentication_protocol_for_e_a_p_t_t_l_s
@@ -431,7 +431,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
-            ## @return a wired_network_authentication_method
+            ## @return a windows_wired_network_configuration_secondary_authentication_method
             ## 
             def secondary_authentication_method
                 return @secondary_authentication_method

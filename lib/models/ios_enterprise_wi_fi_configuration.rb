@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             @username_format_string
             ## 
             ## Gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
-            ## @return a wi_fi_authentication_method
+            ## @return a ios_enterprise_wi_fi_configuration_authentication_method
             ## 
             def authentication_method
                 return @authentication_method
@@ -90,7 +90,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
-            ## @return a eap_fast_configuration
+            ## @return a ios_enterprise_wi_fi_configuration_eap_fast_configuration
             ## 
             def eap_fast_configuration
                 return @eap_fast_configuration
@@ -124,12 +124,12 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiAuthenticationMethod) },
+                    "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::IosEnterpriseWiFiConfigurationAuthenticationMethod) },
                     "derivedCredentialSettings" => lambda {|n| @derived_credential_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementDerivedCredentialSettings.create_from_discriminator_value(pn) }) },
-                    "eapFastConfiguration" => lambda {|n| @eap_fast_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::EapFastConfiguration) },
+                    "eapFastConfiguration" => lambda {|n| @eap_fast_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::IosEnterpriseWiFiConfigurationEapFastConfiguration) },
                     "eapType" => lambda {|n| @eap_type = n.get_enum_value(MicrosoftGraphBeta::Models::EapType) },
                     "identityCertificateForClientAuthentication" => lambda {|n| @identity_certificate_for_client_authentication = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IosCertificateProfileBase.create_from_discriminator_value(pn) }) },
-                    "innerAuthenticationProtocolForEapTtls" => lambda {|n| @inner_authentication_protocol_for_eap_ttls = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForEapTtlsType) },
+                    "innerAuthenticationProtocolForEapTtls" => lambda {|n| @inner_authentication_protocol_for_eap_ttls = n.get_enum_value(MicrosoftGraphBeta::Models::IosEnterpriseWiFiConfigurationInnerAuthenticationProtocolForEapTtls) },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
                     "passwordFormatString" => lambda {|n| @password_format_string = n.get_string_value() },
                     "rootCertificatesForServerValidation" => lambda {|n| @root_certificates_for_server_validation = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IosTrustedRootCertificate.create_from_discriminator_value(pn) }) },
@@ -154,7 +154,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
-            ## @return a non_eap_authentication_method_for_eap_ttls_type
+            ## @return a ios_enterprise_wi_fi_configuration_inner_authentication_protocol_for_eap_ttls
             ## 
             def inner_authentication_protocol_for_eap_ttls
                 return @inner_authentication_protocol_for_eap_ttls

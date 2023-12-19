@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             @completion_reason
             ## 
             ## Gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-            ## @return a play_prompt_completion_reason
+            ## @return a play_prompt_operation_completion_reason
             ## 
             def completion_reason
                 return @completion_reason
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "completionReason" => lambda {|n| @completion_reason = n.get_enum_value(MicrosoftGraphBeta::Models::PlayPromptCompletionReason) },
+                    "completionReason" => lambda {|n| @completion_reason = n.get_enum_value(MicrosoftGraphBeta::Models::PlayPromptOperationCompletionReason) },
                 })
             end
             ## 

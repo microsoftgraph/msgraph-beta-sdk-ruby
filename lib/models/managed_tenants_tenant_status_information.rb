@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
+            # The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
             @delegated_privilege_status
             ## 
             # The date and time the delegated admin privileges status was updated. Optional. Read-only.
@@ -41,15 +41,15 @@ module MicrosoftGraphBeta
             # The collection of workload statues for the managed tenant. Optional. Read-only.
             @workload_statuses
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 return ManagedTenantsTenantStatusInformation.new
             end
             ## 
-            ## Gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
-            ## @return a managed_tenants_delegated_privilege_status
+            ## Gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
+            ## @return a managed_tenants_tenant_status_information_delegated_privilege_status
             ## 
             def delegated_privilege_status
                 return @delegated_privilege_status
             end
             ## 
-            ## Sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
+            ## Sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
             ## @param value Value to set for the delegatedPrivilegeStatus property.
             ## @return a void
             ## 
@@ -92,15 +92,15 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "delegatedPrivilegeStatus" => lambda {|n| @delegated_privilege_status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsDelegatedPrivilegeStatus) },
+                    "delegatedPrivilegeStatus" => lambda {|n| @delegated_privilege_status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsTenantStatusInformationDelegatedPrivilegeStatus) },
                     "lastDelegatedPrivilegeRefreshDateTime" => lambda {|n| @last_delegated_privilege_refresh_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "offboardedByUserId" => lambda {|n| @offboarded_by_user_id = n.get_string_value() },
                     "offboardedDateTime" => lambda {|n| @offboarded_date_time = n.get_date_time_value() },
                     "onboardedByUserId" => lambda {|n| @onboarded_by_user_id = n.get_string_value() },
                     "onboardedDateTime" => lambda {|n| @onboarded_date_time = n.get_date_time_value() },
-                    "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsTenantOnboardingStatus) },
-                    "tenantOnboardingEligibilityReason" => lambda {|n| @tenant_onboarding_eligibility_reason = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsTenantOnboardingEligibilityReason) },
+                    "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsTenantStatusInformationOnboardingStatus) },
+                    "tenantOnboardingEligibilityReason" => lambda {|n| @tenant_onboarding_eligibility_reason = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsTenantStatusInformationTenantOnboardingEligibilityReason) },
                     "workloadStatuses" => lambda {|n| @workload_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsWorkloadStatus.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -196,7 +196,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
-            ## @return a managed_tenants_tenant_onboarding_status
+            ## @return a managed_tenants_tenant_status_information_onboarding_status
             ## 
             def onboarding_status
                 return @onboarding_status
@@ -230,7 +230,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
-            ## @return a managed_tenants_tenant_onboarding_eligibility_reason
+            ## @return a managed_tenants_tenant_status_information_tenant_onboarding_eligibility_reason
             ## 
             def tenant_onboarding_eligibility_reason
                 return @tenant_onboarding_eligibility_reason

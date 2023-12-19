@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
             @status
             ## 
             ## Gets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
-            ## @return a security_case_action
+            ## @return a security_case_operation_action
             ## 
             def action
                 return @action
@@ -118,6 +118,8 @@ module MicrosoftGraphBeta
                             return SecurityEdiscoveryIndexOperation.new
                         when "#microsoft.graph.security.ediscoveryPurgeDataOperation"
                             return SecurityEdiscoveryPurgeDataOperation.new
+                        when "#microsoft.graph.security.ediscoverySearchExportOperation"
+                            return SecurityEdiscoverySearchExportOperation.new
                         when "#microsoft.graph.security.ediscoveryTagOperation"
                             return SecurityEdiscoveryTagOperation.new
                     end
@@ -130,7 +132,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityCaseAction) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityCaseOperationAction) },
                     "completedDateTime" => lambda {|n| @completed_date_time = n.get_date_time_value() },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },

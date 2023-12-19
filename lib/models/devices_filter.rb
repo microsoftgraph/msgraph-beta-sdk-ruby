@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
             @rule
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "mode" => lambda {|n| @mode = n.get_enum_value(MicrosoftGraphBeta::Models::CrossTenantAccessPolicyTargetConfigurationAccessType) },
+                    "mode" => lambda {|n| @mode = n.get_enum_value(MicrosoftGraphBeta::Models::DevicesFilterMode) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rule" => lambda {|n| @rule = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
-            ## @return a cross_tenant_access_policy_target_configuration_access_type
+            ## @return a devices_filter_mode
             ## 
             def mode
                 return @mode

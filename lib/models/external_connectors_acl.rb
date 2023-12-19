@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            # The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+            # The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
             @value
             ## 
             ## Gets the accessType property value. The accessType property
@@ -40,15 +40,15 @@ module MicrosoftGraphBeta
                 @access_type = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "accessType" => lambda {|n| @access_type = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsAccessType) },
-                    "identitySource" => lambda {|n| @identity_source = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsIdentitySourceType) },
+                    "identitySource" => lambda {|n| @identity_source = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsAclIdentitySource) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsAclType) },
                     "value" => lambda {|n| @value = n.get_string_value() },
@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the identitySource property value. The source of identity. Possible values are azureActiveDirectory or external.
-            ## @return a external_connectors_identity_source_type
+            ## @return a external_connectors_acl_identity_source
             ## 
             def identity_source
                 return @identity_source
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @type = value
             end
             ## 
-            ## Gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+            ## Gets the value property value. The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
             ## @return a string
             ## 
             def value
                 return @value
             end
             ## 
-            ## Sets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
+            ## Sets the value property value. The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
             ## @param value Value to set for the value property.
             ## @return a void
             ## 

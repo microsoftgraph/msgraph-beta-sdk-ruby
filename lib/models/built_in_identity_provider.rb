@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "identityProviderType" => lambda {|n| @identity_provider_type = n.get_string_value() },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::IdentityProviderState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::BuiltInIdentityProviderState) },
                 })
             end
             ## 
@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the state property value. The state property
-            ## @return a identity_provider_state
+            ## @return a built_in_identity_provider_state
             ## 
             def state
                 return @state

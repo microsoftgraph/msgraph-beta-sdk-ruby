@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class DirectoryAudit < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
+            # Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
             @activity_date_time
             ## 
-            # Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+            # Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).
             @activity_display_name
             ## 
-            # Indicates additional details on the activity.
+            # Indicates more details on the activity.
             @additional_details
             ## 
-            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
+            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.
             @category
             ## 
             # Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
             @logged_by_service
             ## 
-            # Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+            # Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
             @operation_type
             ## 
             # Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
@@ -44,14 +44,14 @@ module MicrosoftGraphBeta
             # Type of user agent used by a user in the activity.
             @user_agent
             ## 
-            ## Gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
+            ## Gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
             ## @return a date_time
             ## 
             def activity_date_time
                 return @activity_date_time
             end
             ## 
-            ## Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
+            ## Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
             ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 @activity_date_time = value
             end
             ## 
-            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).
             ## @return a string
             ## 
             def activity_display_name
                 return @activity_display_name
             end
             ## 
-            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).
             ## @param value Value to set for the activityDisplayName property.
             ## @return a void
             ## 
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 @activity_display_name = value
             end
             ## 
-            ## Gets the additionalDetails property value. Indicates additional details on the activity.
+            ## Gets the additionalDetails property value. Indicates more details on the activity.
             ## @return a key_value
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Indicates additional details on the activity.
+            ## Sets the additionalDetails property value. Indicates more details on the activity.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 @additional_details = value
             end
             ## 
-            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
+            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.
             ## @return a string
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
+            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 
@@ -148,7 +148,7 @@ module MicrosoftGraphBeta
                     "initiatedBy" => lambda {|n| @initiated_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AuditActivityInitiator.create_from_discriminator_value(pn) }) },
                     "loggedByService" => lambda {|n| @logged_by_service = n.get_string_value() },
                     "operationType" => lambda {|n| @operation_type = n.get_string_value() },
-                    "result" => lambda {|n| @result = n.get_enum_value(MicrosoftGraphBeta::Models::OperationResult) },
+                    "result" => lambda {|n| @result = n.get_enum_value(MicrosoftGraphBeta::Models::DirectoryAuditResult) },
                     "resultReason" => lambda {|n| @result_reason = n.get_string_value() },
                     "targetResources" => lambda {|n| @target_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TargetResource.create_from_discriminator_value(pn) }) },
                     "userAgent" => lambda {|n| @user_agent = n.get_string_value() },
@@ -185,14 +185,14 @@ module MicrosoftGraphBeta
                 @logged_by_service = value
             end
             ## 
-            ## Gets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+            ## Gets the operationType property value. Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
             ## @return a string
             ## 
             def operation_type
                 return @operation_type
             end
             ## 
-            ## Sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
+            ## Sets the operationType property value. Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
             ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
@@ -201,7 +201,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
-            ## @return a operation_result
+            ## @return a directory_audit_result
             ## 
             def result
                 return @result

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class StatusDetails < MicrosoftGraphBeta::Models::StatusBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details in case of error.
+            # Additional details if there is an error.
             @additional_details
             ## 
             # Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
@@ -22,14 +22,14 @@ module MicrosoftGraphBeta
             # Provides the resolution for the corresponding error.
             @recommended_action
             ## 
-            ## Gets the additionalDetails property value. Additional details in case of error.
+            ## Gets the additionalDetails property value. Additional details if there is an error.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details in case of error.
+            ## Sets the additionalDetails property value. Additional details if there is an error.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
-            ## @return a provisioning_status_error_category
+            ## @return a status_details_error_category
             ## 
             def error_category
                 return @error_category
@@ -90,7 +90,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "additionalDetails" => lambda {|n| @additional_details = n.get_string_value() },
-                    "errorCategory" => lambda {|n| @error_category = n.get_enum_value(MicrosoftGraphBeta::Models::ProvisioningStatusErrorCategory) },
+                    "errorCategory" => lambda {|n| @error_category = n.get_enum_value(MicrosoftGraphBeta::Models::StatusDetailsErrorCategory) },
                     "errorCode" => lambda {|n| @error_code = n.get_string_value() },
                     "reason" => lambda {|n| @reason = n.get_string_value() },
                     "recommendedAction" => lambda {|n| @recommended_action = n.get_string_value() },

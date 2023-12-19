@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PositiveReinforcementNotification < MicrosoftGraphBeta::Models::BaseEndUserNotification
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deliveryPreference property
+            # Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
             @delivery_preference
             ## 
             ## Instantiates a new positiveReinforcementNotification and sets the default values.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return PositiveReinforcementNotification.new
             end
             ## 
-            ## Gets the deliveryPreference property value. The deliveryPreference property
-            ## @return a notification_delivery_preference
+            ## Gets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
+            ## @return a positive_reinforcement_notification_delivery_preference
             ## 
             def delivery_preference
                 return @delivery_preference
             end
             ## 
-            ## Sets the deliveryPreference property value. The deliveryPreference property
+            ## Sets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
             ## @param value Value to set for the deliveryPreference property.
             ## @return a void
             ## 
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "deliveryPreference" => lambda {|n| @delivery_preference = n.get_enum_value(MicrosoftGraphBeta::Models::NotificationDeliveryPreference) },
+                    "deliveryPreference" => lambda {|n| @delivery_preference = n.get_enum_value(MicrosoftGraphBeta::Models::PositiveReinforcementNotificationDeliveryPreference) },
                 })
             end
             ## 

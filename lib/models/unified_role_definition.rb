@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith).
             @display_name
             ## 
-            # Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+            # Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
             @inherits_permissions_from
             ## 
             # Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq).
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
             @is_enabled
             ## 
-            # The isPrivileged property
+            # Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             @is_privileged
             ## 
             # List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             @version
             ## 
             ## Gets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
-            ## @return a allowed_role_principal_types
+            ## @return a unified_role_definition_allowed_principal_types
             ## 
             def allowed_principal_types
                 return @allowed_principal_types
@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedPrincipalTypes" => lambda {|n| @allowed_principal_types = n.get_enum_value(MicrosoftGraphBeta::Models::AllowedRolePrincipalTypes) },
+                    "allowedPrincipalTypes" => lambda {|n| @allowed_principal_types = n.get_enum_value(MicrosoftGraphBeta::Models::UnifiedRoleDefinitionAllowedPrincipalTypes) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "inheritsPermissionsFrom" => lambda {|n| @inherits_permissions_from = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }) },
@@ -120,14 +120,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+            ## Gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
             ## @return a unified_role_definition
             ## 
             def inherits_permissions_from
                 return @inherits_permissions_from
             end
             ## 
-            ## Sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+            ## Sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
             ## @param value Value to set for the inheritsPermissionsFrom property.
             ## @return a void
             ## 
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 @is_enabled = value
             end
             ## 
-            ## Gets the isPrivileged property value. The isPrivileged property
+            ## Gets the isPrivileged property value. Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_privileged
                 return @is_privileged
             end
             ## 
-            ## Sets the isPrivileged property value. The isPrivileged property
+            ## Sets the isPrivileged property value. Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
             ## @param value Value to set for the isPrivileged property.
             ## @return a void
             ## 

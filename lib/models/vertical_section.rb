@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
-            ## @return a section_emphasis_type
+            ## @return a vertical_section_emphasis
             ## 
             def emphasis
                 return @emphasis
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "emphasis" => lambda {|n| @emphasis = n.get_enum_value(MicrosoftGraphBeta::Models::SectionEmphasisType) },
+                    "emphasis" => lambda {|n| @emphasis = n.get_enum_value(MicrosoftGraphBeta::Models::VerticalSectionEmphasis) },
                     "webparts" => lambda {|n| @webparts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WebPart.create_from_discriminator_value(pn) }) },
                 })
             end

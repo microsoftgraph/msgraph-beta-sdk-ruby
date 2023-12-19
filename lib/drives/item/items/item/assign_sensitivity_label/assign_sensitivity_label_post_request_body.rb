@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph_beta'
-require_relative '../../../../../models/sensitivity_label_assignment_method'
 require_relative '../../../../drives'
 require_relative '../../../item'
 require_relative '../../items'
@@ -28,15 +27,15 @@ module MicrosoftGraphBeta
                             # The sensitivityLabelId property
                             @sensitivity_label_id
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -44,7 +43,7 @@ module MicrosoftGraphBeta
                             end
                             ## 
                             ## Gets the assignmentMethod property value. The assignmentMethod property
-                            ## @return a sensitivity_label_assignment_method
+                            ## @return a assign_sensitivity_label_post_request_body_assignment_method
                             ## 
                             def assignment_method
                                 return @assignment_method
@@ -79,7 +78,7 @@ module MicrosoftGraphBeta
                             ## 
                             def get_field_deserializers()
                                 return {
-                                    "assignmentMethod" => lambda {|n| @assignment_method = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelAssignmentMethod) },
+                                    "assignmentMethod" => lambda {|n| @assignment_method = n.get_enum_value(MicrosoftGraphBeta::Drives::Item::Items::Item::AssignSensitivityLabel::AssignSensitivityLabelPostRequestBodyAssignmentMethod) },
                                     "justificationText" => lambda {|n| @justification_text = n.get_string_value() },
                                     "sensitivityLabelId" => lambda {|n| @sensitivity_label_id = n.get_string_value() },
                                 }

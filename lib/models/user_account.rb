@@ -32,15 +32,15 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                     "riskScore" => lambda {|n| @risk_score = n.get_string_value() },
                     "service" => lambda {|n| @service = n.get_string_value() },
                     "signinName" => lambda {|n| @signin_name = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::AccountStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::UserAccountStatus) },
                 }
             end
             ## 
@@ -185,7 +185,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the status property value. The status property
-            ## @return a account_status
+            ## @return a user_account_status
             ## 
             def status
                 return @status

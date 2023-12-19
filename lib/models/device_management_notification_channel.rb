@@ -19,18 +19,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
-            @receivers
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,15 +55,14 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "notificationChannelType" => lambda {|n| @notification_channel_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementNotificationChannelType) },
+                    "notificationChannelType" => lambda {|n| @notification_channel_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementNotificationChannelNotificationChannelType) },
                     "notificationReceivers" => lambda {|n| @notification_receivers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementNotificationReceiver.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "receivers" => lambda {|n| @receivers = n.get_collection_of_primitive_values(String) },
                 }
             end
             ## 
             ## Gets the notificationChannelType property value. The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
-            ## @return a device_management_notification_channel_type
+            ## @return a device_management_notification_channel_notification_channel_type
             ## 
             def notification_channel_type
                 return @notification_channel_type
@@ -110,21 +106,6 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the receivers property value. The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
-            ## @return a string
-            ## 
-            def receivers
-                return @receivers
-            end
-            ## 
-            ## Sets the receivers property value. The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
-            ## @param value Value to set for the receivers property.
-            ## @return a void
-            ## 
-            def receivers=(value)
-                @receivers = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -134,7 +115,6 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("notificationChannelType", @notification_channel_type)
                 writer.write_collection_of_object_values("notificationReceivers", @notification_receivers)
                 writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_primitive_values("receivers", @receivers)
                 writer.write_additional_data(@additional_data)
             end
         end

@@ -7,41 +7,41 @@ module MicrosoftGraphBeta
         class PrivilegedAccessGroupAssignmentScheduleInstance < MicrosoftGraphBeta::Models::PrivilegedAccessScheduleInstance
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue.
+            # The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).
             @access_id
             ## 
-            # When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            # When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             @activated_using
             ## 
-            # The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required.
+            # The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required. Supports $filter (eq, ne).
             @assignment_schedule_id
             ## 
-            # Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue.
+            # Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
             @assignment_type
             ## 
             # References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
             @group
             ## 
-            # The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional.
+            # The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
             @group_id
             ## 
-            # Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue.
+            # Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
             @member_type
             ## 
             # References the principal that's in the scope of the membership or ownership assignment request through the group that's governed by PIM. Supports $expand.
             @principal
             ## 
-            # The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required.
+            # The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
             @principal_id
             ## 
-            ## Gets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue.
-            ## @return a privileged_access_group_relationships
+            ## Gets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).
+            ## @return a privileged_access_group_assignment_schedule_instance_access_id
             ## 
             def access_id
                 return @access_id
             end
             ## 
-            ## Sets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue.
+            ## Sets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the accessId property.
             ## @return a void
             ## 
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @access_id = value
             end
             ## 
-            ## Gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            ## Gets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             ## @return a privileged_access_group_eligibility_schedule_instance
             ## 
             def activated_using
                 return @activated_using
             end
             ## 
-            ## Sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+            ## Sets the activatedUsing property value. When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
             ## @param value Value to set for the activatedUsing property.
             ## @return a void
             ## 
@@ -64,14 +64,14 @@ module MicrosoftGraphBeta
                 @activated_using = value
             end
             ## 
-            ## Gets the assignmentScheduleId property value. The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required.
+            ## Gets the assignmentScheduleId property value. The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required. Supports $filter (eq, ne).
             ## @return a string
             ## 
             def assignment_schedule_id
                 return @assignment_schedule_id
             end
             ## 
-            ## Sets the assignmentScheduleId property value. The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required.
+            ## Sets the assignmentScheduleId property value. The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required. Supports $filter (eq, ne).
             ## @param value Value to set for the assignmentScheduleId property.
             ## @return a void
             ## 
@@ -79,14 +79,14 @@ module MicrosoftGraphBeta
                 @assignment_schedule_id = value
             end
             ## 
-            ## Gets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue.
-            ## @return a privileged_access_group_assignment_type
+            ## Gets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
+            ## @return a privileged_access_group_assignment_schedule_instance_assignment_type
             ## 
             def assignment_type
                 return @assignment_type
             end
             ## 
-            ## Sets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue.
+            ## Sets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the assignmentType property.
             ## @return a void
             ## 
@@ -116,13 +116,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessId" => lambda {|n| @access_id = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupRelationships) },
+                    "accessId" => lambda {|n| @access_id = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupAssignmentScheduleInstanceAccessId) },
                     "activatedUsing" => lambda {|n| @activated_using = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegedAccessGroupEligibilityScheduleInstance.create_from_discriminator_value(pn) }) },
                     "assignmentScheduleId" => lambda {|n| @assignment_schedule_id = n.get_string_value() },
-                    "assignmentType" => lambda {|n| @assignment_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupAssignmentType) },
+                    "assignmentType" => lambda {|n| @assignment_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupAssignmentScheduleInstanceAssignmentType) },
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }) },
                     "groupId" => lambda {|n| @group_id = n.get_string_value() },
-                    "memberType" => lambda {|n| @member_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupMemberType) },
+                    "memberType" => lambda {|n| @member_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupAssignmentScheduleInstanceMemberType) },
                     "principal" => lambda {|n| @principal = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                     "principalId" => lambda {|n| @principal_id = n.get_string_value() },
                 })
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @group = value
             end
             ## 
-            ## Gets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional.
+            ## Gets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
             ## @return a string
             ## 
             def group_id
                 return @group_id
             end
             ## 
-            ## Sets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional.
+            ## Sets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
             ## @param value Value to set for the groupId property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraphBeta
                 @group_id = value
             end
             ## 
-            ## Gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue.
-            ## @return a privileged_access_group_member_type
+            ## Gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
+            ## @return a privileged_access_group_assignment_schedule_instance_member_type
             ## 
             def member_type
                 return @member_type
             end
             ## 
-            ## Sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue.
+            ## Sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the memberType property.
             ## @return a void
             ## 
@@ -188,14 +188,14 @@ module MicrosoftGraphBeta
                 @principal = value
             end
             ## 
-            ## Gets the principalId property value. The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required.
+            ## Gets the principalId property value. The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
             ## @return a string
             ## 
             def principal_id
                 return @principal_id
             end
             ## 
-            ## Sets the principalId property value. The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required.
+            ## Sets the principalId property value. The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
             ## @param value Value to set for the principalId property.
             ## @return a void
             ## 

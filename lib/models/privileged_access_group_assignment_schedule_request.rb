@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             @target_schedule_id
             ## 
             ## Gets the accessId property value. The identifier of a membership or ownership assignment relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.
-            ## @return a privileged_access_group_relationships
+            ## @return a privileged_access_group_assignment_schedule_request_access_id
             ## 
             def access_id
                 return @access_id
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessId" => lambda {|n| @access_id = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupRelationships) },
+                    "accessId" => lambda {|n| @access_id = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegedAccessGroupAssignmentScheduleRequestAccessId) },
                     "activatedUsing" => lambda {|n| @activated_using = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegedAccessGroupEligibilitySchedule.create_from_discriminator_value(pn) }) },
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }) },
                     "groupId" => lambda {|n| @group_id = n.get_string_value() },

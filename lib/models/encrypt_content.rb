@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the encryptWith property value. The encryptWith property
-            ## @return a encrypt_with
+            ## @return a encrypt_content_encrypt_with
             ## 
             def encrypt_with
                 return @encrypt_with
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "encryptWith" => lambda {|n| @encrypt_with = n.get_enum_value(MicrosoftGraphBeta::Models::EncryptWith) },
+                    "encryptWith" => lambda {|n| @encrypt_with = n.get_enum_value(MicrosoftGraphBeta::Models::EncryptContentEncryptWith) },
                 })
             end
             ## 

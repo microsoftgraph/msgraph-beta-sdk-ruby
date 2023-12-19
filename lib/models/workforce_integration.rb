@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WorkforceIntegration < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # API version for the call back URL. Start with 1.
+            # API version for the callback URL. Start with 1.
             @api_version
             ## 
             # Name of the workforce integration.
@@ -22,23 +22,23 @@ module MicrosoftGraphBeta
             # Indicates whether this workforce integration is currently active and available.
             @is_active
             ## 
-            # This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            # This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
             @supported_entities
             ## 
-            # The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            # The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
             @supports
             ## 
             # Workforce Integration URL for callbacks from the Shifts service.
             @url
             ## 
-            ## Gets the apiVersion property value. API version for the call back URL. Start with 1.
+            ## Gets the apiVersion property value. API version for the callback URL. Start with 1.
             ## @return a integer
             ## 
             def api_version
                 return @api_version
             end
             ## 
-            ## Sets the apiVersion property value. API version for the call back URL. Start with 1.
+            ## Sets the apiVersion property value. API version for the callback URL. Start with 1.
             ## @param value Value to set for the apiVersion property.
             ## @return a void
             ## 
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the eligibilityFilteringEnabledEntities property value. The eligibilityFilteringEnabledEntities property
-            ## @return a eligibility_filtering_enabled_entities
+            ## @return a workforce_integration_eligibility_filtering_enabled_entities
             ## 
             def eligibility_filtering_enabled_entities
                 return @eligibility_filtering_enabled_entities
@@ -115,11 +115,11 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "apiVersion" => lambda {|n| @api_version = n.get_number_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "eligibilityFilteringEnabledEntities" => lambda {|n| @eligibility_filtering_enabled_entities = n.get_enum_value(MicrosoftGraphBeta::Models::EligibilityFilteringEnabledEntities) },
+                    "eligibilityFilteringEnabledEntities" => lambda {|n| @eligibility_filtering_enabled_entities = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationEligibilityFilteringEnabledEntities) },
                     "encryption" => lambda {|n| @encryption = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WorkforceIntegrationEncryption.create_from_discriminator_value(pn) }) },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
                     "supportedEntities" => lambda {|n| @supported_entities = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
-                    "supports" => lambda {|n| @supports = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationSupportedEntities) },
+                    "supports" => lambda {|n| @supports = n.get_enum_value(MicrosoftGraphBeta::Models::WorkforceIntegrationSupports) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 })
             end
@@ -156,14 +156,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("url", @url)
             end
             ## 
-            ## Gets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            ## Gets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
             ## @return a workforce_integration_supported_entities
             ## 
             def supported_entities
                 return @supported_entities
             end
             ## 
-            ## Sets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            ## Sets the supportedEntities property value. This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
             ## @param value Value to set for the supportedEntities property.
             ## @return a void
             ## 
@@ -171,14 +171,14 @@ module MicrosoftGraphBeta
                 @supported_entities = value
             end
             ## 
-            ## Gets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-            ## @return a workforce_integration_supported_entities
+            ## Gets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            ## @return a workforce_integration_supports
             ## 
             def supports
                 return @supports
             end
             ## 
-            ## Sets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
+            ## Sets the supports property value. The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
             ## @param value Value to set for the supports property.
             ## @return a void
             ## 

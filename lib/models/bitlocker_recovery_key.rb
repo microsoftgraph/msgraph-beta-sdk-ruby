@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class BitlockerRecoveryKey < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time when the key was originally backed up to Azure Active Directory.
+            # The date and time when the key was originally backed up to Microsoft Entra ID.
             @created_date_time
             ## 
             # ID of the device the BitLocker key is originally backed up from.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
+            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
+            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
                     "key" => lambda {|n| @key = n.get_string_value() },
-                    "volumeType" => lambda {|n| @volume_type = n.get_enum_value(MicrosoftGraphBeta::Models::VolumeType) },
+                    "volumeType" => lambda {|n| @volume_type = n.get_enum_value(MicrosoftGraphBeta::Models::BitlockerRecoveryKeyVolumeType) },
                 })
             end
             ## 
@@ -107,7 +107,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
-            ## @return a volume_type
+            ## @return a bitlocker_recovery_key_volume_type
             ## 
             def volume_type
                 return @volume_type

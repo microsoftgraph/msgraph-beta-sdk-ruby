@@ -34,18 +34,18 @@ module MicrosoftGraphBeta
             # The client platform ID of the participant. Read-only.
             @platform_id
             ## 
-            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            # The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             @region
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
-            ## @return a endpoint_type
+            ## @return a participant_info_endpoint_type
             ## 
             def endpoint_type
                 return @endpoint_type
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "countryCode" => lambda {|n| @country_code = n.get_string_value() },
-                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraphBeta::Models::EndpointType) },
+                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraphBeta::Models::ParticipantInfoEndpointType) },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "languageId" => lambda {|n| @language_id = n.get_string_value() },
                     "nonAnonymizedIdentity" => lambda {|n| @non_anonymized_identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
@@ -205,14 +205,14 @@ module MicrosoftGraphBeta
                 @platform_id = value
             end
             ## 
-            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            ## Gets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             ## @return a string
             ## 
             def region
                 return @region
             end
             ## 
-            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+            ## Sets the region property value. The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
             ## @param value Value to set for the region property.
             ## @return a void
             ## 

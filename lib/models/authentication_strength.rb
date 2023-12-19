@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the authenticationStrengthResult property value. The result of the authentication strength. The possible values are: notSet, skippedForProofUp, satisfied, singleChallengeRequired, multipleChallengesRequired, singleRegistrationRequired, multipleRegistrationsRequired, cannotSatisfyDueToCombinationConfiguration, cannotSatisfy, unknownFutureValue.
-            ## @return a authentication_strength_result
+            ## @return a authentication_strength_authentication_strength_result
             ## 
             def authentication_strength_result
                 return @authentication_strength_result
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "authenticationStrengthId" => lambda {|n| @authentication_strength_id = n.get_string_value() },
-                    "authenticationStrengthResult" => lambda {|n| @authentication_strength_result = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationStrengthResult) },
+                    "authenticationStrengthResult" => lambda {|n| @authentication_strength_result = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationStrengthAuthenticationStrengthResult) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }

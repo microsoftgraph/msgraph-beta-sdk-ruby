@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # The riskEventTypes property
             @risk_event_types
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the detail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-            ## @return a risk_detail
+            ## @return a risk_user_activity_detail
             ## 
             def detail
                 return @detail
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the eventTypes property value. The eventTypes property
-            ## @return a risk_event_type
+            ## @return a risk_user_activity_event_types
             ## 
             def event_types
                 return @event_types
@@ -88,8 +88,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "detail" => lambda {|n| @detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
-                    "eventTypes" => lambda {|n| @event_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RiskEventType.create_from_discriminator_value(pn) }) },
+                    "detail" => lambda {|n| @detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskUserActivityDetail) },
+                    "eventTypes" => lambda {|n| @event_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RiskUserActivityEventTypes.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "riskEventTypes" => lambda {|n| @risk_event_types = n.get_collection_of_primitive_values(String) },
                 }

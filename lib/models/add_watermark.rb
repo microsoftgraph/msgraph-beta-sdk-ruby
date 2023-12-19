@@ -32,12 +32,12 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraphBeta::Models::PageOrientation) },
+                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraphBeta::Models::AddWatermarkOrientation) },
                 })
             end
             ## 
             ## Gets the orientation property value. The orientation property
-            ## @return a page_orientation
+            ## @return a add_watermark_orientation
             ## 
             def orientation
                 return @orientation

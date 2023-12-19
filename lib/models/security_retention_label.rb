@@ -60,7 +60,7 @@ module MicrosoftGraphBeta
             @retention_trigger
             ## 
             ## Gets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
-            ## @return a security_action_after_retention_period
+            ## @return a security_retention_label_action_after_retention_period
             ## 
             def action_after_retention_period
                 return @action_after_retention_period
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
-            ## @return a security_behavior_during_retention_period
+            ## @return a security_retention_label_behavior_during_retention_period
             ## 
             def behavior_during_retention_period
                 return @behavior_during_retention_period
@@ -136,7 +136,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
-            ## @return a security_default_record_behavior
+            ## @return a security_retention_label_default_record_behavior
             ## 
             def default_record_behavior
                 return @default_record_behavior
@@ -230,11 +230,11 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "actionAfterRetentionPeriod" => lambda {|n| @action_after_retention_period = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityActionAfterRetentionPeriod) },
-                    "behaviorDuringRetentionPeriod" => lambda {|n| @behavior_during_retention_period = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityBehaviorDuringRetentionPeriod) },
+                    "actionAfterRetentionPeriod" => lambda {|n| @action_after_retention_period = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRetentionLabelActionAfterRetentionPeriod) },
+                    "behaviorDuringRetentionPeriod" => lambda {|n| @behavior_during_retention_period = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRetentionLabelBehaviorDuringRetentionPeriod) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                    "defaultRecordBehavior" => lambda {|n| @default_record_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDefaultRecordBehavior) },
+                    "defaultRecordBehavior" => lambda {|n| @default_record_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRetentionLabelDefaultRecordBehavior) },
                     "descriptionForAdmins" => lambda {|n| @description_for_admins = n.get_string_value() },
                     "descriptionForUsers" => lambda {|n| @description_for_users = n.get_string_value() },
                     "descriptors" => lambda {|n| @descriptors = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanDescriptor.create_from_discriminator_value(pn) }) },
@@ -246,7 +246,7 @@ module MicrosoftGraphBeta
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "retentionDuration" => lambda {|n| @retention_duration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityRetentionDuration.create_from_discriminator_value(pn) }) },
                     "retentionEventType" => lambda {|n| @retention_event_type = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityRetentionEventType.create_from_discriminator_value(pn) }) },
-                    "retentionTrigger" => lambda {|n| @retention_trigger = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRetentionTrigger) },
+                    "retentionTrigger" => lambda {|n| @retention_trigger = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityRetentionLabelRetentionTrigger) },
                 })
             end
             ## 
@@ -341,7 +341,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
-            ## @return a security_retention_trigger
+            ## @return a security_retention_label_retention_trigger
             ## 
             def retention_trigger
                 return @retention_trigger

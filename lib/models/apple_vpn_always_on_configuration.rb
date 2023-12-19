@@ -45,15 +45,15 @@ module MicrosoftGraphBeta
             # Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
             @voicemail_exception_action
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-            ## @return a vpn_service_exception_action
+            ## @return a apple_vpn_always_on_configuration_air_print_exception_action
             ## 
             def air_print_exception_action
                 return @air_print_exception_action
@@ -121,7 +121,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-            ## @return a vpn_service_exception_action
+            ## @return a apple_vpn_always_on_configuration_cellular_exception_action
             ## 
             def cellular_exception_action
                 return @cellular_exception_action
@@ -156,17 +156,17 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "airPrintExceptionAction" => lambda {|n| @air_print_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::VpnServiceExceptionAction) },
+                    "airPrintExceptionAction" => lambda {|n| @air_print_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::AppleVpnAlwaysOnConfigurationAirPrintExceptionAction) },
                     "allowAllCaptiveNetworkPlugins" => lambda {|n| @allow_all_captive_network_plugins = n.get_boolean_value() },
                     "allowCaptiveWebSheet" => lambda {|n| @allow_captive_web_sheet = n.get_boolean_value() },
                     "allowedCaptiveNetworkPlugins" => lambda {|n| @allowed_captive_network_plugins = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SpecifiedCaptiveNetworkPlugins.create_from_discriminator_value(pn) }) },
-                    "cellularExceptionAction" => lambda {|n| @cellular_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::VpnServiceExceptionAction) },
+                    "cellularExceptionAction" => lambda {|n| @cellular_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::AppleVpnAlwaysOnConfigurationCellularExceptionAction) },
                     "natKeepAliveIntervalInSeconds" => lambda {|n| @nat_keep_alive_interval_in_seconds = n.get_number_value() },
                     "natKeepAliveOffloadEnable" => lambda {|n| @nat_keep_alive_offload_enable = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "tunnelConfiguration" => lambda {|n| @tunnel_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::VpnTunnelConfigurationType) },
                     "userToggleEnabled" => lambda {|n| @user_toggle_enabled = n.get_boolean_value() },
-                    "voicemailExceptionAction" => lambda {|n| @voicemail_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::VpnServiceExceptionAction) },
+                    "voicemailExceptionAction" => lambda {|n| @voicemail_exception_action = n.get_enum_value(MicrosoftGraphBeta::Models::AppleVpnAlwaysOnConfigurationVoicemailExceptionAction) },
                 }
             end
             ## 
@@ -266,7 +266,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
-            ## @return a vpn_service_exception_action
+            ## @return a apple_vpn_always_on_configuration_voicemail_exception_action
             ## 
             def voicemail_exception_action
                 return @voicemail_exception_action

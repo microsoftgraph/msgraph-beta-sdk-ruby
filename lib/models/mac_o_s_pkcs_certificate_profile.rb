@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
-            ## @return a certificate_store
+            ## @return a mac_o_s_pkcs_certificate_profile_certificate_store
             ## 
             def certificate_store
                 return @certificate_store
@@ -149,7 +149,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowAllAppsAccess" => lambda {|n| @allow_all_apps_access = n.get_boolean_value() },
-                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
+                    "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSPkcsCertificateProfileCertificateStore) },
                     "certificateTemplateName" => lambda {|n| @certificate_template_name = n.get_string_value() },
                     "certificationAuthority" => lambda {|n| @certification_authority = n.get_string_value() },
                     "certificationAuthorityName" => lambda {|n| @certification_authority_name = n.get_string_value() },

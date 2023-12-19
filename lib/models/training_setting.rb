@@ -13,18 +13,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The settingType property
+            # Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
             @setting_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "settingType" => lambda {|n| @setting_type = n.get_enum_value(MicrosoftGraphBeta::Models::TrainingSettingType) },
+                    "settingType" => lambda {|n| @setting_type = n.get_enum_value(MicrosoftGraphBeta::Models::TrainingSettingSettingType) },
                 }
             end
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the settingType property value. The settingType property
-            ## @return a training_setting_type
+            ## Gets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
+            ## @return a training_setting_setting_type
             ## 
             def setting_type
                 return @setting_type
             end
             ## 
-            ## Sets the settingType property value. The settingType property
+            ## Sets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
             ## @param value Value to set for the settingType property.
             ## @return a void
             ## 

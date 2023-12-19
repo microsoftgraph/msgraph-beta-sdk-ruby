@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
             @time_zone_used
             ## 
             ## Gets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
-            ## @return a analytics_activity_type
+            ## @return a activity_statistics_activity
             ## 
             def activity
                 return @activity
@@ -105,7 +105,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraphBeta::Models::AnalyticsActivityType) },
+                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraphBeta::Models::ActivityStatisticsActivity) },
                     "duration" => lambda {|n| @duration = n.get_duration_value() },
                     "endDate" => lambda {|n| @end_date = n.get_date_value() },
                     "startDate" => lambda {|n| @start_date = n.get_date_value() },

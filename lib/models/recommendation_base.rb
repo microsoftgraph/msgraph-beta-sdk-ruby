@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # List of actions to take to complete a recommendation.
             @action_steps
             ## 
-            # An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            # An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             @benefits
             ## 
             # The category property
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The list of directory objects associated with the recommendation.
             @impacted_resources
             ## 
-            # Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            # Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             @insights
             ## 
             # The most recent date and time a recommendation was deemed applicable to your directory.
@@ -59,8 +59,11 @@ module MicrosoftGraphBeta
             # The priority property
             @priority
             ## 
-            # Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
+            # Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.
             @recommendation_type
+            ## 
+            # The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            @release_type
             ## 
             # Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
             @remediation_impact
@@ -83,14 +86,14 @@ module MicrosoftGraphBeta
                 @action_steps = value
             end
             ## 
-            ## Gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            ## Gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def benefits
                 return @benefits
             end
             ## 
-            ## Sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            ## Sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             ## @param value Value to set for the benefits property.
             ## @return a void
             ## 
@@ -183,7 +186,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the featureAreas property value. The directory feature that the recommendation is related to.
-            ## @return a recommendation_feature_areas
+            ## @return a recommendation_base_feature_areas
             ## 
             def feature_areas
                 return @feature_areas
@@ -208,7 +211,7 @@ module MicrosoftGraphBeta
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "currentScore" => lambda {|n| @current_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "featureAreas" => lambda {|n| @feature_areas = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RecommendationFeatureAreas.create_from_discriminator_value(pn) }) },
+                    "featureAreas" => lambda {|n| @feature_areas = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RecommendationBaseFeatureAreas.create_from_discriminator_value(pn) }) },
                     "impactStartDateTime" => lambda {|n| @impact_start_date_time = n.get_date_time_value() },
                     "impactType" => lambda {|n| @impact_type = n.get_string_value() },
                     "impactedResources" => lambda {|n| @impacted_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ImpactedResource.create_from_discriminator_value(pn) }) },
@@ -219,7 +222,8 @@ module MicrosoftGraphBeta
                     "maxScore" => lambda {|n| @max_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "postponeUntilDateTime" => lambda {|n| @postpone_until_date_time = n.get_date_time_value() },
                     "priority" => lambda {|n| @priority = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationPriority) },
-                    "recommendationType" => lambda {|n| @recommendation_type = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationType) },
+                    "recommendationType" => lambda {|n| @recommendation_type = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationBaseRecommendationType) },
+                    "releaseType" => lambda {|n| @release_type = n.get_string_value() },
                     "remediationImpact" => lambda {|n| @remediation_impact = n.get_string_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationStatus) },
                 })
@@ -270,14 +274,14 @@ module MicrosoftGraphBeta
                 @impacted_resources = value
             end
             ## 
-            ## Gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            ## Gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def insights
                 return @insights
             end
             ## 
-            ## Sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            ## Sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             ## @param value Value to set for the insights property.
             ## @return a void
             ## 
@@ -375,19 +379,34 @@ module MicrosoftGraphBeta
                 @priority = value
             end
             ## 
-            ## Gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
-            ## @return a recommendation_type
+            ## Gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.
+            ## @return a recommendation_base_recommendation_type
             ## 
             def recommendation_type
                 return @recommendation_type
             end
             ## 
-            ## Sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
+            ## Sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.
             ## @param value Value to set for the recommendationType property.
             ## @return a void
             ## 
             def recommendation_type=(value)
                 @recommendation_type = value
+            end
+            ## 
+            ## Gets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @return a string
+            ## 
+            def release_type
+                return @release_type
+            end
+            ## 
+            ## Sets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @param value Value to set for the releaseType property.
+            ## @return a void
+            ## 
+            def release_type=(value)
+                @release_type = value
             end
             ## 
             ## Gets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
@@ -430,6 +449,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("postponeUntilDateTime", @postpone_until_date_time)
                 writer.write_enum_value("priority", @priority)
                 writer.write_enum_value("recommendationType", @recommendation_type)
+                writer.write_string_value("releaseType", @release_type)
                 writer.write_string_value("remediationImpact", @remediation_impact)
                 writer.write_enum_value("status", @status)
             end

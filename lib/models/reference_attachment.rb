@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                     "isFolder" => lambda {|n| @is_folder = n.get_boolean_value() },
                     "permission" => lambda {|n| @permission = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceAttachmentPermission) },
                     "previewUrl" => lambda {|n| @preview_url = n.get_string_value() },
-                    "providerType" => lambda {|n| @provider_type = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceAttachmentProvider) },
+                    "providerType" => lambda {|n| @provider_type = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceAttachmentProviderType) },
                     "sourceUrl" => lambda {|n| @source_url = n.get_string_value() },
                     "thumbnailUrl" => lambda {|n| @thumbnail_url = n.get_string_value() },
                 })
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
-            ## @return a reference_attachment_provider
+            ## @return a reference_attachment_provider_type
             ## 
             def provider_type
                 return @provider_type

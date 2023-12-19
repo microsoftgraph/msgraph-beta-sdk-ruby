@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
-            ## @return a user_account_security_type
+            ## @return a logon_user_account_type
             ## 
             def account_type
                 return @account_type
@@ -80,15 +80,15 @@ module MicrosoftGraphBeta
                 @account_type = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -133,11 +133,11 @@ module MicrosoftGraphBeta
                 return {
                     "accountDomain" => lambda {|n| @account_domain = n.get_string_value() },
                     "accountName" => lambda {|n| @account_name = n.get_string_value() },
-                    "accountType" => lambda {|n| @account_type = n.get_enum_value(MicrosoftGraphBeta::Models::UserAccountSecurityType) },
+                    "accountType" => lambda {|n| @account_type = n.get_enum_value(MicrosoftGraphBeta::Models::LogonUserAccountType) },
                     "firstSeenDateTime" => lambda {|n| @first_seen_date_time = n.get_date_time_value() },
                     "lastSeenDateTime" => lambda {|n| @last_seen_date_time = n.get_date_time_value() },
                     "logonId" => lambda {|n| @logon_id = n.get_string_value() },
-                    "logonTypes" => lambda {|n| @logon_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LogonType.create_from_discriminator_value(pn) }) },
+                    "logonTypes" => lambda {|n| @logon_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LogonUserLogonTypes.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -173,7 +173,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-            ## @return a logon_type
+            ## @return a logon_user_logon_types
             ## 
             def logon_types
                 return @logon_types

@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The collection of roles assigned.
             @roles
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
-            ## @return a managed_tenants_delegated_privilege_status
+            ## @return a managed_tenants_role_assignment_assignment_type
             ## 
             def assignment_type
                 return @assignment_type
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "assignmentType" => lambda {|n| @assignment_type = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsDelegatedPrivilegeStatus) },
+                    "assignmentType" => lambda {|n| @assignment_type = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsRoleAssignmentAssignmentType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "roles" => lambda {|n| @roles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsRoleDefinition.create_from_discriminator_value(pn) }) },
                 }

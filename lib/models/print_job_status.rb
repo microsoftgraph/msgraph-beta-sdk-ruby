@@ -49,15 +49,15 @@ module MicrosoftGraphBeta
                 @acquired_by_printer = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                     "details" => lambda {|n| @details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintJobStateDetail.create_from_discriminator_value(pn) }) },
                     "isAcquiredByPrinter" => lambda {|n| @is_acquired_by_printer = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "processingState" => lambda {|n| @processing_state = n.get_enum_value(MicrosoftGraphBeta::Models::PrintJobProcessingState) },
+                    "processingState" => lambda {|n| @processing_state = n.get_enum_value(MicrosoftGraphBeta::Models::PrintJobStatusProcessingState) },
                     "processingStateDescription" => lambda {|n| @processing_state_description = n.get_string_value() },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::PrintJobProcessingState) },
                 }
@@ -157,7 +157,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the processingState property value. The processingState property
-            ## @return a print_job_processing_state
+            ## @return a print_job_status_processing_state
             ## 
             def processing_state
                 return @processing_state

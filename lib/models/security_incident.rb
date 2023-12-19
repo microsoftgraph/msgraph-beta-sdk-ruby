@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # The systemTags property
             @system_tags
             ## 
-            # The Azure Active Directory tenant in which the alert was created.
+            # The Microsoft Entra tenant in which the alert was created.
             @tenant_id
             ## 
             ## Gets the alerts property value. The list of related alerts. Supports $expand.
@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
-            ## @return a security_alert_classification
+            ## @return a security_incident_classification
             ## 
             def classification
                 return @classification
@@ -187,7 +187,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
-            ## @return a security_alert_determination
+            ## @return a security_incident_determination
             ## 
             def determination
                 return @determination
@@ -223,12 +223,12 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "alerts" => lambda {|n| @alerts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAlert.create_from_discriminator_value(pn) }) },
                     "assignedTo" => lambda {|n| @assigned_to = n.get_string_value() },
-                    "classification" => lambda {|n| @classification = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityAlertClassification) },
+                    "classification" => lambda {|n| @classification = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityIncidentClassification) },
                     "comments" => lambda {|n| @comments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAlertComment.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customTags" => lambda {|n| @custom_tags = n.get_collection_of_primitive_values(String) },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "determination" => lambda {|n| @determination = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityAlertDetermination) },
+                    "determination" => lambda {|n| @determination = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityIncidentDetermination) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "incidentWebUrl" => lambda {|n| @incident_web_url = n.get_string_value() },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_string_value() },
@@ -406,14 +406,14 @@ module MicrosoftGraphBeta
                 @system_tags = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Gets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Sets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

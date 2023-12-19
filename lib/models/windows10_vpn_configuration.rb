@@ -317,7 +317,7 @@ module MicrosoftGraphBeta
                     "identityCertificate" => lambda {|n| @identity_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsCertificateProfileBase.create_from_discriminator_value(pn) }) },
                     "microsoftTunnelSiteId" => lambda {|n| @microsoft_tunnel_site_id = n.get_string_value() },
                     "onlyAssociatedAppsCanUseConnection" => lambda {|n| @only_associated_apps_can_use_connection = n.get_boolean_value() },
-                    "profileTarget" => lambda {|n| @profile_target = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10VpnProfileTarget) },
+                    "profileTarget" => lambda {|n| @profile_target = n.get_enum_value(MicrosoftGraphBeta::Models::Windows10VpnConfigurationProfileTarget) },
                     "proxyServer" => lambda {|n| @proxy_server = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Windows10VpnProxyServer.create_from_discriminator_value(pn) }) },
                     "rememberUserCredentials" => lambda {|n| @remember_user_credentials = n.get_boolean_value() },
                     "routes" => lambda {|n| @routes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VpnRoute.create_from_discriminator_value(pn) }) },
@@ -375,7 +375,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
-            ## @return a windows10_vpn_profile_target
+            ## @return a windows10_vpn_configuration_profile_target
             ## 
             def profile_target
                 return @profile_target
