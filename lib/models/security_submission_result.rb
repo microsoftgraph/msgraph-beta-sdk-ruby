@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
             @category
             ## 
-            # Specifies the additional details provided by Microsoft to substantiate their analysis result.
+            # Specifies the extra details provided by Microsoft to substantiate their analysis result.
             @detail
             ## 
             # Specifies the files detected by Microsoft in the submitted emails.
             @detected_files
             ## 
-            # Specifes the URLs detected by Microsoft in the submitted email.
+            # Specifies the URLs detected by Microsoft in the submitted email.
             @detected_urls
             ## 
             # The OdataType property
@@ -28,15 +28,15 @@ module MicrosoftGraphBeta
             # Specifies the setting for user mailbox denoted by a comma-separated string.
             @user_mailbox_setting
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 return SecuritySubmissionResult.new
             end
             ## 
-            ## Gets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
+            ## Gets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
             ## @return a security_submission_result_detail
             ## 
             def detail
                 return @detail
             end
             ## 
-            ## Sets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
+            ## Sets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
             ## @param value Value to set for the detail property.
             ## @return a void
             ## 
@@ -104,14 +104,14 @@ module MicrosoftGraphBeta
                 @detected_files = value
             end
             ## 
-            ## Gets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
+            ## Gets the detectedUrls property value. Specifies the URLs detected by Microsoft in the submitted email.
             ## @return a string
             ## 
             def detected_urls
                 return @detected_urls
             end
             ## 
-            ## Sets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
+            ## Sets the detectedUrls property value. Specifies the URLs detected by Microsoft in the submitted email.
             ## @param value Value to set for the detectedUrls property.
             ## @return a void
             ## 
@@ -129,7 +129,7 @@ module MicrosoftGraphBeta
                     "detectedFiles" => lambda {|n| @detected_files = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubmissionDetectedFile.create_from_discriminator_value(pn) }) },
                     "detectedUrls" => lambda {|n| @detected_urls = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "userMailboxSetting" => lambda {|n| @user_mailbox_setting = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityUserMailboxSetting) },
+                    "userMailboxSetting" => lambda {|n| @user_mailbox_setting = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityUserMailboxSetting) },
                 }
             end
             ## 

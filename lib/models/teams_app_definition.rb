@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class TeamsAppDefinition < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            # A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             @allowed_installation_scopes
             ## 
             # Authorization requirements specified in the Teams app manifest.
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The outline version of the Teams app's icon.
             @outline_icon
             ## 
-            # The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            # The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             @publishing_state
             ## 
             # The shortdescription property
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
             # The version number of the application.
             @version
             ## 
-            ## Gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            ## Gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             ## @return a teams_app_installation_scopes
             ## 
             def allowed_installation_scopes
                 return @allowed_installation_scopes
             end
             ## 
-            ## Sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            ## Sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             ## @param value Value to set for the allowedInstallationScopes property.
             ## @return a void
             ## 
@@ -191,7 +191,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
+                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_values(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
                     "authorization" => lambda {|n| @authorization = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppAuthorization.create_from_discriminator_value(pn) }) },
                     "azureADAppId" => lambda {|n| @azure_a_d_app_id = n.get_string_value() },
                     "bot" => lambda {|n| @bot = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamworkBot.create_from_discriminator_value(pn) }) },
@@ -238,14 +238,14 @@ module MicrosoftGraphBeta
                 @outline_icon = value
             end
             ## 
-            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             ## @return a teams_app_publishing_state
             ## 
             def publishing_state
                 return @publishing_state
             end
             ## 
-            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CustomExtensionStageSetting < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+            # Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
             @custom_extension
             ## 
             # The stage property
@@ -29,14 +29,14 @@ module MicrosoftGraphBeta
                 return CustomExtensionStageSetting.new
             end
             ## 
-            ## Gets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+            ## Gets the customExtension property value. Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
             ## @return a custom_callout_extension
             ## 
             def custom_extension
                 return @custom_extension
             end
             ## 
-            ## Sets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+            ## Sets the customExtension property value. Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
             ## @param value Value to set for the customExtension property.
             ## @return a void
             ## 

@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             # Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
-            # The moduleUrl property
+            # The URL of the module from which to access the assignment.
             @module_url
             ## 
             # Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
@@ -444,14 +444,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the moduleUrl property value. The moduleUrl property
+            ## Gets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @return a string
             ## 
             def module_url
                 return @module_url
             end
             ## 
-            ## Sets the moduleUrl property value. The moduleUrl property
+            ## Sets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @param value Value to set for the moduleUrl property.
             ## @return a void
             ## 

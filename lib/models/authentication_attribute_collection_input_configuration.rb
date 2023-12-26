@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The inputType property
             @input_type
             ## 
-            # The label of the attribute field that will be displayed to end user, unless overridden.
+            # The label of the attribute field that is displayed to end user, unless overridden.
             @label
             ## 
             # The OdataType property
@@ -40,18 +40,18 @@ module MicrosoftGraphBeta
             # The regex for the value of the field.
             @validation_reg_ex
             ## 
-            # Whether the value collected will be stored.
+            # Whether the value collected is stored.
             @write_to_directory
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -168,14 +168,14 @@ module MicrosoftGraphBeta
                 @input_type = value
             end
             ## 
-            ## Gets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+            ## Gets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
             ## @return a string
             ## 
             def label
                 return @label
             end
             ## 
-            ## Sets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+            ## Sets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
             ## @param value Value to set for the label property.
             ## @return a void
             ## 
@@ -263,14 +263,14 @@ module MicrosoftGraphBeta
                 @validation_reg_ex = value
             end
             ## 
-            ## Gets the writeToDirectory property value. Whether the value collected will be stored.
+            ## Gets the writeToDirectory property value. Whether the value collected is stored.
             ## @return a boolean
             ## 
             def write_to_directory
                 return @write_to_directory
             end
             ## 
-            ## Sets the writeToDirectory property value. Whether the value collected will be stored.
+            ## Sets the writeToDirectory property value. Whether the value collected is stored.
             ## @param value Value to set for the writeToDirectory property.
             ## @return a void
             ## 

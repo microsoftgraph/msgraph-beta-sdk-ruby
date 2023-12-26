@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class LandingPageDetail < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content property
+            # Landing page detail content.
             @content
             ## 
-            # The isDefaultLangauge property
+            # Indicates whether this language detail is default for the landing page.
             @is_default_langauge
             ## 
-            # The language property
+            # The content language for the landing page.
             @language
             ## 
             ## Instantiates a new landingPageDetail and sets the default values.
@@ -23,14 +23,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the content property value. The content property
+            ## Gets the content property value. Landing page detail content.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content property
+            ## Sets the content property value. Landing page detail content.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Gets the isDefaultLangauge property value. Indicates whether this language detail is default for the landing page.
             ## @return a boolean
             ## 
             def is_default_langauge
                 return @is_default_langauge
             end
             ## 
-            ## Sets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Sets the isDefaultLangauge property value. Indicates whether this language detail is default for the landing page.
             ## @param value Value to set for the isDefaultLangauge property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 @is_default_langauge = value
             end
             ## 
-            ## Gets the language property value. The language property
+            ## Gets the language property value. The content language for the landing page.
             ## @return a string
             ## 
             def language
                 return @language
             end
             ## 
-            ## Sets the language property value. The language property
+            ## Sets the language property value. The content language for the landing page.
             ## @param value Value to set for the language property.
             ## @return a void
             ## 
