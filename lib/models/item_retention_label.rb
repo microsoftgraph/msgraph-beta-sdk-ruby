@@ -8,19 +8,19 @@ module MicrosoftGraphBeta
         class ItemRetentionLabel < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The isLabelAppliedExplicitly property
+            # Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
             @is_label_applied_explicitly
             ## 
-            # The labelAppliedBy property
+            # Identity of the user who applied the label. Read-only.
             @label_applied_by
             ## 
-            # The labelAppliedDateTime property
+            # The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @label_applied_date_time
             ## 
-            # The name property
+            # The retention label on the document. Read-write.
             @name
             ## 
-            # The retentionSettings property
+            # The retention settings enforced on the item. Read-write.
             @retention_settings
             ## 
             ## Instantiates a new itemRetentionLabel and sets the default values.
@@ -52,14 +52,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isLabelAppliedExplicitly property value. The isLabelAppliedExplicitly property
+            ## Gets the isLabelAppliedExplicitly property value. Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
             ## @return a boolean
             ## 
             def is_label_applied_explicitly
                 return @is_label_applied_explicitly
             end
             ## 
-            ## Sets the isLabelAppliedExplicitly property value. The isLabelAppliedExplicitly property
+            ## Sets the isLabelAppliedExplicitly property value. Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
             ## @param value Value to set for the isLabelAppliedExplicitly property.
             ## @return a void
             ## 
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 @is_label_applied_explicitly = value
             end
             ## 
-            ## Gets the labelAppliedBy property value. The labelAppliedBy property
+            ## Gets the labelAppliedBy property value. Identity of the user who applied the label. Read-only.
             ## @return a identity_set
             ## 
             def label_applied_by
                 return @label_applied_by
             end
             ## 
-            ## Sets the labelAppliedBy property value. The labelAppliedBy property
+            ## Sets the labelAppliedBy property value. Identity of the user who applied the label. Read-only.
             ## @param value Value to set for the labelAppliedBy property.
             ## @return a void
             ## 
@@ -82,14 +82,14 @@ module MicrosoftGraphBeta
                 @label_applied_by = value
             end
             ## 
-            ## Gets the labelAppliedDateTime property value. The labelAppliedDateTime property
+            ## Gets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def label_applied_date_time
                 return @label_applied_date_time
             end
             ## 
-            ## Sets the labelAppliedDateTime property value. The labelAppliedDateTime property
+            ## Sets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the labelAppliedDateTime property.
             ## @return a void
             ## 
@@ -97,14 +97,14 @@ module MicrosoftGraphBeta
                 @label_applied_date_time = value
             end
             ## 
-            ## Gets the name property value. The name property
+            ## Gets the name property value. The retention label on the document. Read-write.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The name property
+            ## Sets the name property value. The retention label on the document. Read-write.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -112,14 +112,14 @@ module MicrosoftGraphBeta
                 @name = value
             end
             ## 
-            ## Gets the retentionSettings property value. The retentionSettings property
+            ## Gets the retentionSettings property value. The retention settings enforced on the item. Read-write.
             ## @return a retention_label_settings
             ## 
             def retention_settings
                 return @retention_settings
             end
             ## 
-            ## Sets the retentionSettings property value. The retentionSettings property
+            ## Sets the retentionSettings property value. The retention settings enforced on the item. Read-write.
             ## @param value Value to set for the retentionSettings property.
             ## @return a void
             ## 

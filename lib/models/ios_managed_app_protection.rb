@@ -51,6 +51,9 @@ module MicrosoftGraphBeta
             # A list of custom urls that are allowed to invocate a managed app
             @managed_universal_links
             ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            @messaging_redirect_app_url_scheme
+            ## 
             # Versions less than the specified version will block the managed app from accessing company data.
             @minimum_required_sdk_version
             ## 
@@ -297,6 +300,7 @@ module MicrosoftGraphBeta
                     "faceIdBlocked" => lambda {|n| @face_id_blocked = n.get_boolean_value() },
                     "filterOpenInToOnlyManagedApps" => lambda {|n| @filter_open_in_to_only_managed_apps = n.get_boolean_value() },
                     "managedUniversalLinks" => lambda {|n| @managed_universal_links = n.get_collection_of_primitive_values(String) },
+                    "messagingRedirectAppUrlScheme" => lambda {|n| @messaging_redirect_app_url_scheme = n.get_string_value() },
                     "minimumRequiredSdkVersion" => lambda {|n| @minimum_required_sdk_version = n.get_string_value() },
                     "minimumWarningSdkVersion" => lambda {|n| @minimum_warning_sdk_version = n.get_string_value() },
                     "minimumWipeSdkVersion" => lambda {|n| @minimum_wipe_sdk_version = n.get_string_value() },
@@ -318,6 +322,21 @@ module MicrosoftGraphBeta
             ## 
             def managed_universal_links=(value)
                 @managed_universal_links = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_url_scheme
+                return @messaging_redirect_app_url_scheme
+            end
+            ## 
+            ## Sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppUrlScheme property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_url_scheme=(value)
+                @messaging_redirect_app_url_scheme = value
             end
             ## 
             ## Gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
@@ -401,6 +420,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
                 writer.write_boolean_value("filterOpenInToOnlyManagedApps", @filter_open_in_to_only_managed_apps)
                 writer.write_collection_of_primitive_values("managedUniversalLinks", @managed_universal_links)
+                writer.write_string_value("messagingRedirectAppUrlScheme", @messaging_redirect_app_url_scheme)
                 writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)
                 writer.write_string_value("minimumWarningSdkVersion", @minimum_warning_sdk_version)
                 writer.write_string_value("minimumWipeSdkVersion", @minimum_wipe_sdk_version)

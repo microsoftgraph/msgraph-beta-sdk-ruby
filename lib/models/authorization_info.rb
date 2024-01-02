@@ -10,35 +10,35 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            # The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
             @certificate_user_ids
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            ## Gets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
             ## @return a string
             ## 
             def certificate_user_ids
                 return @certificate_user_ids
             end
             ## 
-            ## Sets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+            ## Sets the certificateUserIds property value. The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
             ## @param value Value to set for the certificateUserIds property.
             ## @return a void
             ## 

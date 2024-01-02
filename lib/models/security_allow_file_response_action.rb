@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "deviceGroupNames" => lambda {|n| @device_group_names = n.get_collection_of_primitive_values(String) },
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityFileEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityFileEntityIdentifier) },
                 })
             end
             ## 

@@ -8,47 +8,47 @@ module MicrosoftGraphBeta
         class WorkbookDocumentTaskChange < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The assignee property
+            # The user identity the task is assigned to. Only present when the type property is assign. Nullable.
             @assignee
             ## 
             # The changedBy property
             @changed_by
             ## 
-            # The commentId property
+            # The identifier of the associated comment.
             @comment_id
             ## 
-            # The createdDateTime property
+            # Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The dueDateTime property
+            # The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @due_date_time
             ## 
-            # The percentComplete property
+            # An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.
             @percent_complete
             ## 
-            # The priority property
+            # An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
             @priority
             ## 
-            # The startDateTime property
+            # The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @start_date_time
             ## 
-            # The title property
+            # The title of the task. Only present when the type property is setTitle. Nullable.
             @title
             ## 
-            # The type property
+            # The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
             @type
             ## 
-            # The undoChangeId property
+            # The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
             @undo_change_id
             ## 
-            ## Gets the assignee property value. The assignee property
+            ## Gets the assignee property value. The user identity the task is assigned to. Only present when the type property is assign. Nullable.
             ## @return a workbook_email_identity
             ## 
             def assignee
                 return @assignee
             end
             ## 
-            ## Sets the assignee property value. The assignee property
+            ## Sets the assignee property value. The user identity the task is assigned to. Only present when the type property is assign. Nullable.
             ## @param value Value to set for the assignee property.
             ## @return a void
             ## 
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 @changed_by = value
             end
             ## 
-            ## Gets the commentId property value. The commentId property
+            ## Gets the commentId property value. The identifier of the associated comment.
             ## @return a string
             ## 
             def comment_id
                 return @comment_id
             end
             ## 
-            ## Sets the commentId property value. The commentId property
+            ## Sets the commentId property value. The identifier of the associated comment.
             ## @param value Value to set for the commentId property.
             ## @return a void
             ## 
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -117,14 +117,14 @@ module MicrosoftGraphBeta
                 return WorkbookDocumentTaskChange.new
             end
             ## 
-            ## Gets the dueDateTime property value. The dueDateTime property
+            ## Gets the dueDateTime property value. The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def due_date_time
                 return @due_date_time
             end
             ## 
-            ## Sets the dueDateTime property value. The dueDateTime property
+            ## Sets the dueDateTime property value. The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the dueDateTime property.
             ## @return a void
             ## 
@@ -151,14 +151,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the percentComplete property value. The percentComplete property
+            ## Gets the percentComplete property value. An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.
             ## @return a integer
             ## 
             def percent_complete
                 return @percent_complete
             end
             ## 
-            ## Sets the percentComplete property value. The percentComplete property
+            ## Sets the percentComplete property value. An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.
             ## @param value Value to set for the percentComplete property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraphBeta
                 @percent_complete = value
             end
             ## 
-            ## Gets the priority property value. The priority property
+            ## Gets the priority property value. An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
             ## @return a integer
             ## 
             def priority
                 return @priority
             end
             ## 
-            ## Sets the priority property value. The priority property
+            ## Sets the priority property value. An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
             ## @param value Value to set for the priority property.
             ## @return a void
             ## 
@@ -201,14 +201,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("undoChangeId", @undo_change_id)
             end
             ## 
-            ## Gets the startDateTime property value. The startDateTime property
+            ## Gets the startDateTime property value. The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The startDateTime property
+            ## Sets the startDateTime property value. The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -216,14 +216,14 @@ module MicrosoftGraphBeta
                 @start_date_time = value
             end
             ## 
-            ## Gets the title property value. The title property
+            ## Gets the title property value. The title of the task. Only present when the type property is setTitle. Nullable.
             ## @return a string
             ## 
             def title
                 return @title
             end
             ## 
-            ## Sets the title property value. The title property
+            ## Sets the title property value. The title of the task. Only present when the type property is setTitle. Nullable.
             ## @param value Value to set for the title property.
             ## @return a void
             ## 
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @title = value
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @type = value
             end
             ## 
-            ## Gets the undoChangeId property value. The undoChangeId property
+            ## Gets the undoChangeId property value. The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
             ## @return a string
             ## 
             def undo_change_id
                 return @undo_change_id
             end
             ## 
-            ## Sets the undoChangeId property value. The undoChangeId property
+            ## Sets the undoChangeId property value. The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
             ## @param value Value to set for the undoChangeId property.
             ## @return a void
             ## 

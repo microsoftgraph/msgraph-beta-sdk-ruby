@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # The systemTags property
             @system_tags
             ## 
-            # The Azure Active Directory tenant in which the alert was created.
+            # The Microsoft Entra tenant in which the alert was created.
             @tenant_id
             ## 
             ## Gets the alerts property value. The list of related alerts. Supports $expand.
@@ -406,14 +406,14 @@ module MicrosoftGraphBeta
                 @system_tags = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Gets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Sets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

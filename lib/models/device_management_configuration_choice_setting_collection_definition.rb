@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationChoiceSettingCollectionDefinition < MicrosoftGraphBeta::Models::DeviceManagementConfigurationChoiceSettingDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Maximum number of choices in the collection. Valid values 1 to 100
+            # Maximum number of choices in the collection
             @maximum_count
             ## 
-            # Minimum number of choices in the collection. Valid values 1 to 100
+            # Minimum number of choices in the collection
             @minimum_count
             ## 
             ## Instantiates a new deviceManagementConfigurationChoiceSettingCollectionDefinition and sets the default values.
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the maximumCount property value. Maximum number of choices in the collection. Valid values 1 to 100
+            ## Gets the maximumCount property value. Maximum number of choices in the collection
             ## @return a integer
             ## 
             def maximum_count
                 return @maximum_count
             end
             ## 
-            ## Sets the maximumCount property value. Maximum number of choices in the collection. Valid values 1 to 100
+            ## Sets the maximumCount property value. Maximum number of choices in the collection
             ## @param value Value to set for the maximumCount property.
             ## @return a void
             ## 
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 @maximum_count = value
             end
             ## 
-            ## Gets the minimumCount property value. Minimum number of choices in the collection. Valid values 1 to 100
+            ## Gets the minimumCount property value. Minimum number of choices in the collection
             ## @return a integer
             ## 
             def minimum_count
                 return @minimum_count
             end
             ## 
-            ## Sets the minimumCount property value. Minimum number of choices in the collection. Valid values 1 to 100
+            ## Sets the minimumCount property value. Minimum number of choices in the collection
             ## @param value Value to set for the minimumCount property.
             ## @return a void
             ## 

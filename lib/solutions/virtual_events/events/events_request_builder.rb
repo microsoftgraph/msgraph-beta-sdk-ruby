@@ -5,9 +5,11 @@ require_relative '../../../models/virtual_event'
 require_relative '../../../models/virtual_event_collection_response'
 require_relative '../../solutions'
 require_relative '../virtual_events'
+require_relative './cancel/cancel_request_builder'
 require_relative './count/count_request_builder'
 require_relative './events'
 require_relative './item/virtual_event_item_request_builder'
+require_relative './publish/publish_request_builder'
 
 module MicrosoftGraphBeta
     module Solutions
@@ -18,9 +20,19 @@ module MicrosoftGraphBeta
                 class EventsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
+                    # Provides operations to call the cancel method.
+                    def cancel()
+                        return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the publish method.
+                    def publish()
+                        return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.
@@ -79,15 +91,15 @@ module MicrosoftGraphBeta
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -99,16 +111,25 @@ module MicrosoftGraphBeta
                     def to_post_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :POST
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :POST
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a events_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return EventsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

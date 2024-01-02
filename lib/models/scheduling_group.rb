@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class SchedulingGroup < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The code for the schedulingGroup to represent an external identifier.
+            @code
+            ## 
             # The display name for the schedulingGroup. Required.
             @display_name
             ## 
@@ -15,6 +18,21 @@ module MicrosoftGraphBeta
             ## 
             # The list of user IDs that are a member of the schedulingGroup. Required.
             @user_ids
+            ## 
+            ## Gets the code property value. The code for the schedulingGroup to represent an external identifier.
+            ## @return a string
+            ## 
+            def code
+                return @code
+            end
+            ## 
+            ## Sets the code property value. The code for the schedulingGroup to represent an external identifier.
+            ## @param value Value to set for the code property.
+            ## @return a void
+            ## 
+            def code=(value)
+                @code = value
+            end
             ## 
             ## Instantiates a new schedulingGroup and sets the default values.
             ## @return a void
@@ -53,6 +71,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "code" => lambda {|n| @code = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
                     "userIds" => lambda {|n| @user_ids = n.get_collection_of_primitive_values(String) },
@@ -81,6 +100,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("code", @code)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_collection_of_primitive_values("userIds", @user_ids)
             end

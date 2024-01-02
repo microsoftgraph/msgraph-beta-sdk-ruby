@@ -44,6 +44,8 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.fido2CombinationConfiguration"
                             return Fido2CombinationConfiguration.new
+                        when "#microsoft.graph.x509CertificateCombinationConfiguration"
+                            return X509CertificateCombinationConfiguration.new
                     end
                 end
                 return AuthenticationCombinationConfiguration.new

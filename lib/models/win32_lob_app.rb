@@ -146,7 +146,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowAvailableUninstall" => lambda {|n| @allow_available_uninstall = n.get_boolean_value() },
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "detectionRules" => lambda {|n| @detection_rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Win32LobAppDetection.create_from_discriminator_value(pn) }) },
                     "displayVersion" => lambda {|n| @display_version = n.get_string_value() },
                     "installCommandLine" => lambda {|n| @install_command_line = n.get_string_value() },

@@ -35,10 +35,13 @@ module MicrosoftGraphBeta
             # Reverse passive DNS retrieval about this host.
             @passive_dns_reverse
             ## 
+            # The hostPorts associated with a host.
+            @ports
+            ## 
             # Represents a calculated reputation of this host.
             @reputation
             ## 
-            # The sslCertificates property
+            # The hostSslCertificates that are associated with this host.
             @ssl_certificates
             ## 
             # The subdomains that are associated with this host.
@@ -47,7 +50,7 @@ module MicrosoftGraphBeta
             # The hostTrackers that are associated with this host.
             @trackers
             ## 
-            # The whois property
+            # The most recent whoisRecord for this host.
             @whois
             ## 
             ## Gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
@@ -151,6 +154,7 @@ module MicrosoftGraphBeta
                     "parentHostPairs" => lambda {|n| @parent_host_pairs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityHostPair.create_from_discriminator_value(pn) }) },
                     "passiveDns" => lambda {|n| @passive_dns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityPassiveDnsRecord.create_from_discriminator_value(pn) }) },
                     "passiveDnsReverse" => lambda {|n| @passive_dns_reverse = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityPassiveDnsRecord.create_from_discriminator_value(pn) }) },
+                    "ports" => lambda {|n| @ports = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityHostPort.create_from_discriminator_value(pn) }) },
                     "reputation" => lambda {|n| @reputation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityHostReputation.create_from_discriminator_value(pn) }) },
                     "sslCertificates" => lambda {|n| @ssl_certificates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityHostSslCertificate.create_from_discriminator_value(pn) }) },
                     "subdomains" => lambda {|n| @subdomains = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubdomain.create_from_discriminator_value(pn) }) },
@@ -234,6 +238,21 @@ module MicrosoftGraphBeta
                 @passive_dns_reverse = value
             end
             ## 
+            ## Gets the ports property value. The hostPorts associated with a host.
+            ## @return a security_host_port
+            ## 
+            def ports
+                return @ports
+            end
+            ## 
+            ## Sets the ports property value. The hostPorts associated with a host.
+            ## @param value Value to set for the ports property.
+            ## @return a void
+            ## 
+            def ports=(value)
+                @ports = value
+            end
+            ## 
             ## Gets the reputation property value. Represents a calculated reputation of this host.
             ## @return a security_host_reputation
             ## 
@@ -265,6 +284,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("parentHostPairs", @parent_host_pairs)
                 writer.write_collection_of_object_values("passiveDns", @passive_dns)
                 writer.write_collection_of_object_values("passiveDnsReverse", @passive_dns_reverse)
+                writer.write_collection_of_object_values("ports", @ports)
                 writer.write_object_value("reputation", @reputation)
                 writer.write_collection_of_object_values("sslCertificates", @ssl_certificates)
                 writer.write_collection_of_object_values("subdomains", @subdomains)
@@ -272,14 +292,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("whois", @whois)
             end
             ## 
-            ## Gets the sslCertificates property value. The sslCertificates property
+            ## Gets the sslCertificates property value. The hostSslCertificates that are associated with this host.
             ## @return a security_host_ssl_certificate
             ## 
             def ssl_certificates
                 return @ssl_certificates
             end
             ## 
-            ## Sets the sslCertificates property value. The sslCertificates property
+            ## Sets the sslCertificates property value. The hostSslCertificates that are associated with this host.
             ## @param value Value to set for the sslCertificates property.
             ## @return a void
             ## 
@@ -317,14 +337,14 @@ module MicrosoftGraphBeta
                 @trackers = value
             end
             ## 
-            ## Gets the whois property value. The whois property
+            ## Gets the whois property value. The most recent whoisRecord for this host.
             ## @return a security_whois_record
             ## 
             def whois
                 return @whois
             end
             ## 
-            ## Sets the whois property value. The whois property
+            ## Sets the whois property value. The most recent whoisRecord for this host.
             ## @param value Value to set for the whois property.
             ## @return a void
             ## 

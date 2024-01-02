@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # Represents references to a directory or domain of another organization whose users can request access.
             @connected_organizations
             ## 
-            # Represents the settings that control the behavior of Azure AD entitlement management.
+            # Represents the settings that control the behavior of Microsoft Entra entitlement management.
             @settings
             ## 
             # Represents the subjects within entitlement management.
@@ -290,14 +290,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("subjects", @subjects)
             end
             ## 
-            ## Gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+            ## Gets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
             ## @return a entitlement_management_settings
             ## 
             def settings
                 return @settings
             end
             ## 
-            ## Sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+            ## Sets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
             ## @param value Value to set for the settings property.
             ## @return a void
             ## 

@@ -133,7 +133,7 @@ module MicrosoftGraphBeta
                     "deployedAppCount" => lambda {|n| @deployed_app_count = n.get_number_value() },
                     "deploymentSummary" => lambda {|n| @deployment_summary = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppPolicyDeploymentSummary.create_from_discriminator_value(pn) }) },
                     "isAssigned" => lambda {|n| @is_assigned = n.get_boolean_value() },
-                    "targetedAppManagementLevels" => lambda {|n| @targeted_app_management_levels = n.get_enum_value(MicrosoftGraphBeta::Models::AppManagementLevel) },
+                    "targetedAppManagementLevels" => lambda {|n| @targeted_app_management_levels = n.get_enum_values(MicrosoftGraphBeta::Models::AppManagementLevel) },
                 })
             end
             ## 

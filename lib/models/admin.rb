@@ -22,10 +22,13 @@ module MicrosoftGraphBeta
             # The forms property
             @forms
             ## 
+            # A container for the Microsoft 365 apps admin functionality.
+            @microsoft365_apps
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            # The people property
+            # Represents a setting to control people-related admin settings in the tenant.
             @people
             ## 
             # A container for administrative resources to manage reports.
@@ -43,15 +46,15 @@ module MicrosoftGraphBeta
             # A container for all Windows administrator functionalities. Read-only.
             @windows
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -143,6 +146,7 @@ module MicrosoftGraphBeta
                     "dynamics" => lambda {|n| @dynamics = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminDynamics.create_from_discriminator_value(pn) }) },
                     "edge" => lambda {|n| @edge = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Edge.create_from_discriminator_value(pn) }) },
                     "forms" => lambda {|n| @forms = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminForms.create_from_discriminator_value(pn) }) },
+                    "microsoft365Apps" => lambda {|n| @microsoft365_apps = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminMicrosoft365Apps.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "people" => lambda {|n| @people = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PeopleAdminSettings.create_from_discriminator_value(pn) }) },
                     "reportSettings" => lambda {|n| @report_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminReportSettings.create_from_discriminator_value(pn) }) },
@@ -151,6 +155,21 @@ module MicrosoftGraphBeta
                     "todo" => lambda {|n| @todo = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminTodo.create_from_discriminator_value(pn) }) },
                     "windows" => lambda {|n| @windows = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminWindows.create_from_discriminator_value(pn) }) },
                 }
+            end
+            ## 
+            ## Gets the microsoft365Apps property value. A container for the Microsoft 365 apps admin functionality.
+            ## @return a admin_microsoft365_apps
+            ## 
+            def microsoft365_apps
+                return @microsoft365_apps
+            end
+            ## 
+            ## Sets the microsoft365Apps property value. A container for the Microsoft 365 apps admin functionality.
+            ## @param value Value to set for the microsoft365Apps property.
+            ## @return a void
+            ## 
+            def microsoft365_apps=(value)
+                @microsoft365_apps = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -168,14 +187,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the people property value. The people property
+            ## Gets the people property value. Represents a setting to control people-related admin settings in the tenant.
             ## @return a people_admin_settings
             ## 
             def people
                 return @people
             end
             ## 
-            ## Sets the people property value. The people property
+            ## Sets the people property value. Represents a setting to control people-related admin settings in the tenant.
             ## @param value Value to set for the people property.
             ## @return a void
             ## 
@@ -208,6 +227,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("dynamics", @dynamics)
                 writer.write_object_value("edge", @edge)
                 writer.write_object_value("forms", @forms)
+                writer.write_object_value("microsoft365Apps", @microsoft365_apps)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("people", @people)
                 writer.write_object_value("reportSettings", @report_settings)
