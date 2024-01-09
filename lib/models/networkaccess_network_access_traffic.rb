@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
         class NetworkaccessNetworkAccessTraffic
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The action property
+            @action
+            ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
@@ -29,6 +32,9 @@ module MicrosoftGraphBeta
             # Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
             @destination_port
             ## 
+            # The destinationWebCategory property
+            @destination_web_category
+            ## 
             # Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
             @device_category
             ## 
@@ -41,8 +47,17 @@ module MicrosoftGraphBeta
             # Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.
             @device_operating_system_version
             ## 
+            # The filteringProfileId property
+            @filtering_profile_id
+            ## 
+            # The filteringProfileName property
+            @filtering_profile_name
+            ## 
             # Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.
             @headers
+            ## 
+            # The initiatingProcessName property
+            @initiating_process_name
             ## 
             # Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
             @network_protocol
@@ -53,11 +68,20 @@ module MicrosoftGraphBeta
             # Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
             @policy_id
             ## 
+            # The policyName property
+            @policy_name
+            ## 
             # Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
             @policy_rule_id
             ## 
+            # The policyRuleName property
+            @policy_rule_name
+            ## 
             # Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
             @received_bytes
+            ## 
+            # The resourceTenantId property
+            @resource_tenant_id
             ## 
             # Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
             @sent_bytes
@@ -89,15 +113,30 @@ module MicrosoftGraphBeta
             # Represents the user principal name (UPN) associated with a user. Supports $filter (eq) and $orderby.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the action property value. The action property
+            ## @return a networkaccess_filtering_policy_action
+            ## 
+            def action
+                return @action
+            end
+            ## 
+            ## Sets the action property value. The action property
+            ## @param value Value to set for the action property.
+            ## @return a void
+            ## 
+            def action=(value)
+                @action = value
+            end
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -210,6 +249,21 @@ module MicrosoftGraphBeta
                 @destination_port = value
             end
             ## 
+            ## Gets the destinationWebCategory property value. The destinationWebCategory property
+            ## @return a networkaccess_web_category
+            ## 
+            def destination_web_category
+                return @destination_web_category
+            end
+            ## 
+            ## Sets the destinationWebCategory property value. The destinationWebCategory property
+            ## @param value Value to set for the destinationWebCategory property.
+            ## @return a void
+            ## 
+            def destination_web_category=(value)
+                @destination_web_category = value
+            end
+            ## 
             ## Gets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
             ## @return a networkaccess_device_category
             ## 
@@ -270,27 +324,65 @@ module MicrosoftGraphBeta
                 @device_operating_system_version = value
             end
             ## 
+            ## Gets the filteringProfileId property value. The filteringProfileId property
+            ## @return a string
+            ## 
+            def filtering_profile_id
+                return @filtering_profile_id
+            end
+            ## 
+            ## Sets the filteringProfileId property value. The filteringProfileId property
+            ## @param value Value to set for the filteringProfileId property.
+            ## @return a void
+            ## 
+            def filtering_profile_id=(value)
+                @filtering_profile_id = value
+            end
+            ## 
+            ## Gets the filteringProfileName property value. The filteringProfileName property
+            ## @return a string
+            ## 
+            def filtering_profile_name
+                return @filtering_profile_name
+            end
+            ## 
+            ## Sets the filteringProfileName property value. The filteringProfileName property
+            ## @param value Value to set for the filteringProfileName property.
+            ## @return a void
+            ## 
+            def filtering_profile_name=(value)
+                @filtering_profile_name = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessFilteringPolicyAction) },
                     "agentVersion" => lambda {|n| @agent_version = n.get_string_value() },
                     "connectionId" => lambda {|n| @connection_id = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "destinationFQDN" => lambda {|n| @destination_f_q_d_n = n.get_string_value() },
                     "destinationIp" => lambda {|n| @destination_ip = n.get_string_value() },
                     "destinationPort" => lambda {|n| @destination_port = n.get_number_value() },
+                    "destinationWebCategory" => lambda {|n| @destination_web_category = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessWebCategory.create_from_discriminator_value(pn) }) },
                     "deviceCategory" => lambda {|n| @device_category = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessDeviceCategory) },
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
                     "deviceOperatingSystem" => lambda {|n| @device_operating_system = n.get_string_value() },
                     "deviceOperatingSystemVersion" => lambda {|n| @device_operating_system_version = n.get_string_value() },
+                    "filteringProfileId" => lambda {|n| @filtering_profile_id = n.get_string_value() },
+                    "filteringProfileName" => lambda {|n| @filtering_profile_name = n.get_string_value() },
                     "headers" => lambda {|n| @headers = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessHeaders.create_from_discriminator_value(pn) }) },
+                    "initiatingProcessName" => lambda {|n| @initiating_process_name = n.get_string_value() },
                     "networkProtocol" => lambda {|n| @network_protocol = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessNetworkingProtocol) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "policyId" => lambda {|n| @policy_id = n.get_string_value() },
+                    "policyName" => lambda {|n| @policy_name = n.get_string_value() },
                     "policyRuleId" => lambda {|n| @policy_rule_id = n.get_string_value() },
+                    "policyRuleName" => lambda {|n| @policy_rule_name = n.get_string_value() },
                     "receivedBytes" => lambda {|n| @received_bytes = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "resourceTenantId" => lambda {|n| @resource_tenant_id = n.get_string_value() },
                     "sentBytes" => lambda {|n| @sent_bytes = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "sessionId" => lambda {|n| @session_id = n.get_string_value() },
                     "sourceIp" => lambda {|n| @source_ip = n.get_string_value() },
@@ -317,6 +409,21 @@ module MicrosoftGraphBeta
             ## 
             def headers=(value)
                 @headers = value
+            end
+            ## 
+            ## Gets the initiatingProcessName property value. The initiatingProcessName property
+            ## @return a string
+            ## 
+            def initiating_process_name
+                return @initiating_process_name
+            end
+            ## 
+            ## Sets the initiatingProcessName property value. The initiatingProcessName property
+            ## @param value Value to set for the initiatingProcessName property.
+            ## @return a void
+            ## 
+            def initiating_process_name=(value)
+                @initiating_process_name = value
             end
             ## 
             ## Gets the networkProtocol property value. Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
@@ -364,6 +471,21 @@ module MicrosoftGraphBeta
                 @policy_id = value
             end
             ## 
+            ## Gets the policyName property value. The policyName property
+            ## @return a string
+            ## 
+            def policy_name
+                return @policy_name
+            end
+            ## 
+            ## Sets the policyName property value. The policyName property
+            ## @param value Value to set for the policyName property.
+            ## @return a void
+            ## 
+            def policy_name=(value)
+                @policy_name = value
+            end
+            ## 
             ## Gets the policyRuleId property value. Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
             ## @return a string
             ## 
@@ -379,6 +501,21 @@ module MicrosoftGraphBeta
                 @policy_rule_id = value
             end
             ## 
+            ## Gets the policyRuleName property value. The policyRuleName property
+            ## @return a string
+            ## 
+            def policy_rule_name
+                return @policy_rule_name
+            end
+            ## 
+            ## Sets the policyRuleName property value. The policyRuleName property
+            ## @param value Value to set for the policyRuleName property.
+            ## @return a void
+            ## 
+            def policy_rule_name=(value)
+                @policy_rule_name = value
+            end
+            ## 
             ## Gets the receivedBytes property value. Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
             ## @return a int64
             ## 
@@ -392,6 +529,21 @@ module MicrosoftGraphBeta
             ## 
             def received_bytes=(value)
                 @received_bytes = value
+            end
+            ## 
+            ## Gets the resourceTenantId property value. The resourceTenantId property
+            ## @return a string
+            ## 
+            def resource_tenant_id
+                return @resource_tenant_id
+            end
+            ## 
+            ## Sets the resourceTenantId property value. The resourceTenantId property
+            ## @param value Value to set for the resourceTenantId property.
+            ## @return a void
+            ## 
+            def resource_tenant_id=(value)
+                @resource_tenant_id = value
             end
             ## 
             ## Gets the sentBytes property value. Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
@@ -415,22 +567,30 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_enum_value("action", @action)
                 writer.write_string_value("agentVersion", @agent_version)
                 writer.write_string_value("connectionId", @connection_id)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("destinationFQDN", @destination_f_q_d_n)
                 writer.write_string_value("destinationIp", @destination_ip)
                 writer.write_number_value("destinationPort", @destination_port)
+                writer.write_object_value("destinationWebCategory", @destination_web_category)
                 writer.write_enum_value("deviceCategory", @device_category)
                 writer.write_string_value("deviceId", @device_id)
                 writer.write_string_value("deviceOperatingSystem", @device_operating_system)
                 writer.write_string_value("deviceOperatingSystemVersion", @device_operating_system_version)
+                writer.write_string_value("filteringProfileId", @filtering_profile_id)
+                writer.write_string_value("filteringProfileName", @filtering_profile_name)
                 writer.write_object_value("headers", @headers)
+                writer.write_string_value("initiatingProcessName", @initiating_process_name)
                 writer.write_enum_value("networkProtocol", @network_protocol)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("policyId", @policy_id)
+                writer.write_string_value("policyName", @policy_name)
                 writer.write_string_value("policyRuleId", @policy_rule_id)
+                writer.write_string_value("policyRuleName", @policy_rule_name)
                 writer.write_object_value("receivedBytes", @received_bytes)
+                writer.write_string_value("resourceTenantId", @resource_tenant_id)
                 writer.write_object_value("sentBytes", @sent_bytes)
                 writer.write_string_value("sessionId", @session_id)
                 writer.write_string_value("sourceIp", @source_ip)

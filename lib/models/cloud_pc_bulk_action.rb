@@ -82,6 +82,12 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback"
+                            return CloudPcBulkDisasterRecoveryFailback.new
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover"
+                            return CloudPcBulkDisasterRecoveryFailover.new
+                        when "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType"
+                            return CloudPcBulkModifyDiskEncryptionType.new
                         when "#microsoft.graph.cloudPcBulkPowerOff"
                             return CloudPcBulkPowerOff.new
                         when "#microsoft.graph.cloudPcBulkPowerOn"

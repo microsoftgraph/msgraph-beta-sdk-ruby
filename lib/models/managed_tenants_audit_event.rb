@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class ManagedTenantsAuditEvent < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A string which uniquely represents the operation that occurred. Required. Read-only.
+            # A string that uniquely represents the operation that occurred. Required. Read-only.
             @activity
             ## 
-            # The time when the activity ocurred. Required. Read-only.
+            # The time when the activity occurred. Required. Read-only.
             @activity_date_time
             ## 
             # The identifier of the activity request that made the audit event. Required. Read-only.
             @activity_id
             ## 
-            # A category which represents a logical grouping of activities. Required. Read-only.
+            # A category that represents a logical grouping of activities. Required. Read-only.
             @category
             ## 
             # The HTTP verb that was used when making the API request. Required. Read-only.
@@ -41,20 +41,20 @@ module MicrosoftGraphBeta
             # The raw HTTP request URL. Required. Read-only.
             @request_url
             ## 
-            # The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            # The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             @tenant_ids
             ## 
-            # The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            # The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             @tenant_names
             ## 
-            ## Gets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
+            ## Gets the activity property value. A string that uniquely represents the operation that occurred. Required. Read-only.
             ## @return a string
             ## 
             def activity
                 return @activity
             end
             ## 
-            ## Sets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
+            ## Sets the activity property value. A string that uniquely represents the operation that occurred. Required. Read-only.
             ## @param value Value to set for the activity property.
             ## @return a void
             ## 
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 @activity = value
             end
             ## 
-            ## Gets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
+            ## Gets the activityDateTime property value. The time when the activity occurred. Required. Read-only.
             ## @return a date_time
             ## 
             def activity_date_time
                 return @activity_date_time
             end
             ## 
-            ## Sets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
+            ## Sets the activityDateTime property value. The time when the activity occurred. Required. Read-only.
             ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @activity_id = value
             end
             ## 
-            ## Gets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
+            ## Gets the category property value. A category that represents a logical grouping of activities. Required. Read-only.
             ## @return a string
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
+            ## Sets the category property value. A category that represents a logical grouping of activities. Required. Read-only.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 
@@ -271,14 +271,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("tenantNames", @tenant_names)
             end
             ## 
-            ## Gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            ## Gets the tenantIds property value. The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             ## @return a string
             ## 
             def tenant_ids
                 return @tenant_ids
             end
             ## 
-            ## Sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            ## Sets the tenantIds property value. The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             ## @param value Value to set for the tenantIds property.
             ## @return a void
             ## 
@@ -286,14 +286,14 @@ module MicrosoftGraphBeta
                 @tenant_ids = value
             end
             ## 
-            ## Gets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            ## Gets the tenantNames property value. The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             ## @return a string
             ## 
             def tenant_names
                 return @tenant_names
             end
             ## 
-            ## Sets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+            ## Sets the tenantNames property value. The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
             ## @param value Value to set for the tenantNames property.
             ## @return a void
             ## 

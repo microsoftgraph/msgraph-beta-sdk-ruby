@@ -67,7 +67,6 @@ require_relative './identity_protection/identity_protection_request_builder'
 require_relative './identity_providers/identity_providers_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './invitations/invitations_request_builder'
-require_relative './me/me_request_builder'
 require_relative './message_events/message_events_request_builder'
 require_relative './message_recipients/message_recipients_request_builder'
 require_relative './message_traces/message_traces_request_builder'
@@ -435,11 +434,6 @@ module MicrosoftGraphBeta
         # Provides operations to manage the collection of invitation entities.
         def invitations()
             return MicrosoftGraphBeta::Invitations::InvitationsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the user singleton.
-        def me()
-            return MicrosoftGraphBeta::Me::MeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the collection of messageEvent entities.

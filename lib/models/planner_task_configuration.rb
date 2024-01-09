@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PlannerTaskConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
+            # Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
             @edit_policy
             ## 
             ## Instantiates a new plannerTaskConfiguration and sets the default values.
@@ -26,14 +26,14 @@ module MicrosoftGraphBeta
                 return PlannerTaskConfiguration.new
             end
             ## 
-            ## Gets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
+            ## Gets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
             ## @return a planner_task_policy
             ## 
             def edit_policy
                 return @edit_policy
             end
             ## 
-            ## Sets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
+            ## Sets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
             ## @param value Value to set for the editPolicy property.
             ## @return a void
             ## 

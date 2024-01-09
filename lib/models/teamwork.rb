@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class Teamwork < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deletedChats property
+            # A collection of deleted chats.
             @deleted_chats
             ## 
             # A collection of deleted teams.
@@ -15,6 +15,12 @@ module MicrosoftGraphBeta
             ## 
             # The Teams devices provisioned for the tenant.
             @devices
+            ## 
+            # Indicates whether Microsoft Teams is enabled for the organization.
+            @is_teams_enabled
+            ## 
+            # Represents the region of the organization.
+            @region
             ## 
             # The templates associated with a team.
             @team_templates
@@ -41,14 +47,14 @@ module MicrosoftGraphBeta
                 return Teamwork.new
             end
             ## 
-            ## Gets the deletedChats property value. The deletedChats property
+            ## Gets the deletedChats property value. A collection of deleted chats.
             ## @return a deleted_chat
             ## 
             def deleted_chats
                 return @deleted_chats
             end
             ## 
-            ## Sets the deletedChats property value. The deletedChats property
+            ## Sets the deletedChats property value. A collection of deleted chats.
             ## @param value Value to set for the deletedChats property.
             ## @return a void
             ## 
@@ -94,10 +100,42 @@ module MicrosoftGraphBeta
                     "deletedChats" => lambda {|n| @deleted_chats = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeletedChat.create_from_discriminator_value(pn) }) },
                     "deletedTeams" => lambda {|n| @deleted_teams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeletedTeam.create_from_discriminator_value(pn) }) },
                     "devices" => lambda {|n| @devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TeamworkDevice.create_from_discriminator_value(pn) }) },
+                    "isTeamsEnabled" => lambda {|n| @is_teams_enabled = n.get_boolean_value() },
+                    "region" => lambda {|n| @region = n.get_string_value() },
                     "teamTemplates" => lambda {|n| @team_templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TeamTemplate.create_from_discriminator_value(pn) }) },
                     "teamsAppSettings" => lambda {|n| @teams_app_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppSettings.create_from_discriminator_value(pn) }) },
                     "workforceIntegrations" => lambda {|n| @workforce_integrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WorkforceIntegration.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the isTeamsEnabled property value. Indicates whether Microsoft Teams is enabled for the organization.
+            ## @return a boolean
+            ## 
+            def is_teams_enabled
+                return @is_teams_enabled
+            end
+            ## 
+            ## Sets the isTeamsEnabled property value. Indicates whether Microsoft Teams is enabled for the organization.
+            ## @param value Value to set for the isTeamsEnabled property.
+            ## @return a void
+            ## 
+            def is_teams_enabled=(value)
+                @is_teams_enabled = value
+            end
+            ## 
+            ## Gets the region property value. Represents the region of the organization.
+            ## @return a string
+            ## 
+            def region
+                return @region
+            end
+            ## 
+            ## Sets the region property value. Represents the region of the organization.
+            ## @param value Value to set for the region property.
+            ## @return a void
+            ## 
+            def region=(value)
+                @region = value
             end
             ## 
             ## Serializes information the current object
@@ -110,6 +148,8 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("deletedChats", @deleted_chats)
                 writer.write_collection_of_object_values("deletedTeams", @deleted_teams)
                 writer.write_collection_of_object_values("devices", @devices)
+                writer.write_boolean_value("isTeamsEnabled", @is_teams_enabled)
+                writer.write_string_value("region", @region)
                 writer.write_collection_of_object_values("teamTemplates", @team_templates)
                 writer.write_object_value("teamsAppSettings", @teams_app_settings)
                 writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)

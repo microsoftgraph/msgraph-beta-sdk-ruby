@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Number of conflict devices
             @conflict_device_count
             ## 
-            # Not yet documented
+            # The deviceComplianceSettingStates property
             @device_compliance_setting_states
             ## 
             # Number of error devices
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 return DeviceCompliancePolicySettingStateSummary.new
             end
             ## 
-            ## Gets the deviceComplianceSettingStates property value. Not yet documented
+            ## Gets the deviceComplianceSettingStates property value. The deviceComplianceSettingStates property
             ## @return a device_compliance_setting_state
             ## 
             def device_compliance_setting_states
                 return @device_compliance_setting_states
             end
             ## 
-            ## Sets the deviceComplianceSettingStates property value. Not yet documented
+            ## Sets the deviceComplianceSettingStates property value. The deviceComplianceSettingStates property
             ## @param value Value to set for the deviceComplianceSettingStates property.
             ## @return a void
             ## 

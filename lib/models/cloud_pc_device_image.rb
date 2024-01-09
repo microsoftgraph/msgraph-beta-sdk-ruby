@@ -11,6 +11,9 @@ module MicrosoftGraphBeta
             # The display name of the image.
             @display_name
             ## 
+            # The errorCode property
+            @error_code
+            ## 
             # The date the image became unavailable.
             @expiration_date
             ## 
@@ -25,6 +28,9 @@ module MicrosoftGraphBeta
             ## 
             # The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
             @os_status
+            ## 
+            # The scopeIds property
+            @scope_ids
             ## 
             # The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
             @source_image_resource_id
@@ -69,6 +75,21 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
+            ## Gets the errorCode property value. The errorCode property
+            ## @return a cloud_pc_device_image_error_code
+            ## 
+            def error_code
+                return @error_code
+            end
+            ## 
+            ## Sets the errorCode property value. The errorCode property
+            ## @param value Value to set for the errorCode property.
+            ## @return a void
+            ## 
+            def error_code=(value)
+                @error_code = value
+            end
+            ## 
             ## Gets the expirationDate property value. The date the image became unavailable.
             ## @return a date
             ## 
@@ -90,11 +111,13 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "errorCode" => lambda {|n| @error_code = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageErrorCode) },
                     "expirationDate" => lambda {|n| @expiration_date = n.get_date_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "operatingSystem" => lambda {|n| @operating_system = n.get_string_value() },
                     "osBuildNumber" => lambda {|n| @os_build_number = n.get_string_value() },
                     "osStatus" => lambda {|n| @os_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageOsStatus) },
+                    "scopeIds" => lambda {|n| @scope_ids = n.get_collection_of_primitive_values(String) },
                     "sourceImageResourceId" => lambda {|n| @source_image_resource_id = n.get_string_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageStatus) },
                     "statusDetails" => lambda {|n| @status_details = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcDeviceImageStatusDetails) },
@@ -162,6 +185,21 @@ module MicrosoftGraphBeta
                 @os_status = value
             end
             ## 
+            ## Gets the scopeIds property value. The scopeIds property
+            ## @return a string
+            ## 
+            def scope_ids
+                return @scope_ids
+            end
+            ## 
+            ## Sets the scopeIds property value. The scopeIds property
+            ## @param value Value to set for the scopeIds property.
+            ## @return a void
+            ## 
+            def scope_ids=(value)
+                @scope_ids = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -170,11 +208,13 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("displayName", @display_name)
+                writer.write_enum_value("errorCode", @error_code)
                 writer.write_date_value("expirationDate", @expiration_date)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("operatingSystem", @operating_system)
                 writer.write_string_value("osBuildNumber", @os_build_number)
                 writer.write_enum_value("osStatus", @os_status)
+                writer.write_collection_of_primitive_values("scopeIds", @scope_ids)
                 writer.write_string_value("sourceImageResourceId", @source_image_resource_id)
                 writer.write_enum_value("status", @status)
                 writer.write_enum_value("statusDetails", @status_details)

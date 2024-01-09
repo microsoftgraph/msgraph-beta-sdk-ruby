@@ -13,21 +13,27 @@ module MicrosoftGraphBeta
             # The ARM resource ID of the Azure resource associated with the managed identity used for sign in.
             @associated_resource_id
             ## 
+            # The unique ID of the federated token.
+            @federated_token_id
+            ## 
+            # The issuer of the federated token.
+            @federated_token_issuer
+            ## 
             # The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.
             @msi_type
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,12 +71,44 @@ module MicrosoftGraphBeta
                 return ManagedIdentity.new
             end
             ## 
+            ## Gets the federatedTokenId property value. The unique ID of the federated token.
+            ## @return a string
+            ## 
+            def federated_token_id
+                return @federated_token_id
+            end
+            ## 
+            ## Sets the federatedTokenId property value. The unique ID of the federated token.
+            ## @param value Value to set for the federatedTokenId property.
+            ## @return a void
+            ## 
+            def federated_token_id=(value)
+                @federated_token_id = value
+            end
+            ## 
+            ## Gets the federatedTokenIssuer property value. The issuer of the federated token.
+            ## @return a string
+            ## 
+            def federated_token_issuer
+                return @federated_token_issuer
+            end
+            ## 
+            ## Sets the federatedTokenIssuer property value. The issuer of the federated token.
+            ## @param value Value to set for the federatedTokenIssuer property.
+            ## @return a void
+            ## 
+            def federated_token_issuer=(value)
+                @federated_token_issuer = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
                     "associatedResourceId" => lambda {|n| @associated_resource_id = n.get_string_value() },
+                    "federatedTokenId" => lambda {|n| @federated_token_id = n.get_string_value() },
+                    "federatedTokenIssuer" => lambda {|n| @federated_token_issuer = n.get_string_value() },
                     "msiType" => lambda {|n| @msi_type = n.get_enum_value(MicrosoftGraphBeta::Models::MsiType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
@@ -113,6 +151,8 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("associatedResourceId", @associated_resource_id)
+                writer.write_string_value("federatedTokenId", @federated_token_id)
+                writer.write_string_value("federatedTokenIssuer", @federated_token_issuer)
                 writer.write_enum_value("msiType", @msi_type)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

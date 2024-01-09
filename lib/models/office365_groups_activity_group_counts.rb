@@ -8,10 +8,10 @@ module MicrosoftGraphBeta
         class Office365GroupsActivityGroupCounts < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+            # The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
             @active
             ## 
-            # The date on which a number of groups were active.
+            # The date on which groups were active.
             @report_date
             ## 
             # The number of days the report covers.
@@ -23,14 +23,14 @@ module MicrosoftGraphBeta
             # The total number of groups.
             @total
             ## 
-            ## Gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+            ## Gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
             ## @return a int64
             ## 
             def active
                 return @active
             end
             ## 
-            ## Sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+            ## Sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
             ## @param value Value to set for the active property.
             ## @return a void
             ## 
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the reportDate property value. The date on which a number of groups were active.
+            ## Gets the reportDate property value. The date on which groups were active.
             ## @return a date
             ## 
             def report_date
                 return @report_date
             end
             ## 
-            ## Sets the reportDate property value. The date on which a number of groups were active.
+            ## Sets the reportDate property value. The date on which groups were active.
             ## @param value Value to set for the reportDate property.
             ## @return a void
             ## 

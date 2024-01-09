@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The gradingCategories property
             @grading_categories
             ## 
-            # Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            # Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             @submission_animation_disabled
             ## 
             ## Instantiates a new educationAssignmentSettings and sets the default values.
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled)
             end
             ## 
-            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             ## @return a boolean
             ## 
             def submission_animation_disabled
                 return @submission_animation_disabled
             end
             ## 
-            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             ## @param value Value to set for the submissionAnimationDisabled property.
             ## @return a void
             ## 

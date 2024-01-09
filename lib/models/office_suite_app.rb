@@ -105,7 +105,7 @@ module MicrosoftGraphBeta
                     "installProgressDisplayLevel" => lambda {|n| @install_progress_display_level = n.get_enum_value(MicrosoftGraphBeta::Models::OfficeSuiteInstallProgressDisplayLevel) },
                     "localesToInstall" => lambda {|n| @locales_to_install = n.get_collection_of_primitive_values(String) },
                     "officeConfigurationXml" => lambda {|n| @office_configuration_xml = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
-                    "officePlatformArchitecture" => lambda {|n| @office_platform_architecture = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "officePlatformArchitecture" => lambda {|n| @office_platform_architecture = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "officeSuiteAppDefaultFileFormat" => lambda {|n| @office_suite_app_default_file_format = n.get_enum_value(MicrosoftGraphBeta::Models::OfficeSuiteDefaultFileFormatType) },
                     "productIds" => lambda {|n| @product_ids = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OfficeProductId.create_from_discriminator_value(pn) }) },
                     "shouldUninstallOlderVersionsOfOffice" => lambda {|n| @should_uninstall_older_versions_of_office = n.get_boolean_value() },

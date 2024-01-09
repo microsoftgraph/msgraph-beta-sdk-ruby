@@ -16,6 +16,12 @@ module MicrosoftGraphBeta
             # Other detail information of the presenter.
             @presenter_details
             ## 
+            # The profilePhoto property
+            @profile_photo
+            ## 
+            # The sessions property
+            @sessions
+            ## 
             ## Instantiates a new virtualEventPresenter and sets the default values.
             ## @return a void
             ## 
@@ -55,6 +61,8 @@ module MicrosoftGraphBeta
                     "email" => lambda {|n| @email = n.get_string_value() },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CommunicationsUserIdentity.create_from_discriminator_value(pn) }) },
                     "presenterDetails" => lambda {|n| @presenter_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventPresenterDetails.create_from_discriminator_value(pn) }) },
+                    "profilePhoto" => lambda {|n| @profile_photo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
+                    "sessions" => lambda {|n| @sessions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventSession.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -88,6 +96,21 @@ module MicrosoftGraphBeta
                 @presenter_details = value
             end
             ## 
+            ## Gets the profilePhoto property value. The profilePhoto property
+            ## @return a base64url
+            ## 
+            def profile_photo
+                return @profile_photo
+            end
+            ## 
+            ## Sets the profilePhoto property value. The profilePhoto property
+            ## @param value Value to set for the profilePhoto property.
+            ## @return a void
+            ## 
+            def profile_photo=(value)
+                @profile_photo = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -98,6 +121,23 @@ module MicrosoftGraphBeta
                 writer.write_string_value("email", @email)
                 writer.write_object_value("identity", @identity)
                 writer.write_object_value("presenterDetails", @presenter_details)
+                writer.write_object_value("profilePhoto", @profile_photo)
+                writer.write_collection_of_object_values("sessions", @sessions)
+            end
+            ## 
+            ## Gets the sessions property value. The sessions property
+            ## @return a virtual_event_session
+            ## 
+            def sessions
+                return @sessions
+            end
+            ## 
+            ## Sets the sessions property value. The sessions property
+            ## @param value Value to set for the sessions property.
+            ## @return a void
+            ## 
+            def sessions=(value)
+                @sessions = value
             end
         end
     end

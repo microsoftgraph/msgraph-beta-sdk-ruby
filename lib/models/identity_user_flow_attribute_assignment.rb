@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The display name of the identityUserFlowAttribute within a user flow.
             @display_name
             ## 
-            # Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            # Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             @is_optional
             ## 
             # Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            ## Gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             ## @return a boolean
             ## 
             def is_optional
                 return @is_optional
             end
             ## 
-            ## Sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            ## Sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             ## @param value Value to set for the isOptional property.
             ## @return a void
             ## 

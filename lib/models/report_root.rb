@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # Represents a detailed summary of an application sign-in.
             @application_sign_in_detailed_summary
             ## 
-            # Container for navigation properties for Azure AD authentication methods resources.
+            # Container for navigation properties for Microsoft Entra authentication methods resources.
             @authentication_methods
             ## 
-            # Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+            # Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
             @credential_user_registration_details
             ## 
             # The dailyPrintUsage property
@@ -46,17 +46,23 @@ module MicrosoftGraphBeta
             # The monthlyPrintUsageSummariesByUser property
             @monthly_print_usage_summaries_by_user
             ## 
-            # Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            # Provides the ability to launch a simulated phishing attack that organizations can learn from.
             @security
+            ## 
+            # Reports that relate to tenant-level authentication activities in Microsoft Entra.
+            @service_activity
             ## 
             # Represents a collection of sign-in activities of service principals.
             @service_principal_sign_in_activities
             ## 
-            # A placeholder to allow for the desired URL path for SLA.
+            # Reports that relate to tenant-level Microsoft Entra SLA attainment.
             @sla
             ## 
             # Represents the self-service password reset (SSPR) usage for a given tenant.
             @user_credential_usage_details
+            ## 
+            # Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
+            @user_insights
             ## 
             ## Gets the appCredentialSignInActivities property value. Represents a collection of sign-in activities of application credentials.
             ## @return a app_credential_sign_in_activity
@@ -88,14 +94,14 @@ module MicrosoftGraphBeta
                 @application_sign_in_detailed_summary = value
             end
             ## 
-            ## Gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @return a authentication_methods_root
             ## 
             def authentication_methods
                 return @authentication_methods
             end
             ## 
-            ## Sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @param value Value to set for the authenticationMethods property.
             ## @return a void
             ## 
@@ -119,14 +125,14 @@ module MicrosoftGraphBeta
                 return ReportRoot.new
             end
             ## 
-            ## Gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+            ## Gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
             ## @return a credential_user_registration_details
             ## 
             def credential_user_registration_details
                 return @credential_user_registration_details
             end
             ## 
-            ## Sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+            ## Sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
             ## @param value Value to set for the credentialUserRegistrationDetails property.
             ## @return a void
             ## 
@@ -228,9 +234,11 @@ module MicrosoftGraphBeta
                     "monthlyPrintUsageSummariesByPrinter" => lambda {|n| @monthly_print_usage_summaries_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
                     "monthlyPrintUsageSummariesByUser" => lambda {|n| @monthly_print_usage_summaries_by_user = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrintUsageByUser.create_from_discriminator_value(pn) }) },
                     "security" => lambda {|n| @security = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityReportsRoot.create_from_discriminator_value(pn) }) },
+                    "serviceActivity" => lambda {|n| @service_activity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServiceActivity.create_from_discriminator_value(pn) }) },
                     "servicePrincipalSignInActivities" => lambda {|n| @service_principal_sign_in_activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ServicePrincipalSignInActivity.create_from_discriminator_value(pn) }) },
                     "sla" => lambda {|n| @sla = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServiceLevelAgreementRoot.create_from_discriminator_value(pn) }) },
                     "userCredentialUsageDetails" => lambda {|n| @user_credential_usage_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UserCredentialUsageDetails.create_from_discriminator_value(pn) }) },
+                    "userInsights" => lambda {|n| @user_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::UserInsightsRoot.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -294,14 +302,14 @@ module MicrosoftGraphBeta
                 @monthly_print_usage_summaries_by_user = value
             end
             ## 
-            ## Gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            ## Gets the security property value. Provides the ability to launch a simulated phishing attack that organizations can learn from.
             ## @return a security_reports_root
             ## 
             def security
                 return @security
             end
             ## 
-            ## Sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
+            ## Sets the security property value. Provides the ability to launch a simulated phishing attack that organizations can learn from.
             ## @param value Value to set for the security property.
             ## @return a void
             ## 
@@ -330,9 +338,26 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("monthlyPrintUsageSummariesByPrinter", @monthly_print_usage_summaries_by_printer)
                 writer.write_collection_of_object_values("monthlyPrintUsageSummariesByUser", @monthly_print_usage_summaries_by_user)
                 writer.write_object_value("security", @security)
+                writer.write_object_value("serviceActivity", @service_activity)
                 writer.write_collection_of_object_values("servicePrincipalSignInActivities", @service_principal_sign_in_activities)
                 writer.write_object_value("sla", @sla)
                 writer.write_collection_of_object_values("userCredentialUsageDetails", @user_credential_usage_details)
+                writer.write_object_value("userInsights", @user_insights)
+            end
+            ## 
+            ## Gets the serviceActivity property value. Reports that relate to tenant-level authentication activities in Microsoft Entra.
+            ## @return a service_activity
+            ## 
+            def service_activity
+                return @service_activity
+            end
+            ## 
+            ## Sets the serviceActivity property value. Reports that relate to tenant-level authentication activities in Microsoft Entra.
+            ## @param value Value to set for the serviceActivity property.
+            ## @return a void
+            ## 
+            def service_activity=(value)
+                @service_activity = value
             end
             ## 
             ## Gets the servicePrincipalSignInActivities property value. Represents a collection of sign-in activities of service principals.
@@ -350,14 +375,14 @@ module MicrosoftGraphBeta
                 @service_principal_sign_in_activities = value
             end
             ## 
-            ## Gets the sla property value. A placeholder to allow for the desired URL path for SLA.
+            ## Gets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
             ## @return a service_level_agreement_root
             ## 
             def sla
                 return @sla
             end
             ## 
-            ## Sets the sla property value. A placeholder to allow for the desired URL path for SLA.
+            ## Sets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
             ## @param value Value to set for the sla property.
             ## @return a void
             ## 
@@ -378,6 +403,21 @@ module MicrosoftGraphBeta
             ## 
             def user_credential_usage_details=(value)
                 @user_credential_usage_details = value
+            end
+            ## 
+            ## Gets the userInsights property value. Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
+            ## @return a user_insights_root
+            ## 
+            def user_insights
+                return @user_insights
+            end
+            ## 
+            ## Sets the userInsights property value. Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
+            ## @param value Value to set for the userInsights property.
+            ## @return a void
+            ## 
+            def user_insights=(value)
+                @user_insights = value
             end
         end
     end

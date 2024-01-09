@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceIdEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityDeviceIdEntityIdentifier) },
                 })
             end
             ## 

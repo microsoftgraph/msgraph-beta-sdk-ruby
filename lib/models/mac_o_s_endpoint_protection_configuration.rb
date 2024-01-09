@@ -480,7 +480,7 @@ module MicrosoftGraphBeta
                     "fileVaultNumberOfTimesUserCanIgnore" => lambda {|n| @file_vault_number_of_times_user_can_ignore = n.get_number_value() },
                     "fileVaultPersonalRecoveryKeyHelpMessage" => lambda {|n| @file_vault_personal_recovery_key_help_message = n.get_string_value() },
                     "fileVaultPersonalRecoveryKeyRotationInMonths" => lambda {|n| @file_vault_personal_recovery_key_rotation_in_months = n.get_number_value() },
-                    "fileVaultSelectedRecoveryKeyTypes" => lambda {|n| @file_vault_selected_recovery_key_types = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSFileVaultRecoveryKeyTypes) },
+                    "fileVaultSelectedRecoveryKeyTypes" => lambda {|n| @file_vault_selected_recovery_key_types = n.get_enum_values(MicrosoftGraphBeta::Models::MacOSFileVaultRecoveryKeyTypes) },
                     "firewallApplications" => lambda {|n| @firewall_applications = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MacOSFirewallApplication.create_from_discriminator_value(pn) }) },
                     "firewallBlockAllIncoming" => lambda {|n| @firewall_block_all_incoming = n.get_boolean_value() },
                     "firewallEnableStealthMode" => lambda {|n| @firewall_enable_stealth_mode = n.get_boolean_value() },
