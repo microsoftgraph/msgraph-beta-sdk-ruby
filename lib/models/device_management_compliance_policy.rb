@@ -137,12 +137,12 @@ module MicrosoftGraphBeta
                     "isAssigned" => lambda {|n| @is_assigned = n.get_boolean_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "platforms" => lambda {|n| @platforms = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "platforms" => lambda {|n| @platforms = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
                     "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
                     "scheduledActionsForRule" => lambda {|n| @scheduled_actions_for_rule = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementComplianceScheduledActionForRule.create_from_discriminator_value(pn) }) },
                     "settingCount" => lambda {|n| @setting_count = n.get_number_value() },
                     "settings" => lambda {|n| @settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSetting.create_from_discriminator_value(pn) }) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                 })
             end
             ## 

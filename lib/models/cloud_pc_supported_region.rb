@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "regionGroup" => lambda {|n| @region_group = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRegionGroup) },
                     "regionStatus" => lambda {|n| @region_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcSupportedRegionStatus) },
-                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                 })
             end
             ## 

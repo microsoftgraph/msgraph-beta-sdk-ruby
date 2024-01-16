@@ -10,25 +10,25 @@ module MicrosoftGraphBeta
             # The accessTypes property
             @access_types
             ## 
-            # Details which device setting is applicable on
+            # Details which device setting is applicable on. Supports: $filters.
             @applicability
             ## 
             # Base CSP Path
             @base_uri
             ## 
-            # Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+            # Specify category in which the setting is under. Support $filters.
             @category_id
             ## 
-            # Description of the item
+            # Description of the setting.
             @description
             ## 
-            # Display name of the item
+            # Name of the setting. For example: Allow Toast.
             @display_name
             ## 
-            # Help text of the item
+            # Help text of the setting. Give more details of the setting.
             @help_text
             ## 
-            # List of links more info for the setting can be found at
+            # List of links more info for the setting can be found at.
             @info_urls
             ## 
             # Tokens which to search settings on
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             # List of referred setting information.
             @referred_setting_information_list
             ## 
-            # Root setting definition if the setting is a child setting.
+            # Root setting definition id if the setting is a child setting.
             @root_definition_id
             ## 
             # Supported setting types
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @access_types = value
             end
             ## 
-            ## Gets the applicability property value. Details which device setting is applicable on
+            ## Gets the applicability property value. Details which device setting is applicable on. Supports: $filters.
             ## @return a device_management_configuration_setting_applicability
             ## 
             def applicability
                 return @applicability
             end
             ## 
-            ## Sets the applicability property value. Details which device setting is applicable on
+            ## Sets the applicability property value. Details which device setting is applicable on. Supports: $filters.
             ## @param value Value to set for the applicability property.
             ## @return a void
             ## 
@@ -106,14 +106,14 @@ module MicrosoftGraphBeta
                 @base_uri = value
             end
             ## 
-            ## Gets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+            ## Gets the categoryId property value. Specify category in which the setting is under. Support $filters.
             ## @return a string
             ## 
             def category_id
                 return @category_id
             end
             ## 
-            ## Sets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+            ## Sets the categoryId property value. Specify category in which the setting is under. Support $filters.
             ## @param value Value to set for the categoryId property.
             ## @return a void
             ## 
@@ -157,14 +157,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementConfigurationSettingDefinition.new
             end
             ## 
-            ## Gets the description property value. Description of the item
+            ## Gets the description property value. Description of the setting.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Description of the item
+            ## Sets the description property value. Description of the setting.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Display name of the item
+            ## Gets the displayName property value. Name of the setting. For example: Allow Toast.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name of the item
+            ## Sets the displayName property value. Name of the setting. For example: Allow Toast.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -192,7 +192,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessTypes" => lambda {|n| @access_types = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
+                    "accessTypes" => lambda {|n| @access_types = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
                     "applicability" => lambda {|n| @applicability = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingApplicability.create_from_discriminator_value(pn) }) },
                     "baseUri" => lambda {|n| @base_uri = n.get_string_value() },
                     "categoryId" => lambda {|n| @category_id = n.get_string_value() },
@@ -206,21 +206,21 @@ module MicrosoftGraphBeta
                     "offsetUri" => lambda {|n| @offset_uri = n.get_string_value() },
                     "referredSettingInformationList" => lambda {|n| @referred_setting_information_list = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationReferredSettingInformation.create_from_discriminator_value(pn) }) },
                     "rootDefinitionId" => lambda {|n| @root_definition_id = n.get_string_value() },
-                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
+                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
                     "uxBehavior" => lambda {|n| @ux_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationControlType) },
                     "version" => lambda {|n| @version = n.get_string_value() },
-                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
+                    "visibility" => lambda {|n| @visibility = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
                 })
             end
             ## 
-            ## Gets the helpText property value. Help text of the item
+            ## Gets the helpText property value. Help text of the setting. Give more details of the setting.
             ## @return a string
             ## 
             def help_text
                 return @help_text
             end
             ## 
-            ## Sets the helpText property value. Help text of the item
+            ## Sets the helpText property value. Help text of the setting. Give more details of the setting.
             ## @param value Value to set for the helpText property.
             ## @return a void
             ## 
@@ -228,14 +228,14 @@ module MicrosoftGraphBeta
                 @help_text = value
             end
             ## 
-            ## Gets the infoUrls property value. List of links more info for the setting can be found at
+            ## Gets the infoUrls property value. List of links more info for the setting can be found at.
             ## @return a string
             ## 
             def info_urls
                 return @info_urls
             end
             ## 
-            ## Sets the infoUrls property value. List of links more info for the setting can be found at
+            ## Sets the infoUrls property value. List of links more info for the setting can be found at.
             ## @param value Value to set for the infoUrls property.
             ## @return a void
             ## 
@@ -318,14 +318,14 @@ module MicrosoftGraphBeta
                 @referred_setting_information_list = value
             end
             ## 
-            ## Gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
+            ## Gets the rootDefinitionId property value. Root setting definition id if the setting is a child setting.
             ## @return a string
             ## 
             def root_definition_id
                 return @root_definition_id
             end
             ## 
-            ## Sets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
+            ## Sets the rootDefinitionId property value. Root setting definition id if the setting is a child setting.
             ## @param value Value to set for the rootDefinitionId property.
             ## @return a void
             ## 

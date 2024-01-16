@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # For user sign ins, the identifier of the tenant that the user is a member of.
             @home_tenant_id
             ## 
-            # For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+            # For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
             @home_tenant_name
             ## 
             ## Instantiates a new auditUserIdentity and sets the default values.
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 @home_tenant_id = value
             end
             ## 
-            ## Gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+            ## Gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
             ## @return a string
             ## 
             def home_tenant_name
                 return @home_tenant_name
             end
             ## 
-            ## Sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
+            ## Sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
             ## @param value Value to set for the homeTenantName property.
             ## @return a void
             ## 

@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # The currentLabel property
             @current_label
             ## 
+            # The discoveredSensitiveTypes property
+            @discovered_sensitive_types
+            ## 
             ## Instantiates a new attachmentContentProperties and sets the default values.
             ## @return a void
             ## 
@@ -42,12 +45,28 @@ module MicrosoftGraphBeta
                 @current_label = value
             end
             ## 
+            ## Gets the discoveredSensitiveTypes property value. The discoveredSensitiveTypes property
+            ## @return a discovered_sensitive_type
+            ## 
+            def discovered_sensitive_types
+                return @discovered_sensitive_types
+            end
+            ## 
+            ## Sets the discoveredSensitiveTypes property value. The discoveredSensitiveTypes property
+            ## @param value Value to set for the discoveredSensitiveTypes property.
+            ## @return a void
+            ## 
+            def discovered_sensitive_types=(value)
+                @discovered_sensitive_types = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "currentLabel" => lambda {|n| @current_label = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CurrentLabel.create_from_discriminator_value(pn) }) },
+                    "discoveredSensitiveTypes" => lambda {|n| @discovered_sensitive_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DiscoveredSensitiveType.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -59,6 +78,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("currentLabel", @current_label)
+                writer.write_collection_of_object_values("discoveredSensitiveTypes", @discovered_sensitive_types)
             end
         end
     end

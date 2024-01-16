@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
             @attack_simulation
             ## 
+            # The auditLog property
+            @audit_log
+            ## 
             # The cases property
             @cases
             ## 
@@ -124,6 +127,21 @@ module MicrosoftGraphBeta
                 @attack_simulation = value
             end
             ## 
+            ## Gets the auditLog property value. The auditLog property
+            ## @return a security_audit_core_root
+            ## 
+            def audit_log
+                return @audit_log
+            end
+            ## 
+            ## Sets the auditLog property value. The auditLog property
+            ## @param value Value to set for the auditLog property.
+            ## @return a void
+            ## 
+            def audit_log=(value)
+                @audit_log = value
+            end
+            ## 
             ## Gets the cases property value. The cases property
             ## @return a security_cases_root
             ## 
@@ -208,6 +226,7 @@ module MicrosoftGraphBeta
                     "alerts" => lambda {|n| @alerts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Alert.create_from_discriminator_value(pn) }) },
                     "alerts_v2" => lambda {|n| @alerts_v2 = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAlert.create_from_discriminator_value(pn) }) },
                     "attackSimulation" => lambda {|n| @attack_simulation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AttackSimulationRoot.create_from_discriminator_value(pn) }) },
+                    "auditLog" => lambda {|n| @audit_log = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAuditCoreRoot.create_from_discriminator_value(pn) }) },
                     "cases" => lambda {|n| @cases = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCasesRoot.create_from_discriminator_value(pn) }) },
                     "cloudAppSecurityProfiles" => lambda {|n| @cloud_app_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudAppSecurityProfile.create_from_discriminator_value(pn) }) },
                     "domainSecurityProfiles" => lambda {|n| @domain_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DomainSecurityProfile.create_from_discriminator_value(pn) }) },
@@ -392,6 +411,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("alerts", @alerts)
                 writer.write_collection_of_object_values("alerts_v2", @alerts_v2)
                 writer.write_object_value("attackSimulation", @attack_simulation)
+                writer.write_object_value("auditLog", @audit_log)
                 writer.write_object_value("cases", @cases)
                 writer.write_collection_of_object_values("cloudAppSecurityProfiles", @cloud_app_security_profiles)
                 writer.write_collection_of_object_values("domainSecurityProfiles", @domain_security_profiles)

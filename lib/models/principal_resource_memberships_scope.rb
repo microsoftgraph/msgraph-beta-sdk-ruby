@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PrincipalResourceMembershipsScope < MicrosoftGraphBeta::Models::AccessReviewScope
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Defines the scopes of the principals whose access to resources are reviewed in the access review.
+            # Defines the scopes of the principals for which access to resources are reviewed in the access review.
             @principal_scopes
             ## 
             # Defines the scopes of the resources for which access is reviewed.
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+            ## Gets the principalScopes property value. Defines the scopes of the principals for which access to resources are reviewed in the access review.
             ## @return a access_review_scope
             ## 
             def principal_scopes
                 return @principal_scopes
             end
             ## 
-            ## Sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+            ## Sets the principalScopes property value. Defines the scopes of the principals for which access to resources are reviewed in the access review.
             ## @param value Value to set for the principalScopes property.
             ## @return a void
             ## 

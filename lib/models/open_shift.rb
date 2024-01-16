@@ -7,17 +7,26 @@ module MicrosoftGraphBeta
         class OpenShift < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # An unpublished open shift.
+            # Draft changes in the openShift are only visible to managers until they are shared.
             @draft_open_shift
             ## 
-            # The isStagedForDeletion property
+            # The openShift is marked for deletion, a process that is finalized when the schedule is shared.
             @is_staged_for_deletion
             ## 
-            # ID for the scheduling group that the open shift belongs to.
+            # The ID of the schedulingGroup that contains the openShift.
             @scheduling_group_id
             ## 
-            # A published open shift.
+            # The name of the schedulingGroup that contains the openShift.
+            @scheduling_group_name
+            ## 
+            # The shared version of this openShift that is viewable by both employees and managers.
             @shared_open_shift
+            ## 
+            # The ID of the team in which the openShift is located.
+            @team_id
+            ## 
+            # The name of the team in which the openShift is located.
+            @team_name
             ## 
             ## Instantiates a new openShift and sets the default values.
             ## @return a void
@@ -36,14 +45,14 @@ module MicrosoftGraphBeta
                 return OpenShift.new
             end
             ## 
-            ## Gets the draftOpenShift property value. An unpublished open shift.
+            ## Gets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they are shared.
             ## @return a open_shift_item
             ## 
             def draft_open_shift
                 return @draft_open_shift
             end
             ## 
-            ## Sets the draftOpenShift property value. An unpublished open shift.
+            ## Sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they are shared.
             ## @param value Value to set for the draftOpenShift property.
             ## @return a void
             ## 
@@ -59,18 +68,21 @@ module MicrosoftGraphBeta
                     "draftOpenShift" => lambda {|n| @draft_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
                     "isStagedForDeletion" => lambda {|n| @is_staged_for_deletion = n.get_boolean_value() },
                     "schedulingGroupId" => lambda {|n| @scheduling_group_id = n.get_string_value() },
+                    "schedulingGroupName" => lambda {|n| @scheduling_group_name = n.get_string_value() },
                     "sharedOpenShift" => lambda {|n| @shared_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
+                    "teamId" => lambda {|n| @team_id = n.get_string_value() },
+                    "teamName" => lambda {|n| @team_name = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Gets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
             ## @return a boolean
             ## 
             def is_staged_for_deletion
                 return @is_staged_for_deletion
             end
             ## 
-            ## Sets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Sets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
             ## @param value Value to set for the isStagedForDeletion property.
             ## @return a void
             ## 
@@ -78,19 +90,34 @@ module MicrosoftGraphBeta
                 @is_staged_for_deletion = value
             end
             ## 
-            ## Gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @return a string
             ## 
             def scheduling_group_id
                 return @scheduling_group_id
             end
             ## 
-            ## Sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Sets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
             def scheduling_group_id=(value)
                 @scheduling_group_id = value
+            end
+            ## 
+            ## Gets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
+            ## @return a string
+            ## 
+            def scheduling_group_name
+                return @scheduling_group_name
+            end
+            ## 
+            ## Sets the schedulingGroupName property value. The name of the schedulingGroup that contains the openShift.
+            ## @param value Value to set for the schedulingGroupName property.
+            ## @return a void
+            ## 
+            def scheduling_group_name=(value)
+                @scheduling_group_name = value
             end
             ## 
             ## Serializes information the current object
@@ -106,19 +133,49 @@ module MicrosoftGraphBeta
                 writer.write_object_value("sharedOpenShift", @shared_open_shift)
             end
             ## 
-            ## Gets the sharedOpenShift property value. A published open shift.
+            ## Gets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @return a open_shift_item
             ## 
             def shared_open_shift
                 return @shared_open_shift
             end
             ## 
-            ## Sets the sharedOpenShift property value. A published open shift.
+            ## Sets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @param value Value to set for the sharedOpenShift property.
             ## @return a void
             ## 
             def shared_open_shift=(value)
                 @shared_open_shift = value
+            end
+            ## 
+            ## Gets the teamId property value. The ID of the team in which the openShift is located.
+            ## @return a string
+            ## 
+            def team_id
+                return @team_id
+            end
+            ## 
+            ## Sets the teamId property value. The ID of the team in which the openShift is located.
+            ## @param value Value to set for the teamId property.
+            ## @return a void
+            ## 
+            def team_id=(value)
+                @team_id = value
+            end
+            ## 
+            ## Gets the teamName property value. The name of the team in which the openShift is located.
+            ## @return a string
+            ## 
+            def team_name
+                return @team_name
+            end
+            ## 
+            ## Sets the teamName property value. The name of the team in which the openShift is located.
+            ## @param value Value to set for the teamName property.
+            ## @return a void
+            ## 
+            def team_name=(value)
+                @team_name = value
             end
         end
     end

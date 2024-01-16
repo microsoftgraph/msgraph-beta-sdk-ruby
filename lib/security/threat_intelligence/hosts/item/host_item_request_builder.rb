@@ -13,6 +13,7 @@ require_relative './item'
 require_relative './parent_host_pairs/parent_host_pairs_request_builder'
 require_relative './passive_dns/passive_dns_request_builder'
 require_relative './passive_dns_reverse/passive_dns_reverse_request_builder'
+require_relative './ports/ports_request_builder'
 require_relative './reputation/reputation_request_builder'
 require_relative './ssl_certificates/ssl_certificates_request_builder'
 require_relative './subdomains/subdomains_request_builder'
@@ -62,6 +63,11 @@ module MicrosoftGraphBeta
                         # Provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
                         def passive_dns_reverse()
                             return MicrosoftGraphBeta::Security::ThreatIntelligence::Hosts::Item::PassiveDnsReverse::PassiveDnsReverseRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the ports property of the microsoft.graph.security.host entity.
+                        def ports()
+                            return MicrosoftGraphBeta::Security::ThreatIntelligence::Hosts::Item::Ports::PortsRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the reputation property of the microsoft.graph.security.host entity.
@@ -148,13 +154,14 @@ module MicrosoftGraphBeta
                         ## 
                         def to_delete_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :DELETE
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :DELETE
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
@@ -164,15 +171,15 @@ module MicrosoftGraphBeta
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
@@ -184,16 +191,25 @@ module MicrosoftGraphBeta
                         def to_patch_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :PATCH
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :PATCH
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a host_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return HostItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

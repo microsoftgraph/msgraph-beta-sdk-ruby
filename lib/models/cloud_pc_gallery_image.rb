@@ -23,8 +23,14 @@ module MicrosoftGraphBeta
             # The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
             @offer_display_name
             ## 
+            # The offerName property
+            @offer_name
+            ## 
             # The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
             @publisher
+            ## 
+            # The publisherName property
+            @publisher_name
             ## 
             # Recommended Cloud PC SKU for this gallery image. Read-only.
             @recommended_sku
@@ -37,6 +43,9 @@ module MicrosoftGraphBeta
             ## 
             # The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
             @sku_display_name
+            ## 
+            # The skuName property
+            @sku_name
             ## 
             # The date when the image becomes available. Read-only.
             @start_date
@@ -115,11 +124,14 @@ module MicrosoftGraphBeta
                     "expirationDate" => lambda {|n| @expiration_date = n.get_date_value() },
                     "offer" => lambda {|n| @offer = n.get_string_value() },
                     "offerDisplayName" => lambda {|n| @offer_display_name = n.get_string_value() },
+                    "offerName" => lambda {|n| @offer_name = n.get_string_value() },
                     "publisher" => lambda {|n| @publisher = n.get_string_value() },
+                    "publisherName" => lambda {|n| @publisher_name = n.get_string_value() },
                     "recommendedSku" => lambda {|n| @recommended_sku = n.get_string_value() },
                     "sizeInGB" => lambda {|n| @size_in_g_b = n.get_number_value() },
                     "sku" => lambda {|n| @sku = n.get_string_value() },
                     "skuDisplayName" => lambda {|n| @sku_display_name = n.get_string_value() },
+                    "skuName" => lambda {|n| @sku_name = n.get_string_value() },
                     "startDate" => lambda {|n| @start_date = n.get_date_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcGalleryImageStatus) },
                 })
@@ -155,6 +167,21 @@ module MicrosoftGraphBeta
                 @offer_display_name = value
             end
             ## 
+            ## Gets the offerName property value. The offerName property
+            ## @return a string
+            ## 
+            def offer_name
+                return @offer_name
+            end
+            ## 
+            ## Sets the offerName property value. The offerName property
+            ## @param value Value to set for the offerName property.
+            ## @return a void
+            ## 
+            def offer_name=(value)
+                @offer_name = value
+            end
+            ## 
             ## Gets the publisher property value. The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
             ## @return a string
             ## 
@@ -168,6 +195,21 @@ module MicrosoftGraphBeta
             ## 
             def publisher=(value)
                 @publisher = value
+            end
+            ## 
+            ## Gets the publisherName property value. The publisherName property
+            ## @return a string
+            ## 
+            def publisher_name
+                return @publisher_name
+            end
+            ## 
+            ## Sets the publisherName property value. The publisherName property
+            ## @param value Value to set for the publisherName property.
+            ## @return a void
+            ## 
+            def publisher_name=(value)
+                @publisher_name = value
             end
             ## 
             ## Gets the recommendedSku property value. Recommended Cloud PC SKU for this gallery image. Read-only.
@@ -197,11 +239,14 @@ module MicrosoftGraphBeta
                 writer.write_date_value("expirationDate", @expiration_date)
                 writer.write_string_value("offer", @offer)
                 writer.write_string_value("offerDisplayName", @offer_display_name)
+                writer.write_string_value("offerName", @offer_name)
                 writer.write_string_value("publisher", @publisher)
+                writer.write_string_value("publisherName", @publisher_name)
                 writer.write_string_value("recommendedSku", @recommended_sku)
                 writer.write_number_value("sizeInGB", @size_in_g_b)
                 writer.write_string_value("sku", @sku)
                 writer.write_string_value("skuDisplayName", @sku_display_name)
+                writer.write_string_value("skuName", @sku_name)
                 writer.write_date_value("startDate", @start_date)
                 writer.write_enum_value("status", @status)
             end
@@ -249,6 +294,21 @@ module MicrosoftGraphBeta
             ## 
             def sku_display_name=(value)
                 @sku_display_name = value
+            end
+            ## 
+            ## Gets the skuName property value. The skuName property
+            ## @return a string
+            ## 
+            def sku_name
+                return @sku_name
+            end
+            ## 
+            ## Sets the skuName property value. The skuName property
+            ## @param value Value to set for the skuName property.
+            ## @return a void
+            ## 
+            def sku_name=(value)
+                @sku_name = value
             end
             ## 
             ## Gets the startDate property value. The date when the image becomes available. Read-only.

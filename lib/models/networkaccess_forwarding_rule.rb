@@ -49,6 +49,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.networkaccess.internetAccessForwardingRule"
+                            return NetworkaccessInternetAccessForwardingRule.new
                         when "#microsoft.graph.networkaccess.m365ForwardingRule"
                             return NetworkaccessM365ForwardingRule.new
                         when "#microsoft.graph.networkaccess.privateAccessForwardingRule"

@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -15,8 +16,14 @@ module MicrosoftGraphBeta
             # Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
             @color_index
             ## 
+            # The createdDateTime property
+            @created_date_time
+            ## 
             # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
             @is_email_notification_enabled
+            ## 
+            # The lastUpdatedDateTime property
+            @last_updated_date_time
             ## 
             # The membershipStatus property
             @membership_status
@@ -70,6 +77,21 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
+            ## Gets the createdDateTime property value. The createdDateTime property
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The createdDateTime property
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
+            end
+            ## 
             ## Creates a new instance of the appropriate class based on discriminator value
             ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a booking_staff_member
@@ -86,7 +108,9 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "availabilityIsAffectedByPersonalCalendar" => lambda {|n| @availability_is_affected_by_personal_calendar = n.get_boolean_value() },
                     "colorIndex" => lambda {|n| @color_index = n.get_number_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "isEmailNotificationEnabled" => lambda {|n| @is_email_notification_enabled = n.get_boolean_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "membershipStatus" => lambda {|n| @membership_status = n.get_enum_value(MicrosoftGraphBeta::Models::BookingStaffMembershipStatus) },
                     "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::BookingStaffRole) },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
@@ -108,6 +132,21 @@ module MicrosoftGraphBeta
             ## 
             def is_email_notification_enabled=(value)
                 @is_email_notification_enabled = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the membershipStatus property value. The membershipStatus property
@@ -149,7 +188,9 @@ module MicrosoftGraphBeta
                 super
                 writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar)
                 writer.write_number_value("colorIndex", @color_index)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_enum_value("membershipStatus", @membership_status)
                 writer.write_enum_value("role", @role)
                 writer.write_string_value("timeZone", @time_zone)

@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # Timestamp of when the search answer is created or edited. Read-only.
             @last_modified_date_time
             ## 
-            # Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            # Search answer URL link. When users click this search answer in search results, they'll go to this URL.
             @web_url
             ## 
             ## Instantiates a new searchSearchAnswer and sets the default values.
@@ -138,14 +138,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            ## Gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they'll go to this URL.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            ## Sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they'll go to this URL.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
