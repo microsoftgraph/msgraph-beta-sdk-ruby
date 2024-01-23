@@ -10,59 +10,59 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The address property
+            # A physical address of the entity.
             @address
             ## 
-            # The alternateNames property
+            # Alternate names for this entity that are part of the certificate.
             @alternate_names
             ## 
-            # The commonName property
+            # A common name for this entity.
             @common_name
             ## 
-            # The email property
+            # An email for this entity.
             @email
             ## 
-            # The givenName property
+            # If the entity is a person, this is the person's given name (first name).
             @given_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The organizationName property
+            # If the entity is an organization, this is the name of the organization.
             @organization_name
             ## 
-            # The organizationUnitName property
+            # If the entity is an organization, this communicates if a unit in the organization is named on the entity.
             @organization_unit_name
             ## 
-            # The serialNumber property
+            # A serial number assigned to the entity; usually only available if the entity is the issuer.
             @serial_number
             ## 
-            # The surname property
+            # If the entity is a person, this is the person's surname (last name).
             @surname
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the address property value. The address property
+            ## Gets the address property value. A physical address of the entity.
             ## @return a physical_address
             ## 
             def address
                 return @address
             end
             ## 
-            ## Sets the address property value. The address property
+            ## Sets the address property value. A physical address of the entity.
             ## @param value Value to set for the address property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 @address = value
             end
             ## 
-            ## Gets the alternateNames property value. The alternateNames property
+            ## Gets the alternateNames property value. Alternate names for this entity that are part of the certificate.
             ## @return a string
             ## 
             def alternate_names
                 return @alternate_names
             end
             ## 
-            ## Sets the alternateNames property value. The alternateNames property
+            ## Sets the alternateNames property value. Alternate names for this entity that are part of the certificate.
             ## @param value Value to set for the alternateNames property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @alternate_names = value
             end
             ## 
-            ## Gets the commonName property value. The commonName property
+            ## Gets the commonName property value. A common name for this entity.
             ## @return a string
             ## 
             def common_name
                 return @common_name
             end
             ## 
-            ## Sets the commonName property value. The commonName property
+            ## Sets the commonName property value. A common name for this entity.
             ## @param value Value to set for the commonName property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 return SecuritySslCertificateEntity.new
             end
             ## 
-            ## Gets the email property value. The email property
+            ## Gets the email property value. An email for this entity.
             ## @return a string
             ## 
             def email
                 return @email
             end
             ## 
-            ## Sets the email property value. The email property
+            ## Sets the email property value. An email for this entity.
             ## @param value Value to set for the email property.
             ## @return a void
             ## 
@@ -149,14 +149,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the givenName property value. The givenName property
+            ## Gets the givenName property value. If the entity is a person, this is the person's given name (first name).
             ## @return a string
             ## 
             def given_name
                 return @given_name
             end
             ## 
-            ## Sets the givenName property value. The givenName property
+            ## Sets the givenName property value. If the entity is a person, this is the person's given name (first name).
             ## @param value Value to set for the givenName property.
             ## @return a void
             ## 
@@ -179,14 +179,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the organizationName property value. The organizationName property
+            ## Gets the organizationName property value. If the entity is an organization, this is the name of the organization.
             ## @return a string
             ## 
             def organization_name
                 return @organization_name
             end
             ## 
-            ## Sets the organizationName property value. The organizationName property
+            ## Sets the organizationName property value. If the entity is an organization, this is the name of the organization.
             ## @param value Value to set for the organizationName property.
             ## @return a void
             ## 
@@ -194,14 +194,14 @@ module MicrosoftGraphBeta
                 @organization_name = value
             end
             ## 
-            ## Gets the organizationUnitName property value. The organizationUnitName property
+            ## Gets the organizationUnitName property value. If the entity is an organization, this communicates if a unit in the organization is named on the entity.
             ## @return a string
             ## 
             def organization_unit_name
                 return @organization_unit_name
             end
             ## 
-            ## Sets the organizationUnitName property value. The organizationUnitName property
+            ## Sets the organizationUnitName property value. If the entity is an organization, this communicates if a unit in the organization is named on the entity.
             ## @param value Value to set for the organizationUnitName property.
             ## @return a void
             ## 
@@ -209,14 +209,14 @@ module MicrosoftGraphBeta
                 @organization_unit_name = value
             end
             ## 
-            ## Gets the serialNumber property value. The serialNumber property
+            ## Gets the serialNumber property value. A serial number assigned to the entity; usually only available if the entity is the issuer.
             ## @return a string
             ## 
             def serial_number
                 return @serial_number
             end
             ## 
-            ## Sets the serialNumber property value. The serialNumber property
+            ## Sets the serialNumber property value. A serial number assigned to the entity; usually only available if the entity is the issuer.
             ## @param value Value to set for the serialNumber property.
             ## @return a void
             ## 
@@ -243,14 +243,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the surname property value. The surname property
+            ## Gets the surname property value. If the entity is a person, this is the person's surname (last name).
             ## @return a string
             ## 
             def surname
                 return @surname
             end
             ## 
-            ## Sets the surname property value. The surname property
+            ## Sets the surname property value. If the entity is a person, this is the person's surname (last name).
             ## @param value Value to set for the surname property.
             ## @return a void
             ## 

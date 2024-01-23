@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::IdentityGovernanceLifecycleTaskCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_values(MicrosoftGraphBeta::Models::IdentityGovernanceLifecycleTaskCategory) },
                     "continueOnError" => lambda {|n| @continue_on_error = n.get_boolean_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },

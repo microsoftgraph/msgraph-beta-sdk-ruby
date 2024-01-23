@@ -1,5 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph_beta'
+require_relative '../../../../models/cloud_p_c_inaccessible_report_name'
 require_relative '../../../device_management'
 require_relative '../../virtual_endpoint'
 require_relative '../reports'
@@ -25,6 +26,9 @@ module MicrosoftGraphBeta
                         # The orderBy property
                         @order_by
                         ## 
+                        # The reportName property
+                        @report_name
+                        ## 
                         # The search property
                         @search
                         ## 
@@ -37,15 +41,15 @@ module MicrosoftGraphBeta
                         # The top property
                         @top
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -91,6 +95,7 @@ module MicrosoftGraphBeta
                                 "filter" => lambda {|n| @filter = n.get_string_value() },
                                 "groupBy" => lambda {|n| @group_by = n.get_collection_of_primitive_values(String) },
                                 "orderBy" => lambda {|n| @order_by = n.get_collection_of_primitive_values(String) },
+                                "reportName" => lambda {|n| @report_name = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPCInaccessibleReportName) },
                                 "search" => lambda {|n| @search = n.get_string_value() },
                                 "select" => lambda {|n| @select = n.get_collection_of_primitive_values(String) },
                                 "skip" => lambda {|n| @skip = n.get_number_value() },
@@ -126,6 +131,21 @@ module MicrosoftGraphBeta
                         ## 
                         def order_by=(value)
                             @order_by = value
+                        end
+                        ## 
+                        ## Gets the reportName property value. The reportName property
+                        ## @return a cloud_p_c_inaccessible_report_name
+                        ## 
+                        def report_name
+                            return @report_name
+                        end
+                        ## 
+                        ## Sets the reportName property value. The reportName property
+                        ## @param value Value to set for the reportName property.
+                        ## @return a void
+                        ## 
+                        def report_name=(value)
+                            @report_name = value
                         end
                         ## 
                         ## Gets the search property value. The search property
@@ -167,6 +187,7 @@ module MicrosoftGraphBeta
                             writer.write_string_value("filter", @filter)
                             writer.write_collection_of_primitive_values("groupBy", @group_by)
                             writer.write_collection_of_primitive_values("orderBy", @order_by)
+                            writer.write_enum_value("reportName", @report_name)
                             writer.write_string_value("search", @search)
                             writer.write_collection_of_primitive_values("select", @select)
                             writer.write_number_value("skip", @skip)

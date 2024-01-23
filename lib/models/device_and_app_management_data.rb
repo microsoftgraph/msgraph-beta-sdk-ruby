@@ -12,21 +12,21 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Not yet documented
+            # The content property
             @content
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the content property value. Not yet documented
+            ## Gets the content property value. The content property
             ## @return a base64url
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. Not yet documented
+            ## Sets the content property value. The content property
             ## @param value Value to set for the content property.
             ## @return a void
             ## 

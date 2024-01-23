@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class AuthenticationFlowsPolicy < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+            # Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
             @description
             ## 
-            # Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+            # Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
             @display_name
             ## 
-            # Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+            # Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property isn't a key. Optional. Read-only.
             @self_service_sign_up
             ## 
             ## Instantiates a new authenticationFlowsPolicy and sets the default values.
@@ -32,14 +32,14 @@ module MicrosoftGraphBeta
                 return AuthenticationFlowsPolicy.new
             end
             ## 
-            ## Gets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+            ## Gets the description property value. Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+            ## Sets the description property value. Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -47,14 +47,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+            ## Gets the displayName property value. Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
+            ## Sets the displayName property value. Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+            ## Gets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property isn't a key. Optional. Read-only.
             ## @return a self_service_sign_up_authentication_flow_configuration
             ## 
             def self_service_sign_up
                 return @self_service_sign_up
             end
             ## 
-            ## Sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
+            ## Sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property isn't a key. Optional. Read-only.
             ## @param value Value to set for the selfServiceSignUp property.
             ## @return a void
             ## 

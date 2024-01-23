@@ -18,7 +18,6 @@ module MicrosoftGraphBeta
             ## 
             def initialize()
                 super
-                @odata_type = "#microsoft.graph.virtualEventWebinarRegistrationConfiguration"
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value

@@ -6,32 +6,32 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Entity representing the configuration of a cached report
+        # Entity representing the configuration of a cached report.
         class DeviceManagementCachedReportConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Time that the cached report expires
+            # Time that the cached report expires.
             @expiration_date_time
             ## 
             # Filters applied on report creation.
             @filter
             ## 
-            # Time that the cached report was last refreshed
+            # Time that the cached report was last refreshed.
             @last_refresh_date_time
             ## 
-            # Caller-managed metadata associated with the report
+            # Caller-managed metadata associated with the report.
             @metadata
             ## 
-            # Ordering of columns in the report
+            # Ordering of columns in the report.
             @order_by
             ## 
-            # Name of the report
+            # Name of the report.
             @report_name
             ## 
-            # Columns selected from the report
+            # Columns selected from the report.
             @select
             ## 
-            # Possible statuses associated with a generated report
+            # Possible statuses associated with a generated report.
             @status
             ## 
             ## Instantiates a new deviceManagementCachedReportConfiguration and sets the default values.
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementCachedReportConfiguration.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Time that the cached report expires
+            ## Gets the expirationDateTime property value. Time that the cached report expires.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Time that the cached report expires
+            ## Sets the expirationDateTime property value. Time that the cached report expires.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+            ## Gets the lastRefreshDateTime property value. Time that the cached report was last refreshed.
             ## @return a date_time
             ## 
             def last_refresh_date_time
                 return @last_refresh_date_time
             end
             ## 
-            ## Sets the lastRefreshDateTime property value. Time that the cached report was last refreshed
+            ## Sets the lastRefreshDateTime property value. Time that the cached report was last refreshed.
             ## @param value Value to set for the lastRefreshDateTime property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 @last_refresh_date_time = value
             end
             ## 
-            ## Gets the metadata property value. Caller-managed metadata associated with the report
+            ## Gets the metadata property value. Caller-managed metadata associated with the report.
             ## @return a string
             ## 
             def metadata
                 return @metadata
             end
             ## 
-            ## Sets the metadata property value. Caller-managed metadata associated with the report
+            ## Sets the metadata property value. Caller-managed metadata associated with the report.
             ## @param value Value to set for the metadata property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @metadata = value
             end
             ## 
-            ## Gets the orderBy property value. Ordering of columns in the report
+            ## Gets the orderBy property value. Ordering of columns in the report.
             ## @return a string
             ## 
             def order_by
                 return @order_by
             end
             ## 
-            ## Sets the orderBy property value. Ordering of columns in the report
+            ## Sets the orderBy property value. Ordering of columns in the report.
             ## @param value Value to set for the orderBy property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @order_by = value
             end
             ## 
-            ## Gets the reportName property value. Name of the report
+            ## Gets the reportName property value. Name of the report.
             ## @return a string
             ## 
             def report_name
                 return @report_name
             end
             ## 
-            ## Sets the reportName property value. Name of the report
+            ## Sets the reportName property value. Name of the report.
             ## @param value Value to set for the reportName property.
             ## @return a void
             ## 
@@ -156,14 +156,14 @@ module MicrosoftGraphBeta
                 @report_name = value
             end
             ## 
-            ## Gets the select property value. Columns selected from the report
+            ## Gets the select property value. Columns selected from the report.
             ## @return a string
             ## 
             def select
                 return @select
             end
             ## 
-            ## Sets the select property value. Columns selected from the report
+            ## Sets the select property value. Columns selected from the report.
             ## @param value Value to set for the select property.
             ## @return a void
             ## 
@@ -178,21 +178,24 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
                 writer.write_string_value("filter", @filter)
+                writer.write_date_time_value("lastRefreshDateTime", @last_refresh_date_time)
                 writer.write_string_value("metadata", @metadata)
                 writer.write_collection_of_primitive_values("orderBy", @order_by)
+                writer.write_string_value("reportName", @report_name)
                 writer.write_collection_of_primitive_values("select", @select)
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the status property value. Possible statuses associated with a generated report
+            ## Gets the status property value. Possible statuses associated with a generated report.
             ## @return a device_management_report_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Possible statuses associated with a generated report
+            ## Sets the status property value. Possible statuses associated with a generated report.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

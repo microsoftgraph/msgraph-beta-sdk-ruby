@@ -63,13 +63,16 @@ module MicrosoftGraphBeta
             # Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
             @password_required_type
             ## 
+            # Require device to have no pending Android system updates.
+            @require_no_pending_system_updates
+            ## 
             # If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
             @security_require_intune_app_integrity
             ## 
-            # Require the device to pass the SafetyNet basic integrity check.
+            # Require the device to pass the Play Integrity basic integrity check.
             @security_require_safety_net_attestation_basic_integrity
             ## 
-            # Require the device to pass the SafetyNet certified device check.
+            # Require the device to pass the Play Integrity device integrity check.
             @security_require_safety_net_attestation_certified_device
             ## 
             # Require encryption on Android devices.
@@ -160,6 +163,7 @@ module MicrosoftGraphBeta
                     "passwordPreviousPasswordCountToBlock" => lambda {|n| @password_previous_password_count_to_block = n.get_number_value() },
                     "passwordRequired" => lambda {|n| @password_required = n.get_boolean_value() },
                     "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerRequiredPasswordType) },
+                    "requireNoPendingSystemUpdates" => lambda {|n| @require_no_pending_system_updates = n.get_boolean_value() },
                     "securityRequireIntuneAppIntegrity" => lambda {|n| @security_require_intune_app_integrity = n.get_boolean_value() },
                     "securityRequireSafetyNetAttestationBasicIntegrity" => lambda {|n| @security_require_safety_net_attestation_basic_integrity = n.get_boolean_value() },
                     "securityRequireSafetyNetAttestationCertifiedDevice" => lambda {|n| @security_require_safety_net_attestation_certified_device = n.get_boolean_value() },
@@ -392,6 +396,21 @@ module MicrosoftGraphBeta
                 @password_required_type = value
             end
             ## 
+            ## Gets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+            ## @return a boolean
+            ## 
+            def require_no_pending_system_updates
+                return @require_no_pending_system_updates
+            end
+            ## 
+            ## Sets the requireNoPendingSystemUpdates property value. Require device to have no pending Android system updates.
+            ## @param value Value to set for the requireNoPendingSystemUpdates property.
+            ## @return a void
+            ## 
+            def require_no_pending_system_updates=(value)
+                @require_no_pending_system_updates = value
+            end
+            ## 
             ## Gets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
             ## @return a boolean
             ## 
@@ -407,14 +426,14 @@ module MicrosoftGraphBeta
                 @security_require_intune_app_integrity = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_basic_integrity
                 return @security_require_safety_net_attestation_basic_integrity
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationBasicIntegrity property.
             ## @return a void
             ## 
@@ -422,14 +441,14 @@ module MicrosoftGraphBeta
                 @security_require_safety_net_attestation_basic_integrity = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_certified_device
                 return @security_require_safety_net_attestation_certified_device
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationCertifiedDevice property.
             ## @return a void
             ## 
@@ -462,6 +481,7 @@ module MicrosoftGraphBeta
                 writer.write_number_value("passwordPreviousPasswordCountToBlock", @password_previous_password_count_to_block)
                 writer.write_boolean_value("passwordRequired", @password_required)
                 writer.write_enum_value("passwordRequiredType", @password_required_type)
+                writer.write_boolean_value("requireNoPendingSystemUpdates", @require_no_pending_system_updates)
                 writer.write_boolean_value("securityRequireIntuneAppIntegrity", @security_require_intune_app_integrity)
                 writer.write_boolean_value("securityRequireSafetyNetAttestationBasicIntegrity", @security_require_safety_net_attestation_basic_integrity)
                 writer.write_boolean_value("securityRequireSafetyNetAttestationCertifiedDevice", @security_require_safety_net_attestation_certified_device)

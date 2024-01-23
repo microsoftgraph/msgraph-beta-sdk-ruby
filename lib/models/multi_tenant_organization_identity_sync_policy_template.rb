@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The templateApplicationLevel property
             @template_application_level
             ## 
-            # The userSyncInbound property
+            # Defines whether users can be synchronized from the partner tenant.
             @user_sync_inbound
             ## 
             ## Instantiates a new multiTenantOrganizationIdentitySyncPolicyTemplate and sets the default values.
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "templateApplicationLevel" => lambda {|n| @template_application_level = n.get_enum_value(MicrosoftGraphBeta::Models::TemplateApplicationLevel) },
+                    "templateApplicationLevel" => lambda {|n| @template_application_level = n.get_enum_values(MicrosoftGraphBeta::Models::TemplateApplicationLevel) },
                     "userSyncInbound" => lambda {|n| @user_sync_inbound = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CrossTenantUserSyncInbound.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 @template_application_level = value
             end
             ## 
-            ## Gets the userSyncInbound property value. The userSyncInbound property
+            ## Gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
             ## @return a cross_tenant_user_sync_inbound
             ## 
             def user_sync_inbound
                 return @user_sync_inbound
             end
             ## 
-            ## Sets the userSyncInbound property value. The userSyncInbound property
+            ## Sets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
             ## @param value Value to set for the userSyncInbound property.
             ## @return a void
             ## 

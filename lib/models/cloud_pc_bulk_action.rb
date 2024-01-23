@@ -20,6 +20,9 @@ module MicrosoftGraphBeta
             # The displayName property
             @display_name
             ## 
+            # The scheduledDuringMaintenanceWindow property
+            @scheduled_during_maintenance_window
+            ## 
             ## Gets the actionSummary property value. The actionSummary property
             ## @return a cloud_pc_bulk_action_summary
             ## 
@@ -82,6 +85,12 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback"
+                            return CloudPcBulkDisasterRecoveryFailback.new
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover"
+                            return CloudPcBulkDisasterRecoveryFailover.new
+                        when "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType"
+                            return CloudPcBulkModifyDiskEncryptionType.new
                         when "#microsoft.graph.cloudPcBulkPowerOff"
                             return CloudPcBulkPowerOff.new
                         when "#microsoft.graph.cloudPcBulkPowerOn"
@@ -125,7 +134,23 @@ module MicrosoftGraphBeta
                     "cloudPcIds" => lambda {|n| @cloud_pc_ids = n.get_collection_of_primitive_values(String) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "scheduledDuringMaintenanceWindow" => lambda {|n| @scheduled_during_maintenance_window = n.get_boolean_value() },
                 })
+            end
+            ## 
+            ## Gets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+            ## @return a boolean
+            ## 
+            def scheduled_during_maintenance_window
+                return @scheduled_during_maintenance_window
+            end
+            ## 
+            ## Sets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+            ## @param value Value to set for the scheduledDuringMaintenanceWindow property.
+            ## @return a void
+            ## 
+            def scheduled_during_maintenance_window=(value)
+                @scheduled_during_maintenance_window = value
             end
             ## 
             ## Serializes information the current object
@@ -139,6 +164,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("cloudPcIds", @cloud_pc_ids)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_boolean_value("scheduledDuringMaintenanceWindow", @scheduled_during_maintenance_window)
             end
         end
     end

@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # The events property
             @events
             ## 
+            # The townhalls property
+            @townhalls
+            ## 
             # The webinars property
             @webinars
             ## 
@@ -50,6 +53,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "events" => lambda {|n| @events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEvent.create_from_discriminator_value(pn) }) },
+                    "townhalls" => lambda {|n| @townhalls = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventTownhall.create_from_discriminator_value(pn) }) },
                     "webinars" => lambda {|n| @webinars = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventWebinar.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -62,7 +66,23 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("events", @events)
+                writer.write_collection_of_object_values("townhalls", @townhalls)
                 writer.write_collection_of_object_values("webinars", @webinars)
+            end
+            ## 
+            ## Gets the townhalls property value. The townhalls property
+            ## @return a virtual_event_townhall
+            ## 
+            def townhalls
+                return @townhalls
+            end
+            ## 
+            ## Sets the townhalls property value. The townhalls property
+            ## @param value Value to set for the townhalls property.
+            ## @return a void
+            ## 
+            def townhalls=(value)
+                @townhalls = value
             end
             ## 
             ## Gets the webinars property value. The webinars property

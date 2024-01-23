@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The identifier for the tenant group that is associated with the management action. Required. Read-only.
             @tenant_group_id
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             @tenant_id
             ## 
             ## Instantiates a new managedTenantsManagementActionTenantDeploymentStatus and sets the default values.
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @tenant_group_id = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

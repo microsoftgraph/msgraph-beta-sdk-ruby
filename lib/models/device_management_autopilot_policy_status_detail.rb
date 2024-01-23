@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The policyType property
             @policy_type
             ## 
-            # Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+            # Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
             @tracked_on_enrollment_status
             ## 
             ## Gets the complianceStatus property value. The complianceStatus property
@@ -148,14 +148,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("trackedOnEnrollmentStatus", @tracked_on_enrollment_status)
             end
             ## 
-            ## Gets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+            ## Gets the trackedOnEnrollmentStatus property value. Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
             ## @return a boolean
             ## 
             def tracked_on_enrollment_status
                 return @tracked_on_enrollment_status
             end
             ## 
-            ## Sets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+            ## Sets the trackedOnEnrollmentStatus property value. Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
             ## @param value Value to set for the trackedOnEnrollmentStatus property.
             ## @return a void
             ## 

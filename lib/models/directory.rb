@@ -22,6 +22,9 @@ module MicrosoftGraphBeta
             # The deletedItems property
             @deleted_items
             ## 
+            # The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            @device_local_credentials
+            ## 
             # The featureRolloutPolicies property
             @feature_rollout_policies
             ## 
@@ -140,6 +143,21 @@ module MicrosoftGraphBeta
                 @deleted_items = value
             end
             ## 
+            ## Gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @return a device_local_credential_info
+            ## 
+            def device_local_credentials
+                return @device_local_credentials
+            end
+            ## 
+            ## Sets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @param value Value to set for the deviceLocalCredentials property.
+            ## @return a void
+            ## 
+            def device_local_credentials=(value)
+                @device_local_credentials = value
+            end
+            ## 
             ## Gets the featureRolloutPolicies property value. The featureRolloutPolicies property
             ## @return a feature_rollout_policy
             ## 
@@ -180,6 +198,7 @@ module MicrosoftGraphBeta
                     "certificateAuthorities" => lambda {|n| @certificate_authorities = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CertificateAuthorityPath.create_from_discriminator_value(pn) }) },
                     "customSecurityAttributeDefinitions" => lambda {|n| @custom_security_attribute_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSecurityAttributeDefinition.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                    "deviceLocalCredentials" => lambda {|n| @device_local_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceLocalCredentialInfo.create_from_discriminator_value(pn) }) },
                     "featureRolloutPolicies" => lambda {|n| @feature_rollout_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::FeatureRolloutPolicy.create_from_discriminator_value(pn) }) },
                     "federationConfigurations" => lambda {|n| @federation_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
                     "impactedResources" => lambda {|n| @impacted_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ImpactedResource.create_from_discriminator_value(pn) }) },
@@ -279,6 +298,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("certificateAuthorities", @certificate_authorities)
                 writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions)
                 writer.write_collection_of_object_values("deletedItems", @deleted_items)
+                writer.write_collection_of_object_values("deviceLocalCredentials", @device_local_credentials)
                 writer.write_collection_of_object_values("featureRolloutPolicies", @feature_rollout_policies)
                 writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
                 writer.write_collection_of_object_values("impactedResources", @impacted_resources)

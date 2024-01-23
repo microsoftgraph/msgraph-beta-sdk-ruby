@@ -13,18 +13,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+            # The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
             @rules
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+            ## Gets the rules property value. The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
             ## @return a planner_task_role_based_rule
             ## 
             def rules
                 return @rules
             end
             ## 
-            ## Sets the rules property value. The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+            ## Sets the rules property value. The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
             ## @param value Value to set for the rules property.
             ## @return a void
             ## 

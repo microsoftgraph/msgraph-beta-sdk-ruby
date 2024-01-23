@@ -7,19 +7,19 @@ module MicrosoftGraphBeta
         class Shift < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The draft version of this shift that is viewable by managers. Required.
+            # Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             @draft_shift
             ## 
-            # The isStagedForDeletion property
+            # The shift is marked for deletion, a process that is finalized when the schedule is shared.
             @is_staged_for_deletion
             ## 
-            # The schedulingGroupId property
+            # ID of the scheduling group the shift is part of. Required.
             @scheduling_group_id
             ## 
-            # The sharedShift property
+            # The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             @shared_shift
             ## 
-            # The userId property
+            # ID of the user assigned to the shift. Required.
             @user_id
             ## 
             ## Instantiates a new shift and sets the default values.
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 return Shift.new
             end
             ## 
-            ## Gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
+            ## Gets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             ## @return a shift_item
             ## 
             def draft_shift
                 return @draft_shift
             end
             ## 
-            ## Sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
+            ## Sets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             ## @param value Value to set for the draftShift property.
             ## @return a void
             ## 
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Gets the isStagedForDeletion property value. The shift is marked for deletion, a process that is finalized when the schedule is shared.
             ## @return a boolean
             ## 
             def is_staged_for_deletion
                 return @is_staged_for_deletion
             end
             ## 
-            ## Sets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Sets the isStagedForDeletion property value. The shift is marked for deletion, a process that is finalized when the schedule is shared.
             ## @param value Value to set for the isStagedForDeletion property.
             ## @return a void
             ## 
@@ -82,14 +82,14 @@ module MicrosoftGraphBeta
                 @is_staged_for_deletion = value
             end
             ## 
-            ## Gets the schedulingGroupId property value. The schedulingGroupId property
+            ## Gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
             ## @return a string
             ## 
             def scheduling_group_id
                 return @scheduling_group_id
             end
             ## 
-            ## Sets the schedulingGroupId property value. The schedulingGroupId property
+            ## Sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
             ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the sharedShift property value. The sharedShift property
+            ## Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             ## @return a shift_item
             ## 
             def shared_shift
                 return @shared_shift
             end
             ## 
-            ## Sets the sharedShift property value. The sharedShift property
+            ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             ## @param value Value to set for the sharedShift property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @shared_shift = value
             end
             ## 
-            ## Gets the userId property value. The userId property
+            ## Gets the userId property value. ID of the user assigned to the shift. Required.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The userId property
+            ## Sets the userId property value. ID of the user assigned to the shift. Required.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 
