@@ -141,6 +141,9 @@ module MicrosoftGraphBeta
             # Indicates whether printing is allowed from managed apps.
             @print_blocked
             ## 
+            # Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            @protected_messaging_redirect_app_type
+            ## 
             # Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
             @save_as_blocked
             ## 
@@ -440,7 +443,7 @@ module MicrosoftGraphBeta
                     "disableAppPinIfDevicePinIsSet" => lambda {|n| @disable_app_pin_if_device_pin_is_set = n.get_boolean_value() },
                     "fingerprintBlocked" => lambda {|n| @fingerprint_blocked = n.get_boolean_value() },
                     "gracePeriodToBlockAppsDuringOffClockHours" => lambda {|n| @grace_period_to_block_apps_during_off_clock_hours = n.get_duration_value() },
-                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedBrowserType) },
+                    "managedBrowser" => lambda {|n| @managed_browser = n.get_enum_values(MicrosoftGraphBeta::Models::ManagedBrowserType) },
                     "managedBrowserToOpenLinksRequired" => lambda {|n| @managed_browser_to_open_links_required = n.get_boolean_value() },
                     "maximumAllowedDeviceThreatLevel" => lambda {|n| @maximum_allowed_device_threat_level = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDeviceThreatLevel) },
                     "maximumPinRetries" => lambda {|n| @maximum_pin_retries = n.get_number_value() },
@@ -467,6 +470,7 @@ module MicrosoftGraphBeta
                     "pinRequiredInsteadOfBiometricTimeout" => lambda {|n| @pin_required_instead_of_biometric_timeout = n.get_duration_value() },
                     "previousPinBlockCount" => lambda {|n| @previous_pin_block_count = n.get_number_value() },
                     "printBlocked" => lambda {|n| @print_blocked = n.get_boolean_value() },
+                    "protectedMessagingRedirectAppType" => lambda {|n| @protected_messaging_redirect_app_type = n.get_enum_value(MicrosoftGraphBeta::Models::MessagingRedirectAppType) },
                     "saveAsBlocked" => lambda {|n| @save_as_blocked = n.get_boolean_value() },
                     "simplePinBlocked" => lambda {|n| @simple_pin_blocked = n.get_boolean_value() },
                 })
@@ -892,6 +896,21 @@ module MicrosoftGraphBeta
                 @print_blocked = value
             end
             ## 
+            ## Gets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            ## @return a messaging_redirect_app_type
+            ## 
+            def protected_messaging_redirect_app_type
+                return @protected_messaging_redirect_app_type
+            end
+            ## 
+            ## Sets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+            ## @param value Value to set for the protectedMessagingRedirectAppType property.
+            ## @return a void
+            ## 
+            def protected_messaging_redirect_app_type=(value)
+                @protected_messaging_redirect_app_type = value
+            end
+            ## 
             ## Gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
             ## @return a boolean
             ## 
@@ -958,6 +977,7 @@ module MicrosoftGraphBeta
                 writer.write_duration_value("pinRequiredInsteadOfBiometricTimeout", @pin_required_instead_of_biometric_timeout)
                 writer.write_number_value("previousPinBlockCount", @previous_pin_block_count)
                 writer.write_boolean_value("printBlocked", @print_blocked)
+                writer.write_enum_value("protectedMessagingRedirectAppType", @protected_messaging_redirect_app_type)
                 writer.write_boolean_value("saveAsBlocked", @save_as_blocked)
                 writer.write_boolean_value("simplePinBlocked", @simple_pin_blocked)
             end

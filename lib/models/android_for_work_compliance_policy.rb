@@ -63,10 +63,10 @@ module MicrosoftGraphBeta
             # Require Google Play Services to be installed and enabled on the device.
             @security_require_google_play_services
             ## 
-            # Require the device to pass the SafetyNet basic integrity check.
+            # Require the device to pass the Play Integrity basic integrity check.
             @security_require_safety_net_attestation_basic_integrity
             ## 
-            # Require the device to pass the SafetyNet certified device check.
+            # Require the device to pass the Play Integrity device integrity check.
             @security_require_safety_net_attestation_certified_device
             ## 
             # Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
             # Require the Android Verify apps feature is turned on.
             @security_require_verify_apps
             ## 
-            # An enum representing the Android SafetyNet attestation evaluation types.
+            # An enum representing the Android Play Integrity API evaluation types.
             @security_required_android_safety_net_evaluation_type
             ## 
             # Require encryption on Android devices.
@@ -400,14 +400,14 @@ module MicrosoftGraphBeta
                 @security_require_google_play_services = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_basic_integrity
                 return @security_require_safety_net_attestation_basic_integrity
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationBasicIntegrity property.
             ## @return a void
             ## 
@@ -415,14 +415,14 @@ module MicrosoftGraphBeta
                 @security_require_safety_net_attestation_basic_integrity = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_certified_device
                 return @security_require_safety_net_attestation_certified_device
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationCertifiedDevice property.
             ## @return a void
             ## 
@@ -460,14 +460,14 @@ module MicrosoftGraphBeta
                 @security_require_verify_apps = value
             end
             ## 
-            ## Gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+            ## Gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
             ## @return a android_safety_net_evaluation_type
             ## 
             def security_required_android_safety_net_evaluation_type
                 return @security_required_android_safety_net_evaluation_type
             end
             ## 
-            ## Sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+            ## Sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
             ## @param value Value to set for the securityRequiredAndroidSafetyNetEvaluationType property.
             ## @return a void
             ## 

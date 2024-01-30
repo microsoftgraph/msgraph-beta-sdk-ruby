@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Indicates the ServiceNow incident API URL that Intune will use the fetch incidents. Saved in the format of /api/now/table/incident
             @incident_api_url
             ## 
-            # Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
+            # Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
             @instance_url
             ## 
             # Date Time when connection properties were last updated. The value cannot be modified and is automatically populated when the connection properties were updated.
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @incident_api_url = value
             end
             ## 
-            ## Gets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
+            ## Gets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
             ## @return a string
             ## 
             def instance_url
                 return @instance_url
             end
             ## 
-            ## Sets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
+            ## Sets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
             ## @param value Value to set for the instanceUrl property.
             ## @return a void
             ## 

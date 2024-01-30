@@ -16,15 +16,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # Specifies whether the update is offered as Optional rather than Required.
+            @offer_as_optional
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,6 +72,7 @@ module MicrosoftGraphBeta
                 return {
                     "daysUntilForcedReboot" => lambda {|n| @days_until_forced_reboot = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "offerAsOptional" => lambda {|n| @offer_as_optional = n.get_boolean_value() },
                 }
             end
             ## 
@@ -87,6 +91,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the offerAsOptional property value. Specifies whether the update is offered as Optional rather than Required.
+            ## @return a boolean
+            ## 
+            def offer_as_optional
+                return @offer_as_optional
+            end
+            ## 
+            ## Sets the offerAsOptional property value. Specifies whether the update is offered as Optional rather than Required.
+            ## @param value Value to set for the offerAsOptional property.
+            ## @return a void
+            ## 
+            def offer_as_optional=(value)
+                @offer_as_optional = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -95,6 +114,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_number_value("daysUntilForcedReboot", @days_until_forced_reboot)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_boolean_value("offerAsOptional", @offer_as_optional)
                 writer.write_additional_data(@additional_data)
             end
         end

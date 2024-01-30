@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
                     super(path_parameters, request_adapter, "{+baseurl}/schemaExtensions/{schemaExtension%2Did}{?%24select,%24expand}")
                 end
                 ## 
-                ## Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
+                ## Delete the definition of a schema extension. In app-only scenarios, only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. In delegated scenarios, the owner of the owner app can delete the schema extension definition, and only when the extension is in the InDevelopment state.  Deleting a schema extension definition before deleting the data associated with the extension in the target resources makes the data inaccessible. To recover the data, you can recreate the schema extension definition with the same configuration, but only if you used the verified domain for the schema extension id.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
@@ -66,19 +66,20 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SchemaExtension.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
+                ## Delete the definition of a schema extension. In app-only scenarios, only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. In delegated scenarios, the owner of the owner app can delete the schema extension definition, and only when the extension is in the InDevelopment state.  Deleting a schema extension definition before deleting the data associated with the extension in the target resources makes the data inaccessible. To recover the data, you can recreate the schema extension definition with the same configuration, but only if you used the verified domain for the schema extension id.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -88,15 +89,15 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -108,16 +109,25 @@ module MicrosoftGraphBeta
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a schema_extension_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return SchemaExtensionItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

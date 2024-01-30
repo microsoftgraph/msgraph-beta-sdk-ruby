@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Apple Id of the account used to create the MDM push certificate.
             @apple_identifier
             ## 
-            # Not yet documented
+            # The certificate property
             @certificate
             ## 
             # Certificate serial number. This property is read-only.
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @apple_identifier = value
             end
             ## 
-            ## Gets the certificate property value. Not yet documented
+            ## Gets the certificate property value. The certificate property
             ## @return a string
             ## 
             def certificate
                 return @certificate
             end
             ## 
-            ## Sets the certificate property value. Not yet documented
+            ## Sets the certificate property value. The certificate property
             ## @param value Value to set for the certificate property.
             ## @return a void
             ## 

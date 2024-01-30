@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class ChangeTrackedEntity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdBy property
+            # Identity of the user who created the entity.
             @created_by
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # Identity of the person who last modified the entity.
+            # Identity of the user who last modified the entity.
             @last_modified_by
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
             ## Instantiates a new changeTrackedEntity and sets the default values.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the entity.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the entity.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -42,14 +42,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -67,6 +67,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.dayNote"
+                            return DayNote.new
                         when "#microsoft.graph.offerShiftRequest"
                             return OfferShiftRequest.new
                         when "#microsoft.graph.openShift"
@@ -110,14 +112,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Identity of the person who last modified the entity.
+            ## Gets the lastModifiedBy property value. Identity of the user who last modified the entity.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Identity of the person who last modified the entity.
+            ## Sets the lastModifiedBy property value. Identity of the user who last modified the entity.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -125,14 +127,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the lastModifiedDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the lastModifiedDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 

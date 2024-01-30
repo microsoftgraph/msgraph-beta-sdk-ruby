@@ -14,10 +14,12 @@ require_relative './access_package_resource_requests/access_package_resource_req
 require_relative './access_package_resource_role_scopes/access_package_resource_role_scopes_request_builder'
 require_relative './access_package_resources/access_package_resources_request_builder'
 require_relative './access_packages/access_packages_request_builder'
+require_relative './assignment_requests/assignment_requests_request_builder'
 require_relative './connected_organizations/connected_organizations_request_builder'
 require_relative './entitlement_management'
 require_relative './settings/settings_request_builder'
 require_relative './subjects/subjects_request_builder'
+require_relative './subjects_with_object_id/subjects_with_object_id_request_builder'
 
 module MicrosoftGraphBeta
     module IdentityGovernance
@@ -80,6 +82,11 @@ module MicrosoftGraphBeta
                 # Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
                 def access_packages()
                     return MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AccessPackages::AccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+                def assignment_requests()
+                    return MicrosoftGraphBeta::IdentityGovernance::EntitlementManagement::AssignmentRequests::AssignmentRequestsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
@@ -150,19 +157,29 @@ module MicrosoftGraphBeta
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EntitlementManagement.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
+                ## Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+                ## @param object_id Alternate key of accessPackageSubject
+                ## @return a subjects_with_object_id_request_builder
+                ## 
+                def subjects_with_object_id(object_id)
+                    raise StandardError, 'object_id cannot be null' if object_id.nil?
+                    return SubjectsWithObjectIdRequestBuilder.new(@path_parameters, @request_adapter, objectId)
+                end
+                ## 
                 ## Delete navigation property entitlementManagement for identityGovernance
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -172,15 +189,15 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -192,16 +209,25 @@ module MicrosoftGraphBeta
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a entitlement_management_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return EntitlementManagementRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

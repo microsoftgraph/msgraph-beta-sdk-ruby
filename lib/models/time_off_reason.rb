@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class TimeOffReason < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The code of the timeOffReason to represent an external identifier.
+            @code
+            ## 
             # The name of the timeOffReason. Required.
             @display_name
             ## 
@@ -15,6 +18,21 @@ module MicrosoftGraphBeta
             ## 
             # Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
             @is_active
+            ## 
+            ## Gets the code property value. The code of the timeOffReason to represent an external identifier.
+            ## @return a string
+            ## 
+            def code
+                return @code
+            end
+            ## 
+            ## Sets the code property value. The code of the timeOffReason to represent an external identifier.
+            ## @param value Value to set for the code property.
+            ## @return a void
+            ## 
+            def code=(value)
+                @code = value
+            end
             ## 
             ## Instantiates a new timeOffReason and sets the default values.
             ## @return a void
@@ -53,6 +71,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "code" => lambda {|n| @code = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "iconType" => lambda {|n| @icon_type = n.get_enum_value(MicrosoftGraphBeta::Models::TimeOffReasonIconType) },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
@@ -96,6 +115,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("code", @code)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_enum_value("iconType", @icon_type)
                 writer.write_boolean_value("isActive", @is_active)

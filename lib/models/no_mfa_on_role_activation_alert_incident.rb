@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NoMfaOnRoleActivationAlertIncident < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertIncident
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the Azure AD directory role.
+            # The name of the Microsoft Entra ID directory role.
             @role_display_name
             ## 
             # The globally unique identifier for a directory role.
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the roleDisplayName property value. The name of the Azure AD directory role.
+            ## Gets the roleDisplayName property value. The name of the Microsoft Entra ID directory role.
             ## @return a string
             ## 
             def role_display_name
                 return @role_display_name
             end
             ## 
-            ## Sets the roleDisplayName property value. The name of the Azure AD directory role.
+            ## Sets the roleDisplayName property value. The name of the Microsoft Entra ID directory role.
             ## @param value Value to set for the roleDisplayName property.
             ## @return a void
             ## 

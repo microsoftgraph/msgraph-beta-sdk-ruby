@@ -9,20 +9,20 @@ module MicrosoftGraphBeta
         class DeviceManagementReports < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Entity representing the configuration of a cached report
+            # Entity representing the configuration of a cached report.
             @cached_report_configurations
             ## 
-            # Entity representing a job to export a report
+            # Entity representing a job to export a report.
             @export_jobs
             ## 
-            ## Gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
+            ## Gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report.
             ## @return a device_management_cached_report_configuration
             ## 
             def cached_report_configurations
                 return @cached_report_configurations
             end
             ## 
-            ## Sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
+            ## Sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report.
             ## @param value Value to set for the cachedReportConfigurations property.
             ## @return a void
             ## 
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementReports.new
             end
             ## 
-            ## Gets the exportJobs property value. Entity representing a job to export a report
+            ## Gets the exportJobs property value. Entity representing a job to export a report.
             ## @return a device_management_export_job
             ## 
             def export_jobs
                 return @export_jobs
             end
             ## 
-            ## Sets the exportJobs property value. Entity representing a job to export a report
+            ## Sets the exportJobs property value. Entity representing a job to export a report.
             ## @param value Value to set for the exportJobs property.
             ## @return a void
             ## 

@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # The detectionAction property
             @detection_action
             ## 
+            # The detectorId property
+            @detector_id
+            ## 
             # The lastRunDetails property
             @last_run_details
             ## 
@@ -51,12 +54,28 @@ module MicrosoftGraphBeta
                 @detection_action = value
             end
             ## 
+            ## Gets the detectorId property value. The detectorId property
+            ## @return a string
+            ## 
+            def detector_id
+                return @detector_id
+            end
+            ## 
+            ## Sets the detectorId property value. The detectorId property
+            ## @param value Value to set for the detectorId property.
+            ## @return a void
+            ## 
+            def detector_id=(value)
+                @detector_id = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "detectionAction" => lambda {|n| @detection_action = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityDetectionAction.create_from_discriminator_value(pn) }) },
+                    "detectorId" => lambda {|n| @detector_id = n.get_string_value() },
                     "lastRunDetails" => lambda {|n| @last_run_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityRunDetails.create_from_discriminator_value(pn) }) },
                     "queryCondition" => lambda {|n| @query_condition = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityQueryCondition.create_from_discriminator_value(pn) }) },
                     "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityRuleSchedule.create_from_discriminator_value(pn) }) },
@@ -116,6 +135,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("detectionAction", @detection_action)
+                writer.write_string_value("detectorId", @detector_id)
                 writer.write_object_value("lastRunDetails", @last_run_details)
                 writer.write_object_value("queryCondition", @query_condition)
                 writer.write_object_value("schedule", @schedule)

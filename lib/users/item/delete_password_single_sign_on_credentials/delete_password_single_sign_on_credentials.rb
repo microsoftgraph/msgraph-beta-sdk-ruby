@@ -1,0 +1,1 @@
+require_relative 'delete_password_single_sign_on_credentials_post_request_body'

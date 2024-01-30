@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ServiceHostedMediaConfig < MicrosoftGraphBeta::Models::MediaConfig
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The list of media to pre-fetch.
+            # The list of media to prefetch.
             @pre_fetch_media
             ## 
             ## Instantiates a new serviceHostedMediaConfig and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the preFetchMedia property value. The list of media to pre-fetch.
+            ## Gets the preFetchMedia property value. The list of media to prefetch.
             ## @return a media_info
             ## 
             def pre_fetch_media
                 return @pre_fetch_media
             end
             ## 
-            ## Sets the preFetchMedia property value. The list of media to pre-fetch.
+            ## Sets the preFetchMedia property value. The list of media to prefetch.
             ## @param value Value to set for the preFetchMedia property.
             ## @return a void
             ## 

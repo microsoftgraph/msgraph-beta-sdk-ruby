@@ -10,50 +10,50 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Not yet documented
+            # The calendarSyncEnabled property
             @calendar_sync_enabled
             ## 
-            # Not yet documented
+            # The deviceAccount property
             @device_account
             ## 
-            # Not yet documented
+            # The deviceAccountEmail property
             @device_account_email
             ## 
-            # Not yet documented
+            # The exchangeServer property
             @exchange_server
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Not yet documented
+            # The passwordRotationEnabled property
             @password_rotation_enabled
             ## 
-            # Not yet documented
+            # The sessionInitiationProtocalAddress property
             @session_initiation_protocal_address
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the calendarSyncEnabled property value. Not yet documented
+            ## Gets the calendarSyncEnabled property value. The calendarSyncEnabled property
             ## @return a boolean
             ## 
             def calendar_sync_enabled
                 return @calendar_sync_enabled
             end
             ## 
-            ## Sets the calendarSyncEnabled property value. Not yet documented
+            ## Sets the calendarSyncEnabled property value. The calendarSyncEnabled property
             ## @param value Value to set for the calendarSyncEnabled property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 return UpdateWindowsDeviceAccountActionParameter.new
             end
             ## 
-            ## Gets the deviceAccount property value. Not yet documented
+            ## Gets the deviceAccount property value. The deviceAccount property
             ## @return a windows_device_account
             ## 
             def device_account
                 return @device_account
             end
             ## 
-            ## Sets the deviceAccount property value. Not yet documented
+            ## Sets the deviceAccount property value. The deviceAccount property
             ## @param value Value to set for the deviceAccount property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @device_account = value
             end
             ## 
-            ## Gets the deviceAccountEmail property value. Not yet documented
+            ## Gets the deviceAccountEmail property value. The deviceAccountEmail property
             ## @return a string
             ## 
             def device_account_email
                 return @device_account_email
             end
             ## 
-            ## Sets the deviceAccountEmail property value. Not yet documented
+            ## Sets the deviceAccountEmail property value. The deviceAccountEmail property
             ## @param value Value to set for the deviceAccountEmail property.
             ## @return a void
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraphBeta
                 @device_account_email = value
             end
             ## 
-            ## Gets the exchangeServer property value. Not yet documented
+            ## Gets the exchangeServer property value. The exchangeServer property
             ## @return a string
             ## 
             def exchange_server
                 return @exchange_server
             end
             ## 
-            ## Sets the exchangeServer property value. Not yet documented
+            ## Sets the exchangeServer property value. The exchangeServer property
             ## @param value Value to set for the exchangeServer property.
             ## @return a void
             ## 
@@ -152,14 +152,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the passwordRotationEnabled property value. Not yet documented
+            ## Gets the passwordRotationEnabled property value. The passwordRotationEnabled property
             ## @return a boolean
             ## 
             def password_rotation_enabled
                 return @password_rotation_enabled
             end
             ## 
-            ## Sets the passwordRotationEnabled property value. Not yet documented
+            ## Sets the passwordRotationEnabled property value. The passwordRotationEnabled property
             ## @param value Value to set for the passwordRotationEnabled property.
             ## @return a void
             ## 
@@ -183,14 +183,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sessionInitiationProtocalAddress property value. Not yet documented
+            ## Gets the sessionInitiationProtocalAddress property value. The sessionInitiationProtocalAddress property
             ## @return a string
             ## 
             def session_initiation_protocal_address
                 return @session_initiation_protocal_address
             end
             ## 
-            ## Sets the sessionInitiationProtocalAddress property value. Not yet documented
+            ## Sets the sessionInitiationProtocalAddress property value. The sessionInitiationProtocalAddress property
             ## @param value Value to set for the sessionInitiationProtocalAddress property.
             ## @return a void
             ## 

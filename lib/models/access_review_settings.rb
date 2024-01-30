@@ -19,10 +19,10 @@ module MicrosoftGraphBeta
             # Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
             @auto_apply_review_results_enabled
             ## 
-            # Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+            # Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
             @auto_review_enabled
             ## 
-            # Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
+            # Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
             @auto_review_settings
             ## 
             # Indicates whether reviewers are required to provide a justification when reviewing access.
@@ -70,15 +70,15 @@ module MicrosoftGraphBeta
                 @activity_duration_in_days = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 @auto_apply_review_results_enabled = value
             end
             ## 
-            ## Gets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+            ## Gets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
             ## @return a boolean
             ## 
             def auto_review_enabled
                 return @auto_review_enabled
             end
             ## 
-            ## Sets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+            ## Sets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
             ## @param value Value to set for the autoReviewEnabled property.
             ## @return a void
             ## 
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @auto_review_enabled = value
             end
             ## 
-            ## Gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
+            ## Gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
             ## @return a auto_review_settings
             ## 
             def auto_review_settings
                 return @auto_review_settings
             end
             ## 
-            ## Sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
+            ## Sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
             ## @param value Value to set for the autoReviewSettings property.
             ## @return a void
             ## 

@@ -20,6 +20,18 @@ module MicrosoftGraphBeta
             SouthAfricaWest: :SouthAfricaWest,
             SouthAfricaNorth: :SouthAfricaNorth,
             UaeNorth: :UaeNorth,
+            AustraliaEast: :AustraliaEast,
+            WestCentralUS: :WestCentralUS,
+            CentralIndia: :CentralIndia,
+            SouthEastAsia: :SouthEastAsia,
+            SwedenCentral: :SwedenCentral,
+            SouthIndia: :SouthIndia,
+            AustraliaSouthEast: :AustraliaSouthEast,
+            KoreaCentral: :KoreaCentral,
+            PolandCentral: :PolandCentral,
+            BrazilSouth: :BrazilSouth,
+            JapanEast: :JapanEast,
+            JapanWest: :JapanWest,
             UnknownFutureValue: :UnknownFutureValue,
         }
     end

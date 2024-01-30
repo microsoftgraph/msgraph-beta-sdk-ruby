@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AuthenticationEventsFlow < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The conditions representing the context of the authentication request which will be used to decide whether the events policy will be invoked.
+            # The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
             @conditions
             ## 
             # The description of the events policy.
@@ -19,14 +19,14 @@ module MicrosoftGraphBeta
             # The priority to use for each individual event of the events policy. If multiple competing listeners for an event have the same priority, one is chosen and an error is silently logged. Defaults to 500.
             @priority
             ## 
-            ## Gets the conditions property value. The conditions representing the context of the authentication request which will be used to decide whether the events policy will be invoked.
+            ## Gets the conditions property value. The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
             ## @return a authentication_conditions
             ## 
             def conditions
                 return @conditions
             end
             ## 
-            ## Sets the conditions property value. The conditions representing the context of the authentication request which will be used to decide whether the events policy will be invoked.
+            ## Sets the conditions property value. The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
             ## @param value Value to set for the conditions property.
             ## @return a void
             ## 
