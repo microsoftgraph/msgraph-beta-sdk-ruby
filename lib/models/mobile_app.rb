@@ -192,6 +192,8 @@ module MicrosoftGraphBeta
                             return OfficeSuiteApp.new
                         when "#microsoft.graph.webApp"
                             return WebApp.new
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
                         when "#microsoft.graph.win32LobApp"
                             return Win32LobApp.new
                         when "#microsoft.graph.windowsAppX"

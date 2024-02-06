@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityAllowFileResponseAction < MicrosoftGraphBeta::Models::SecurityResponseAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deviceGroupNames property
+            # Device groups to which the actions set in the custom detection rule are applied. More information
             @device_group_names
             ## 
             # The identifier property
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return SecurityAllowFileResponseAction.new
             end
             ## 
-            ## Gets the deviceGroupNames property value. The deviceGroupNames property
+            ## Gets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
             ## @return a string
             ## 
             def device_group_names
                 return @device_group_names
             end
             ## 
-            ## Sets the deviceGroupNames property value. The deviceGroupNames property
+            ## Sets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
             ## @param value Value to set for the deviceGroupNames property.
             ## @return a void
             ## 
@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "deviceGroupNames" => lambda {|n| @device_group_names = n.get_collection_of_primitive_values(String) },
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityFileEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityFileEntityIdentifier) },
                 })
             end
             ## 

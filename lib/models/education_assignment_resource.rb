@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class EducationAssignmentResource < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The dependentResources property
+            @dependent_resources
+            ## 
             # Indicates whether this resource should be copied to each student submission for modification and submission. Required
             @distribute_for_student_work
             ## 
@@ -29,6 +32,21 @@ module MicrosoftGraphBeta
                 return EducationAssignmentResource.new
             end
             ## 
+            ## Gets the dependentResources property value. The dependentResources property
+            ## @return a education_assignment_resource
+            ## 
+            def dependent_resources
+                return @dependent_resources
+            end
+            ## 
+            ## Sets the dependentResources property value. The dependentResources property
+            ## @param value Value to set for the dependentResources property.
+            ## @return a void
+            ## 
+            def dependent_resources=(value)
+                @dependent_resources = value
+            end
+            ## 
             ## Gets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
             ## @return a boolean
             ## 
@@ -49,6 +67,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "dependentResources" => lambda {|n| @dependent_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationAssignmentResource.create_from_discriminator_value(pn) }) },
                     "distributeForStudentWork" => lambda {|n| @distribute_for_student_work = n.get_boolean_value() },
                     "resource" => lambda {|n| @resource = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationResource.create_from_discriminator_value(pn) }) },
                 })
@@ -76,6 +95,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("dependentResources", @dependent_resources)
                 writer.write_boolean_value("distributeForStudentWork", @distribute_for_student_work)
                 writer.write_object_value("resource", @resource)
             end

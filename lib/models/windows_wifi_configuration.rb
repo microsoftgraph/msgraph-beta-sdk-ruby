@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             # Specify the port for the proxy server.
             @proxy_manual_port
             ## 
-            # Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+            # Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
             @proxy_setting
             ## 
             # Specify the SSID of the wifi connection.
@@ -244,14 +244,14 @@ module MicrosoftGraphBeta
                 @proxy_manual_port = value
             end
             ## 
-            ## Gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+            ## Gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
             ## @return a wi_fi_proxy_setting
             ## 
             def proxy_setting
                 return @proxy_setting
             end
             ## 
-            ## Sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
+            ## Sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
             ## @param value Value to set for the proxySetting property.
             ## @return a void
             ## 

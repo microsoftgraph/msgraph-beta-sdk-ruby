@@ -26,6 +26,9 @@ module MicrosoftGraphBeta
             # The displayName property
             @display_name
             ## 
+            # The informationLinks property
+            @information_links
+            ## 
             # The lastActionByUserId property
             @last_action_by_user_id
             ## 
@@ -40,6 +43,9 @@ module MicrosoftGraphBeta
             ## 
             # The priority property
             @priority
+            ## 
+            # The userImpact property
+            @user_impact
             ## 
             # The versions property
             @versions
@@ -161,13 +167,30 @@ module MicrosoftGraphBeta
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "informationLinks" => lambda {|n| @information_links = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ActionUrl.create_from_discriminator_value(pn) }) },
                     "lastActionByUserId" => lambda {|n| @last_action_by_user_id = n.get_string_value() },
                     "lastActionDateTime" => lambda {|n| @last_action_date_time = n.get_date_time_value() },
                     "managementTemplate" => lambda {|n| @management_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsManagementTemplate.create_from_discriminator_value(pn) }) },
                     "portalLink" => lambda {|n| @portal_link = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ActionUrl.create_from_discriminator_value(pn) }) },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
+                    "userImpact" => lambda {|n| @user_impact = n.get_string_value() },
                     "versions" => lambda {|n| @versions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsManagementTemplateStepVersion.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the informationLinks property value. The informationLinks property
+            ## @return a action_url
+            ## 
+            def information_links
+                return @information_links
+            end
+            ## 
+            ## Sets the informationLinks property value. The informationLinks property
+            ## @param value Value to set for the informationLinks property.
+            ## @return a void
+            ## 
+            def information_links=(value)
+                @information_links = value
             end
             ## 
             ## Gets the lastActionByUserId property value. The lastActionByUserId property
@@ -258,12 +281,29 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_collection_of_object_values("informationLinks", @information_links)
                 writer.write_string_value("lastActionByUserId", @last_action_by_user_id)
                 writer.write_date_time_value("lastActionDateTime", @last_action_date_time)
                 writer.write_object_value("managementTemplate", @management_template)
                 writer.write_object_value("portalLink", @portal_link)
                 writer.write_number_value("priority", @priority)
+                writer.write_string_value("userImpact", @user_impact)
                 writer.write_collection_of_object_values("versions", @versions)
+            end
+            ## 
+            ## Gets the userImpact property value. The userImpact property
+            ## @return a string
+            ## 
+            def user_impact
+                return @user_impact
+            end
+            ## 
+            ## Sets the userImpact property value. The userImpact property
+            ## @param value Value to set for the userImpact property.
+            ## @return a void
+            ## 
+            def user_impact=(value)
+                @user_impact = value
             end
             ## 
             ## Gets the versions property value. The versions property

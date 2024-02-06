@@ -29,10 +29,10 @@ module MicrosoftGraphBeta
                                     super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/informationProtection/policy/labels/evaluateClassificationResults")
                                 end
                                 ## 
-                                ## Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: 
+                                ## Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of evaluate_classification_results_response
+                                ## @return a Fiber of evaluate_classification_results_post_response
                                 ## 
                                 def post(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
@@ -42,10 +42,10 @@ module MicrosoftGraphBeta
                                     error_mapping = Hash.new
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Sites::Item::InformationProtection::Policy::Labels::EvaluateClassificationResults::EvaluateClassificationResultsResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Sites::Item::InformationProtection::Policy::Labels::EvaluateClassificationResults::EvaluateClassificationResultsPostResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: 
+                                ## Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -53,16 +53,25 @@ module MicrosoftGraphBeta
                                 def to_post_request_information(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :POST
-                                    request_info.headers.add('Accept', 'application/json')
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.add_request_options(request_configuration.options)
                                     end
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :POST
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
+                                end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a evaluate_classification_results_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return EvaluateClassificationResultsRequestBuilder.new(raw_url, @request_adapter)
                                 end
                             end
                         end

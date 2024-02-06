@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The external partner settings on a Cloud PC.
             @external_partner_settings
             ## 
-            # The frontLineServicePlans property
+            # Front-line service plans for a Cloud PC.
             @front_line_service_plans
             ## 
             # The gallery image resource on Cloud PC.
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             # Cloud PC service plans.
             @service_plans
             ## 
-            # Cloud PC shared-use service plans.
+            # The sharedUseServicePlans property
             @shared_use_service_plans
             ## 
             # Cloud PC snapshots.
@@ -164,14 +164,14 @@ module MicrosoftGraphBeta
                 @external_partner_settings = value
             end
             ## 
-            ## Gets the frontLineServicePlans property value. The frontLineServicePlans property
+            ## Gets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
             ## @return a cloud_pc_front_line_service_plan
             ## 
             def front_line_service_plans
                 return @front_line_service_plans
             end
             ## 
-            ## Sets the frontLineServicePlans property value. The frontLineServicePlans property
+            ## Sets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
             ## @param value Value to set for the frontLineServicePlans property.
             ## @return a void
             ## 
@@ -320,14 +320,14 @@ module MicrosoftGraphBeta
                 @service_plans = value
             end
             ## 
-            ## Gets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
+            ## Gets the sharedUseServicePlans property value. The sharedUseServicePlans property
             ## @return a cloud_pc_shared_use_service_plan
             ## 
             def shared_use_service_plans
                 return @shared_use_service_plans
             end
             ## 
-            ## Sets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
+            ## Sets the sharedUseServicePlans property value. The sharedUseServicePlans property
             ## @param value Value to set for the sharedUseServicePlans property.
             ## @return a void
             ## 

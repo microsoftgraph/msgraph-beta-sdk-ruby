@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
             @explicit_value
             ## 
-            # Not yet documented
+            # The valuePrefix property
             @value_prefix
             ## 
             ## Instantiates a new groupPolicyPresentationListBox and sets the default values.
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("valuePrefix", @value_prefix)
             end
             ## 
-            ## Gets the valuePrefix property value. Not yet documented
+            ## Gets the valuePrefix property value. The valuePrefix property
             ## @return a string
             ## 
             def value_prefix
                 return @value_prefix
             end
             ## 
-            ## Sets the valuePrefix property value. Not yet documented
+            ## Sets the valuePrefix property value. The valuePrefix property
             ## @param value Value to set for the valuePrefix property.
             ## @return a void
             ## 

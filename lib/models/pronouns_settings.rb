@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PronounsSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
+            # true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
             @is_enabled_in_organization
             ## 
             ## Instantiates a new pronounsSettings and sets the default values.
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isEnabledInOrganization property value. true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
+            ## Gets the isEnabledInOrganization property value. true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
             ## @return a boolean
             ## 
             def is_enabled_in_organization
                 return @is_enabled_in_organization
             end
             ## 
-            ## Sets the isEnabledInOrganization property value. true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
+            ## Sets the isEnabledInOrganization property value. true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
             ## @param value Value to set for the isEnabledInOrganization property.
             ## @return a void
             ## 

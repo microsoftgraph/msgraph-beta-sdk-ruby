@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                         end
                         ## 
                         ## Gets an item from the MicrosoftGraphBeta.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection
-                        ## @param group_id Unique identifier of the item
+                        ## @param group_id The unique identifier of group
                         ## @return a group_item_request_builder
                         ## 
                         def by_group_id(group_id)
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                         end
                         ## 
                         ## Get the list of groups that are included in a mobile app management policy.
@@ -70,16 +70,25 @@ module MicrosoftGraphBeta
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a included_groups_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return IncludedGroupsRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

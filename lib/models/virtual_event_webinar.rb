@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # To whom the webinar is visible.
             @audience
             ## 
-            # Identity information of co-organizers of the webinar.
+            # Identity information of coorganizers of the webinar.
             @co_organizers
             ## 
             # The registrationConfiguration property
             @registration_configuration
             ## 
-            # The registrations property
+            # Registration records of the webinar.
             @registrations
             ## 
             ## Gets the audience property value. To whom the webinar is visible.
@@ -34,14 +34,14 @@ module MicrosoftGraphBeta
                 @audience = value
             end
             ## 
-            ## Gets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Gets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @return a communications_user_identity
             ## 
             def co_organizers
                 return @co_organizers
             end
             ## 
-            ## Sets the coOrganizers property value. Identity information of co-organizers of the webinar.
+            ## Sets the coOrganizers property value. Identity information of coorganizers of the webinar.
             ## @param value Value to set for the coOrganizers property.
             ## @return a void
             ## 
@@ -54,6 +54,7 @@ module MicrosoftGraphBeta
             ## 
             def initialize()
                 super
+                @odata_type = "#microsoft.graph.virtualEventWebinar"
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -72,13 +73,13 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "audience" => lambda {|n| @audience = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingAudience) },
                     "coOrganizers" => lambda {|n| @co_organizers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CommunicationsUserIdentity.create_from_discriminator_value(pn) }) },
-                    "registrationConfiguration" => lambda {|n| @registration_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventRegistrationConfiguration.create_from_discriminator_value(pn) }) },
+                    "registrationConfiguration" => lambda {|n| @registration_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventWebinarRegistrationConfiguration.create_from_discriminator_value(pn) }) },
                     "registrations" => lambda {|n| @registrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventRegistration.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
             ## Gets the registrationConfiguration property value. The registrationConfiguration property
-            ## @return a virtual_event_registration_configuration
+            ## @return a virtual_event_webinar_registration_configuration
             ## 
             def registration_configuration
                 return @registration_configuration
@@ -92,14 +93,14 @@ module MicrosoftGraphBeta
                 @registration_configuration = value
             end
             ## 
-            ## Gets the registrations property value. The registrations property
+            ## Gets the registrations property value. Registration records of the webinar.
             ## @return a virtual_event_registration
             ## 
             def registrations
                 return @registrations
             end
             ## 
-            ## Sets the registrations property value. The registrations property
+            ## Sets the registrations property value. Registration records of the webinar.
             ## @param value Value to set for the registrations property.
             ## @return a void
             ## 

@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class TeamsAppDefinition < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            # A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             @allowed_installation_scopes
             ## 
             # Authorization requirements specified in the Teams app manifest.
@@ -26,6 +26,9 @@ module MicrosoftGraphBeta
             # The createdBy property
             @created_by
             ## 
+            # The dashboardCards property
+            @dashboard_cards
+            ## 
             # The description property
             @description
             ## 
@@ -38,7 +41,7 @@ module MicrosoftGraphBeta
             # The outline version of the Teams app's icon.
             @outline_icon
             ## 
-            # The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            # The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             @publishing_state
             ## 
             # The shortdescription property
@@ -50,14 +53,14 @@ module MicrosoftGraphBeta
             # The version number of the application.
             @version
             ## 
-            ## Gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            ## Gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             ## @return a teams_app_installation_scopes
             ## 
             def allowed_installation_scopes
                 return @allowed_installation_scopes
             end
             ## 
-            ## Sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+            ## Sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
             ## @param value Value to set for the allowedInstallationScopes property.
             ## @return a void
             ## 
@@ -156,6 +159,21 @@ module MicrosoftGraphBeta
                 return TeamsAppDefinition.new
             end
             ## 
+            ## Gets the dashboardCards property value. The dashboardCards property
+            ## @return a teams_app_dashboard_card_definition
+            ## 
+            def dashboard_cards
+                return @dashboard_cards
+            end
+            ## 
+            ## Sets the dashboardCards property value. The dashboardCards property
+            ## @param value Value to set for the dashboardCards property.
+            ## @return a void
+            ## 
+            def dashboard_cards=(value)
+                @dashboard_cards = value
+            end
+            ## 
             ## Gets the description property value. The description property
             ## @return a string
             ## 
@@ -191,12 +209,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_value(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
+                    "allowedInstallationScopes" => lambda {|n| @allowed_installation_scopes = n.get_enum_values(MicrosoftGraphBeta::Models::TeamsAppInstallationScopes) },
                     "authorization" => lambda {|n| @authorization = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppAuthorization.create_from_discriminator_value(pn) }) },
                     "azureADAppId" => lambda {|n| @azure_a_d_app_id = n.get_string_value() },
                     "bot" => lambda {|n| @bot = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamworkBot.create_from_discriminator_value(pn) }) },
                     "colorIcon" => lambda {|n| @color_icon = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppIcon.create_from_discriminator_value(pn) }) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
+                    "dashboardCards" => lambda {|n| @dashboard_cards = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppDashboardCardDefinition.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
@@ -238,14 +257,14 @@ module MicrosoftGraphBeta
                 @outline_icon = value
             end
             ## 
-            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             ## @return a teams_app_publishing_state
             ## 
             def publishing_state
                 return @publishing_state
             end
             ## 
-            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
             ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 
@@ -266,6 +285,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("bot", @bot)
                 writer.write_object_value("colorIcon", @color_icon)
                 writer.write_object_value("createdBy", @created_by)
+                writer.write_collection_of_object_values("dashboardCards", @dashboard_cards)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)

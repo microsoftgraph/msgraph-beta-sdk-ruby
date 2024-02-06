@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class EducationAssignmentSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The gradingCategories property
+            # When set, enables users to weight assignments differently when computing a class average grade.
             @grading_categories
             ## 
-            # Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            # Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             @submission_animation_disabled
             ## 
             ## Instantiates a new educationAssignmentSettings and sets the default values.
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the gradingCategories property value. The gradingCategories property
+            ## Gets the gradingCategories property value. When set, enables users to weight assignments differently when computing a class average grade.
             ## @return a education_grading_category
             ## 
             def grading_categories
                 return @grading_categories
             end
             ## 
-            ## Sets the gradingCategories property value. The gradingCategories property
+            ## Sets the gradingCategories property value. When set, enables users to weight assignments differently when computing a class average grade.
             ## @param value Value to set for the gradingCategories property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled)
             end
             ## 
-            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             ## @return a boolean
             ## 
             def submission_animation_disabled
                 return @submission_animation_disabled
             end
             ## 
-            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
+            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
             ## @param value Value to set for the submissionAnimationDisabled property.
             ## @return a void
             ## 

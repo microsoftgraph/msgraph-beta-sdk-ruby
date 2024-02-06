@@ -13,21 +13,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+            # The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
             @tenants
             ## 
             # The object id of the external user. Read-only.
             @user_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenants property value. The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+            ## Gets the tenants property value. The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
             ## @return a tenant_reference
             ## 
             def tenants
                 return @tenants
             end
             ## 
-            ## Sets the tenants property value. The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+            ## Sets the tenants property value. The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
             ## @param value Value to set for the tenants property.
             ## @return a void
             ## 

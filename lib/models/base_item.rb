@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class BaseItem < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Identity of the user, device, or application which created the item. Read-only.
+            # Identity of the user, device, or application that created the item. Read-only.
             @created_by
             ## 
             # The createdByUser property
@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # ETag for the item. Read-only.
             @e_tag
             ## 
-            # Identity of the user, device, and application which last modified the item. Read-only.
+            # Identity of the user, device, and application that last modified the item. Read-only.
             @last_modified_by
             ## 
             # The lastModifiedByUser property
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # Parent information, if the item has a parent. Read-write.
             @parent_reference
             ## 
-            # URL that displays the resource in the browser. Read-only.
+            # URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             @web_url
             ## 
             ## Instantiates a new baseItem and sets the default values.
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 super
             end
             ## 
-            ## Gets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+            ## Gets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+            ## Sets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -113,6 +113,10 @@ module MicrosoftGraphBeta
                             return List.new
                         when "#microsoft.graph.listItem"
                             return ListItem.new
+                        when "#microsoft.graph.recycleBin"
+                            return RecycleBin.new
+                        when "#microsoft.graph.recycleBinItem"
+                            return RecycleBinItem.new
                         when "#microsoft.graph.sharedDriveItem"
                             return SharedDriveItem.new
                         when "#microsoft.graph.site"
@@ -173,14 +177,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+            ## Gets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+            ## Sets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -268,14 +272,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+            ## Gets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. URL that displays the resource in the browser. Read-only.
+            ## Sets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

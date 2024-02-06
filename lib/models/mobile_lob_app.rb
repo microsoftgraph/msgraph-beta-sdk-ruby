@@ -79,6 +79,8 @@ module MicrosoftGraphBeta
                             return MacOSLobApp.new
                         when "#microsoft.graph.macOSPkgApp"
                             return MacOSPkgApp.new
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
                         when "#microsoft.graph.win32LobApp"
                             return Win32LobApp.new
                         when "#microsoft.graph.windowsAppX"

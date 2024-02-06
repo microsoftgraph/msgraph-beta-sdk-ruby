@@ -27,24 +27,10 @@ module MicrosoftGraphBeta
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/gradingCategory{?%24select,%24expand}")
+                                    super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/gradingCategory{?%24expand,%24select}")
                                 end
                                 ## 
-                                ## Remove a gradingCategory from an educationAssignment. Only teachers can perform this operation.
-                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of void
-                                ## 
-                                def delete(request_configuration=nil)
-                                    request_info = self.to_delete_request_information(
-                                        request_configuration
-                                    )
-                                    error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, nil, error_mapping)
-                                end
-                                ## 
-                                ## Get gradingCategory from education
+                                ## When set, enables users to weight assignments differently when computing a class average grade.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_grading_category
                                 ## 
@@ -58,42 +44,35 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::EducationGradingCategory.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Remove a gradingCategory from an educationAssignment. Only teachers can perform this operation.
-                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a request_information
-                                ## 
-                                def to_delete_request_information(request_configuration=nil)
-                                    request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :DELETE
-                                    unless request_configuration.nil?
-                                        request_info.add_headers_from_raw_object(request_configuration.headers)
-                                        request_info.add_request_options(request_configuration.options)
-                                    end
-                                    return request_info
-                                end
-                                ## 
-                                ## Get gradingCategory from education
+                                ## When set, enables users to weight assignments differently when computing a class average grade.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_get_request_information(request_configuration=nil)
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :GET
-                                    request_info.headers.add('Accept', 'application/json')
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                         request_info.add_request_options(request_configuration.options)
                                     end
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :GET
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
+                                end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a grading_category_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return GradingCategoryRequestBuilder.new(raw_url, @request_adapter)
                                 end
 
                                 ## 
-                                # Get gradingCategory from education
+                                # When set, enables users to weight assignments differently when computing a class average grade.
                                 class GradingCategoryRequestBuilderGetQueryParameters
                                     
                                     ## 

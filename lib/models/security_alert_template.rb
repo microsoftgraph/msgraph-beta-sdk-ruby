@@ -10,53 +10,53 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The category property
+            # Category assigned to the alert triggered by the custom detection rule.
             @category
             ## 
-            # The description property
+            # Description of the alert triggered by the custom detection rule.
             @description
             ## 
-            # The impactedAssets property
+            # Which asset or assets were impacted based on the alert triggered by the custom detection rule.
             @impacted_assets
             ## 
-            # The mitreTechniques property
+            # MITRE technique assigned to the alert triggered by the custom detection rule.
             @mitre_techniques
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The recommendedActions property
+            # Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
             @recommended_actions
             ## 
             # The severity property
             @severity
             ## 
-            # The title property
+            # Name of the alert triggered by the custom detection rule.
             @title
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the category property value. The category property
+            ## Gets the category property value. Category assigned to the alert triggered by the custom detection rule.
             ## @return a string
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. The category property
+            ## Sets the category property value. Category assigned to the alert triggered by the custom detection rule.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 return SecurityAlertTemplate.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the alert triggered by the custom detection rule.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the alert triggered by the custom detection rule.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the impactedAssets property value. The impactedAssets property
+            ## Gets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
             ## @return a security_impacted_asset
             ## 
             def impacted_assets
                 return @impacted_assets
             end
             ## 
-            ## Sets the impactedAssets property value. The impactedAssets property
+            ## Sets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
             ## @param value Value to set for the impactedAssets property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @impacted_assets = value
             end
             ## 
-            ## Gets the mitreTechniques property value. The mitreTechniques property
+            ## Gets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
             ## @return a string
             ## 
             def mitre_techniques
                 return @mitre_techniques
             end
             ## 
-            ## Sets the mitreTechniques property value. The mitreTechniques property
+            ## Sets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
             ## @param value Value to set for the mitreTechniques property.
             ## @return a void
             ## 
@@ -156,14 +156,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the recommendedActions property value. The recommendedActions property
+            ## Gets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
             ## @return a string
             ## 
             def recommended_actions
                 return @recommended_actions
             end
             ## 
-            ## Sets the recommendedActions property value. The recommendedActions property
+            ## Sets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
             ## @param value Value to set for the recommendedActions property.
             ## @return a void
             ## 
@@ -203,14 +203,14 @@ module MicrosoftGraphBeta
                 @severity = value
             end
             ## 
-            ## Gets the title property value. The title property
+            ## Gets the title property value. Name of the alert triggered by the custom detection rule.
             ## @return a string
             ## 
             def title
                 return @title
             end
             ## 
-            ## Sets the title property value. The title property
+            ## Sets the title property value. Name of the alert triggered by the custom detection rule.
             ## @param value Value to set for the title property.
             ## @return a void
             ## 

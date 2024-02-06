@@ -11,30 +11,30 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The errorCode property
+            # Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
             @error_code
             ## 
-            # The failureReason property
+            # Reason for failure when the custom detection last ran and failed. See the table below.
             @failure_reason
             ## 
-            # The lastRunDateTime property
+            # Timestamp when the custom detection was last run.
             @last_run_date_time
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The status property
+            # Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 return SecurityRunDetails.new
             end
             ## 
-            ## Gets the errorCode property value. The errorCode property
+            ## Gets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
             ## @return a security_hunting_rule_error_code
             ## 
             def error_code
                 return @error_code
             end
             ## 
-            ## Sets the errorCode property value. The errorCode property
+            ## Sets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
             ## @param value Value to set for the errorCode property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @error_code = value
             end
             ## 
-            ## Gets the failureReason property value. The failureReason property
+            ## Gets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
             ## @return a string
             ## 
             def failure_reason
                 return @failure_reason
             end
             ## 
-            ## Sets the failureReason property value. The failureReason property
+            ## Sets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
             ## @param value Value to set for the failureReason property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the lastRunDateTime property value. The lastRunDateTime property
+            ## Gets the lastRunDateTime property value. Timestamp when the custom detection was last run.
             ## @return a date_time
             ## 
             def last_run_date_time
                 return @last_run_date_time
             end
             ## 
-            ## Sets the lastRunDateTime property value. The lastRunDateTime property
+            ## Sets the lastRunDateTime property value. Timestamp when the custom detection was last run.
             ## @param value Value to set for the lastRunDateTime property.
             ## @return a void
             ## 
@@ -144,14 +144,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
             ## @return a security_hunting_rule_run_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

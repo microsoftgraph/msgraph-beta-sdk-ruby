@@ -10,6 +10,12 @@ module MicrosoftGraphBeta
             # The configuration for what to invoke when attributes are ready to be collected from the user.
             @on_attribute_collection
             ## 
+            # The configuration for what to invoke when attribution collection has started.
+            @on_attribute_collection_start
+            ## 
+            # The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+            @on_attribute_collection_submit
+            ## 
             # Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
             @on_authentication_method_load_start
             ## 
@@ -42,6 +48,8 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "onAttributeCollection" => lambda {|n| @on_attribute_collection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnAttributeCollectionHandler.create_from_discriminator_value(pn) }) },
+                    "onAttributeCollectionStart" => lambda {|n| @on_attribute_collection_start = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnAttributeCollectionStartHandler.create_from_discriminator_value(pn) }) },
+                    "onAttributeCollectionSubmit" => lambda {|n| @on_attribute_collection_submit = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnAttributeCollectionSubmitHandler.create_from_discriminator_value(pn) }) },
                     "onAuthenticationMethodLoadStart" => lambda {|n| @on_authentication_method_load_start = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnAuthenticationMethodLoadStartHandler.create_from_discriminator_value(pn) }) },
                     "onInteractiveAuthFlowStart" => lambda {|n| @on_interactive_auth_flow_start = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnInteractiveAuthFlowStartHandler.create_from_discriminator_value(pn) }) },
                     "onUserCreateStart" => lambda {|n| @on_user_create_start = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OnUserCreateStartHandler.create_from_discriminator_value(pn) }) },
@@ -61,6 +69,36 @@ module MicrosoftGraphBeta
             ## 
             def on_attribute_collection=(value)
                 @on_attribute_collection = value
+            end
+            ## 
+            ## Gets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection has started.
+            ## @return a on_attribute_collection_start_handler
+            ## 
+            def on_attribute_collection_start
+                return @on_attribute_collection_start
+            end
+            ## 
+            ## Sets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection has started.
+            ## @param value Value to set for the onAttributeCollectionStart property.
+            ## @return a void
+            ## 
+            def on_attribute_collection_start=(value)
+                @on_attribute_collection_start = value
+            end
+            ## 
+            ## Gets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+            ## @return a on_attribute_collection_submit_handler
+            ## 
+            def on_attribute_collection_submit
+                return @on_attribute_collection_submit
+            end
+            ## 
+            ## Sets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+            ## @param value Value to set for the onAttributeCollectionSubmit property.
+            ## @return a void
+            ## 
+            def on_attribute_collection_submit=(value)
+                @on_attribute_collection_submit = value
             end
             ## 
             ## Gets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
@@ -116,6 +154,8 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("onAttributeCollection", @on_attribute_collection)
+                writer.write_object_value("onAttributeCollectionStart", @on_attribute_collection_start)
+                writer.write_object_value("onAttributeCollectionSubmit", @on_attribute_collection_submit)
                 writer.write_object_value("onAuthenticationMethodLoadStart", @on_authentication_method_load_start)
                 writer.write_object_value("onInteractiveAuthFlowStart", @on_interactive_auth_flow_start)
                 writer.write_object_value("onUserCreateStart", @on_user_create_start)

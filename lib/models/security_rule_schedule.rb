@@ -11,24 +11,24 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The nextRunDateTime property
+            # Timestamp of the custom detection rule's next scheduled run.
             @next_run_date_time
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The period property
+            # How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
             @period
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the nextRunDateTime property value. The nextRunDateTime property
+            ## Gets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
             ## @return a date_time
             ## 
             def next_run_date_time
                 return @next_run_date_time
             end
             ## 
-            ## Sets the nextRunDateTime property value. The nextRunDateTime property
+            ## Sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
             ## @param value Value to set for the nextRunDateTime property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the period property value. The period property
+            ## Gets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
             ## @return a string
             ## 
             def period
                 return @period
             end
             ## 
-            ## Sets the period property value. The period property
+            ## Sets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
             ## @param value Value to set for the period property.
             ## @return a void
             ## 

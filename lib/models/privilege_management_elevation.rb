@@ -46,11 +46,29 @@ module MicrosoftGraphBeta
             # The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: `To install debug tool.`.
             @justification
             ## 
+            # The name of parent process associated with the elevated process. This is always populated for both parent and child process types
+            @parent_process_name
+            ## 
+            # Unique Identifier of the policy configured to run the application with elevated access
+            @policy_id
+            ## 
+            # The name of the policy configured to run the application in elevated access
+            @policy_name
+            ## 
+            # Indicates the type of elevated process
+            @process_type
+            ## 
             # The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`
             @product_name
             ## 
             # The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: `0`. Valid values 0 to 2147483647
             @result
+            ## 
+            # Unique identifier of the rule configured to run the application with elevated access
+            @rule_id
+            ## 
+            # To identify if the elevation is initiated by system or user interaction
+            @system_initiated_elevation
             ## 
             # The User Principal Name of the user who performed the elevation. Example: `john@domain.com`
             @upn
@@ -226,8 +244,14 @@ module MicrosoftGraphBeta
                     "hash" => lambda {|n| @hash = n.get_string_value() },
                     "internalName" => lambda {|n| @internal_name = n.get_string_value() },
                     "justification" => lambda {|n| @justification = n.get_string_value() },
+                    "parentProcessName" => lambda {|n| @parent_process_name = n.get_string_value() },
+                    "policyId" => lambda {|n| @policy_id = n.get_string_value() },
+                    "policyName" => lambda {|n| @policy_name = n.get_string_value() },
+                    "processType" => lambda {|n| @process_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegeManagementProcessType) },
                     "productName" => lambda {|n| @product_name = n.get_string_value() },
                     "result" => lambda {|n| @result = n.get_number_value() },
+                    "ruleId" => lambda {|n| @rule_id = n.get_string_value() },
+                    "systemInitiatedElevation" => lambda {|n| @system_initiated_elevation = n.get_boolean_value() },
                     "upn" => lambda {|n| @upn = n.get_string_value() },
                     "userType" => lambda {|n| @user_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivilegeManagementEndUserType) },
                 })
@@ -278,6 +302,66 @@ module MicrosoftGraphBeta
                 @justification = value
             end
             ## 
+            ## Gets the parentProcessName property value. The name of parent process associated with the elevated process. This is always populated for both parent and child process types
+            ## @return a string
+            ## 
+            def parent_process_name
+                return @parent_process_name
+            end
+            ## 
+            ## Sets the parentProcessName property value. The name of parent process associated with the elevated process. This is always populated for both parent and child process types
+            ## @param value Value to set for the parentProcessName property.
+            ## @return a void
+            ## 
+            def parent_process_name=(value)
+                @parent_process_name = value
+            end
+            ## 
+            ## Gets the policyId property value. Unique Identifier of the policy configured to run the application with elevated access
+            ## @return a string
+            ## 
+            def policy_id
+                return @policy_id
+            end
+            ## 
+            ## Sets the policyId property value. Unique Identifier of the policy configured to run the application with elevated access
+            ## @param value Value to set for the policyId property.
+            ## @return a void
+            ## 
+            def policy_id=(value)
+                @policy_id = value
+            end
+            ## 
+            ## Gets the policyName property value. The name of the policy configured to run the application in elevated access
+            ## @return a string
+            ## 
+            def policy_name
+                return @policy_name
+            end
+            ## 
+            ## Sets the policyName property value. The name of the policy configured to run the application in elevated access
+            ## @param value Value to set for the policyName property.
+            ## @return a void
+            ## 
+            def policy_name=(value)
+                @policy_name = value
+            end
+            ## 
+            ## Gets the processType property value. Indicates the type of elevated process
+            ## @return a privilege_management_process_type
+            ## 
+            def process_type
+                return @process_type
+            end
+            ## 
+            ## Sets the processType property value. Indicates the type of elevated process
+            ## @param value Value to set for the processType property.
+            ## @return a void
+            ## 
+            def process_type=(value)
+                @process_type = value
+            end
+            ## 
             ## Gets the productName property value. The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`
             ## @return a string
             ## 
@@ -308,6 +392,21 @@ module MicrosoftGraphBeta
                 @result = value
             end
             ## 
+            ## Gets the ruleId property value. Unique identifier of the rule configured to run the application with elevated access
+            ## @return a string
+            ## 
+            def rule_id
+                return @rule_id
+            end
+            ## 
+            ## Sets the ruleId property value. Unique identifier of the rule configured to run the application with elevated access
+            ## @param value Value to set for the ruleId property.
+            ## @return a void
+            ## 
+            def rule_id=(value)
+                @rule_id = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -327,10 +426,31 @@ module MicrosoftGraphBeta
                 writer.write_string_value("hash", @hash)
                 writer.write_string_value("internalName", @internal_name)
                 writer.write_string_value("justification", @justification)
+                writer.write_string_value("parentProcessName", @parent_process_name)
+                writer.write_string_value("policyId", @policy_id)
+                writer.write_string_value("policyName", @policy_name)
+                writer.write_enum_value("processType", @process_type)
                 writer.write_string_value("productName", @product_name)
                 writer.write_number_value("result", @result)
+                writer.write_string_value("ruleId", @rule_id)
+                writer.write_boolean_value("systemInitiatedElevation", @system_initiated_elevation)
                 writer.write_string_value("upn", @upn)
                 writer.write_enum_value("userType", @user_type)
+            end
+            ## 
+            ## Gets the systemInitiatedElevation property value. To identify if the elevation is initiated by system or user interaction
+            ## @return a boolean
+            ## 
+            def system_initiated_elevation
+                return @system_initiated_elevation
+            end
+            ## 
+            ## Sets the systemInitiatedElevation property value. To identify if the elevation is initiated by system or user interaction
+            ## @param value Value to set for the systemInitiatedElevation property.
+            ## @return a void
+            ## 
+            def system_initiated_elevation=(value)
+                @system_initiated_elevation = value
             end
             ## 
             ## Gets the upn property value. The User Principal Name of the user who performed the elevation. Example: `john@domain.com`
