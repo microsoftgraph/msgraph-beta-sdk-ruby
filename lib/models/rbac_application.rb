@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # The transitiveRoleAssignments property
             @transitive_role_assignments
             ## 
-            ## Instantiates a new rbacApplication and sets the default values.
+            ## Instantiates a new RbacApplication and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The targetType property
             @target_type
             ## 
-            ## Instantiates a new authenticationMethodTarget and sets the default values.
+            ## Instantiates a new AuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

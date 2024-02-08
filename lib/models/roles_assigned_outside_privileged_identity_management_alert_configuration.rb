@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration and sets the default values.
+            ## Instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @all_tenants_included = value
             end
             ## 
-            ## Instantiates a new managedTenantsTenantGroup and sets the default values.
+            ## Instantiates a new ManagedTenantsTenantGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

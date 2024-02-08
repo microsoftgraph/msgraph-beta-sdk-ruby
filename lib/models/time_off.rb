@@ -7,19 +7,25 @@ module MicrosoftGraphBeta
         class TimeOff < MicrosoftGraphBeta::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The draft version of this timeOff that is viewable by managers. Required.
+            # The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
             @draft_time_off
             ## 
-            # The isStagedForDeletion property
+            # The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
             @is_staged_for_deletion
             ## 
-            # The shared version of this timeOff that is viewable by both employees and managers. Required.
+            # The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             @shared_time_off
+            ## 
+            # The teamInfo property
+            @team_info
             ## 
             # ID of the user assigned to the timeOff. Required.
             @user_id
             ## 
-            ## Instantiates a new timeOff and sets the default values.
+            # The userInfo property
+            @user_info
+            ## 
+            ## Instantiates a new TimeOff and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +42,14 @@ module MicrosoftGraphBeta
                 return TimeOff.new
             end
             ## 
-            ## Gets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+            ## Gets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
             ## @return a time_off_item
             ## 
             def draft_time_off
                 return @draft_time_off
             end
             ## 
-            ## Sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+            ## Sets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
             ## @param value Value to set for the draftTimeOff property.
             ## @return a void
             ## 
@@ -59,18 +65,20 @@ module MicrosoftGraphBeta
                     "draftTimeOff" => lambda {|n| @draft_time_off = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeOffItem.create_from_discriminator_value(pn) }) },
                     "isStagedForDeletion" => lambda {|n| @is_staged_for_deletion = n.get_boolean_value() },
                     "sharedTimeOff" => lambda {|n| @shared_time_off = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeOffItem.create_from_discriminator_value(pn) }) },
+                    "teamInfo" => lambda {|n| @team_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ShiftsTeamInfo.create_from_discriminator_value(pn) }) },
                     "userId" => lambda {|n| @user_id = n.get_string_value() },
+                    "userInfo" => lambda {|n| @user_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ShiftsUserInfo.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Gets the isStagedForDeletion property value. The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
             ## @return a boolean
             ## 
             def is_staged_for_deletion
                 return @is_staged_for_deletion
             end
             ## 
-            ## Sets the isStagedForDeletion property value. The isStagedForDeletion property
+            ## Sets the isStagedForDeletion property value. The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
             ## @param value Value to set for the isStagedForDeletion property.
             ## @return a void
             ## 
@@ -91,19 +99,34 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+            ## Gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             ## @return a time_off_item
             ## 
             def shared_time_off
                 return @shared_time_off
             end
             ## 
-            ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+            ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             ## @param value Value to set for the sharedTimeOff property.
             ## @return a void
             ## 
             def shared_time_off=(value)
                 @shared_time_off = value
+            end
+            ## 
+            ## Gets the teamInfo property value. The teamInfo property
+            ## @return a shifts_team_info
+            ## 
+            def team_info
+                return @team_info
+            end
+            ## 
+            ## Sets the teamInfo property value. The teamInfo property
+            ## @param value Value to set for the teamInfo property.
+            ## @return a void
+            ## 
+            def team_info=(value)
+                @team_info = value
             end
             ## 
             ## Gets the userId property value. ID of the user assigned to the timeOff. Required.
@@ -119,6 +142,21 @@ module MicrosoftGraphBeta
             ## 
             def user_id=(value)
                 @user_id = value
+            end
+            ## 
+            ## Gets the userInfo property value. The userInfo property
+            ## @return a shifts_user_info
+            ## 
+            def user_info
+                return @user_info
+            end
+            ## 
+            ## Sets the userInfo property value. The userInfo property
+            ## @param value Value to set for the userInfo property.
+            ## @return a void
+            ## 
+            def user_info=(value)
+                @user_info = value
             end
         end
     end

@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @access_id = value
             end
             ## 
-            ## Instantiates a new privilegedAccessGroupEligibilityScheduleRequest and sets the default values.
+            ## Instantiates a new PrivilegedAccessGroupEligibilityScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

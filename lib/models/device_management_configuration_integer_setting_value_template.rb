@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Required value definition.
             @required_value_definition
             ## 
-            ## Instantiates a new deviceManagementConfigurationIntegerSettingValueTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationIntegerSettingValueTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,41 +8,41 @@ module MicrosoftGraphBeta
         class VirtualEventRegistration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The cancelationDateTime property
+            # Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @cancelation_date_time
             ## 
-            # The email property
+            # Email address of the registrant.
             @email
             ## 
-            # The firstName property
+            # First name of the registrant.
             @first_name
             ## 
-            # The lastName property
+            # Last name of the registrant.
             @last_name
             ## 
-            # The registrationDateTime property
+            # Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @registration_date_time
             ## 
-            # The registrationQuestionAnswers property
+            # The registrant's answer to the registration questions.
             @registration_question_answers
             ## 
             # The sessions property
             @sessions
             ## 
-            # The status property
+            # Registration status of the registrant. Read-only.
             @status
             ## 
-            # The userId property
+            # The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             @user_id
             ## 
-            ## Gets the cancelationDateTime property value. The cancelationDateTime property
+            ## Gets the cancelationDateTime property value. Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def cancelation_date_time
                 return @cancelation_date_time
             end
             ## 
-            ## Sets the cancelationDateTime property value. The cancelationDateTime property
+            ## Sets the cancelationDateTime property value. Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the cancelationDateTime property.
             ## @return a void
             ## 
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                 @cancelation_date_time = value
             end
             ## 
-            ## Instantiates a new virtualEventRegistration and sets the default values.
+            ## Instantiates a new VirtualEventRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 return VirtualEventRegistration.new
             end
             ## 
-            ## Gets the email property value. The email property
+            ## Gets the email property value. Email address of the registrant.
             ## @return a string
             ## 
             def email
                 return @email
             end
             ## 
-            ## Sets the email property value. The email property
+            ## Sets the email property value. Email address of the registrant.
             ## @param value Value to set for the email property.
             ## @return a void
             ## 
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 @email = value
             end
             ## 
-            ## Gets the firstName property value. The firstName property
+            ## Gets the firstName property value. First name of the registrant.
             ## @return a string
             ## 
             def first_name
                 return @first_name
             end
             ## 
-            ## Sets the firstName property value. The firstName property
+            ## Sets the firstName property value. First name of the registrant.
             ## @param value Value to set for the firstName property.
             ## @return a void
             ## 
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastName property value. The lastName property
+            ## Gets the lastName property value. Last name of the registrant.
             ## @return a string
             ## 
             def last_name
                 return @last_name
             end
             ## 
-            ## Sets the lastName property value. The lastName property
+            ## Sets the lastName property value. Last name of the registrant.
             ## @param value Value to set for the lastName property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @last_name = value
             end
             ## 
-            ## Gets the registrationDateTime property value. The registrationDateTime property
+            ## Gets the registrationDateTime property value. Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def registration_date_time
                 return @registration_date_time
             end
             ## 
-            ## Sets the registrationDateTime property value. The registrationDateTime property
+            ## Sets the registrationDateTime property value. Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the registrationDateTime property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @registration_date_time = value
             end
             ## 
-            ## Gets the registrationQuestionAnswers property value. The registrationQuestionAnswers property
+            ## Gets the registrationQuestionAnswers property value. The registrant's answer to the registration questions.
             ## @return a virtual_event_registration_question_answer
             ## 
             def registration_question_answers
                 return @registration_question_answers
             end
             ## 
-            ## Sets the registrationQuestionAnswers property value. The registrationQuestionAnswers property
+            ## Sets the registrationQuestionAnswers property value. The registrant's answer to the registration questions.
             ## @param value Value to set for the registrationQuestionAnswers property.
             ## @return a void
             ## 
@@ -191,14 +191,14 @@ module MicrosoftGraphBeta
                 @sessions = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Registration status of the registrant. Read-only.
             ## @return a virtual_event_attendee_registration_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Registration status of the registrant. Read-only.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the userId property value. The userId property
+            ## Gets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The userId property
+            ## Sets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

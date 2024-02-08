@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
+            # Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
             @description
             ## 
             # Last IPv4 address associated with this NIC.
             @ip_v4_address
             ## 
-            # Last Public (aka global) IPv6 address associated with this NIC.
+            # Last Public (also known as global) IPv6 address associated with this NIC.
             @ip_v6_address
             ## 
             # Last local (link-local or site-local) IPv6 address associated with this NIC.
@@ -28,22 +28,22 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new networkInterface and sets the default values.
+            ## Instantiates a new NetworkInterface and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return NetworkInterface.new
             end
             ## 
-            ## Gets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
+            ## Gets the description property value. Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
+            ## Sets the description property value. Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 @ip_v4_address = value
             end
             ## 
-            ## Gets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
+            ## Gets the ipV6Address property value. Last Public (also known as global) IPv6 address associated with this NIC.
             ## @return a string
             ## 
             def ip_v6_address
                 return @ip_v6_address
             end
             ## 
-            ## Sets the ipV6Address property value. Last Public (aka global) IPv6 address associated with this NIC.
+            ## Sets the ipV6Address property value. Last Public (also known as global) IPv6 address associated with this NIC.
             ## @param value Value to set for the ipV6Address property.
             ## @return a void
             ## 

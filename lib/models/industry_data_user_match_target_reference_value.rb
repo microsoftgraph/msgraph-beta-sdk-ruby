@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataUserMatchTargetReferenceValue < MicrosoftGraphBeta::Models::IndustryDataReferenceValue
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataUserMatchTargetReferenceValue and sets the default values.
+            ## Instantiates a new IndustryDataUserMatchTargetReferenceValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

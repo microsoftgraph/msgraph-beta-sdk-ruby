@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             # Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
             @pending_install_user_count
             ## 
-            ## Instantiates a new mobileAppInstallSummary and sets the default values.
+            ## Instantiates a new MobileAppInstallSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,18 +7,10 @@ require_relative '../../../../virtual_events'
 require_relative '../../../events'
 require_relative '../../item'
 require_relative '../sessions'
-require_relative './alternative_recording/alternative_recording_request_builder'
 require_relative './attendance_reports/attendance_reports_request_builder'
-require_relative './attendee_report/attendee_report_request_builder'
-require_relative './broadcast_recording/broadcast_recording_request_builder'
 require_relative './item'
-require_relative './meeting_attendance_report/meeting_attendance_report_request_builder'
-require_relative './recording/recording_request_builder'
-require_relative './recordings/recordings_request_builder'
-require_relative './registration/registration_request_builder'
+require_relative './presenters/presenters_request_builder'
 require_relative './registrations/registrations_request_builder'
-require_relative './transcripts/transcripts_request_builder'
-require_relative './virtual_appointment/virtual_appointment_request_builder'
 
 module MicrosoftGraphBeta
     module Solutions
@@ -32,59 +24,19 @@ module MicrosoftGraphBeta
                             class VirtualEventSessionItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
                                 ## 
-                                # Provides operations to manage the media for the solutionsRoot entity.
-                                def alternative_recording()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::AlternativeRecording::AlternativeRecordingRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+                                # Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
                                 def attendance_reports()
                                     return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::AttendanceReports::AttendanceReportsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the media for the solutionsRoot entity.
-                                def attendee_report()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::AttendeeReport::AttendeeReportRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the media for the solutionsRoot entity.
-                                def broadcast_recording()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::BroadcastRecording::BroadcastRecordingRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
-                                def meeting_attendance_report()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::MeetingAttendanceReport::MeetingAttendanceReportRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the media for the solutionsRoot entity.
-                                def recording()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Recording::RecordingRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-                                def recordings()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Recordings::RecordingsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
-                                def registration()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Registration::RegistrationRequestBuilder.new(@path_parameters, @request_adapter)
+                                # Provides operations to manage the presenters property of the microsoft.graph.virtualEventSession entity.
+                                def presenters()
+                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Presenters::PresentersRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
                                 def registrations()
                                     return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Registrations::RegistrationsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-                                def transcripts()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::Transcripts::TranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.
-                                def virtual_appointment()
-                                    return MicrosoftGraphBeta::Solutions::VirtualEvents::Events::Item::Sessions::Item::VirtualAppointment::VirtualAppointmentRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
@@ -93,7 +45,7 @@ module MicrosoftGraphBeta
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}{?%24select,%24expand}")
+                                    super(path_parameters, request_adapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}{?%24expand,%24select}")
                                 end
                                 ## 
                                 ## Delete navigation property sessions for solutions
@@ -110,7 +62,7 @@ module MicrosoftGraphBeta
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Read the properties and relationships of a virtualEventSession object.
+                                ## Sessions for the virtual event.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of virtual_event_session
                                 ## 
@@ -146,31 +98,32 @@ module MicrosoftGraphBeta
                                 ## 
                                 def to_delete_request_information(request_configuration=nil)
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :DELETE
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.add_request_options(request_configuration.options)
                                     end
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :DELETE
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
                                 end
                                 ## 
-                                ## Read the properties and relationships of a virtualEventSession object.
+                                ## Sessions for the virtual event.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_get_request_information(request_configuration=nil)
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :GET
-                                    request_info.headers.add('Accept', 'application/json')
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                         request_info.add_request_options(request_configuration.options)
                                     end
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :GET
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
                                 end
                                 ## 
@@ -182,20 +135,29 @@ module MicrosoftGraphBeta
                                 def to_patch_request_information(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                    request_info.url_template = @url_template
-                                    request_info.path_parameters = @path_parameters
-                                    request_info.http_method = :PATCH
-                                    request_info.headers.add('Accept', 'application/json')
                                     unless request_configuration.nil?
                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                         request_info.add_request_options(request_configuration.options)
                                     end
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                    request_info.url_template = @url_template
+                                    request_info.path_parameters = @path_parameters
+                                    request_info.http_method = :PATCH
+                                    request_info.headers.try_add('Accept', 'application/json')
                                     return request_info
+                                end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a virtual_event_session_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return VirtualEventSessionItemRequestBuilder.new(raw_url, @request_adapter)
                                 end
 
                                 ## 
-                                # Read the properties and relationships of a virtualEventSession object.
+                                # Sessions for the virtual event.
                                 class VirtualEventSessionItemRequestBuilderGetQueryParameters
                                     
                                     ## 

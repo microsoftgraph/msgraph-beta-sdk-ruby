@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @configuration_xml = value
             end
             ## 
-            ## Instantiates a new macOSCustomAppConfiguration and sets the default values.
+            ## Instantiates a new MacOSCustomAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

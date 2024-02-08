@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The unique identifier for the vendor of the device. Each vendor has a unique ID.
             @vendor_id
             ## 
-            ## Instantiates a new teamworkPeripheral and sets the default values.
+            ## Instantiates a new TeamworkPeripheral and sets the default values.
             ## @return a void
             ## 
             def initialize()

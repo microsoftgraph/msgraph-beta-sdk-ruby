@@ -6,6 +6,7 @@ require_relative '../../../../device_management'
 require_relative '../../../windows_autopilot_deployment_profiles'
 require_relative '../../item'
 require_relative '../assigned_devices'
+require_relative './allow_next_enrollment/allow_next_enrollment_request_builder'
 require_relative './assign_resource_account_to_device/assign_resource_account_to_device_request_builder'
 require_relative './assign_user_to_device/assign_user_to_device_request_builder'
 require_relative './deployment_profile/deployment_profile_request_builder'
@@ -25,6 +26,11 @@ module MicrosoftGraphBeta
                         # Provides operations to manage the assignedDevices property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.
                         class WindowsAutopilotDeviceIdentityItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
+                            ## 
+                            # Provides operations to call the allowNextEnrollment method.
+                            def allow_next_enrollment()
+                                return MicrosoftGraphBeta::DeviceManagement::WindowsAutopilotDeploymentProfiles::Item::AssignedDevices::Item::AllowNextEnrollment::AllowNextEnrollmentRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             # Provides operations to call the assignResourceAccountToDevice method.
                             def assign_resource_account_to_device()
@@ -67,7 +73,7 @@ module MicrosoftGraphBeta
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignedDevices/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignedDevices/{windowsAutopilotDeviceIdentity%2Did}{?%24expand,%24select}")
                             end
                             ## 
                             ## Delete navigation property assignedDevices for deviceManagement
@@ -120,13 +126,14 @@ module MicrosoftGraphBeta
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
@@ -136,15 +143,15 @@ module MicrosoftGraphBeta
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
@@ -156,16 +163,25 @@ module MicrosoftGraphBeta
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a windows_autopilot_device_identity_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return WindowsAutopilotDeviceIdentityItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

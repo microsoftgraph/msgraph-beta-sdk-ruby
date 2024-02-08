@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @constant_value = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

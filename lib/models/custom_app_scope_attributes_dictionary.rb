@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CustomAppScopeAttributesDictionary < MicrosoftGraphBeta::Models::Dictionary
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new customAppScopeAttributesDictionary and sets the default values.
+            ## Instantiates a new CustomAppScopeAttributesDictionary and sets the default values.
             ## @return a void
             ## 
             def initialize()

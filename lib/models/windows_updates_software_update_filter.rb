@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesSoftwareUpdateFilter < MicrosoftGraphBeta::Models::WindowsUpdatesContentFilter
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsUpdatesSoftwareUpdateFilter and sets the default values.
+            ## Instantiates a new WindowsUpdatesSoftwareUpdateFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()

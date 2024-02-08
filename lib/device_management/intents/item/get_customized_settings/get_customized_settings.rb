@@ -1,1 +1,1 @@
-require_relative 'get_customized_settings_response'
+require_relative 'get_customized_settings_get_response'

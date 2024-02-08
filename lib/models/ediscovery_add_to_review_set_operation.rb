@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The sourceCollection that items are being added from.
             @source_collection
             ## 
-            ## Instantiates a new ediscoveryAddToReviewSetOperation and sets the default values.
+            ## Instantiates a new EdiscoveryAddToReviewSetOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

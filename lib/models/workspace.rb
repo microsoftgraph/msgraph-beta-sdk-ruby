@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @capacity = value
             end
             ## 
-            ## Instantiates a new workspace and sets the default values.
+            ## Instantiates a new Workspace and sets the default values.
             ## @return a void
             ## 
             def initialize()

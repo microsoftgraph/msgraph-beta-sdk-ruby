@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
             # Generic representation of a team template definition for a team with a specific structure and configuration.
             @template_definition
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # The visibility of the group and team. Defaults to Public.
@@ -149,7 +149,7 @@ module MicrosoftGraphBeta
                 @classification = value
             end
             ## 
-            ## Instantiates a new team and sets the default values.
+            ## Instantiates a new Team and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -636,14 +636,14 @@ module MicrosoftGraphBeta
                 @template_definition = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

@@ -6,41 +6,44 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Entity representing a job to export a report
+        # Entity representing a job to export a report.
         class DeviceManagementExportJob < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Time that the exported report expires
+            # Time that the exported report expires.
             @expiration_date_time
             ## 
-            # Filters applied on the report
+            # Filters applied on the report. The maximum length allowed for this property is 2000 characters.
             @filter
             ## 
-            # Possible values for the file format of a report
+            # Possible values for the file format of a report.
             @format
             ## 
-            # Configures how the requested export job is localized
+            # Configures how the requested export job is localized.
             @localization_type
             ## 
-            # Name of the report
+            # Name of the report. The maximum length allowed for this property is 2000 characters.
             @report_name
             ## 
-            # Time that the exported report was requested
+            # Time that the exported report was requested.
             @request_date_time
             ## 
-            # Columns selected from the report
+            # Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+            @search
+            ## 
+            # Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             @select
             ## 
-            # A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+            # A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.
             @snapshot_id
             ## 
-            # Possible statuses associated with a generated report
+            # Possible statuses associated with a generated report.
             @status
             ## 
-            # Temporary location of the exported report
+            # Temporary location of the exported report.
             @url
             ## 
-            ## Instantiates a new deviceManagementExportJob and sets the default values.
+            ## Instantiates a new DeviceManagementExportJob and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +59,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementExportJob.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Time that the exported report expires
+            ## Gets the expirationDateTime property value. Time that the exported report expires.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Time that the exported report expires
+            ## Sets the expirationDateTime property value. Time that the exported report expires.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -71,14 +74,14 @@ module MicrosoftGraphBeta
                 @expiration_date_time = value
             end
             ## 
-            ## Gets the filter property value. Filters applied on the report
+            ## Gets the filter property value. Filters applied on the report. The maximum length allowed for this property is 2000 characters.
             ## @return a string
             ## 
             def filter
                 return @filter
             end
             ## 
-            ## Sets the filter property value. Filters applied on the report
+            ## Sets the filter property value. Filters applied on the report. The maximum length allowed for this property is 2000 characters.
             ## @param value Value to set for the filter property.
             ## @return a void
             ## 
@@ -86,14 +89,14 @@ module MicrosoftGraphBeta
                 @filter = value
             end
             ## 
-            ## Gets the format property value. Possible values for the file format of a report
+            ## Gets the format property value. Possible values for the file format of a report.
             ## @return a device_management_report_file_format
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. Possible values for the file format of a report
+            ## Sets the format property value. Possible values for the file format of a report.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 
@@ -112,6 +115,7 @@ module MicrosoftGraphBeta
                     "localizationType" => lambda {|n| @localization_type = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementExportJobLocalizationType) },
                     "reportName" => lambda {|n| @report_name = n.get_string_value() },
                     "requestDateTime" => lambda {|n| @request_date_time = n.get_date_time_value() },
+                    "search" => lambda {|n| @search = n.get_string_value() },
                     "select" => lambda {|n| @select = n.get_collection_of_primitive_values(String) },
                     "snapshotId" => lambda {|n| @snapshot_id = n.get_string_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementReportStatus) },
@@ -119,14 +123,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the localizationType property value. Configures how the requested export job is localized
+            ## Gets the localizationType property value. Configures how the requested export job is localized.
             ## @return a device_management_export_job_localization_type
             ## 
             def localization_type
                 return @localization_type
             end
             ## 
-            ## Sets the localizationType property value. Configures how the requested export job is localized
+            ## Sets the localizationType property value. Configures how the requested export job is localized.
             ## @param value Value to set for the localizationType property.
             ## @return a void
             ## 
@@ -134,14 +138,14 @@ module MicrosoftGraphBeta
                 @localization_type = value
             end
             ## 
-            ## Gets the reportName property value. Name of the report
+            ## Gets the reportName property value. Name of the report. The maximum length allowed for this property is 2000 characters.
             ## @return a string
             ## 
             def report_name
                 return @report_name
             end
             ## 
-            ## Sets the reportName property value. Name of the report
+            ## Sets the reportName property value. Name of the report. The maximum length allowed for this property is 2000 characters.
             ## @param value Value to set for the reportName property.
             ## @return a void
             ## 
@@ -149,14 +153,14 @@ module MicrosoftGraphBeta
                 @report_name = value
             end
             ## 
-            ## Gets the requestDateTime property value. Time that the exported report was requested
+            ## Gets the requestDateTime property value. Time that the exported report was requested.
             ## @return a date_time
             ## 
             def request_date_time
                 return @request_date_time
             end
             ## 
-            ## Sets the requestDateTime property value. Time that the exported report was requested
+            ## Sets the requestDateTime property value. Time that the exported report was requested.
             ## @param value Value to set for the requestDateTime property.
             ## @return a void
             ## 
@@ -164,14 +168,29 @@ module MicrosoftGraphBeta
                 @request_date_time = value
             end
             ## 
-            ## Gets the select property value. Columns selected from the report
+            ## Gets the search property value. Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+            ## @return a string
+            ## 
+            def search
+                return @search
+            end
+            ## 
+            ## Sets the search property value. Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+            ## @param value Value to set for the search property.
+            ## @return a void
+            ## 
+            def search=(value)
+                @search = value
+            end
+            ## 
+            ## Gets the select property value. Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             ## @return a string
             ## 
             def select
                 return @select
             end
             ## 
-            ## Sets the select property value. Columns selected from the report
+            ## Sets the select property value. Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             ## @param value Value to set for the select property.
             ## @return a void
             ## 
@@ -186,23 +205,27 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
                 writer.write_string_value("filter", @filter)
                 writer.write_enum_value("format", @format)
                 writer.write_enum_value("localizationType", @localization_type)
                 writer.write_string_value("reportName", @report_name)
+                writer.write_date_time_value("requestDateTime", @request_date_time)
+                writer.write_string_value("search", @search)
                 writer.write_collection_of_primitive_values("select", @select)
                 writer.write_string_value("snapshotId", @snapshot_id)
                 writer.write_enum_value("status", @status)
+                writer.write_string_value("url", @url)
             end
             ## 
-            ## Gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+            ## Gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.
             ## @return a string
             ## 
             def snapshot_id
                 return @snapshot_id
             end
             ## 
-            ## Sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+            ## Sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.
             ## @param value Value to set for the snapshotId property.
             ## @return a void
             ## 
@@ -210,14 +233,14 @@ module MicrosoftGraphBeta
                 @snapshot_id = value
             end
             ## 
-            ## Gets the status property value. Possible statuses associated with a generated report
+            ## Gets the status property value. Possible statuses associated with a generated report.
             ## @return a device_management_report_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Possible statuses associated with a generated report
+            ## Sets the status property value. Possible statuses associated with a generated report.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -225,14 +248,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the url property value. Temporary location of the exported report
+            ## Gets the url property value. Temporary location of the exported report.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. Temporary location of the exported report
+            ## Sets the url property value. Temporary location of the exported report.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

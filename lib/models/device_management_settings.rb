@@ -52,15 +52,15 @@ module MicrosoftGraphBeta
             # Device should be noncompliant when there is no compliance policy targeted when this is true
             @secure_by_default
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                 @android_device_administrator_enrollment_enabled = value
             end
             ## 
-            ## Instantiates a new deviceManagementSettings and sets the default values.
+            ## Instantiates a new DeviceManagementSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

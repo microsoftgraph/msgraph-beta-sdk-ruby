@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
             @is_enabled
             ## 
-            ## Instantiates a new contactMergeSuggestions and sets the default values.
+            ## Instantiates a new ContactMergeSuggestions and sets the default values.
             ## @return a void
             ## 
             def initialize()

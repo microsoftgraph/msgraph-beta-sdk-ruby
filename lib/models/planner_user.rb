@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
             @favorite_plans
             ## 
+            # The myDayTasks property
+            @my_day_tasks
+            ## 
             # The plans property
             @plans
             ## 
@@ -46,7 +49,7 @@ module MicrosoftGraphBeta
                 @all = value
             end
             ## 
-            ## Instantiates a new plannerUser and sets the default values.
+            ## Instantiates a new PlannerUser and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,12 +103,28 @@ module MicrosoftGraphBeta
                     "all" => lambda {|n| @all = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerDelta.create_from_discriminator_value(pn) }) },
                     "favoritePlanReferences" => lambda {|n| @favorite_plan_references = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerFavoritePlanReferenceCollection.create_from_discriminator_value(pn) }) },
                     "favoritePlans" => lambda {|n| @favorite_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }) },
+                    "myDayTasks" => lambda {|n| @my_day_tasks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTask.create_from_discriminator_value(pn) }) },
                     "plans" => lambda {|n| @plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }) },
                     "recentPlanReferences" => lambda {|n| @recent_plan_references = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerRecentPlanReferenceCollection.create_from_discriminator_value(pn) }) },
                     "recentPlans" => lambda {|n| @recent_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }) },
                     "rosterPlans" => lambda {|n| @roster_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }) },
                     "tasks" => lambda {|n| @tasks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTask.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the myDayTasks property value. The myDayTasks property
+            ## @return a planner_task
+            ## 
+            def my_day_tasks
+                return @my_day_tasks
+            end
+            ## 
+            ## Sets the myDayTasks property value. The myDayTasks property
+            ## @param value Value to set for the myDayTasks property.
+            ## @return a void
+            ## 
+            def my_day_tasks=(value)
+                @my_day_tasks = value
             end
             ## 
             ## Gets the plans property value. The plans property
@@ -178,6 +197,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("all", @all)
                 writer.write_object_value("favoritePlanReferences", @favorite_plan_references)
                 writer.write_collection_of_object_values("favoritePlans", @favorite_plans)
+                writer.write_collection_of_object_values("myDayTasks", @my_day_tasks)
                 writer.write_collection_of_object_values("plans", @plans)
                 writer.write_object_value("recentPlanReferences", @recent_plan_references)
                 writer.write_collection_of_object_values("recentPlans", @recent_plans)
