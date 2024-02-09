@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @class_name = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerKioskModeApp and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

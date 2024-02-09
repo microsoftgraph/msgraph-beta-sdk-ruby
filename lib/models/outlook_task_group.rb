@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @change_key = value
             end
             ## 
-            ## Instantiates a new outlookTaskGroup and sets the default values.
+            ## Instantiates a new OutlookTaskGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

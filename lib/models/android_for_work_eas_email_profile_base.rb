@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new androidForWorkEasEmailProfileBase and sets the default values.
+            ## Instantiates a new AndroidForWorkEasEmailProfileBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

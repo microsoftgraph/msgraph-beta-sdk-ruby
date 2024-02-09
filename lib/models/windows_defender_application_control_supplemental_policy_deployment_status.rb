@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # User Principal Name.
             @user_principal_name
             ## 
-            ## Instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
+            ## Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new searchBookmark and sets the default values.
+            ## Instantiates a new SearchBookmark and sets the default values.
             ## @return a void
             ## 
             def initialize()

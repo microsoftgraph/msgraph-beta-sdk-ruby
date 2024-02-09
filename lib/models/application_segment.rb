@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ApplicationSegment < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new applicationSegment and sets the default values.
+            ## Instantiates a new ApplicationSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,45 +10,48 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Count of the aggregation.
+            # The number of the destinationSummary objects, aggregated by Global Secure Access service.
             @count
             ## 
-            # Destination FQDN or IP address.
+            # The IP address or FQDN of the destination.
             @destination
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
+            @traffic_type
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new networkaccessDestinationSummary and sets the default values.
+            ## Instantiates a new NetworkaccessDestinationSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the count property value. Count of the aggregation.
+            ## Gets the count property value. The number of the destinationSummary objects, aggregated by Global Secure Access service.
             ## @return a integer
             ## 
             def count
                 return @count
             end
             ## 
-            ## Sets the count property value. Count of the aggregation.
+            ## Sets the count property value. The number of the destinationSummary objects, aggregated by Global Secure Access service.
             ## @param value Value to set for the count property.
             ## @return a void
             ## 
@@ -65,14 +68,14 @@ module MicrosoftGraphBeta
                 return NetworkaccessDestinationSummary.new
             end
             ## 
-            ## Gets the destination property value. Destination FQDN or IP address.
+            ## Gets the destination property value. The IP address or FQDN of the destination.
             ## @return a string
             ## 
             def destination
                 return @destination
             end
             ## 
-            ## Sets the destination property value. Destination FQDN or IP address.
+            ## Sets the destination property value. The IP address or FQDN of the destination.
             ## @param value Value to set for the destination property.
             ## @return a void
             ## 
@@ -88,6 +91,7 @@ module MicrosoftGraphBeta
                     "count" => lambda {|n| @count = n.get_number_value() },
                     "destination" => lambda {|n| @destination = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "trafficType" => lambda {|n| @traffic_type = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessTrafficType) },
                 }
             end
             ## 
@@ -115,7 +119,23 @@ module MicrosoftGraphBeta
                 writer.write_number_value("count", @count)
                 writer.write_string_value("destination", @destination)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_enum_value("trafficType", @traffic_type)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the trafficType property value. The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
+            ## @return a networkaccess_traffic_type
+            ## 
+            def traffic_type
+                return @traffic_type
+            end
+            ## 
+            ## Sets the trafficType property value. The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.
+            ## @param value Value to set for the trafficType property.
+            ## @return a void
+            ## 
+            def traffic_type=(value)
+                @traffic_type = value
             end
         end
     end

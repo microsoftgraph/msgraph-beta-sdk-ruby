@@ -1,1 +1,1 @@
-require_relative 'get_cloud_pc_connectivity_history_response'
+require_relative 'get_cloud_pc_connectivity_history_get_response'

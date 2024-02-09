@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The total number of apps directly or indirectly superseding the parent app.
             @superseding_app_count
             ## 
-            ## Instantiates a new mobileAppSupersedence and sets the default values.
+            ## Instantiates a new MobileAppSupersedence and sets the default values.
             ## @return a void
             ## 
             def initialize()

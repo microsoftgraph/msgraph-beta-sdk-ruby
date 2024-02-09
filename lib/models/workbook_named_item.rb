@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @comment = value
             end
             ## 
-            ## Instantiates a new workbookNamedItem and sets the default values.
+            ## Instantiates a new WorkbookNamedItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

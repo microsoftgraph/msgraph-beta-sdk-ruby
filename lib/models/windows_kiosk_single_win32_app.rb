@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The win32App property
             @win32_app
             ## 
-            ## Instantiates a new windowsKioskSingleWin32App and sets the default values.
+            ## Instantiates a new WindowsKioskSingleWin32App and sets the default values.
             ## @return a void
             ## 
             def initialize()

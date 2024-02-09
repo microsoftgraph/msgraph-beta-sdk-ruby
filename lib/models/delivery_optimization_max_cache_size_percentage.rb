@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100
             @maximum_cache_size_percentage
             ## 
-            ## Instantiates a new deliveryOptimizationMaxCacheSizePercentage and sets the default values.
+            ## Instantiates a new DeliveryOptimizationMaxCacheSizePercentage and sets the default values.
             ## @return a void
             ## 
             def initialize()

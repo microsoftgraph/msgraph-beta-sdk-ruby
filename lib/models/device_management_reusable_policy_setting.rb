@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
             # version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
             @version
             ## 
-            ## Instantiates a new deviceManagementReusablePolicySetting and sets the default values.
+            ## Instantiates a new DeviceManagementReusablePolicySetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

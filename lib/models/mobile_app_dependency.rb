@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The total number of apps the child app directly or indirectly depends on.
             @depends_on_app_count
             ## 
-            ## Instantiates a new mobileAppDependency and sets the default values.
+            ## Instantiates a new MobileAppDependency and sets the default values.
             ## @return a void
             ## 
             def initialize()

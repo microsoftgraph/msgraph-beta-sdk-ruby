@@ -4,17 +4,14 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class PolicyRoot
-            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
+        class PolicyRoot < MicrosoftGraphBeta::Models::Entity
+            include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The policy that contains directory-level access review settings.
             @access_review_policy
             ## 
-            # The policy that controls the idle time out for web sessions for applications.
+            # The policy that controls the idle time-out for web sessions for applications.
             @activity_based_timeout_policies
-            ## 
-            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            @additional_data
             ## 
             # The policy by which consent requests are created and managed for the entire tenant.
             @admin_consent_request_policy
@@ -22,16 +19,16 @@ module MicrosoftGraphBeta
             # The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
             @app_management_policies
             ## 
-            # The policy configuration of the self-service sign-up experience of external users.
+            # The policy configuration of the self-service sign-up experience of guests.
             @authentication_flows_policy
             ## 
-            # The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             @authentication_methods_policy
             ## 
-            # The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            # The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             @authentication_strength_policies
             ## 
-            # The policy that controls Azure AD authorization settings.
+            # The policy that controls Microsoft Entra authorization settings.
             @authorization_policy
             ## 
             # The Azure AD B2C policies that define how end users register via local accounts.
@@ -43,7 +40,7 @@ module MicrosoftGraphBeta
             # The custom rules that define an access scenario.
             @conditional_access_policies
             ## 
-            # The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            # The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             @cross_tenant_access_policy
             ## 
             # The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -55,7 +52,7 @@ module MicrosoftGraphBeta
             # The directoryRoleAccessReviewPolicy property
             @directory_role_access_review_policy
             ## 
-            # Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            # Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
             @external_identities_policy
             ## 
             # The feature rollout policy associated with a directory object.
@@ -64,20 +61,17 @@ module MicrosoftGraphBeta
             # The federatedTokenValidationPolicy property
             @federated_token_validation_policy
             ## 
-            # The policy to control Azure AD authentication behavior for federated users.
+            # The policy to control Microsoft Entra authentication behavior for federated users.
             @home_realm_discovery_policies
             ## 
             # The policy that represents the security defaults that protect against common attacks.
             @identity_security_defaults_enforcement_policy
             ## 
-            # The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            # The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             @mobile_app_management_policies
             ## 
             # The mobileDeviceManagementPolicies property
             @mobile_device_management_policies
-            ## 
-            # The OdataType property
-            @odata_type
             ## 
             # The policy that specifies the conditions under which consent can be granted.
             @permission_grant_policies
@@ -91,10 +85,10 @@ module MicrosoftGraphBeta
             # The servicePrincipalCreationPolicies property
             @service_principal_creation_policies
             ## 
-            # The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            # The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             @token_issuance_policies
             ## 
-            # The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            # The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             @token_lifetime_policies
             ## 
             ## Gets the accessReviewPolicy property value. The policy that contains directory-level access review settings.
@@ -112,34 +106,19 @@ module MicrosoftGraphBeta
                 @access_review_policy = value
             end
             ## 
-            ## Gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+            ## Gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
             ## @return a activity_based_timeout_policy
             ## 
             def activity_based_timeout_policies
                 return @activity_based_timeout_policies
             end
             ## 
-            ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
+            ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
             ## @param value Value to set for the activityBasedTimeoutPolicies property.
             ## @return a void
             ## 
             def activity_based_timeout_policies=(value)
                 @activity_based_timeout_policies = value
-            end
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @return a i_dictionary
-            ## 
-            def additional_data
-                return @additional_data
-            end
-            ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
-            ## @return a void
-            ## 
-            def additional_data=(value)
-                @additional_data = value
             end
             ## 
             ## Gets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
@@ -172,14 +151,14 @@ module MicrosoftGraphBeta
                 @app_management_policies = value
             end
             ## 
-            ## Gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+            ## Gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
             ## @return a authentication_flows_policy
             ## 
             def authentication_flows_policy
                 return @authentication_flows_policy
             end
             ## 
-            ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
+            ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
             ## @param value Value to set for the authenticationFlowsPolicy property.
             ## @return a void
             ## 
@@ -187,14 +166,14 @@ module MicrosoftGraphBeta
                 @authentication_flows_policy = value
             end
             ## 
-            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             ## @return a authentication_methods_policy
             ## 
             def authentication_methods_policy
                 return @authentication_methods_policy
             end
             ## 
-            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             ## @param value Value to set for the authenticationMethodsPolicy property.
             ## @return a void
             ## 
@@ -202,14 +181,14 @@ module MicrosoftGraphBeta
                 @authentication_methods_policy = value
             end
             ## 
-            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             ## @return a authentication_strength_policy
             ## 
             def authentication_strength_policies
                 return @authentication_strength_policies
             end
             ## 
-            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             ## @param value Value to set for the authenticationStrengthPolicies property.
             ## @return a void
             ## 
@@ -217,14 +196,14 @@ module MicrosoftGraphBeta
                 @authentication_strength_policies = value
             end
             ## 
-            ## Gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+            ## Gets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
             ## @return a authorization_policy
             ## 
             def authorization_policy
                 return @authorization_policy
             end
             ## 
-            ## Sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+            ## Sets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
             ## @param value Value to set for the authorizationPolicy property.
             ## @return a void
             ## 
@@ -277,11 +256,11 @@ module MicrosoftGraphBeta
                 @conditional_access_policies = value
             end
             ## 
-            ## Instantiates a new policyRoot and sets the default values.
+            ## Instantiates a new PolicyRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                @additional_data = Hash.new
+                super
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -293,14 +272,14 @@ module MicrosoftGraphBeta
                 return PolicyRoot.new
             end
             ## 
-            ## Gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            ## Gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             ## @return a cross_tenant_access_policy
             ## 
             def cross_tenant_access_policy
                 return @cross_tenant_access_policy
             end
             ## 
-            ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             ## @param value Value to set for the crossTenantAccessPolicy property.
             ## @return a void
             ## 
@@ -353,14 +332,14 @@ module MicrosoftGraphBeta
                 @directory_role_access_review_policy = value
             end
             ## 
-            ## Gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            ## Gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
             ## @return a external_identities_policy
             ## 
             def external_identities_policy
                 return @external_identities_policy
             end
             ## 
-            ## Sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
+            ## Sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
             ## @param value Value to set for the externalIdentitiesPolicy property.
             ## @return a void
             ## 
@@ -402,7 +381,7 @@ module MicrosoftGraphBeta
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return {
+                return super.merge({
                     "accessReviewPolicy" => lambda {|n| @access_review_policy = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AccessReviewPolicy.create_from_discriminator_value(pn) }) },
                     "activityBasedTimeoutPolicies" => lambda {|n| @activity_based_timeout_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ActivityBasedTimeoutPolicy.create_from_discriminator_value(pn) }) },
                     "adminConsentRequestPolicy" => lambda {|n| @admin_consent_request_policy = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AdminConsentRequestPolicy.create_from_discriminator_value(pn) }) },
@@ -425,24 +404,23 @@ module MicrosoftGraphBeta
                     "identitySecurityDefaultsEnforcementPolicy" => lambda {|n| @identity_security_defaults_enforcement_policy = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySecurityDefaultsEnforcementPolicy.create_from_discriminator_value(pn) }) },
                     "mobileAppManagementPolicies" => lambda {|n| @mobile_app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobilityManagementPolicy.create_from_discriminator_value(pn) }) },
                     "mobileDeviceManagementPolicies" => lambda {|n| @mobile_device_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobilityManagementPolicy.create_from_discriminator_value(pn) }) },
-                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "permissionGrantPolicies" => lambda {|n| @permission_grant_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PermissionGrantPolicy.create_from_discriminator_value(pn) }) },
                     "roleManagementPolicies" => lambda {|n| @role_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleManagementPolicy.create_from_discriminator_value(pn) }) },
                     "roleManagementPolicyAssignments" => lambda {|n| @role_management_policy_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UnifiedRoleManagementPolicyAssignment.create_from_discriminator_value(pn) }) },
                     "servicePrincipalCreationPolicies" => lambda {|n| @service_principal_creation_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ServicePrincipalCreationPolicy.create_from_discriminator_value(pn) }) },
                     "tokenIssuancePolicies" => lambda {|n| @token_issuance_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TokenIssuancePolicy.create_from_discriminator_value(pn) }) },
                     "tokenLifetimePolicies" => lambda {|n| @token_lifetime_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TokenLifetimePolicy.create_from_discriminator_value(pn) }) },
-                }
+                })
             end
             ## 
-            ## Gets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+            ## Gets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
             ## @return a home_realm_discovery_policy
             ## 
             def home_realm_discovery_policies
                 return @home_realm_discovery_policies
             end
             ## 
-            ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+            ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
             ## @param value Value to set for the homeRealmDiscoveryPolicies property.
             ## @return a void
             ## 
@@ -465,14 +443,14 @@ module MicrosoftGraphBeta
                 @identity_security_defaults_enforcement_policy = value
             end
             ## 
-            ## Gets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            ## Gets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             ## @return a mobility_management_policy
             ## 
             def mobile_app_management_policies
                 return @mobile_app_management_policies
             end
             ## 
-            ## Sets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
+            ## Sets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
             ## @param value Value to set for the mobileAppManagementPolicies property.
             ## @return a void
             ## 
@@ -493,21 +471,6 @@ module MicrosoftGraphBeta
             ## 
             def mobile_device_management_policies=(value)
                 @mobile_device_management_policies = value
-            end
-            ## 
-            ## Gets the @odata.type property value. The OdataType property
-            ## @return a string
-            ## 
-            def odata_type
-                return @odata_type
-            end
-            ## 
-            ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the @odata.type property.
-            ## @return a void
-            ## 
-            def odata_type=(value)
-                @odata_type = value
             end
             ## 
             ## Gets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
@@ -561,6 +524,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                super
                 writer.write_object_value("accessReviewPolicy", @access_review_policy)
                 writer.write_collection_of_object_values("activityBasedTimeoutPolicies", @activity_based_timeout_policies)
                 writer.write_object_value("adminConsentRequestPolicy", @admin_consent_request_policy)
@@ -583,14 +547,12 @@ module MicrosoftGraphBeta
                 writer.write_object_value("identitySecurityDefaultsEnforcementPolicy", @identity_security_defaults_enforcement_policy)
                 writer.write_collection_of_object_values("mobileAppManagementPolicies", @mobile_app_management_policies)
                 writer.write_collection_of_object_values("mobileDeviceManagementPolicies", @mobile_device_management_policies)
-                writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("permissionGrantPolicies", @permission_grant_policies)
                 writer.write_collection_of_object_values("roleManagementPolicies", @role_management_policies)
                 writer.write_collection_of_object_values("roleManagementPolicyAssignments", @role_management_policy_assignments)
                 writer.write_collection_of_object_values("servicePrincipalCreationPolicies", @service_principal_creation_policies)
                 writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
                 writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies)
-                writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the servicePrincipalCreationPolicies property value. The servicePrincipalCreationPolicies property
@@ -608,14 +570,14 @@ module MicrosoftGraphBeta
                 @service_principal_creation_policies = value
             end
             ## 
-            ## Gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            ## Gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             ## @return a token_issuance_policy
             ## 
             def token_issuance_policies
                 return @token_issuance_policies
             end
             ## 
-            ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             ## @param value Value to set for the tokenIssuancePolicies property.
             ## @return a void
             ## 
@@ -623,14 +585,14 @@ module MicrosoftGraphBeta
                 @token_issuance_policies = value
             end
             ## 
-            ## Gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            ## Gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             ## @return a token_lifetime_policy
             ## 
             def token_lifetime_policies
                 return @token_lifetime_policies
             end
             ## 
-            ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             ## @param value Value to set for the tokenLifetimePolicies property.
             ## @return a void
             ## 
