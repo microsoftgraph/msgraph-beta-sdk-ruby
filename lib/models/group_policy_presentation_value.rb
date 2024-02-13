@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The group policy presentation associated with the presentation value.
             @presentation
             ## 
-            ## Instantiates a new groupPolicyPresentationValue and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

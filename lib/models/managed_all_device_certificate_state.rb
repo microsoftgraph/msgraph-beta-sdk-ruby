@@ -194,7 +194,7 @@ module MicrosoftGraphBeta
                 @certificate_thumbprint = value
             end
             ## 
-            ## Instantiates a new managedAllDeviceCertificateState and sets the default values.
+            ## Instantiates a new ManagedAllDeviceCertificateState and sets the default values.
             ## @return a void
             ## 
             def initialize()

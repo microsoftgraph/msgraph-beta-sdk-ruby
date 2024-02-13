@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new securityHostSslCertificateCollectionResponse and sets the default values.
+            ## Instantiates a new SecurityHostSslCertificateCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

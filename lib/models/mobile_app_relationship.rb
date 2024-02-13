@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
             # Indicates whether the target of a relationship is the parent or the child in the relationship.
             @target_type
             ## 
-            ## Instantiates a new mobileAppRelationship and sets the default values.
+            ## Instantiates a new MobileAppRelationship and sets the default values.
             ## @return a void
             ## 
             def initialize()

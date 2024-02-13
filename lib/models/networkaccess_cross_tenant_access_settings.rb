@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The networkPacketTaggingStatus property
             @network_packet_tagging_status
             ## 
-            ## Instantiates a new networkaccessCrossTenantAccessSettings and sets the default values.
+            ## Instantiates a new NetworkaccessCrossTenantAccessSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

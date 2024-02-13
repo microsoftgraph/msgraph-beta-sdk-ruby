@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.
             @user_identity_type
             ## 
-            ## Instantiates a new teamworkUserIdentity and sets the default values.
+            ## Instantiates a new TeamworkUserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

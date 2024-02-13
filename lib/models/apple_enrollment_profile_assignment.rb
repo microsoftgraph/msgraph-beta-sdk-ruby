@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The assignment target for the Apple user initiated deployment profile.
             @target
             ## 
-            ## Instantiates a new appleEnrollmentProfileAssignment and sets the default values.
+            ## Instantiates a new AppleEnrollmentProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name of the UI element of the footer to be removed.
             @ui_element_names
             ## 
-            ## Instantiates a new removeContentFooterAction and sets the default values.
+            ## Instantiates a new RemoveContentFooterAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

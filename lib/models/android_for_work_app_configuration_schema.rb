@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Collection of items each representing a named configuration option in the schema
             @schema_items
             ## 
-            ## Instantiates a new androidForWorkAppConfigurationSchema and sets the default values.
+            ## Instantiates a new AndroidForWorkAppConfigurationSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

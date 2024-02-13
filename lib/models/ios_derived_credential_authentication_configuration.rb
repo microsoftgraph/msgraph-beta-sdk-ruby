@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Tenant level settings for the Derived Credentials to be used for authentication.
             @derived_credential_settings
             ## 
-            ## Instantiates a new iosDerivedCredentialAuthenticationConfiguration and sets the default values.
+            ## Instantiates a new IosDerivedCredentialAuthenticationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

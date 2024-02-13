@@ -5,15 +5,21 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../device_management'
 require_relative '../virtual_endpoint'
 require_relative './export_jobs/export_jobs_request_builder'
+require_relative './get_action_status_reports/get_action_status_reports_request_builder'
+require_relative './get_cloud_pc_performance_report/get_cloud_pc_performance_report_request_builder'
+require_relative './get_cloud_pc_recommendation_reports/get_cloud_pc_recommendation_reports_request_builder'
 require_relative './get_connection_quality_reports/get_connection_quality_reports_request_builder'
 require_relative './get_daily_aggregated_remote_connection_reports/get_daily_aggregated_remote_connection_reports_request_builder'
+require_relative './get_frontline_report/get_frontline_report_request_builder'
 require_relative './get_inaccessible_cloud_pc_reports/get_inaccessible_cloud_pc_reports_request_builder'
+require_relative './get_raw_remote_connection_reports/get_raw_remote_connection_reports_request_builder'
 require_relative './get_real_time_remote_connection_latency_with_cloud_pc_id/get_real_time_remote_connection_latency_with_cloud_pc_id_request_builder'
 require_relative './get_real_time_remote_connection_status_with_cloud_pc_id/get_real_time_remote_connection_status_with_cloud_pc_id_request_builder'
 require_relative './get_remote_connection_historical_reports/get_remote_connection_historical_reports_request_builder'
 require_relative './get_shared_use_license_usage_report/get_shared_use_license_usage_report_request_builder'
 require_relative './get_total_aggregated_remote_connection_reports/get_total_aggregated_remote_connection_reports_request_builder'
 require_relative './reports'
+require_relative './retrieve_cross_region_disaster_recovery_report/retrieve_cross_region_disaster_recovery_report_request_builder'
 
 module MicrosoftGraphBeta
     module DeviceManagement
@@ -29,6 +35,21 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::ExportJobs::ExportJobsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getActionStatusReports method.
+                    def get_action_status_reports()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetActionStatusReports::GetActionStatusReportsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getCloudPcPerformanceReport method.
+                    def get_cloud_pc_performance_report()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetCloudPcPerformanceReport::GetCloudPcPerformanceReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getCloudPcRecommendationReports method.
+                    def get_cloud_pc_recommendation_reports()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetCloudPcRecommendationReports::GetCloudPcRecommendationReportsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the getConnectionQualityReports method.
                     def get_connection_quality_reports()
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetConnectionQualityReports::GetConnectionQualityReportsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -39,9 +60,19 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetDailyAggregatedRemoteConnectionReports::GetDailyAggregatedRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getFrontlineReport method.
+                    def get_frontline_report()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetFrontlineReport::GetFrontlineReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the getInaccessibleCloudPcReports method.
                     def get_inaccessible_cloud_pc_reports()
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetInaccessibleCloudPcReports::GetInaccessibleCloudPcReportsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getRawRemoteConnectionReports method.
+                    def get_raw_remote_connection_reports()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetRawRemoteConnectionReports::GetRawRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getRemoteConnectionHistoricalReports method.
@@ -59,13 +90,18 @@ module MicrosoftGraphBeta
                         return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::GetTotalAggregatedRemoteConnectionReports::GetTotalAggregatedRemoteConnectionReportsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
+                    def retrieve_cross_region_disaster_recovery_report()
+                        return MicrosoftGraphBeta::DeviceManagement::VirtualEndpoint::Reports::RetrieveCrossRegionDisasterRecoveryReport::RetrieveCrossRegionDisasterRecoveryReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new ReportsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24select,%24expand}")
+                        super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}")
                     end
                     ## 
                     ## Delete navigation property reports for deviceManagement
@@ -77,8 +113,7 @@ module MicrosoftGraphBeta
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
@@ -91,8 +126,7 @@ module MicrosoftGraphBeta
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CloudPcReports.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -125,8 +159,7 @@ module MicrosoftGraphBeta
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CloudPcReports.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -136,13 +169,14 @@ module MicrosoftGraphBeta
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = '{+baseurl}/deviceManagement/virtualEndpoint/reports'
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -152,15 +186,15 @@ module MicrosoftGraphBeta
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -172,16 +206,25 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = '{+baseurl}/deviceManagement/virtualEndpoint/reports'
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a reports_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ReportsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

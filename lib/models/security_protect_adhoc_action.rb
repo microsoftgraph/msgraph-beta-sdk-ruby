@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityProtectAdhocAction < MicrosoftGraphBeta::Models::SecurityInformationProtectionAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityProtectAdhocAction and sets the default values.
+            ## Instantiates a new SecurityProtectAdhocAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

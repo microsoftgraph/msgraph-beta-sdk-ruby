@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Localized strings listed in the drop-down list of the combo box. The default value is empty.
             @suggestions
             ## 
-            ## Instantiates a new groupPolicyPresentationComboBox and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationComboBox and sets the default values.
             ## @return a void
             ## 
             def initialize()

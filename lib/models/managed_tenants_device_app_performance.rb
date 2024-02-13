@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                 @app_version = value
             end
             ## 
-            ## Instantiates a new managedTenantsDeviceAppPerformance and sets the default values.
+            ## Instantiates a new ManagedTenantsDeviceAppPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

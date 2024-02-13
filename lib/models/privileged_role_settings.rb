@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @approver_ids = value
             end
             ## 
-            ## Instantiates a new privilegedRoleSettings and sets the default values.
+            ## Instantiates a new PrivilegedRoleSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

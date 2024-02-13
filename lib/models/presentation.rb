@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @comments = value
             end
             ## 
-            ## Instantiates a new presentation and sets the default values.
+            ## Instantiates a new Presentation and sets the default values.
             ## @return a void
             ## 
             def initialize()

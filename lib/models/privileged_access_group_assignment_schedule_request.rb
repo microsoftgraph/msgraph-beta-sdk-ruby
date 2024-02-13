@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @activated_using = value
             end
             ## 
-            ## Instantiates a new privilegedAccessGroupAssignmentScheduleRequest and sets the default values.
+            ## Instantiates a new PrivilegedAccessGroupAssignmentScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

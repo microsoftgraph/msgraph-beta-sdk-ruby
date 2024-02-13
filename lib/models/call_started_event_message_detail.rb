@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @call_id = value
             end
             ## 
-            ## Instantiates a new callStartedEventMessageDetail and sets the default values.
+            ## Instantiates a new CallStartedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

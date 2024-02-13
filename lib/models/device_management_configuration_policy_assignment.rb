@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The assignment target for the DeviceManagementConfigurationPolicy.
             @target
             ## 
-            ## Instantiates a new deviceManagementConfigurationPolicyAssignment and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationPolicyAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

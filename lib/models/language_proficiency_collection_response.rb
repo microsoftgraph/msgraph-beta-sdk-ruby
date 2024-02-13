@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new languageProficiencyCollectionResponse and sets the default values.
+            ## Instantiates a new LanguageProficiencyCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

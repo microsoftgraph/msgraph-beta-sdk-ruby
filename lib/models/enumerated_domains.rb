@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The domainNames property
             @domain_names
             ## 
-            ## Instantiates a new enumeratedDomains and sets the default values.
+            ## Instantiates a new EnumeratedDomains and sets the default values.
             ## @return a void
             ## 
             def initialize()

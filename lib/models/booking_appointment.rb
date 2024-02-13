@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -14,6 +15,12 @@ module MicrosoftGraphBeta
             ## 
             # The URL of the meeting to join anonymously.
             @anonymous_join_web_url
+            ## 
+            # Custom label that can be stamped on this appointment by the user.
+            @appointment_label
+            ## 
+            # The date, time and timezone when the appointment was created.
+            @created_date_time
             ## 
             # The SMTP address of the bookingCustomer who is booking the appointment.
             @customer_email_address
@@ -68,6 +75,9 @@ module MicrosoftGraphBeta
             ## 
             # The URL of the online meeting for the appointment.
             @join_web_url
+            ## 
+            # The date, time and timezone when the booking business was last updated.
+            @last_updated_date_time
             ## 
             # The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
@@ -147,11 +157,41 @@ module MicrosoftGraphBeta
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new bookingAppointment and sets the default values.
+            ## Gets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
+            ## @return a string
+            ## 
+            def appointment_label
+                return @appointment_label
+            end
+            ## 
+            ## Sets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
+            ## @param value Value to set for the appointmentLabel property.
+            ## @return a void
+            ## 
+            def appointment_label=(value)
+                @appointment_label = value
+            end
+            ## 
+            ## Instantiates a new BookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time and timezone when the appointment was created.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time and timezone when the appointment was created.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -335,6 +375,8 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                     "anonymousJoinWebUrl" => lambda {|n| @anonymous_join_web_url = n.get_string_value() },
+                    "appointmentLabel" => lambda {|n| @appointment_label = n.get_string_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customerEmailAddress" => lambda {|n| @customer_email_address = n.get_string_value() },
                     "customerId" => lambda {|n| @customer_id = n.get_string_value() },
                     "customerLocation" => lambda {|n| @customer_location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Location.create_from_discriminator_value(pn) }) },
@@ -353,6 +395,7 @@ module MicrosoftGraphBeta
                     "invoiceUrl" => lambda {|n| @invoice_url = n.get_string_value() },
                     "isLocationOnline" => lambda {|n| @is_location_online = n.get_boolean_value() },
                     "joinWebUrl" => lambda {|n| @join_web_url = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "maximumAttendeesCount" => lambda {|n| @maximum_attendees_count = n.get_number_value() },
                     "onlineMeetingUrl" => lambda {|n| @online_meeting_url = n.get_string_value() },
                     "optOutOfCustomerEmail" => lambda {|n| @opt_out_of_customer_email = n.get_boolean_value() },
@@ -475,6 +518,21 @@ module MicrosoftGraphBeta
             ## 
             def join_web_url=(value)
                 @join_web_url = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
@@ -621,6 +679,8 @@ module MicrosoftGraphBeta
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
                 writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
+                writer.write_string_value("appointmentLabel", @appointment_label)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("customerEmailAddress", @customer_email_address)
                 writer.write_string_value("customerId", @customer_id)
                 writer.write_object_value("customerLocation", @customer_location)
@@ -637,6 +697,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("invoiceUrl", @invoice_url)
                 writer.write_boolean_value("isLocationOnline", @is_location_online)
                 writer.write_string_value("joinWebUrl", @join_web_url)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
                 writer.write_string_value("onlineMeetingUrl", @online_meeting_url)
                 writer.write_boolean_value("optOutOfCustomerEmail", @opt_out_of_customer_email)

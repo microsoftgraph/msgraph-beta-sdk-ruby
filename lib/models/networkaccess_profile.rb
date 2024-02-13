@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # Profile version.
             @version
             ## 
-            ## Instantiates a new networkaccessProfile and sets the default values.
+            ## Instantiates a new NetworkaccessProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -43,6 +43,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.networkaccess.filteringProfile"
+                            return NetworkaccessFilteringProfile.new
                         when "#microsoft.graph.networkaccess.forwardingProfile"
                             return NetworkaccessForwardingProfile.new
                     end

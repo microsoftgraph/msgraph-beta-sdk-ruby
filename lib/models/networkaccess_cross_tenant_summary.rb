@@ -10,47 +10,50 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.
+            # The total number of authentication sessions between startDateTime and endDateTime.
             @auth_transaction_count
             ## 
-            # Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            # The number of unique devices that performed cross-tenant access.
             @device_count
             ## 
-            # Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven't been accessed in the time frame between discoveryPivotDateTime to startDateTime.
+            # The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren't accessed between discoveryPivotDateTime and startDateTime.
             @new_tenant_count
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
+            # The rarelyUsedTenantCount property
+            @rarely_used_tenant_count
+            ## 
+            # The number of unique tenants that were accessed, not including the device's tenant.
             @tenant_count
             ## 
-            # Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            # The number of unique users that performed cross-tenant access.
             @user_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the authTransactionCount property value. Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.
+            ## Gets the authTransactionCount property value. The total number of authentication sessions between startDateTime and endDateTime.
             ## @return a integer
             ## 
             def auth_transaction_count
                 return @auth_transaction_count
             end
             ## 
-            ## Sets the authTransactionCount property value. Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.
+            ## Sets the authTransactionCount property value. The total number of authentication sessions between startDateTime and endDateTime.
             ## @param value Value to set for the authTransactionCount property.
             ## @return a void
             ## 
@@ -58,7 +61,7 @@ module MicrosoftGraphBeta
                 @auth_transaction_count = value
             end
             ## 
-            ## Instantiates a new networkaccessCrossTenantSummary and sets the default values.
+            ## Instantiates a new NetworkaccessCrossTenantSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,14 +77,14 @@ module MicrosoftGraphBeta
                 return NetworkaccessCrossTenantSummary.new
             end
             ## 
-            ## Gets the deviceCount property value. Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            ## Gets the deviceCount property value. The number of unique devices that performed cross-tenant access.
             ## @return a integer
             ## 
             def device_count
                 return @device_count
             end
             ## 
-            ## Sets the deviceCount property value. Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            ## Sets the deviceCount property value. The number of unique devices that performed cross-tenant access.
             ## @param value Value to set for the deviceCount property.
             ## @return a void
             ## 
@@ -98,19 +101,20 @@ module MicrosoftGraphBeta
                     "deviceCount" => lambda {|n| @device_count = n.get_number_value() },
                     "newTenantCount" => lambda {|n| @new_tenant_count = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "rarelyUsedTenantCount" => lambda {|n| @rarely_used_tenant_count = n.get_number_value() },
                     "tenantCount" => lambda {|n| @tenant_count = n.get_number_value() },
                     "userCount" => lambda {|n| @user_count = n.get_number_value() },
                 }
             end
             ## 
-            ## Gets the newTenantCount property value. Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven't been accessed in the time frame between discoveryPivotDateTime to startDateTime.
+            ## Gets the newTenantCount property value. The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren't accessed between discoveryPivotDateTime and startDateTime.
             ## @return a integer
             ## 
             def new_tenant_count
                 return @new_tenant_count
             end
             ## 
-            ## Sets the newTenantCount property value. Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven't been accessed in the time frame between discoveryPivotDateTime to startDateTime.
+            ## Sets the newTenantCount property value. The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren't accessed between discoveryPivotDateTime and startDateTime.
             ## @param value Value to set for the newTenantCount property.
             ## @return a void
             ## 
@@ -133,6 +137,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+            ## @return a integer
+            ## 
+            def rarely_used_tenant_count
+                return @rarely_used_tenant_count
+            end
+            ## 
+            ## Sets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+            ## @param value Value to set for the rarelyUsedTenantCount property.
+            ## @return a void
+            ## 
+            def rarely_used_tenant_count=(value)
+                @rarely_used_tenant_count = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -143,19 +162,20 @@ module MicrosoftGraphBeta
                 writer.write_number_value("deviceCount", @device_count)
                 writer.write_number_value("newTenantCount", @new_tenant_count)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_number_value("rarelyUsedTenantCount", @rarely_used_tenant_count)
                 writer.write_number_value("tenantCount", @tenant_count)
                 writer.write_number_value("userCount", @user_count)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantCount property value. Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
+            ## Gets the tenantCount property value. The number of unique tenants that were accessed, not including the device's tenant.
             ## @return a integer
             ## 
             def tenant_count
                 return @tenant_count
             end
             ## 
-            ## Sets the tenantCount property value. Count of unique tenants that were accessed, that are different from the device's home tenant, in the time frame between startDateTime and endDateTime.
+            ## Sets the tenantCount property value. The number of unique tenants that were accessed, not including the device's tenant.
             ## @param value Value to set for the tenantCount property.
             ## @return a void
             ## 
@@ -163,14 +183,14 @@ module MicrosoftGraphBeta
                 @tenant_count = value
             end
             ## 
-            ## Gets the userCount property value. Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            ## Gets the userCount property value. The number of unique users that performed cross-tenant access.
             ## @return a integer
             ## 
             def user_count
                 return @user_count
             end
             ## 
-            ## Sets the userCount property value. Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.
+            ## Sets the userCount property value. The number of unique users that performed cross-tenant access.
             ## @param value Value to set for the userCount property.
             ## @return a void
             ## 

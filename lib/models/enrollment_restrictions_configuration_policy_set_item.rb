@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
             @priority
             ## 
-            ## Instantiates a new enrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
+            ## Instantiates a new EnrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

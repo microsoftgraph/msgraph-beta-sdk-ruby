@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
             @direct_reports
             ## 
-            # Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            # Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             @display_name
             ## 
             # First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
                 @company_name = value
             end
             ## 
-            ## Instantiates a new orgContact and sets the default values.
+            ## Instantiates a new OrgContact and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -145,14 +145,14 @@ module MicrosoftGraphBeta
                 @direct_reports = value
             end
             ## 
-            ## Gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            ## Gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            ## Sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
