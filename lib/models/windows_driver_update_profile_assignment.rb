@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Base type for assignment targets.
             @target
             ## 
-            ## Instantiates a new windowsDriverUpdateProfileAssignment and sets the default values.
+            ## Instantiates a new WindowsDriverUpdateProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

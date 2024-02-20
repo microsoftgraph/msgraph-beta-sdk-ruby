@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name of the UI element of the header to be removed.
             @ui_element_names
             ## 
-            ## Instantiates a new removeContentHeaderAction and sets the default values.
+            ## Instantiates a new RemoveContentHeaderAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

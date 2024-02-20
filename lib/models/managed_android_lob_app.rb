@@ -9,12 +9,6 @@ module MicrosoftGraphBeta
         class ManagedAndroidLobApp < MicrosoftGraphBeta::Models::ManagedMobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Identity Name. This property is being deprecated in 2302(February 2023).
-            @identity_name
-            ## 
-            # The identity version. This property is being deprecated in 2302(February 2023).
-            @identity_version
-            ## 
             # The value for the minimum applicable operating system.
             @minimum_supported_operating_system
             ## 
@@ -30,7 +24,7 @@ module MicrosoftGraphBeta
             # The version name of managed Android Line of Business (LoB) app.
             @version_name
             ## 
-            ## Instantiates a new managedAndroidLobApp and sets the default values.
+            ## Instantiates a new ManagedAndroidLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,44 +46,12 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "identityName" => lambda {|n| @identity_name = n.get_string_value() },
-                    "identityVersion" => lambda {|n| @identity_version = n.get_string_value() },
                     "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
                     "packageId" => lambda {|n| @package_id = n.get_string_value() },
-                    "targetedPlatforms" => lambda {|n| @targeted_platforms = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidTargetedPlatforms) },
+                    "targetedPlatforms" => lambda {|n| @targeted_platforms = n.get_enum_values(MicrosoftGraphBeta::Models::AndroidTargetedPlatforms) },
                     "versionCode" => lambda {|n| @version_code = n.get_string_value() },
                     "versionName" => lambda {|n| @version_name = n.get_string_value() },
                 })
-            end
-            ## 
-            ## Gets the identityName property value. The Identity Name. This property is being deprecated in 2302(February 2023).
-            ## @return a string
-            ## 
-            def identity_name
-                return @identity_name
-            end
-            ## 
-            ## Sets the identityName property value. The Identity Name. This property is being deprecated in 2302(February 2023).
-            ## @param value Value to set for the identityName property.
-            ## @return a void
-            ## 
-            def identity_name=(value)
-                @identity_name = value
-            end
-            ## 
-            ## Gets the identityVersion property value. The identity version. This property is being deprecated in 2302(February 2023).
-            ## @return a string
-            ## 
-            def identity_version
-                return @identity_version
-            end
-            ## 
-            ## Sets the identityVersion property value. The identity version. This property is being deprecated in 2302(February 2023).
-            ## @param value Value to set for the identityVersion property.
-            ## @return a void
-            ## 
-            def identity_version=(value)
-                @identity_version = value
             end
             ## 
             ## Gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
@@ -129,8 +91,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("identityName", @identity_name)
-                writer.write_string_value("identityVersion", @identity_version)
                 writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
                 writer.write_string_value("packageId", @package_id)
                 writer.write_enum_value("targetedPlatforms", @targeted_platforms)

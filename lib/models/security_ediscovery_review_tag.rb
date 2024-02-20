@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @child_tags = value
             end
             ## 
-            ## Instantiates a new securityEdiscoveryReviewTag and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryReviewTag and sets the default values.
             ## @return a void
             ## 
             def initialize()

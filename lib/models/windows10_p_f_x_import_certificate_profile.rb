@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Key Storage Provider (KSP) Import Options.
             @key_storage_provider
             ## 
-            ## Instantiates a new windows10PFXImportCertificateProfile and sets the default values.
+            ## Instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

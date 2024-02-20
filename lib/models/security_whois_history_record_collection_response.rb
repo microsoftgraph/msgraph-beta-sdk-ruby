@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new securityWhoisHistoryRecordCollectionResponse and sets the default values.
+            ## Instantiates a new SecurityWhoisHistoryRecordCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

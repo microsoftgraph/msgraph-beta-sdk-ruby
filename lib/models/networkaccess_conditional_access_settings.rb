@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The signalingStatus property
             @signaling_status
             ## 
-            ## Instantiates a new networkaccessConditionalAccessSettings and sets the default values.
+            ## Instantiates a new NetworkaccessConditionalAccessSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

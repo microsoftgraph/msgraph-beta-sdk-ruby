@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @catalog = value
             end
             ## 
-            ## Instantiates a new adminWindowsUpdates and sets the default values.
+            ## Instantiates a new AdminWindowsUpdates and sets the default values.
             ## @return a void
             ## 
             def initialize()

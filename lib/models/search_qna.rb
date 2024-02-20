@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class SearchQna < MicrosoftGraphBeta::Models::SearchSearchAnswer
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            # Timestamp of when the qna stops to appear as a search result. Set as null for always available.
             @availability_end_date_time
             ## 
-            # Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            # Timestamp of when the qna starts to appear as a search result. Set as null for always available.
             @availability_start_date_time
             ## 
             # List of security groups able to view this qna.
             @group_ids
             ## 
-            # True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            # True if a user or Microsoft suggested this qna to the admin. Read-only.
             @is_suggested
             ## 
             # Keywords that trigger this qna to appear in search results.
@@ -32,17 +32,17 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            # Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            # Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             @targeted_variations
             ## 
-            ## Gets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            ## Gets the availabilityEndDateTime property value. Timestamp of when the qna stops to appear as a search result. Set as null for always available.
             ## @return a date_time
             ## 
             def availability_end_date_time
                 return @availability_end_date_time
             end
             ## 
-            ## Sets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            ## Sets the availabilityEndDateTime property value. Timestamp of when the qna stops to appear as a search result. Set as null for always available.
             ## @param value Value to set for the availabilityEndDateTime property.
             ## @return a void
             ## 
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @availability_end_date_time = value
             end
             ## 
-            ## Gets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            ## Gets the availabilityStartDateTime property value. Timestamp of when the qna starts to appear as a search result. Set as null for always available.
             ## @return a date_time
             ## 
             def availability_start_date_time
                 return @availability_start_date_time
             end
             ## 
-            ## Sets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            ## Sets the availabilityStartDateTime property value. Timestamp of when the qna starts to appear as a search result. Set as null for always available.
             ## @param value Value to set for the availabilityStartDateTime property.
             ## @return a void
             ## 
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @availability_start_date_time = value
             end
             ## 
-            ## Instantiates a new searchQna and sets the default values.
+            ## Instantiates a new SearchQna and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 @group_ids = value
             end
             ## 
-            ## Gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Gets the isSuggested property value. True if a user or Microsoft suggested this qna to the admin. Read-only.
             ## @return a boolean
             ## 
             def is_suggested
                 return @is_suggested
             end
             ## 
-            ## Sets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Sets the isSuggested property value. True if a user or Microsoft suggested this qna to the admin. Read-only.
             ## @param value Value to set for the isSuggested property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @return a search_answer_variant
             ## 
             def targeted_variations
                 return @targeted_variations
             end
             ## 
-            ## Sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @param value Value to set for the targetedVariations property.
             ## @return a void
             ## 

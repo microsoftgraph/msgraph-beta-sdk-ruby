@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new androidWorkProfileEnterpriseWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileEnterpriseWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @business_flow_template_id = value
             end
             ## 
-            ## Instantiates a new accessReview and sets the default values.
+            ## Instantiates a new AccessReview and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @applicable_platform = value
             end
             ## 
-            ## Instantiates a new securityConfigurationTask and sets the default values.
+            ## Instantiates a new SecurityConfigurationTask and sets the default values.
             ## @return a void
             ## 
             def initialize()

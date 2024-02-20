@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Identifier for deployment to a group or app
             @target
             ## 
-            ## Instantiates a new targetedManagedAppPolicyAssignment and sets the default values.
+            ## Instantiates a new TargetedManagedAppPolicyAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

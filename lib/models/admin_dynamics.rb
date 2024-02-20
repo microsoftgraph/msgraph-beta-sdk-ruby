@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The customerVoice property
             @customer_voice
             ## 
-            ## Instantiates a new adminDynamics and sets the default values.
+            ## Instantiates a new AdminDynamics and sets the default values.
             ## @return a void
             ## 
             def initialize()

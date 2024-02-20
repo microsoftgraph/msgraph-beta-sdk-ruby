@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The event property
             @event
             ## 
-            ## Instantiates a new printTaskTrigger and sets the default values.
+            ## Instantiates a new PrintTaskTrigger and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new iosStoreApp and sets the default values.
+            ## Instantiates a new IosStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

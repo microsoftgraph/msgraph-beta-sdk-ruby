@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @citation_url = value
             end
             ## 
-            ## Instantiates a new securityCitation and sets the default values.
+            ## Instantiates a new SecurityCitation and sets the default values.
             ## @return a void
             ## 
             def initialize()

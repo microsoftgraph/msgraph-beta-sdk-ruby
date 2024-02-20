@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new securityAction and sets the default values.
+            ## Instantiates a new SecurityAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new messageCollectionResponse and sets the default values.
+            ## Instantiates a new MessageCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

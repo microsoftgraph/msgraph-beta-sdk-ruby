@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # The VPN Configuration Id to apply for this app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new iosLobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new IosLobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

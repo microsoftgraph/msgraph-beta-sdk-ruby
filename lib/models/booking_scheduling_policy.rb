@@ -15,6 +15,9 @@ module MicrosoftGraphBeta
             # True if to allow customers to choose a specific person for the booking.
             @allow_staff_selection
             ## 
+            # Indicates if the meeting invite is sent to the customers. The default value is false
+            @is_meeting_invite_to_customers_enabled
+            ## 
             # Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
             @maximum_advance
             ## 
@@ -30,15 +33,15 @@ module MicrosoftGraphBeta
             # Duration of each time slot, denoted in ISO 8601 format.
             @time_slot_interval
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -60,7 +63,7 @@ module MicrosoftGraphBeta
                 @allow_staff_selection = value
             end
             ## 
-            ## Instantiates a new bookingSchedulingPolicy and sets the default values.
+            ## Instantiates a new BookingSchedulingPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -82,12 +85,28 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "allowStaffSelection" => lambda {|n| @allow_staff_selection = n.get_boolean_value() },
+                    "isMeetingInviteToCustomersEnabled" => lambda {|n| @is_meeting_invite_to_customers_enabled = n.get_boolean_value() },
                     "maximumAdvance" => lambda {|n| @maximum_advance = n.get_duration_value() },
                     "minimumLeadTime" => lambda {|n| @minimum_lead_time = n.get_duration_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "sendConfirmationsToOwner" => lambda {|n| @send_confirmations_to_owner = n.get_boolean_value() },
                     "timeSlotInterval" => lambda {|n| @time_slot_interval = n.get_duration_value() },
                 }
+            end
+            ## 
+            ## Gets the isMeetingInviteToCustomersEnabled property value. Indicates if the meeting invite is sent to the customers. The default value is false
+            ## @return a boolean
+            ## 
+            def is_meeting_invite_to_customers_enabled
+                return @is_meeting_invite_to_customers_enabled
+            end
+            ## 
+            ## Sets the isMeetingInviteToCustomersEnabled property value. Indicates if the meeting invite is sent to the customers. The default value is false
+            ## @param value Value to set for the isMeetingInviteToCustomersEnabled property.
+            ## @return a void
+            ## 
+            def is_meeting_invite_to_customers_enabled=(value)
+                @is_meeting_invite_to_customers_enabled = value
             end
             ## 
             ## Gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
@@ -157,6 +176,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("allowStaffSelection", @allow_staff_selection)
+                writer.write_boolean_value("isMeetingInviteToCustomersEnabled", @is_meeting_invite_to_customers_enabled)
                 writer.write_duration_value("maximumAdvance", @maximum_advance)
                 writer.write_duration_value("minimumLeadTime", @minimum_lead_time)
                 writer.write_string_value("@odata.type", @odata_type)

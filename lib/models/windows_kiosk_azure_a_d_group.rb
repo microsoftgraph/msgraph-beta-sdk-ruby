@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The ID of the AzureAD group that will be locked to this kiosk configuration
             @group_id
             ## 
-            ## Instantiates a new windowsKioskAzureADGroup and sets the default values.
+            ## Instantiates a new WindowsKioskAzureADGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

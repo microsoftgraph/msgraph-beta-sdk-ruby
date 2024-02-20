@@ -1,1 +1,0 @@
-require_relative 'create_enrollment_notification_configuration_post_request_body'

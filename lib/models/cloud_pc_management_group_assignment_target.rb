@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The unique identifier for the service plan that indicates which size of the Cloud PC to provision for the user. Use a null value, when the provisioningType is dedicated.
             @service_plan_id
             ## 
-            ## Instantiates a new cloudPcManagementGroupAssignmentTarget and sets the default values.
+            ## Instantiates a new CloudPcManagementGroupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

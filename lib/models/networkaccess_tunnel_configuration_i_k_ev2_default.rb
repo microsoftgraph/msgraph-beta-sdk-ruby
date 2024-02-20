@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NetworkaccessTunnelConfigurationIKEv2Default < MicrosoftGraphBeta::Models::NetworkaccessTunnelConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new networkaccessTunnelConfigurationIKEv2Default and sets the default values.
+            ## Instantiates a new NetworkaccessTunnelConfigurationIKEv2Default and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @conflict_count = value
             end
             ## 
-            ## Instantiates a new deviceManagementIntentDeviceStateSummary and sets the default values.
+            ## Instantiates a new DeviceManagementIntentDeviceStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

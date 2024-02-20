@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class User < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A freeform text entry field for the user to describe themselves. Returned only on $select.
+            # A freeform text entry field for users to describe themselves. Returned only on $select.
             @about_me
             ## 
             # true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The user's activities across devices. Read-only. Nullable.
             @activities
             ## 
-            # Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
+            # Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
             @age_group
             ## 
             # The user's terms of use acceptance statuses. Read-only. Nullable.
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The approvals property
             @approvals
             ## 
-            # The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+            # The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
             @assigned_licenses
             ## 
             # The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
@@ -47,10 +47,10 @@ module MicrosoftGraphBeta
             # The authentication methods that are supported for the user.
             @authentication
             ## 
-            # Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+            # Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
             @authorization_info
             ## 
-            # The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+            # The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
             @birthday
             ## 
             # The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
@@ -71,16 +71,16 @@ module MicrosoftGraphBeta
             # The chats property
             @chats
             ## 
-            # The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @city
             ## 
             # The cloudPCs property
             @cloud_p_cs
             ## 
-            # The cloudRealtimeCommunicationInfo property
+            # Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             @cloud_realtime_communication_info
             ## 
-            # The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @company_name
             ## 
             # Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
@@ -92,22 +92,22 @@ module MicrosoftGraphBeta
             # The user's contacts. Read-only. Nullable.
             @contacts
             ## 
-            # The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @country
             ## 
-            # The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+            # The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
             @created_date_time
             ## 
-            # Directory objects that were created by the user. Read-only. Nullable.
+            # Directory objects that the user created. Read-only. Nullable.
             @created_objects
             ## 
             # Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
             @creation_type
             ## 
-            # An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
+            # An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
             @custom_security_attributes
             ## 
-            # The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+            # The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
             @department
             ## 
             # Get enrollment configurations targeted to the user
@@ -125,10 +125,10 @@ module MicrosoftGraphBeta
             # The devices property
             @devices
             ## 
-            # The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+            # The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
             @direct_reports
             ## 
-            # The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
+            # The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
             @display_name
             ## 
             # The user's OneDrive. Read-only.
@@ -140,22 +140,22 @@ module MicrosoftGraphBeta
             # The employeeExperience property
             @employee_experience
             ## 
-            # The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+            # The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
             @employee_hire_date
             ## 
             # The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
             @employee_id
             ## 
-            # The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+            # The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
             @employee_leave_date_time
             ## 
-            # Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
+            # Represents organization data (for example, division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
             @employee_org_data
             ## 
             # Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
             @employee_type
             ## 
-            # The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+            # The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
             @events
             ## 
             # The collection of open extensions defined for the user. Supports $expand. Nullable.
@@ -176,16 +176,16 @@ module MicrosoftGraphBeta
             # The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
             @given_name
             ## 
-            # The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+            # The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
             @hire_date
             ## 
-            # Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+            # Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
             @identities
             ## 
-            # The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+            # The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
             @im_addresses
             ## 
-            # Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+            # Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
             @inference_classification
             ## 
             # Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
@@ -197,13 +197,13 @@ module MicrosoftGraphBeta
             # The insights property
             @insights
             ## 
-            # A list for the user to describe their interests. Returned only on $select.
+            # A list for users to describe their interests. Returned only on $select.
             @interests
             ## 
             # Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
             @is_license_reconciliation_needed
             ## 
-            # true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            # true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
             @is_management_restricted
             ## 
             # Do not use – reserved for future use.
@@ -215,22 +215,22 @@ module MicrosoftGraphBeta
             # The joinedGroups property
             @joined_groups
             ## 
-            # The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+            # The Microsoft Teams teams the user is a member of. Read-only. Nullable.
             @joined_teams
             ## 
-            # The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+            # When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
             @last_password_change_date_time
             ## 
-            # Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+            # Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
             @legal_age_group_classification
             ## 
-            # State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+            # State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
             @license_assignment_states
             ## 
             # The licenseDetails property
             @license_details
             ## 
-            # The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+            # The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
             @mail
             ## 
             # The user's mail folders. Read-only. Nullable.
@@ -248,10 +248,10 @@ module MicrosoftGraphBeta
             # The managed devices associated with the user.
             @managed_devices
             ## 
-            # The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+            # The user or contact that is this user's manager. Read-only. Supports $expand.
             @manager
             ## 
-            # The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+            # The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
             @member_of
             ## 
             # The messages in a mailbox or folder. Read-only. Nullable.
@@ -263,10 +263,10 @@ module MicrosoftGraphBeta
             # The list of mobile app troubleshooting events for this user.
             @mobile_app_troubleshooting_events
             ## 
-            # The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+            # The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             @mobile_phone
             ## 
-            # The URL for the user's personal site. Returned only on $select.
+            # The URL for the user's site. Returned only on $select.
             @my_site
             ## 
             # The notifications property
@@ -278,79 +278,79 @@ module MicrosoftGraphBeta
             # The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @office_location
             ## 
-            # Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            # Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             @on_premises_distinguished_name
             ## 
-            # Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            # Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             @on_premises_domain_name
             ## 
-            # Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+            # Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
             @on_premises_extension_attributes
             ## 
-            # This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+            # This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
             @on_premises_immutable_id
             ## 
-            # Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+            # Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
             @on_premises_last_sync_date_time
             ## 
             # Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
             @on_premises_provisioning_errors
             ## 
-            # Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            # Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             @on_premises_sam_account_name
             ## 
-            # Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+            # Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
             @on_premises_security_identifier
             ## 
-            # The onPremisesSipInfo property
+            # Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             @on_premises_sip_info
             ## 
-            # true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+            # true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             @on_premises_sync_enabled
             ## 
-            # Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            # Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             @on_premises_user_principal_name
             ## 
             # The onenote property
             @onenote
             ## 
-            # Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+            # Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
             @online_meetings
             ## 
-            # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
             @other_mails
             ## 
             # Selective Outlook services available to the user. Read-only. Nullable.
             @outlook
             ## 
-            # Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+            # Devices owned by the user. Read-only. Nullable. Supports $expand.
             @owned_devices
             ## 
-            # Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            # Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owned_objects
             ## 
-            # Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
+            # Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
             @password_policies
             ## 
             # Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).
             @password_profile
             ## 
-            # A list for the user to enumerate their past projects. Returned only on $select.
+            # A list for users to enumerate their past projects. Returned only on $select.
             @past_projects
             ## 
-            # Navigation property to get list of access reviews pending approval by reviewer.
+            # Navigation property to get a list of access reviews pending approval by the reviewer.
             @pending_access_review_instances
             ## 
-            # Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+            # Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
             @people
             ## 
-            # The permissionGrants property
+            # List all resource-specific permission grants of a user.
             @permission_grants
             ## 
             # The user's profile photo. Read-only.
             @photo
             ## 
-            # The photos property
+            # The collection of the user's profile photos in different sizes. Read-only.
             @photos
             ## 
             # Selective Planner services available to the user. Read-only. Nullable.
@@ -362,7 +362,7 @@ module MicrosoftGraphBeta
             # The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
             @preferred_data_location
             ## 
-            # The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @preferred_language
             ## 
             # The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
@@ -380,13 +380,13 @@ module MicrosoftGraphBeta
             # The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, not, ge, le).
             @provisioned_plans
             ## 
-            # For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            # For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
             @proxy_addresses
             ## 
-            # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+            # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
             @refresh_tokens_valid_from_date_time
             ## 
-            # Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+            # Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
             @registered_devices
             ## 
             # A list for the user to enumerate their responsibilities. Returned only on $select.
@@ -404,7 +404,7 @@ module MicrosoftGraphBeta
             # Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
             @security_identifier
             ## 
-            # Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            # Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
             @service_provisioning_errors
             ## 
             # The settings property
@@ -413,16 +413,16 @@ module MicrosoftGraphBeta
             # Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
             @show_in_address_list
             ## 
-            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             @sign_in_activity
             ## 
-            # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+            # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
             @sign_in_sessions_valid_from_date_time
             ## 
             # A list for the user to enumerate their skills. Returned only on $select.
             @skills
             ## 
-            # The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+            # The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
             @sponsors
             ## 
             # The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -440,35 +440,38 @@ module MicrosoftGraphBeta
             # Represents the To Do services available to a user.
             @todo
             ## 
-            # The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+            # The groups, including nested groups and directory roles that a user is a member of. Nullable.
             @transitive_member_of
             ## 
             # The transitive reports for a user. Read-only.
             @transitive_reports
             ## 
-            # A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @usage_location
             ## 
             # Represents the usage rights a user has been granted.
             @usage_rights
             ## 
-            # The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
+            # The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
             @user_principal_name
             ## 
-            # A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+            # A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
             @user_type
+            ## 
+            # The virtualEvents property
+            @virtual_events
             ## 
             # Zero or more WIP device registrations that belong to the user.
             @windows_information_protection_device_registrations
             ## 
-            ## Gets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
+            ## Gets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
             ## @return a string
             ## 
             def about_me
                 return @about_me
             end
             ## 
-            ## Sets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
+            ## Sets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
             ## @param value Value to set for the aboutMe property.
             ## @return a void
             ## 
@@ -506,14 +509,14 @@ module MicrosoftGraphBeta
                 @activities = value
             end
             ## 
-            ## Gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
+            ## Gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
             ## @return a string
             ## 
             def age_group
                 return @age_group
             end
             ## 
-            ## Sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
+            ## Sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
             ## @param value Value to set for the ageGroup property.
             ## @return a void
             ## 
@@ -611,14 +614,14 @@ module MicrosoftGraphBeta
                 @approvals = value
             end
             ## 
-            ## Gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+            ## Gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
             ## @return a assigned_license
             ## 
             def assigned_licenses
                 return @assigned_licenses
             end
             ## 
-            ## Sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+            ## Sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
             ## @param value Value to set for the assignedLicenses property.
             ## @return a void
             ## 
@@ -656,14 +659,14 @@ module MicrosoftGraphBeta
                 @authentication = value
             end
             ## 
-            ## Gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+            ## Gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
             ## @return a authorization_info
             ## 
             def authorization_info
                 return @authorization_info
             end
             ## 
-            ## Sets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+            ## Sets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
             ## @param value Value to set for the authorizationInfo property.
             ## @return a void
             ## 
@@ -671,14 +674,14 @@ module MicrosoftGraphBeta
                 @authorization_info = value
             end
             ## 
-            ## Gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+            ## Gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
             ## @return a date_time
             ## 
             def birthday
                 return @birthday
             end
             ## 
-            ## Sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+            ## Sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
             ## @param value Value to set for the birthday property.
             ## @return a void
             ## 
@@ -776,14 +779,14 @@ module MicrosoftGraphBeta
                 @chats = value
             end
             ## 
-            ## Gets the city property value. The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the city property value. The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @return a string
             ## 
             def city
                 return @city
             end
             ## 
-            ## Sets the city property value. The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the city property value. The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @param value Value to set for the city property.
             ## @return a void
             ## 
@@ -806,14 +809,14 @@ module MicrosoftGraphBeta
                 @cloud_p_cs = value
             end
             ## 
-            ## Gets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+            ## Gets the cloudRealtimeCommunicationInfo property value. Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             ## @return a cloud_realtime_communication_info
             ## 
             def cloud_realtime_communication_info
                 return @cloud_realtime_communication_info
             end
             ## 
-            ## Sets the cloudRealtimeCommunicationInfo property value. The cloudRealtimeCommunicationInfo property
+            ## Sets the cloudRealtimeCommunicationInfo property value. Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
             ## @param value Value to set for the cloudRealtimeCommunicationInfo property.
             ## @return a void
             ## 
@@ -821,14 +824,14 @@ module MicrosoftGraphBeta
                 @cloud_realtime_communication_info = value
             end
             ## 
-            ## Gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @return a string
             ## 
             def company_name
                 return @company_name
             end
             ## 
-            ## Sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @param value Value to set for the companyName property.
             ## @return a void
             ## 
@@ -851,7 +854,7 @@ module MicrosoftGraphBeta
                 @consent_provided_for_minor = value
             end
             ## 
-            ## Instantiates a new user and sets the default values.
+            ## Instantiates a new User and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -889,14 +892,14 @@ module MicrosoftGraphBeta
                 @contacts = value
             end
             ## 
-            ## Gets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the country property value. The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @return a string
             ## 
             def country
                 return @country
             end
             ## 
-            ## Sets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the country property value. The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @param value Value to set for the country property.
             ## @return a void
             ## 
@@ -904,14 +907,14 @@ module MicrosoftGraphBeta
                 @country = value
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+            ## Gets the createdDateTime property value. The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+            ## Sets the createdDateTime property value. The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -919,14 +922,14 @@ module MicrosoftGraphBeta
                 @created_date_time = value
             end
             ## 
-            ## Gets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
+            ## Gets the createdObjects property value. Directory objects that the user created. Read-only. Nullable.
             ## @return a directory_object
             ## 
             def created_objects
                 return @created_objects
             end
             ## 
-            ## Sets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
+            ## Sets the createdObjects property value. Directory objects that the user created. Read-only. Nullable.
             ## @param value Value to set for the createdObjects property.
             ## @return a void
             ## 
@@ -958,14 +961,14 @@ module MicrosoftGraphBeta
                 @creation_type = value
             end
             ## 
-            ## Gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
+            ## Gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
             ## @return a custom_security_attribute_value
             ## 
             def custom_security_attributes
                 return @custom_security_attributes
             end
             ## 
-            ## Sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
+            ## Sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
             ## @param value Value to set for the customSecurityAttributes property.
             ## @return a void
             ## 
@@ -973,14 +976,14 @@ module MicrosoftGraphBeta
                 @custom_security_attributes = value
             end
             ## 
-            ## Gets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+            ## Gets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
             ## @return a string
             ## 
             def department
                 return @department
             end
             ## 
-            ## Sets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+            ## Sets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
             ## @param value Value to set for the department property.
             ## @return a void
             ## 
@@ -1063,14 +1066,14 @@ module MicrosoftGraphBeta
                 @devices = value
             end
             ## 
-            ## Gets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+            ## Gets the directReports property value. The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
             ## @return a directory_object
             ## 
             def direct_reports
                 return @direct_reports
             end
             ## 
-            ## Sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+            ## Sets the directReports property value. The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
             ## @param value Value to set for the directReports property.
             ## @return a void
             ## 
@@ -1078,14 +1081,14 @@ module MicrosoftGraphBeta
                 @direct_reports = value
             end
             ## 
-            ## Gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
+            ## Gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
+            ## Sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -1138,14 +1141,14 @@ module MicrosoftGraphBeta
                 @employee_experience = value
             end
             ## 
-            ## Gets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+            ## Gets the employeeHireDate property value. The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
             ## @return a date_time
             ## 
             def employee_hire_date
                 return @employee_hire_date
             end
             ## 
-            ## Sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+            ## Sets the employeeHireDate property value. The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
             ## @param value Value to set for the employeeHireDate property.
             ## @return a void
             ## 
@@ -1168,14 +1171,14 @@ module MicrosoftGraphBeta
                 @employee_id = value
             end
             ## 
-            ## Gets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+            ## Gets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
             ## @return a date_time
             ## 
             def employee_leave_date_time
                 return @employee_leave_date_time
             end
             ## 
-            ## Sets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+            ## Sets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
             ## @param value Value to set for the employeeLeaveDateTime property.
             ## @return a void
             ## 
@@ -1183,14 +1186,14 @@ module MicrosoftGraphBeta
                 @employee_leave_date_time = value
             end
             ## 
-            ## Gets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
+            ## Gets the employeeOrgData property value. Represents organization data (for example, division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
             ## @return a employee_org_data
             ## 
             def employee_org_data
                 return @employee_org_data
             end
             ## 
-            ## Sets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
+            ## Sets the employeeOrgData property value. Represents organization data (for example, division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
             ## @param value Value to set for the employeeOrgData property.
             ## @return a void
             ## 
@@ -1213,14 +1216,14 @@ module MicrosoftGraphBeta
                 @employee_type = value
             end
             ## 
-            ## Gets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+            ## Gets the events property value. The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
             ## @return a event
             ## 
             def events
                 return @events
             end
             ## 
-            ## Sets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+            ## Sets the events property value. The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
             ## @param value Value to set for the events property.
             ## @return a void
             ## 
@@ -1458,6 +1461,7 @@ module MicrosoftGraphBeta
                     "usageRights" => lambda {|n| @usage_rights = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::UsageRight.create_from_discriminator_value(pn) }) },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                     "userType" => lambda {|n| @user_type = n.get_string_value() },
+                    "virtualEvents" => lambda {|n| @virtual_events = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::UserVirtualEventsRoot.create_from_discriminator_value(pn) }) },
                     "windowsInformationProtectionDeviceRegistrations" => lambda {|n| @windows_information_protection_device_registrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsInformationProtectionDeviceRegistration.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -1477,14 +1481,14 @@ module MicrosoftGraphBeta
                 @given_name = value
             end
             ## 
-            ## Gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+            ## Gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
             ## @return a date_time
             ## 
             def hire_date
                 return @hire_date
             end
             ## 
-            ## Sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+            ## Sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
             ## @param value Value to set for the hireDate property.
             ## @return a void
             ## 
@@ -1492,14 +1496,14 @@ module MicrosoftGraphBeta
                 @hire_date = value
             end
             ## 
-            ## Gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+            ## Gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
             ## @return a object_identity
             ## 
             def identities
                 return @identities
             end
             ## 
-            ## Sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+            ## Sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
             ## @param value Value to set for the identities property.
             ## @return a void
             ## 
@@ -1507,14 +1511,14 @@ module MicrosoftGraphBeta
                 @identities = value
             end
             ## 
-            ## Gets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+            ## Gets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
             ## @return a string
             ## 
             def im_addresses
                 return @im_addresses
             end
             ## 
-            ## Sets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+            ## Sets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
             ## @param value Value to set for the imAddresses property.
             ## @return a void
             ## 
@@ -1522,14 +1526,14 @@ module MicrosoftGraphBeta
                 @im_addresses = value
             end
             ## 
-            ## Gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+            ## Gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
             ## @return a inference_classification
             ## 
             def inference_classification
                 return @inference_classification
             end
             ## 
-            ## Sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+            ## Sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
             ## @param value Value to set for the inferenceClassification property.
             ## @return a void
             ## 
@@ -1582,14 +1586,14 @@ module MicrosoftGraphBeta
                 @insights = value
             end
             ## 
-            ## Gets the interests property value. A list for the user to describe their interests. Returned only on $select.
+            ## Gets the interests property value. A list for users to describe their interests. Returned only on $select.
             ## @return a string
             ## 
             def interests
                 return @interests
             end
             ## 
-            ## Sets the interests property value. A list for the user to describe their interests. Returned only on $select.
+            ## Sets the interests property value. A list for users to describe their interests. Returned only on $select.
             ## @param value Value to set for the interests property.
             ## @return a void
             ## 
@@ -1612,14 +1616,14 @@ module MicrosoftGraphBeta
                 @is_license_reconciliation_needed = value
             end
             ## 
-            ## Gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            ## Gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
             ## @return a boolean
             ## 
             def is_management_restricted
                 return @is_management_restricted
             end
             ## 
-            ## Sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            ## Sets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
             ## @param value Value to set for the isManagementRestricted property.
             ## @return a void
             ## 
@@ -1672,14 +1676,14 @@ module MicrosoftGraphBeta
                 @joined_groups = value
             end
             ## 
-            ## Gets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+            ## Gets the joinedTeams property value. The Microsoft Teams teams the user is a member of. Read-only. Nullable.
             ## @return a team
             ## 
             def joined_teams
                 return @joined_teams
             end
             ## 
-            ## Sets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+            ## Sets the joinedTeams property value. The Microsoft Teams teams the user is a member of. Read-only. Nullable.
             ## @param value Value to set for the joinedTeams property.
             ## @return a void
             ## 
@@ -1687,14 +1691,14 @@ module MicrosoftGraphBeta
                 @joined_teams = value
             end
             ## 
-            ## Gets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+            ## Gets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
             ## @return a date_time
             ## 
             def last_password_change_date_time
                 return @last_password_change_date_time
             end
             ## 
-            ## Sets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+            ## Sets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
             ## @param value Value to set for the lastPasswordChangeDateTime property.
             ## @return a void
             ## 
@@ -1702,14 +1706,14 @@ module MicrosoftGraphBeta
                 @last_password_change_date_time = value
             end
             ## 
-            ## Gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+            ## Gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
             ## @return a string
             ## 
             def legal_age_group_classification
                 return @legal_age_group_classification
             end
             ## 
-            ## Sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+            ## Sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
             ## @param value Value to set for the legalAgeGroupClassification property.
             ## @return a void
             ## 
@@ -1717,14 +1721,14 @@ module MicrosoftGraphBeta
                 @legal_age_group_classification = value
             end
             ## 
-            ## Gets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+            ## Gets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
             ## @return a license_assignment_state
             ## 
             def license_assignment_states
                 return @license_assignment_states
             end
             ## 
-            ## Sets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+            ## Sets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
             ## @param value Value to set for the licenseAssignmentStates property.
             ## @return a void
             ## 
@@ -1747,14 +1751,14 @@ module MicrosoftGraphBeta
                 @license_details = value
             end
             ## 
-            ## Gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+            ## Gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
             ## @return a string
             ## 
             def mail
                 return @mail
             end
             ## 
-            ## Sets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+            ## Sets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
             ## @param value Value to set for the mail property.
             ## @return a void
             ## 
@@ -1837,14 +1841,14 @@ module MicrosoftGraphBeta
                 @managed_devices = value
             end
             ## 
-            ## Gets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+            ## Gets the manager property value. The user or contact that is this user's manager. Read-only. Supports $expand.
             ## @return a directory_object
             ## 
             def manager
                 return @manager
             end
             ## 
-            ## Sets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+            ## Sets the manager property value. The user or contact that is this user's manager. Read-only. Supports $expand.
             ## @param value Value to set for the manager property.
             ## @return a void
             ## 
@@ -1852,14 +1856,14 @@ module MicrosoftGraphBeta
                 @manager = value
             end
             ## 
-            ## Gets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+            ## Gets the memberOf property value. The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
             ## @return a directory_object
             ## 
             def member_of
                 return @member_of
             end
             ## 
-            ## Sets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+            ## Sets the memberOf property value. The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
             ## @param value Value to set for the memberOf property.
             ## @return a void
             ## 
@@ -1912,14 +1916,14 @@ module MicrosoftGraphBeta
                 @mobile_app_troubleshooting_events = value
             end
             ## 
-            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             ## @return a string
             ## 
             def mobile_phone
                 return @mobile_phone
             end
             ## 
-            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             ## @param value Value to set for the mobilePhone property.
             ## @return a void
             ## 
@@ -1927,14 +1931,14 @@ module MicrosoftGraphBeta
                 @mobile_phone = value
             end
             ## 
-            ## Gets the mySite property value. The URL for the user's personal site. Returned only on $select.
+            ## Gets the mySite property value. The URL for the user's site. Returned only on $select.
             ## @return a string
             ## 
             def my_site
                 return @my_site
             end
             ## 
-            ## Sets the mySite property value. The URL for the user's personal site. Returned only on $select.
+            ## Sets the mySite property value. The URL for the user's site. Returned only on $select.
             ## @param value Value to set for the mySite property.
             ## @return a void
             ## 
@@ -1987,14 +1991,14 @@ module MicrosoftGraphBeta
                 @office_location = value
             end
             ## 
-            ## Gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            ## Gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             ## @return a string
             ## 
             def on_premises_distinguished_name
                 return @on_premises_distinguished_name
             end
             ## 
-            ## Sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            ## Sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             ## @param value Value to set for the onPremisesDistinguishedName property.
             ## @return a void
             ## 
@@ -2002,14 +2006,14 @@ module MicrosoftGraphBeta
                 @on_premises_distinguished_name = value
             end
             ## 
-            ## Gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            ## Gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             ## @return a string
             ## 
             def on_premises_domain_name
                 return @on_premises_domain_name
             end
             ## 
-            ## Sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+            ## Sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
             ## @param value Value to set for the onPremisesDomainName property.
             ## @return a void
             ## 
@@ -2017,14 +2021,14 @@ module MicrosoftGraphBeta
                 @on_premises_domain_name = value
             end
             ## 
-            ## Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+            ## Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
             ## @return a on_premises_extension_attributes
             ## 
             def on_premises_extension_attributes
                 return @on_premises_extension_attributes
             end
             ## 
-            ## Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+            ## Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
             ## @param value Value to set for the onPremisesExtensionAttributes property.
             ## @return a void
             ## 
@@ -2032,14 +2036,14 @@ module MicrosoftGraphBeta
                 @on_premises_extension_attributes = value
             end
             ## 
-            ## Gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+            ## Gets the onPremisesImmutableId property value. This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
             ## @return a string
             ## 
             def on_premises_immutable_id
                 return @on_premises_immutable_id
             end
             ## 
-            ## Sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+            ## Sets the onPremisesImmutableId property value. This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
             ## @param value Value to set for the onPremisesImmutableId property.
             ## @return a void
             ## 
@@ -2047,14 +2051,14 @@ module MicrosoftGraphBeta
                 @on_premises_immutable_id = value
             end
             ## 
-            ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+            ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
             ## @return a date_time
             ## 
             def on_premises_last_sync_date_time
                 return @on_premises_last_sync_date_time
             end
             ## 
-            ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+            ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
             ## @param value Value to set for the onPremisesLastSyncDateTime property.
             ## @return a void
             ## 
@@ -2077,14 +2081,14 @@ module MicrosoftGraphBeta
                 @on_premises_provisioning_errors = value
             end
             ## 
-            ## Gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            ## Gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             ## @return a string
             ## 
             def on_premises_sam_account_name
                 return @on_premises_sam_account_name
             end
             ## 
-            ## Sets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            ## Sets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             ## @param value Value to set for the onPremisesSamAccountName property.
             ## @return a void
             ## 
@@ -2092,14 +2096,14 @@ module MicrosoftGraphBeta
                 @on_premises_sam_account_name = value
             end
             ## 
-            ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+            ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
             ## @return a string
             ## 
             def on_premises_security_identifier
                 return @on_premises_security_identifier
             end
             ## 
-            ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+            ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
             ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
@@ -2107,14 +2111,14 @@ module MicrosoftGraphBeta
                 @on_premises_security_identifier = value
             end
             ## 
-            ## Gets the onPremisesSipInfo property value. The onPremisesSipInfo property
+            ## Gets the onPremisesSipInfo property value. Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             ## @return a on_premises_sip_info
             ## 
             def on_premises_sip_info
                 return @on_premises_sip_info
             end
             ## 
-            ## Sets the onPremisesSipInfo property value. The onPremisesSipInfo property
+            ## Sets the onPremisesSipInfo property value. Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
             ## @param value Value to set for the onPremisesSipInfo property.
             ## @return a void
             ## 
@@ -2122,14 +2126,14 @@ module MicrosoftGraphBeta
                 @on_premises_sip_info = value
             end
             ## 
-            ## Gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+            ## Gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             ## @return a boolean
             ## 
             def on_premises_sync_enabled
                 return @on_premises_sync_enabled
             end
             ## 
-            ## Sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+            ## Sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             ## @param value Value to set for the onPremisesSyncEnabled property.
             ## @return a void
             ## 
@@ -2137,14 +2141,14 @@ module MicrosoftGraphBeta
                 @on_premises_sync_enabled = value
             end
             ## 
-            ## Gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            ## Gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             ## @return a string
             ## 
             def on_premises_user_principal_name
                 return @on_premises_user_principal_name
             end
             ## 
-            ## Sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+            ## Sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
             ## @param value Value to set for the onPremisesUserPrincipalName property.
             ## @return a void
             ## 
@@ -2167,14 +2171,14 @@ module MicrosoftGraphBeta
                 @onenote = value
             end
             ## 
-            ## Gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+            ## Gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
             ## @return a online_meeting
             ## 
             def online_meetings
                 return @online_meetings
             end
             ## 
-            ## Sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+            ## Sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
             ## @param value Value to set for the onlineMeetings property.
             ## @return a void
             ## 
@@ -2182,14 +2186,14 @@ module MicrosoftGraphBeta
                 @online_meetings = value
             end
             ## 
-            ## Gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            ## Gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
             ## @return a string
             ## 
             def other_mails
                 return @other_mails
             end
             ## 
-            ## Sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            ## Sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
             ## @param value Value to set for the otherMails property.
             ## @return a void
             ## 
@@ -2212,14 +2216,14 @@ module MicrosoftGraphBeta
                 @outlook = value
             end
             ## 
-            ## Gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+            ## Gets the ownedDevices property value. Devices owned by the user. Read-only. Nullable. Supports $expand.
             ## @return a directory_object
             ## 
             def owned_devices
                 return @owned_devices
             end
             ## 
-            ## Sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+            ## Sets the ownedDevices property value. Devices owned by the user. Read-only. Nullable. Supports $expand.
             ## @param value Value to set for the ownedDevices property.
             ## @return a void
             ## 
@@ -2227,14 +2231,14 @@ module MicrosoftGraphBeta
                 @owned_devices = value
             end
             ## 
-            ## Gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            ## Gets the ownedObjects property value. Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @return a directory_object
             ## 
             def owned_objects
                 return @owned_objects
             end
             ## 
-            ## Sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+            ## Sets the ownedObjects property value. Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @param value Value to set for the ownedObjects property.
             ## @return a void
             ## 
@@ -2242,14 +2246,14 @@ module MicrosoftGraphBeta
                 @owned_objects = value
             end
             ## 
-            ## Gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
+            ## Gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
             ## @return a string
             ## 
             def password_policies
                 return @password_policies
             end
             ## 
-            ## Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
+            ## Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
             ## @param value Value to set for the passwordPolicies property.
             ## @return a void
             ## 
@@ -2272,14 +2276,14 @@ module MicrosoftGraphBeta
                 @password_profile = value
             end
             ## 
-            ## Gets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
+            ## Gets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
             ## @return a string
             ## 
             def past_projects
                 return @past_projects
             end
             ## 
-            ## Sets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
+            ## Sets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
             ## @param value Value to set for the pastProjects property.
             ## @return a void
             ## 
@@ -2287,14 +2291,14 @@ module MicrosoftGraphBeta
                 @past_projects = value
             end
             ## 
-            ## Gets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
+            ## Gets the pendingAccessReviewInstances property value. Navigation property to get a list of access reviews pending approval by the reviewer.
             ## @return a access_review_instance
             ## 
             def pending_access_review_instances
                 return @pending_access_review_instances
             end
             ## 
-            ## Sets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
+            ## Sets the pendingAccessReviewInstances property value. Navigation property to get a list of access reviews pending approval by the reviewer.
             ## @param value Value to set for the pendingAccessReviewInstances property.
             ## @return a void
             ## 
@@ -2302,14 +2306,14 @@ module MicrosoftGraphBeta
                 @pending_access_review_instances = value
             end
             ## 
-            ## Gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+            ## Gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
             ## @return a person
             ## 
             def people
                 return @people
             end
             ## 
-            ## Sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+            ## Sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
             ## @param value Value to set for the people property.
             ## @return a void
             ## 
@@ -2317,14 +2321,14 @@ module MicrosoftGraphBeta
                 @people = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. List all resource-specific permission grants of a user.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. List all resource-specific permission grants of a user.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
@@ -2347,14 +2351,14 @@ module MicrosoftGraphBeta
                 @photo = value
             end
             ## 
-            ## Gets the photos property value. The photos property
+            ## Gets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
             ## @return a profile_photo
             ## 
             def photos
                 return @photos
             end
             ## 
-            ## Sets the photos property value. The photos property
+            ## Sets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
             ## @param value Value to set for the photos property.
             ## @return a void
             ## 
@@ -2407,14 +2411,14 @@ module MicrosoftGraphBeta
                 @preferred_data_location = value
             end
             ## 
-            ## Gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @return a string
             ## 
             def preferred_language
                 return @preferred_language
             end
             ## 
-            ## Sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @param value Value to set for the preferredLanguage property.
             ## @return a void
             ## 
@@ -2497,14 +2501,14 @@ module MicrosoftGraphBeta
                 @provisioned_plans = value
             end
             ## 
-            ## Gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            ## Gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
             ## @return a string
             ## 
             def proxy_addresses
                 return @proxy_addresses
             end
             ## 
-            ## Sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+            ## Sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
             ## @param value Value to set for the proxyAddresses property.
             ## @return a void
             ## 
@@ -2512,14 +2516,14 @@ module MicrosoftGraphBeta
                 @proxy_addresses = value
             end
             ## 
-            ## Gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+            ## Gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
             ## @return a date_time
             ## 
             def refresh_tokens_valid_from_date_time
                 return @refresh_tokens_valid_from_date_time
             end
             ## 
-            ## Sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+            ## Sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
             ## @param value Value to set for the refreshTokensValidFromDateTime property.
             ## @return a void
             ## 
@@ -2527,14 +2531,14 @@ module MicrosoftGraphBeta
                 @refresh_tokens_valid_from_date_time = value
             end
             ## 
-            ## Gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+            ## Gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
             ## @return a directory_object
             ## 
             def registered_devices
                 return @registered_devices
             end
             ## 
-            ## Sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+            ## Sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
             ## @param value Value to set for the registeredDevices property.
             ## @return a void
             ## 
@@ -2774,17 +2778,18 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("usageRights", @usage_rights)
                 writer.write_string_value("userPrincipalName", @user_principal_name)
                 writer.write_string_value("userType", @user_type)
+                writer.write_object_value("virtualEvents", @virtual_events)
                 writer.write_collection_of_object_values("windowsInformationProtectionDeviceRegistrations", @windows_information_protection_device_registrations)
             end
             ## 
-            ## Gets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            ## Gets the serviceProvisioningErrors property value. Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
             ## @return a service_provisioning_error
             ## 
             def service_provisioning_errors
                 return @service_provisioning_errors
             end
             ## 
-            ## Sets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            ## Sets the serviceProvisioningErrors property value. Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
             ## @param value Value to set for the serviceProvisioningErrors property.
             ## @return a void
             ## 
@@ -2822,14 +2827,14 @@ module MicrosoftGraphBeta
                 @show_in_address_list = value
             end
             ## 
-            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             ## @return a sign_in_activity
             ## 
             def sign_in_activity
                 return @sign_in_activity
             end
             ## 
-            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             ## @param value Value to set for the signInActivity property.
             ## @return a void
             ## 
@@ -2837,14 +2842,14 @@ module MicrosoftGraphBeta
                 @sign_in_activity = value
             end
             ## 
-            ## Gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+            ## Gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
             ## @return a date_time
             ## 
             def sign_in_sessions_valid_from_date_time
                 return @sign_in_sessions_valid_from_date_time
             end
             ## 
-            ## Sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+            ## Sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
             ## @param value Value to set for the signInSessionsValidFromDateTime property.
             ## @return a void
             ## 
@@ -2867,14 +2872,14 @@ module MicrosoftGraphBeta
                 @skills = value
             end
             ## 
-            ## Gets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+            ## Gets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
             ## @return a directory_object
             ## 
             def sponsors
                 return @sponsors
             end
             ## 
-            ## Sets the sponsors property value. The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+            ## Sets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
             ## @param value Value to set for the sponsors property.
             ## @return a void
             ## 
@@ -2957,14 +2962,14 @@ module MicrosoftGraphBeta
                 @todo = value
             end
             ## 
-            ## Gets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+            ## Gets the transitiveMemberOf property value. The groups, including nested groups and directory roles that a user is a member of. Nullable.
             ## @return a directory_object
             ## 
             def transitive_member_of
                 return @transitive_member_of
             end
             ## 
-            ## Sets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+            ## Sets the transitiveMemberOf property value. The groups, including nested groups and directory roles that a user is a member of. Nullable.
             ## @param value Value to set for the transitiveMemberOf property.
             ## @return a void
             ## 
@@ -2987,14 +2992,14 @@ module MicrosoftGraphBeta
                 @transitive_reports = value
             end
             ## 
-            ## Gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @return a string
             ## 
             def usage_location
                 return @usage_location
             end
             ## 
-            ## Sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             ## @param value Value to set for the usageLocation property.
             ## @return a void
             ## 
@@ -3017,14 +3022,14 @@ module MicrosoftGraphBeta
                 @usage_rights = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
+            ## Gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
+            ## Sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
@@ -3032,19 +3037,34 @@ module MicrosoftGraphBeta
                 @user_principal_name = value
             end
             ## 
-            ## Gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+            ## Gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
             ## @return a string
             ## 
             def user_type
                 return @user_type
             end
             ## 
-            ## Sets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+            ## Sets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
             ## @param value Value to set for the userType property.
             ## @return a void
             ## 
             def user_type=(value)
                 @user_type = value
+            end
+            ## 
+            ## Gets the virtualEvents property value. The virtualEvents property
+            ## @return a user_virtual_events_root
+            ## 
+            def virtual_events
+                return @virtual_events
+            end
+            ## 
+            ## Sets the virtualEvents property value. The virtualEvents property
+            ## @param value Value to set for the virtualEvents property.
+            ## @return a void
+            ## 
+            def virtual_events=(value)
+                @virtual_events = value
             end
             ## 
             ## Gets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.

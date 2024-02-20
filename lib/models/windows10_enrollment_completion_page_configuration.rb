@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 @block_device_setup_retry_by_user = value
             end
             ## 
-            ## Instantiates a new windows10EnrollmentCompletionPageConfiguration and sets the default values.
+            ## Instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

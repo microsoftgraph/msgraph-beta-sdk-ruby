@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
             @sub_category
             ## 
-            ## Instantiates a new securityAppliedCategory and sets the default values.
+            ## Instantiates a new SecurityAppliedCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()
