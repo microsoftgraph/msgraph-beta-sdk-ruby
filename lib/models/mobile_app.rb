@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new mobileApp and sets the default values.
+            ## Instantiates a new MobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -192,6 +192,8 @@ module MicrosoftGraphBeta
                             return OfficeSuiteApp.new
                         when "#microsoft.graph.webApp"
                             return WebApp.new
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
                         when "#microsoft.graph.win32LobApp"
                             return Win32LobApp.new
                         when "#microsoft.graph.windowsAppX"

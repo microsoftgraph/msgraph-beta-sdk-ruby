@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceCompliancePolicy and sets the default values.
+            ## Instantiates a new DeviceCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

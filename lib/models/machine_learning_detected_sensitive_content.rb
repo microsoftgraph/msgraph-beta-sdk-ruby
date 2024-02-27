@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The modelVersion property
             @model_version
             ## 
-            ## Instantiates a new machineLearningDetectedSensitiveContent and sets the default values.
+            ## Instantiates a new MachineLearningDetectedSensitiveContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "matchTolerance" => lambda {|n| @match_tolerance = n.get_enum_value(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
+                    "matchTolerance" => lambda {|n| @match_tolerance = n.get_enum_values(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
                     "modelVersion" => lambda {|n| @model_version = n.get_string_value() },
                 })
             end

@@ -140,7 +140,7 @@ module MicrosoftGraphBeta
                 @amount_including_tax = value
             end
             ## 
-            ## Instantiates a new salesCreditMemoLine and sets the default values.
+            ## Instantiates a new SalesCreditMemoLine and sets the default values.
             ## @return a void
             ## 
             def initialize()

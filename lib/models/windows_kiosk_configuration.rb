@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             # force update schedule for Kiosk devices.
             @windows_kiosk_force_update_schedule
             ## 
-            ## Instantiates a new windowsKioskConfiguration and sets the default values.
+            ## Instantiates a new WindowsKioskConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

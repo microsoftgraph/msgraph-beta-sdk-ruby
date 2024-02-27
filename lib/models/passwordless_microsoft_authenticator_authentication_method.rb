@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The display name of the mobile device as given by the user.
             @display_name
             ## 
-            ## Instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

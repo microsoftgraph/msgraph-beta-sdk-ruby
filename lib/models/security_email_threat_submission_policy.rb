@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.
             @customized_notification_sender_email_address
             ## 
-            # Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+            # Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
             @customized_report_recipient_email_address
             ## 
             # Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.
@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Indicates whether end users can confirm using a popup before reporting messages as spam, phish or not junk. The default value is true.  Optional for creation.
             @is_ask_me_enabled_for_users
             ## 
-            # Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
+            # Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
             @is_customized_message_enabled
             ## 
             # If enabled, customized message only shows when email is reported as phishing. The default value is false. Optional for creation.
@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Indicates whether to use the sender email address set using customizedNotificationSenderEmailAddress for sending email notifications to end users. The default value is false. Optional for creation.
             @is_customized_notification_sender_enabled
             ## 
-            # Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+            # Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
             @is_never_report_enabled_for_users
             ## 
             # Indicates whether the branding logo should be used in the email notifications sent to end users. The default value is false. Optional for creation.
@@ -37,16 +37,16 @@ module MicrosoftGraphBeta
             # Indicates whether end users can submit from the quarantine page. The default value is true. Optional for creation.
             @is_report_from_quarantine_enabled
             ## 
-            # Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+            # Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
             @is_report_to_customized_email_address_enabled
             ## 
-            # If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
+            # If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
             @is_report_to_microsoft_enabled
             ## 
             # Indicates whether an email notification is sent to the end user who reported the email when it has been reviewed by the admin. The default value is false. Optional for creation.
             @is_review_email_notification_enabled
             ## 
-            ## Instantiates a new securityEmailThreatSubmissionPolicy and sets the default values.
+            ## Instantiates a new SecurityEmailThreatSubmissionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 @customized_notification_sender_email_address = value
             end
             ## 
-            ## Gets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+            ## Gets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
             ## @return a string
             ## 
             def customized_report_recipient_email_address
                 return @customized_report_recipient_email_address
             end
             ## 
-            ## Sets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+            ## Sets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
             ## @param value Value to set for the customizedReportRecipientEmailAddress property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @is_ask_me_enabled_for_users = value
             end
             ## 
-            ## Gets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
+            ## Gets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
             ## @return a boolean
             ## 
             def is_customized_message_enabled
                 return @is_customized_message_enabled
             end
             ## 
-            ## Sets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
+            ## Sets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
             ## @param value Value to set for the isCustomizedMessageEnabled property.
             ## @return a void
             ## 
@@ -188,14 +188,14 @@ module MicrosoftGraphBeta
                 @is_customized_notification_sender_enabled = value
             end
             ## 
-            ## Gets the isNeverReportEnabledForUsers property value. Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+            ## Gets the isNeverReportEnabledForUsers property value. Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
             ## @return a boolean
             ## 
             def is_never_report_enabled_for_users
                 return @is_never_report_enabled_for_users
             end
             ## 
-            ## Sets the isNeverReportEnabledForUsers property value. Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+            ## Sets the isNeverReportEnabledForUsers property value. Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
             ## @param value Value to set for the isNeverReportEnabledForUsers property.
             ## @return a void
             ## 
@@ -233,14 +233,14 @@ module MicrosoftGraphBeta
                 @is_report_from_quarantine_enabled = value
             end
             ## 
-            ## Gets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+            ## Gets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
             ## @return a boolean
             ## 
             def is_report_to_customized_email_address_enabled
                 return @is_report_to_customized_email_address_enabled
             end
             ## 
-            ## Sets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+            ## Sets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
             ## @param value Value to set for the isReportToCustomizedEmailAddressEnabled property.
             ## @return a void
             ## 
@@ -248,14 +248,14 @@ module MicrosoftGraphBeta
                 @is_report_to_customized_email_address_enabled = value
             end
             ## 
-            ## Gets the isReportToMicrosoftEnabled property value. If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
+            ## Gets the isReportToMicrosoftEnabled property value. If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
             ## @return a boolean
             ## 
             def is_report_to_microsoft_enabled
                 return @is_report_to_microsoft_enabled
             end
             ## 
-            ## Sets the isReportToMicrosoftEnabled property value. If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
+            ## Sets the isReportToMicrosoftEnabled property value. If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
             ## @param value Value to set for the isReportToMicrosoftEnabled property.
             ## @return a void
             ## 

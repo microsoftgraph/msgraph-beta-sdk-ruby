@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Setting name for the rule with error.
             @setting_name
             ## 
-            ## Instantiates a new deviceComplianceScriptRuleError and sets the default values.
+            ## Instantiates a new DeviceComplianceScriptRuleError and sets the default values.
             ## @return a void
             ## 
             def initialize()

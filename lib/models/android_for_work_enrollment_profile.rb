@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @account_id = value
             end
             ## 
-            ## Instantiates a new androidForWorkEnrollmentProfile and sets the default values.
+            ## Instantiates a new AndroidForWorkEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

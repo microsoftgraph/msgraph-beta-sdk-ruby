@@ -8,6 +8,7 @@ require_relative './agreement_acceptances/agreement_acceptances_request_builder'
 require_relative './analytics/analytics_request_builder'
 require_relative './app_consent_requests_for_approval/app_consent_requests_for_approval_request_builder'
 require_relative './app_role_assigned_resources/app_role_assigned_resources_request_builder'
+require_relative './app_role_assigned_resources_with_app_id/app_role_assigned_resources_with_app_id_request_builder'
 require_relative './app_role_assignments/app_role_assignments_request_builder'
 require_relative './approvals/approvals_request_builder'
 require_relative './assign_license/assign_license_request_builder'
@@ -20,13 +21,16 @@ require_relative './change_password/change_password_request_builder'
 require_relative './chats/chats_request_builder'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
+require_relative './cloud_clipboard/cloud_clipboard_request_builder'
 require_relative './cloud_p_cs/cloud_p_cs_request_builder'
 require_relative './contact_folders/contact_folders_request_builder'
 require_relative './contacts/contacts_request_builder'
 require_relative './created_objects/created_objects_request_builder'
+require_relative './delete_password_single_sign_on_credentials/delete_password_single_sign_on_credentials_request_builder'
 require_relative './device_enrollment_configurations/device_enrollment_configurations_request_builder'
 require_relative './device_management_troubleshooting_events/device_management_troubleshooting_events_request_builder'
 require_relative './devices/devices_request_builder'
+require_relative './devices_with_device_id/devices_with_device_id_request_builder'
 require_relative './direct_reports/direct_reports_request_builder'
 require_relative './drive/drive_request_builder'
 require_relative './drives/drives_request_builder'
@@ -50,6 +54,7 @@ require_relative './get_managed_devices_with_app_failures/get_managed_devices_wi
 require_relative './get_managed_devices_with_failed_or_pending_apps/get_managed_devices_with_failed_or_pending_apps_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
+require_relative './get_password_single_sign_on_credentials/get_password_single_sign_on_credentials_request_builder'
 require_relative './inference_classification/inference_classification_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './insights/insights_request_builder'
@@ -72,6 +77,7 @@ require_relative './notifications/notifications_request_builder'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './onenote/onenote_request_builder'
 require_relative './online_meetings/online_meetings_request_builder'
+require_relative './online_meetings_with_join_web_url/online_meetings_with_join_web_url_request_builder'
 require_relative './outlook/outlook_request_builder'
 require_relative './owned_devices/owned_devices_request_builder'
 require_relative './owned_objects/owned_objects_request_builder'
@@ -93,6 +99,7 @@ require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_buil
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './security/security_request_builder'
 require_relative './send_mail/send_mail_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sponsors/sponsors_request_builder'
 require_relative './teamwork/teamwork_request_builder'
@@ -102,6 +109,7 @@ require_relative './transitive_reports/transitive_reports_request_builder'
 require_relative './translate_exchange_ids/translate_exchange_ids_request_builder'
 require_relative './unblock_managed_apps/unblock_managed_apps_request_builder'
 require_relative './usage_rights/usage_rights_request_builder'
+require_relative './virtual_events/virtual_events_request_builder'
 require_relative './windows_information_protection_device_registrations/windows_information_protection_device_registrations_request_builder'
 require_relative './wipe_and_block_managed_apps/wipe_and_block_managed_apps_request_builder'
 require_relative './wipe_managed_app_registration_by_device_tag/wipe_managed_app_registration_by_device_tag_request_builder'
@@ -201,6 +209,11 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.
+                def cloud_clipboard()
+                    return MicrosoftGraphBeta::Users::Item::CloudClipboard::CloudClipboardRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
                 def cloud_p_cs()
                     return MicrosoftGraphBeta::Users::Item::CloudPCs::CloudPCsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -219,6 +232,11 @@ module MicrosoftGraphBeta
                 # Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
                 def created_objects()
                     return MicrosoftGraphBeta::Users::Item::CreatedObjects::CreatedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the deletePasswordSingleSignOnCredentials method.
+                def delete_password_single_sign_on_credentials()
+                    return MicrosoftGraphBeta::Users::Item::DeletePasswordSingleSignOnCredentials::DeletePasswordSingleSignOnCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
@@ -339,6 +357,11 @@ module MicrosoftGraphBeta
                 # Provides operations to call the getMemberObjects method.
                 def get_member_objects()
                     return MicrosoftGraphBeta::Users::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getPasswordSingleSignOnCredentials method.
+                def get_password_single_sign_on_credentials()
+                    return MicrosoftGraphBeta::Users::Item::GetPasswordSingleSignOnCredentials::GetPasswordSingleSignOnCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
@@ -546,6 +569,11 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::SendMail::SendMailRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # The serviceProvisioningErrors property
+                def service_provisioning_errors()
+                    return MicrosoftGraphBeta::Users::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the settings property of the microsoft.graph.user entity.
                 def settings()
                     return MicrosoftGraphBeta::Users::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -591,6 +619,11 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::UsageRights::UsageRightsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.
+                def virtual_events()
+                    return MicrosoftGraphBeta::Users::Item::VirtualEvents::VirtualEventsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
                 def windows_information_protection_device_registrations()
                     return MicrosoftGraphBeta::Users::Item::WindowsInformationProtectionDeviceRegistrations::WindowsInformationProtectionDeviceRegistrationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -616,13 +649,22 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Users::Item::WipeManagedAppRegistrationsByDeviceTag::WipeManagedAppRegistrationsByDeviceTagRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+                ## @param app_id Alternate key of servicePrincipal
+                ## @return a app_role_assigned_resources_with_app_id_request_builder
+                ## 
+                def app_role_assigned_resources_with_app_id(app_id)
+                    raise StandardError, 'app_id cannot be null' if app_id.nil?
+                    return AppRoleAssignedResourcesWithAppIdRequestBuilder.new(@path_parameters, @request_adapter, appId)
+                end
+                ## 
                 ## Instantiates a new UserItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24expand,%24select}")
                 end
                 ## 
                 ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
@@ -634,9 +676,17 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
+                end
+                ## 
+                ## Provides operations to manage the devices property of the microsoft.graph.user entity.
+                ## @param device_id Alternate key of device
+                ## @return a devices_with_device_id_request_builder
+                ## 
+                def devices_with_device_id(device_id)
+                    raise StandardError, 'device_id cannot be null' if device_id.nil?
+                    return DevicesWithDeviceIdRequestBuilder.new(@path_parameters, @request_adapter, deviceId)
                 end
                 ## 
                 ## Provides operations to call the exportDeviceAndAppManagementData method.
@@ -668,9 +718,17 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::User.create_from_discriminator_value(pn) }, error_mapping)
+                end
+                ## 
+                ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+                ## @param join_web_url Alternate key of onlineMeeting
+                ## @return a online_meetings_with_join_web_url_request_builder
+                ## 
+                def online_meetings_with_join_web_url(join_web_url)
+                    raise StandardError, 'join_web_url cannot be null' if join_web_url.nil?
+                    return OnlineMeetingsWithJoinWebUrlRequestBuilder.new(@path_parameters, @request_adapter, joinWebUrl)
                 end
                 ## 
                 ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
@@ -684,8 +742,7 @@ module MicrosoftGraphBeta
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -706,13 +763,14 @@ module MicrosoftGraphBeta
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = '{+baseurl}/users/{user%2Did}'
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -722,15 +780,15 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -742,16 +800,25 @@ module MicrosoftGraphBeta
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = '{+baseurl}/users/{user%2Did}'
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a user_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return UserItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

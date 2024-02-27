@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class TrainingReminderNotification < MicrosoftGraphBeta::Models::BaseEndUserNotification
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deliveryFrequency property
+            # Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
             @delivery_frequency
             ## 
-            ## Instantiates a new trainingReminderNotification and sets the default values.
+            ## Instantiates a new TrainingReminderNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return TrainingReminderNotification.new
             end
             ## 
-            ## Gets the deliveryFrequency property value. The deliveryFrequency property
+            ## Gets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
             ## @return a notification_delivery_frequency
             ## 
             def delivery_frequency
                 return @delivery_frequency
             end
             ## 
-            ## Sets the deliveryFrequency property value. The deliveryFrequency property
+            ## Sets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
             ## @param value Value to set for the deliveryFrequency property.
             ## @return a void
             ## 

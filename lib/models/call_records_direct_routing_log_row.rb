@@ -17,10 +17,10 @@ module MicrosoftGraphBeta
             # Call type and direction.
             @call_type
             ## 
-            # Number of the user or bot who received the call (E.164 format, but may include additional data).
+            # Number of the user or bot who received the call (E.164 format, but may include more data).
             @callee_number
             ## 
-            # Number of the user or bot who made the call (E.164 format, but may include additional data).
+            # Number of the user or bot who made the call (E.164 format, but may include more data).
             @caller_number
             ## 
             # Identifier (GUID) for the call that you can use when calling Microsoft Support.
@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
             # Unique call identifier (GUID).
             @id
             ## 
-            # When the initial invite was sent.
+            # The date and time when the initial invite was sent.
             @invite_date_time
             ## 
             # Indicates if the trunk was enabled for media bypass or not.
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+            # Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
             @other_party_country_code
             ## 
             # The data center used for signaling for both bypass and non-bypass calls.
@@ -77,21 +77,21 @@ module MicrosoftGraphBeta
             # Display name of the user.
             @user_display_name
             ## 
-            # The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
+            # The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info is null/empty for bot call types.
             @user_id
             ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            # The user principal name (sign-in name) in Microsoft Entra ID, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @call_type = value
             end
             ## 
-            ## Gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+            ## Gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include more data).
             ## @return a string
             ## 
             def callee_number
                 return @callee_number
             end
             ## 
-            ## Sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+            ## Sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include more data).
             ## @param value Value to set for the calleeNumber property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @callee_number = value
             end
             ## 
-            ## Gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+            ## Gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include more data).
             ## @return a string
             ## 
             def caller_number
                 return @caller_number
             end
             ## 
-            ## Sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+            ## Sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include more data).
             ## @param value Value to set for the callerNumber property.
             ## @return a void
             ## 
@@ -158,7 +158,7 @@ module MicrosoftGraphBeta
                 @caller_number = value
             end
             ## 
-            ## Instantiates a new callRecordsDirectRoutingLogRow and sets the default values.
+            ## Instantiates a new CallRecordsDirectRoutingLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -311,14 +311,14 @@ module MicrosoftGraphBeta
                 @id = value
             end
             ## 
-            ## Gets the inviteDateTime property value. When the initial invite was sent.
+            ## Gets the inviteDateTime property value. The date and time when the initial invite was sent.
             ## @return a date_time
             ## 
             def invite_date_time
                 return @invite_date_time
             end
             ## 
-            ## Sets the inviteDateTime property value. When the initial invite was sent.
+            ## Sets the inviteDateTime property value. The date and time when the initial invite was sent.
             ## @param value Value to set for the inviteDateTime property.
             ## @return a void
             ## 
@@ -371,14 +371,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+            ## Gets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
             ## @return a string
             ## 
             def other_party_country_code
                 return @other_party_country_code
             end
             ## 
-            ## Sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+            ## Sets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
             ## @param value Value to set for the otherPartyCountryCode property.
             ## @return a void
             ## 
@@ -509,14 +509,14 @@ module MicrosoftGraphBeta
                 @user_display_name = value
             end
             ## 
-            ## Gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
+            ## Gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info is null/empty for bot call types.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
+            ## Sets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info is null/empty for bot call types.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 
@@ -524,14 +524,14 @@ module MicrosoftGraphBeta
                 @user_id = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID, is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

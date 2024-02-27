@@ -181,6 +181,9 @@ module MicrosoftGraphBeta
             # A list of connector objects.
             @domain_join_connectors
             ## 
+            # List of elevation requests
+            @elevation_requests
+            ## 
             # The embedded SIM activation code pools created by this account.
             @embedded_s_i_m_activation_code_pools
             ## 
@@ -244,6 +247,9 @@ module MicrosoftGraphBeta
             # The MacOS software update account summaries for this account.
             @mac_o_s_software_update_account_summaries
             ## 
+            # Device cleanup rule V2
+            @managed_device_cleanup_rules
+            ## 
             # Device cleanup rule
             @managed_device_cleanup_settings
             ## 
@@ -285,6 +291,12 @@ module MicrosoftGraphBeta
             ## 
             # The Notification Message Templates.
             @notification_message_templates
+            ## 
+            # The Operation Approval Policies
+            @operation_approval_policies
+            ## 
+            # The Operation Approval Requests
+            @operation_approval_requests
             ## 
             # The endpoint privilege management elevation event entity contains elevation details.
             @privilege_management_elevations
@@ -1030,7 +1042,7 @@ module MicrosoftGraphBeta
                 @connector_status = value
             end
             ## 
-            ## Instantiates a new deviceManagementModelModelModelModelModelModelModel and sets the default values.
+            ## Instantiates a new DeviceManagementModelModelModelModelModelModelModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -1421,6 +1433,21 @@ module MicrosoftGraphBeta
                 @domain_join_connectors = value
             end
             ## 
+            ## Gets the elevationRequests property value. List of elevation requests
+            ## @return a privilege_management_elevation_request
+            ## 
+            def elevation_requests
+                return @elevation_requests
+            end
+            ## 
+            ## Sets the elevationRequests property value. List of elevation requests
+            ## @param value Value to set for the elevationRequests property.
+            ## @return a void
+            ## 
+            def elevation_requests=(value)
+                @elevation_requests = value
+            end
+            ## 
             ## Gets the embeddedSIMActivationCodePools property value. The embedded SIM activation code pools created by this account.
             ## @return a embedded_s_i_m_activation_code_pool
             ## 
@@ -1543,6 +1570,7 @@ module MicrosoftGraphBeta
                     "deviceProtectionOverview" => lambda {|n| @device_protection_overview = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceProtectionOverview.create_from_discriminator_value(pn) }) },
                     "deviceShellScripts" => lambda {|n| @device_shell_scripts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceShellScript.create_from_discriminator_value(pn) }) },
                     "domainJoinConnectors" => lambda {|n| @domain_join_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementDomainJoinConnector.create_from_discriminator_value(pn) }) },
+                    "elevationRequests" => lambda {|n| @elevation_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegeManagementElevationRequest.create_from_discriminator_value(pn) }) },
                     "embeddedSIMActivationCodePools" => lambda {|n| @embedded_s_i_m_activation_code_pools = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EmbeddedSIMActivationCodePool.create_from_discriminator_value(pn) }) },
                     "exchangeConnectors" => lambda {|n| @exchange_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementExchangeConnector.create_from_discriminator_value(pn) }) },
                     "exchangeOnPremisesPolicies" => lambda {|n| @exchange_on_premises_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementExchangeOnPremisesPolicy.create_from_discriminator_value(pn) }) },
@@ -1564,6 +1592,7 @@ module MicrosoftGraphBeta
                     "lastReportAggregationDateTime" => lambda {|n| @last_report_aggregation_date_time = n.get_date_time_value() },
                     "legacyPcManangementEnabled" => lambda {|n| @legacy_pc_manangement_enabled = n.get_boolean_value() },
                     "macOSSoftwareUpdateAccountSummaries" => lambda {|n| @mac_o_s_software_update_account_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MacOSSoftwareUpdateAccountSummary.create_from_discriminator_value(pn) }) },
+                    "managedDeviceCleanupRules" => lambda {|n| @managed_device_cleanup_rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCleanupRule.create_from_discriminator_value(pn) }) },
                     "managedDeviceCleanupSettings" => lambda {|n| @managed_device_cleanup_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCleanupSettings.create_from_discriminator_value(pn) }) },
                     "managedDeviceEncryptionStates" => lambda {|n| @managed_device_encryption_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceEncryptionState.create_from_discriminator_value(pn) }) },
                     "managedDeviceOverview" => lambda {|n| @managed_device_overview = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceOverview.create_from_discriminator_value(pn) }) },
@@ -1578,6 +1607,8 @@ module MicrosoftGraphBeta
                     "monitoring" => lambda {|n| @monitoring = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementMonitoring.create_from_discriminator_value(pn) }) },
                     "ndesConnectors" => lambda {|n| @ndes_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NdesConnector.create_from_discriminator_value(pn) }) },
                     "notificationMessageTemplates" => lambda {|n| @notification_message_templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NotificationMessageTemplate.create_from_discriminator_value(pn) }) },
+                    "operationApprovalPolicies" => lambda {|n| @operation_approval_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OperationApprovalPolicy.create_from_discriminator_value(pn) }) },
+                    "operationApprovalRequests" => lambda {|n| @operation_approval_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OperationApprovalRequest.create_from_discriminator_value(pn) }) },
                     "privilegeManagementElevations" => lambda {|n| @privilege_management_elevations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegeManagementElevation.create_from_discriminator_value(pn) }) },
                     "remoteActionAudits" => lambda {|n| @remote_action_audits = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RemoteActionAudit.create_from_discriminator_value(pn) }) },
                     "remoteAssistancePartners" => lambda {|n| @remote_assistance_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RemoteAssistancePartner.create_from_discriminator_value(pn) }) },
@@ -1595,7 +1626,7 @@ module MicrosoftGraphBeta
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementSettings.create_from_discriminator_value(pn) }) },
                     "softwareUpdateStatusSummary" => lambda {|n| @software_update_status_summary = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SoftwareUpdateStatusSummary.create_from_discriminator_value(pn) }) },
                     "subscriptionState" => lambda {|n| @subscription_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementSubscriptionState) },
-                    "subscriptions" => lambda {|n| @subscriptions = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementSubscriptions) },
+                    "subscriptions" => lambda {|n| @subscriptions = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementSubscriptions) },
                     "telecomExpenseManagementPartners" => lambda {|n| @telecom_expense_management_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TelecomExpenseManagementPartner.create_from_discriminator_value(pn) }) },
                     "templateInsights" => lambda {|n| @template_insights = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementTemplateInsightsDefinition.create_from_discriminator_value(pn) }) },
                     "templateSettings" => lambda {|n| @template_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingTemplate.create_from_discriminator_value(pn) }) },
@@ -1924,6 +1955,21 @@ module MicrosoftGraphBeta
                 @mac_o_s_software_update_account_summaries = value
             end
             ## 
+            ## Gets the managedDeviceCleanupRules property value. Device cleanup rule V2
+            ## @return a managed_device_cleanup_rule
+            ## 
+            def managed_device_cleanup_rules
+                return @managed_device_cleanup_rules
+            end
+            ## 
+            ## Sets the managedDeviceCleanupRules property value. Device cleanup rule V2
+            ## @param value Value to set for the managedDeviceCleanupRules property.
+            ## @return a void
+            ## 
+            def managed_device_cleanup_rules=(value)
+                @managed_device_cleanup_rules = value
+            end
+            ## 
             ## Gets the managedDeviceCleanupSettings property value. Device cleanup rule
             ## @return a managed_device_cleanup_settings
             ## 
@@ -2132,6 +2178,36 @@ module MicrosoftGraphBeta
             ## 
             def notification_message_templates=(value)
                 @notification_message_templates = value
+            end
+            ## 
+            ## Gets the operationApprovalPolicies property value. The Operation Approval Policies
+            ## @return a operation_approval_policy
+            ## 
+            def operation_approval_policies
+                return @operation_approval_policies
+            end
+            ## 
+            ## Sets the operationApprovalPolicies property value. The Operation Approval Policies
+            ## @param value Value to set for the operationApprovalPolicies property.
+            ## @return a void
+            ## 
+            def operation_approval_policies=(value)
+                @operation_approval_policies = value
+            end
+            ## 
+            ## Gets the operationApprovalRequests property value. The Operation Approval Requests
+            ## @return a operation_approval_request
+            ## 
+            def operation_approval_requests
+                return @operation_approval_requests
+            end
+            ## 
+            ## Sets the operationApprovalRequests property value. The Operation Approval Requests
+            ## @param value Value to set for the operationApprovalRequests property.
+            ## @return a void
+            ## 
+            def operation_approval_requests=(value)
+                @operation_approval_requests = value
             end
             ## 
             ## Gets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
@@ -2377,6 +2453,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("deviceProtectionOverview", @device_protection_overview)
                 writer.write_collection_of_object_values("deviceShellScripts", @device_shell_scripts)
                 writer.write_collection_of_object_values("domainJoinConnectors", @domain_join_connectors)
+                writer.write_collection_of_object_values("elevationRequests", @elevation_requests)
                 writer.write_collection_of_object_values("embeddedSIMActivationCodePools", @embedded_s_i_m_activation_code_pools)
                 writer.write_collection_of_object_values("exchangeConnectors", @exchange_connectors)
                 writer.write_collection_of_object_values("exchangeOnPremisesPolicies", @exchange_on_premises_policies)
@@ -2396,6 +2473,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("intuneBrandingProfiles", @intune_branding_profiles)
                 writer.write_collection_of_object_values("iosUpdateStatuses", @ios_update_statuses)
                 writer.write_collection_of_object_values("macOSSoftwareUpdateAccountSummaries", @mac_o_s_software_update_account_summaries)
+                writer.write_collection_of_object_values("managedDeviceCleanupRules", @managed_device_cleanup_rules)
                 writer.write_object_value("managedDeviceCleanupSettings", @managed_device_cleanup_settings)
                 writer.write_collection_of_object_values("managedDeviceEncryptionStates", @managed_device_encryption_states)
                 writer.write_object_value("managedDeviceOverview", @managed_device_overview)
@@ -2410,6 +2488,8 @@ module MicrosoftGraphBeta
                 writer.write_object_value("monitoring", @monitoring)
                 writer.write_collection_of_object_values("ndesConnectors", @ndes_connectors)
                 writer.write_collection_of_object_values("notificationMessageTemplates", @notification_message_templates)
+                writer.write_collection_of_object_values("operationApprovalPolicies", @operation_approval_policies)
+                writer.write_collection_of_object_values("operationApprovalRequests", @operation_approval_requests)
                 writer.write_collection_of_object_values("privilegeManagementElevations", @privilege_management_elevations)
                 writer.write_collection_of_object_values("remoteActionAudits", @remote_action_audits)
                 writer.write_collection_of_object_values("remoteAssistancePartners", @remote_assistance_partners)

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The row property
             @row
             ## 
-            ## Instantiates a new lookupResultRow and sets the default values.
+            ## Instantiates a new LookupResultRow and sets the default values.
             ## @return a void
             ## 
             def initialize()

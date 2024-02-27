@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @command_line = value
             end
             ## 
-            ## Instantiates a new windowsMobileMSI and sets the default values.
+            ## Instantiates a new WindowsMobileMSI and sets the default values.
             ## @return a void
             ## 
             def initialize()

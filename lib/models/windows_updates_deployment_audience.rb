@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesDeploymentAudience < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+            # The applicableContent property
             @applicable_content
             ## 
             # Specifies the assets to exclude from the audience.
@@ -16,14 +16,14 @@ module MicrosoftGraphBeta
             # Specifies the assets to include in the audience.
             @members
             ## 
-            ## Gets the applicableContent property value. Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+            ## Gets the applicableContent property value. The applicableContent property
             ## @return a windows_updates_applicable_content
             ## 
             def applicable_content
                 return @applicable_content
             end
             ## 
-            ## Sets the applicableContent property value. Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+            ## Sets the applicableContent property value. The applicableContent property
             ## @param value Value to set for the applicableContent property.
             ## @return a void
             ## 
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @applicable_content = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesDeploymentAudience and sets the default values.
+            ## Instantiates a new WindowsUpdatesDeploymentAudience and sets the default values.
             ## @return a void
             ## 
             def initialize()

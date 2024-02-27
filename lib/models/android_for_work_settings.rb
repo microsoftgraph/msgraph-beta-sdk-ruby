@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @bind_status = value
             end
             ## 
-            ## Instantiates a new androidForWorkSettings and sets the default values.
+            ## Instantiates a new AndroidForWorkSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

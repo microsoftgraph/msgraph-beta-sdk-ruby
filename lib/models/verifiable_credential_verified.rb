@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class VerifiableCredentialVerified < MicrosoftGraphBeta::Models::VerifiableCredentialRequirementStatus
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new verifiableCredentialVerified and sets the default values.
+            ## Instantiates a new VerifiableCredentialVerified and sets the default values.
             ## @return a void
             ## 
             def initialize()

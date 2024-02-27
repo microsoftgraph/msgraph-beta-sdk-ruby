@@ -1,1 +1,1 @@
-require_relative 'upload_url_response'
+require_relative 'upload_url_get_response'

@@ -13,21 +13,21 @@ module MicrosoftGraphBeta
             # The catalogEntry property
             @catalog_entry
             ## 
-            # Collection of devices and recommendations for applicable catalog content.
+            # The matchedDevices property
             @matched_devices
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @catalog_entry = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesApplicableContent and sets the default values.
+            ## Instantiates a new WindowsUpdatesApplicableContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
+            ## Gets the matchedDevices property value. The matchedDevices property
             ## @return a windows_updates_applicable_content_device_match
             ## 
             def matched_devices
                 return @matched_devices
             end
             ## 
-            ## Sets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
+            ## Sets the matchedDevices property value. The matchedDevices property
             ## @param value Value to set for the matchedDevices property.
             ## @return a void
             ## 

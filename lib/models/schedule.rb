@@ -7,8 +7,20 @@ module MicrosoftGraphBeta
         class Schedule < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Indicates whether copied shifts should include the activities.
+            @activities_included_when_copying_shifts_enabled
+            ## 
+            # The day notes in the schedule.
+            @day_notes
+            ## 
             # Indicates whether the schedule is enabled for the team. Required.
             @enabled
+            ## 
+            # Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+            @is_cross_location_shift_request_approval_required
+            ## 
+            # Indicates whether the cross-location marketplace feature is enabled for this schedule.
+            @is_cross_location_shifts_enabled
             ## 
             # The offer requests for shifts in the schedule.
             @offer_shift_requests
@@ -37,19 +49,25 @@ module MicrosoftGraphBeta
             # The shifts in the schedule.
             @shifts
             ## 
+            # The shiftsRoleDefinitions property
+            @shifts_role_definitions
+            ## 
+            # Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+            @start_day_of_week
+            ## 
             # The swap requests for shifts in the schedule.
             @swap_shifts_change_requests
             ## 
             # Indicates whether swap shifts requests are enabled for the schedule.
             @swap_shifts_requests_enabled
             ## 
-            # The timeCards property
+            # The time cards in the schedule.
             @time_cards
             ## 
             # Indicates whether time clock is enabled for the schedule.
             @time_clock_enabled
             ## 
-            # The timeClockSettings property
+            # The time clock location settings for this schedule.
             @time_clock_settings
             ## 
             # The set of reasons for a time off in the schedule.
@@ -67,10 +85,25 @@ module MicrosoftGraphBeta
             # The instances of times off in the schedule.
             @times_off
             ## 
-            # The workforceIntegrationIds property
+            # The IDs for the workforce integrations associated with this schedule.
             @workforce_integration_ids
             ## 
-            ## Instantiates a new schedule and sets the default values.
+            ## Gets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities.
+            ## @return a boolean
+            ## 
+            def activities_included_when_copying_shifts_enabled
+                return @activities_included_when_copying_shifts_enabled
+            end
+            ## 
+            ## Sets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities.
+            ## @param value Value to set for the activitiesIncludedWhenCopyingShiftsEnabled property.
+            ## @return a void
+            ## 
+            def activities_included_when_copying_shifts_enabled=(value)
+                @activities_included_when_copying_shifts_enabled = value
+            end
+            ## 
+            ## Instantiates a new Schedule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,6 +117,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return Schedule.new
+            end
+            ## 
+            ## Gets the dayNotes property value. The day notes in the schedule.
+            ## @return a day_note
+            ## 
+            def day_notes
+                return @day_notes
+            end
+            ## 
+            ## Sets the dayNotes property value. The day notes in the schedule.
+            ## @param value Value to set for the dayNotes property.
+            ## @return a void
+            ## 
+            def day_notes=(value)
+                @day_notes = value
             end
             ## 
             ## Gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
@@ -106,7 +154,11 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "activitiesIncludedWhenCopyingShiftsEnabled" => lambda {|n| @activities_included_when_copying_shifts_enabled = n.get_boolean_value() },
+                    "dayNotes" => lambda {|n| @day_notes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DayNote.create_from_discriminator_value(pn) }) },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
+                    "isCrossLocationShiftRequestApprovalRequired" => lambda {|n| @is_cross_location_shift_request_approval_required = n.get_boolean_value() },
+                    "isCrossLocationShiftsEnabled" => lambda {|n| @is_cross_location_shifts_enabled = n.get_boolean_value() },
                     "offerShiftRequests" => lambda {|n| @offer_shift_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OfferShiftRequest.create_from_discriminator_value(pn) }) },
                     "offerShiftRequestsEnabled" => lambda {|n| @offer_shift_requests_enabled = n.get_boolean_value() },
                     "openShiftChangeRequests" => lambda {|n| @open_shift_change_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OpenShiftChangeRequest.create_from_discriminator_value(pn) }) },
@@ -116,6 +168,8 @@ module MicrosoftGraphBeta
                     "provisionStatusCode" => lambda {|n| @provision_status_code = n.get_string_value() },
                     "schedulingGroups" => lambda {|n| @scheduling_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SchedulingGroup.create_from_discriminator_value(pn) }) },
                     "shifts" => lambda {|n| @shifts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Shift.create_from_discriminator_value(pn) }) },
+                    "shiftsRoleDefinitions" => lambda {|n| @shifts_role_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ShiftsRoleDefinition.create_from_discriminator_value(pn) }) },
+                    "startDayOfWeek" => lambda {|n| @start_day_of_week = n.get_enum_value(MicrosoftGraphBeta::Models::DayOfWeek) },
                     "swapShiftsChangeRequests" => lambda {|n| @swap_shifts_change_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SwapShiftsChangeRequest.create_from_discriminator_value(pn) }) },
                     "swapShiftsRequestsEnabled" => lambda {|n| @swap_shifts_requests_enabled = n.get_boolean_value() },
                     "timeCards" => lambda {|n| @time_cards = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TimeCard.create_from_discriminator_value(pn) }) },
@@ -128,6 +182,36 @@ module MicrosoftGraphBeta
                     "timesOff" => lambda {|n| @times_off = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TimeOff.create_from_discriminator_value(pn) }) },
                     "workforceIntegrationIds" => lambda {|n| @workforce_integration_ids = n.get_collection_of_primitive_values(String) },
                 })
+            end
+            ## 
+            ## Gets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+            ## @return a boolean
+            ## 
+            def is_cross_location_shift_request_approval_required
+                return @is_cross_location_shift_request_approval_required
+            end
+            ## 
+            ## Sets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+            ## @param value Value to set for the isCrossLocationShiftRequestApprovalRequired property.
+            ## @return a void
+            ## 
+            def is_cross_location_shift_request_approval_required=(value)
+                @is_cross_location_shift_request_approval_required = value
+            end
+            ## 
+            ## Gets the isCrossLocationShiftsEnabled property value. Indicates whether the cross-location marketplace feature is enabled for this schedule.
+            ## @return a boolean
+            ## 
+            def is_cross_location_shifts_enabled
+                return @is_cross_location_shifts_enabled
+            end
+            ## 
+            ## Sets the isCrossLocationShiftsEnabled property value. Indicates whether the cross-location marketplace feature is enabled for this schedule.
+            ## @param value Value to set for the isCrossLocationShiftsEnabled property.
+            ## @return a void
+            ## 
+            def is_cross_location_shifts_enabled=(value)
+                @is_cross_location_shifts_enabled = value
             end
             ## 
             ## Gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
@@ -257,7 +341,11 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_boolean_value("activitiesIncludedWhenCopyingShiftsEnabled", @activities_included_when_copying_shifts_enabled)
+                writer.write_collection_of_object_values("dayNotes", @day_notes)
                 writer.write_boolean_value("enabled", @enabled)
+                writer.write_boolean_value("isCrossLocationShiftRequestApprovalRequired", @is_cross_location_shift_request_approval_required)
+                writer.write_boolean_value("isCrossLocationShiftsEnabled", @is_cross_location_shifts_enabled)
                 writer.write_collection_of_object_values("offerShiftRequests", @offer_shift_requests)
                 writer.write_boolean_value("offerShiftRequestsEnabled", @offer_shift_requests_enabled)
                 writer.write_collection_of_object_values("openShiftChangeRequests", @open_shift_change_requests)
@@ -265,6 +353,8 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("openShiftsEnabled", @open_shifts_enabled)
                 writer.write_collection_of_object_values("schedulingGroups", @scheduling_groups)
                 writer.write_collection_of_object_values("shifts", @shifts)
+                writer.write_collection_of_object_values("shiftsRoleDefinitions", @shifts_role_definitions)
+                writer.write_enum_value("startDayOfWeek", @start_day_of_week)
                 writer.write_collection_of_object_values("swapShiftsChangeRequests", @swap_shifts_change_requests)
                 writer.write_boolean_value("swapShiftsRequestsEnabled", @swap_shifts_requests_enabled)
                 writer.write_collection_of_object_values("timeCards", @time_cards)
@@ -291,6 +381,36 @@ module MicrosoftGraphBeta
             ## 
             def shifts=(value)
                 @shifts = value
+            end
+            ## 
+            ## Gets the shiftsRoleDefinitions property value. The shiftsRoleDefinitions property
+            ## @return a shifts_role_definition
+            ## 
+            def shifts_role_definitions
+                return @shifts_role_definitions
+            end
+            ## 
+            ## Sets the shiftsRoleDefinitions property value. The shiftsRoleDefinitions property
+            ## @param value Value to set for the shiftsRoleDefinitions property.
+            ## @return a void
+            ## 
+            def shifts_role_definitions=(value)
+                @shifts_role_definitions = value
+            end
+            ## 
+            ## Gets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+            ## @return a day_of_week
+            ## 
+            def start_day_of_week
+                return @start_day_of_week
+            end
+            ## 
+            ## Sets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+            ## @param value Value to set for the startDayOfWeek property.
+            ## @return a void
+            ## 
+            def start_day_of_week=(value)
+                @start_day_of_week = value
             end
             ## 
             ## Gets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
@@ -323,14 +443,14 @@ module MicrosoftGraphBeta
                 @swap_shifts_requests_enabled = value
             end
             ## 
-            ## Gets the timeCards property value. The timeCards property
+            ## Gets the timeCards property value. The time cards in the schedule.
             ## @return a time_card
             ## 
             def time_cards
                 return @time_cards
             end
             ## 
-            ## Sets the timeCards property value. The timeCards property
+            ## Sets the timeCards property value. The time cards in the schedule.
             ## @param value Value to set for the timeCards property.
             ## @return a void
             ## 
@@ -353,14 +473,14 @@ module MicrosoftGraphBeta
                 @time_clock_enabled = value
             end
             ## 
-            ## Gets the timeClockSettings property value. The timeClockSettings property
+            ## Gets the timeClockSettings property value. The time clock location settings for this schedule.
             ## @return a time_clock_settings
             ## 
             def time_clock_settings
                 return @time_clock_settings
             end
             ## 
-            ## Sets the timeClockSettings property value. The timeClockSettings property
+            ## Sets the timeClockSettings property value. The time clock location settings for this schedule.
             ## @param value Value to set for the timeClockSettings property.
             ## @return a void
             ## 
@@ -443,14 +563,14 @@ module MicrosoftGraphBeta
                 @times_off = value
             end
             ## 
-            ## Gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Gets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
             ## @return a string
             ## 
             def workforce_integration_ids
                 return @workforce_integration_ids
             end
             ## 
-            ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Sets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
             ## @param value Value to set for the workforceIntegrationIds property.
             ## @return a void
             ## 

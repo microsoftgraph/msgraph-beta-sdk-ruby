@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SubjectRightsRequestAllSiteLocation < MicrosoftGraphBeta::Models::SubjectRightsRequestSiteLocation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new subjectRightsRequestAllSiteLocation and sets the default values.
+            ## Instantiates a new SubjectRightsRequestAllSiteLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()

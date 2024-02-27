@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                 @checked_date_time = value
             end
             ## 
-            ## Instantiates a new checklistItem and sets the default values.
+            ## Instantiates a new ChecklistItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

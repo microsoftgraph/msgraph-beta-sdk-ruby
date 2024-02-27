@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The calendar that contains the event. Navigation property. Read-only.
             @calendar
             ## 
-            # Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            # Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             @cancelled_occurrences
             ## 
             # The date, time, and time zone that the event ends. By default, the end time is in UTC.
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # The importance property
             @importance
             ## 
-            # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             @instances
             ## 
             # The isAllDay property
@@ -233,14 +233,14 @@ module MicrosoftGraphBeta
                 @calendar = value
             end
             ## 
-            ## Gets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            ## Gets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             ## @return a string
             ## 
             def cancelled_occurrences
                 return @cancelled_occurrences
             end
             ## 
-            ## Sets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            ## Sets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             ## @param value Value to set for the cancelledOccurrences property.
             ## @return a void
             ## 
@@ -248,7 +248,7 @@ module MicrosoftGraphBeta
                 @cancelled_occurrences = value
             end
             ## 
-            ## Instantiates a new event and sets the default values.
+            ## Instantiates a new Event and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -408,14 +408,14 @@ module MicrosoftGraphBeta
                 @importance = value
             end
             ## 
-            ## Gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            ## Gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             ## @return a event
             ## 
             def instances
                 return @instances
             end
             ## 
-            ## Sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            ## Sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             ## @param value Value to set for the instances property.
             ## @return a void
             ## 

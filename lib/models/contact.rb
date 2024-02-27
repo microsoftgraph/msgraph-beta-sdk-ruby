@@ -179,7 +179,7 @@ module MicrosoftGraphBeta
                 @company_name = value
             end
             ## 
-            ## Instantiates a new contact and sets the default values.
+            ## Instantiates a new Contact and sets the default values.
             ## @return a void
             ## 
             def initialize()

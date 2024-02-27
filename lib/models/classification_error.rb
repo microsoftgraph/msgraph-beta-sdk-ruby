@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The details property
             @details
             ## 
-            ## Instantiates a new classificationError and sets the default values.
+            ## Instantiates a new ClassificationError and sets the default values.
             ## @return a void
             ## 
             def initialize()

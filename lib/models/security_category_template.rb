@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Represents all subcategories under a particular category.
             @sub_categories
             ## 
-            ## Instantiates a new securityCategoryTemplate and sets the default values.
+            ## Instantiates a new SecurityCategoryTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,19 +8,19 @@ module MicrosoftGraphBeta
         class EducationAssignment < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+            # Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
             @add_to_calendar_action
             ## 
-            # Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+            # Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn't be assigned to new students.
             @added_student_action
             ## 
-            # Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
+            # Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
             @allow_late_submissions
             ## 
             # Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
             @allow_students_to_add_resources_to_submission
             ## 
-            # The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @assign_date_time
             ## 
             # Which users, or whole class should receive a submission object once the assignment is published.
@@ -32,10 +32,10 @@ module MicrosoftGraphBeta
             # When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
             @categories
             ## 
-            # Class which this assignment belongs.
+            # Class to which this assignment belongs.
             @class_id
             ## 
-            # Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @close_date_time
             ## 
             # Who created the assignment.
@@ -56,10 +56,13 @@ module MicrosoftGraphBeta
             # How the assignment will be graded.
             @grading
             ## 
-            # The gradingCategory property
+            # When set, enables users to weight assignments differently when computing a class average grade.
             @grading_category
             ## 
-            # Instructions for the assignment.  This along with the display name tell the student what to do.
+            # The gradingScheme property
+            @grading_scheme
+            ## 
+            # Instructions for the assignment. This property and the display name tell the student what to do.
             @instructions
             ## 
             # Who last modified the assignment.
@@ -68,10 +71,10 @@ module MicrosoftGraphBeta
             # Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
-            # The moduleUrl property
+            # The URL of the module from which to access the assignment.
             @module_url
             ## 
-            # Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
+            # Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
             @notification_channel_url
             ## 
             # Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
@@ -83,7 +86,7 @@ module MicrosoftGraphBeta
             # When set, the grading rubric attached to this assignment.
             @rubric
             ## 
-            # Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
+            # Status of the assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
             @status
             ## 
             # Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
@@ -92,14 +95,14 @@ module MicrosoftGraphBeta
             # The deep link URL for the given assignment.
             @web_url
             ## 
-            ## Gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+            ## Gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
             ## @return a education_add_to_calendar_options
             ## 
             def add_to_calendar_action
                 return @add_to_calendar_action
             end
             ## 
-            ## Sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+            ## Sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
             ## @param value Value to set for the addToCalendarAction property.
             ## @return a void
             ## 
@@ -107,14 +110,14 @@ module MicrosoftGraphBeta
                 @add_to_calendar_action = value
             end
             ## 
-            ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+            ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn't be assigned to new students.
             ## @return a education_added_student_action
             ## 
             def added_student_action
                 return @added_student_action
             end
             ## 
-            ## Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+            ## Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn't be assigned to new students.
             ## @param value Value to set for the addedStudentAction property.
             ## @return a void
             ## 
@@ -122,14 +125,14 @@ module MicrosoftGraphBeta
                 @added_student_action = value
             end
             ## 
-            ## Gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
+            ## Gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
             ## @return a boolean
             ## 
             def allow_late_submissions
                 return @allow_late_submissions
             end
             ## 
-            ## Sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.
+            ## Sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
             ## @param value Value to set for the allowLateSubmissions property.
             ## @return a void
             ## 
@@ -152,14 +155,14 @@ module MicrosoftGraphBeta
                 @allow_students_to_add_resources_to_submission = value
             end
             ## 
-            ## Gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def assign_date_time
                 return @assign_date_time
             end
             ## 
-            ## Sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the assignDateTime property.
             ## @return a void
             ## 
@@ -212,14 +215,14 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Gets the classId property value. Class which this assignment belongs.
+            ## Gets the classId property value. Class to which this assignment belongs.
             ## @return a string
             ## 
             def class_id
                 return @class_id
             end
             ## 
-            ## Sets the classId property value. Class which this assignment belongs.
+            ## Sets the classId property value. Class to which this assignment belongs.
             ## @param value Value to set for the classId property.
             ## @return a void
             ## 
@@ -227,14 +230,14 @@ module MicrosoftGraphBeta
                 @class_id = value
             end
             ## 
-            ## Gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def close_date_time
                 return @close_date_time
             end
             ## 
-            ## Sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the closeDateTime property.
             ## @return a void
             ## 
@@ -242,7 +245,7 @@ module MicrosoftGraphBeta
                 @close_date_time = value
             end
             ## 
-            ## Instantiates a new educationAssignment and sets the default values.
+            ## Instantiates a new EducationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -355,6 +358,7 @@ module MicrosoftGraphBeta
                     "feedbackResourcesFolderUrl" => lambda {|n| @feedback_resources_folder_url = n.get_string_value() },
                     "grading" => lambda {|n| @grading = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationAssignmentGradeType.create_from_discriminator_value(pn) }) },
                     "gradingCategory" => lambda {|n| @grading_category = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationGradingCategory.create_from_discriminator_value(pn) }) },
+                    "gradingScheme" => lambda {|n| @grading_scheme = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationGradingScheme.create_from_discriminator_value(pn) }) },
                     "instructions" => lambda {|n| @instructions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationItemBody.create_from_discriminator_value(pn) }) },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
@@ -384,14 +388,14 @@ module MicrosoftGraphBeta
                 @grading = value
             end
             ## 
-            ## Gets the gradingCategory property value. The gradingCategory property
+            ## Gets the gradingCategory property value. When set, enables users to weight assignments differently when computing a class average grade.
             ## @return a education_grading_category
             ## 
             def grading_category
                 return @grading_category
             end
             ## 
-            ## Sets the gradingCategory property value. The gradingCategory property
+            ## Sets the gradingCategory property value. When set, enables users to weight assignments differently when computing a class average grade.
             ## @param value Value to set for the gradingCategory property.
             ## @return a void
             ## 
@@ -399,14 +403,29 @@ module MicrosoftGraphBeta
                 @grading_category = value
             end
             ## 
-            ## Gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+            ## Gets the gradingScheme property value. The gradingScheme property
+            ## @return a education_grading_scheme
+            ## 
+            def grading_scheme
+                return @grading_scheme
+            end
+            ## 
+            ## Sets the gradingScheme property value. The gradingScheme property
+            ## @param value Value to set for the gradingScheme property.
+            ## @return a void
+            ## 
+            def grading_scheme=(value)
+                @grading_scheme = value
+            end
+            ## 
+            ## Gets the instructions property value. Instructions for the assignment. This property and the display name tell the student what to do.
             ## @return a education_item_body
             ## 
             def instructions
                 return @instructions
             end
             ## 
-            ## Sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+            ## Sets the instructions property value. Instructions for the assignment. This property and the display name tell the student what to do.
             ## @param value Value to set for the instructions property.
             ## @return a void
             ## 
@@ -444,14 +463,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the moduleUrl property value. The moduleUrl property
+            ## Gets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @return a string
             ## 
             def module_url
                 return @module_url
             end
             ## 
-            ## Sets the moduleUrl property value. The moduleUrl property
+            ## Sets the moduleUrl property value. The URL of the module from which to access the assignment.
             ## @param value Value to set for the moduleUrl property.
             ## @return a void
             ## 
@@ -459,14 +478,14 @@ module MicrosoftGraphBeta
                 @module_url = value
             end
             ## 
-            ## Gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
+            ## Gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
             ## @return a string
             ## 
             def notification_channel_url
                 return @notification_channel_url
             end
             ## 
-            ## Sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
+            ## Sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
             ## @param value Value to set for the notificationChannelUrl property.
             ## @return a void
             ## 
@@ -538,6 +557,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("dueDateTime", @due_date_time)
                 writer.write_object_value("grading", @grading)
                 writer.write_object_value("gradingCategory", @grading_category)
+                writer.write_object_value("gradingScheme", @grading_scheme)
                 writer.write_object_value("instructions", @instructions)
                 writer.write_string_value("moduleUrl", @module_url)
                 writer.write_string_value("notificationChannelUrl", @notification_channel_url)
@@ -546,14 +566,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("submissions", @submissions)
             end
             ## 
-            ## Gets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
+            ## Gets the status property value. Status of the assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
             ## @return a education_assignment_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
+            ## Sets the status property value. Status of the assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

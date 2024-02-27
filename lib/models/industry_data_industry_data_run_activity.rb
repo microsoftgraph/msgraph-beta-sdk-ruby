@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @blocking_error = value
             end
             ## 
-            ## Instantiates a new industryDataIndustryDataRunActivity and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataRunActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

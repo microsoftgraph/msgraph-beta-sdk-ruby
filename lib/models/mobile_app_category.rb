@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The date and time the mobileAppCategory was last modified.
             @last_modified_date_time
             ## 
-            ## Instantiates a new mobileAppCategory and sets the default values.
+            ## Instantiates a new MobileAppCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

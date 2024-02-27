@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The sequence number for each stage of the disposition review.
             @stage_number
             ## 
-            ## Instantiates a new securityDispositionReviewStage and sets the default values.
+            ## Instantiates a new SecurityDispositionReviewStage and sets the default values.
             ## @return a void
             ## 
             def initialize()

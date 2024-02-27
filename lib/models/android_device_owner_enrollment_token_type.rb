@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
         AndroidDeviceOwnerEnrollmentTokenType = {
             Default: :Default,
             CorporateOwnedDedicatedDeviceWithAzureADSharedMode: :CorporateOwnedDedicatedDeviceWithAzureADSharedMode,
+            DeviceStaging: :DeviceStaging,
         }
     end
 end

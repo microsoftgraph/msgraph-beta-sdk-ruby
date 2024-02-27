@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 @app_tracks = value
             end
             ## 
-            ## Instantiates a new androidManagedStoreApp and sets the default values.
+            ## Instantiates a new AndroidManagedStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
