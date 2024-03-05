@@ -115,7 +115,7 @@ module MicrosoftGraphBeta
                 @android_managed_app_protections = value
             end
             ## 
-            ## Instantiates a new deviceAppManagement and sets the default values.
+            ## Instantiates a new DeviceAppManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -197,7 +197,7 @@ module MicrosoftGraphBeta
                     "microsoftStoreForBusinessLanguage" => lambda {|n| @microsoft_store_for_business_language = n.get_string_value() },
                     "microsoftStoreForBusinessLastCompletedApplicationSyncTime" => lambda {|n| @microsoft_store_for_business_last_completed_application_sync_time = n.get_date_time_value() },
                     "microsoftStoreForBusinessLastSuccessfulSyncDateTime" => lambda {|n| @microsoft_store_for_business_last_successful_sync_date_time = n.get_date_time_value() },
-                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
+                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_values(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
                     "mobileAppCategories" => lambda {|n| @mobile_app_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppCategory.create_from_discriminator_value(pn) }) },
                     "mobileAppConfigurations" => lambda {|n| @mobile_app_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceMobileAppConfiguration.create_from_discriminator_value(pn) }) },
                     "mobileApps" => lambda {|n| @mobile_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileApp.create_from_discriminator_value(pn) }) },

@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
             @state
             ## 
-            ## Instantiates a new educationSynchronizationProfile and sets the default values.
+            ## Instantiates a new EducationSynchronizationProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

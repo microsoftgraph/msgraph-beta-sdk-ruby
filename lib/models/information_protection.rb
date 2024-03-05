@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @bitlocker = value
             end
             ## 
-            ## Instantiates a new informationProtection and sets the default values.
+            ## Instantiates a new InformationProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

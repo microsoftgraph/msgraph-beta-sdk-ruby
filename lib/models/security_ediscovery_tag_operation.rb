@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityEdiscoveryTagOperation < MicrosoftGraphBeta::Models::SecurityCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityEdiscoveryTagOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryTagOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

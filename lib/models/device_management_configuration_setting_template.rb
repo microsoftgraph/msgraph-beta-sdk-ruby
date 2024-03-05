@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Setting Instance Template
             @setting_instance_template
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

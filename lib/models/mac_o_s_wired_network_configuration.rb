@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new macOSWiredNetworkConfiguration and sets the default values.
+            ## Instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

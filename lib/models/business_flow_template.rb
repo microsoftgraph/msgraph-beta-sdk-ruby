@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name of the business flow template
             @display_name
             ## 
-            ## Instantiates a new businessFlowTemplate and sets the default values.
+            ## Instantiates a new BusinessFlowTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

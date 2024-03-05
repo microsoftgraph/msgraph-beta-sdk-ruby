@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
             @context_scenario_id
             ## 
-            # Nullable. The id of the external entity's containing entity or context.
+            # Nullable. The ID of the external entity's containing entity or context.
             @external_context_id
             ## 
-            # Nullable. The id of the entity that an external service associates with a bucket.
+            # Nullable. The ID of the entity that an external service associates with a bucket.
             @external_object_id
             ## 
-            ## Instantiates a new plannerExternalBucketSource and sets the default values.
+            ## Instantiates a new PlannerExternalBucketSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 return PlannerExternalBucketSource.new
             end
             ## 
-            ## Gets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
+            ## Gets the externalContextId property value. Nullable. The ID of the external entity's containing entity or context.
             ## @return a string
             ## 
             def external_context_id
                 return @external_context_id
             end
             ## 
-            ## Sets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
+            ## Sets the externalContextId property value. Nullable. The ID of the external entity's containing entity or context.
             ## @param value Value to set for the externalContextId property.
             ## @return a void
             ## 
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 @external_context_id = value
             end
             ## 
-            ## Gets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a bucket.
+            ## Gets the externalObjectId property value. Nullable. The ID of the entity that an external service associates with a bucket.
             ## @return a string
             ## 
             def external_object_id
                 return @external_object_id
             end
             ## 
-            ## Sets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a bucket.
+            ## Sets the externalObjectId property value. Nullable. The ID of the entity that an external service associates with a bucket.
             ## @param value Value to set for the externalObjectId property.
             ## @return a void
             ## 

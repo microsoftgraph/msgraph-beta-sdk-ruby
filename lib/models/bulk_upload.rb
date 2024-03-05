@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class BulkUpload < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new bulkUpload and sets the default values.
+            ## Instantiates a new BulkUpload and sets the default values.
             ## @return a void
             ## 
             def initialize()

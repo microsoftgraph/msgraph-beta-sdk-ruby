@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                 @conditions = value
             end
             ## 
-            ## Instantiates a new conditionalAccessPolicy and sets the default values.
+            ## Instantiates a new ConditionalAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -9,22 +9,28 @@ module MicrosoftGraphBeta
         class MacOSPkgApp < MicrosoftGraphBeta::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.
+            # When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             @ignore_version_detection
             ## 
-            # The list of apps expected to be installed by the .pkg.
+            # The list of apps expected to be installed by the PKG.
             @included_apps
             ## 
-            # The value for the minimum applicable operating system.
+            # ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             @minimum_supported_operating_system
             ## 
-            # The primary CFBundleIdentifier of the .pkg.
+            # ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            @post_install_script
+            ## 
+            # ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            @pre_install_script
+            ## 
+            # The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
             @primary_bundle_id
             ## 
-            # The primary CFBundleVersion of the .pkg.
+            # The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
             @primary_bundle_version
             ## 
-            ## Instantiates a new macOSPkgApp and sets the default values.
+            ## Instantiates a new MacOSPkgApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -49,19 +55,21 @@ module MicrosoftGraphBeta
                     "ignoreVersionDetection" => lambda {|n| @ignore_version_detection = n.get_boolean_value() },
                     "includedApps" => lambda {|n| @included_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MacOSIncludedApp.create_from_discriminator_value(pn) }) },
                     "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
+                    "postInstallScript" => lambda {|n| @post_install_script = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSAppScript.create_from_discriminator_value(pn) }) },
+                    "preInstallScript" => lambda {|n| @pre_install_script = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSAppScript.create_from_discriminator_value(pn) }) },
                     "primaryBundleId" => lambda {|n| @primary_bundle_id = n.get_string_value() },
                     "primaryBundleVersion" => lambda {|n| @primary_bundle_version = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.
+            ## Gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             ## @return a boolean
             ## 
             def ignore_version_detection
                 return @ignore_version_detection
             end
             ## 
-            ## Sets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device. The default value is false.
+            ## Sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             ## @param value Value to set for the ignoreVersionDetection property.
             ## @return a void
             ## 
@@ -69,14 +77,14 @@ module MicrosoftGraphBeta
                 @ignore_version_detection = value
             end
             ## 
-            ## Gets the includedApps property value. The list of apps expected to be installed by the .pkg.
+            ## Gets the includedApps property value. The list of apps expected to be installed by the PKG.
             ## @return a mac_o_s_included_app
             ## 
             def included_apps
                 return @included_apps
             end
             ## 
-            ## Sets the includedApps property value. The list of apps expected to be installed by the .pkg.
+            ## Sets the includedApps property value. The list of apps expected to be installed by the PKG.
             ## @param value Value to set for the includedApps property.
             ## @return a void
             ## 
@@ -84,14 +92,14 @@ module MicrosoftGraphBeta
                 @included_apps = value
             end
             ## 
-            ## Gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+            ## Gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             ## @return a mac_o_s_minimum_operating_system
             ## 
             def minimum_supported_operating_system
                 return @minimum_supported_operating_system
             end
             ## 
-            ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+            ## Sets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
@@ -99,14 +107,44 @@ module MicrosoftGraphBeta
                 @minimum_supported_operating_system = value
             end
             ## 
-            ## Gets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
+            ## Gets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @return a mac_o_s_app_script
+            ## 
+            def post_install_script
+                return @post_install_script
+            end
+            ## 
+            ## Sets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @param value Value to set for the postInstallScript property.
+            ## @return a void
+            ## 
+            def post_install_script=(value)
+                @post_install_script = value
+            end
+            ## 
+            ## Gets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @return a mac_o_s_app_script
+            ## 
+            def pre_install_script
+                return @pre_install_script
+            end
+            ## 
+            ## Sets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+            ## @param value Value to set for the preInstallScript property.
+            ## @return a void
+            ## 
+            def pre_install_script=(value)
+                @pre_install_script = value
+            end
+            ## 
+            ## Gets the primaryBundleId property value. The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @return a string
             ## 
             def primary_bundle_id
                 return @primary_bundle_id
             end
             ## 
-            ## Sets the primaryBundleId property value. The primary CFBundleIdentifier of the .pkg.
+            ## Sets the primaryBundleId property value. The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @param value Value to set for the primaryBundleId property.
             ## @return a void
             ## 
@@ -114,14 +152,14 @@ module MicrosoftGraphBeta
                 @primary_bundle_id = value
             end
             ## 
-            ## Gets the primaryBundleVersion property value. The primary CFBundleVersion of the .pkg.
+            ## Gets the primaryBundleVersion property value. The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @return a string
             ## 
             def primary_bundle_version
                 return @primary_bundle_version
             end
             ## 
-            ## Sets the primaryBundleVersion property value. The primary CFBundleVersion of the .pkg.
+            ## Sets the primaryBundleVersion property value. The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @param value Value to set for the primaryBundleVersion property.
             ## @return a void
             ## 
@@ -139,6 +177,8 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection)
                 writer.write_collection_of_object_values("includedApps", @included_apps)
                 writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
+                writer.write_object_value("postInstallScript", @post_install_script)
+                writer.write_object_value("preInstallScript", @pre_install_script)
                 writer.write_string_value("primaryBundleId", @primary_bundle_id)
                 writer.write_string_value("primaryBundleVersion", @primary_bundle_version)
             end

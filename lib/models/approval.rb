@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Used to represent the decision associated with a single step in the approval process configured in approvalStage.
             @steps
             ## 
-            ## Instantiates a new approval and sets the default values.
+            ## Instantiates a new Approval and sets the default values.
             ## @return a void
             ## 
             def initialize()

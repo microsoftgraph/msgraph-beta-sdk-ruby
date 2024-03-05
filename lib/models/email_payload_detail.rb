@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # Display name of the user.
             @from_name
             ## 
-            # Indicates whether the sender is not from the user's organization.
+            # Indicates whether the sender isn't from the user's organization.
             @is_external_sender
             ## 
             # The subject of the email address sent to the user.
             @subject
             ## 
-            ## Instantiates a new emailPayloadDetail and sets the default values.
+            ## Instantiates a new EmailPayloadDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
+            ## Gets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
             ## @return a boolean
             ## 
             def is_external_sender
                 return @is_external_sender
             end
             ## 
-            ## Sets the isExternalSender property value. Indicates whether the sender is not from the user's organization.
+            ## Sets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
             ## @param value Value to set for the isExternalSender property.
             ## @return a void
             ## 

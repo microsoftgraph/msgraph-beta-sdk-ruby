@@ -23,10 +23,10 @@ module MicrosoftGraphBeta
             # Time when the incident was first created.
             @created_date_time
             ## 
-            # Array of custom tags associated with an incident.
+            # The collection of custom tags that are associated with an incident.
             @custom_tags
             ## 
-            # The description property
+            # Description of the incident.
             @description
             ## 
             # Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
@@ -38,16 +38,16 @@ module MicrosoftGraphBeta
             # The URL for the incident page in the Microsoft 365 Defender portal.
             @incident_web_url
             ## 
-            # The lastModifiedBy property
+            # The identity that last modified the incident.
             @last_modified_by
             ## 
             # Time when the incident was last updated.
             @last_update_date_time
             ## 
-            # The recommendedActions property
+            # A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
             @recommended_actions
             ## 
-            # The recommendedHuntingQueries property
+            # List of hunting Kusto Query Language (KQL) queries related to the incident
             @recommended_hunting_queries
             ## 
             # Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
@@ -59,10 +59,10 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            # The systemTags property
+            # The collection of system tags that are associated with the incident.
             @system_tags
             ## 
-            # The Azure Active Directory tenant in which the alert was created.
+            # The Microsoft Entra tenant in which the alert was created.
             @tenant_id
             ## 
             ## Gets the alerts property value. The list of related alerts. Supports $expand.
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 @comments = value
             end
             ## 
-            ## Instantiates a new securityIncident and sets the default values.
+            ## Instantiates a new SecurityIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -156,14 +156,14 @@ module MicrosoftGraphBeta
                 return SecurityIncident.new
             end
             ## 
-            ## Gets the customTags property value. Array of custom tags associated with an incident.
+            ## Gets the customTags property value. The collection of custom tags that are associated with an incident.
             ## @return a string
             ## 
             def custom_tags
                 return @custom_tags
             end
             ## 
-            ## Sets the customTags property value. Array of custom tags associated with an incident.
+            ## Sets the customTags property value. The collection of custom tags that are associated with an incident.
             ## @param value Value to set for the customTags property.
             ## @return a void
             ## 
@@ -171,14 +171,14 @@ module MicrosoftGraphBeta
                 @custom_tags = value
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the incident.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the incident.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -258,14 +258,14 @@ module MicrosoftGraphBeta
                 @incident_web_url = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. The identity that last modified the incident.
             ## @return a string
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. The identity that last modified the incident.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -288,14 +288,14 @@ module MicrosoftGraphBeta
                 @last_update_date_time = value
             end
             ## 
-            ## Gets the recommendedActions property value. The recommendedActions property
+            ## Gets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
             ## @return a string
             ## 
             def recommended_actions
                 return @recommended_actions
             end
             ## 
-            ## Sets the recommendedActions property value. The recommendedActions property
+            ## Sets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
             ## @param value Value to set for the recommendedActions property.
             ## @return a void
             ## 
@@ -303,14 +303,14 @@ module MicrosoftGraphBeta
                 @recommended_actions = value
             end
             ## 
-            ## Gets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+            ## Gets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
             ## @return a security_recommended_hunting_query
             ## 
             def recommended_hunting_queries
                 return @recommended_hunting_queries
             end
             ## 
-            ## Sets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+            ## Sets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
             ## @param value Value to set for the recommendedHuntingQueries property.
             ## @return a void
             ## 
@@ -391,14 +391,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the systemTags property value. The systemTags property
+            ## Gets the systemTags property value. The collection of system tags that are associated with the incident.
             ## @return a string
             ## 
             def system_tags
                 return @system_tags
             end
             ## 
-            ## Sets the systemTags property value. The systemTags property
+            ## Sets the systemTags property value. The collection of system tags that are associated with the incident.
             ## @param value Value to set for the systemTags property.
             ## @return a void
             ## 
@@ -406,14 +406,14 @@ module MicrosoftGraphBeta
                 @system_tags = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Gets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+            ## Sets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

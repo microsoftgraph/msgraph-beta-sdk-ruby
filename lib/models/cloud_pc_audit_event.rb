@@ -161,7 +161,7 @@ module MicrosoftGraphBeta
                 @component_name = value
             end
             ## 
-            ## Instantiates a new cloudPcAuditEvent and sets the default values.
+            ## Instantiates a new CloudPcAuditEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

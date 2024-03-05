@@ -19,6 +19,9 @@ module MicrosoftGraphBeta
             # The phone number of the place.
             @phone
             ## 
+            # An alternate immutable unique identifier of the place.
+            @place_id
+            ## 
             ## Gets the address property value. The street address of the place.
             ## @return a physical_address
             ## 
@@ -34,7 +37,7 @@ module MicrosoftGraphBeta
                 @address = value
             end
             ## 
-            ## Instantiates a new place and sets the default values.
+            ## Instantiates a new Place and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -101,6 +104,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "geoCoordinates" => lambda {|n| @geo_coordinates = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OutlookGeoCoordinates.create_from_discriminator_value(pn) }) },
                     "phone" => lambda {|n| @phone = n.get_string_value() },
+                    "placeId" => lambda {|n| @place_id = n.get_string_value() },
                 })
             end
             ## 
@@ -119,6 +123,21 @@ module MicrosoftGraphBeta
                 @phone = value
             end
             ## 
+            ## Gets the placeId property value. An alternate immutable unique identifier of the place.
+            ## @return a string
+            ## 
+            def place_id
+                return @place_id
+            end
+            ## 
+            ## Sets the placeId property value. An alternate immutable unique identifier of the place.
+            ## @param value Value to set for the placeId property.
+            ## @return a void
+            ## 
+            def place_id=(value)
+                @place_id = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -130,6 +149,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("geoCoordinates", @geo_coordinates)
                 writer.write_string_value("phone", @phone)
+                writer.write_string_value("placeId", @place_id)
             end
         end
     end

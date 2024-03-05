@@ -16,10 +16,10 @@ module MicrosoftGraphBeta
             # Returns the name of the table column.
             @name
             ## 
-            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             @values
             ## 
-            ## Instantiates a new workbookTableColumn and sets the default values.
+            ## Instantiates a new WorkbookTableColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("values", @values)
             end
             ## 
-            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @return a json
             ## 
             def values
                 return @values
             end
             ## 
-            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @param value Value to set for the values property.
             ## @return a void
             ## 

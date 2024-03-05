@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new securityCloudApplicationEvidence and sets the default values.
+            ## Instantiates a new SecurityCloudApplicationEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

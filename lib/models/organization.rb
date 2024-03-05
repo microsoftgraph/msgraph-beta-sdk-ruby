@@ -194,7 +194,7 @@ module MicrosoftGraphBeta
                 @city = value
             end
             ## 
-            ## Instantiates a new organization and sets the default values.
+            ## Instantiates a new Organization and sets the default values.
             ## @return a void
             ## 
             def initialize()

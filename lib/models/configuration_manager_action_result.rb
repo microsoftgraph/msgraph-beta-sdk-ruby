@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @action_delivery_status = value
             end
             ## 
-            ## Instantiates a new configurationManagerActionResult and sets the default values.
+            ## Instantiates a new ConfigurationManagerActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

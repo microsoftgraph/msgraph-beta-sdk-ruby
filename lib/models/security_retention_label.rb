@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                 @behavior_during_retention_period = value
             end
             ## 
-            ## Instantiates a new securityRetentionLabel and sets the default values.
+            ## Instantiates a new SecurityRetentionLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()

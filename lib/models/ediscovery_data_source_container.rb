@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # Latest status of the dataSourceContainer. Possible values are: Active, Released.
             @status
             ## 
-            ## Instantiates a new ediscoveryDataSourceContainer and sets the default values.
+            ## Instantiates a new EdiscoveryDataSourceContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

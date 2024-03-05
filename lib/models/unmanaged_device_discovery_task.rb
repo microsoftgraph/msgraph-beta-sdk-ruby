@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Unmanaged devices discovered in the network.
             @unmanaged_devices
             ## 
-            ## Instantiates a new unmanagedDeviceDiscoveryTask and sets the default values.
+            ## Instantiates a new UnmanagedDeviceDiscoveryTask and sets the default values.
             ## @return a void
             ## 
             def initialize()

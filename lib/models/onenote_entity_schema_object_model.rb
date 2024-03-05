@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # The createdDateTime property
             @created_date_time
             ## 
-            ## Instantiates a new onenoteEntitySchemaObjectModel and sets the default values.
+            ## Instantiates a new OnenoteEntitySchemaObjectModel and sets the default values.
             ## @return a void
             ## 
             def initialize()

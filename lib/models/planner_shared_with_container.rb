@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @access_level = value
             end
             ## 
-            ## Instantiates a new plannerSharedWithContainer and sets the default values.
+            ## Instantiates a new PlannerSharedWithContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

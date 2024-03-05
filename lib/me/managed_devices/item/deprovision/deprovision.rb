@@ -1,1 +1,0 @@
-require_relative 'deprovision_post_request_body'

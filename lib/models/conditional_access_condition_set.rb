@@ -13,13 +13,16 @@ module MicrosoftGraphBeta
             # Applications and user actions included in and excluded from the policy. Required.
             @applications
             ## 
-            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            # Authentication flows included in the policy scope. For more information, see Conditional Access: Authentication flows.
+            @authentication_flows
+            ## 
+            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             @client_app_types
             ## 
             # Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
             @client_applications
             ## 
-            # Device states in the policy.
+            # Device states in the policy. To be deprecated and removed. Use the devices property instead.
             @device_states
             ## 
             # Devices in the policy.
@@ -46,15 +49,15 @@ module MicrosoftGraphBeta
             # Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
             @users
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,14 +79,29 @@ module MicrosoftGraphBeta
                 @applications = value
             end
             ## 
-            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Gets the authenticationFlows property value. Authentication flows included in the policy scope. For more information, see Conditional Access: Authentication flows.
+            ## @return a conditional_access_authentication_flows
+            ## 
+            def authentication_flows
+                return @authentication_flows
+            end
+            ## 
+            ## Sets the authenticationFlows property value. Authentication flows included in the policy scope. For more information, see Conditional Access: Authentication flows.
+            ## @param value Value to set for the authenticationFlows property.
+            ## @return a void
+            ## 
+            def authentication_flows=(value)
+                @authentication_flows = value
+            end
+            ## 
+            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             ## @return a conditional_access_client_app
             ## 
             def client_app_types
                 return @client_app_types
             end
             ## 
-            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             ## @param value Value to set for the clientAppTypes property.
             ## @return a void
             ## 
@@ -106,7 +124,7 @@ module MicrosoftGraphBeta
                 @client_applications = value
             end
             ## 
-            ## Instantiates a new conditionalAccessConditionSet and sets the default values.
+            ## Instantiates a new ConditionalAccessConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -122,14 +140,14 @@ module MicrosoftGraphBeta
                 return ConditionalAccessConditionSet.new
             end
             ## 
-            ## Gets the deviceStates property value. Device states in the policy.
+            ## Gets the deviceStates property value. Device states in the policy. To be deprecated and removed. Use the devices property instead.
             ## @return a conditional_access_device_states
             ## 
             def device_states
                 return @device_states
             end
             ## 
-            ## Sets the deviceStates property value. Device states in the policy.
+            ## Sets the deviceStates property value. Device states in the policy. To be deprecated and removed. Use the devices property instead.
             ## @param value Value to set for the deviceStates property.
             ## @return a void
             ## 
@@ -158,6 +176,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "applications" => lambda {|n| @applications = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessApplications.create_from_discriminator_value(pn) }) },
+                    "authenticationFlows" => lambda {|n| @authentication_flows = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessAuthenticationFlows.create_from_discriminator_value(pn) }) },
                     "clientAppTypes" => lambda {|n| @client_app_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessClientApp.create_from_discriminator_value(pn) }) },
                     "clientApplications" => lambda {|n| @client_applications = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessClientApplications.create_from_discriminator_value(pn) }) },
                     "deviceStates" => lambda {|n| @device_states = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConditionalAccessDeviceStates.create_from_discriminator_value(pn) }) },
@@ -224,6 +243,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("applications", @applications)
+                writer.write_object_value("authenticationFlows", @authentication_flows)
                 writer.write_collection_of_object_values("clientAppTypes", @client_app_types)
                 writer.write_object_value("clientApplications", @client_applications)
                 writer.write_object_value("deviceStates", @device_states)
