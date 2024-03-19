@@ -1,1 +1,1 @@
-require_relative 'generate_encryption_public_key_response'
+require_relative 'generate_encryption_public_key_post_response'

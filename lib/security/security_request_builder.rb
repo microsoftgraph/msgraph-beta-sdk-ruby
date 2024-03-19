@@ -5,8 +5,10 @@ require_relative '../models/security_model_model_model_model_model_model_model'
 require_relative './alerts/alerts_request_builder'
 require_relative './alerts_v2/alerts_v2_request_builder'
 require_relative './attack_simulation/attack_simulation_request_builder'
+require_relative './audit_log/audit_log_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './cloud_app_security_profiles/cloud_app_security_profiles_request_builder'
+require_relative './collaboration/collaboration_request_builder'
 require_relative './domain_security_profiles/domain_security_profiles_request_builder'
 require_relative './file_security_profiles/file_security_profiles_request_builder'
 require_relative './host_security_profiles/host_security_profiles_request_builder'
@@ -16,6 +18,7 @@ require_relative './ip_security_profiles/ip_security_profiles_request_builder'
 require_relative './labels/labels_request_builder'
 require_relative './microsoft_graph_security_run_hunting_query/microsoft_graph_security_run_hunting_query_request_builder'
 require_relative './provider_tenant_settings/provider_tenant_settings_request_builder'
+require_relative './rules/rules_request_builder'
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
@@ -50,6 +53,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Security::AttackSimulation::AttackSimulationRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the auditLog property of the microsoft.graph.security entity.
+            def audit_log()
+                return MicrosoftGraphBeta::Security::AuditLog::AuditLogRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the cases property of the microsoft.graph.security entity.
             def cases()
                 return MicrosoftGraphBeta::Security::Cases::CasesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -58,6 +66,11 @@ module MicrosoftGraphBeta
             # Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
             def cloud_app_security_profiles()
                 return MicrosoftGraphBeta::Security::CloudAppSecurityProfiles::CloudAppSecurityProfilesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the collaboration property of the microsoft.graph.security entity.
+            def collaboration()
+                return MicrosoftGraphBeta::Security::Collaboration::CollaborationRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
@@ -103,6 +116,11 @@ module MicrosoftGraphBeta
             # Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
             def provider_tenant_settings()
                 return MicrosoftGraphBeta::Security::ProviderTenantSettings::ProviderTenantSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the rules property of the microsoft.graph.security entity.
+            def rules()
+                return MicrosoftGraphBeta::Security::Rules::RulesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
@@ -161,7 +179,7 @@ module MicrosoftGraphBeta
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/security{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/security{?%24expand,%24select}")
             end
             ## 
             ## Get security
@@ -173,8 +191,7 @@ module MicrosoftGraphBeta
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SecurityModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -189,8 +206,7 @@ module MicrosoftGraphBeta
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::SecurityModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -200,15 +216,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -220,16 +236,25 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = '{+baseurl}/security'
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a security_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return SecurityRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

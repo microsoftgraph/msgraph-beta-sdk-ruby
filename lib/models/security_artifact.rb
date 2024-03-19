@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityArtifact < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityArtifact and sets the default values.
+            ## Instantiates a new SecurityArtifact and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,13 +7,16 @@ module MicrosoftGraphBeta
         class PeopleAdminSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The profileCardProperties property
+            # The itemInsights property
+            @item_insights
+            ## 
+            # Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             @profile_card_properties
             ## 
             # Represents administrator settings that manage the support of pronouns in an organization.
             @pronouns
             ## 
-            ## Instantiates a new peopleAdminSettings and sets the default values.
+            ## Instantiates a new PeopleAdminSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,19 +37,35 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "itemInsights" => lambda {|n| @item_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InsightsSettings.create_from_discriminator_value(pn) }) },
                     "profileCardProperties" => lambda {|n| @profile_card_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ProfileCardProperty.create_from_discriminator_value(pn) }) },
                     "pronouns" => lambda {|n| @pronouns = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PronounsSettings.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the profileCardProperties property value. The profileCardProperties property
+            ## Gets the itemInsights property value. The itemInsights property
+            ## @return a insights_settings
+            ## 
+            def item_insights
+                return @item_insights
+            end
+            ## 
+            ## Sets the itemInsights property value. The itemInsights property
+            ## @param value Value to set for the itemInsights property.
+            ## @return a void
+            ## 
+            def item_insights=(value)
+                @item_insights = value
+            end
+            ## 
+            ## Gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             ## @return a profile_card_property
             ## 
             def profile_card_properties
                 return @profile_card_properties
             end
             ## 
-            ## Sets the profileCardProperties property value. The profileCardProperties property
+            ## Sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
             ## @param value Value to set for the profileCardProperties property.
             ## @return a void
             ## 
@@ -76,6 +95,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("itemInsights", @item_insights)
                 writer.write_collection_of_object_values("profileCardProperties", @profile_card_properties)
                 writer.write_object_value("pronouns", @pronouns)
             end

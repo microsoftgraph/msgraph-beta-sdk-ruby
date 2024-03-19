@@ -10,8 +10,11 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The catalogEntry property
+            # Catalog entry for the update or content.
             @catalog_entry
+            ## 
+            # ID of the catalog entry for the applicable content.
+            @catalog_entry_id
             ## 
             # Collection of devices and recommendations for applicable catalog content.
             @matched_devices
@@ -19,29 +22,29 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the catalogEntry property value. The catalogEntry property
+            ## Gets the catalogEntry property value. Catalog entry for the update or content.
             ## @return a windows_updates_catalog_entry
             ## 
             def catalog_entry
                 return @catalog_entry
             end
             ## 
-            ## Sets the catalogEntry property value. The catalogEntry property
+            ## Sets the catalogEntry property value. Catalog entry for the update or content.
             ## @param value Value to set for the catalogEntry property.
             ## @return a void
             ## 
@@ -49,7 +52,22 @@ module MicrosoftGraphBeta
                 @catalog_entry = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesApplicableContent and sets the default values.
+            ## Gets the catalogEntryId property value. ID of the catalog entry for the applicable content.
+            ## @return a string
+            ## 
+            def catalog_entry_id
+                return @catalog_entry_id
+            end
+            ## 
+            ## Sets the catalogEntryId property value. ID of the catalog entry for the applicable content.
+            ## @param value Value to set for the catalogEntryId property.
+            ## @return a void
+            ## 
+            def catalog_entry_id=(value)
+                @catalog_entry_id = value
+            end
+            ## 
+            ## Instantiates a new WindowsUpdatesApplicableContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,6 +89,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "catalogEntry" => lambda {|n| @catalog_entry = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesCatalogEntry.create_from_discriminator_value(pn) }) },
+                    "catalogEntryId" => lambda {|n| @catalog_entry_id = n.get_string_value() },
                     "matchedDevices" => lambda {|n| @matched_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesApplicableContentDeviceMatch.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
@@ -113,6 +132,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("catalogEntry", @catalog_entry)
+                writer.write_string_value("catalogEntryId", @catalog_entry_id)
                 writer.write_collection_of_object_values("matchedDevices", @matched_devices)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.
             @method
             ## 
-            ## Instantiates a new workbookTableSort and sets the default values.
+            ## Instantiates a new WorkbookTableSort and sets the default values.
             ## @return a void
             ## 
             def initialize()

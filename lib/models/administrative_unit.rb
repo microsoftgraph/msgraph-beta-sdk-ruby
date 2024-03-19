@@ -10,17 +10,26 @@ module MicrosoftGraphBeta
             # An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
             @description
             ## 
-            # Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # The collection of open extensions defined for this administrative unit. Nullable.
             @extensions
             ## 
-            # true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
+            # true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
             @is_member_management_restricted
             ## 
             # Users and groups that are members of this administrative unit. Supports $expand.
             @members
+            ## 
+            # Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+            @membership_rule
+            ## 
+            # Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+            @membership_rule_processing_state
+            ## 
+            # Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+            @membership_type
             ## 
             # Scoped-role members of this administrative unit.
             @scoped_role_members
@@ -28,7 +37,7 @@ module MicrosoftGraphBeta
             # Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
             @visibility
             ## 
-            ## Instantiates a new administrativeUnit and sets the default values.
+            ## Instantiates a new AdministrativeUnit and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,14 +69,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -100,19 +109,22 @@ module MicrosoftGraphBeta
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Extension.create_from_discriminator_value(pn) }) },
                     "isMemberManagementRestricted" => lambda {|n| @is_member_management_restricted = n.get_boolean_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                    "membershipRule" => lambda {|n| @membership_rule = n.get_string_value() },
+                    "membershipRuleProcessingState" => lambda {|n| @membership_rule_processing_state = n.get_string_value() },
+                    "membershipType" => lambda {|n| @membership_type = n.get_string_value() },
                     "scopedRoleMembers" => lambda {|n| @scoped_role_members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }) },
                     "visibility" => lambda {|n| @visibility = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
+            ## Gets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
             ## @return a boolean
             ## 
             def is_member_management_restricted
                 return @is_member_management_restricted
             end
             ## 
-            ## Sets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
+            ## Sets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
             ## @param value Value to set for the isMemberManagementRestricted property.
             ## @return a void
             ## 
@@ -133,6 +145,51 @@ module MicrosoftGraphBeta
             ## 
             def members=(value)
                 @members = value
+            end
+            ## 
+            ## Gets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+            ## @return a string
+            ## 
+            def membership_rule
+                return @membership_rule
+            end
+            ## 
+            ## Sets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+            ## @param value Value to set for the membershipRule property.
+            ## @return a void
+            ## 
+            def membership_rule=(value)
+                @membership_rule = value
+            end
+            ## 
+            ## Gets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+            ## @return a string
+            ## 
+            def membership_rule_processing_state
+                return @membership_rule_processing_state
+            end
+            ## 
+            ## Sets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+            ## @param value Value to set for the membershipRuleProcessingState property.
+            ## @return a void
+            ## 
+            def membership_rule_processing_state=(value)
+                @membership_rule_processing_state = value
+            end
+            ## 
+            ## Gets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+            ## @return a string
+            ## 
+            def membership_type
+                return @membership_type
+            end
+            ## 
+            ## Sets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+            ## @param value Value to set for the membershipType property.
+            ## @return a void
+            ## 
+            def membership_type=(value)
+                @membership_type = value
             end
             ## 
             ## Gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
@@ -162,6 +219,9 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("extensions", @extensions)
                 writer.write_boolean_value("isMemberManagementRestricted", @is_member_management_restricted)
                 writer.write_collection_of_object_values("members", @members)
+                writer.write_string_value("membershipRule", @membership_rule)
+                writer.write_string_value("membershipRuleProcessingState", @membership_rule_processing_state)
+                writer.write_string_value("membershipType", @membership_type)
                 writer.write_collection_of_object_values("scopedRoleMembers", @scoped_role_members)
                 writer.write_string_value("visibility", @visibility)
             end

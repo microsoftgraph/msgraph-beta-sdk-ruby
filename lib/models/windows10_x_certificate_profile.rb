@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class Windows10XCertificateProfile < MicrosoftGraphBeta::Models::DeviceManagementResourceAccessProfileBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windows10XCertificateProfile and sets the default values.
+            ## Instantiates a new Windows10XCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

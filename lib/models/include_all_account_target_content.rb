@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IncludeAllAccountTargetContent < MicrosoftGraphBeta::Models::AccountTargetContent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new includeAllAccountTargetContent and sets the default values.
+            ## Instantiates a new IncludeAllAccountTargetContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Read the Microsoft Purview Information Protection labels for the user or organization.
             @sensitivity_labels
             ## 
-            ## Instantiates a new securityInformationProtection and sets the default values.
+            ## Instantiates a new SecurityInformationProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

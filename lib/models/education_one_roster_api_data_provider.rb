@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @connection_url = value
             end
             ## 
-            ## Instantiates a new educationOneRosterApiDataProvider and sets the default values.
+            ## Instantiates a new EducationOneRosterApiDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

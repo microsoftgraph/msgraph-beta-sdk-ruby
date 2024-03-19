@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
             @is_enabled
             ## 
-            ## Instantiates a new userInsightsSettings and sets the default values.
+            ## Instantiates a new UserInsightsSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

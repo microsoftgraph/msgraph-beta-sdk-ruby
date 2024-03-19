@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new windowsPhone81AppX and sets the default values.
+            ## Instantiates a new WindowsPhone81AppX and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,7 +78,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },
                     "identityResourceIdentifier" => lambda {|n| @identity_resource_identifier = n.get_string_value() },

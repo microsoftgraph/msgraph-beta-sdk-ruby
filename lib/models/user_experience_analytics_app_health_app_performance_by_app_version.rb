@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 @app_version = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()
