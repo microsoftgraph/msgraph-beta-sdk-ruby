@@ -9,16 +9,16 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthModelPerformance < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices for that model. Valid values -2147483648 to 2147483647
+            # Number of active devices for that model. Valid values 0 to 2147483647
             @active_devices
             ## 
-            # The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            # The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             @average_battery_age_in_days
             ## 
-            # The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            # The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             @average_estimated_runtime_in_minutes
             ## 
-            # The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            # The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             @average_max_capacity_percentage
             ## 
             # Name of the device manufacturer.
@@ -39,20 +39,20 @@ module MicrosoftGraphBeta
             # The model name of the device.
             @model
             ## 
-            # A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            # A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             @model_battery_health_score
             ## 
             # The modelHealthStatus property
             @model_health_status
             ## 
-            ## Gets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -60,14 +60,14 @@ module MicrosoftGraphBeta
                 @active_devices = value
             end
             ## 
-            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_battery_age_in_days
                 return @average_battery_age_in_days
             end
             ## 
-            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @param value Value to set for the averageBatteryAgeInDays property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 @average_battery_age_in_days = value
             end
             ## 
-            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_estimated_runtime_in_minutes
                 return @average_estimated_runtime_in_minutes
             end
             ## 
-            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             ## @param value Value to set for the averageEstimatedRuntimeInMinutes property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 @average_estimated_runtime_in_minutes = value
             end
             ## 
-            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_max_capacity_percentage
                 return @average_max_capacity_percentage
             end
             ## 
-            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @param value Value to set for the averageMaxCapacityPercentage property.
             ## @return a void
             ## 
@@ -105,7 +105,7 @@ module MicrosoftGraphBeta
                 @average_max_capacity_percentage = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @model = value
             end
             ## 
-            ## Gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def model_battery_health_score
                 return @model_battery_health_score
             end
             ## 
-            ## Sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @param value Value to set for the modelBatteryHealthScore property.
             ## @return a void
             ## 

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The settings property
             @settings
             ## 
-            ## Instantiates a new governancePolicyTemplate and sets the default values.
+            ## Instantiates a new GovernancePolicyTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

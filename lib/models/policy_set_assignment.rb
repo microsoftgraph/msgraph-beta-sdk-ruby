@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The target group of PolicySetAssignment
             @target
             ## 
-            ## Instantiates a new policySetAssignment and sets the default values.
+            ## Instantiates a new PolicySetAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

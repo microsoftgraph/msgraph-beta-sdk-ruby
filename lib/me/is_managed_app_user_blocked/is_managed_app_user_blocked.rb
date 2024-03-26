@@ -1,1 +1,0 @@
-require_relative 'is_managed_app_user_blocked_response'

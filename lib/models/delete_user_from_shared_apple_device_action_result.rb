@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # User principal name of the user to be deleted
             @user_principal_name
             ## 
-            ## Instantiates a new deleteUserFromSharedAppleDeviceActionResult and sets the default values.
+            ## Instantiates a new DeleteUserFromSharedAppleDeviceActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

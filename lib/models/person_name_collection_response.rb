@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new personNameCollectionResponse and sets the default values.
+            ## Instantiates a new PersonNameCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

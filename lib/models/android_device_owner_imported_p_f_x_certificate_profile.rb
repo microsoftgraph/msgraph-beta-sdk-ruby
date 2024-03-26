@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @certificate_access_type = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

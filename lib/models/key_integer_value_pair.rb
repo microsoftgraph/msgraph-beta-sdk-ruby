@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The integer value of the key-value pair.
             @value
             ## 
-            ## Instantiates a new keyIntegerValuePair and sets the default values.
+            ## Instantiates a new KeyIntegerValuePair and sets the default values.
             ## @return a void
             ## 
             def initialize()

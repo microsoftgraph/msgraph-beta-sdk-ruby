@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new managedEBook and sets the default values.
+            ## Instantiates a new ManagedEBook and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # Indicates the type for the replied comment.
             @content_type
             ## 
-            # The task property
+            # The task associated with the comment thread.
             @task
             ## 
-            ## Instantiates a new workbookCommentReply and sets the default values.
+            ## Instantiates a new WorkbookCommentReply and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("task", @task)
             end
             ## 
-            ## Gets the task property value. The task property
+            ## Gets the task property value. The task associated with the comment thread.
             ## @return a workbook_document_task
             ## 
             def task
                 return @task
             end
             ## 
-            ## Sets the task property value. The task property
+            ## Sets the task property value. The task associated with the comment thread.
             ## @param value Value to set for the task property.
             ## @return a void
             ## 

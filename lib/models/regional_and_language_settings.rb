@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @authoring_languages = value
             end
             ## 
-            ## Instantiates a new regionalAndLanguageSettings and sets the default values.
+            ## Instantiates a new RegionalAndLanguageSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

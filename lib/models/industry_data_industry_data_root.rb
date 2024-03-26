@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Set of years represented in the system.
             @years
             ## 
-            ## Instantiates a new industryDataIndustryDataRoot and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -67,7 +67,6 @@ require_relative './identity_protection/identity_protection_request_builder'
 require_relative './identity_providers/identity_providers_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './invitations/invitations_request_builder'
-require_relative './me/me_request_builder'
 require_relative './message_events/message_events_request_builder'
 require_relative './message_recipients/message_recipients_request_builder'
 require_relative './message_traces/message_traces_request_builder'
@@ -81,6 +80,7 @@ require_relative './organization/organization_request_builder'
 require_relative './payload_response/payload_response_request_builder'
 require_relative './permission_grants/permission_grants_request_builder'
 require_relative './places/places_request_builder'
+require_relative './places_with_place_id/places_with_place_id_request_builder'
 require_relative './planner/planner_request_builder'
 require_relative './policies/policies_request_builder'
 require_relative './print/print_request_builder'
@@ -120,6 +120,7 @@ require_relative './term_store/term_store_request_builder'
 require_relative './threat_submission/threat_submission_request_builder'
 require_relative './trust_framework/trust_framework_request_builder'
 require_relative './users/users_request_builder'
+require_relative './workplace/workplace_request_builder'
 
 module MicrosoftGraphBeta
     ## 
@@ -437,11 +438,6 @@ module MicrosoftGraphBeta
             return MicrosoftGraphBeta::Invitations::InvitationsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to manage the user singleton.
-        def me()
-            return MicrosoftGraphBeta::Me::MeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the collection of messageEvent entities.
         def message_events()
             return MicrosoftGraphBeta::MessageEvents::MessageEventsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -692,6 +688,11 @@ module MicrosoftGraphBeta
             return MicrosoftGraphBeta::Users::UsersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to manage the workplace singleton.
+        def workplace()
+            return MicrosoftGraphBeta::Workplace::WorkplaceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         ## Provides operations to manage the collection of application entities.
         ## @param app_id Alternate key of application
         ## @return a applications_with_app_id_request_builder
@@ -749,6 +750,15 @@ module MicrosoftGraphBeta
         def groups_with_unique_name(unique_name)
             raise StandardError, 'unique_name cannot be null' if unique_name.nil?
             return GroupsWithUniqueNameRequestBuilder.new(@path_parameters, @request_adapter, uniqueName)
+        end
+        ## 
+        ## Provides operations to manage the collection of place entities.
+        ## @param place_id Alternate key of place
+        ## @return a places_with_place_id_request_builder
+        ## 
+        def places_with_place_id(place_id)
+            raise StandardError, 'place_id cannot be null' if place_id.nil?
+            return PlacesWithPlaceIdRequestBuilder.new(@path_parameters, @request_adapter, placeId)
         end
         ## 
         ## Provides operations to manage the collection of servicePrincipal entities.

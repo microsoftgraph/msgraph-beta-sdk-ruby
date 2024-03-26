@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # Deployments created using the deployment service.
             @deployments
             ## 
+            # A collection of Windows products.
+            @products
+            ## 
             # Service connections to external resources such as analytics workspaces.
             @resource_connections
             ## 
@@ -40,7 +43,7 @@ module MicrosoftGraphBeta
                 @catalog = value
             end
             ## 
-            ## Instantiates a new adminWindowsUpdates and sets the default values.
+            ## Instantiates a new AdminWindowsUpdates and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,10 +97,26 @@ module MicrosoftGraphBeta
                     "catalog" => lambda {|n| @catalog = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesCatalog.create_from_discriminator_value(pn) }) },
                     "deploymentAudiences" => lambda {|n| @deployment_audiences = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesDeploymentAudience.create_from_discriminator_value(pn) }) },
                     "deployments" => lambda {|n| @deployments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesDeployment.create_from_discriminator_value(pn) }) },
+                    "products" => lambda {|n| @products = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesProduct.create_from_discriminator_value(pn) }) },
                     "resourceConnections" => lambda {|n| @resource_connections = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesResourceConnection.create_from_discriminator_value(pn) }) },
                     "updatableAssets" => lambda {|n| @updatable_assets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesUpdatableAsset.create_from_discriminator_value(pn) }) },
                     "updatePolicies" => lambda {|n| @update_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesUpdatePolicy.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the products property value. A collection of Windows products.
+            ## @return a windows_updates_product
+            ## 
+            def products
+                return @products
+            end
+            ## 
+            ## Sets the products property value. A collection of Windows products.
+            ## @param value Value to set for the products property.
+            ## @return a void
+            ## 
+            def products=(value)
+                @products = value
             end
             ## 
             ## Gets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
@@ -125,6 +144,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("catalog", @catalog)
                 writer.write_collection_of_object_values("deploymentAudiences", @deployment_audiences)
                 writer.write_collection_of_object_values("deployments", @deployments)
+                writer.write_collection_of_object_values("products", @products)
                 writer.write_collection_of_object_values("resourceConnections", @resource_connections)
                 writer.write_collection_of_object_values("updatableAssets", @updatable_assets)
                 writer.write_collection_of_object_values("updatePolicies", @update_policies)

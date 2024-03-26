@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
             # The version of the policy
             @version
             ## 
-            ## Instantiates a new managedDeviceMobileAppConfigurationState and sets the default values.
+            ## Instantiates a new ManagedDeviceMobileAppConfigurationState and sets the default values.
             ## @return a void
             ## 
             def initialize()

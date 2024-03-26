@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The name of the team.
             @display_name
             ## 
-            # Settings to configure use of Giphy, memes, and stickers in the team.
+            # Settings to configure the use of Giphy, memes, and stickers in the team.
             @fun_settings
             ## 
             # The group property
@@ -44,13 +44,13 @@ module MicrosoftGraphBeta
             # The apps installed in this team.
             @installed_apps
             ## 
-            # A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            # A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
             @internal_id
             ## 
             # Whether this team is in read-only mode.
             @is_archived
             ## 
-            # If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
+            # If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
             @is_membership_limited_to_owners
             ## 
             # Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
             # The async operations that ran or are running on this team.
             @operations
             ## 
-            # The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+            # The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
             @owners
             ## 
             # A collection of permissions granted to apps to access the team.
@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
             # Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
             @specialization
             ## 
-            # Contains summary information about the team, including number of owners, members, and guests.
+            # Contains summary information about the team, including the number of owners, members, and guests.
             @summary
             ## 
             # The tags associated with the team.
@@ -95,13 +95,13 @@ module MicrosoftGraphBeta
             # Generic representation of a team template definition for a team with a specific structure and configuration.
             @template_definition
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # The visibility of the group and team. Defaults to Public.
             @visibility
             ## 
-            # A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            # A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             @web_url
             ## 
             ## Gets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
@@ -149,7 +149,7 @@ module MicrosoftGraphBeta
                 @classification = value
             end
             ## 
-            ## Instantiates a new team and sets the default values.
+            ## Instantiates a new Team and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -225,14 +225,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
+            ## Gets the funSettings property value. Settings to configure the use of Giphy, memes, and stickers in the team.
             ## @return a team_fun_settings
             ## 
             def fun_settings
                 return @fun_settings
             end
             ## 
-            ## Sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
+            ## Sets the funSettings property value. Settings to configure the use of Giphy, memes, and stickers in the team.
             ## @param value Value to set for the funSettings property.
             ## @return a void
             ## 
@@ -340,14 +340,14 @@ module MicrosoftGraphBeta
                 @installed_apps = value
             end
             ## 
-            ## Gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            ## Gets the internalId property value. A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
             ## @return a string
             ## 
             def internal_id
                 return @internal_id
             end
             ## 
-            ## Sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            ## Sets the internalId property value. A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
             ## @param value Value to set for the internalId property.
             ## @return a void
             ## 
@@ -370,14 +370,14 @@ module MicrosoftGraphBeta
                 @is_archived = value
             end
             ## 
-            ## Gets the isMembershipLimitedToOwners property value. If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
+            ## Gets the isMembershipLimitedToOwners property value. If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
             ## @return a boolean
             ## 
             def is_membership_limited_to_owners
                 return @is_membership_limited_to_owners
             end
             ## 
-            ## Sets the isMembershipLimitedToOwners property value. If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
+            ## Sets the isMembershipLimitedToOwners property value. If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
             ## @param value Value to set for the isMembershipLimitedToOwners property.
             ## @return a void
             ## 
@@ -445,14 +445,14 @@ module MicrosoftGraphBeta
                 @operations = value
             end
             ## 
-            ## Gets the owners property value. The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+            ## Gets the owners property value. The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
             ## @return a user
             ## 
             def owners
                 return @owners
             end
             ## 
-            ## Sets the owners property value. The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
+            ## Sets the owners property value. The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
             ## @param value Value to set for the owners property.
             ## @return a void
             ## 
@@ -576,14 +576,14 @@ module MicrosoftGraphBeta
                 @specialization = value
             end
             ## 
-            ## Gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
+            ## Gets the summary property value. Contains summary information about the team, including the number of owners, members, and guests.
             ## @return a team_summary
             ## 
             def summary
                 return @summary
             end
             ## 
-            ## Sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
+            ## Sets the summary property value. Contains summary information about the team, including the number of owners, members, and guests.
             ## @param value Value to set for the summary property.
             ## @return a void
             ## 
@@ -636,14 +636,14 @@ module MicrosoftGraphBeta
                 @template_definition = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -666,14 +666,14 @@ module MicrosoftGraphBeta
                 @visibility = value
             end
             ## 
-            ## Gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            ## Gets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            ## Sets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
