@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The workspaces property
             @workspaces
             ## 
-            ## Instantiates a new roomList and sets the default values.
+            ## Instantiates a new RoomList and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -17,6 +17,9 @@ module MicrosoftGraphBeta
             @default_locale
             ## 
             # Display name for the Notification Message Template.
+            @description
+            ## 
+            # Display name for the Notification Message Template.
             @display_name
             ## 
             # DateTime the object was last modified.
@@ -43,7 +46,7 @@ module MicrosoftGraphBeta
                 @branding_options = value
             end
             ## 
-            ## Instantiates a new notificationMessageTemplate and sets the default values.
+            ## Instantiates a new NotificationMessageTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,6 +77,21 @@ module MicrosoftGraphBeta
                 @default_locale = value
             end
             ## 
+            ## Gets the description property value. Display name for the Notification Message Template.
+            ## @return a string
+            ## 
+            def description
+                return @description
+            end
+            ## 
+            ## Sets the description property value. Display name for the Notification Message Template.
+            ## @param value Value to set for the description property.
+            ## @return a void
+            ## 
+            def description=(value)
+                @description = value
+            end
+            ## 
             ## Gets the displayName property value. Display name for the Notification Message Template.
             ## @return a string
             ## 
@@ -94,8 +112,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_value(MicrosoftGraphBeta::Models::NotificationTemplateBrandingOptions) },
+                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_values(MicrosoftGraphBeta::Models::NotificationTemplateBrandingOptions) },
                     "defaultLocale" => lambda {|n| @default_locale = n.get_string_value() },
+                    "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "localizedNotificationMessages" => lambda {|n| @localized_notification_messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LocalizedNotificationMessage.create_from_discriminator_value(pn) }) },
@@ -157,6 +176,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_enum_value("brandingOptions", @branding_options)
                 writer.write_string_value("defaultLocale", @default_locale)
+                writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_collection_of_object_values("localizedNotificationMessages", @localized_notification_messages)

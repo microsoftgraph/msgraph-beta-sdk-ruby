@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The deviceId property
+            # Collection of vendors who recommend the content.
             @device_id
             ## 
             # The OdataType property
@@ -19,22 +19,22 @@ module MicrosoftGraphBeta
             # Collection of vendors who recommend the content.
             @recommended_by
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesApplicableContentDeviceMatch and sets the default values.
+            ## Instantiates a new WindowsUpdatesApplicableContentDeviceMatch and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesApplicableContentDeviceMatch.new
             end
             ## 
-            ## Gets the deviceId property value. The deviceId property
+            ## Gets the deviceId property value. Collection of vendors who recommend the content.
             ## @return a string
             ## 
             def device_id
                 return @device_id
             end
             ## 
-            ## Sets the deviceId property value. The deviceId property
+            ## Sets the deviceId property value. Collection of vendors who recommend the content.
             ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 

@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Indicates the type of execution status of the device management script.
             @run_state
             ## 
-            ## Instantiates a new mobileAppTroubleshootingAppPolicyCreationHistory and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingAppPolicyCreationHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

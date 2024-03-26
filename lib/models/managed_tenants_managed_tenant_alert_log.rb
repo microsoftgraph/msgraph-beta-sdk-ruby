@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                 @alert = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantAlertLog and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantAlertLog and sets the default values.
             ## @return a void
             ## 
             def initialize()

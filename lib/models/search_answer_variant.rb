@@ -10,40 +10,40 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Answer variation description shown on search results page.
+            # The answer variation description that is shown on the search results page.
             @description
             ## 
-            # Answer variation name displayed in search results.
+            # The answer variation name that is displayed in search results.
             @display_name
             ## 
-            # The languageTag property
+            # The country or region that can view this answer variation.
             @language_tag
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The platform property
+            # The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             @platform
             ## 
-            # Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
+            # The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
             @web_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new searchAnswerVariant and sets the default values.
+            ## Instantiates a new SearchAnswerVariant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return SearchAnswerVariant.new
             end
             ## 
-            ## Gets the description property value. Answer variation description shown on search results page.
+            ## Gets the description property value. The answer variation description that is shown on the search results page.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Answer variation description shown on search results page.
+            ## Sets the description property value. The answer variation description that is shown on the search results page.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Answer variation name displayed in search results.
+            ## Gets the displayName property value. The answer variation name that is displayed in search results.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Answer variation name displayed in search results.
+            ## Sets the displayName property value. The answer variation name that is displayed in search results.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the languageTag property value. The languageTag property
+            ## Gets the languageTag property value. The country or region that can view this answer variation.
             ## @return a string
             ## 
             def language_tag
                 return @language_tag
             end
             ## 
-            ## Sets the languageTag property value. The languageTag property
+            ## Sets the languageTag property value. The country or region that can view this answer variation.
             ## @param value Value to set for the languageTag property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the platform property value. The platform property
+            ## Gets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @return a device_platform_type
             ## 
             def platform
                 return @platform
             end
             ## 
-            ## Sets the platform property value. The platform property
+            ## Sets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @param value Value to set for the platform property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
+            ## Gets the webUrl property value. The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
+            ## Sets the webUrl property value. The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

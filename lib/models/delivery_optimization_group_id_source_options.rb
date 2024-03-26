@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
             @group_id_source_option
             ## 
-            ## Instantiates a new deliveryOptimizationGroupIdSourceOptions and sets the default values.
+            ## Instantiates a new DeliveryOptimizationGroupIdSourceOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()

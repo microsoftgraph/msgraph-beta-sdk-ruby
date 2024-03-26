@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
             @extended_key_usages
             ## 
-            ## Instantiates a new windows81CertificateProfileBase and sets the default values.
+            ## Instantiates a new Windows81CertificateProfileBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

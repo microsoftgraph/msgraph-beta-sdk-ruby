@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Pre-configured synchronization settings for a particular application.
             @templates
             ## 
-            ## Instantiates a new synchronization and sets the default values.
+            ## Instantiates a new Synchronization and sets the default values.
             ## @return a void
             ## 
             def initialize()

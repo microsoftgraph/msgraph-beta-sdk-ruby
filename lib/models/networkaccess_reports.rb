@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NetworkaccessReports < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new networkaccessReports and sets the default values.
+            ## Instantiates a new NetworkaccessReports and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -36,28 +36,31 @@ module MicrosoftGraphBeta
             # When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v16_0
             ## 
+            # When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            @v17_0
+            ## 
             # When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v8_0
             ## 
             # When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v9_0
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new iosMinimumOperatingSystem and sets the default values.
+            ## Instantiates a new IosMinimumOperatingSystem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,6 +89,7 @@ module MicrosoftGraphBeta
                     "v14_0" => lambda {|n| @v14_0 = n.get_boolean_value() },
                     "v15_0" => lambda {|n| @v15_0 = n.get_boolean_value() },
                     "v16_0" => lambda {|n| @v16_0 = n.get_boolean_value() },
+                    "v17_0" => lambda {|n| @v17_0 = n.get_boolean_value() },
                     "v8_0" => lambda {|n| @v8_0 = n.get_boolean_value() },
                     "v9_0" => lambda {|n| @v9_0 = n.get_boolean_value() },
                 }
@@ -120,6 +124,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("v14_0", @v14_0)
                 writer.write_boolean_value("v15_0", @v15_0)
                 writer.write_boolean_value("v16_0", @v16_0)
+                writer.write_boolean_value("v17_0", @v17_0)
                 writer.write_boolean_value("v8_0", @v8_0)
                 writer.write_boolean_value("v9_0", @v9_0)
                 writer.write_additional_data(@additional_data)
@@ -228,6 +233,21 @@ module MicrosoftGraphBeta
             ## 
             def v16_0=(value)
                 @v16_0 = value
+            end
+            ## 
+            ## Gets the v17_0 property value. When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @return a boolean
+            ## 
+            def v17_0
+                return @v17_0
+            end
+            ## 
+            ## Sets the v17_0 property value. When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @param value Value to set for the v17_0 property.
+            ## @return a void
+            ## 
+            def v17_0=(value)
+                @v17_0 = value
             end
             ## 
             ## Gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.

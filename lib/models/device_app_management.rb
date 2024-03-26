@@ -61,6 +61,9 @@ module MicrosoftGraphBeta
             # Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
             @microsoft_store_for_business_portal_selection
             ## 
+            # MobileAppCatalogPackage entities.
+            @mobile_app_catalog_packages
+            ## 
             # The mobile app categories.
             @mobile_app_categories
             ## 
@@ -115,7 +118,7 @@ module MicrosoftGraphBeta
                 @android_managed_app_protections = value
             end
             ## 
-            ## Instantiates a new deviceAppManagement and sets the default values.
+            ## Instantiates a new DeviceAppManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -197,7 +200,8 @@ module MicrosoftGraphBeta
                     "microsoftStoreForBusinessLanguage" => lambda {|n| @microsoft_store_for_business_language = n.get_string_value() },
                     "microsoftStoreForBusinessLastCompletedApplicationSyncTime" => lambda {|n| @microsoft_store_for_business_last_completed_application_sync_time = n.get_date_time_value() },
                     "microsoftStoreForBusinessLastSuccessfulSyncDateTime" => lambda {|n| @microsoft_store_for_business_last_successful_sync_date_time = n.get_date_time_value() },
-                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
+                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_values(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
+                    "mobileAppCatalogPackages" => lambda {|n| @mobile_app_catalog_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppCatalogPackage.create_from_discriminator_value(pn) }) },
                     "mobileAppCategories" => lambda {|n| @mobile_app_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppCategory.create_from_discriminator_value(pn) }) },
                     "mobileAppConfigurations" => lambda {|n| @mobile_app_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceMobileAppConfiguration.create_from_discriminator_value(pn) }) },
                     "mobileApps" => lambda {|n| @mobile_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileApp.create_from_discriminator_value(pn) }) },
@@ -409,6 +413,21 @@ module MicrosoftGraphBeta
                 @microsoft_store_for_business_portal_selection = value
             end
             ## 
+            ## Gets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+            ## @return a mobile_app_catalog_package
+            ## 
+            def mobile_app_catalog_packages
+                return @mobile_app_catalog_packages
+            end
+            ## 
+            ## Sets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+            ## @param value Value to set for the mobileAppCatalogPackages property.
+            ## @return a void
+            ## 
+            def mobile_app_catalog_packages=(value)
+                @mobile_app_catalog_packages = value
+            end
+            ## 
             ## Gets the mobileAppCategories property value. The mobile app categories.
             ## @return a mobile_app_category
             ## 
@@ -493,6 +512,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("microsoftStoreForBusinessLastCompletedApplicationSyncTime", @microsoft_store_for_business_last_completed_application_sync_time)
                 writer.write_date_time_value("microsoftStoreForBusinessLastSuccessfulSyncDateTime", @microsoft_store_for_business_last_successful_sync_date_time)
                 writer.write_enum_value("microsoftStoreForBusinessPortalSelection", @microsoft_store_for_business_portal_selection)
+                writer.write_collection_of_object_values("mobileAppCatalogPackages", @mobile_app_catalog_packages)
                 writer.write_collection_of_object_values("mobileAppCategories", @mobile_app_categories)
                 writer.write_collection_of_object_values("mobileAppConfigurations", @mobile_app_configurations)
                 writer.write_collection_of_object_values("mobileApps", @mobile_apps)

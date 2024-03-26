@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
             # Specifies the type of scope for a Role Assignment.
             @scope_type
             ## 
-            ## Instantiates a new roleAssignment and sets the default values.
+            ## Instantiates a new RoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

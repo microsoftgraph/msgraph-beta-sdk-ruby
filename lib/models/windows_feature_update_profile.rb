@@ -31,6 +31,9 @@ module MicrosoftGraphBeta
             # The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
             @feature_update_version
             ## 
+            # If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+            @install_latest_windows10_on_windows11_ineligible_device
+            ## 
             # The date time that the profile was last modified.
             @last_modified_date_time
             ## 
@@ -55,7 +58,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new windowsFeatureUpdateProfile and sets the default values.
+            ## Instantiates a new WindowsFeatureUpdateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -173,10 +176,26 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endOfSupportDate" => lambda {|n| @end_of_support_date = n.get_date_time_value() },
                     "featureUpdateVersion" => lambda {|n| @feature_update_version = n.get_string_value() },
+                    "installLatestWindows10OnWindows11IneligibleDevice" => lambda {|n| @install_latest_windows10_on_windows11_ineligible_device = n.get_boolean_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
                     "rolloutSettings" => lambda {|n| @rollout_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdateRolloutSettings.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+            ## @return a boolean
+            ## 
+            def install_latest_windows10_on_windows11_ineligible_device
+                return @install_latest_windows10_on_windows11_ineligible_device
+            end
+            ## 
+            ## Sets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+            ## @param value Value to set for the installLatestWindows10OnWindows11IneligibleDevice property.
+            ## @return a void
+            ## 
+            def install_latest_windows10_on_windows11_ineligible_device=(value)
+                @install_latest_windows10_on_windows11_ineligible_device = value
             end
             ## 
             ## Gets the lastModifiedDateTime property value. The date time that the profile was last modified.
@@ -238,6 +257,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("endOfSupportDate", @end_of_support_date)
                 writer.write_string_value("featureUpdateVersion", @feature_update_version)
+                writer.write_boolean_value("installLatestWindows10OnWindows11IneligibleDevice", @install_latest_windows10_on_windows11_ineligible_device)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
                 writer.write_object_value("rolloutSettings", @rollout_settings)

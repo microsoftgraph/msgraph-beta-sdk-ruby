@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @api_connector_configuration = value
             end
             ## 
-            ## Instantiates a new b2cIdentityUserFlow and sets the default values.
+            ## Instantiates a new B2cIdentityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()

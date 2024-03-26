@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The collection of management templates associated with the management intent. Optional. Read-only.
             @management_templates
             ## 
-            ## Instantiates a new managedTenantsManagementIntent and sets the default values.
+            ## Instantiates a new ManagedTenantsManagementIntent and sets the default values.
             ## @return a void
             ## 
             def initialize()

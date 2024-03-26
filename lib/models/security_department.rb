@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityDepartment < MicrosoftGraphBeta::Models::SecurityFilePlanDescriptorBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityDepartment and sets the default values.
+            ## Instantiates a new SecurityDepartment and sets the default values.
             ## @return a void
             ## 
             def initialize()

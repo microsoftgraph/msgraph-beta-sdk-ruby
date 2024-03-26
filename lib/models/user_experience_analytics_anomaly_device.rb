@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @anomaly_on_device_latest_occurrence_date_time = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAnomalyDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagementTemplate and sets the default values.
+            ## Instantiates a new ManagedTenantsManagementTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

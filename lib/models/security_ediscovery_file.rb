@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Tags associated with the file.
             @tags
             ## 
-            ## Instantiates a new securityEdiscoveryFile and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

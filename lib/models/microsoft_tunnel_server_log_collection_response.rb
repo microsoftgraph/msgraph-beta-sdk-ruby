@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Enum type that represent the status of log collection
             @status
             ## 
-            ## Instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
+            ## Instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

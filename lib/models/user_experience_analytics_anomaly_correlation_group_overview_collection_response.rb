@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new userExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

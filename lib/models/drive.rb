@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
             @bundles
             ## 
-            # Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            # Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             @drive_type
             ## 
             # The list of items the user is following. Only in OneDrive for Business.
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                 @bundles = value
             end
             ## 
-            ## Instantiates a new drive and sets the default values.
+            ## Instantiates a new Drive and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 return Drive.new
             end
             ## 
-            ## Gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            ## Gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             ## @return a string
             ## 
             def drive_type
                 return @drive_type
             end
             ## 
-            ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             ## @param value Value to set for the driveType property.
             ## @return a void
             ## 

@@ -5,11 +5,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class CallRecordsPstnCallLogRow
-            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-            ## 
-            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            @additional_data
+        class CallRecordsPstnCallLogRow < MicrosoftGraphBeta::Models::CallRecordsCallLogRow
+            include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
             @call_duration_source
@@ -62,23 +59,14 @@ module MicrosoftGraphBeta
             # Call end time.
             @end_date_time
             ## 
-            # Unique call identifier (GUID).
-            @id
-            ## 
             # User's phone number type, such as a service of toll-free number.
             @inventory_type
             ## 
             # The license used for the call.
             @license_capability
             ## 
-            # The OdataType property
-            @odata_type
-            ## 
-            # The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            # The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
             @operator
-            ## 
-            # Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            @other_party_country_code
             ## 
             # Call start time.
             @start_date_time
@@ -88,30 +76,6 @@ module MicrosoftGraphBeta
             ## 
             # Country code of the user. For details, see ISO 3166-1 alpha-2.
             @usage_country_code
-            ## 
-            # Display name of the user.
-            @user_display_name
-            ## 
-            # The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-            @user_id
-            ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            @user_principal_name
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @return a i_dictionary
-            ## 
-            def additional_data
-                return @additional_data
-            end
-            ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
-            ## @return a void
-            ## 
-            def additional_data=(value)
-                @additional_data = value
-            end
             ## 
             ## Gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
             ## @return a call_records_pstn_call_duration_source
@@ -293,11 +257,11 @@ module MicrosoftGraphBeta
                 @connection_charge = value
             end
             ## 
-            ## Instantiates a new callRecordsPstnCallLogRow and sets the default values.
+            ## Instantiates a new CallRecordsPstnCallLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                @additional_data = Hash.new
+                super
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -388,7 +352,7 @@ module MicrosoftGraphBeta
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return {
+                return super.merge({
                     "callDurationSource" => lambda {|n| @call_duration_source = n.get_enum_value(MicrosoftGraphBeta::Models::CallRecordsPstnCallDurationSource) },
                     "callId" => lambda {|n| @call_id = n.get_string_value() },
                     "callType" => lambda {|n| @call_type = n.get_string_value() },
@@ -406,34 +370,13 @@ module MicrosoftGraphBeta
                     "destinationName" => lambda {|n| @destination_name = n.get_string_value() },
                     "duration" => lambda {|n| @duration = n.get_number_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
-                    "id" => lambda {|n| @id = n.get_string_value() },
                     "inventoryType" => lambda {|n| @inventory_type = n.get_string_value() },
                     "licenseCapability" => lambda {|n| @license_capability = n.get_string_value() },
-                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "operator" => lambda {|n| @operator = n.get_string_value() },
-                    "otherPartyCountryCode" => lambda {|n| @other_party_country_code = n.get_string_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "tenantCountryCode" => lambda {|n| @tenant_country_code = n.get_string_value() },
                     "usageCountryCode" => lambda {|n| @usage_country_code = n.get_string_value() },
-                    "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
-                    "userId" => lambda {|n| @user_id = n.get_string_value() },
-                    "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
-                }
-            end
-            ## 
-            ## Gets the id property value. Unique call identifier (GUID).
-            ## @return a string
-            ## 
-            def id
-                return @id
-            end
-            ## 
-            ## Sets the id property value. Unique call identifier (GUID).
-            ## @param value Value to set for the id property.
-            ## @return a void
-            ## 
-            def id=(value)
-                @id = value
+                })
             end
             ## 
             ## Gets the inventoryType property value. User's phone number type, such as a service of toll-free number.
@@ -466,49 +409,19 @@ module MicrosoftGraphBeta
                 @license_capability = value
             end
             ## 
-            ## Gets the @odata.type property value. The OdataType property
-            ## @return a string
-            ## 
-            def odata_type
-                return @odata_type
-            end
-            ## 
-            ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the @odata.type property.
-            ## @return a void
-            ## 
-            def odata_type=(value)
-                @odata_type = value
-            end
-            ## 
-            ## Gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            ## Gets the operator property value. The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
             ## @return a string
             ## 
             def operator
                 return @operator
             end
             ## 
-            ## Sets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            ## Sets the operator property value. The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
             ## @param value Value to set for the operator property.
             ## @return a void
             ## 
             def operator=(value)
                 @operator = value
-            end
-            ## 
-            ## Gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            ## @return a string
-            ## 
-            def other_party_country_code
-                return @other_party_country_code
-            end
-            ## 
-            ## Sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            ## @param value Value to set for the otherPartyCountryCode property.
-            ## @return a void
-            ## 
-            def other_party_country_code=(value)
-                @other_party_country_code = value
             end
             ## 
             ## Serializes information the current object
@@ -517,6 +430,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                super
                 writer.write_enum_value("callDurationSource", @call_duration_source)
                 writer.write_string_value("callId", @call_id)
                 writer.write_string_value("callType", @call_type)
@@ -534,19 +448,12 @@ module MicrosoftGraphBeta
                 writer.write_string_value("destinationName", @destination_name)
                 writer.write_number_value("duration", @duration)
                 writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("id", @id)
                 writer.write_string_value("inventoryType", @inventory_type)
                 writer.write_string_value("licenseCapability", @license_capability)
-                writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("operator", @operator)
-                writer.write_string_value("otherPartyCountryCode", @other_party_country_code)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_string_value("tenantCountryCode", @tenant_country_code)
                 writer.write_string_value("usageCountryCode", @usage_country_code)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the startDateTime property value. Call start time.
@@ -592,51 +499,6 @@ module MicrosoftGraphBeta
             ## 
             def usage_country_code=(value)
                 @usage_country_code = value
-            end
-            ## 
-            ## Gets the userDisplayName property value. Display name of the user.
-            ## @return a string
-            ## 
-            def user_display_name
-                return @user_display_name
-            end
-            ## 
-            ## Sets the userDisplayName property value. Display name of the user.
-            ## @param value Value to set for the userDisplayName property.
-            ## @return a void
-            ## 
-            def user_display_name=(value)
-                @user_display_name = value
-            end
-            ## 
-            ## Gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-            ## @return a string
-            ## 
-            def user_id
-                return @user_id
-            end
-            ## 
-            ## Sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-            ## @param value Value to set for the userId property.
-            ## @return a void
-            ## 
-            def user_id=(value)
-                @user_id = value
-            end
-            ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @return a string
-            ## 
-            def user_principal_name
-                return @user_principal_name
-            end
-            ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @param value Value to set for the userPrincipalName property.
-            ## @return a void
-            ## 
-            def user_principal_name=(value)
-                @user_principal_name = value
             end
         end
     end

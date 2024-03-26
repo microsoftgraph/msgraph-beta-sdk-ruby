@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NoTrainingSetting < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new noTrainingSetting and sets the default values.
+            ## Instantiates a new NoTrainingSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,0 +1,1 @@
+require_relative 'get_password_single_sign_on_credentials_post_response'

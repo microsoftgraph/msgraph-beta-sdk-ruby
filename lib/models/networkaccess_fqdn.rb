@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Defines the FQDN used in a destination for a rule.
             @value
             ## 
-            ## Instantiates a new networkaccessFqdn and sets the default values.
+            ## Instantiates a new NetworkaccessFqdn and sets the default values.
             ## @return a void
             ## 
             def initialize()

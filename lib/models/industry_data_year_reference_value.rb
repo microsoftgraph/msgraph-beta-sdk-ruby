@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataYearReferenceValue < MicrosoftGraphBeta::Models::IndustryDataReferenceValue
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataYearReferenceValue and sets the default values.
+            ## Instantiates a new IndustryDataYearReferenceValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

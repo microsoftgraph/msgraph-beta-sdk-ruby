@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                 @colleagues = value
             end
             ## 
-            ## Instantiates a new projectParticipation and sets the default values.
+            ## Instantiates a new ProjectParticipation and sets the default values.
             ## @return a void
             ## 
             def initialize()

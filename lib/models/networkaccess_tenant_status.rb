@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class NetworkaccessTenantStatus < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Reflects a message to the user in case of an error.
+            # Reflects a message to the user if there's an error.
             @onboarding_error_message
             ## 
             # The onboardingStatus property
             @onboarding_status
             ## 
-            ## Instantiates a new networkaccessTenantStatus and sets the default values.
+            ## Instantiates a new NetworkaccessTenantStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
+            ## Gets the onboardingErrorMessage property value. Reflects a message to the user if there's an error.
             ## @return a string
             ## 
             def onboarding_error_message
                 return @onboarding_error_message
             end
             ## 
-            ## Sets the onboardingErrorMessage property value. Reflects a message to the user in case of an error.
+            ## Sets the onboardingErrorMessage property value. Reflects a message to the user if there's an error.
             ## @param value Value to set for the onboardingErrorMessage property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
             @errors
             ## 
-            ## Instantiates a new windowsUpdatesAzureADDevice and sets the default values.
+            ## Instantiates a new WindowsUpdatesAzureADDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecureSignInSessionControl < MicrosoftGraphBeta::Models::ConditionalAccessSessionControl
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new secureSignInSessionControl and sets the default values.
+            ## Instantiates a new SecureSignInSessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

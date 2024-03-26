@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The date and time the entity was last modified.
             @last_modified_date_time
             ## 
-            ## Instantiates a new groupPolicyPresentation and sets the default values.
+            ## Instantiates a new GroupPolicyPresentation and sets the default values.
             ## @return a void
             ## 
             def initialize()

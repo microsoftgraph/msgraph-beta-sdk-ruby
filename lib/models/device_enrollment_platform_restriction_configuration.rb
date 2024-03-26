@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # This enum indicates the platform type for which the enrollment restriction applies.
             @platform_type
             ## 
-            ## Instantiates a new deviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

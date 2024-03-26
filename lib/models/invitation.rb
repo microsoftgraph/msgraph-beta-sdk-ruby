@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The display name of the user being invited.
             @invited_user_display_name
             ## 
-            # The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
+            # The email address of the user being invited. Required. The following special characters aren't permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
             @invited_user_email_address
             ## 
             # Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
             @invited_user_sponsors
             ## 
-            # The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
+            # The userType of the user being invited. By default, this is Guest. You can invite as Member if you're a company administrator. The default is false.
             @invited_user_type
             ## 
             # Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user (Preview).
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
             @status
             ## 
-            ## Instantiates a new invitation and sets the default values.
+            ## Instantiates a new Invitation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -135,14 +135,14 @@ module MicrosoftGraphBeta
                 @invited_user_display_name = value
             end
             ## 
-            ## Gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
+            ## Gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters aren't permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
             ## @return a string
             ## 
             def invited_user_email_address
                 return @invited_user_email_address
             end
             ## 
-            ## Sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
+            ## Sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters aren't permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
             ## @param value Value to set for the invitedUserEmailAddress property.
             ## @return a void
             ## 
@@ -180,14 +180,14 @@ module MicrosoftGraphBeta
                 @invited_user_sponsors = value
             end
             ## 
-            ## Gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
+            ## Gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're a company administrator. The default is false.
             ## @return a string
             ## 
             def invited_user_type
                 return @invited_user_type
             end
             ## 
-            ## Sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
+            ## Sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're a company administrator. The default is false.
             ## @param value Value to set for the invitedUserType property.
             ## @return a void
             ## 

@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class PolicyTemplate < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The multiTenantOrganizationIdentitySynchronization property
+            # Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
             @multi_tenant_organization_identity_synchronization
             ## 
-            # The multiTenantOrganizationPartnerConfiguration property
+            # Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
             @multi_tenant_organization_partner_configuration
             ## 
-            ## Instantiates a new policyTemplate and sets the default values.
+            ## Instantiates a new PolicyTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the multiTenantOrganizationIdentitySynchronization property value. The multiTenantOrganizationIdentitySynchronization property
+            ## Gets the multiTenantOrganizationIdentitySynchronization property value. Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
             ## @return a multi_tenant_organization_identity_sync_policy_template
             ## 
             def multi_tenant_organization_identity_synchronization
                 return @multi_tenant_organization_identity_synchronization
             end
             ## 
-            ## Sets the multiTenantOrganizationIdentitySynchronization property value. The multiTenantOrganizationIdentitySynchronization property
+            ## Sets the multiTenantOrganizationIdentitySynchronization property value. Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
             ## @param value Value to set for the multiTenantOrganizationIdentitySynchronization property.
             ## @return a void
             ## 
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 @multi_tenant_organization_identity_synchronization = value
             end
             ## 
-            ## Gets the multiTenantOrganizationPartnerConfiguration property value. The multiTenantOrganizationPartnerConfiguration property
+            ## Gets the multiTenantOrganizationPartnerConfiguration property value. Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
             ## @return a multi_tenant_organization_partner_configuration_template
             ## 
             def multi_tenant_organization_partner_configuration
                 return @multi_tenant_organization_partner_configuration
             end
             ## 
-            ## Sets the multiTenantOrganizationPartnerConfiguration property value. The multiTenantOrganizationPartnerConfiguration property
+            ## Sets the multiTenantOrganizationPartnerConfiguration property value. Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
             ## @param value Value to set for the multiTenantOrganizationPartnerConfiguration property.
             ## @return a void
             ## 

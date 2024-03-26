@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new termsAndConditionsCollectionResponse and sets the default values.
+            ## Instantiates a new TermsAndConditionsCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

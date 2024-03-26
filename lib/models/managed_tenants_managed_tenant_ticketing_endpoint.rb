@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The phoneNumber property
             @phone_number
             ## 
-            ## Instantiates a new managedTenantsManagedTenantTicketingEndpoint and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantTicketingEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

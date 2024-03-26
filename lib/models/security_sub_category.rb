@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecuritySubCategory < MicrosoftGraphBeta::Models::SecurityFilePlanDescriptorBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securitySubCategory and sets the default values.
+            ## Instantiates a new SecuritySubCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

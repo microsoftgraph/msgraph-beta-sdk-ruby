@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ContentType < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            # List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             @associated_hubs_urls
             ## 
             # Parent contentType from which this content type is derived.
@@ -16,13 +16,13 @@ module MicrosoftGraphBeta
             # The collection of content types that are ancestors of this content type.
             @base_types
             ## 
-            # The collection of columns that are required by this content type
+            # The collection of columns that are required by this content type.
             @column_links
             ## 
             # Column order information in a content type.
             @column_positions
             ## 
-            # The collection of column definitions for this contentType.
+            # The collection of column definitions for this content type.
             @columns
             ## 
             # The descriptive text for the item.
@@ -55,23 +55,23 @@ module MicrosoftGraphBeta
             # The unique identifier of the content type.
             @parent_id
             ## 
-            # If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            # If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             @propagate_changes
             ## 
-            # If true, the content type cannot be modified unless this value is first set to false.
+            # If true, the content type can't be modified unless this value is first set to false.
             @read_only
             ## 
-            # If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            # If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             @sealed
             ## 
-            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             ## @return a string
             ## 
             def associated_hubs_urls
                 return @associated_hubs_urls
             end
             ## 
-            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             ## @param value Value to set for the associatedHubsUrls property.
             ## @return a void
             ## 
@@ -109,14 +109,14 @@ module MicrosoftGraphBeta
                 @base_types = value
             end
             ## 
-            ## Gets the columnLinks property value. The collection of columns that are required by this content type
+            ## Gets the columnLinks property value. The collection of columns that are required by this content type.
             ## @return a column_link
             ## 
             def column_links
                 return @column_links
             end
             ## 
-            ## Sets the columnLinks property value. The collection of columns that are required by this content type
+            ## Sets the columnLinks property value. The collection of columns that are required by this content type.
             ## @param value Value to set for the columnLinks property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraphBeta
                 @column_positions = value
             end
             ## 
-            ## Gets the columns property value. The collection of column definitions for this contentType.
+            ## Gets the columns property value. The collection of column definitions for this content type.
             ## @return a column_definition
             ## 
             def columns
                 return @columns
             end
             ## 
-            ## Sets the columns property value. The collection of column definitions for this contentType.
+            ## Sets the columns property value. The collection of column definitions for this content type.
             ## @param value Value to set for the columns property.
             ## @return a void
             ## 
@@ -154,7 +154,7 @@ module MicrosoftGraphBeta
                 @columns = value
             end
             ## 
-            ## Instantiates a new contentType and sets the default values.
+            ## Instantiates a new ContentType and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -347,14 +347,14 @@ module MicrosoftGraphBeta
                 @parent_id = value
             end
             ## 
-            ## Gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            ## Gets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             ## @return a boolean
             ## 
             def propagate_changes
                 return @propagate_changes
             end
             ## 
-            ## Sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            ## Sets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             ## @param value Value to set for the propagateChanges property.
             ## @return a void
             ## 
@@ -362,14 +362,14 @@ module MicrosoftGraphBeta
                 @propagate_changes = value
             end
             ## 
-            ## Gets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+            ## Gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
             ## @return a boolean
             ## 
             def read_only
                 return @read_only
             end
             ## 
-            ## Sets the readOnly property value. If true, the content type cannot be modified unless this value is first set to false.
+            ## Sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
             ## @param value Value to set for the readOnly property.
             ## @return a void
             ## 
@@ -377,14 +377,14 @@ module MicrosoftGraphBeta
                 @read_only = value
             end
             ## 
-            ## Gets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            ## Gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             ## @return a boolean
             ## 
             def sealed
                 return @sealed
             end
             ## 
-            ## Sets the sealed property value. If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+            ## Sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             ## @param value Value to set for the sealed property.
             ## @return a void
             ## 

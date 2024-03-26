@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceHealthScriptHourlySchedule < MicrosoftGraphBeta::Models::DeviceHealthScriptRunSchedule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceHealthScriptHourlySchedule and sets the default values.
+            ## Instantiates a new DeviceHealthScriptHourlySchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

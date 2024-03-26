@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The settings this category contains
             @settings
             ## 
-            ## Instantiates a new deviceManagementIntentSettingCategory and sets the default values.
+            ## Instantiates a new DeviceManagementIntentSettingCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

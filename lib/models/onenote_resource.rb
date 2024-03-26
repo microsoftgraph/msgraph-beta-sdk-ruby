@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The contentUrl property
             @content_url
             ## 
-            ## Instantiates a new onenoteResource and sets the default values.
+            ## Instantiates a new OnenoteResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

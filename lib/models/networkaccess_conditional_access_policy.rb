@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # Indicates the date and time when the conditional access policy was last modified.
             @modified_date_time
             ## 
-            ## Instantiates a new networkaccessConditionalAccessPolicy and sets the default values.
+            ## Instantiates a new NetworkaccessConditionalAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

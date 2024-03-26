@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The schedule object of the eligible role assignment request.
             @schedule_info
             ## 
-            ## Instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
+            ## Instantiates a new UnifiedRoleEligibilitySchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

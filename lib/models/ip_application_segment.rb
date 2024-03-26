@@ -10,13 +10,19 @@ module MicrosoftGraphBeta
             # The destinationHost property
             @destination_host
             ## 
+            # The destinationType property
+            @destination_type
+            ## 
             # The port property
             @port
             ## 
             # The ports property
             @ports
             ## 
-            ## Instantiates a new ipApplicationSegment and sets the default values.
+            # The protocol property
+            @protocol
+            ## 
+            ## Instantiates a new IpApplicationSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +54,31 @@ module MicrosoftGraphBeta
                 @destination_host = value
             end
             ## 
+            ## Gets the destinationType property value. The destinationType property
+            ## @return a private_network_destination_type
+            ## 
+            def destination_type
+                return @destination_type
+            end
+            ## 
+            ## Sets the destinationType property value. The destinationType property
+            ## @param value Value to set for the destinationType property.
+            ## @return a void
+            ## 
+            def destination_type=(value)
+                @destination_type = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "destinationHost" => lambda {|n| @destination_host = n.get_string_value() },
+                    "destinationType" => lambda {|n| @destination_type = n.get_enum_value(MicrosoftGraphBeta::Models::PrivateNetworkDestinationType) },
                     "port" => lambda {|n| @port = n.get_number_value() },
                     "ports" => lambda {|n| @ports = n.get_collection_of_primitive_values(String) },
+                    "protocol" => lambda {|n| @protocol = n.get_enum_values(MicrosoftGraphBeta::Models::PrivateNetworkProtocol) },
                 })
             end
             ## 
@@ -89,6 +112,21 @@ module MicrosoftGraphBeta
                 @ports = value
             end
             ## 
+            ## Gets the protocol property value. The protocol property
+            ## @return a private_network_protocol
+            ## 
+            def protocol
+                return @protocol
+            end
+            ## 
+            ## Sets the protocol property value. The protocol property
+            ## @param value Value to set for the protocol property.
+            ## @return a void
+            ## 
+            def protocol=(value)
+                @protocol = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -97,8 +135,10 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("destinationHost", @destination_host)
+                writer.write_enum_value("destinationType", @destination_type)
                 writer.write_number_value("port", @port)
                 writer.write_collection_of_primitive_values("ports", @ports)
+                writer.write_enum_value("protocol", @protocol)
             end
         end
     end

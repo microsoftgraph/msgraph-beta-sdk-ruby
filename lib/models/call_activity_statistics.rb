@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @after_hours = value
             end
             ## 
-            ## Instantiates a new callActivityStatistics and sets the default values.
+            ## Instantiates a new CallActivityStatistics and sets the default values.
             ## @return a void
             ## 
             def initialize()

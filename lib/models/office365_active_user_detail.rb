@@ -11,10 +11,10 @@ module MicrosoftGraphBeta
             # All the products assigned for the user.
             @assigned_products
             ## 
-            # The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
+            # The date when the delete operation happened. Default value is 'null' when the user hasn't been deleted.
             @deleted_date
             ## 
-            # The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
+            # The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it can't be cleared during updates.
             @display_name
             ## 
             # The date when user last read or sent email.
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                 @assigned_products = value
             end
             ## 
-            ## Instantiates a new office365ActiveUserDetail and sets the default values.
+            ## Instantiates a new Office365ActiveUserDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 return Office365ActiveUserDetail.new
             end
             ## 
-            ## Gets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
+            ## Gets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user hasn't been deleted.
             ## @return a date
             ## 
             def deleted_date
                 return @deleted_date
             end
             ## 
-            ## Sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
+            ## Sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user hasn't been deleted.
             ## @param value Value to set for the deletedDate property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @deleted_date = value
             end
             ## 
-            ## Gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
+            ## Gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it can't be cleared during updates.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
+            ## Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it can't be cleared during updates.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

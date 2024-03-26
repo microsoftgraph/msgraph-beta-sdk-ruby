@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class WindowsKioskAutologon < MicrosoftGraphBeta::Models::WindowsKioskUser
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsKioskAutologon and sets the default values.
+            ## Instantiates a new WindowsKioskAutologon and sets the default values.
             ## @return a void
             ## 
             def initialize()

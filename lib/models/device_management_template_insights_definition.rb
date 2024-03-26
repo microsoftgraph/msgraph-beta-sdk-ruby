@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Setting insights in a template
             @setting_insights
             ## 
-            ## Instantiates a new deviceManagementTemplateInsightsDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementTemplateInsightsDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,39 +8,39 @@ module MicrosoftGraphBeta
         class MultiTenantOrganization < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdDateTime property
+            # Date when multitenant organization was created. Read-only.
             @created_date_time
             ## 
-            # The description property
+            # Description of the multitenant organization.
             @description
             ## 
-            # The displayName property
+            # Display name of the multitenant organization.
             @display_name
             ## 
-            # The joinRequest property
+            # Defines the status of a tenant joining a multitenant organization.
             @join_request
             ## 
-            # The state property
+            # State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
             @state
             ## 
-            # The tenants property
+            # Defines tenants added to a multitenant organization.
             @tenants
             ## 
-            ## Instantiates a new multiTenantOrganization and sets the default values.
+            ## Instantiates a new MultiTenantOrganization and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date when multitenant organization was created. Read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date when multitenant organization was created. Read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 return MultiTenantOrganization.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the multitenant organization.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the multitenant organization.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Display name of the multitenant organization.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Display name of the multitenant organization.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the joinRequest property value. The joinRequest property
+            ## Gets the joinRequest property value. Defines the status of a tenant joining a multitenant organization.
             ## @return a multi_tenant_organization_join_request_record
             ## 
             def join_request
                 return @join_request
             end
             ## 
-            ## Sets the joinRequest property value. The joinRequest property
+            ## Sets the joinRequest property value. Defines the status of a tenant joining a multitenant organization.
             ## @param value Value to set for the joinRequest property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("tenants", @tenants)
             end
             ## 
-            ## Gets the state property value. The state property
+            ## Gets the state property value. State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
             ## @return a multi_tenant_organization_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state property
+            ## Sets the state property value. State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
             ## @param value Value to set for the state property.
             ## @return a void
             ## 
@@ -146,14 +146,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the tenants property value. The tenants property
+            ## Gets the tenants property value. Defines tenants added to a multitenant organization.
             ## @return a multi_tenant_organization_member
             ## 
             def tenants
                 return @tenants
             end
             ## 
-            ## Sets the tenants property value. The tenants property
+            ## Sets the tenants property value. Defines tenants added to a multitenant organization.
             ## @param value Value to set for the tenants property.
             ## @return a void
             ## 

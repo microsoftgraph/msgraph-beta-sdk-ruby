@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
             @state
             ## 
-            ## Instantiates a new windowsUpdatesResourceConnection and sets the default values.
+            ## Instantiates a new WindowsUpdatesResourceConnection and sets the default values.
             ## @return a void
             ## 
             def initialize()

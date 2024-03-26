@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @call = value
             end
             ## 
-            ## Instantiates a new participantLeftNotification and sets the default values.
+            ## Instantiates a new ParticipantLeftNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()

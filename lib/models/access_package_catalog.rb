@@ -158,7 +158,7 @@ module MicrosoftGraphBeta
                 @catalog_type = value
             end
             ## 
-            ## Instantiates a new accessPackageCatalog and sets the default values.
+            ## Instantiates a new AccessPackageCatalog and sets the default values.
             ## @return a void
             ## 
             def initialize()

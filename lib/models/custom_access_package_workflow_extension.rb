@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @last_modified_date_time
             ## 
-            ## Instantiates a new customAccessPackageWorkflowExtension and sets the default values.
+            ## Instantiates a new CustomAccessPackageWorkflowExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

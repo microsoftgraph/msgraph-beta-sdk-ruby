@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @alert_rules = value
             end
             ## 
-            ## Instantiates a new deviceManagementMonitoring and sets the default values.
+            ## Instantiates a new DeviceManagementMonitoring and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @branding_options = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentNotificationConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentNotificationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_value(MicrosoftGraphBeta::Models::EnrollmentNotificationBrandingOptions) },
+                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_values(MicrosoftGraphBeta::Models::EnrollmentNotificationBrandingOptions) },
                     "defaultLocale" => lambda {|n| @default_locale = n.get_string_value() },
                     "notificationMessageTemplateId" => lambda {|n| @notification_message_template_id = n.get_guid_value() },
                     "notificationTemplates" => lambda {|n| @notification_templates = n.get_collection_of_primitive_values(String) },

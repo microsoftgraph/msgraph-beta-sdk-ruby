@@ -7,26 +7,26 @@ module MicrosoftGraphBeta
         class CertificateAuthorityAsEntity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The certificate property
+            # The trusted certificate.
             @certificate
             ## 
-            # The isRootAuthority property
+            # Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
             @is_root_authority
             ## 
-            # The issuer property
+            # The issuer of the trusted certificate.
             @issuer
             ## 
-            # The issuerSubjectKeyIdentifier property
+            # The subject key identifier of the trusted certificate.
             @issuer_subject_key_identifier
             ## 
-            ## Gets the certificate property value. The certificate property
+            ## Gets the certificate property value. The trusted certificate.
             ## @return a base64url
             ## 
             def certificate
                 return @certificate
             end
             ## 
-            ## Sets the certificate property value. The certificate property
+            ## Sets the certificate property value. The trusted certificate.
             ## @param value Value to set for the certificate property.
             ## @return a void
             ## 
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @certificate = value
             end
             ## 
-            ## Instantiates a new certificateAuthorityAsEntity and sets the default values.
+            ## Instantiates a new CertificateAuthorityAsEntity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isRootAuthority property value. The isRootAuthority property
+            ## Gets the isRootAuthority property value. Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
             ## @return a boolean
             ## 
             def is_root_authority
                 return @is_root_authority
             end
             ## 
-            ## Sets the isRootAuthority property value. The isRootAuthority property
+            ## Sets the isRootAuthority property value. Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
             ## @param value Value to set for the isRootAuthority property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 @is_root_authority = value
             end
             ## 
-            ## Gets the issuer property value. The issuer property
+            ## Gets the issuer property value. The issuer of the trusted certificate.
             ## @return a string
             ## 
             def issuer
                 return @issuer
             end
             ## 
-            ## Sets the issuer property value. The issuer property
+            ## Sets the issuer property value. The issuer of the trusted certificate.
             ## @param value Value to set for the issuer property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @issuer = value
             end
             ## 
-            ## Gets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+            ## Gets the issuerSubjectKeyIdentifier property value. The subject key identifier of the trusted certificate.
             ## @return a string
             ## 
             def issuer_subject_key_identifier
                 return @issuer_subject_key_identifier
             end
             ## 
-            ## Sets the issuerSubjectKeyIdentifier property value. The issuerSubjectKeyIdentifier property
+            ## Sets the issuerSubjectKeyIdentifier property value. The subject key identifier of the trusted certificate.
             ## @param value Value to set for the issuerSubjectKeyIdentifier property.
             ## @return a void
             ## 

@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -11,6 +12,9 @@ module MicrosoftGraphBeta
             ## 
             # Additional information that is sent to the customer when an appointment is confirmed.
             @additional_information
+            ## 
+            # The date, time and timezone when the Service was created.
+            @created_date_time
             ## 
             # Contains the set of custom questions associated with a particular service.
             @custom_questions
@@ -33,17 +37,23 @@ module MicrosoftGraphBeta
             # A text description for the service.
             @description
             ## 
-            # True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
+            # Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             @is_anonymous_join_enabled
             ## 
-            # True means this service is not available to customers for booking.
+            # Indicates that the customer can manage bookings created by the staff. The default value is false.
+            @is_customer_allowed_to_manage_booking
+            ## 
+            # True means this service isn't available to customers for booking.
             @is_hidden_from_customers
             ## 
-            # True indicates that the appointments for the service will be held online. Default value is false.
+            # Indicates that the appointments for the service are held online. The default value is false.
             @is_location_online
             ## 
             # The language of the self service booking page.
             @language_tag
+            ## 
+            # The date, time and timezone when the Service  was last updated.
+            @last_updated_date_time
             ## 
             # The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
@@ -84,12 +94,27 @@ module MicrosoftGraphBeta
                 @additional_information = value
             end
             ## 
-            ## Instantiates a new bookingService and sets the default values.
+            ## Instantiates a new BookingService and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.bookingService"
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time and timezone when the Service was created.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time and timezone when the Service was created.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -212,6 +237,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customQuestions" => lambda {|n| @custom_questions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingQuestionAssignment.create_from_discriminator_value(pn) }) },
                     "defaultDuration" => lambda {|n| @default_duration = n.get_duration_value() },
                     "defaultLocation" => lambda {|n| @default_location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Location.create_from_discriminator_value(pn) }) },
@@ -220,9 +246,11 @@ module MicrosoftGraphBeta
                     "defaultReminders" => lambda {|n| @default_reminders = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingReminder.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "isAnonymousJoinEnabled" => lambda {|n| @is_anonymous_join_enabled = n.get_boolean_value() },
+                    "isCustomerAllowedToManageBooking" => lambda {|n| @is_customer_allowed_to_manage_booking = n.get_boolean_value() },
                     "isHiddenFromCustomers" => lambda {|n| @is_hidden_from_customers = n.get_boolean_value() },
                     "isLocationOnline" => lambda {|n| @is_location_online = n.get_boolean_value() },
                     "languageTag" => lambda {|n| @language_tag = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "maximumAttendeesCount" => lambda {|n| @maximum_attendees_count = n.get_number_value() },
                     "notes" => lambda {|n| @notes = n.get_string_value() },
                     "postBuffer" => lambda {|n| @post_buffer = n.get_duration_value() },
@@ -234,14 +262,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isAnonymousJoinEnabled property value. True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
+            ## Gets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             ## @return a boolean
             ## 
             def is_anonymous_join_enabled
                 return @is_anonymous_join_enabled
             end
             ## 
-            ## Sets the isAnonymousJoinEnabled property value. True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
+            ## Sets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             ## @param value Value to set for the isAnonymousJoinEnabled property.
             ## @return a void
             ## 
@@ -249,14 +277,29 @@ module MicrosoftGraphBeta
                 @is_anonymous_join_enabled = value
             end
             ## 
-            ## Gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @return a boolean
+            ## 
+            def is_customer_allowed_to_manage_booking
+                return @is_customer_allowed_to_manage_booking
+            end
+            ## 
+            ## Sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @param value Value to set for the isCustomerAllowedToManageBooking property.
+            ## @return a void
+            ## 
+            def is_customer_allowed_to_manage_booking=(value)
+                @is_customer_allowed_to_manage_booking = value
+            end
+            ## 
+            ## Gets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
             ## @return a boolean
             ## 
             def is_hidden_from_customers
                 return @is_hidden_from_customers
             end
             ## 
-            ## Sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Sets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
             ## @param value Value to set for the isHiddenFromCustomers property.
             ## @return a void
             ## 
@@ -264,14 +307,14 @@ module MicrosoftGraphBeta
                 @is_hidden_from_customers = value
             end
             ## 
-            ## Gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+            ## Gets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
             ## @return a boolean
             ## 
             def is_location_online
                 return @is_location_online
             end
             ## 
-            ## Sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+            ## Sets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
             ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
@@ -292,6 +335,21 @@ module MicrosoftGraphBeta
             ## 
             def language_tag=(value)
                 @language_tag = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time and timezone when the Service  was last updated.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time and timezone when the Service  was last updated.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
@@ -377,6 +435,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("customQuestions", @custom_questions)
                 writer.write_duration_value("defaultDuration", @default_duration)
                 writer.write_object_value("defaultLocation", @default_location)
@@ -385,9 +444,11 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("defaultReminders", @default_reminders)
                 writer.write_string_value("description", @description)
                 writer.write_boolean_value("isAnonymousJoinEnabled", @is_anonymous_join_enabled)
+                writer.write_boolean_value("isCustomerAllowedToManageBooking", @is_customer_allowed_to_manage_booking)
                 writer.write_boolean_value("isHiddenFromCustomers", @is_hidden_from_customers)
                 writer.write_boolean_value("isLocationOnline", @is_location_online)
                 writer.write_string_value("languageTag", @language_tag)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
                 writer.write_string_value("notes", @notes)
                 writer.write_duration_value("postBuffer", @post_buffer)

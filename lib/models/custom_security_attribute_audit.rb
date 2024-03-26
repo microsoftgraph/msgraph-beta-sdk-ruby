@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Instantiates a new customSecurityAttributeAudit and sets the default values.
+            ## Instantiates a new CustomSecurityAttributeAudit and sets the default values.
             ## @return a void
             ## 
             def initialize()

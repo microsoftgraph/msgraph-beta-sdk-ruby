@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The unique identifier for the group.
             @group_id
             ## 
-            ## Instantiates a new businessScenarioGroupTarget and sets the default values.
+            ## Instantiates a new BusinessScenarioGroupTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

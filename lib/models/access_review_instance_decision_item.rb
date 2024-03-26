@@ -119,7 +119,7 @@ module MicrosoftGraphBeta
                 @apply_result = value
             end
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItem and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The ID of the AAD group in which the app provisioning configuration is being targeted.
             @target_group_id
             ## 
-            ## Instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
+            ## Instantiates a new MobileAppProvisioningConfigGroupAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

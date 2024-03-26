@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The definitions of each property of the complex setting
             @property_definition_ids
             ## 
-            ## Instantiates a new deviceManagementComplexSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementComplexSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

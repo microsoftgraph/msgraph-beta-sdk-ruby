@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Represents various states for Zebra FOTA connector.
             @state
             ## 
-            ## Instantiates a new zebraFotaConnector and sets the default values.
+            ## Instantiates a new ZebraFotaConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

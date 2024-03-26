@@ -72,6 +72,9 @@ module MicrosoftGraphBeta
             # Indicates if touch id setup pane is disabled
             @touch_id_disabled
             ## 
+            # Indicates if the device will need to wait for configured confirmation
+            @wait_for_device_configured_confirmation
+            ## 
             ## Gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
             ## @return a boolean
             ## 
@@ -117,7 +120,7 @@ module MicrosoftGraphBeta
                 @configuration_web_url = value
             end
             ## 
-            ## Instantiates a new depEnrollmentBaseProfile and sets the default values.
+            ## Instantiates a new DepEnrollmentBaseProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -245,6 +248,7 @@ module MicrosoftGraphBeta
                     "supportPhoneNumber" => lambda {|n| @support_phone_number = n.get_string_value() },
                     "termsAndConditionsDisabled" => lambda {|n| @terms_and_conditions_disabled = n.get_boolean_value() },
                     "touchIdDisabled" => lambda {|n| @touch_id_disabled = n.get_boolean_value() },
+                    "waitForDeviceConfiguredConfirmation" => lambda {|n| @wait_for_device_configured_confirmation = n.get_boolean_value() },
                 })
             end
             ## 
@@ -381,6 +385,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("supportPhoneNumber", @support_phone_number)
                 writer.write_boolean_value("termsAndConditionsDisabled", @terms_and_conditions_disabled)
                 writer.write_boolean_value("touchIdDisabled", @touch_id_disabled)
+                writer.write_boolean_value("waitForDeviceConfiguredConfirmation", @wait_for_device_configured_confirmation)
             end
             ## 
             ## Gets the siriDisabled property value. Indicates if siri setup pane is disabled
@@ -471,6 +476,21 @@ module MicrosoftGraphBeta
             ## 
             def touch_id_disabled=(value)
                 @touch_id_disabled = value
+            end
+            ## 
+            ## Gets the waitForDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+            ## @return a boolean
+            ## 
+            def wait_for_device_configured_confirmation
+                return @wait_for_device_configured_confirmation
+            end
+            ## 
+            ## Sets the waitForDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+            ## @param value Value to set for the waitForDeviceConfiguredConfirmation property.
+            ## @return a void
+            ## 
+            def wait_for_device_configured_confirmation=(value)
+                @wait_for_device_configured_confirmation = value
             end
         end
     end

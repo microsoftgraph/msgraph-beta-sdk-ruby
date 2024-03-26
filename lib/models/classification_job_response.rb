@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The result property
             @result
             ## 
-            ## Instantiates a new classificationJobResponse and sets the default values.
+            ## Instantiates a new ClassificationJobResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

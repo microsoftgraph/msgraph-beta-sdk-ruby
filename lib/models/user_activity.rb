@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                 @app_display_name = value
             end
             ## 
-            ## Instantiates a new userActivity and sets the default values.
+            ## Instantiates a new UserActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The text property
             @text
             ## 
-            ## Instantiates a new markContent and sets the default values.
+            ## Instantiates a new MarkContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

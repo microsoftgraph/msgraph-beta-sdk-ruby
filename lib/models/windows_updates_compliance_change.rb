@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The policy this compliance change is a member of.
             @update_policy
             ## 
-            ## Instantiates a new windowsUpdatesComplianceChange and sets the default values.
+            ## Instantiates a new WindowsUpdatesComplianceChange and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -92,7 +92,7 @@ module MicrosoftGraphBeta
                 @assignment_created_date_time = value
             end
             ## 
-            ## Instantiates a new staleSignInAlertIncident and sets the default values.
+            ## Instantiates a new StaleSignInAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

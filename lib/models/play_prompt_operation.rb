@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @completion_reason = value
             end
             ## 
-            ## Instantiates a new playPromptOperation and sets the default values.
+            ## Instantiates a new PlayPromptOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

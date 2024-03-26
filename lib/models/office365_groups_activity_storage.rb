@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The storage used in SharePoint document library.
             @site_storage_used_in_bytes
             ## 
-            ## Instantiates a new office365GroupsActivityStorage and sets the default values.
+            ## Instantiates a new Office365GroupsActivityStorage and sets the default values.
             ## @return a void
             ## 
             def initialize()

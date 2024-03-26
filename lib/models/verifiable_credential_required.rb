@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # A URL that launches the digital wallet and starts the presentation process. You can present this URL to the user if they can't scan the QR code.
             @url
             ## 
-            ## Instantiates a new verifiableCredentialRequired and sets the default values.
+            ## Instantiates a new VerifiableCredentialRequired and sets the default values.
             ## @return a void
             ## 
             def initialize()

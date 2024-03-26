@@ -59,7 +59,7 @@ module MicrosoftGraphBeta
                 @compliance_grace_period_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new iosUpdateDeviceStatus and sets the default values.
+            ## Instantiates a new IosUpdateDeviceStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

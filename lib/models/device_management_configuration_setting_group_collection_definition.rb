@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Minimum number of setting group count in the collection
             @minimum_count
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingGroupCollectionDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingGroupCollectionDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @access_package_resource = value
             end
             ## 
-            ## Instantiates a new accessPackageResourceRole and sets the default values.
+            ## Instantiates a new AccessPackageResourceRole and sets the default values.
             ## @return a void
             ## 
             def initialize()

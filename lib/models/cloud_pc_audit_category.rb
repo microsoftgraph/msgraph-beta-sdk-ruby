@@ -2,7 +2,7 @@ module MicrosoftGraphBeta
     module Models
         CloudPcAuditCategory = {
             CloudPC: :CloudPC,
-            Other: :Other,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

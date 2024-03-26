@@ -80,7 +80,7 @@ module MicrosoftGraphBeta
                 @alert_rule_template = value
             end
             ## 
-            ## Instantiates a new deviceManagementAlertRecord and sets the default values.
+            ## Instantiates a new DeviceManagementAlertRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

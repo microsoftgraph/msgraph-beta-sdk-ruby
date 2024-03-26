@@ -16,6 +16,7 @@ module MicrosoftGraphBeta
             AndroidMobileApplicationManagement: :AndroidMobileApplicationManagement,
             IOSMobileApplicationManagement: :IOSMobileApplicationManagement,
             UnknownFutureValue: :UnknownFutureValue,
+            WindowsMobileApplicationManagement: :WindowsMobileApplicationManagement,
         }
     end
 end

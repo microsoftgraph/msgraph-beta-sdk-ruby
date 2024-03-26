@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The UserId being targeted by this wipe action.
             @targeted_user_id
             ## 
-            ## Instantiates a new windowsInformationProtectionWipeAction and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionWipeAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

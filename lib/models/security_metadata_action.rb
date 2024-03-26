@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # A collection of strings that indicate which keys to remove from the file metadata.
             @metadata_to_remove
             ## 
-            ## Instantiates a new securityMetadataAction and sets the default values.
+            ## Instantiates a new SecurityMetadataAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

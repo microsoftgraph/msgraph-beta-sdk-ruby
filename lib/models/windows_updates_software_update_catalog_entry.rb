@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesSoftwareUpdateCatalogEntry < MicrosoftGraphBeta::Models::WindowsUpdatesCatalogEntry
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsUpdatesSoftwareUpdateCatalogEntry and sets the default values.
+            ## Instantiates a new WindowsUpdatesSoftwareUpdateCatalogEntry and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataOutboundFlowActivity < MicrosoftGraphBeta::Models::IndustryDataIndustryDataRunActivity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataOutboundFlowActivity and sets the default values.
+            ## Instantiates a new IndustryDataOutboundFlowActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

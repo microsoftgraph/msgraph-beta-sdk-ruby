@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The participants property
             @participants
             ## 
-            ## Instantiates a new muteParticipantsOperation and sets the default values.
+            ## Instantiates a new MuteParticipantsOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

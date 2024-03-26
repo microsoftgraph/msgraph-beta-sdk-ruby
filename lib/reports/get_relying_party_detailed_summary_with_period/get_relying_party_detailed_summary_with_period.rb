@@ -1,1 +1,1 @@
-require_relative 'get_relying_party_detailed_summary_with_period_response'
+require_relative 'get_relying_party_detailed_summary_with_period_get_response'

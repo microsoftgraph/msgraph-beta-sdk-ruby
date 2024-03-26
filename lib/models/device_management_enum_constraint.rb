@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # List of valid values for this string
             @values
             ## 
-            ## Instantiates a new deviceManagementEnumConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementEnumConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class FocusActivityStatistics < MicrosoftGraphBeta::Models::ActivityStatistics
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new focusActivityStatistics and sets the default values.
+            ## Instantiates a new FocusActivityStatistics and sets the default values.
             ## @return a void
             ## 
             def initialize()

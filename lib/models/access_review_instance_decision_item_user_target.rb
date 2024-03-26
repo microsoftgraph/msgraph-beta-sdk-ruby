@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The user principal name.
             @user_principal_name
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItemUserTarget and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItemUserTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A unique web URL for the registrant to join the meeting. Read-only.
             @join_web_url
             ## 
-            ## Instantiates a new meetingRegistrantBase and sets the default values.
+            ## Instantiates a new MeetingRegistrantBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

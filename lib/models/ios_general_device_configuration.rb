@@ -1230,7 +1230,7 @@ module MicrosoftGraphBeta
                 @configuration_profile_block_changes = value
             end
             ## 
-            ## Instantiates a new iosGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new IosGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

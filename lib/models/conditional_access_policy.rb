@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                 @conditions = value
             end
             ## 
-            ## Instantiates a new conditionalAccessPolicy and sets the default values.
+            ## Instantiates a new ConditionalAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,6 +75,14 @@ module MicrosoftGraphBeta
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.conditionalAccessWhatIfPolicy"
+                            return ConditionalAccessWhatIfPolicy.new
+                    end
+                end
                 return ConditionalAccessPolicy.new
             end
             ## 

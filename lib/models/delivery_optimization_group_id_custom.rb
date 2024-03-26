@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Specifies an arbitrary group ID that the device belongs to
             @group_id_custom
             ## 
-            ## Instantiates a new deliveryOptimizationGroupIdCustom and sets the default values.
+            ## Instantiates a new DeliveryOptimizationGroupIdCustom and sets the default values.
             ## @return a void
             ## 
             def initialize()

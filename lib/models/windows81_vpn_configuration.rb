@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @connection_type = value
             end
             ## 
-            ## Instantiates a new windows81VpnConfiguration and sets the default values.
+            ## Instantiates a new Windows81VpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 @configurations = value
             end
             ## 
-            ## Instantiates a new credentialSingleSignOnExtension and sets the default values.
+            ## Instantiates a new CredentialSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

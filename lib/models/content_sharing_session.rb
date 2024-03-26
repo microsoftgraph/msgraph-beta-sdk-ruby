@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ContentSharingSession < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new contentSharingSession and sets the default values.
+            ## Instantiates a new ContentSharingSession and sets the default values.
             ## @return a void
             ## 
             def initialize()

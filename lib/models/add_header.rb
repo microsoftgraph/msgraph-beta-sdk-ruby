@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @alignment = value
             end
             ## 
-            ## Instantiates a new addHeader and sets the default values.
+            ## Instantiates a new AddHeader and sets the default values.
             ## @return a void
             ## 
             def initialize()

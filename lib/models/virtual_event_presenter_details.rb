@@ -28,18 +28,21 @@ module MicrosoftGraphBeta
             # The presenter's personal website URL.
             @personal_site_web_url
             ## 
+            # The content stream of the presenter's photo.
+            @photo
+            ## 
             # The presenter's Twitter profile URL.
             @twitter_profile_web_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,7 +79,7 @@ module MicrosoftGraphBeta
                 @company = value
             end
             ## 
-            ## Instantiates a new virtualEventPresenterDetails and sets the default values.
+            ## Instantiates a new VirtualEventPresenterDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,6 +106,7 @@ module MicrosoftGraphBeta
                     "linkedInProfileWebUrl" => lambda {|n| @linked_in_profile_web_url = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "personalSiteWebUrl" => lambda {|n| @personal_site_web_url = n.get_string_value() },
+                    "photo" => lambda {|n| @photo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "twitterProfileWebUrl" => lambda {|n| @twitter_profile_web_url = n.get_string_value() },
                 }
             end
@@ -167,6 +171,21 @@ module MicrosoftGraphBeta
                 @personal_site_web_url = value
             end
             ## 
+            ## Gets the photo property value. The content stream of the presenter's photo.
+            ## @return a base64url
+            ## 
+            def photo
+                return @photo
+            end
+            ## 
+            ## Sets the photo property value. The content stream of the presenter's photo.
+            ## @param value Value to set for the photo property.
+            ## @return a void
+            ## 
+            def photo=(value)
+                @photo = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -179,6 +198,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("linkedInProfileWebUrl", @linked_in_profile_web_url)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("personalSiteWebUrl", @personal_site_web_url)
+                writer.write_object_value("photo", @photo)
                 writer.write_string_value("twitterProfileWebUrl", @twitter_profile_web_url)
                 writer.write_additional_data(@additional_data)
             end

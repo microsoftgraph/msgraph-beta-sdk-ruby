@@ -7,10 +7,13 @@ module MicrosoftGraphBeta
         class SubjectRightsRequestEnumeratedMailboxLocation < MicrosoftGraphBeta::Models::SubjectRightsRequestMailboxLocation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
+            # The upns property
             @upns
             ## 
-            ## Instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
+            # Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
+            @user_principal_names
+            ## 
+            ## Instantiates a new SubjectRightsRequestEnumeratedMailboxLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,6 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "upns" => lambda {|n| @upns = n.get_collection_of_primitive_values(String) },
+                    "userPrincipalNames" => lambda {|n| @user_principal_names = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
@@ -44,21 +48,37 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_primitive_values("upns", @upns)
+                writer.write_collection_of_primitive_values("userPrincipalNames", @user_principal_names)
             end
             ## 
-            ## Gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
+            ## Gets the upns property value. The upns property
             ## @return a string
             ## 
             def upns
                 return @upns
             end
             ## 
-            ## Sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
+            ## Sets the upns property value. The upns property
             ## @param value Value to set for the upns property.
             ## @return a void
             ## 
             def upns=(value)
                 @upns = value
+            end
+            ## 
+            ## Gets the userPrincipalNames property value. Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
+            ## @return a string
+            ## 
+            def user_principal_names
+                return @user_principal_names
+            end
+            ## 
+            ## Sets the userPrincipalNames property value. Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
+            ## @param value Value to set for the userPrincipalNames property.
+            ## @return a void
+            ## 
+            def user_principal_names=(value)
+                @user_principal_names = value
             end
         end
     end

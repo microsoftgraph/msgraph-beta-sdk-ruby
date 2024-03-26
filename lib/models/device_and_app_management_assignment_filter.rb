@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @assignment_filter_management_type = value
             end
             ## 
-            ## Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+            ## Instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()

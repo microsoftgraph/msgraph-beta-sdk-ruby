@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Toggles syncing tasks. If set to false tasks are turned off on the device.
             @sync_tasks
             ## 
-            ## Instantiates a new androidWorkProfileNineWorkEasConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileNineWorkEasConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

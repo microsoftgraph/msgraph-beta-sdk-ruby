@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @allow_external_identities_to_leave = value
             end
             ## 
-            ## Instantiates a new externalIdentitiesPolicy and sets the default values.
+            ## Instantiates a new ExternalIdentitiesPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

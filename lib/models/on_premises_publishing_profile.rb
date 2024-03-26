@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The isDefaultAccessEnabled property
             @is_default_access_enabled
             ## 
-            # Represents if Azure AD Application Proxy is enabled for the tenant.
+            # Represents if Microsoft Entra application proxy is enabled for the tenant.
             @is_enabled
             ## 
             # List of existing publishedResource objects. Read-only. Nullable.
@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                 @connectors = value
             end
             ## 
-            ## Instantiates a new onPremisesPublishingProfile and sets the default values.
+            ## Instantiates a new OnPremisesPublishingProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -153,14 +153,14 @@ module MicrosoftGraphBeta
                 @is_default_access_enabled = value
             end
             ## 
-            ## Gets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+            ## Gets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+            ## Sets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 

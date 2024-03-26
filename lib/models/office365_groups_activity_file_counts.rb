@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @active = value
             end
             ## 
-            ## Instantiates a new office365GroupsActivityFileCounts and sets the default values.
+            ## Instantiates a new Office365GroupsActivityFileCounts and sets the default values.
             ## @return a void
             ## 
             def initialize()

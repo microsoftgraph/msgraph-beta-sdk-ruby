@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Value. (UTF8 encoded byte array)
             @value
             ## 
-            ## Instantiates a new omaSettingStringXml and sets the default values.
+            ## Instantiates a new OmaSettingStringXml and sets the default values.
             ## @return a void
             ## 
             def initialize()

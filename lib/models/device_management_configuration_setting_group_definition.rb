@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationSettingGroupDefinition < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Dependent child settings to this group of settings.
+            # Dependent child settings to this group of settings
             @child_ids
             ## 
             # List of child settings that depend on this setting
@@ -16,14 +16,14 @@ module MicrosoftGraphBeta
             # List of Dependencies for the setting group
             @dependent_on
             ## 
-            ## Gets the childIds property value. Dependent child settings to this group of settings.
+            ## Gets the childIds property value. Dependent child settings to this group of settings
             ## @return a string
             ## 
             def child_ids
                 return @child_ids
             end
             ## 
-            ## Sets the childIds property value. Dependent child settings to this group of settings.
+            ## Sets the childIds property value. Dependent child settings to this group of settings
             ## @param value Value to set for the childIds property.
             ## @return a void
             ## 
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @child_ids = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingGroupDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @agent_groups = value
             end
             ## 
-            ## Instantiates a new publishedResource and sets the default values.
+            ## Instantiates a new PublishedResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The unique id of user who initialize the connection.
             @user_id
             ## 
-            ## Instantiates a new cloudPCConnectivityIssue and sets the default values.
+            ## Instantiates a new CloudPCConnectivityIssue and sets the default values.
             ## @return a void
             ## 
             def initialize()

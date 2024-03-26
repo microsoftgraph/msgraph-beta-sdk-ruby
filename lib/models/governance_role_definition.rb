@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The templateId property
             @template_id
             ## 
-            ## Instantiates a new governanceRoleDefinition and sets the default values.
+            ## Instantiates a new GovernanceRoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

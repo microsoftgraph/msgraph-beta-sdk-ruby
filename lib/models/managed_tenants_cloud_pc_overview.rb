@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
             # The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
             @total_enterprise_licenses
             ## 
-            ## Instantiates a new managedTenantsCloudPcOverview and sets the default values.
+            ## Instantiates a new ManagedTenantsCloudPcOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()

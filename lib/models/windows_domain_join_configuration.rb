@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @computer_name_suffix_random_char_count = value
             end
             ## 
-            ## Instantiates a new windowsDomainJoinConfiguration and sets the default values.
+            ## Instantiates a new WindowsDomainJoinConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # URL referencing the patent or filing.
             @web_url
             ## 
-            ## Instantiates a new itemPatent and sets the default values.
+            ## Instantiates a new ItemPatent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class ExternalMeetingRegistrant < MicrosoftGraphBeta::Models::MeetingRegistrantBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The tenant ID of this registrant if in Azure Active Directory.
+            # The tenant ID of this registrant if in Microsoft Entra ID.
             @tenant_id
             ## 
-            # The user ID of this registrant if in Azure Active Directory.
+            # The user ID of this registrant if in Microsoft Entra ID.
             @user_id
             ## 
-            ## Instantiates a new externalMeetingRegistrant and sets the default values.
+            ## Instantiates a new ExternalMeetingRegistrant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,14 +51,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
+            ## Gets the tenantId property value. The tenant ID of this registrant if in Microsoft Entra ID.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
+            ## Sets the tenantId property value. The tenant ID of this registrant if in Microsoft Entra ID.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the userId property value. The user ID of this registrant if in Azure Active Directory.
+            ## Gets the userId property value. The user ID of this registrant if in Microsoft Entra ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The user ID of this registrant if in Azure Active Directory.
+            ## Sets the userId property value. The user ID of this registrant if in Microsoft Entra ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

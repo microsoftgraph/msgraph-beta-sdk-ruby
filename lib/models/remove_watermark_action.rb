@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name of the UI element of footer to be removed.
             @ui_element_names
             ## 
-            ## Instantiates a new removeWatermarkAction and sets the default values.
+            ## Instantiates a new RemoveWatermarkAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

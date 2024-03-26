@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @assignee_user_principal_name = value
             end
             ## 
-            ## Instantiates a new tooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
+            ## Instantiates a new TooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

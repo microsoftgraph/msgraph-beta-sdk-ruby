@@ -156,7 +156,7 @@ module MicrosoftGraphBeta
                 @company_portal_vpp_token_id = value
             end
             ## 
-            ## Instantiates a new depIOSEnrollmentProfile and sets the default values.
+            ## Instantiates a new DepIOSEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

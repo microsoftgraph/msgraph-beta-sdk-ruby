@@ -23,6 +23,9 @@ module MicrosoftGraphBeta
             # Metadata for the location where the channel's files are stored.
             @files_folder
             ## 
+            # The isArchived property
+            @is_archived
+            ## 
             # Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
             @is_favorite_by_default
             ## 
@@ -47,13 +50,13 @@ module MicrosoftGraphBeta
             # A collection of all the tabs in the channel. A navigation property.
             @tabs
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
             @web_url
             ## 
-            ## Instantiates a new channel and sets the default values.
+            ## Instantiates a new Channel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -154,6 +157,7 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "email" => lambda {|n| @email = n.get_string_value() },
                     "filesFolder" => lambda {|n| @files_folder = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }) },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
                     "isFavoriteByDefault" => lambda {|n| @is_favorite_by_default = n.get_boolean_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                     "membershipType" => lambda {|n| @membership_type = n.get_enum_value(MicrosoftGraphBeta::Models::ChannelMembershipType) },
@@ -165,6 +169,21 @@ module MicrosoftGraphBeta
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
+            end
+            ## 
+            ## Gets the isArchived property value. The isArchived property
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. The isArchived property
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
             end
             ## 
             ## Gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
@@ -254,6 +273,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("email", @email)
                 writer.write_object_value("filesFolder", @files_folder)
+                writer.write_boolean_value("isArchived", @is_archived)
                 writer.write_boolean_value("isFavoriteByDefault", @is_favorite_by_default)
                 writer.write_collection_of_object_values("members", @members)
                 writer.write_enum_value("membershipType", @membership_type)
@@ -311,14 +331,14 @@ module MicrosoftGraphBeta
                 @tabs = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

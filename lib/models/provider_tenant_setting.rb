@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @azure_tenant_id = value
             end
             ## 
-            ## Instantiates a new providerTenantSetting and sets the default values.
+            ## Instantiates a new ProviderTenantSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new ediscoverySiteSourceCollectionResponse and sets the default values.
+            ## Instantiates a new EdiscoverySiteSourceCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

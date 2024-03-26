@@ -4,6 +4,7 @@ module MicrosoftGraphBeta
             Client: :Client,
             Branch: :Branch,
             UnknownFutureValue: :UnknownFutureValue,
+            RemoteNetwork: :RemoteNetwork,
         }
     end
 end

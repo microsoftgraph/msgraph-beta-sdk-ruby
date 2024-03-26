@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class SimulationNotification < MicrosoftGraphBeta::Models::BaseEndUserNotification
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The targettedUserType property
+            # Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
             @targetted_user_type
             ## 
-            ## Instantiates a new simulationNotification and sets the default values.
+            ## Instantiates a new SimulationNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("targettedUserType", @targetted_user_type)
             end
             ## 
-            ## Gets the targettedUserType property value. The targettedUserType property
+            ## Gets the targettedUserType property value. Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
             ## @return a targetted_user_type
             ## 
             def targetted_user_type
                 return @targetted_user_type
             end
             ## 
-            ## Sets the targettedUserType property value. The targettedUserType property
+            ## Sets the targettedUserType property value. Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
             ## @param value Value to set for the targettedUserType property.
             ## @return a void
             ## 

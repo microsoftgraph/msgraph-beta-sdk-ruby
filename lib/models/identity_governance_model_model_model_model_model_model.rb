@@ -25,6 +25,12 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # The permissionsAnalytics property
+            @permissions_analytics
+            ## 
+            # The permissionsManagement property
+            @permissions_management
+            ## 
             # The privilegedAccess property
             @privileged_access
             ## 
@@ -49,15 +55,15 @@ module MicrosoftGraphBeta
                 @access_reviews = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +85,7 @@ module MicrosoftGraphBeta
                 @app_consent = value
             end
             ## 
-            ## Instantiates a new identityGovernanceModelModelModelModelModelModel and sets the default values.
+            ## Instantiates a new IdentityGovernanceModelModelModelModelModelModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -120,6 +126,8 @@ module MicrosoftGraphBeta
                     "entitlementManagement" => lambda {|n| @entitlement_management = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EntitlementManagement.create_from_discriminator_value(pn) }) },
                     "lifecycleWorkflows" => lambda {|n| @lifecycle_workflows = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentityGovernanceLifecycleWorkflowsContainer.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "permissionsAnalytics" => lambda {|n| @permissions_analytics = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PermissionsAnalyticsAggregation.create_from_discriminator_value(pn) }) },
+                    "permissionsManagement" => lambda {|n| @permissions_management = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PermissionsManagement.create_from_discriminator_value(pn) }) },
                     "privilegedAccess" => lambda {|n| @privileged_access = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PrivilegedAccessRoot.create_from_discriminator_value(pn) }) },
                     "roleManagementAlerts" => lambda {|n| @role_management_alerts = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RoleManagementAlert.create_from_discriminator_value(pn) }) },
                     "termsOfUse" => lambda {|n| @terms_of_use = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TermsOfUseContainer.create_from_discriminator_value(pn) }) },
@@ -154,6 +162,36 @@ module MicrosoftGraphBeta
             ## 
             def odata_type=(value)
                 @odata_type = value
+            end
+            ## 
+            ## Gets the permissionsAnalytics property value. The permissionsAnalytics property
+            ## @return a permissions_analytics_aggregation
+            ## 
+            def permissions_analytics
+                return @permissions_analytics
+            end
+            ## 
+            ## Sets the permissionsAnalytics property value. The permissionsAnalytics property
+            ## @param value Value to set for the permissionsAnalytics property.
+            ## @return a void
+            ## 
+            def permissions_analytics=(value)
+                @permissions_analytics = value
+            end
+            ## 
+            ## Gets the permissionsManagement property value. The permissionsManagement property
+            ## @return a permissions_management
+            ## 
+            def permissions_management
+                return @permissions_management
+            end
+            ## 
+            ## Sets the permissionsManagement property value. The permissionsManagement property
+            ## @param value Value to set for the permissionsManagement property.
+            ## @return a void
+            ## 
+            def permissions_management=(value)
+                @permissions_management = value
             end
             ## 
             ## Gets the privilegedAccess property value. The privilegedAccess property
@@ -197,6 +235,8 @@ module MicrosoftGraphBeta
                 writer.write_object_value("entitlementManagement", @entitlement_management)
                 writer.write_object_value("lifecycleWorkflows", @lifecycle_workflows)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("permissionsAnalytics", @permissions_analytics)
+                writer.write_object_value("permissionsManagement", @permissions_management)
                 writer.write_object_value("privilegedAccess", @privileged_access)
                 writer.write_object_value("roleManagementAlerts", @role_management_alerts)
                 writer.write_object_value("termsOfUse", @terms_of_use)

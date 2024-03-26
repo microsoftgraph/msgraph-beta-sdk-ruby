@@ -1,1 +1,1 @@
-require_relative 'can_sign_up_response'
+require_relative 'can_sign_up_get_response'

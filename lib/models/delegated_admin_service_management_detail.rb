@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The name of a managed service. Read-only.
             @service_name
             ## 
-            ## Instantiates a new delegatedAdminServiceManagementDetail and sets the default values.
+            ## Instantiates a new DelegatedAdminServiceManagementDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AccessReviewSet < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents an Azure AD access review decision on an instance of a review.
+            # Represents a Microsoft Entra access review decision on an instance of a review.
             @decisions
             ## 
             # Represents the template and scheduling for an access review.
@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Resource that enables administrators to manage directory-level access review policies in their tenant.
             @policy
             ## 
-            ## Instantiates a new accessReviewSet and sets the default values.
+            ## Instantiates a new AccessReviewSet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 return AccessReviewSet.new
             end
             ## 
-            ## Gets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
+            ## Gets the decisions property value. Represents a Microsoft Entra access review decision on an instance of a review.
             ## @return a access_review_instance_decision_item
             ## 
             def decisions
                 return @decisions
             end
             ## 
-            ## Sets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
+            ## Sets the decisions property value. Represents a Microsoft Entra access review decision on an instance of a review.
             ## @param value Value to set for the decisions property.
             ## @return a void
             ## 

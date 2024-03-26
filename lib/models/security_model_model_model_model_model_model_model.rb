@@ -16,11 +16,17 @@ module MicrosoftGraphBeta
             # Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
             @attack_simulation
             ## 
+            # The auditLog property
+            @audit_log
+            ## 
             # The cases property
             @cases
             ## 
             # The cloudAppSecurityProfiles property
             @cloud_app_security_profiles
+            ## 
+            # Enables read and other actions on collaborative entities in Microsoft Defender.
+            @collaboration
             ## 
             # The domainSecurityProfiles property
             @domain_security_profiles
@@ -48,6 +54,9 @@ module MicrosoftGraphBeta
             ## 
             # The providerTenantSettings property
             @provider_tenant_settings
+            ## 
+            # The rules property
+            @rules
             ## 
             # The secureScoreControlProfiles property
             @secure_score_control_profiles
@@ -124,6 +133,21 @@ module MicrosoftGraphBeta
                 @attack_simulation = value
             end
             ## 
+            ## Gets the auditLog property value. The auditLog property
+            ## @return a security_audit_core_root
+            ## 
+            def audit_log
+                return @audit_log
+            end
+            ## 
+            ## Sets the auditLog property value. The auditLog property
+            ## @param value Value to set for the auditLog property.
+            ## @return a void
+            ## 
+            def audit_log=(value)
+                @audit_log = value
+            end
+            ## 
             ## Gets the cases property value. The cases property
             ## @return a security_cases_root
             ## 
@@ -154,7 +178,22 @@ module MicrosoftGraphBeta
                 @cloud_app_security_profiles = value
             end
             ## 
-            ## Instantiates a new securityModelModelModelModelModelModelModel and sets the default values.
+            ## Gets the collaboration property value. Enables read and other actions on collaborative entities in Microsoft Defender.
+            ## @return a security_collaboration_root
+            ## 
+            def collaboration
+                return @collaboration
+            end
+            ## 
+            ## Sets the collaboration property value. Enables read and other actions on collaborative entities in Microsoft Defender.
+            ## @param value Value to set for the collaboration property.
+            ## @return a void
+            ## 
+            def collaboration=(value)
+                @collaboration = value
+            end
+            ## 
+            ## Instantiates a new SecurityModelModelModelModelModelModelModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -208,8 +247,10 @@ module MicrosoftGraphBeta
                     "alerts" => lambda {|n| @alerts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Alert.create_from_discriminator_value(pn) }) },
                     "alerts_v2" => lambda {|n| @alerts_v2 = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAlert.create_from_discriminator_value(pn) }) },
                     "attackSimulation" => lambda {|n| @attack_simulation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AttackSimulationRoot.create_from_discriminator_value(pn) }) },
+                    "auditLog" => lambda {|n| @audit_log = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAuditCoreRoot.create_from_discriminator_value(pn) }) },
                     "cases" => lambda {|n| @cases = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCasesRoot.create_from_discriminator_value(pn) }) },
                     "cloudAppSecurityProfiles" => lambda {|n| @cloud_app_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudAppSecurityProfile.create_from_discriminator_value(pn) }) },
+                    "collaboration" => lambda {|n| @collaboration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCollaborationRoot.create_from_discriminator_value(pn) }) },
                     "domainSecurityProfiles" => lambda {|n| @domain_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DomainSecurityProfile.create_from_discriminator_value(pn) }) },
                     "fileSecurityProfiles" => lambda {|n| @file_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::FileSecurityProfile.create_from_discriminator_value(pn) }) },
                     "hostSecurityProfiles" => lambda {|n| @host_security_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::HostSecurityProfile.create_from_discriminator_value(pn) }) },
@@ -219,6 +260,7 @@ module MicrosoftGraphBeta
                     "labels" => lambda {|n| @labels = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityLabelsRoot.create_from_discriminator_value(pn) }) },
                     "providerStatus" => lambda {|n| @provider_status = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityProviderStatus.create_from_discriminator_value(pn) }) },
                     "providerTenantSettings" => lambda {|n| @provider_tenant_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ProviderTenantSetting.create_from_discriminator_value(pn) }) },
+                    "rules" => lambda {|n| @rules = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityRulesRoot.create_from_discriminator_value(pn) }) },
                     "secureScoreControlProfiles" => lambda {|n| @secure_score_control_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }) },
                     "secureScores" => lambda {|n| @secure_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecureScore.create_from_discriminator_value(pn) }) },
                     "securityActions" => lambda {|n| @security_actions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAction.create_from_discriminator_value(pn) }) },
@@ -337,6 +379,21 @@ module MicrosoftGraphBeta
                 @provider_tenant_settings = value
             end
             ## 
+            ## Gets the rules property value. The rules property
+            ## @return a security_rules_root
+            ## 
+            def rules
+                return @rules
+            end
+            ## 
+            ## Sets the rules property value. The rules property
+            ## @param value Value to set for the rules property.
+            ## @return a void
+            ## 
+            def rules=(value)
+                @rules = value
+            end
+            ## 
             ## Gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
             ## @return a secure_score_control_profile
             ## 
@@ -392,8 +449,10 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("alerts", @alerts)
                 writer.write_collection_of_object_values("alerts_v2", @alerts_v2)
                 writer.write_object_value("attackSimulation", @attack_simulation)
+                writer.write_object_value("auditLog", @audit_log)
                 writer.write_object_value("cases", @cases)
                 writer.write_collection_of_object_values("cloudAppSecurityProfiles", @cloud_app_security_profiles)
+                writer.write_object_value("collaboration", @collaboration)
                 writer.write_collection_of_object_values("domainSecurityProfiles", @domain_security_profiles)
                 writer.write_collection_of_object_values("fileSecurityProfiles", @file_security_profiles)
                 writer.write_collection_of_object_values("hostSecurityProfiles", @host_security_profiles)
@@ -403,6 +462,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("labels", @labels)
                 writer.write_collection_of_object_values("providerStatus", @provider_status)
                 writer.write_collection_of_object_values("providerTenantSettings", @provider_tenant_settings)
+                writer.write_object_value("rules", @rules)
                 writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
                 writer.write_collection_of_object_values("secureScores", @secure_scores)
                 writer.write_collection_of_object_values("securityActions", @security_actions)

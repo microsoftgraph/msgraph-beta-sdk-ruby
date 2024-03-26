@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Minimum allowed value of the integer
             @minimum_value
             ## 
-            ## Instantiates a new deviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Teams enriched audit logs settings.
             @teams
             ## 
-            ## Instantiates a new networkaccessEnrichedAuditLogs and sets the default values.
+            ## Instantiates a new NetworkaccessEnrichedAuditLogs and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Type of conversation. Possible values are: team, channel, and chat.
             @conversation_identity_type
             ## 
-            ## Instantiates a new teamworkConversationIdentity and sets the default values.
+            ## Instantiates a new TeamworkConversationIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

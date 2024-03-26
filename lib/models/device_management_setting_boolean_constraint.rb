@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The boolean value to compare against
             @value
             ## 
-            ## Instantiates a new deviceManagementSettingBooleanConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingBooleanConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

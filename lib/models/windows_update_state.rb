@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # User principal name.
             @user_principal_name
             ## 
-            ## Instantiates a new windowsUpdateState and sets the default values.
+            ## Instantiates a new WindowsUpdateState and sets the default values.
             ## @return a void
             ## 
             def initialize()

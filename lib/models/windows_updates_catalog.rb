@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Lists the content that you can approve for deployment. Read-only.
             @entries
             ## 
-            ## Instantiates a new windowsUpdatesCatalog and sets the default values.
+            ## Instantiates a new WindowsUpdatesCatalog and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @certification_authority_name = value
             end
             ## 
-            ## Instantiates a new androidForWorkPkcsCertificateProfile and sets the default values.
+            ## Instantiates a new AndroidForWorkPkcsCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

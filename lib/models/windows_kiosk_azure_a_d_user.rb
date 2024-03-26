@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The user accounts that will be locked to this kiosk configuration
             @user_principal_name
             ## 
-            ## Instantiates a new windowsKioskAzureADUser and sets the default values.
+            ## Instantiates a new WindowsKioskAzureADUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

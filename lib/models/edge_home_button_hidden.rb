@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class EdgeHomeButtonHidden < MicrosoftGraphBeta::Models::EdgeHomeButtonConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new edgeHomeButtonHidden and sets the default values.
+            ## Instantiates a new EdgeHomeButtonHidden and sets the default values.
             ## @return a void
             ## 
             def initialize()

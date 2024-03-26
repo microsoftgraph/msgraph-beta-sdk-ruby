@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Specifies the url of the message to be submitted.
             @message_url
             ## 
-            ## Instantiates a new securityEmailUrlThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityEmailUrlThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()

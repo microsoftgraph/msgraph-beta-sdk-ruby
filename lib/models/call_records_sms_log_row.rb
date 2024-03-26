@@ -5,11 +5,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class CallRecordsSmsLogRow
-            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-            ## 
-            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            @additional_data
+        class CallRecordsSmsLogRow < MicrosoftGraphBeta::Models::CallRecordsCallLogRow
+            include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Amount of money or cost of the SMS that is charged.
             @call_charge
@@ -26,17 +23,8 @@ module MicrosoftGraphBeta
             # Partially obfuscated phone number that received the SMS. For details, see E.164.
             @destination_number
             ## 
-            # Unique identifier (GUID) for the SMS.
-            @id
-            ## 
             # The license used for the SMS.
             @license_capability
-            ## 
-            # The OdataType property
-            @odata_type
-            ## 
-            # For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
-            @other_party_country_code
             ## 
             # The date and time when the SMS was sent.
             @sent_date_time
@@ -59,30 +47,6 @@ module MicrosoftGraphBeta
             # Country code of the user. For details, see ISO 3166-1 alpha-2.
             @user_country_code
             ## 
-            # Display name of the user.
-            @user_display_name
-            ## 
-            # The unique identifier (GUID) of the user in Azure Active Directory.
-            @user_id
-            ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            @user_principal_name
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @return a i_dictionary
-            ## 
-            def additional_data
-                return @additional_data
-            end
-            ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
-            ## @return a void
-            ## 
-            def additional_data=(value)
-                @additional_data = value
-            end
-            ## 
             ## Gets the callCharge property value. Amount of money or cost of the SMS that is charged.
             ## @return a decimal
             ## 
@@ -98,11 +62,11 @@ module MicrosoftGraphBeta
                 @call_charge = value
             end
             ## 
-            ## Instantiates a new callRecordsSmsLogRow and sets the default values.
+            ## Instantiates a new CallRecordsSmsLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                @additional_data = Hash.new
+                super
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -178,16 +142,13 @@ module MicrosoftGraphBeta
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return {
+                return super.merge({
                     "callCharge" => lambda {|n| @call_charge = n.get_object_value(lambda {|pn| Decimal.create_from_discriminator_value(pn) }) },
                     "currency" => lambda {|n| @currency = n.get_string_value() },
                     "destinationContext" => lambda {|n| @destination_context = n.get_string_value() },
                     "destinationName" => lambda {|n| @destination_name = n.get_string_value() },
                     "destinationNumber" => lambda {|n| @destination_number = n.get_string_value() },
-                    "id" => lambda {|n| @id = n.get_string_value() },
                     "licenseCapability" => lambda {|n| @license_capability = n.get_string_value() },
-                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "otherPartyCountryCode" => lambda {|n| @other_party_country_code = n.get_string_value() },
                     "sentDateTime" => lambda {|n| @sent_date_time = n.get_date_time_value() },
                     "smsId" => lambda {|n| @sms_id = n.get_string_value() },
                     "smsType" => lambda {|n| @sms_type = n.get_string_value() },
@@ -195,25 +156,7 @@ module MicrosoftGraphBeta
                     "sourceNumber" => lambda {|n| @source_number = n.get_string_value() },
                     "tenantCountryCode" => lambda {|n| @tenant_country_code = n.get_string_value() },
                     "userCountryCode" => lambda {|n| @user_country_code = n.get_string_value() },
-                    "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
-                    "userId" => lambda {|n| @user_id = n.get_string_value() },
-                    "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
-                }
-            end
-            ## 
-            ## Gets the id property value. Unique identifier (GUID) for the SMS.
-            ## @return a string
-            ## 
-            def id
-                return @id
-            end
-            ## 
-            ## Sets the id property value. Unique identifier (GUID) for the SMS.
-            ## @param value Value to set for the id property.
-            ## @return a void
-            ## 
-            def id=(value)
-                @id = value
+                })
             end
             ## 
             ## Gets the licenseCapability property value. The license used for the SMS.
@@ -229,36 +172,6 @@ module MicrosoftGraphBeta
             ## 
             def license_capability=(value)
                 @license_capability = value
-            end
-            ## 
-            ## Gets the @odata.type property value. The OdataType property
-            ## @return a string
-            ## 
-            def odata_type
-                return @odata_type
-            end
-            ## 
-            ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the @odata.type property.
-            ## @return a void
-            ## 
-            def odata_type=(value)
-                @odata_type = value
-            end
-            ## 
-            ## Gets the otherPartyCountryCode property value. For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
-            ## @return a string
-            ## 
-            def other_party_country_code
-                return @other_party_country_code
-            end
-            ## 
-            ## Sets the otherPartyCountryCode property value. For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
-            ## @param value Value to set for the otherPartyCountryCode property.
-            ## @return a void
-            ## 
-            def other_party_country_code=(value)
-                @other_party_country_code = value
             end
             ## 
             ## Gets the sentDateTime property value. The date and time when the SMS was sent.
@@ -282,15 +195,13 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                super
                 writer.write_object_value("callCharge", @call_charge)
                 writer.write_string_value("currency", @currency)
                 writer.write_string_value("destinationContext", @destination_context)
                 writer.write_string_value("destinationName", @destination_name)
                 writer.write_string_value("destinationNumber", @destination_number)
-                writer.write_string_value("id", @id)
                 writer.write_string_value("licenseCapability", @license_capability)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("otherPartyCountryCode", @other_party_country_code)
                 writer.write_date_time_value("sentDateTime", @sent_date_time)
                 writer.write_string_value("smsId", @sms_id)
                 writer.write_string_value("smsType", @sms_type)
@@ -298,10 +209,6 @@ module MicrosoftGraphBeta
                 writer.write_string_value("sourceNumber", @source_number)
                 writer.write_string_value("tenantCountryCode", @tenant_country_code)
                 writer.write_string_value("userCountryCode", @user_country_code)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the smsId property value. SMS identifier. Not guaranteed to be unique.
@@ -392,51 +299,6 @@ module MicrosoftGraphBeta
             ## 
             def user_country_code=(value)
                 @user_country_code = value
-            end
-            ## 
-            ## Gets the userDisplayName property value. Display name of the user.
-            ## @return a string
-            ## 
-            def user_display_name
-                return @user_display_name
-            end
-            ## 
-            ## Sets the userDisplayName property value. Display name of the user.
-            ## @param value Value to set for the userDisplayName property.
-            ## @return a void
-            ## 
-            def user_display_name=(value)
-                @user_display_name = value
-            end
-            ## 
-            ## Gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
-            ## @return a string
-            ## 
-            def user_id
-                return @user_id
-            end
-            ## 
-            ## Sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
-            ## @param value Value to set for the userId property.
-            ## @return a void
-            ## 
-            def user_id=(value)
-                @user_id = value
-            end
-            ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @return a string
-            ## 
-            def user_principal_name
-                return @user_principal_name
-            end
-            ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @param value Value to set for the userPrincipalName property.
-            ## @return a void
-            ## 
-            def user_principal_name=(value)
-                @user_principal_name = value
             end
         end
     end

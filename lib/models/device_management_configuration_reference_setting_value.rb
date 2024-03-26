@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # A note that admin can use to put some contextual information
             @note
             ## 
-            ## Instantiates a new deviceManagementConfigurationReferenceSettingValue and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationReferenceSettingValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

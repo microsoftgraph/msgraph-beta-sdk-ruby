@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @application_name = value
             end
             ## 
-            ## Instantiates a new linkedResource and sets the default values.
+            ## Instantiates a new LinkedResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

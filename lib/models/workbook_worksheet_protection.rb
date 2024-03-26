@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Indicates if the worksheet is protected.  Read-only.
             @protected
             ## 
-            ## Instantiates a new workbookWorksheetProtection and sets the default values.
+            ## Instantiates a new WorkbookWorksheetProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

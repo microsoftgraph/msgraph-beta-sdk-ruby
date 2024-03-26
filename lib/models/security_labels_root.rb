@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @citations = value
             end
             ## 
-            ## Instantiates a new securityLabelsRoot and sets the default values.
+            ## Instantiates a new SecurityLabelsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

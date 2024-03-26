@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Target for the compliance policy assignment.
             @target
             ## 
-            ## Instantiates a new deviceCompliancePolicyAssignment and sets the default values.
+            ## Instantiates a new DeviceCompliancePolicyAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

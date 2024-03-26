@@ -13,28 +13,28 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The scopeNames property
+            # List of groups to which the custom detection rule applies.
             @scope_names
             ## 
             # The scopeType property
             @scope_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityOrganizationalScope and sets the default values.
+            ## Instantiates a new SecurityOrganizationalScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the scopeNames property value. The scopeNames property
+            ## Gets the scopeNames property value. List of groups to which the custom detection rule applies.
             ## @return a string
             ## 
             def scope_names
                 return @scope_names
             end
             ## 
-            ## Sets the scopeNames property value. The scopeNames property
+            ## Sets the scopeNames property value. List of groups to which the custom detection rule applies.
             ## @param value Value to set for the scopeNames property.
             ## @return a void
             ## 

@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # The life cycle status of the control.
             @status
             ## 
-            ## Instantiates a new programControl and sets the default values.
+            ## Instantiates a new ProgramControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

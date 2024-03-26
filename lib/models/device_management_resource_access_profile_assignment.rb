@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Base type for assignment targets.
             @target
             ## 
-            ## Instantiates a new deviceManagementResourceAccessProfileAssignment and sets the default values.
+            ## Instantiates a new DeviceManagementResourceAccessProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

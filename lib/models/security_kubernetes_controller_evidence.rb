@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The controller type.
             @type
             ## 
-            ## Instantiates a new securityKubernetesControllerEvidence and sets the default values.
+            ## Instantiates a new SecurityKubernetesControllerEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

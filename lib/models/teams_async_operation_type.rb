@@ -10,6 +10,8 @@ module MicrosoftGraphBeta
             TeamifyGroup: :TeamifyGroup,
             CreateChannel: :CreateChannel,
             CreateChat: :CreateChat,
+            ArchiveChannel: :ArchiveChannel,
+            UnarchiveChannel: :UnarchiveChannel,
         }
     end
 end

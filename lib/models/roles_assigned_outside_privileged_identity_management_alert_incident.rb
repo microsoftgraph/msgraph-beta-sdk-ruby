@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                 @assignment_created_date_time = value
             end
             ## 
-            ## Instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
+            ## Instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

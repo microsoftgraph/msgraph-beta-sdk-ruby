@@ -4,7 +4,7 @@ module MicrosoftGraphBeta
             ItPro: :ItPro,
             Application: :Application,
             Partner: :Partner,
-            Unknown: :Unknown,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

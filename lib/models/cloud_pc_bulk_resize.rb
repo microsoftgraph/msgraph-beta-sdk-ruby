@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The targetServicePlanId property
             @target_service_plan_id
             ## 
-            ## Instantiates a new cloudPcBulkResize and sets the default values.
+            ## Instantiates a new CloudPcBulkResize and sets the default values.
             ## @return a void
             ## 
             def initialize()

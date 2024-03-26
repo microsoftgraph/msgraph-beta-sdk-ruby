@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Value. (Base64 encoded string)
             @value
             ## 
-            ## Instantiates a new omaSettingBase64 and sets the default values.
+            ## Instantiates a new OmaSettingBase64 and sets the default values.
             ## @return a void
             ## 
             def initialize()

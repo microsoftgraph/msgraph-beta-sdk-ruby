@@ -78,22 +78,22 @@ module MicrosoftGraphBeta
                 @action = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new windowsFirewallRule and sets the default values.
+            ## Instantiates a new WindowsFirewallRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -179,13 +179,13 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "edgeTraversal" => lambda {|n| @edge_traversal = n.get_enum_value(MicrosoftGraphBeta::Models::StateManagementSetting) },
                     "filePath" => lambda {|n| @file_path = n.get_string_value() },
-                    "interfaceTypes" => lambda {|n| @interface_types = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsFirewallRuleInterfaceTypes) },
+                    "interfaceTypes" => lambda {|n| @interface_types = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsFirewallRuleInterfaceTypes) },
                     "localAddressRanges" => lambda {|n| @local_address_ranges = n.get_collection_of_primitive_values(String) },
                     "localPortRanges" => lambda {|n| @local_port_ranges = n.get_collection_of_primitive_values(String) },
                     "localUserAuthorizations" => lambda {|n| @local_user_authorizations = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "packageFamilyName" => lambda {|n| @package_family_name = n.get_string_value() },
-                    "profileTypes" => lambda {|n| @profile_types = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsFirewallRuleNetworkProfileTypes) },
+                    "profileTypes" => lambda {|n| @profile_types = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsFirewallRuleNetworkProfileTypes) },
                     "protocol" => lambda {|n| @protocol = n.get_number_value() },
                     "remoteAddressRanges" => lambda {|n| @remote_address_ranges = n.get_collection_of_primitive_values(String) },
                     "remotePortRanges" => lambda {|n| @remote_port_ranges = n.get_collection_of_primitive_values(String) },

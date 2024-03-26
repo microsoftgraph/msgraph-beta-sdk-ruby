@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The HTTP endpoint that a custom extension calls.
             @target_url
             ## 
-            ## Instantiates a new httpRequestEndpoint and sets the default values.
+            ## Instantiates a new HttpRequestEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

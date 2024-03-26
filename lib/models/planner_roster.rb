@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Retrieves the plans contained by the plannerRoster.
             @plans
             ## 
-            ## Instantiates a new plannerRoster and sets the default values.
+            ## Instantiates a new PlannerRoster and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @cert_file_name = value
             end
             ## 
-            ## Instantiates a new windows81TrustedRootCertificate and sets the default values.
+            ## Instantiates a new Windows81TrustedRootCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

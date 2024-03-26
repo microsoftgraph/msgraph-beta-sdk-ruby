@@ -1,2 +1,0 @@
-require_relative 'evaluate_classification_results_post_request_body'
-require_relative 'evaluate_classification_results_response'

@@ -1,1 +1,1 @@
-require_relative 'is_signed_up_response'
+require_relative 'is_signed_up_get_response'

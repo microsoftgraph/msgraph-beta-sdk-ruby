@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                 @completed_date = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentRequest and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

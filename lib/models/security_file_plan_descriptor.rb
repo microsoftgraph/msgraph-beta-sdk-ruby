@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                 @citation_template = value
             end
             ## 
-            ## Instantiates a new securityFilePlanDescriptor and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptor and sets the default values.
             ## @return a void
             ## 
             def initialize()

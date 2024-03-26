@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The sourceSystem property
             @source_system
             ## 
-            ## Instantiates a new industryDataIndustryDataConnector and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

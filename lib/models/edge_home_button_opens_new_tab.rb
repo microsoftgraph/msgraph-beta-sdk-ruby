@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class EdgeHomeButtonOpensNewTab < MicrosoftGraphBeta::Models::EdgeHomeButtonConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new edgeHomeButtonOpensNewTab and sets the default values.
+            ## Instantiates a new EdgeHomeButtonOpensNewTab and sets the default values.
             ## @return a void
             ## 
             def initialize()

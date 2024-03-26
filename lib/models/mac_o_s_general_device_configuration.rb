@@ -369,7 +369,7 @@ module MicrosoftGraphBeta
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -524,7 +524,7 @@ module MicrosoftGraphBeta
                     "softwareUpdatesEnforcedDelayInDays" => lambda {|n| @software_updates_enforced_delay_in_days = n.get_number_value() },
                     "spotlightBlockInternetResults" => lambda {|n| @spotlight_block_internet_results = n.get_boolean_value() },
                     "touchIdTimeoutInHours" => lambda {|n| @touch_id_timeout_in_hours = n.get_number_value() },
-                    "updateDelayPolicy" => lambda {|n| @update_delay_policy = n.get_enum_value(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateDelayPolicy) },
+                    "updateDelayPolicy" => lambda {|n| @update_delay_policy = n.get_enum_values(MicrosoftGraphBeta::Models::MacOSSoftwareUpdateDelayPolicy) },
                     "wallpaperModificationBlocked" => lambda {|n| @wallpaper_modification_blocked = n.get_boolean_value() },
                 })
             end

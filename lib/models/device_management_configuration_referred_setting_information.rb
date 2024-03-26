@@ -15,25 +15,25 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            # Setting definition id that is being referred to a setting. Applicable for reusable setting
             @setting_definition_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationReferredSettingInformation and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationReferredSettingInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            ## Gets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
             ## @return a string
             ## 
             def setting_definition_id
                 return @setting_definition_id
             end
             ## 
-            ## Sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting.
+            ## Sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
             ## @param value Value to set for the settingDefinitionId property.
             ## @return a void
             ## 

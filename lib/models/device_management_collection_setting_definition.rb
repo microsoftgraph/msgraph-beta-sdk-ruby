@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The Setting Definition ID that describes what each element of the collection looks like
             @element_definition_id
             ## 
-            ## Instantiates a new deviceManagementCollectionSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementCollectionSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

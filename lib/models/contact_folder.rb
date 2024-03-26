@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @child_folders = value
             end
             ## 
-            ## Instantiates a new contactFolder and sets the default values.
+            ## Instantiates a new ContactFolder and sets the default values.
             ## @return a void
             ## 
             def initialize()

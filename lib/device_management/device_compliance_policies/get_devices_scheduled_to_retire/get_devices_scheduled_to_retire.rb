@@ -1,1 +1,1 @@
-require_relative 'get_devices_scheduled_to_retire_response'
+require_relative 'get_devices_scheduled_to_retire_get_response'

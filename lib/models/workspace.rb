@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Specifies a nickname for the workspace, for example, 'quiet workspace'.
             @nickname
             ## 
-            # Specifies additional features of the workspace, for example, details like the type of view or furniture type.
+            # Specifies other features of the workspace; for example, the type of view or furniture type.
             @tags
             ## 
             ## Gets the building property value. Specifies the building name or building number that the workspace is in.
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @capacity = value
             end
             ## 
-            ## Instantiates a new workspace and sets the default values.
+            ## Instantiates a new Workspace and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("tags", @tags)
             end
             ## 
-            ## Gets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
+            ## Gets the tags property value. Specifies other features of the workspace; for example, the type of view or furniture type.
             ## @return a string
             ## 
             def tags
                 return @tags
             end
             ## 
-            ## Sets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
+            ## Sets the tags property value. Specifies other features of the workspace; for example, the type of view or furniture type.
             ## @param value Value to set for the tags property.
             ## @return a void
             ## 

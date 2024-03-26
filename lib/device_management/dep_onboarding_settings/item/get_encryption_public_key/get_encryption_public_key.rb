@@ -1,1 +1,1 @@
-require_relative 'get_encryption_public_key_response'
+require_relative 'get_encryption_public_key_get_response'

@@ -10,31 +10,34 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+            # The frequencyInHours property
             @frequency_in_hours
+            ## 
+            # The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+            @frequency_type
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+            # If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
             @user_restore_enabled
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new cloudPcRestorePointSetting and sets the default values.
+            ## Instantiates a new CloudPcRestorePointSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,19 +53,34 @@ module MicrosoftGraphBeta
                 return CloudPcRestorePointSetting.new
             end
             ## 
-            ## Gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+            ## Gets the frequencyInHours property value. The frequencyInHours property
             ## @return a integer
             ## 
             def frequency_in_hours
                 return @frequency_in_hours
             end
             ## 
-            ## Sets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+            ## Sets the frequencyInHours property value. The frequencyInHours property
             ## @param value Value to set for the frequencyInHours property.
             ## @return a void
             ## 
             def frequency_in_hours=(value)
                 @frequency_in_hours = value
+            end
+            ## 
+            ## Gets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+            ## @return a cloud_pc_restore_point_frequency_type
+            ## 
+            def frequency_type
+                return @frequency_type
+            end
+            ## 
+            ## Sets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+            ## @param value Value to set for the frequencyType property.
+            ## @return a void
+            ## 
+            def frequency_type=(value)
+                @frequency_type = value
             end
             ## 
             ## The deserialization information for the current model
@@ -71,6 +89,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "frequencyInHours" => lambda {|n| @frequency_in_hours = n.get_number_value() },
+                    "frequencyType" => lambda {|n| @frequency_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcRestorePointFrequencyType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "userRestoreEnabled" => lambda {|n| @user_restore_enabled = n.get_boolean_value() },
                 }
@@ -98,19 +117,20 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_number_value("frequencyInHours", @frequency_in_hours)
+                writer.write_enum_value("frequencyType", @frequency_type)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_boolean_value("userRestoreEnabled", @user_restore_enabled)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+            ## Gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
             ## @return a boolean
             ## 
             def user_restore_enabled
                 return @user_restore_enabled
             end
             ## 
-            ## Sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
+            ## Sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
             ## @param value Value to set for the userRestoreEnabled property.
             ## @return a void
             ## 

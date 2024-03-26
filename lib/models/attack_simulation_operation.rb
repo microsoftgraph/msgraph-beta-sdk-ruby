@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
             @type
             ## 
-            ## Instantiates a new attackSimulationOperation and sets the default values.
+            ## Instantiates a new AttackSimulationOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

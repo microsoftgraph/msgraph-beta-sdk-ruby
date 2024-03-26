@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
             @values
             ## 
-            ## Instantiates a new directorySetting and sets the default values.
+            ## Instantiates a new DirectorySetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

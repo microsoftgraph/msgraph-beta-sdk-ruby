@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @conditional_access = value
             end
             ## 
-            ## Instantiates a new networkaccessSettings and sets the default values.
+            ## Instantiates a new NetworkaccessSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

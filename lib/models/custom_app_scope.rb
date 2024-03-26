@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The customAttributes property
             @custom_attributes
             ## 
-            ## Instantiates a new customAppScope and sets the default values.
+            ## Instantiates a new CustomAppScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

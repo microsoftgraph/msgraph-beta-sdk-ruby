@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AndroidDeviceOwnerKioskModeFolderItem < MicrosoftGraphBeta::Models::AndroidDeviceOwnerKioskModeHomeScreenItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new androidDeviceOwnerKioskModeFolderItem and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerKioskModeFolderItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

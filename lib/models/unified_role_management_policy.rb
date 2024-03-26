@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
             @scope_type
             ## 
-            ## Instantiates a new unifiedRoleManagementPolicy and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

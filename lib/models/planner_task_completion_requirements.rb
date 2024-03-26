@@ -4,6 +4,9 @@ module MicrosoftGraphBeta
             None: :None,
             ChecklistCompletion: :ChecklistCompletion,
             UnknownFutureValue: :UnknownFutureValue,
+            FormCompletion: :FormCompletion,
+            ApprovalCompletion: :ApprovalCompletion,
+            CompletionInHostedApp: :CompletionInHostedApp,
         }
     end
 end

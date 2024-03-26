@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new securityBaselineStateCollectionResponse and sets the default values.
+            ## Instantiates a new SecurityBaselineStateCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

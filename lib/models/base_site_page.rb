@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Title of the sitePage.
             @title
             ## 
-            ## Instantiates a new baseSitePage and sets the default values.
+            ## Instantiates a new BaseSitePage and sets the default values.
             ## @return a void
             ## 
             def initialize()

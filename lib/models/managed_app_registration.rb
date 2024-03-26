@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                 @azure_a_d_device_id = value
             end
             ## 
-            ## Instantiates a new managedAppRegistration and sets the default values.
+            ## Instantiates a new ManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -163,6 +163,8 @@ module MicrosoftGraphBeta
                             return AndroidManagedAppRegistration.new
                         when "#microsoft.graph.iosManagedAppRegistration"
                             return IosManagedAppRegistration.new
+                        when "#microsoft.graph.windowsManagedAppRegistration"
+                            return WindowsManagedAppRegistration.new
                     end
                 end
                 return ManagedAppRegistration.new

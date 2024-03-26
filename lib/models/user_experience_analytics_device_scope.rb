@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
             @value_object_id
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

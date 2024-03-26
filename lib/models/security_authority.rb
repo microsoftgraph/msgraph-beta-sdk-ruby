@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityAuthority < MicrosoftGraphBeta::Models::SecurityFilePlanDescriptorBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityAuthority and sets the default values.
+            ## Instantiates a new SecurityAuthority and sets the default values.
             ## @return a void
             ## 
             def initialize()

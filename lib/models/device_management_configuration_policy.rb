@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationPolicy and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -140,12 +140,12 @@ module MicrosoftGraphBeta
                     "isAssigned" => lambda {|n| @is_assigned = n.get_boolean_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "platforms" => lambda {|n| @platforms = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "platforms" => lambda {|n| @platforms = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
                     "priorityMetaData" => lambda {|n| @priority_meta_data = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementPriorityMetaData.create_from_discriminator_value(pn) }) },
                     "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
                     "settingCount" => lambda {|n| @setting_count = n.get_number_value() },
                     "settings" => lambda {|n| @settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSetting.create_from_discriminator_value(pn) }) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                     "templateReference" => lambda {|n| @template_reference = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationPolicyTemplateReference.create_from_discriminator_value(pn) }) },
                 })
             end

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The URL of the user's OneDrive for Business site. Read-only.
             @site_web_url
             ## 
-            ## Instantiates a new ediscoveryUserSource and sets the default values.
+            ## Instantiates a new EdiscoveryUserSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoverySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_values(MicrosoftGraphBeta::Models::EdiscoverySourceType) },
                     "siteWebUrl" => lambda {|n| @site_web_url = n.get_string_value() },
                 })
             end

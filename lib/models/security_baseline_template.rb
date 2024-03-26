@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @category_device_state_summaries = value
             end
             ## 
-            ## Instantiates a new securityBaselineTemplate and sets the default values.
+            ## Instantiates a new SecurityBaselineTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

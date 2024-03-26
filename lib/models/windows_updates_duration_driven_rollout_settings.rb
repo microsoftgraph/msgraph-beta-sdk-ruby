@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The target duration of the rollout. Given durationBetweenOffers and durationUntilDeploymentEnd, the system will automatically calculate how many devices are in each offering.
             @duration_until_deployment_end
             ## 
-            ## Instantiates a new windowsUpdatesDurationDrivenRolloutSettings and sets the default values.
+            ## Instantiates a new WindowsUpdatesDurationDrivenRolloutSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

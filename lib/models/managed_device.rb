@@ -544,7 +544,7 @@ module MicrosoftGraphBeta
                 @configuration_manager_client_information = value
             end
             ## 
-            ## Instantiates a new managedDevice and sets the default values.
+            ## Instantiates a new ManagedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IdentityGovernanceOnDemandExecutionOnly < MicrosoftGraphBeta::Models::IdentityGovernanceWorkflowExecutionConditions
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new identityGovernanceOnDemandExecutionOnly and sets the default values.
+            ## Instantiates a new IdentityGovernanceOnDemandExecutionOnly and sets the default values.
             ## @return a void
             ## 
             def initialize()

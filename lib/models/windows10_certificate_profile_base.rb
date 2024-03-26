@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class Windows10CertificateProfileBase < MicrosoftGraphBeta::Models::WindowsCertificateProfileBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windows10CertificateProfileBase and sets the default values.
+            ## Instantiates a new Windows10CertificateProfileBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

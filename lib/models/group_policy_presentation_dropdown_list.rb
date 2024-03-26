@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Requirement to enter a value in the parameter box. The default value is false.
             @required
             ## 
-            ## Instantiates a new groupPolicyPresentationDropdownList and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationDropdownList and sets the default values.
             ## @return a void
             ## 
             def initialize()

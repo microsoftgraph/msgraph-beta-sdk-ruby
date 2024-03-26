@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
             @city
             ## 
-            # Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            # Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             @country_or_region
             ## 
             # Provides the latitude, longitude and altitude where the sign-in originated.
@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
             @state
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,21 +55,21 @@ module MicrosoftGraphBeta
                 @city = value
             end
             ## 
-            ## Instantiates a new signInLocation and sets the default values.
+            ## Instantiates a new SignInLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            ## Gets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             ## @return a string
             ## 
             def country_or_region
                 return @country_or_region
             end
             ## 
-            ## Sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            ## Sets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             ## @param value Value to set for the countryOrRegion property.
             ## @return a void
             ## 

@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @activities = value
             end
             ## 
-            ## Instantiates a new shiftItem and sets the default values.
+            ## Instantiates a new ShiftItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

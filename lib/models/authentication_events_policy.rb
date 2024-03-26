@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A list of applicable actions to be taken on sign-up.
             @on_signup_start
             ## 
-            ## Instantiates a new authenticationEventsPolicy and sets the default values.
+            ## Instantiates a new AuthenticationEventsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

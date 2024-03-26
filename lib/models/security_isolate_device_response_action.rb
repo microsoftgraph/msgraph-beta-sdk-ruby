@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The isolationType property
             @isolation_type
             ## 
-            ## Instantiates a new securityIsolateDeviceResponseAction and sets the default values.
+            ## Instantiates a new SecurityIsolateDeviceResponseAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceIdEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityDeviceIdEntityIdentifier) },
                     "isolationType" => lambda {|n| @isolation_type = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityIsolationType) },
                 })
             end

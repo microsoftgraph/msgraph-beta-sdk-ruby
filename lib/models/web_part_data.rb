@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            # Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             @audiences
             ## 
             # Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
@@ -31,29 +31,29 @@ module MicrosoftGraphBeta
             # Title of the web part.
             @title
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @return a string
             ## 
             def audiences
                 return @audiences
             end
             ## 
-            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @param value Value to set for the audiences property.
             ## @return a void
             ## 
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @audiences = value
             end
             ## 
-            ## Instantiates a new webPartData and sets the default values.
+            ## Instantiates a new WebPartData and sets the default values.
             ## @return a void
             ## 
             def initialize()

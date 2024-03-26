@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # A Guid that indicates the webPart type.
             @web_part_type
             ## 
-            ## Instantiates a new standardWebPart and sets the default values.
+            ## Instantiates a new StandardWebPart and sets the default values.
             ## @return a void
             ## 
             def initialize()

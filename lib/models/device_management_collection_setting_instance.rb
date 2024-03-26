@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The collection of values
             @value
             ## 
-            ## Instantiates a new deviceManagementCollectionSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementCollectionSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @business_scenario_properties = value
             end
             ## 
-            ## Instantiates a new businessScenarioTask and sets the default values.
+            ## Instantiates a new BusinessScenarioTask and sets the default values.
             ## @return a void
             ## 
             def initialize()

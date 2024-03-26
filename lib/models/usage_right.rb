@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new usageRight and sets the default values.
+            ## Instantiates a new UsageRight and sets the default values.
             ## @return a void
             ## 
             def initialize()

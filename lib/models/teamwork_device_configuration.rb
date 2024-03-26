@@ -59,7 +59,7 @@ module MicrosoftGraphBeta
                 @camera_configuration = value
             end
             ## 
-            ## Instantiates a new teamworkDeviceConfiguration and sets the default values.
+            ## Instantiates a new TeamworkDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

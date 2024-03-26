@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 @advanced_threat_protection_required_security_level = value
             end
             ## 
-            ## Instantiates a new iosCompliancePolicy and sets the default values.
+            ## Instantiates a new IosCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

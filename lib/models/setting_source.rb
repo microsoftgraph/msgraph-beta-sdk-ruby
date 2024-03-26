@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Not yet documented
+            # The displayName property
             @display_name
             ## 
-            # Not yet documented
+            # The id property
             @id
             ## 
             # The OdataType property
@@ -22,22 +22,22 @@ module MicrosoftGraphBeta
             # The sourceType property
             @source_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new settingSource and sets the default values.
+            ## Instantiates a new SettingSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,14 +53,14 @@ module MicrosoftGraphBeta
                 return SettingSource.new
             end
             ## 
-            ## Gets the displayName property value. Not yet documented
+            ## Gets the displayName property value. The displayName property
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Not yet documented
+            ## Sets the displayName property value. The displayName property
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the id property value. Not yet documented
+            ## Gets the id property value. The id property
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. Not yet documented
+            ## Sets the id property value. The id property
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

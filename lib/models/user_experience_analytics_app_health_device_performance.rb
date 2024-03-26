@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                 @app_hang_count = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

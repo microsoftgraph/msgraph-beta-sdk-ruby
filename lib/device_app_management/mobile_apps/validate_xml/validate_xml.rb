@@ -1,2 +1,2 @@
 require_relative 'validate_xml_post_request_body'
-require_relative 'validate_xml_response'
+require_relative 'validate_xml_post_response'

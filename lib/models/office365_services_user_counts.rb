@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
             # The number of inactive users on Yammer.
             @yammer_inactive
             ## 
-            ## Instantiates a new office365ServicesUserCounts and sets the default values.
+            ## Instantiates a new Office365ServicesUserCounts and sets the default values.
             ## @return a void
             ## 
             def initialize()

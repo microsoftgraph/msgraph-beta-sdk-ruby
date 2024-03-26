@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.
             @status
             ## 
-            ## Instantiates a new privilegedAccessSchedule and sets the default values.
+            ## Instantiates a new PrivilegedAccessSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Unique string that defines a filePlanDescriptorTemplate name.
             @display_name
             ## 
-            ## Instantiates a new securityFilePlanDescriptorTemplate and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptorTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
             @handler
             ## 
-            ## Instantiates a new onInteractiveAuthFlowStartListener and sets the default values.
+            ## Instantiates a new OnInteractiveAuthFlowStartListener and sets the default values.
             ## @return a void
             ## 
             def initialize()

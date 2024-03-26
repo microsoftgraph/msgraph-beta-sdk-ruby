@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Label that would be used if no customizedLabel is provided. Read only.
             @default_label
             ## 
-            # Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
+            # Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
             @field_id
             ## 
             # The OdataType property
@@ -25,22 +25,22 @@ module MicrosoftGraphBeta
             # Type of the credential. The values can be text, password.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new passwordSingleSignOnField and sets the default values.
+            ## Instantiates a new PasswordSingleSignOnField and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 @default_label = value
             end
             ## 
-            ## Gets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
+            ## Gets the fieldId property value. Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
             ## @return a string
             ## 
             def field_id
                 return @field_id
             end
             ## 
-            ## Sets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
+            ## Sets the fieldId property value. Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
             ## @param value Value to set for the fieldId property.
             ## @return a void
             ## 

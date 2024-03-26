@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceManagementSettingXmlConstraint < MicrosoftGraphBeta::Models::DeviceManagementConstraint
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceManagementSettingXmlConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingXmlConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

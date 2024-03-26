@@ -1,1 +1,1 @@
-require_relative 'get_portal_notifications_response'
+require_relative 'get_portal_notifications_get_response'

@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The activityResult property
             @activity_result
             ## 
-            # The type of activity that was performed. Read-only.
+            # The type of the activity that was performed. Read-only.
             @activity_type
             ## 
             # The actor property
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Component name. Read-only.
             @component_name
             ## 
-            # The client request identifier, used to correlate activity within the system. Read-only.
+            # The client request ID that is used to correlate activity within the system. Read-only.
             @correlation_id
             ## 
             # Event display name. Read-only.
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 @activity_result = value
             end
             ## 
-            ## Gets the activityType property value. The type of activity that was performed. Read-only.
+            ## Gets the activityType property value. The type of the activity that was performed. Read-only.
             ## @return a string
             ## 
             def activity_type
                 return @activity_type
             end
             ## 
-            ## Sets the activityType property value. The type of activity that was performed. Read-only.
+            ## Sets the activityType property value. The type of the activity that was performed. Read-only.
             ## @param value Value to set for the activityType property.
             ## @return a void
             ## 
@@ -161,21 +161,21 @@ module MicrosoftGraphBeta
                 @component_name = value
             end
             ## 
-            ## Instantiates a new cloudPcAuditEvent and sets the default values.
+            ## Instantiates a new CloudPcAuditEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
+            ## Gets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
             ## @return a string
             ## 
             def correlation_id
                 return @correlation_id
             end
             ## 
-            ## Sets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
+            ## Sets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
             ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 

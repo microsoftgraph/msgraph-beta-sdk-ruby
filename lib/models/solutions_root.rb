@@ -10,6 +10,12 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The bookingBusinesses property
+            @booking_businesses
+            ## 
+            # The bookingCurrencies property
+            @booking_currencies
+            ## 
             # The businessScenarios property
             @business_scenarios
             ## 
@@ -19,19 +25,49 @@ module MicrosoftGraphBeta
             # The virtualEvents property
             @virtual_events
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the bookingBusinesses property value. The bookingBusinesses property
+            ## @return a booking_business
+            ## 
+            def booking_businesses
+                return @booking_businesses
+            end
+            ## 
+            ## Sets the bookingBusinesses property value. The bookingBusinesses property
+            ## @param value Value to set for the bookingBusinesses property.
+            ## @return a void
+            ## 
+            def booking_businesses=(value)
+                @booking_businesses = value
+            end
+            ## 
+            ## Gets the bookingCurrencies property value. The bookingCurrencies property
+            ## @return a booking_currency
+            ## 
+            def booking_currencies
+                return @booking_currencies
+            end
+            ## 
+            ## Sets the bookingCurrencies property value. The bookingCurrencies property
+            ## @param value Value to set for the bookingCurrencies property.
+            ## @return a void
+            ## 
+            def booking_currencies=(value)
+                @booking_currencies = value
             end
             ## 
             ## Gets the businessScenarios property value. The businessScenarios property
@@ -49,7 +85,7 @@ module MicrosoftGraphBeta
                 @business_scenarios = value
             end
             ## 
-            ## Instantiates a new solutionsRoot and sets the default values.
+            ## Instantiates a new SolutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,6 +106,8 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "bookingBusinesses" => lambda {|n| @booking_businesses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingBusiness.create_from_discriminator_value(pn) }) },
+                    "bookingCurrencies" => lambda {|n| @booking_currencies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingCurrency.create_from_discriminator_value(pn) }) },
                     "businessScenarios" => lambda {|n| @business_scenarios = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BusinessScenario.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "virtualEvents" => lambda {|n| @virtual_events = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventsRoot.create_from_discriminator_value(pn) }) },
@@ -97,6 +135,8 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_collection_of_object_values("bookingBusinesses", @booking_businesses)
+                writer.write_collection_of_object_values("bookingCurrencies", @booking_currencies)
                 writer.write_collection_of_object_values("businessScenarios", @business_scenarios)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("virtualEvents", @virtual_events)

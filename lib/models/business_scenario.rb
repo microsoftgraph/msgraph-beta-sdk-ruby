@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.
             @unique_name
             ## 
-            ## Instantiates a new businessScenario and sets the default values.
+            ## Instantiates a new BusinessScenario and sets the default values.
             ## @return a void
             ## 
             def initialize()

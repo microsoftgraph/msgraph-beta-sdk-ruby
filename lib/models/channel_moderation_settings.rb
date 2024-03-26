@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
             @user_new_message_restriction
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @allow_new_message_from_connectors = value
             end
             ## 
-            ## Instantiates a new channelModerationSettings and sets the default values.
+            ## Instantiates a new ChannelModerationSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

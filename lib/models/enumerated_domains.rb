@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class EnumeratedDomains < MicrosoftGraphBeta::Models::ValidatingDomains
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The domainNames property
+            # List of federated or managed root domains that Microsoft Entra ID validates.
             @domain_names
             ## 
-            ## Instantiates a new enumeratedDomains and sets the default values.
+            ## Instantiates a new EnumeratedDomains and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return EnumeratedDomains.new
             end
             ## 
-            ## Gets the domainNames property value. The domainNames property
+            ## Gets the domainNames property value. List of federated or managed root domains that Microsoft Entra ID validates.
             ## @return a string
             ## 
             def domain_names
                 return @domain_names
             end
             ## 
-            ## Sets the domainNames property value. The domainNames property
+            ## Sets the domainNames property value. List of federated or managed root domains that Microsoft Entra ID validates.
             ## @param value Value to set for the domainNames property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new deviceConfigurationConflictSummaryCollectionResponse and sets the default values.
+            ## Instantiates a new DeviceConfigurationConflictSummaryCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

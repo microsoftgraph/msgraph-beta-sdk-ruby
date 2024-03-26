@@ -1,0 +1,2 @@
+require_relative 'assign_just_in_time_configuration_post_request_body'
+require_relative 'assign_just_in_time_configuration_post_response'

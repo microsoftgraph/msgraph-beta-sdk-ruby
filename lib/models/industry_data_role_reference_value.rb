@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataRoleReferenceValue < MicrosoftGraphBeta::Models::IndustryDataReferenceValue
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataRoleReferenceValue and sets the default values.
+            ## Instantiates a new IndustryDataRoleReferenceValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

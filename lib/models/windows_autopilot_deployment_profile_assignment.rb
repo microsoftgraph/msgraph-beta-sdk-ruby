@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The assignment target for the Windows Autopilot deployment profile.
             @target
             ## 
-            ## Instantiates a new windowsAutopilotDeploymentProfileAssignment and sets the default values.
+            ## Instantiates a new WindowsAutopilotDeploymentProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

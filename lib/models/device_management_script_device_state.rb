@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Indicates the type of execution status of the device management script.
             @run_state
             ## 
-            ## Instantiates a new deviceManagementScriptDeviceState and sets the default values.
+            ## Instantiates a new DeviceManagementScriptDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

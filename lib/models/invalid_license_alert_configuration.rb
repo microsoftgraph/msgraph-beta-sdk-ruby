@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class InvalidLicenseAlertConfiguration < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new invalidLicenseAlertConfiguration and sets the default values.
+            ## Instantiates a new InvalidLicenseAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

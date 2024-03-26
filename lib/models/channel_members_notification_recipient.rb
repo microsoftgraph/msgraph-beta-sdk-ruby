@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new channelMembersNotificationRecipient and sets the default values.
+            ## Instantiates a new ChannelMembersNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

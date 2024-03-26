@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @board_support_package_version = value
             end
             ## 
-            ## Instantiates a new zebraFotaArtifact and sets the default values.
+            ## Instantiates a new ZebraFotaArtifact and sets the default values.
             ## @return a void
             ## 
             def initialize()

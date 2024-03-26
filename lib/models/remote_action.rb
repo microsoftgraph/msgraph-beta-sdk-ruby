@@ -38,6 +38,9 @@ module MicrosoftGraphBeta
             LaunchRemoteHelp: :LaunchRemoteHelp,
             RevokeAppleVppLicenses: :RevokeAppleVppLicenses,
             RemoveDeviceFirmwareConfigurationInterfaceManagement: :RemoveDeviceFirmwareConfigurationInterfaceManagement,
+            PauseConfigurationRefresh: :PauseConfigurationRefresh,
+            InitiateDeviceAttestation: :InitiateDeviceAttestation,
+            ChangeAssignments: :ChangeAssignments,
         }
     end
 end

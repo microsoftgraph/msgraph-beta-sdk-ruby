@@ -1,1 +1,1 @@
-require_relative 'get_effective_device_enrollment_configurations_response'
+require_relative 'get_effective_device_enrollment_configurations_get_response'

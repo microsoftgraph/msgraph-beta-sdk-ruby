@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The version property
             @version
             ## 
-            ## Instantiates a new connector and sets the default values.
+            ## Instantiates a new Connector and sets the default values.
             ## @return a void
             ## 
             def initialize()

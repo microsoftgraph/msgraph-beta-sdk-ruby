@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The weight of the category; an integer between 0 and 100.
             @percentage_weight
             ## 
-            ## Instantiates a new educationGradingCategory and sets the default values.
+            ## Instantiates a new EducationGradingCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

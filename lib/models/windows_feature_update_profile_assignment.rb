@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The assignment target that the feature update profile is assigned to.
             @target
             ## 
-            ## Instantiates a new windowsFeatureUpdateProfileAssignment and sets the default values.
+            ## Instantiates a new WindowsFeatureUpdateProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

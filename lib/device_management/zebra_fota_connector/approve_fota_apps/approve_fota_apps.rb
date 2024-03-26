@@ -1,1 +1,1 @@
-require_relative 'approve_fota_apps_response'
+require_relative 'approve_fota_apps_post_response'

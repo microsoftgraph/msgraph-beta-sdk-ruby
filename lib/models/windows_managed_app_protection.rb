@@ -171,7 +171,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new windowsManagedAppProtection and sets the default values.
+            ## Instantiates a new WindowsManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

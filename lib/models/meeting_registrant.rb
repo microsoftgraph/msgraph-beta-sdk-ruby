@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The registration status of the registrant. Read-only.
             @status
             ## 
-            ## Instantiates a new meetingRegistrant and sets the default values.
+            ## Instantiates a new MeetingRegistrant and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class MdmWindowsInformationProtectionPolicyPolicySetItem < MicrosoftGraphBeta::Models::PolicySetItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new mdmWindowsInformationProtectionPolicyPolicySetItem and sets the default values.
+            ## Instantiates a new MdmWindowsInformationProtectionPolicyPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

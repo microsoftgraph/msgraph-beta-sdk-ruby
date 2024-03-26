@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Base type for assignment targets.
             @target
             ## 
-            ## Instantiates a new embeddedSIMActivationCodePoolAssignment and sets the default values.
+            ## Instantiates a new EmbeddedSIMActivationCodePoolAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

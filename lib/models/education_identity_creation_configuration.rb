@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The userDomains property
             @user_domains
             ## 
-            ## Instantiates a new educationIdentityCreationConfiguration and sets the default values.
+            ## Instantiates a new EducationIdentityCreationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
