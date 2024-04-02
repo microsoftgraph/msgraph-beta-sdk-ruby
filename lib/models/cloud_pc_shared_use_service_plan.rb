@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The number of service plans that the account uses.
             @used_count
             ## 
-            ## Instantiates a new cloudPcSharedUseServicePlan and sets the default values.
+            ## Instantiates a new CloudPcSharedUseServicePlan and sets the default values.
             ## @return a void
             ## 
             def initialize()

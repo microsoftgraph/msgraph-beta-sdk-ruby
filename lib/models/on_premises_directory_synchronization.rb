@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @configuration = value
             end
             ## 
-            ## Instantiates a new onPremisesDirectorySynchronization and sets the default values.
+            ## Instantiates a new OnPremisesDirectorySynchronization and sets the default values.
             ## @return a void
             ## 
             def initialize()

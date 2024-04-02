@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The sequence number for each stage of the disposition review.
             @stage_number
             ## 
-            ## Instantiates a new securityDispositionReviewStage and sets the default values.
+            ## Instantiates a new SecurityDispositionReviewStage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "reviewersEmailAddresses" => lambda {|n| @reviewers_email_addresses = n.get_collection_of_primitive_values(String) },
-                    "stageNumber" => lambda {|n| @stage_number = n.get_number_value() },
+                    "stageNumber" => lambda {|n| @stage_number = n.get_string_value() },
                 })
             end
             ## 
@@ -82,11 +82,11 @@ module MicrosoftGraphBeta
                 super
                 writer.write_string_value("name", @name)
                 writer.write_collection_of_primitive_values("reviewersEmailAddresses", @reviewers_email_addresses)
-                writer.write_number_value("stageNumber", @stage_number)
+                writer.write_string_value("stageNumber", @stage_number)
             end
             ## 
             ## Gets the stageNumber property value. The sequence number for each stage of the disposition review.
-            ## @return a integer
+            ## @return a string
             ## 
             def stage_number
                 return @stage_number

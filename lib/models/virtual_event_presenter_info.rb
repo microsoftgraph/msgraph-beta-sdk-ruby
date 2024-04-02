@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The presenterDetails property
             @presenter_details
             ## 
-            ## Instantiates a new virtualEventPresenterInfo and sets the default values.
+            ## Instantiates a new VirtualEventPresenterInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

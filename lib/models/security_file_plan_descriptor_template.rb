@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Unique string that defines a filePlanDescriptorTemplate name.
             @display_name
             ## 
-            ## Instantiates a new securityFilePlanDescriptorTemplate and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptorTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,8 +74,8 @@ module MicrosoftGraphBeta
                             return SecurityDepartmentTemplate.new
                         when "#microsoft.graph.security.filePlanReferenceTemplate"
                             return SecurityFilePlanReferenceTemplate.new
-                        when "#microsoft.graph.security.subCategoryTemplate"
-                            return SecuritySubCategoryTemplate.new
+                        when "#microsoft.graph.security.subcategoryTemplate"
+                            return SecuritySubcategoryTemplate.new
                     end
                 end
                 return SecurityFilePlanDescriptorTemplate.new

@@ -72,7 +72,7 @@ module MicrosoftGraphBeta
                 @child_category_ids = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationCategory and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -130,10 +130,10 @@ module MicrosoftGraphBeta
                     "helpText" => lambda {|n| @help_text = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "parentCategoryId" => lambda {|n| @parent_category_id = n.get_string_value() },
-                    "platforms" => lambda {|n| @platforms = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "platforms" => lambda {|n| @platforms = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
                     "rootCategoryId" => lambda {|n| @root_category_id = n.get_string_value() },
-                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                 })
             end
             ## 

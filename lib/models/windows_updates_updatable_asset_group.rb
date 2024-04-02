@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Members of the group. Read-only.
             @members
             ## 
-            ## Instantiates a new windowsUpdatesUpdatableAssetGroup and sets the default values.
+            ## Instantiates a new WindowsUpdatesUpdatableAssetGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -121,7 +121,7 @@ module MicrosoftGraphBeta
                 @account_setup_status = value
             end
             ## 
-            ## Instantiates a new deviceManagementAutopilotEvent and sets the default values.
+            ## Instantiates a new DeviceManagementAutopilotEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,41 +10,41 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Count of transactions that were blocked.
+            # The number of transactions that were blocked.
             @blocked_count
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Count of transactions.
+            # The total number of transactions.
             @total_count
             ## 
             # The trafficType property
             @traffic_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the blockedCount property value. Count of transactions that were blocked.
+            ## Gets the blockedCount property value. The number of transactions that were blocked.
             ## @return a integer
             ## 
             def blocked_count
                 return @blocked_count
             end
             ## 
-            ## Sets the blockedCount property value. Count of transactions that were blocked.
+            ## Sets the blockedCount property value. The number of transactions that were blocked.
             ## @param value Value to set for the blockedCount property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @blocked_count = value
             end
             ## 
-            ## Instantiates a new networkaccessTransactionSummary and sets the default values.
+            ## Instantiates a new NetworkaccessTransactionSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the totalCount property value. Count of transactions.
+            ## Gets the totalCount property value. The total number of transactions.
             ## @return a integer
             ## 
             def total_count
                 return @total_count
             end
             ## 
-            ## Sets the totalCount property value. Count of transactions.
+            ## Sets the totalCount property value. The total number of transactions.
             ## @param value Value to set for the totalCount property.
             ## @return a void
             ## 

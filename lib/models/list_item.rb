@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @analytics = value
             end
             ## 
-            ## Instantiates a new listItem and sets the default values.
+            ## Instantiates a new ListItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

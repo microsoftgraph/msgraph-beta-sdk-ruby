@@ -11,8 +11,11 @@ module MicrosoftGraphBeta
             # Number of checklist items with value set to false, representing incomplete items.
             @active_checklist_item_count
             ## 
-            # The categories to which the task has been applied. See applied Categories for possible values.
+            # The categories to which the task applies. See applied Categories for possible values.
             @applied_categories
+            ## 
+            # The archivalInfo property
+            @archival_info
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
             @assigned_to_task_board_format
@@ -23,7 +26,7 @@ module MicrosoftGraphBeta
             # The set of assignees the task is assigned to.
             @assignments
             ## 
-            # Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            # Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             @bucket_id
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
@@ -50,14 +53,23 @@ module MicrosoftGraphBeta
             # Contains information about the origin of the task.
             @creation_source
             ## 
-            # Read-only. Nullable. Additional details about the task.
+            # Read-only. Nullable. More details about the task.
             @details
             ## 
             # Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @due_date_time
             ## 
-            # Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            # Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             @has_description
+            ## 
+            # The isArchived property
+            @is_archived
+            ## 
+            # A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
+            @is_on_my_day
+            ## 
+            # Read-only. The date on which task is added to or removed from MyDay.
+            @is_on_my_day_last_modified_date
             ## 
             # Hint used to order items of this type in a list view. The format is defined as outlined here.
             @order_hint
@@ -71,7 +83,7 @@ module MicrosoftGraphBeta
             # This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
             @preview_type
             ## 
-            # Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            # The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             @priority
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
@@ -107,19 +119,34 @@ module MicrosoftGraphBeta
                 @active_checklist_item_count = value
             end
             ## 
-            ## Gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+            ## Gets the appliedCategories property value. The categories to which the task applies. See applied Categories for possible values.
             ## @return a planner_applied_categories
             ## 
             def applied_categories
                 return @applied_categories
             end
             ## 
-            ## Sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+            ## Sets the appliedCategories property value. The categories to which the task applies. See applied Categories for possible values.
             ## @param value Value to set for the appliedCategories property.
             ## @return a void
             ## 
             def applied_categories=(value)
                 @applied_categories = value
+            end
+            ## 
+            ## Gets the archivalInfo property value. The archivalInfo property
+            ## @return a planner_archival_info
+            ## 
+            def archival_info
+                return @archival_info
+            end
+            ## 
+            ## Sets the archivalInfo property value. The archivalInfo property
+            ## @param value Value to set for the archivalInfo property.
+            ## @return a void
+            ## 
+            def archival_info=(value)
+                @archival_info = value
             end
             ## 
             ## Gets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
@@ -167,14 +194,14 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             ## @return a string
             ## 
             def bucket_id
                 return @bucket_id
             end
             ## 
-            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             ## @param value Value to set for the bucketId property.
             ## @return a void
             ## 
@@ -242,7 +269,7 @@ module MicrosoftGraphBeta
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new plannerTask and sets the default values.
+            ## Instantiates a new PlannerTask and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -326,14 +353,14 @@ module MicrosoftGraphBeta
                 @creation_source = value
             end
             ## 
-            ## Gets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Gets the details property value. Read-only. Nullable. More details about the task.
             ## @return a planner_task_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Sets the details property value. Read-only. Nullable. More details about the task.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -363,6 +390,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "activeChecklistItemCount" => lambda {|n| @active_checklist_item_count = n.get_number_value() },
                     "appliedCategories" => lambda {|n| @applied_categories = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAppliedCategories.create_from_discriminator_value(pn) }) },
+                    "archivalInfo" => lambda {|n| @archival_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerArchivalInfo.create_from_discriminator_value(pn) }) },
                     "assignedToTaskBoardFormat" => lambda {|n| @assigned_to_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignedToTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "assigneePriority" => lambda {|n| @assignee_priority = n.get_string_value() },
                     "assignments" => lambda {|n| @assignments = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignments.create_from_discriminator_value(pn) }) },
@@ -378,6 +406,9 @@ module MicrosoftGraphBeta
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskDetails.create_from_discriminator_value(pn) }) },
                     "dueDateTime" => lambda {|n| @due_date_time = n.get_date_time_value() },
                     "hasDescription" => lambda {|n| @has_description = n.get_boolean_value() },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
+                    "isOnMyDay" => lambda {|n| @is_on_my_day = n.get_boolean_value() },
+                    "isOnMyDayLastModifiedDate" => lambda {|n| @is_on_my_day_last_modified_date = n.get_date_value() },
                     "orderHint" => lambda {|n| @order_hint = n.get_string_value() },
                     "percentComplete" => lambda {|n| @percent_complete = n.get_number_value() },
                     "planId" => lambda {|n| @plan_id = n.get_string_value() },
@@ -386,25 +417,70 @@ module MicrosoftGraphBeta
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskRecurrence.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
-                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
+                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_values(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @return a boolean
             ## 
             def has_description
                 return @has_description
             end
             ## 
-            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @param value Value to set for the hasDescription property.
             ## @return a void
             ## 
             def has_description=(value)
                 @has_description = value
+            end
+            ## 
+            ## Gets the isArchived property value. The isArchived property
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. The isArchived property
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
+            end
+            ## 
+            ## Gets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
+            ## @return a boolean
+            ## 
+            def is_on_my_day
+                return @is_on_my_day
+            end
+            ## 
+            ## Sets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
+            ## @param value Value to set for the isOnMyDay property.
+            ## @return a void
+            ## 
+            def is_on_my_day=(value)
+                @is_on_my_day = value
+            end
+            ## 
+            ## Gets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
+            ## @return a date
+            ## 
+            def is_on_my_day_last_modified_date
+                return @is_on_my_day_last_modified_date
+            end
+            ## 
+            ## Sets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
+            ## @param value Value to set for the isOnMyDayLastModifiedDate property.
+            ## @return a void
+            ## 
+            def is_on_my_day_last_modified_date=(value)
+                @is_on_my_day_last_modified_date = value
             end
             ## 
             ## Gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -467,14 +543,14 @@ module MicrosoftGraphBeta
                 @preview_type = value
             end
             ## 
-            ## Gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            ## Gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             ## @return a integer
             ## 
             def priority
                 return @priority
             end
             ## 
-            ## Sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            ## Sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             ## @param value Value to set for the priority property.
             ## @return a void
             ## 
@@ -536,6 +612,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_number_value("activeChecklistItemCount", @active_checklist_item_count)
                 writer.write_object_value("appliedCategories", @applied_categories)
+                writer.write_object_value("archivalInfo", @archival_info)
                 writer.write_object_value("assignedToTaskBoardFormat", @assigned_to_task_board_format)
                 writer.write_string_value("assigneePriority", @assignee_priority)
                 writer.write_object_value("assignments", @assignments)
@@ -551,6 +628,9 @@ module MicrosoftGraphBeta
                 writer.write_object_value("details", @details)
                 writer.write_date_time_value("dueDateTime", @due_date_time)
                 writer.write_boolean_value("hasDescription", @has_description)
+                writer.write_boolean_value("isArchived", @is_archived)
+                writer.write_boolean_value("isOnMyDay", @is_on_my_day)
+                writer.write_date_value("isOnMyDayLastModifiedDate", @is_on_my_day_last_modified_date)
                 writer.write_string_value("orderHint", @order_hint)
                 writer.write_number_value("percentComplete", @percent_complete)
                 writer.write_string_value("planId", @plan_id)

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Simple Setting Value Template
             @simple_setting_value_template
             ## 
-            ## Instantiates a new deviceManagementConfigurationSimpleSettingInstanceTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSimpleSettingInstanceTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,0 +1,1 @@
+require_relative 'resize_post_request_body'

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class Connector < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The external IP address as detected by the the connector server. Read-only.
+            # The external IP address as detected by the connector server. Read-only.
             @external_ip
             ## 
-            # The machine name the connector is installed and running on.
+            # The name of the computer on which the connector is installed and runs on.
             @machine_name
             ## 
             # The connectorGroup that the connector is a member of. Read-only.
@@ -19,10 +19,10 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            # The version property
+            # The version of the connector.
             @version
             ## 
-            ## Instantiates a new connector and sets the default values.
+            ## Instantiates a new Connector and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,14 +38,14 @@ module MicrosoftGraphBeta
                 return Connector.new
             end
             ## 
-            ## Gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
+            ## Gets the externalIp property value. The external IP address as detected by the connector server. Read-only.
             ## @return a string
             ## 
             def external_ip
                 return @external_ip
             end
             ## 
-            ## Sets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
+            ## Sets the externalIp property value. The external IP address as detected by the connector server. Read-only.
             ## @param value Value to set for the externalIp property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the machineName property value. The machine name the connector is installed and running on.
+            ## Gets the machineName property value. The name of the computer on which the connector is installed and runs on.
             ## @return a string
             ## 
             def machine_name
                 return @machine_name
             end
             ## 
-            ## Sets the machineName property value. The machine name the connector is installed and running on.
+            ## Sets the machineName property value. The name of the computer on which the connector is installed and runs on.
             ## @param value Value to set for the machineName property.
             ## @return a void
             ## 
@@ -125,14 +125,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the version property value. The version property
+            ## Gets the version property value. The version of the connector.
             ## @return a string
             ## 
             def version
                 return @version
             end
             ## 
-            ## Sets the version property value. The version property
+            ## Sets the version property value. The version of the connector.
             ## @param value Value to set for the version property.
             ## @return a void
             ## 

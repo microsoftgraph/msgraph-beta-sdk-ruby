@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The uploaded time of the uploaded ADMX file.
             @upload_date_time
             ## 
-            ## Instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
+            ## Instantiates a new GroupPolicyUploadedDefinitionFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

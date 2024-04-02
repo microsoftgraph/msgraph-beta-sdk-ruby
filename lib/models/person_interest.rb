@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @collaboration_tags = value
             end
             ## 
-            ## Instantiates a new personInterest and sets the default values.
+            ## Instantiates a new PersonInterest and sets the default values.
             ## @return a void
             ## 
             def initialize()

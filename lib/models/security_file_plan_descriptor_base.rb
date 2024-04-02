@@ -16,22 +16,22 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityFilePlanDescriptorBase and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptorBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,18 +48,18 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
-                        when "#microsoft.graph.security.appliedCategory"
-                            return SecurityAppliedCategory.new
-                        when "#microsoft.graph.security.authority"
-                            return SecurityAuthority.new
-                        when "#microsoft.graph.security.citation"
-                            return SecurityCitation.new
-                        when "#microsoft.graph.security.department"
-                            return SecurityDepartment.new
+                        when "#microsoft.graph.security.filePlanAppliedCategory"
+                            return SecurityFilePlanAppliedCategory.new
+                        when "#microsoft.graph.security.filePlanAuthority"
+                            return SecurityFilePlanAuthority.new
+                        when "#microsoft.graph.security.filePlanCitation"
+                            return SecurityFilePlanCitation.new
+                        when "#microsoft.graph.security.filePlanDepartment"
+                            return SecurityFilePlanDepartment.new
                         when "#microsoft.graph.security.filePlanReference"
                             return SecurityFilePlanReference.new
-                        when "#microsoft.graph.security.subCategory"
-                            return SecuritySubCategory.new
+                        when "#microsoft.graph.security.filePlanSubcategory"
+                            return SecurityFilePlanSubcategory.new
                     end
                 end
                 return SecurityFilePlanDescriptorBase.new

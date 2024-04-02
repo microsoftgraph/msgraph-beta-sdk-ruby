@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The encryptWith property
             @encrypt_with
             ## 
-            ## Instantiates a new encryptContent and sets the default values.
+            ## Instantiates a new EncryptContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
