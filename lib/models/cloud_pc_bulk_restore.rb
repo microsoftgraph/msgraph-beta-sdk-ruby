@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # The timeRange property
             @time_range
             ## 
-            ## Instantiates a new cloudPcBulkRestore and sets the default values.
+            ## Instantiates a new CloudPcBulkRestore and sets the default values.
             ## @return a void
             ## 
             def initialize()

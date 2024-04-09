@@ -1,1 +1,1 @@
-require_relative 'get_platform_supported_properties_with_platform_response'
+require_relative 'get_platform_supported_properties_with_platform_get_response'

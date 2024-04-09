@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The identifier for an app, as specified in the app store.
             @windows_app_id
             ## 
-            ## Instantiates a new windowsAppIdentifier and sets the default values.
+            ## Instantiates a new WindowsAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()

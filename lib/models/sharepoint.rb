@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The settings property
             @settings
             ## 
-            ## Instantiates a new sharepoint and sets the default values.
+            ## Instantiates a new Sharepoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

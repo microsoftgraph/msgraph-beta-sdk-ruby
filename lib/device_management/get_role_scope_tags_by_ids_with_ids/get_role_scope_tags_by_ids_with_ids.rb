@@ -1,1 +1,1 @@
-require_relative 'get_role_scope_tags_by_ids_with_ids_response'
+require_relative 'get_role_scope_tags_by_ids_with_ids_get_response'

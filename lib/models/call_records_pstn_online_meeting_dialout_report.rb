@@ -34,28 +34,28 @@ module MicrosoftGraphBeta
             # Display name of the user.
             @user_display_name
             ## 
-            # The unique identifier (GUID) of the user in Azure Active Directory.
+            # The unique identifier (GUID) of the user in Microsoft Entra ID.
             @user_id
             ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            # The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new callRecordsPstnOnlineMeetingDialoutReport and sets the default values.
+            ## Instantiates a new CallRecordsPstnOnlineMeetingDialoutReport and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -228,14 +228,14 @@ module MicrosoftGraphBeta
                 @user_display_name = value
             end
             ## 
-            ## Gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
+            ## Gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory.
+            ## Sets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 
@@ -243,14 +243,14 @@ module MicrosoftGraphBeta
                 @user_id = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

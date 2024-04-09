@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # URL referencing the award or honor.
             @web_url
             ## 
-            ## Instantiates a new personAward and sets the default values.
+            ## Instantiates a new PersonAward and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,0 +1,1 @@
+require_relative 'ingest_telemetry_post_request_body'

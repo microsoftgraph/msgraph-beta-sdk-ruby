@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @allowed_registrant = value
             end
             ## 
-            ## Instantiates a new meetingRegistrationBase and sets the default values.
+            ## Instantiates a new MeetingRegistrationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,2 +1,2 @@
 require_relative 'import_apple_device_identity_list_post_request_body'
-require_relative 'import_apple_device_identity_list_response'
+require_relative 'import_apple_device_identity_list_post_response'

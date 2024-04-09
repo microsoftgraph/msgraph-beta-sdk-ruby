@@ -7,6 +7,9 @@ module MicrosoftGraphBeta
         class PlannerTaskDetails < MicrosoftGraphBeta::Models::PlannerDelta
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The approvalAttachment property
+            @approval_attachment
+            ## 
             # The collection of checklist items on the task.
             @checklist
             ## 
@@ -16,7 +19,10 @@ module MicrosoftGraphBeta
             # Description of the task.
             @description
             ## 
-            # Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            # Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
+            @forms
+            ## 
+            # Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             @notes
             ## 
             # This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
@@ -24,6 +30,21 @@ module MicrosoftGraphBeta
             ## 
             # The collection of references on the task.
             @references
+            ## 
+            ## Gets the approvalAttachment property value. The approvalAttachment property
+            ## @return a planner_base_approval_attachment
+            ## 
+            def approval_attachment
+                return @approval_attachment
+            end
+            ## 
+            ## Sets the approvalAttachment property value. The approvalAttachment property
+            ## @param value Value to set for the approvalAttachment property.
+            ## @return a void
+            ## 
+            def approval_attachment=(value)
+                @approval_attachment = value
+            end
             ## 
             ## Gets the checklist property value. The collection of checklist items on the task.
             ## @return a planner_checklist_items
@@ -55,7 +76,7 @@ module MicrosoftGraphBeta
                 @completion_requirements = value
             end
             ## 
-            ## Instantiates a new plannerTaskDetails and sets the default values.
+            ## Instantiates a new PlannerTaskDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,28 +107,45 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
+            ## Gets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
+            ## @return a planner_forms_dictionary
+            ## 
+            def forms
+                return @forms
+            end
+            ## 
+            ## Sets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
+            ## @param value Value to set for the forms property.
+            ## @return a void
+            ## 
+            def forms=(value)
+                @forms = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "approvalAttachment" => lambda {|n| @approval_attachment = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerBaseApprovalAttachment.create_from_discriminator_value(pn) }) },
                     "checklist" => lambda {|n| @checklist = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerChecklistItems.create_from_discriminator_value(pn) }) },
                     "completionRequirements" => lambda {|n| @completion_requirements = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirementDetails.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
+                    "forms" => lambda {|n| @forms = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerFormsDictionary.create_from_discriminator_value(pn) }) },
                     "notes" => lambda {|n| @notes = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerPreviewType) },
                     "references" => lambda {|n| @references = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerExternalReferences.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            ## Gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             ## @return a item_body
             ## 
             def notes
                 return @notes
             end
             ## 
-            ## Sets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field has not previously been set but 'description' has been, the existing description will be synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+            ## Sets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
             ## @param value Value to set for the notes property.
             ## @return a void
             ## 
@@ -152,9 +190,11 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("approvalAttachment", @approval_attachment)
                 writer.write_object_value("checklist", @checklist)
                 writer.write_object_value("completionRequirements", @completion_requirements)
                 writer.write_string_value("description", @description)
+                writer.write_object_value("forms", @forms)
                 writer.write_object_value("notes", @notes)
                 writer.write_enum_value("previewType", @preview_type)
                 writer.write_object_value("references", @references)

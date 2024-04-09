@@ -87,7 +87,7 @@ module MicrosoftGraphBeta
                 @advanced_threat_protection_required_security_level = value
             end
             ## 
-            ## Instantiates a new macOSCompliancePolicy and sets the default values.
+            ## Instantiates a new MacOSCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

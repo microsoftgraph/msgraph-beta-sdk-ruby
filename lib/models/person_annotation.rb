@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The thumbnailUrl property
             @thumbnail_url
             ## 
-            ## Instantiates a new personAnnotation and sets the default values.
+            ## Instantiates a new PersonAnnotation and sets the default values.
             ## @return a void
             ## 
             def initialize()
