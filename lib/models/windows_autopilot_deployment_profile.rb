@@ -40,17 +40,29 @@ module MicrosoftGraphBeta
             # HardwareHash Extraction for the profile
             @extract_hardware_hash
             ## 
+            # Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            @hardware_hash_extraction_enabled
+            ## 
             # Language configured on the device
             @language
             ## 
             # Profile last modified time
             @last_modified_date_time
             ## 
+            # The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            @locale
+            ## 
             # AzureAD management app ID used during client device-based enrollment discovery
             @management_service_app_id
             ## 
+            # The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            @out_of_box_experience_setting
+            ## 
             # Out of box experience setting
             @out_of_box_experience_settings
+            ## 
+            # Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.
+            @preprovisioning_allowed
             ## 
             # Scope tags for the profile.
             @role_scope_tag_ids
@@ -85,7 +97,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
+            ## Instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -246,12 +258,31 @@ module MicrosoftGraphBeta
                     "enableWhiteGlove" => lambda {|n| @enable_white_glove = n.get_boolean_value() },
                     "enrollmentStatusScreenSettings" => lambda {|n| @enrollment_status_screen_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsEnrollmentStatusScreenSettings.create_from_discriminator_value(pn) }) },
                     "extractHardwareHash" => lambda {|n| @extract_hardware_hash = n.get_boolean_value() },
+                    "hardwareHashExtractionEnabled" => lambda {|n| @hardware_hash_extraction_enabled = n.get_boolean_value() },
                     "language" => lambda {|n| @language = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
+                    "locale" => lambda {|n| @locale = n.get_string_value() },
                     "managementServiceAppId" => lambda {|n| @management_service_app_id = n.get_string_value() },
+                    "outOfBoxExperienceSetting" => lambda {|n| @out_of_box_experience_setting = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OutOfBoxExperienceSetting.create_from_discriminator_value(pn) }) },
                     "outOfBoxExperienceSettings" => lambda {|n| @out_of_box_experience_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OutOfBoxExperienceSettings.create_from_discriminator_value(pn) }) },
+                    "preprovisioningAllowed" => lambda {|n| @preprovisioning_allowed = n.get_boolean_value() },
                     "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
                 })
+            end
+            ## 
+            ## Gets the hardwareHashExtractionEnabled property value. Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @return a boolean
+            ## 
+            def hardware_hash_extraction_enabled
+                return @hardware_hash_extraction_enabled
+            end
+            ## 
+            ## Sets the hardwareHashExtractionEnabled property value. Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @param value Value to set for the hardwareHashExtractionEnabled property.
+            ## @return a void
+            ## 
+            def hardware_hash_extraction_enabled=(value)
+                @hardware_hash_extraction_enabled = value
             end
             ## 
             ## Gets the language property value. Language configured on the device
@@ -284,6 +315,21 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
+            ## Gets the locale property value. The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @return a string
+            ## 
+            def locale
+                return @locale
+            end
+            ## 
+            ## Sets the locale property value. The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @param value Value to set for the locale property.
+            ## @return a void
+            ## 
+            def locale=(value)
+                @locale = value
+            end
+            ## 
             ## Gets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
             ## @return a string
             ## 
@@ -299,6 +345,21 @@ module MicrosoftGraphBeta
                 @management_service_app_id = value
             end
             ## 
+            ## Gets the outOfBoxExperienceSetting property value. The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @return a out_of_box_experience_setting
+            ## 
+            def out_of_box_experience_setting
+                return @out_of_box_experience_setting
+            end
+            ## 
+            ## Sets the outOfBoxExperienceSetting property value. The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+            ## @param value Value to set for the outOfBoxExperienceSetting property.
+            ## @return a void
+            ## 
+            def out_of_box_experience_setting=(value)
+                @out_of_box_experience_setting = value
+            end
+            ## 
             ## Gets the outOfBoxExperienceSettings property value. Out of box experience setting
             ## @return a out_of_box_experience_settings
             ## 
@@ -312,6 +373,21 @@ module MicrosoftGraphBeta
             ## 
             def out_of_box_experience_settings=(value)
                 @out_of_box_experience_settings = value
+            end
+            ## 
+            ## Gets the preprovisioningAllowed property value. Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.
+            ## @return a boolean
+            ## 
+            def preprovisioning_allowed
+                return @preprovisioning_allowed
+            end
+            ## 
+            ## Sets the preprovisioningAllowed property value. Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.
+            ## @param value Value to set for the preprovisioningAllowed property.
+            ## @return a void
+            ## 
+            def preprovisioning_allowed=(value)
+                @preprovisioning_allowed = value
             end
             ## 
             ## Gets the roleScopeTagIds property value. Scope tags for the profile.
@@ -346,10 +422,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("enableWhiteGlove", @enable_white_glove)
                 writer.write_object_value("enrollmentStatusScreenSettings", @enrollment_status_screen_settings)
                 writer.write_boolean_value("extractHardwareHash", @extract_hardware_hash)
+                writer.write_boolean_value("hardwareHashExtractionEnabled", @hardware_hash_extraction_enabled)
                 writer.write_string_value("language", @language)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
+                writer.write_string_value("locale", @locale)
                 writer.write_string_value("managementServiceAppId", @management_service_app_id)
+                writer.write_object_value("outOfBoxExperienceSetting", @out_of_box_experience_setting)
                 writer.write_object_value("outOfBoxExperienceSettings", @out_of_box_experience_settings)
+                writer.write_boolean_value("preprovisioningAllowed", @preprovisioning_allowed)
                 writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
             end
         end

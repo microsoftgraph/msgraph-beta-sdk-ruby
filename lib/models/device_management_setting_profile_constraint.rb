@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # A collection of types this entity carries
             @types
             ## 
-            ## Instantiates a new deviceManagementSettingProfileConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

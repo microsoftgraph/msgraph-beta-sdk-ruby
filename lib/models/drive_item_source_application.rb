@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
             Stream: :Stream,
             PowerPoint: :PowerPoint,
             Office: :Office,
+            Loki: :Loki,
+            Loop: :Loop,
+            Other: :Other,
             UnknownFutureValue: :UnknownFutureValue,
         }
     end

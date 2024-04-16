@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                 @code = value
             end
             ## 
-            ## Instantiates a new industryDataReferenceDefinition and sets the default values.
+            ## Instantiates a new IndustryDataReferenceDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

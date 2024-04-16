@@ -7,10 +7,28 @@ module MicrosoftGraphBeta
         class WindowsUpdatesFeatureUpdateCatalogEntry < MicrosoftGraphBeta::Models::WindowsUpdatesSoftwareUpdateCatalogEntry
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The build number of the feature update. Read-only.
+            @build_number
+            ## 
             # The version of the feature update. Read-only.
             @version
             ## 
-            ## Instantiates a new windowsUpdatesFeatureUpdateCatalogEntry and sets the default values.
+            ## Gets the buildNumber property value. The build number of the feature update. Read-only.
+            ## @return a string
+            ## 
+            def build_number
+                return @build_number
+            end
+            ## 
+            ## Sets the buildNumber property value. The build number of the feature update. Read-only.
+            ## @param value Value to set for the buildNumber property.
+            ## @return a void
+            ## 
+            def build_number=(value)
+                @build_number = value
+            end
+            ## 
+            ## Instantiates a new WindowsUpdatesFeatureUpdateCatalogEntry and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,6 +50,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "buildNumber" => lambda {|n| @build_number = n.get_string_value() },
                     "version" => lambda {|n| @version = n.get_string_value() },
                 })
             end
@@ -43,6 +62,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("buildNumber", @build_number)
                 writer.write_string_value("version", @version)
             end
             ## 

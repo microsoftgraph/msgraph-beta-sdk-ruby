@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @conflict_count = value
             end
             ## 
-            ## Instantiates a new managedDeviceMobileAppConfigurationDeviceSummary and sets the default values.
+            ## Instantiates a new ManagedDeviceMobileAppConfigurationDeviceSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

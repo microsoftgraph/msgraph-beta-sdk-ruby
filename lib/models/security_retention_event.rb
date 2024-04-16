@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The eventPropagationResults property
             @event_propagation_results
             ## 
-            # Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+            # The eventQueries property
             @event_queries
             ## 
             # The eventStatus property
@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
             # Specifies the event that will start the retention period for labels that use this event type when an event is created.
             @retention_event_type
             ## 
-            ## Instantiates a new securityRetentionEvent and sets the default values.
+            ## Instantiates a new SecurityRetentionEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -135,14 +135,14 @@ module MicrosoftGraphBeta
                 @event_propagation_results = value
             end
             ## 
-            ## Gets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+            ## Gets the eventQueries property value. The eventQueries property
             ## @return a security_event_query
             ## 
             def event_queries
                 return @event_queries
             end
             ## 
-            ## Sets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+            ## Sets the eventQueries property value. The eventQueries property
             ## @param value Value to set for the eventQueries property.
             ## @return a void
             ## 

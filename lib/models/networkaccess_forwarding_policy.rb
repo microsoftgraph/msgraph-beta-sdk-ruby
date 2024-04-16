@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The trafficForwardingType property
             @traffic_forwarding_type
             ## 
-            ## Instantiates a new networkaccessForwardingPolicy and sets the default values.
+            ## Instantiates a new NetworkaccessForwardingPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

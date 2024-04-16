@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @application_segments = value
             end
             ## 
-            ## Instantiates a new webSegmentConfiguration and sets the default values.
+            ## Instantiates a new WebSegmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

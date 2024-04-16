@@ -10,35 +10,35 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Run campaigns to remind users to setup targeted authentication methods.
+            # Run campaigns to remind users to set up targeted authentication methods.
             @authentication_methods_registration_campaign
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+            ## Gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
             ## @return a authentication_methods_registration_campaign
             ## 
             def authentication_methods_registration_campaign
                 return @authentication_methods_registration_campaign
             end
             ## 
-            ## Sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+            ## Sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
             ## @param value Value to set for the authenticationMethodsRegistrationCampaign property.
             ## @return a void
             ## 
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @authentication_methods_registration_campaign = value
             end
             ## 
-            ## Instantiates a new registrationEnforcement and sets the default values.
+            ## Instantiates a new RegistrationEnforcement and sets the default values.
             ## @return a void
             ## 
             def initialize()

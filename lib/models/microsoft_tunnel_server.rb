@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @agent_image_digest = value
             end
             ## 
-            ## Instantiates a new microsoftTunnelServer and sets the default values.
+            ## Instantiates a new MicrosoftTunnelServer and sets the default values.
             ## @return a void
             ## 
             def initialize()

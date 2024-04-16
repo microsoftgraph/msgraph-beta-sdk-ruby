@@ -84,15 +84,15 @@ module MicrosoftGraphBeta
             # Configures the firewall to allow unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
             @unicast_responses_to_multicast_broadcasts_required
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraphBeta
                 @connection_security_rules_from_group_policy_not_merged = value
             end
             ## 
-            ## Instantiates a new windowsFirewallNetworkProfile and sets the default values.
+            ## Instantiates a new WindowsFirewallNetworkProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

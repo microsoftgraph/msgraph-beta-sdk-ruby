@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The minimum permitted value
             @minimum_value
             ## 
-            ## Instantiates a new deviceManagementSettingIntegerConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingIntegerConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

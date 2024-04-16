@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # type tracking the encryption state of a secret setting value
             @value_state
             ## 
-            ## Instantiates a new deviceManagementConfigurationSecretSettingValue and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSecretSettingValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

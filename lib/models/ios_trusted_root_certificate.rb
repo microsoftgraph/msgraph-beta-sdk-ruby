@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @cert_file_name = value
             end
             ## 
-            ## Instantiates a new iosTrustedRootCertificate and sets the default values.
+            ## Instantiates a new IosTrustedRootCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

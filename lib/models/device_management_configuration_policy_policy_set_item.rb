@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationPolicyPolicySetItem < MicrosoftGraphBeta::Models::PolicySetItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceManagementConfigurationPolicyPolicySetItem and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationPolicyPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

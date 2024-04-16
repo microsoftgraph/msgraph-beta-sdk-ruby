@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @bandwidth_foreground_percentage_hours = value
             end
             ## 
-            ## Instantiates a new deliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
+            ## Instantiates a new DeliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
             ## @return a void
             ## 
             def initialize()
