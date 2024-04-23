@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Status of imported device identity
             @status
             ## 
-            ## Instantiates a new importedAppleDeviceIdentityResult and sets the default values.
+            ## Instantiates a new ImportedAppleDeviceIdentityResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

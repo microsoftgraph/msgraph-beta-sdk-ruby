@@ -180,7 +180,7 @@ module MicrosoftGraphBeta
                 @block_unified_password_for_work_profile = value
             end
             ## 
-            ## Instantiates a new androidForWorkGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new AndroidForWorkGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

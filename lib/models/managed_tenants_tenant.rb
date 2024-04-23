@@ -20,13 +20,13 @@ module MicrosoftGraphBeta
             # The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
             @last_updated_date_time
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             @tenant_id
             ## 
             # The onboarding status information for the tenant. Optional. Read-only.
             @tenant_status_information
             ## 
-            ## Instantiates a new managedTenantsTenant and sets the default values.
+            ## Instantiates a new ManagedTenantsTenant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("tenantStatusInformation", @tenant_status_information)
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

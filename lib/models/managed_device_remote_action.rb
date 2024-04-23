@@ -20,6 +20,7 @@ module MicrosoftGraphBeta
             InitiateMobileDeviceManagementKeyRecovery: :InitiateMobileDeviceManagementKeyRecovery,
             InitiateOnDemandProactiveRemediation: :InitiateOnDemandProactiveRemediation,
             UnknownFutureValue: :UnknownFutureValue,
+            InitiateDeviceAttestation: :InitiateDeviceAttestation,
         }
     end
 end

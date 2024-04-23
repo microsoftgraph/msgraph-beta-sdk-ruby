@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Collection of all sets available in the term store.
             @sets
             ## 
-            ## Instantiates a new termStoreStore and sets the default values.
+            ## Instantiates a new TermStoreStore and sets the default values.
             ## @return a void
             ## 
             def initialize()

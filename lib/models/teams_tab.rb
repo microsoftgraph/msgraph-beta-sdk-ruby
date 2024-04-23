@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @configuration = value
             end
             ## 
-            ## Instantiates a new teamsTab and sets the default values.
+            ## Instantiates a new TeamsTab and sets the default values.
             ## @return a void
             ## 
             def initialize()

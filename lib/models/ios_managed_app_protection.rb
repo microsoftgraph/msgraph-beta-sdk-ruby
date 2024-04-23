@@ -12,6 +12,9 @@ module MicrosoftGraphBeta
             # Semicolon seperated list of device models allowed, as a string, for the managed app to work.
             @allowed_ios_device_models
             ## 
+            # Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+            @app_action_if_account_is_clocked_out
+            ## 
             # An admin initiated action to be applied on a managed app.
             @app_action_if_ios_device_model_not_allowed
             ## 
@@ -51,6 +54,9 @@ module MicrosoftGraphBeta
             # A list of custom urls that are allowed to invocate a managed app
             @managed_universal_links
             ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            @messaging_redirect_app_url_scheme
+            ## 
             # Versions less than the specified version will block the managed app from accessing company data.
             @minimum_required_sdk_version
             ## 
@@ -79,6 +85,21 @@ module MicrosoftGraphBeta
             ## 
             def allowed_ios_device_models=(value)
                 @allowed_ios_device_models = value
+            end
+            ## 
+            ## Gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+            ## @return a managed_app_remediation_action
+            ## 
+            def app_action_if_account_is_clocked_out
+                return @app_action_if_account_is_clocked_out
+            end
+            ## 
+            ## Sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+            ## @param value Value to set for the appActionIfAccountIsClockedOut property.
+            ## @return a void
+            ## 
+            def app_action_if_account_is_clocked_out=(value)
+                @app_action_if_account_is_clocked_out = value
             end
             ## 
             ## Gets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
@@ -126,7 +147,7 @@ module MicrosoftGraphBeta
                 @apps = value
             end
             ## 
-            ## Instantiates a new iosManagedAppProtection and sets the default values.
+            ## Instantiates a new IosManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -284,6 +305,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowedIosDeviceModels" => lambda {|n| @allowed_ios_device_models = n.get_string_value() },
+                    "appActionIfAccountIsClockedOut" => lambda {|n| @app_action_if_account_is_clocked_out = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appActionIfIosDeviceModelNotAllowed" => lambda {|n| @app_action_if_ios_device_model_not_allowed = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppRemediationAction) },
                     "appDataEncryptionType" => lambda {|n| @app_data_encryption_type = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDataEncryptionType) },
                     "apps" => lambda {|n| @apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedMobileApp.create_from_discriminator_value(pn) }) },
@@ -297,6 +319,7 @@ module MicrosoftGraphBeta
                     "faceIdBlocked" => lambda {|n| @face_id_blocked = n.get_boolean_value() },
                     "filterOpenInToOnlyManagedApps" => lambda {|n| @filter_open_in_to_only_managed_apps = n.get_boolean_value() },
                     "managedUniversalLinks" => lambda {|n| @managed_universal_links = n.get_collection_of_primitive_values(String) },
+                    "messagingRedirectAppUrlScheme" => lambda {|n| @messaging_redirect_app_url_scheme = n.get_string_value() },
                     "minimumRequiredSdkVersion" => lambda {|n| @minimum_required_sdk_version = n.get_string_value() },
                     "minimumWarningSdkVersion" => lambda {|n| @minimum_warning_sdk_version = n.get_string_value() },
                     "minimumWipeSdkVersion" => lambda {|n| @minimum_wipe_sdk_version = n.get_string_value() },
@@ -318,6 +341,21 @@ module MicrosoftGraphBeta
             ## 
             def managed_universal_links=(value)
                 @managed_universal_links = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_url_scheme
+                return @messaging_redirect_app_url_scheme
+            end
+            ## 
+            ## Sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppUrlScheme property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_url_scheme=(value)
+                @messaging_redirect_app_url_scheme = value
             end
             ## 
             ## Gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
@@ -388,6 +426,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("allowedIosDeviceModels", @allowed_ios_device_models)
+                writer.write_enum_value("appActionIfAccountIsClockedOut", @app_action_if_account_is_clocked_out)
                 writer.write_enum_value("appActionIfIosDeviceModelNotAllowed", @app_action_if_ios_device_model_not_allowed)
                 writer.write_enum_value("appDataEncryptionType", @app_data_encryption_type)
                 writer.write_collection_of_object_values("apps", @apps)
@@ -401,6 +440,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
                 writer.write_boolean_value("filterOpenInToOnlyManagedApps", @filter_open_in_to_only_managed_apps)
                 writer.write_collection_of_primitive_values("managedUniversalLinks", @managed_universal_links)
+                writer.write_string_value("messagingRedirectAppUrlScheme", @messaging_redirect_app_url_scheme)
                 writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)
                 writer.write_string_value("minimumWarningSdkVersion", @minimum_warning_sdk_version)
                 writer.write_string_value("minimumWipeSdkVersion", @minimum_wipe_sdk_version)

@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @alignment = value
             end
             ## 
-            ## Instantiates a new addFooter and sets the default values.
+            ## Instantiates a new AddFooter and sets the default values.
             ## @return a void
             ## 
             def initialize()

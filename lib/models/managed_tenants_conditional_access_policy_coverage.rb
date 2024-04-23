@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                 @conditional_access_policy_state = value
             end
             ## 
-            ## Instantiates a new managedTenantsConditionalAccessPolicyCoverage and sets the default values.
+            ## Instantiates a new ManagedTenantsConditionalAccessPolicyCoverage and sets the default values.
             ## @return a void
             ## 
             def initialize()

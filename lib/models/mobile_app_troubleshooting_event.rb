@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class MobileAppTroubleshootingEvent < MicrosoftGraphBeta::Models::DeviceManagementTroubleshootingEvent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The collection property of AppLogUploadRequest.
+            # Indicates collection of App Log Upload Request.
             @app_log_collection_requests
             ## 
             # Intune application identifier.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
             # Identifier for the user that tried to enroll the device.
             @user_id
             ## 
-            ## Gets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
+            ## Gets the appLogCollectionRequests property value. Indicates collection of App Log Upload Request.
             ## @return a app_log_collection_request
             ## 
             def app_log_collection_requests
                 return @app_log_collection_requests
             end
             ## 
-            ## Sets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
+            ## Sets the appLogCollectionRequests property value. Indicates collection of App Log Upload Request.
             ## @param value Value to set for the appLogCollectionRequests property.
             ## @return a void
             ## 
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @application_id = value
             end
             ## 
-            ## Instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

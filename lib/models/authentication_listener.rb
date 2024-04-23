@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
             @priority
             ## 
-            # Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
+            # Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
             @source_filter
             ## 
-            ## Instantiates a new authenticationListener and sets the default values.
+            ## Instantiates a new AuthenticationListener and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("sourceFilter", @source_filter)
             end
             ## 
-            ## Gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
+            ## Gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
             ## @return a authentication_source_filter
             ## 
             def source_filter
                 return @source_filter
             end
             ## 
-            ## Sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
+            ## Sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
             ## @param value Value to set for the sourceFilter property.
             ## @return a void
             ## 

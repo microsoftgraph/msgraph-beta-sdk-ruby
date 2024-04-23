@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A collection of the keys.
             @keys
             ## 
-            ## Instantiates a new trustFrameworkKeySet and sets the default values.
+            ## Instantiates a new TrustFrameworkKeySet and sets the default values.
             ## @return a void
             ## 
             def initialize()

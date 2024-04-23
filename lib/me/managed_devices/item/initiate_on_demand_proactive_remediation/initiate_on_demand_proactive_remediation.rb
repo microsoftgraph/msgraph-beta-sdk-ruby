@@ -1,1 +1,0 @@
-require_relative 'initiate_on_demand_proactive_remediation_post_request_body'

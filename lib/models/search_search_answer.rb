@@ -8,22 +8,22 @@ module MicrosoftGraphBeta
         class SearchSearchAnswer < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Search answer description shown on search results page.
+            # The search answer description that is shown on the search results page.
             @description
             ## 
-            # Search answer name displayed in search results.
+            # The search answer name that is displayed in search results.
             @display_name
             ## 
-            # Details of the user that created or last modified the search answer. Read-only.
+            # Details of the user who created or last modified the search answer. Read-only.
             @last_modified_by
             ## 
-            # Timestamp of when the search answer is created or edited. Read-only.
+            # Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @last_modified_date_time
             ## 
-            # Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            # The URL link for the search answer. When users select this search answer from the search results, they're directed to the specified URL.
             @web_url
             ## 
-            ## Instantiates a new searchSearchAnswer and sets the default values.
+            ## Instantiates a new SearchSearchAnswer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,14 +51,14 @@ module MicrosoftGraphBeta
                 return SearchSearchAnswer.new
             end
             ## 
-            ## Gets the description property value. Search answer description shown on search results page.
+            ## Gets the description property value. The search answer description that is shown on the search results page.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Search answer description shown on search results page.
+            ## Sets the description property value. The search answer description that is shown on the search results page.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Search answer name displayed in search results.
+            ## Gets the displayName property value. The search answer name that is displayed in search results.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Search answer name displayed in search results.
+            ## Sets the displayName property value. The search answer name that is displayed in search results.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -94,14 +94,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
+            ## Gets the lastModifiedBy property value. Details of the user who created or last modified the search answer. Read-only.
             ## @return a search_identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
+            ## Sets the lastModifiedBy property value. Details of the user who created or last modified the search answer. Read-only.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -109,14 +109,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
+            ## Gets the lastModifiedDateTime property value. Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
+            ## Sets the lastModifiedDateTime property value. Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -138,14 +138,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            ## Gets the webUrl property value. The URL link for the search answer. When users select this search answer from the search results, they're directed to the specified URL.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
+            ## Sets the webUrl property value. The URL link for the search answer. When users select this search answer from the search results, they're directed to the specified URL.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

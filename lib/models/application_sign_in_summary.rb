@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @app_display_name = value
             end
             ## 
-            ## Instantiates a new applicationSignInSummary and sets the default values.
+            ## Instantiates a new ApplicationSignInSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

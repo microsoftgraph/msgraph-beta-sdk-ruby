@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class UserRegistrationDetails < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
+            # The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
             @default_mfa_method
             ## 
             # Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
             @is_admin
             ## 
-            # Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            # Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             @is_mfa_capable
             ## 
-            # Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            # Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             @is_mfa_registered
             ## 
             # Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
@@ -38,25 +38,25 @@ module MicrosoftGraphBeta
             # The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_updated_date_time
             ## 
-            # Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            # Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             @methods_registered
             ## 
             # Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
             @system_preferred_authentication_methods
             ## 
-            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             @user_display_name
             ## 
-            # The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+            # The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
             @user_preferred_method_for_secondary_authentication
             ## 
-            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             @user_principal_name
             ## 
             # Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
             @user_type
             ## 
-            ## Instantiates a new userRegistrationDetails and sets the default values.
+            ## Instantiates a new UserRegistrationDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 return UserRegistrationDetails.new
             end
             ## 
-            ## Gets the defaultMfaMethod property value. The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
+            ## Gets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
             ## @return a default_mfa_method_type
             ## 
             def default_mfa_method
                 return @default_mfa_method
             end
             ## 
-            ## Sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
+            ## Sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
             ## @param value Value to set for the defaultMfaMethod property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @is_admin = value
             end
             ## 
-            ## Gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_mfa_capable
                 return @is_mfa_capable
             end
             ## 
-            ## Sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             ## @param value Value to set for the isMfaCapable property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @is_mfa_capable = value
             end
             ## 
-            ## Gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_mfa_registered
                 return @is_mfa_registered
             end
             ## 
-            ## Sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             ## @param value Value to set for the isMfaRegistered property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @last_updated_date_time = value
             end
             ## 
-            ## Gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            ## Gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             ## @return a string
             ## 
             def methods_registered
                 return @methods_registered
             end
             ## 
-            ## Sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            ## Sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             ## @param value Value to set for the methodsRegistered property.
             ## @return a void
             ## 
@@ -301,14 +301,14 @@ module MicrosoftGraphBeta
                 @system_preferred_authentication_methods = value
             end
             ## 
-            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_display_name
                 return @user_display_name
             end
             ## 
-            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
@@ -316,14 +316,14 @@ module MicrosoftGraphBeta
                 @user_display_name = value
             end
             ## 
-            ## Gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+            ## Gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
             ## @return a user_default_authentication_method
             ## 
             def user_preferred_method_for_secondary_authentication
                 return @user_preferred_method_for_secondary_authentication
             end
             ## 
-            ## Sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+            ## Sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
             ## @param value Value to set for the userPreferredMethodForSecondaryAuthentication property.
             ## @return a void
             ## 
@@ -331,14 +331,14 @@ module MicrosoftGraphBeta
                 @user_preferred_method_for_secondary_authentication = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                 @company_codes = value
             end
             ## 
-            ## Instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
+            ## Instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

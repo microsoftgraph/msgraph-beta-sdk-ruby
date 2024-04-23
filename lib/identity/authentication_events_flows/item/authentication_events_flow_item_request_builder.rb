@@ -4,6 +4,8 @@ require_relative '../../../models/authentication_events_flow'
 require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../identity'
 require_relative '../authentication_events_flows'
+require_relative './conditions/conditions_request_builder'
+require_relative './graph_external_users_self_service_sign_up_events_flow/graph_external_users_self_service_sign_up_events_flow_request_builder'
 require_relative './item'
 
 module MicrosoftGraphBeta
@@ -15,16 +17,26 @@ module MicrosoftGraphBeta
                 class AuthenticationEventsFlowItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
+                    # The conditions property
+                    def conditions()
+                        return MicrosoftGraphBeta::Identity::AuthenticationEventsFlows::Item::Conditions::ConditionsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Casts the previous resource to externalUsersSelfServiceSignUpEventsFlow.
+                    def graph_external_users_self_service_sign_up_events_flow()
+                        return MicrosoftGraphBeta::Identity::AuthenticationEventsFlows::Item::GraphExternalUsersSelfServiceSignUpEventsFlow::GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AuthenticationEventsFlowItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}{?%24select,%24expand}")
+                        super(path_parameters, request_adapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}{?%24expand,%24select}")
                     end
                     ## 
-                    ## Delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+                    ## Delete navigation property authenticationEventsFlows for identity
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -33,12 +45,11 @@ module MicrosoftGraphBeta
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+                    ## Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of authentication_events_flow
                     ## 
@@ -47,12 +58,11 @@ module MicrosoftGraphBeta
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationEventsFlow.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+                    ## Update the navigation property authenticationEventsFlows in identity
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of authentication_events_flow
@@ -63,46 +73,46 @@ module MicrosoftGraphBeta
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationEventsFlow.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+                    ## Delete navigation property authenticationEventsFlows for identity
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+                    ## Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
-                    ## Update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+                    ## Update the navigation property authenticationEventsFlows in identity
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -110,20 +120,29 @@ module MicrosoftGraphBeta
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a authentication_events_flow_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return AuthenticationEventsFlowItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+                    # Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                     class AuthenticationEventsFlowItemRequestBuilderGetQueryParameters
                         
                         ## 

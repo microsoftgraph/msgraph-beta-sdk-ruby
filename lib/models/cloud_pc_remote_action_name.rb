@@ -11,6 +11,10 @@ module MicrosoftGraphBeta
             Troubleshoot: :Troubleshoot,
             PlaceUnderReview: :PlaceUnderReview,
             UnknownFutureValue: :UnknownFutureValue,
+            CreateSnapshot: :CreateSnapshot,
+            PowerOn: :PowerOn,
+            PowerOff: :PowerOff,
+            MoveRegion: :MoveRegion,
         }
     end
 end

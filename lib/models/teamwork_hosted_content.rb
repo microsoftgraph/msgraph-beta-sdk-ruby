@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Write only. Content type, such as image/png, image/jpg.
             @content_type
             ## 
-            ## Instantiates a new teamworkHostedContent and sets the default values.
+            ## Instantiates a new TeamworkHostedContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

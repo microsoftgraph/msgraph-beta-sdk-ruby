@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @block_chat = value
             end
             ## 
-            ## Instantiates a new remoteAssistanceSettings and sets the default values.
+            ## Instantiates a new RemoteAssistanceSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The number of days without activation to look back on from current timestamp.
             @duration
             ## 
-            ## Instantiates a new redundantAssignmentAlertConfiguration and sets the default values.
+            ## Instantiates a new RedundantAssignmentAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

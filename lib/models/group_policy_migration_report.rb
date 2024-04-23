@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
             # A list of unsupported group policy extensions inside the Group Policy Object.
             @unsupported_group_policy_extensions
             ## 
-            ## Instantiates a new groupPolicyMigrationReport and sets the default values.
+            ## Instantiates a new GroupPolicyMigrationReport and sets the default values.
             ## @return a void
             ## 
             def initialize()

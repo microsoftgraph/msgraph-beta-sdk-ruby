@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class InvalidLicenseAlertIncident < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertIncident
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Status of the tenant's Azure AD Premium P2 license.
+            # Status of the tenant's Microsoft Entra ID P2 license.
             @tenant_license_status
             ## 
-            ## Instantiates a new invalidLicenseAlertIncident and sets the default values.
+            ## Instantiates a new InvalidLicenseAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("tenantLicenseStatus", @tenant_license_status)
             end
             ## 
-            ## Gets the tenantLicenseStatus property value. Status of the tenant's Azure AD Premium P2 license.
+            ## Gets the tenantLicenseStatus property value. Status of the tenant's Microsoft Entra ID P2 license.
             ## @return a string
             ## 
             def tenant_license_status
                 return @tenant_license_status
             end
             ## 
-            ## Sets the tenantLicenseStatus property value. Status of the tenant's Azure AD Premium P2 license.
+            ## Sets the tenantLicenseStatus property value. Status of the tenant's Microsoft Entra ID P2 license.
             ## @param value Value to set for the tenantLicenseStatus property.
             ## @return a void
             ## 

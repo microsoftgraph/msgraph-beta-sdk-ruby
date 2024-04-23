@@ -10,31 +10,31 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Name for this key-value pair
+            # Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
             @name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Value for this key-value pair
+            # Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new keyValuePair and sets the default values.
+            ## Instantiates a new KeyValuePair and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,14 +61,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the name property value. Name for this key-value pair
+            ## Gets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Name for this key-value pair
+            ## Sets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the value property value. Value for this key-value pair
+            ## Gets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
             ## @return a string
             ## 
             def value
                 return @value
             end
             ## 
-            ## Sets the value property value. Value for this key-value pair
+            ## Sets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
             ## @param value Value to set for the value property.
             ## @return a void
             ## 

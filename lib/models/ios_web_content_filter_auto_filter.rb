@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @blocked_urls = value
             end
             ## 
-            ## Instantiates a new iosWebContentFilterAutoFilter and sets the default values.
+            ## Instantiates a new IosWebContentFilterAutoFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()
