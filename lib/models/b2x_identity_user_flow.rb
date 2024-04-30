@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class B2xIdentityUserFlow < MicrosoftGraphBeta::Models::IdentityUserFlow
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+            # Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
             @api_connector_configuration
             ## 
             # The identityProviders property
             @identity_providers
             ## 
-            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             @languages
             ## 
             # The user attribute assignments included in the user flow.
@@ -22,14 +22,14 @@ module MicrosoftGraphBeta
             # The userFlowIdentityProviders property
             @user_flow_identity_providers
             ## 
-            ## Gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+            ## Gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
             ## @return a user_flow_api_connector_configuration
             ## 
             def api_connector_configuration
                 return @api_connector_configuration
             end
             ## 
-            ## Sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+            ## Sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
             ## @param value Value to set for the apiConnectorConfiguration property.
             ## @return a void
             ## 
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @api_connector_configuration = value
             end
             ## 
-            ## Instantiates a new b2xIdentityUserFlow and sets the default values.
+            ## Instantiates a new B2xIdentityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 @identity_providers = value
             end
             ## 
-            ## Gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+            ## Gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             ## @return a user_flow_language_configuration
             ## 
             def languages
                 return @languages
             end
             ## 
-            ## Sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+            ## Sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             ## @param value Value to set for the languages property.
             ## @return a void
             ## 

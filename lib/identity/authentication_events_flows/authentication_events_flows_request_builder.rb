@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../identity'
 require_relative './authentication_events_flows'
 require_relative './count/count_request_builder'
+require_relative './graph_external_users_self_service_sign_up_events_flow/graph_external_users_self_service_sign_up_events_flow_request_builder'
 require_relative './item/authentication_events_flow_item_request_builder'
 
 module MicrosoftGraphBeta
@@ -19,6 +20,11 @@ module MicrosoftGraphBeta
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraphBeta::Identity::AuthenticationEventsFlows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Casts the previous resource to externalUsersSelfServiceSignUpEventsFlow.
+                def graph_external_users_self_service_sign_up_events_flow()
+                    return MicrosoftGraphBeta::Identity::AuthenticationEventsFlows::GraphExternalUsersSelfServiceSignUpEventsFlow::GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.
@@ -38,10 +44,10 @@ module MicrosoftGraphBeta
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/identity/authenticationEventsFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/identity/authenticationEventsFlows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                 end
                 ## 
-                ## Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned.
+                ## Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_events_flow_collection_response
                 ## 
@@ -50,12 +56,11 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationEventsFlowCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type.
+                ## Create new navigation property to authenticationEventsFlows for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_events_flow
@@ -66,30 +71,29 @@ module MicrosoftGraphBeta
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationEventsFlow.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned.
+                ## Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
-                ## Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type.
+                ## Create new navigation property to authenticationEventsFlows for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -97,20 +101,29 @@ module MicrosoftGraphBeta
                 def to_post_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :POST
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :POST
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a authentication_events_flows_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return AuthenticationEventsFlowsRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 
-                # Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned.
+                # Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
                 class AuthenticationEventsFlowsRequestBuilderGetQueryParameters
                     
                     ## 

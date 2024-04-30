@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             # The site's timezone represented as a minute offset from UTC
             @upgrade_window_utc_offset_in_minutes
             ## 
-            ## Instantiates a new microsoftTunnelSite and sets the default values.
+            ## Instantiates a new MicrosoftTunnelSite and sets the default values.
             ## @return a void
             ## 
             def initialize()

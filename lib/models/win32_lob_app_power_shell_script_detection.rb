@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The base64 encoded script content to detect Win32 Line of Business (LoB) app
             @script_content
             ## 
-            ## Instantiates a new win32LobAppPowerShellScriptDetection and sets the default values.
+            ## Instantiates a new Win32LobAppPowerShellScriptDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()

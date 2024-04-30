@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Output of the detection script
             @script_output
             ## 
-            ## Instantiates a new deviceComplianceScriptDeviceState and sets the default values.
+            ## Instantiates a new DeviceComplianceScriptDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

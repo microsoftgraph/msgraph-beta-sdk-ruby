@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # A blob of data provided by the participant in the roster.
             @metadata
             ## 
-            # The preferredDisplayName property
+            # The participant's preferred display name that overrides the original display name.
             @preferred_display_name
             ## 
             # Information on whether the participant has recording capability.
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # Indicates the roster sequence number the participant was last updated in.
             @roster_sequence_number
             ## 
-            ## Instantiates a new participant and sets the default values.
+            ## Instantiates a new Participant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 @metadata = value
             end
             ## 
-            ## Gets the preferredDisplayName property value. The preferredDisplayName property
+            ## Gets the preferredDisplayName property value. The participant's preferred display name that overrides the original display name.
             ## @return a string
             ## 
             def preferred_display_name
                 return @preferred_display_name
             end
             ## 
-            ## Sets the preferredDisplayName property value. The preferredDisplayName property
+            ## Sets the preferredDisplayName property value. The participant's preferred display name that overrides the original display name.
             ## @param value Value to set for the preferredDisplayName property.
             ## @return a void
             ## 

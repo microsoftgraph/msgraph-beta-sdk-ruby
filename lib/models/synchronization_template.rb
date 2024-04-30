@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
             @factory_tag
             ## 
-            # Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+            # Additional extension properties. Unless mentioned explicitly, metadata values shouldn't be changed.
             @metadata
             ## 
             # Default synchronization schema for the jobs based on this template.
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @application_id = value
             end
             ## 
-            ## Instantiates a new synchronizationTemplate and sets the default values.
+            ## Instantiates a new SynchronizationTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -134,14 +134,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+            ## Gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values shouldn't be changed.
             ## @return a synchronization_metadata_entry
             ## 
             def metadata
                 return @metadata
             end
             ## 
-            ## Sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+            ## Sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values shouldn't be changed.
             ## @param value Value to set for the metadata property.
             ## @return a void
             ## 

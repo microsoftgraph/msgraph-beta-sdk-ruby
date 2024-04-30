@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @conflicting_device_configurations = value
             end
             ## 
-            ## Instantiates a new deviceConfigurationConflictSummary and sets the default values.
+            ## Instantiates a new DeviceConfigurationConflictSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ChatMessageReactionIdentitySet < MicrosoftGraphBeta::Models::IdentitySet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new chatMessageReactionIdentitySet and sets the default values.
+            ## Instantiates a new ChatMessageReactionIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Version of the device configuration.
             @version
             ## 
-            ## Instantiates a new deviceSetupConfiguration and sets the default values.
+            ## Instantiates a new DeviceSetupConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

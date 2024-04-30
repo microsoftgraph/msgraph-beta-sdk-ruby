@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The time before the deployment starts represented in ISO 8601 format for durations.
             @duration_before_deployment_start
             ## 
-            ## Instantiates a new windowsUpdatesContentApprovalRule and sets the default values.
+            ## Instantiates a new WindowsUpdatesContentApprovalRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

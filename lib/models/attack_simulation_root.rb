@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class AttackSimulationRoot < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The endUserNotifications property
+            # Represents an end user's notification for an attack simulation training.
             @end_user_notifications
             ## 
-            # The landingPages property
+            # Represents an attack simulation training landing page.
             @landing_pages
             ## 
-            # The loginPages property
+            # Represents an attack simulation training login page.
             @login_pages
             ## 
             # Represents an attack simulation training operation.
@@ -28,10 +28,13 @@ module MicrosoftGraphBeta
             # Represents an attack simulation training campaign in a tenant.
             @simulations
             ## 
-            # The trainings property
+            # Represents a training campaign in a tenant.
+            @training_campaigns
+            ## 
+            # Represents details about attack simulation trainings.
             @trainings
             ## 
-            ## Instantiates a new attackSimulationRoot and sets the default values.
+            ## Instantiates a new AttackSimulationRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,14 +50,14 @@ module MicrosoftGraphBeta
                 return AttackSimulationRoot.new
             end
             ## 
-            ## Gets the endUserNotifications property value. The endUserNotifications property
+            ## Gets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
             ## @return a end_user_notification
             ## 
             def end_user_notifications
                 return @end_user_notifications
             end
             ## 
-            ## Sets the endUserNotifications property value. The endUserNotifications property
+            ## Sets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
             ## @param value Value to set for the endUserNotifications property.
             ## @return a void
             ## 
@@ -74,18 +77,19 @@ module MicrosoftGraphBeta
                     "payloads" => lambda {|n| @payloads = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Payload.create_from_discriminator_value(pn) }) },
                     "simulationAutomations" => lambda {|n| @simulation_automations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SimulationAutomation.create_from_discriminator_value(pn) }) },
                     "simulations" => lambda {|n| @simulations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Simulation.create_from_discriminator_value(pn) }) },
+                    "trainingCampaigns" => lambda {|n| @training_campaigns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TrainingCampaign.create_from_discriminator_value(pn) }) },
                     "trainings" => lambda {|n| @trainings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Training.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the landingPages property value. The landingPages property
+            ## Gets the landingPages property value. Represents an attack simulation training landing page.
             ## @return a landing_page
             ## 
             def landing_pages
                 return @landing_pages
             end
             ## 
-            ## Sets the landingPages property value. The landingPages property
+            ## Sets the landingPages property value. Represents an attack simulation training landing page.
             ## @param value Value to set for the landingPages property.
             ## @return a void
             ## 
@@ -93,14 +97,14 @@ module MicrosoftGraphBeta
                 @landing_pages = value
             end
             ## 
-            ## Gets the loginPages property value. The loginPages property
+            ## Gets the loginPages property value. Represents an attack simulation training login page.
             ## @return a login_page
             ## 
             def login_pages
                 return @login_pages
             end
             ## 
-            ## Sets the loginPages property value. The loginPages property
+            ## Sets the loginPages property value. Represents an attack simulation training login page.
             ## @param value Value to set for the loginPages property.
             ## @return a void
             ## 
@@ -152,6 +156,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("payloads", @payloads)
                 writer.write_collection_of_object_values("simulationAutomations", @simulation_automations)
                 writer.write_collection_of_object_values("simulations", @simulations)
+                writer.write_collection_of_object_values("trainingCampaigns", @training_campaigns)
                 writer.write_collection_of_object_values("trainings", @trainings)
             end
             ## 
@@ -185,14 +190,29 @@ module MicrosoftGraphBeta
                 @simulations = value
             end
             ## 
-            ## Gets the trainings property value. The trainings property
+            ## Gets the trainingCampaigns property value. Represents a training campaign in a tenant.
+            ## @return a training_campaign
+            ## 
+            def training_campaigns
+                return @training_campaigns
+            end
+            ## 
+            ## Sets the trainingCampaigns property value. Represents a training campaign in a tenant.
+            ## @param value Value to set for the trainingCampaigns property.
+            ## @return a void
+            ## 
+            def training_campaigns=(value)
+                @training_campaigns = value
+            end
+            ## 
+            ## Gets the trainings property value. Represents details about attack simulation trainings.
             ## @return a training
             ## 
             def trainings
                 return @trainings
             end
             ## 
-            ## Sets the trainings property value. The trainings property
+            ## Sets the trainings property value. Represents details about attack simulation trainings.
             ## @param value Value to set for the trainings property.
             ## @return a void
             ## 

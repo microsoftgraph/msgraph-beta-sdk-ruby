@@ -1,1 +1,1 @@
-require_relative 'get_credential_usage_summary_with_period_response'
+require_relative 'get_credential_usage_summary_with_period_get_response'

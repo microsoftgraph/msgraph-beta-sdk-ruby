@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # The collection of managed tenants associated with the tenant tag. Optional.
             @tenants
             ## 
-            ## Instantiates a new managedTenantsTenantTag and sets the default values.
+            ## Instantiates a new ManagedTenantsTenantTag and sets the default values.
             ## @return a void
             ## 
             def initialize()

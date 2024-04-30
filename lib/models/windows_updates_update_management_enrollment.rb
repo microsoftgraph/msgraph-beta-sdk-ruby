@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The updateCategory property
             @update_category
             ## 
-            ## Instantiates a new windowsUpdatesUpdateManagementEnrollment and sets the default values.
+            ## Instantiates a new WindowsUpdatesUpdateManagementEnrollment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -41,6 +41,9 @@ module MicrosoftGraphBeta
             # Location from where the sign-in was initiated.
             @location
             ## 
+            # The mitreTechniqueId property
+            @mitre_technique_id
+            ## 
             # Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
             @request_id
             ## 
@@ -128,7 +131,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new servicePrincipalRiskDetection and sets the default values.
+            ## Instantiates a new ServicePrincipalRiskDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -205,6 +208,7 @@ module MicrosoftGraphBeta
                     "keyIds" => lambda {|n| @key_ids = n.get_collection_of_primitive_values(String) },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInLocation.create_from_discriminator_value(pn) }) },
+                    "mitreTechniqueId" => lambda {|n| @mitre_technique_id = n.get_string_value() },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
                     "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
@@ -275,6 +279,21 @@ module MicrosoftGraphBeta
             ## 
             def location=(value)
                 @location = value
+            end
+            ## 
+            ## Gets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @return a string
+            ## 
+            def mitre_technique_id
+                return @mitre_technique_id
+            end
+            ## 
+            ## Sets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @param value Value to set for the mitreTechniqueId property.
+            ## @return a void
+            ## 
+            def mitre_technique_id=(value)
+                @mitre_technique_id = value
             end
             ## 
             ## Gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
@@ -370,6 +389,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("keyIds", @key_ids)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_object_value("location", @location)
+                writer.write_string_value("mitreTechniqueId", @mitre_technique_id)
                 writer.write_string_value("requestId", @request_id)
                 writer.write_enum_value("riskDetail", @risk_detail)
                 writer.write_string_value("riskEventType", @risk_event_type)

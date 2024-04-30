@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The userId property
             @user_id
             ## 
-            ## Instantiates a new userGovernanceCriteria and sets the default values.
+            ## Instantiates a new UserGovernanceCriteria and sets the default values.
             ## @return a void
             ## 
             def initialize()

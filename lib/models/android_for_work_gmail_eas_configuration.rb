@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AndroidForWorkGmailEasConfiguration < MicrosoftGraphBeta::Models::AndroidForWorkEasEmailProfileBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new androidForWorkGmailEasConfiguration and sets the default values.
+            ## Instantiates a new AndroidForWorkGmailEasConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

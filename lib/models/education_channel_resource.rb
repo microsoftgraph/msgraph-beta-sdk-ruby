@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class EducationChannelResource < MicrosoftGraphBeta::Models::EducationResource
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The url property
+            # URL of the channel resource.
             @url
             ## 
-            ## Instantiates a new educationChannelResource and sets the default values.
+            ## Instantiates a new EducationChannelResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("url", @url)
             end
             ## 
-            ## Gets the url property value. The url property
+            ## Gets the url property value. URL of the channel resource.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. The url property
+            ## Sets the url property value. URL of the channel resource.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

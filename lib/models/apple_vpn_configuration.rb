@@ -135,7 +135,7 @@ module MicrosoftGraphBeta
                 @connection_type = value
             end
             ## 
-            ## Instantiates a new appleVpnConfiguration and sets the default values.
+            ## Instantiates a new AppleVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
