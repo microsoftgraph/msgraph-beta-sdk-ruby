@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
             @managed_device_certificate_states
             ## 
-            ## Instantiates a new iosImportedPFXCertificateProfile and sets the default values.
+            ## Instantiates a new IosImportedPFXCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

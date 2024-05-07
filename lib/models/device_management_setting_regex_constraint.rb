@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The RegEx pattern to match against
             @regex
             ## 
-            ## Instantiates a new deviceManagementSettingRegexConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingRegexConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

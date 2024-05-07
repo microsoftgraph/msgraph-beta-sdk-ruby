@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Base64 encoded file content.
             @file_content
             ## 
-            ## Instantiates a new securityEmailContentThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityEmailContentThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()

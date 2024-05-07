@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @app_user_model_id = value
             end
             ## 
-            ## Instantiates a new microsoftStoreForBusinessContainedApp and sets the default values.
+            ## Instantiates a new MicrosoftStoreForBusinessContainedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

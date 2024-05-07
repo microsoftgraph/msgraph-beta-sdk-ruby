@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The readinessStatus property
             @readiness_status
             ## 
-            ## Instantiates a new industryDataIndustryDataActivity and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

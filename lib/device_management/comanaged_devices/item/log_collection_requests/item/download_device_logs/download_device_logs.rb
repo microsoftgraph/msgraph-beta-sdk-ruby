@@ -1,0 +1,1 @@
+require_relative 'download_device_logs_post_response'

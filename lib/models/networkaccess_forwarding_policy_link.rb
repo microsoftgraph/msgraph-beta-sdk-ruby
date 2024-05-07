@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NetworkaccessForwardingPolicyLink < MicrosoftGraphBeta::Models::NetworkaccessPolicyLink
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new networkaccessForwardingPolicyLink and sets the default values.
+            ## Instantiates a new NetworkaccessForwardingPolicyLink and sets the default values.
             ## @return a void
             ## 
             def initialize()

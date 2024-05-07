@@ -7,45 +7,45 @@ module MicrosoftGraphBeta
         class VirtualEvent < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Identity information of who created the virtual event. Inherited from virtualEvent.
+            # Identity information for the creator of the virtual event. Inherited from virtualEvent.
             @created_by
             ## 
             # Description of the virtual event.
             @description
             ## 
-            # Display name of the virtual event
+            # Display name of the virtual event.
             @display_name
             ## 
-            # End time of the virtual event.
+            # End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             @end_date_time
             ## 
-            # Presenters' information of the virtual event.
+            # The virtual event presenters.
             @presenters
             ## 
-            # Sessions of the virtual event.
+            # Sessions for the virtual event.
             @sessions
             ## 
-            # Start time of the virtual event.
+            # Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             @start_date_time
             ## 
             # Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.
             @status
             ## 
-            ## Instantiates a new virtualEvent and sets the default values.
+            ## Instantiates a new VirtualEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. Identity information of who created the virtual event. Inherited from virtualEvent.
+            ## Gets the createdBy property value. Identity information for the creator of the virtual event. Inherited from virtualEvent.
             ## @return a communications_identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Identity information of who created the virtual event. Inherited from virtualEvent.
+            ## Sets the createdBy property value. Identity information for the creator of the virtual event. Inherited from virtualEvent.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -63,6 +63,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.virtualEventTownhall"
+                            return VirtualEventTownhall.new
                         when "#microsoft.graph.virtualEventWebinar"
                             return VirtualEventWebinar.new
                     end
@@ -71,7 +73,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the description property value. Description of the virtual event.
-            ## @return a string
+            ## @return a item_body
             ## 
             def description
                 return @description
@@ -85,14 +87,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Display name of the virtual event
+            ## Gets the displayName property value. Display name of the virtual event.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name of the virtual event
+            ## Sets the displayName property value. Display name of the virtual event.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -100,14 +102,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the endDateTime property value. End time of the virtual event.
+            ## Gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             ## @return a date_time_time_zone
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. End time of the virtual event.
+            ## Sets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -121,7 +123,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CommunicationsIdentitySet.create_from_discriminator_value(pn) }) },
-                    "description" => lambda {|n| @description = n.get_string_value() },
+                    "description" => lambda {|n| @description = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "presenters" => lambda {|n| @presenters = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventPresenter.create_from_discriminator_value(pn) }) },
@@ -131,14 +133,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the presenters property value. Presenters' information of the virtual event.
+            ## Gets the presenters property value. The virtual event presenters.
             ## @return a virtual_event_presenter
             ## 
             def presenters
                 return @presenters
             end
             ## 
-            ## Sets the presenters property value. Presenters' information of the virtual event.
+            ## Sets the presenters property value. The virtual event presenters.
             ## @param value Value to set for the presenters property.
             ## @return a void
             ## 
@@ -154,7 +156,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("description", @description)
+                writer.write_object_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("endDateTime", @end_date_time)
                 writer.write_collection_of_object_values("presenters", @presenters)
@@ -163,14 +165,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the sessions property value. Sessions of the virtual event.
+            ## Gets the sessions property value. Sessions for the virtual event.
             ## @return a virtual_event_session
             ## 
             def sessions
                 return @sessions
             end
             ## 
-            ## Sets the sessions property value. Sessions of the virtual event.
+            ## Sets the sessions property value. Sessions for the virtual event.
             ## @param value Value to set for the sessions property.
             ## @return a void
             ## 
@@ -178,14 +180,14 @@ module MicrosoftGraphBeta
                 @sessions = value
             end
             ## 
-            ## Gets the startDateTime property value. Start time of the virtual event.
+            ## Gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             ## @return a date_time_time_zone
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. Start time of the virtual event.
+            ## Sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 

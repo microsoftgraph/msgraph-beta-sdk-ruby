@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             AdminConfirmedServicePrincipalCompromised: :AdminConfirmedServicePrincipalCompromised,
             AdminDismissedAllRiskForServicePrincipal: :AdminDismissedAllRiskForServicePrincipal,
             M365DAdminDismissedDetection: :M365DAdminDismissedDetection,
+            UserChangedPasswordOnPremises: :UserChangedPasswordOnPremises,
+            AdminDismissedRiskForSignIn: :AdminDismissedRiskForSignIn,
+            AdminConfirmedAccountSafe: :AdminConfirmedAccountSafe,
         }
     end
 end

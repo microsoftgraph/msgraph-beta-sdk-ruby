@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @configuration_xml = value
             end
             ## 
-            ## Instantiates a new androidOmaCpConfiguration and sets the default values.
+            ## Instantiates a new AndroidOmaCpConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

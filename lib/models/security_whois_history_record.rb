@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityWhoisHistoryRecord < MicrosoftGraphBeta::Models::SecurityWhoisBaseRecord
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityWhoisHistoryRecord and sets the default values.
+            ## Instantiates a new SecurityWhoisHistoryRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

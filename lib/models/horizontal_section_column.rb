@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
             @width
             ## 
-            ## Instantiates a new horizontalSectionColumn and sets the default values.
+            ## Instantiates a new HorizontalSectionColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @application_id = value
             end
             ## 
-            ## Instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

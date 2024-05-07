@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             # Require encryption on Android devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new aospDeviceOwnerCompliancePolicy and sets the default values.
+            ## Instantiates a new AospDeviceOwnerCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

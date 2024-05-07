@@ -19,14 +19,17 @@ module MicrosoftGraphBeta
             # Bundle metadata, if the item is a bundle. Read-only.
             @bundle
             ## 
-            # An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            # An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             @c_tag
             ## 
             # Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
             @children
             ## 
-            # The content stream, if the item represents a file.
+            # The content property
             @content
+            ## 
+            # The content stream, if the item represents a file.
+            @content_stream
             ## 
             # Information about the deleted state of the item. Read-only.
             @deleted
@@ -58,7 +61,7 @@ module MicrosoftGraphBeta
             # If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
             @package
             ## 
-            # If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+            # If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
             @pending_operations
             ## 
             # The set of permissions for the item. Read-only. Nullable.
@@ -67,13 +70,13 @@ module MicrosoftGraphBeta
             # Photo metadata, if the item is a photo. Read-only.
             @photo
             ## 
-            # Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            # Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             @publication
             ## 
             # Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
             @remote_item
             ## 
-            # The retentionLabel property
+            # Information about retention label and settings enforced on the driveItem. Read-write.
             @retention_label
             ## 
             # If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
@@ -82,7 +85,7 @@ module MicrosoftGraphBeta
             # Search metadata, if the item is from a search result. Read-only.
             @search_result
             ## 
-            # Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            # Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             @shared
             ## 
             # Returns identifiers useful for SharePoint REST compatibility. Read-only.
@@ -100,19 +103,22 @@ module MicrosoftGraphBeta
             # The set of subscriptions on the item. Only supported on the root of a drive.
             @subscriptions
             ## 
-            # Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            # Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
             @thumbnails
             ## 
-            # The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+            # The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
             @versions
             ## 
             # Video metadata, if the item is a video. Read-only.
             @video
             ## 
+            # Returns information specific to the calling user for this drive item. Read-only.
+            @viewpoint
+            ## 
             # WebDAV compatible URL for the item.
             @web_dav_url
             ## 
-            # For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            # For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             @workbook
             ## 
             ## Gets the activities property value. The list of recent activities that took place on this item.
@@ -175,14 +181,14 @@ module MicrosoftGraphBeta
                 @bundle = value
             end
             ## 
-            ## Gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            ## Gets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             ## @return a string
             ## 
             def c_tag
                 return @c_tag
             end
             ## 
-            ## Sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            ## Sets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             ## @param value Value to set for the cTag property.
             ## @return a void
             ## 
@@ -205,7 +211,7 @@ module MicrosoftGraphBeta
                 @children = value
             end
             ## 
-            ## Instantiates a new driveItem and sets the default values.
+            ## Instantiates a new DriveItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -213,19 +219,34 @@ module MicrosoftGraphBeta
                 @odata_type = "#microsoft.graph.driveItem"
             end
             ## 
-            ## Gets the content property value. The content stream, if the item represents a file.
+            ## Gets the content property value. The content property
             ## @return a base64url
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content stream, if the item represents a file.
+            ## Sets the content property value. The content property
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
             def content=(value)
                 @content = value
+            end
+            ## 
+            ## Gets the contentStream property value. The content stream, if the item represents a file.
+            ## @return a base64url
+            ## 
+            def content_stream
+                return @content_stream
+            end
+            ## 
+            ## Sets the contentStream property value. The content stream, if the item represents a file.
+            ## @param value Value to set for the contentStream property.
+            ## @return a void
+            ## 
+            def content_stream=(value)
+                @content_stream = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -309,6 +330,7 @@ module MicrosoftGraphBeta
                     "cTag" => lambda {|n| @c_tag = n.get_string_value() },
                     "children" => lambda {|n| @children = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }) },
                     "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
+                    "contentStream" => lambda {|n| @content_stream = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "deleted" => lambda {|n| @deleted = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Deleted.create_from_discriminator_value(pn) }) },
                     "file" => lambda {|n| @file = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::File.create_from_discriminator_value(pn) }) },
                     "fileSystemInfo" => lambda {|n| @file_system_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::FileSystemInfo.create_from_discriminator_value(pn) }) },
@@ -336,6 +358,7 @@ module MicrosoftGraphBeta
                     "thumbnails" => lambda {|n| @thumbnails = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ThumbnailSet.create_from_discriminator_value(pn) }) },
                     "versions" => lambda {|n| @versions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DriveItemVersion.create_from_discriminator_value(pn) }) },
                     "video" => lambda {|n| @video = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Video.create_from_discriminator_value(pn) }) },
+                    "viewpoint" => lambda {|n| @viewpoint = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DriveItemViewpoint.create_from_discriminator_value(pn) }) },
                     "webDavUrl" => lambda {|n| @web_dav_url = n.get_string_value() },
                     "workbook" => lambda {|n| @workbook = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Workbook.create_from_discriminator_value(pn) }) },
                 })
@@ -431,14 +454,14 @@ module MicrosoftGraphBeta
                 @package = value
             end
             ## 
-            ## Gets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+            ## Gets the pendingOperations property value. If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
             ## @return a pending_operations
             ## 
             def pending_operations
                 return @pending_operations
             end
             ## 
-            ## Sets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+            ## Sets the pendingOperations property value. If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
             ## @param value Value to set for the pendingOperations property.
             ## @return a void
             ## 
@@ -476,14 +499,14 @@ module MicrosoftGraphBeta
                 @photo = value
             end
             ## 
-            ## Gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            ## Gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             ## @return a publication_facet
             ## 
             def publication
                 return @publication
             end
             ## 
-            ## Sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            ## Sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             ## @param value Value to set for the publication property.
             ## @return a void
             ## 
@@ -506,14 +529,14 @@ module MicrosoftGraphBeta
                 @remote_item = value
             end
             ## 
-            ## Gets the retentionLabel property value. The retentionLabel property
+            ## Gets the retentionLabel property value. Information about retention label and settings enforced on the driveItem. Read-write.
             ## @return a item_retention_label
             ## 
             def retention_label
                 return @retention_label
             end
             ## 
-            ## Sets the retentionLabel property value. The retentionLabel property
+            ## Sets the retentionLabel property value. Information about retention label and settings enforced on the driveItem. Read-write.
             ## @param value Value to set for the retentionLabel property.
             ## @return a void
             ## 
@@ -565,6 +588,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("cTag", @c_tag)
                 writer.write_collection_of_object_values("children", @children)
                 writer.write_object_value("content", @content)
+                writer.write_object_value("contentStream", @content_stream)
                 writer.write_object_value("deleted", @deleted)
                 writer.write_object_value("file", @file)
                 writer.write_object_value("fileSystemInfo", @file_system_info)
@@ -592,18 +616,19 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("thumbnails", @thumbnails)
                 writer.write_collection_of_object_values("versions", @versions)
                 writer.write_object_value("video", @video)
+                writer.write_object_value("viewpoint", @viewpoint)
                 writer.write_string_value("webDavUrl", @web_dav_url)
                 writer.write_object_value("workbook", @workbook)
             end
             ## 
-            ## Gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            ## Gets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             ## @return a shared
             ## 
             def shared
                 return @shared
             end
             ## 
-            ## Sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            ## Sets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             ## @param value Value to set for the shared property.
             ## @return a void
             ## 
@@ -686,14 +711,14 @@ module MicrosoftGraphBeta
                 @subscriptions = value
             end
             ## 
-            ## Gets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            ## Gets the thumbnails property value. Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
             ## @return a thumbnail_set
             ## 
             def thumbnails
                 return @thumbnails
             end
             ## 
-            ## Sets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            ## Sets the thumbnails property value. Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
             ## @param value Value to set for the thumbnails property.
             ## @return a void
             ## 
@@ -701,14 +726,14 @@ module MicrosoftGraphBeta
                 @thumbnails = value
             end
             ## 
-            ## Gets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+            ## Gets the versions property value. The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
             ## @return a drive_item_version
             ## 
             def versions
                 return @versions
             end
             ## 
-            ## Sets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+            ## Sets the versions property value. The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
             ## @param value Value to set for the versions property.
             ## @return a void
             ## 
@@ -731,6 +756,21 @@ module MicrosoftGraphBeta
                 @video = value
             end
             ## 
+            ## Gets the viewpoint property value. Returns information specific to the calling user for this drive item. Read-only.
+            ## @return a drive_item_viewpoint
+            ## 
+            def viewpoint
+                return @viewpoint
+            end
+            ## 
+            ## Sets the viewpoint property value. Returns information specific to the calling user for this drive item. Read-only.
+            ## @param value Value to set for the viewpoint property.
+            ## @return a void
+            ## 
+            def viewpoint=(value)
+                @viewpoint = value
+            end
+            ## 
             ## Gets the webDavUrl property value. WebDAV compatible URL for the item.
             ## @return a string
             ## 
@@ -746,14 +786,14 @@ module MicrosoftGraphBeta
                 @web_dav_url = value
             end
             ## 
-            ## Gets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            ## Gets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             ## @return a workbook
             ## 
             def workbook
                 return @workbook
             end
             ## 
-            ## Sets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            ## Sets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             ## @param value Value to set for the workbook property.
             ## @return a void
             ## 

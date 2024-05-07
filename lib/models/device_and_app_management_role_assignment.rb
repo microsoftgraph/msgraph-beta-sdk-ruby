@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The set of Role Scope Tags defined on the Role Assignment.
             @role_scope_tags
             ## 
-            ## Instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
+            ## Instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
