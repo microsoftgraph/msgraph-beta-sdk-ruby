@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # A name for the derived entity, which interfaces with customers.
             @display_name
             ## 
-            ## Instantiates a new bookingNamedEntity and sets the default values.
+            ## Instantiates a new BookingNamedEntity and sets the default values.
             ## @return a void
             ## 
             def initialize()

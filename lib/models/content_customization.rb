@@ -19,15 +19,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The registrationCampaign property
+            @registration_campaign
+            ## 
+            # The registrationCampaignRelativeUrl property
+            @registration_campaign_relative_url
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +70,7 @@ module MicrosoftGraphBeta
                 @attribute_collection_relative_url = value
             end
             ## 
-            ## Instantiates a new contentCustomization and sets the default values.
+            ## Instantiates a new ContentCustomization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -88,6 +94,8 @@ module MicrosoftGraphBeta
                     "attributeCollection" => lambda {|n| @attribute_collection = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValue.create_from_discriminator_value(pn) }) },
                     "attributeCollectionRelativeUrl" => lambda {|n| @attribute_collection_relative_url = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "registrationCampaign" => lambda {|n| @registration_campaign = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValue.create_from_discriminator_value(pn) }) },
+                    "registrationCampaignRelativeUrl" => lambda {|n| @registration_campaign_relative_url = n.get_string_value() },
                 }
             end
             ## 
@@ -106,6 +114,36 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the registrationCampaign property value. The registrationCampaign property
+            ## @return a key_value
+            ## 
+            def registration_campaign
+                return @registration_campaign
+            end
+            ## 
+            ## Sets the registrationCampaign property value. The registrationCampaign property
+            ## @param value Value to set for the registrationCampaign property.
+            ## @return a void
+            ## 
+            def registration_campaign=(value)
+                @registration_campaign = value
+            end
+            ## 
+            ## Gets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+            ## @return a string
+            ## 
+            def registration_campaign_relative_url
+                return @registration_campaign_relative_url
+            end
+            ## 
+            ## Sets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+            ## @param value Value to set for the registrationCampaignRelativeUrl property.
+            ## @return a void
+            ## 
+            def registration_campaign_relative_url=(value)
+                @registration_campaign_relative_url = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -115,6 +153,8 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("attributeCollection", @attribute_collection)
                 writer.write_string_value("attributeCollectionRelativeUrl", @attribute_collection_relative_url)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("registrationCampaign", @registration_campaign)
+                writer.write_string_value("registrationCampaignRelativeUrl", @registration_campaign_relative_url)
                 writer.write_additional_data(@additional_data)
             end
         end

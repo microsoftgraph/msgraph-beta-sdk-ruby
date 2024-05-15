@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @class_id = value
             end
             ## 
-            ## Instantiates a new calendarGroup and sets the default values.
+            ## Instantiates a new CalendarGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

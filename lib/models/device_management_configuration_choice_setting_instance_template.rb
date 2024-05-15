@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @choice_setting_value_template = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationChoiceSettingInstanceTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationChoiceSettingInstanceTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

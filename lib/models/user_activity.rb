@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # Optional. URL used to launch the activity in a web-based app, if available.
             @fallback_url
             ## 
-            # Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+            # Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
             @history_items
             ## 
             # Set by the server. DateTime in UTC when the object was modified on the server.
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                 @app_display_name = value
             end
             ## 
-            ## Instantiates a new userActivity and sets the default values.
+            ## Instantiates a new UserActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -223,14 +223,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+            ## Gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
             ## @return a activity_history_item
             ## 
             def history_items
                 return @history_items
             end
             ## 
-            ## Sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+            ## Sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
             ## @param value Value to set for the historyItems property.
             ## @return a void
             ## 

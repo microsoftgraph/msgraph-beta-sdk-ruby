@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # The redundancy (near duplicate and email threading) detection settings for the case.
             @redundancy_detection
             ## 
-            # The Topic Modeling (Themes) settings for the case.
+            # The article Modeling (Themes) settings for the case.
             @topic_modeling
             ## 
-            ## Instantiates a new ediscoveryCaseSettings and sets the default values.
+            ## Instantiates a new EdiscoveryCaseSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("topicModeling", @topic_modeling)
             end
             ## 
-            ## Gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+            ## Gets the topicModeling property value. The article Modeling (Themes) settings for the case.
             ## @return a ediscovery_topic_modeling_settings
             ## 
             def topic_modeling
                 return @topic_modeling
             end
             ## 
-            ## Sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+            ## Sets the topicModeling property value. The article Modeling (Themes) settings for the case.
             ## @param value Value to set for the topicModeling property.
             ## @return a void
             ## 

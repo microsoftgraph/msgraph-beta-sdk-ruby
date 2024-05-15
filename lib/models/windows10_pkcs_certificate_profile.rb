@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
                 @certification_authority_name = value
             end
             ## 
-            ## Instantiates a new windows10PkcsCertificateProfile and sets the default values.
+            ## Instantiates a new Windows10PkcsCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

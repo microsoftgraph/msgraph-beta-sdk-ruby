@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The roleTemplateId property
             @role_template_id
             ## 
-            ## Instantiates a new roleMembershipGovernanceCriteria and sets the default values.
+            ## Instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The issuerURI of the incoming federation. Read only.
             @issuer_uri
             ## 
-            ## Instantiates a new externalDomainFederation and sets the default values.
+            ## Instantiates a new ExternalDomainFederation and sets the default values.
             ## @return a void
             ## 
             def initialize()

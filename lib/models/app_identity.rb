@@ -10,44 +10,44 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Refers to the unique identifier representing Application Id in the Azure Active Directory.
+            # Refers to the unique identifier representing application ID in the Microsoft Entra ID.
             @app_id
             ## 
-            # Refers to the Application Name displayed in the Azure Portal.
+            # Refers to the application name displayed in the Microsoft Entra admin center.
             @display_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+            # Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
             @service_principal_id
             ## 
             # Refers to the Service Principal Name is the Application name in the tenant.
             @service_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
+            ## Gets the appId property value. Refers to the unique identifier representing application ID in the Microsoft Entra ID.
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. Refers to the unique identifier representing Application Id in the Azure Active Directory.
+            ## Sets the appId property value. Refers to the unique identifier representing application ID in the Microsoft Entra ID.
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new appIdentity and sets the default values.
+            ## Instantiates a new AppIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 return AppIdentity.new
             end
             ## 
-            ## Gets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Gets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Sets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+            ## Gets the servicePrincipalId property value. Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
             ## @return a string
             ## 
             def service_principal_id
                 return @service_principal_id
             end
             ## 
-            ## Sets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+            ## Sets the servicePrincipalId property value. Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
             ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 

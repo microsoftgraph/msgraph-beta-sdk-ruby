@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Windows management app last check-in time.
             @last_check_in_date_time
             ## 
-            ## Instantiates a new windowsManagementAppHealthState and sets the default values.
+            ## Instantiates a new WindowsManagementAppHealthState and sets the default values.
             ## @return a void
             ## 
             def initialize()

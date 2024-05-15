@@ -32,6 +32,9 @@ module MicrosoftGraphBeta
             # Where the values within an entity originated if synced from another service.
             @source
             ## 
+            # The sources property
+            @sources
+            ## 
             ## Gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
             ## @return a allowed_audiences
             ## 
@@ -47,7 +50,7 @@ module MicrosoftGraphBeta
                 @allowed_audiences = value
             end
             ## 
-            ## Instantiates a new itemFacet and sets the default values.
+            ## Instantiates a new ItemFacet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -144,7 +147,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "allowedAudiences" => lambda {|n| @allowed_audiences = n.get_enum_value(MicrosoftGraphBeta::Models::AllowedAudiences) },
+                    "allowedAudiences" => lambda {|n| @allowed_audiences = n.get_enum_values(MicrosoftGraphBeta::Models::AllowedAudiences) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "inference" => lambda {|n| @inference = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InferenceData.create_from_discriminator_value(pn) }) },
@@ -152,6 +155,7 @@ module MicrosoftGraphBeta
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "source" => lambda {|n| @source = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PersonDataSources.create_from_discriminator_value(pn) }) },
+                    "sources" => lambda {|n| @sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ProfileSourceAnnotation.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -230,6 +234,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("lastModifiedBy", @last_modified_by)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_object_value("source", @source)
+                writer.write_collection_of_object_values("sources", @sources)
             end
             ## 
             ## Gets the source property value. Where the values within an entity originated if synced from another service.
@@ -245,6 +250,21 @@ module MicrosoftGraphBeta
             ## 
             def source=(value)
                 @source = value
+            end
+            ## 
+            ## Gets the sources property value. The sources property
+            ## @return a profile_source_annotation
+            ## 
+            def sources
+                return @sources
+            end
+            ## 
+            ## Sets the sources property value. The sources property
+            ## @param value Value to set for the sources property.
+            ## @return a void
+            ## 
+            def sources=(value)
+                @sources = value
             end
         end
     end

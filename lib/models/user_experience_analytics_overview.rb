@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The user experience analytics insights. Read-only.
             @insights
             ## 
-            ## Instantiates a new userExperienceAnalyticsOverview and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The enum to specify the status of PolicySet.
             @status
             ## 
-            ## Instantiates a new policySetItem and sets the default values.
+            ## Instantiates a new PolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

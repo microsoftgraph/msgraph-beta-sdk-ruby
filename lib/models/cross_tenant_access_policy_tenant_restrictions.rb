@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
             @devices
             ## 
-            ## Instantiates a new crossTenantAccessPolicyTenantRestrictions and sets the default values.
+            ## Instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
             ## @return a void
             ## 
             def initialize()

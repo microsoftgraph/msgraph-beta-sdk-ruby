@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The ID of the connected organization in entitlement management.
             @id
             ## 
-            ## Instantiates a new connectedOrganizationMembers and sets the default values.
+            ## Instantiates a new ConnectedOrganizationMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @claim_token_management_from_external_mdm = value
             end
             ## 
-            ## Instantiates a new vppToken and sets the default values.
+            ## Instantiates a new VppToken and sets the default values.
             ## @return a void
             ## 
             def initialize()

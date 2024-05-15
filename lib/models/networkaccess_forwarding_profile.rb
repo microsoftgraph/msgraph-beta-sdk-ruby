@@ -7,23 +7,26 @@ module MicrosoftGraphBeta
         class NetworkaccessForwardingProfile < MicrosoftGraphBeta::Models::NetworkaccessProfile
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
+            # Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
             @associations
             ## 
             # Profile priority.
             @priority
             ## 
+            # The servicePrincipal property
+            @service_principal
+            ## 
             # The trafficForwardingType property
             @traffic_forwarding_type
             ## 
-            ## Gets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
+            ## Gets the associations property value. Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
             ## @return a networkaccess_association
             ## 
             def associations
                 return @associations
             end
             ## 
-            ## Sets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
+            ## Sets the associations property value. Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
             ## @param value Value to set for the associations property.
             ## @return a void
             ## 
@@ -31,7 +34,7 @@ module MicrosoftGraphBeta
                 @associations = value
             end
             ## 
-            ## Instantiates a new networkaccessForwardingProfile and sets the default values.
+            ## Instantiates a new NetworkaccessForwardingProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,6 +58,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "associations" => lambda {|n| @associations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessAssociation.create_from_discriminator_value(pn) }) },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
+                    "servicePrincipal" => lambda {|n| @service_principal = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServicePrincipal.create_from_discriminator_value(pn) }) },
                     "trafficForwardingType" => lambda {|n| @traffic_forwarding_type = n.get_enum_value(MicrosoftGraphBeta::Models::NetworkaccessTrafficForwardingType) },
                 })
             end
@@ -83,7 +87,23 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("associations", @associations)
                 writer.write_number_value("priority", @priority)
+                writer.write_object_value("servicePrincipal", @service_principal)
                 writer.write_enum_value("trafficForwardingType", @traffic_forwarding_type)
+            end
+            ## 
+            ## Gets the servicePrincipal property value. The servicePrincipal property
+            ## @return a service_principal
+            ## 
+            def service_principal
+                return @service_principal
+            end
+            ## 
+            ## Sets the servicePrincipal property value. The servicePrincipal property
+            ## @param value Value to set for the servicePrincipal property.
+            ## @return a void
+            ## 
+            def service_principal=(value)
+                @service_principal = value
             end
             ## 
             ## Gets the trafficForwardingType property value. The trafficForwardingType property

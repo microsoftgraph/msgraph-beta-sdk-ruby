@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Version information for a document set version created by a user.
             @document_set_versions
             ## 
-            # For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            # For document libraries, the driveItem relationship exposes the listItem as a driveItem
             @drive_item
             ## 
             # The values of the columns set on this list item.
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @analytics = value
             end
             ## 
-            ## Instantiates a new listItem and sets the default values.
+            ## Instantiates a new ListItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @document_set_versions = value
             end
             ## 
-            ## Gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            ## Gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
             ## @return a drive_item
             ## 
             def drive_item
                 return @drive_item
             end
             ## 
-            ## Sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            ## Sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
             ## @param value Value to set for the driveItem property.
             ## @return a void
             ## 

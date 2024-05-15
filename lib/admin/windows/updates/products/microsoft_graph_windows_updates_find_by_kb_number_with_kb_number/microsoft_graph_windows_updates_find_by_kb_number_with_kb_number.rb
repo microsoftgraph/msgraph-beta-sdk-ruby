@@ -1,0 +1,1 @@
+require_relative 'find_by_kb_number_with_kb_number_get_response'
