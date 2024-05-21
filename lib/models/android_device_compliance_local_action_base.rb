@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647
             @grace_period_in_minutes
             ## 
-            ## Instantiates a new androidDeviceComplianceLocalActionBase and sets the default values.
+            ## Instantiates a new AndroidDeviceComplianceLocalActionBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

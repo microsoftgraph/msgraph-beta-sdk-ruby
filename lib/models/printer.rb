@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @connectors = value
             end
             ## 
-            ## Instantiates a new printer and sets the default values.
+            ## Instantiates a new Printer and sets the default values.
             ## @return a void
             ## 
             def initialize()

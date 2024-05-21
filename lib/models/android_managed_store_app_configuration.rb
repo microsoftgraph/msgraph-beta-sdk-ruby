@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AndroidManagedStoreAppConfiguration < MicrosoftGraphBeta::Models::ManagedDeviceMobileAppConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Whether or not this AppConfig is an OEMConfig policy.
+            # Whether or not this AppConfig is an OEMConfig policy. This property is read-only.
             @app_supports_oem_config
             ## 
             # Setting to specify whether to allow ConnectedApps experience for this app.
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
             # Android profile applicability
             @profile_applicability
             ## 
-            ## Gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
+            ## Gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy. This property is read-only.
             ## @return a boolean
             ## 
             def app_supports_oem_config
                 return @app_supports_oem_config
             end
             ## 
-            ## Sets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
+            ## Sets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy. This property is read-only.
             ## @param value Value to set for the appSupportsOemConfig property.
             ## @return a void
             ## 
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @connected_apps_enabled = value
             end
             ## 
-            ## Instantiates a new androidManagedStoreAppConfiguration and sets the default values.
+            ## Instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -155,7 +155,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("appSupportsOemConfig", @app_supports_oem_config)
                 writer.write_boolean_value("connectedAppsEnabled", @connected_apps_enabled)
                 writer.write_string_value("packageId", @package_id)
                 writer.write_string_value("payloadJson", @payload_json)

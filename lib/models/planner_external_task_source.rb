@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Nullable. URL of the user experience represented by the associated plannerExternalTaskSource.
             @web_url
             ## 
-            ## Instantiates a new plannerExternalTaskSource and sets the default values.
+            ## Instantiates a new PlannerExternalTaskSource and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The type of query. Examples include MicrosoftGraph and ARM.
             @query_type
             ## 
-            ## Instantiates a new accessReviewReviewerScope and sets the default values.
+            ## Instantiates a new AccessReviewReviewerScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

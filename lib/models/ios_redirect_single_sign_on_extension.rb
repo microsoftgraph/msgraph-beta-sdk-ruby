@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @configurations = value
             end
             ## 
-            ## Instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
+            ## Instantiates a new IosRedirectSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

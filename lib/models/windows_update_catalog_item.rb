@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The date the catalog item was released
             @release_date_time
             ## 
-            ## Instantiates a new windowsUpdateCatalogItem and sets the default values.
+            ## Instantiates a new WindowsUpdateCatalogItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

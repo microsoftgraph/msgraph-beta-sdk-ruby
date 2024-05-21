@@ -205,7 +205,7 @@ module MicrosoftGraphBeta
                 @color = value
             end
             ## 
-            ## Instantiates a new calendar and sets the default values.
+            ## Instantiates a new Calendar and sets the default values.
             ## @return a void
             ## 
             def initialize()

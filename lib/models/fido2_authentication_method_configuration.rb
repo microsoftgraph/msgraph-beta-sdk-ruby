@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
             @key_restrictions
             ## 
-            ## Instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationMethodTarget.create_from_discriminator_value(pn) }) },
+                    "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PasskeyAuthenticationMethodTarget.create_from_discriminator_value(pn) }) },
                     "isAttestationEnforced" => lambda {|n| @is_attestation_enforced = n.get_boolean_value() },
                     "isSelfServiceRegistrationAllowed" => lambda {|n| @is_self_service_registration_allowed = n.get_boolean_value() },
                     "keyRestrictions" => lambda {|n| @key_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Fido2KeyRestrictions.create_from_discriminator_value(pn) }) },
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-            ## @return a authentication_method_target
+            ## @return a passkey_authentication_method_target
             ## 
             def include_targets
                 return @include_targets

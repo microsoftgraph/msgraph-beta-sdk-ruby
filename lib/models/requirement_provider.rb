@@ -22,6 +22,8 @@ module MicrosoftGraphBeta
             GpsLocationCondition: :GpsLocationCondition,
             RiskBasedPolicy: :RiskBasedPolicy,
             UnknownFutureValue: :UnknownFutureValue,
+            ScopeBasedAuthRequirementPolicy: :ScopeBasedAuthRequirementPolicy,
+            AuthenticationStrengths: :AuthenticationStrengths,
         }
     end
 end

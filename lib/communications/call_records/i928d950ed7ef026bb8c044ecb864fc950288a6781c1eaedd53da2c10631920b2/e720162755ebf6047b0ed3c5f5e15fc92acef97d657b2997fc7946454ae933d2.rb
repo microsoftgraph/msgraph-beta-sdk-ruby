@@ -23,43 +23,51 @@ module MicrosoftGraphBeta
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter, from_date_time=nil, to_date_time=nil)
-                        super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}")
+                        super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24count,%24filter,%24search,%24skip,%24top}")
                     end
                     ## 
-                    ## Invoke function getPstnOnlineMeetingDialoutReport
+                    ## Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.The report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of get_pstn_online_meeting_dialout_report_with_from_date_time_with_to_date_time_response
+                    ## @return a Fiber of get_pstn_online_meeting_dialout_report_with_from_date_time_with_to_date_time_get_response
                     ## 
                     def get(request_configuration=nil)
                         request_info = self.to_get_request_information(
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Communications::CallRecords::I928d950ed7ef026bb8c044ecb864fc950288a6781c1eaedd53da2c10631920b2::GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeResponse.create_from_discriminator_value(pn) }, error_mapping)
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Communications::CallRecords::I928d950ed7ef026bb8c044ecb864fc950288a6781c1eaedd53da2c10631920b2::GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Invoke function getPstnOnlineMeetingDialoutReport
+                    ## Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.The report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a microsoft_graph_call_records_get_pstn_online_meeting_dialout_report_with_from_date_time_with_to_date_time_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Invoke function getPstnOnlineMeetingDialoutReport
+                    # Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.The report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:
                     class MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters
                         
                         ## 

@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @assignment_filter_ids = value
             end
             ## 
-            ## Instantiates a new deviceHealthScriptDeviceState and sets the default values.
+            ## Instantiates a new DeviceHealthScriptDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

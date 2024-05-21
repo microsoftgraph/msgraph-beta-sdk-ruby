@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The URI that can be used to access the service.
             @uri
             ## 
-            ## Instantiates a new printServiceEndpoint and sets the default values.
+            ## Instantiates a new PrintServiceEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

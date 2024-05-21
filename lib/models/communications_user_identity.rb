@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The user's tenant ID.
             @tenant_id
             ## 
-            ## Instantiates a new communicationsUserIdentity and sets the default values.
+            ## Instantiates a new CommunicationsUserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

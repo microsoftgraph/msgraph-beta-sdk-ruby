@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
             @allow_new_time_proposals
             ## 
+            # The meetingRequestType property
+            @meeting_request_type
+            ## 
             # If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
             @previous_end_date_time
             ## 
@@ -37,7 +40,7 @@ module MicrosoftGraphBeta
                 @allow_new_time_proposals = value
             end
             ## 
-            ## Instantiates a new eventMessageRequest and sets the default values.
+            ## Instantiates a new EventMessageRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,11 +63,27 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowNewTimeProposals" => lambda {|n| @allow_new_time_proposals = n.get_boolean_value() },
+                    "meetingRequestType" => lambda {|n| @meeting_request_type = n.get_enum_value(MicrosoftGraphBeta::Models::MeetingRequestType) },
                     "previousEndDateTime" => lambda {|n| @previous_end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "previousLocation" => lambda {|n| @previous_location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Location.create_from_discriminator_value(pn) }) },
                     "previousStartDateTime" => lambda {|n| @previous_start_date_time = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "responseRequested" => lambda {|n| @response_requested = n.get_boolean_value() },
                 })
+            end
+            ## 
+            ## Gets the meetingRequestType property value. The meetingRequestType property
+            ## @return a meeting_request_type
+            ## 
+            def meeting_request_type
+                return @meeting_request_type
+            end
+            ## 
+            ## Sets the meetingRequestType property value. The meetingRequestType property
+            ## @param value Value to set for the meetingRequestType property.
+            ## @return a void
+            ## 
+            def meeting_request_type=(value)
+                @meeting_request_type = value
             end
             ## 
             ## Gets the previousEndDateTime property value. If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
@@ -135,6 +154,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("allowNewTimeProposals", @allow_new_time_proposals)
+                writer.write_enum_value("meetingRequestType", @meeting_request_type)
                 writer.write_object_value("previousEndDateTime", @previous_end_date_time)
                 writer.write_object_value("previousLocation", @previous_location)
                 writer.write_object_value("previousStartDateTime", @previous_start_date_time)

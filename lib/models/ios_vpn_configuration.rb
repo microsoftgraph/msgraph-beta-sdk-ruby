@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @cloud_name = value
             end
             ## 
-            ## Instantiates a new iosVpnConfiguration and sets the default values.
+            ## Instantiates a new IosVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

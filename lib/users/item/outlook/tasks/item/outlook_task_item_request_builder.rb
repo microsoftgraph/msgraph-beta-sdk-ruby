@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}{?%24select}")
                             end
                             ## 
-                            ## Delete the specified Outlook task in the user's mailbox.
+                            ## Delete navigation property tasks for users
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -49,12 +49,11 @@ module MicrosoftGraphBeta
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get the properties and relationships of an Outlook task in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                            ## The user's Outlook tasks. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of outlook_task
                             ## 
@@ -63,12 +62,11 @@ module MicrosoftGraphBeta
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OutlookTask.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                            ## Update the navigation property tasks in users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of outlook_task
@@ -79,46 +77,46 @@ module MicrosoftGraphBeta
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::OutlookTask.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete the specified Outlook task in the user's mailbox.
+                            ## Delete navigation property tasks for users
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Get the properties and relationships of an Outlook task in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                            ## The user's Outlook tasks. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                            ## Update the navigation property tasks in users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -126,20 +124,29 @@ module MicrosoftGraphBeta
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a outlook_task_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return OutlookTaskItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 
-                            # Get the properties and relationships of an Outlook task in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+                            # The user's Outlook tasks. Read-only. Nullable.
                             class OutlookTaskItemRequestBuilderGetQueryParameters
                                 
                                 ## 

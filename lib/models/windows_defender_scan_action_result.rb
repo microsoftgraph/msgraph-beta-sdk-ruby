@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Scan type either full scan or quick scan
             @scan_type
             ## 
-            ## Instantiates a new windowsDefenderScanActionResult and sets the default values.
+            ## Instantiates a new WindowsDefenderScanActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

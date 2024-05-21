@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The question asked in order to get the value of the attribute
             @question
             ## 
-            ## Instantiates a new accessPackageResourceAttributeQuestion and sets the default values.
+            ## Instantiates a new AccessPackageResourceAttributeQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()
