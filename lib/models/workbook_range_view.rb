@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WorkbookRangeView < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The cellAddresses property
+            # Represents the cell addresses
             @cell_addresses
             ## 
             # Returns the number of visible columns. Read-only.
@@ -34,23 +34,23 @@ module MicrosoftGraphBeta
             # Represents a collection of range views associated with the range. Read-only. Read-only.
             @rows
             ## 
-            # Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            # Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
             @text
             ## 
             # Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
             @value_types
             ## 
-            # Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            # Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             @values
             ## 
-            ## Gets the cellAddresses property value. The cellAddresses property
+            ## Gets the cellAddresses property value. Represents the cell addresses
             ## @return a json
             ## 
             def cell_addresses
                 return @cell_addresses
             end
             ## 
-            ## Sets the cellAddresses property value. The cellAddresses property
+            ## Sets the cellAddresses property value. Represents the cell addresses
             ## @param value Value to set for the cellAddresses property.
             ## @return a void
             ## 
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                 @column_count = value
             end
             ## 
-            ## Instantiates a new workbookRangeView and sets the default values.
+            ## Instantiates a new WorkbookRangeView and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -235,14 +235,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("values", @values)
             end
             ## 
-            ## Gets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            ## Gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
             ## @return a json
             ## 
             def text
                 return @text
             end
             ## 
-            ## Sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            ## Sets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
             ## @param value Value to set for the text property.
             ## @return a void
             ## 
@@ -265,14 +265,14 @@ module MicrosoftGraphBeta
                 @value_types = value
             end
             ## 
-            ## Gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @return a json
             ## 
             def values
                 return @values
             end
             ## 
-            ## Sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @param value Value to set for the values property.
             ## @return a void
             ## 

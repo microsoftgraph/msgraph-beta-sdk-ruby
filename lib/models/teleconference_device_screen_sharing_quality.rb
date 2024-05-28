@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class TeleconferenceDeviceScreenSharingQuality < MicrosoftGraphBeta::Models::TeleconferenceDeviceVideoQuality
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new teleconferenceDeviceScreenSharingQuality and sets the default values.
+            ## Instantiates a new TeleconferenceDeviceScreenSharingQuality and sets the default values.
             ## @return a void
             ## 
             def initialize()

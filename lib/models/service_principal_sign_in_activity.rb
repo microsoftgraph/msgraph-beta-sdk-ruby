@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @application_authentication_resource_sign_in_activity = value
             end
             ## 
-            ## Instantiates a new servicePrincipalSignInActivity and sets the default values.
+            ## Instantiates a new ServicePrincipalSignInActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

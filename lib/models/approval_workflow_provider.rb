@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @business_flows_with_requests_awaiting_my_decision = value
             end
             ## 
-            ## Instantiates a new approvalWorkflowProvider and sets the default values.
+            ## Instantiates a new ApprovalWorkflowProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

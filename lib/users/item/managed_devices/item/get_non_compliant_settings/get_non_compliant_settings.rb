@@ -1,1 +1,1 @@
-require_relative 'get_non_compliant_settings_response'
+require_relative 'get_non_compliant_settings_get_response'

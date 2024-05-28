@@ -1048,7 +1048,7 @@ module MicrosoftGraphBeta
                 @bit_locker_system_drive_policy = value
             end
             ## 
-            ## Instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
+            ## Instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

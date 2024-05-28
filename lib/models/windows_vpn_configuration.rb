@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @connection_name = value
             end
             ## 
-            ## Instantiates a new windowsVpnConfiguration and sets the default values.
+            ## Instantiates a new WindowsVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

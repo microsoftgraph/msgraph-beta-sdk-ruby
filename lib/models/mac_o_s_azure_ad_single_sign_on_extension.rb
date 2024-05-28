@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @configurations = value
             end
             ## 
-            ## Instantiates a new macOSAzureAdSingleSignOnExtension and sets the default values.
+            ## Instantiates a new MacOSAzureAdSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

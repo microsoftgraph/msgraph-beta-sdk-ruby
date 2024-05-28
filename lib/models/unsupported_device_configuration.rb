@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The type of entity that would be returned otherwise.
             @original_entity_type_name
             ## 
-            ## Instantiates a new unsupportedDeviceConfiguration and sets the default values.
+            ## Instantiates a new UnsupportedDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

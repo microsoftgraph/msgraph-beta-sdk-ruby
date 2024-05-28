@@ -93,7 +93,7 @@ module MicrosoftGraphBeta
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new win32LobApp and sets the default values.
+            ## Instantiates a new Win32LobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +107,14 @@ module MicrosoftGraphBeta
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
+                    end
+                end
                 return Win32LobApp.new
             end
             ## 
@@ -146,7 +154,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "allowAvailableUninstall" => lambda {|n| @allow_available_uninstall = n.get_boolean_value() },
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "detectionRules" => lambda {|n| @detection_rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Win32LobAppDetection.create_from_discriminator_value(pn) }) },
                     "displayVersion" => lambda {|n| @display_version = n.get_string_value() },
                     "installCommandLine" => lambda {|n| @install_command_line = n.get_string_value() },

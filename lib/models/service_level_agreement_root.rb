@@ -7,17 +7,17 @@ module MicrosoftGraphBeta
         class ServiceLevelAgreementRoot < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Collects the Azure AD SLA attainment for each month for an Azure AD tenant.
+            # Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
             @azure_a_d_authentication
             ## 
-            ## Gets the azureADAuthentication property value. Collects the Azure AD SLA attainment for each month for an Azure AD tenant.
+            ## Gets the azureADAuthentication property value. Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
             ## @return a azure_a_d_authentication
             ## 
             def azure_a_d_authentication
                 return @azure_a_d_authentication
             end
             ## 
-            ## Sets the azureADAuthentication property value. Collects the Azure AD SLA attainment for each month for an Azure AD tenant.
+            ## Sets the azureADAuthentication property value. Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
             ## @param value Value to set for the azureADAuthentication property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @azure_a_d_authentication = value
             end
             ## 
-            ## Instantiates a new serviceLevelAgreementRoot and sets the default values.
+            ## Instantiates a new ServiceLevelAgreementRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

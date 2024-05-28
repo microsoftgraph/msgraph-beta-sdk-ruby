@@ -9,6 +9,7 @@ module MicrosoftGraphBeta
             LinkToMalwareFile: :LinkToMalwareFile,
             UnknownFutureValue: :UnknownFutureValue,
             OAuthConsentGrant: :OAuthConsentGrant,
+            PhishTraining: :PhishTraining,
         }
     end
 end

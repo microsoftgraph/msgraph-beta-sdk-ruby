@@ -10,19 +10,19 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The containerFilter property
+            # The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             @container_filter
             ## 
-            # true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            # true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             @editable
             ## 
-            # The groupFilter property
+            # The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             @group_filter
             ## 
             # Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
             @id
             ## 
-            # Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            # Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             @metadata
             ## 
             # Human-readable name of the synchronization rule. Not nullable.
@@ -43,36 +43,36 @@ module MicrosoftGraphBeta
             # Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
             @target_directory_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new synchronizationRule and sets the default values.
+            ## Instantiates a new SynchronizationRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the containerFilter property value. The containerFilter property
+            ## Gets the containerFilter property value. The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             ## @return a container_filter
             ## 
             def container_filter
                 return @container_filter
             end
             ## 
-            ## Sets the containerFilter property value. The containerFilter property
+            ## Sets the containerFilter property value. The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             ## @param value Value to set for the containerFilter property.
             ## @return a void
             ## 
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 return SynchronizationRule.new
             end
             ## 
-            ## Gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            ## Gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             ## @return a boolean
             ## 
             def editable
                 return @editable
             end
             ## 
-            ## Sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            ## Sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             ## @param value Value to set for the editable property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the groupFilter property value. The groupFilter property
+            ## Gets the groupFilter property value. The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             ## @return a group_filter
             ## 
             def group_filter
                 return @group_filter
             end
             ## 
-            ## Sets the groupFilter property value. The groupFilter property
+            ## Sets the groupFilter property value. The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.
             ## @param value Value to set for the groupFilter property.
             ## @return a void
             ## 
@@ -153,14 +153,14 @@ module MicrosoftGraphBeta
                 @id = value
             end
             ## 
-            ## Gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            ## Gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             ## @return a string_key_string_value_pair
             ## 
             def metadata
                 return @metadata
             end
             ## 
-            ## Sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            ## Sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             ## @param value Value to set for the metadata property.
             ## @return a void
             ## 

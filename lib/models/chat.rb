@@ -17,6 +17,9 @@ module MicrosoftGraphBeta
             # A collection of all the apps in the chat. Nullable.
             @installed_apps
             ## 
+            # Indicates whether the chat is hidden for all its members. Read-only.
+            @is_hidden_for_all_members
+            ## 
             # Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
             @last_message_preview
             ## 
@@ -71,7 +74,7 @@ module MicrosoftGraphBeta
                 @chat_type = value
             end
             ## 
-            ## Instantiates a new chat and sets the default values.
+            ## Instantiates a new Chat and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,6 +113,7 @@ module MicrosoftGraphBeta
                     "chatType" => lambda {|n| @chat_type = n.get_enum_value(MicrosoftGraphBeta::Models::ChatType) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "installedApps" => lambda {|n| @installed_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }) },
+                    "isHiddenForAllMembers" => lambda {|n| @is_hidden_for_all_members = n.get_boolean_value() },
                     "lastMessagePreview" => lambda {|n| @last_message_preview = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ChatMessageInfo.create_from_discriminator_value(pn) }) },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConversationMember.create_from_discriminator_value(pn) }) },
@@ -139,6 +143,21 @@ module MicrosoftGraphBeta
             ## 
             def installed_apps=(value)
                 @installed_apps = value
+            end
+            ## 
+            ## Gets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+            ## @return a boolean
+            ## 
+            def is_hidden_for_all_members
+                return @is_hidden_for_all_members
+            end
+            ## 
+            ## Sets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+            ## @param value Value to set for the isHiddenForAllMembers property.
+            ## @return a void
+            ## 
+            def is_hidden_for_all_members=(value)
+                @is_hidden_for_all_members = value
             end
             ## 
             ## Gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
@@ -271,6 +290,7 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("chatType", @chat_type)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("installedApps", @installed_apps)
+                writer.write_boolean_value("isHiddenForAllMembers", @is_hidden_for_all_members)
                 writer.write_object_value("lastMessagePreview", @last_message_preview)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_collection_of_object_values("members", @members)

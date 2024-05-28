@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The recovery keys associated with the bitlocker entity.
             @recovery_keys
             ## 
-            ## Instantiates a new bitlocker and sets the default values.
+            ## Instantiates a new Bitlocker and sets the default values.
             ## @return a void
             ## 
             def initialize()

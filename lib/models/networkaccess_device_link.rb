@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class NetworkaccessDeviceLink < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+            # Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
             @bandwidth_capacity_in_mbps
             ## 
             # The bgpConfiguration property
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The deviceVendor property
             @device_vendor
             ## 
-            # Specifies the client IPv4 of the link
+            # The public IP address of your CPE (customer premise equipment) device.
             @ip_address
             ## 
             # last modified time.
@@ -32,14 +32,14 @@ module MicrosoftGraphBeta
             # The tunnelConfiguration property
             @tunnel_configuration
             ## 
-            ## Gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+            ## Gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
             ## @return a networkaccess_bandwidth_capacity_in_mbps
             ## 
             def bandwidth_capacity_in_mbps
                 return @bandwidth_capacity_in_mbps
             end
             ## 
-            ## Sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+            ## Sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
             ## @param value Value to set for the bandwidthCapacityInMbps property.
             ## @return a void
             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                 @bgp_configuration = value
             end
             ## 
-            ## Instantiates a new networkaccessDeviceLink and sets the default values.
+            ## Instantiates a new NetworkaccessDeviceLink and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -109,14 +109,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the ipAddress property value. Specifies the client IPv4 of the link
+            ## Gets the ipAddress property value. The public IP address of your CPE (customer premise equipment) device.
             ## @return a string
             ## 
             def ip_address
                 return @ip_address
             end
             ## 
-            ## Sets the ipAddress property value. Specifies the client IPv4 of the link
+            ## Sets the ipAddress property value. The public IP address of your CPE (customer premise equipment) device.
             ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 

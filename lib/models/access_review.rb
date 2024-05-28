@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class AccessReview < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The business flow template identifier. Required on create.  This value is case sensitive.
+            # The business flow template identifier. Required on create. This value is case sensitive.
             @business_flow_template_id
             ## 
             # The user who created this review.
@@ -23,19 +23,19 @@ module MicrosoftGraphBeta
             # The access review name. Required on create.
             @display_name
             ## 
-            # The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+            # The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.
             @end_date_time
             ## 
-            # The collection of access reviews instances past, present and future, if this object is a recurring access review.
+            # The collection of access reviews instances past, present, and future, if this object is a recurring access review.
             @instances
             ## 
             # The collection of decisions for the caller, if the caller is a reviewer.
             @my_decisions
             ## 
-            # The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+            # The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
             @reviewed_entity
             ## 
-            # The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+            # The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.
             @reviewer_type
             ## 
             # The collection of reviewers for an access review, if access review reviewerType is of type delegated.
@@ -44,20 +44,20 @@ module MicrosoftGraphBeta
             # The settings of an accessReview, see type definition below.
             @settings
             ## 
-            # The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+            # The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.
             @start_date_time
             ## 
             # This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
             @status
             ## 
-            ## Gets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
+            ## Gets the businessFlowTemplateId property value. The business flow template identifier. Required on create. This value is case sensitive.
             ## @return a string
             ## 
             def business_flow_template_id
                 return @business_flow_template_id
             end
             ## 
-            ## Sets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
+            ## Sets the businessFlowTemplateId property value. The business flow template identifier. Required on create. This value is case sensitive.
             ## @param value Value to set for the businessFlowTemplateId property.
             ## @return a void
             ## 
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @business_flow_template_id = value
             end
             ## 
-            ## Instantiates a new accessReview and sets the default values.
+            ## Instantiates a new AccessReview and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+            ## Gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+            ## Sets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -178,14 +178,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+            ## Gets the instances property value. The collection of access reviews instances past, present, and future, if this object is a recurring access review.
             ## @return a access_review
             ## 
             def instances
                 return @instances
             end
             ## 
-            ## Sets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+            ## Sets the instances property value. The collection of access reviews instances past, present, and future, if this object is a recurring access review.
             ## @param value Value to set for the instances property.
             ## @return a void
             ## 
@@ -208,14 +208,14 @@ module MicrosoftGraphBeta
                 @my_decisions = value
             end
             ## 
-            ## Gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+            ## Gets the reviewedEntity property value. The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
             ## @return a identity
             ## 
             def reviewed_entity
                 return @reviewed_entity
             end
             ## 
-            ## Sets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+            ## Sets the reviewedEntity property value. The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
             ## @param value Value to set for the reviewedEntity property.
             ## @return a void
             ## 
@@ -223,14 +223,14 @@ module MicrosoftGraphBeta
                 @reviewed_entity = value
             end
             ## 
-            ## Gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+            ## Gets the reviewerType property value. The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.
             ## @return a string
             ## 
             def reviewer_type
                 return @reviewer_type
             end
             ## 
-            ## Sets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+            ## Sets the reviewerType property value. The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.
             ## @param value Value to set for the reviewerType property.
             ## @return a void
             ## 
@@ -291,14 +291,14 @@ module MicrosoftGraphBeta
                 @settings = value
             end
             ## 
-            ## Gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+            ## Gets the startDateTime property value. The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+            ## Sets the startDateTime property value. The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 

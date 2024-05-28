@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
             @unhealthy_threshold
             ## 
-            ## Instantiates a new microsoftTunnelHealthThreshold and sets the default values.
+            ## Instantiates a new MicrosoftTunnelHealthThreshold and sets the default values.
             ## @return a void
             ## 
             def initialize()
