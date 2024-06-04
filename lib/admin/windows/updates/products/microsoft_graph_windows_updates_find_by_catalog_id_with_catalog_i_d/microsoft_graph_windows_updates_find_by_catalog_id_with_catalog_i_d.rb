@@ -1,0 +1,1 @@
+require_relative 'find_by_catalog_id_with_catalog_i_d_get_response'

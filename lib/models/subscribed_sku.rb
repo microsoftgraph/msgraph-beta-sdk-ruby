@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The SKU part number; for example, AAD_PREMIUM or RMSBASIC. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
             @sku_part_number
             ## 
-            # The subscriptionIds property
+            # A list of all subscription IDs associated with this SKU.
             @subscription_ids
             ## 
             ## Gets the accountId property value. The unique ID of the account this SKU belongs to.
@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new subscribedSku and sets the default values.
+            ## Instantiates a new SubscribedSku and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -225,14 +225,14 @@ module MicrosoftGraphBeta
                 @sku_part_number = value
             end
             ## 
-            ## Gets the subscriptionIds property value. The subscriptionIds property
+            ## Gets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
             ## @return a string
             ## 
             def subscription_ids
                 return @subscription_ids
             end
             ## 
-            ## Sets the subscriptionIds property value. The subscriptionIds property
+            ## Sets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
             ## @param value Value to set for the subscriptionIds property.
             ## @return a void
             ## 

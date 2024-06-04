@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The location property
             @location
             ## 
-            ## Instantiates a new documentCommentReply and sets the default values.
+            ## Instantiates a new DocumentCommentReply and sets the default values.
             ## @return a void
             ## 
             def initialize()

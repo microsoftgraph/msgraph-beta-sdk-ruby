@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            # Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             @audiences
             ## 
             # Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
@@ -22,38 +22,35 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Properties bag of the web part.
-            @properties
-            ## 
             # Contains collections of data that can be processed by server side services like search index and link fixup.
             @server_processed_content
             ## 
             # Title of the web part.
             @title
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Gets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @return a string
             ## 
             def audiences
                 return @audiences
             end
             ## 
-            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.
+            ## Sets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
             ## @param value Value to set for the audiences property.
             ## @return a void
             ## 
@@ -61,7 +58,7 @@ module MicrosoftGraphBeta
                 @audiences = value
             end
             ## 
-            ## Instantiates a new webPartData and sets the default values.
+            ## Instantiates a new WebPartData and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -116,7 +113,6 @@ module MicrosoftGraphBeta
                     "dataVersion" => lambda {|n| @data_version = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "properties" => lambda {|n| @properties = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Json.create_from_discriminator_value(pn) }) },
                     "serverProcessedContent" => lambda {|n| @server_processed_content = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ServerProcessedContent.create_from_discriminator_value(pn) }) },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 }
@@ -137,21 +133,6 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the properties property value. Properties bag of the web part.
-            ## @return a json
-            ## 
-            def properties
-                return @properties
-            end
-            ## 
-            ## Sets the properties property value. Properties bag of the web part.
-            ## @param value Value to set for the properties property.
-            ## @return a void
-            ## 
-            def properties=(value)
-                @properties = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -162,7 +143,6 @@ module MicrosoftGraphBeta
                 writer.write_string_value("dataVersion", @data_version)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("properties", @properties)
                 writer.write_object_value("serverProcessedContent", @server_processed_content)
                 writer.write_string_value("title", @title)
                 writer.write_additional_data(@additional_data)

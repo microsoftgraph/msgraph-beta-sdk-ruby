@@ -7,20 +7,23 @@ module MicrosoftGraphBeta
         class EducationSubmissionResource < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            # Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.
             @assignment_resource_url
+            ## 
+            # The dependentResources property
+            @dependent_resources
             ## 
             # Resource object.
             @resource
             ## 
-            ## Gets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            ## Gets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.
             ## @return a string
             ## 
             def assignment_resource_url
                 return @assignment_resource_url
             end
             ## 
-            ## Sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            ## Sets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.
             ## @param value Value to set for the assignmentResourceUrl property.
             ## @return a void
             ## 
@@ -28,7 +31,7 @@ module MicrosoftGraphBeta
                 @assignment_resource_url = value
             end
             ## 
-            ## Instantiates a new educationSubmissionResource and sets the default values.
+            ## Instantiates a new EducationSubmissionResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,12 +47,28 @@ module MicrosoftGraphBeta
                 return EducationSubmissionResource.new
             end
             ## 
+            ## Gets the dependentResources property value. The dependentResources property
+            ## @return a education_submission_resource
+            ## 
+            def dependent_resources
+                return @dependent_resources
+            end
+            ## 
+            ## Sets the dependentResources property value. The dependentResources property
+            ## @param value Value to set for the dependentResources property.
+            ## @return a void
+            ## 
+            def dependent_resources=(value)
+                @dependent_resources = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "assignmentResourceUrl" => lambda {|n| @assignment_resource_url = n.get_string_value() },
+                    "dependentResources" => lambda {|n| @dependent_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationSubmissionResource.create_from_discriminator_value(pn) }) },
                     "resource" => lambda {|n| @resource = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationResource.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -77,6 +96,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("assignmentResourceUrl", @assignment_resource_url)
+                writer.write_collection_of_object_values("dependentResources", @dependent_resources)
                 writer.write_object_value("resource", @resource)
             end
         end

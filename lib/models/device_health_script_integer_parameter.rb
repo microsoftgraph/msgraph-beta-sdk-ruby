@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The default value of Integer param. Valid values -2147483648 to 2147483647
             @default_value
             ## 
-            ## Instantiates a new deviceHealthScriptIntegerParameter and sets the default values.
+            ## Instantiates a new DeviceHealthScriptIntegerParameter and sets the default values.
             ## @return a void
             ## 
             def initialize()

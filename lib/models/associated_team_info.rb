@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AssociatedTeamInfo < MicrosoftGraphBeta::Models::TeamInfo
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new associatedTeamInfo and sets the default values.
+            ## Instantiates a new AssociatedTeamInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

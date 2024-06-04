@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A generic representation of a team template definition for a team with a specific structure and configuration.
             @definitions
             ## 
-            ## Instantiates a new teamTemplate and sets the default values.
+            ## Instantiates a new TeamTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

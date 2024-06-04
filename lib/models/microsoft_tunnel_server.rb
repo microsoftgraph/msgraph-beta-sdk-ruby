@@ -13,6 +13,9 @@ module MicrosoftGraphBeta
             # The digest of the current agent image running on this server
             @agent_image_digest
             ## 
+            # Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+            @deployment_mode
+            ## 
             # The display name for the server. This property is required when a server is created and cannot be cleared during updates.
             @display_name
             ## 
@@ -40,7 +43,7 @@ module MicrosoftGraphBeta
                 @agent_image_digest = value
             end
             ## 
-            ## Instantiates a new microsoftTunnelServer and sets the default values.
+            ## Instantiates a new MicrosoftTunnelServer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,6 +57,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return MicrosoftTunnelServer.new
+            end
+            ## 
+            ## Gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+            ## @return a microsoft_tunnel_deployment_mode
+            ## 
+            def deployment_mode
+                return @deployment_mode
+            end
+            ## 
+            ## Sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+            ## @param value Value to set for the deploymentMode property.
+            ## @return a void
+            ## 
+            def deployment_mode=(value)
+                @deployment_mode = value
             end
             ## 
             ## Gets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
@@ -77,6 +95,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "agentImageDigest" => lambda {|n| @agent_image_digest = n.get_string_value() },
+                    "deploymentMode" => lambda {|n| @deployment_mode = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftTunnelDeploymentMode) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastCheckinDateTime" => lambda {|n| @last_checkin_date_time = n.get_date_time_value() },
                     "serverImageDigest" => lambda {|n| @server_image_digest = n.get_string_value() },
@@ -107,6 +126,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("agentImageDigest", @agent_image_digest)
+                writer.write_enum_value("deploymentMode", @deployment_mode)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("lastCheckinDateTime", @last_checkin_date_time)
                 writer.write_string_value("serverImageDigest", @server_image_digest)

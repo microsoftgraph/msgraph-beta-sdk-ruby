@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The year property
             @year
             ## 
-            ## Instantiates a new industryDataInboundFlow and sets the default values.
+            ## Instantiates a new IndustryDataInboundFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()

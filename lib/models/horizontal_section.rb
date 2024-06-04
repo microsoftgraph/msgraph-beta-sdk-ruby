@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @columns = value
             end
             ## 
-            ## Instantiates a new horizontalSection and sets the default values.
+            ## Instantiates a new HorizontalSection and sets the default values.
             ## @return a void
             ## 
             def initialize()

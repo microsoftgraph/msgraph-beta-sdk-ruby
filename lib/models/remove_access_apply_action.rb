@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class RemoveAccessApplyAction < MicrosoftGraphBeta::Models::AccessReviewApplyAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new removeAccessApplyAction and sets the default values.
+            ## Instantiates a new RemoveAccessApplyAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

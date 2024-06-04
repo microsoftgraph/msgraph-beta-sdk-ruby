@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Instantiates a new connectionOperation and sets the default values.
+            ## Instantiates a new ConnectionOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

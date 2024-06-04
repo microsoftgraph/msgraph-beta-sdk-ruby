@@ -27,15 +27,15 @@ module MicrosoftGraphBeta
             # The total number of user experience analytics device scopes that are enabled. Valid values -2147483648 to 2147483647
             @total_device_scopes_enabled
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @completed_device_scope_ids = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceScopeSummary and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceScopeSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
             # An unsigned integer that specifies the increment of change for the spin control. The default value is 1.
             @spin_step
             ## 
-            ## Instantiates a new groupPolicyPresentationLongDecimalTextBox and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationLongDecimalTextBox and sets the default values.
             ## @return a void
             ## 
             def initialize()

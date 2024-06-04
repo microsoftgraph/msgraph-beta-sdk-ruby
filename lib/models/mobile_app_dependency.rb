@@ -12,13 +12,13 @@ module MicrosoftGraphBeta
             # Indicates the dependency type associated with a relationship between two mobile apps.
             @dependency_type
             ## 
-            # The total number of apps that directly or indirectly depend on the parent app.
+            # The total number of apps that directly or indirectly depend on the parent app. This property is read-only.
             @dependent_app_count
             ## 
-            # The total number of apps the child app directly or indirectly depends on.
+            # The total number of apps the child app directly or indirectly depends on. This property is read-only.
             @depends_on_app_count
             ## 
-            ## Instantiates a new mobileAppDependency and sets the default values.
+            ## Instantiates a new MobileAppDependency and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @dependency_type = value
             end
             ## 
-            ## Gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
+            ## Gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. This property is read-only.
             ## @return a integer
             ## 
             def dependent_app_count
                 return @dependent_app_count
             end
             ## 
-            ## Sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
+            ## Sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. This property is read-only.
             ## @param value Value to set for the dependentAppCount property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 @dependent_app_count = value
             end
             ## 
-            ## Gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
+            ## Gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. This property is read-only.
             ## @return a integer
             ## 
             def depends_on_app_count
                 return @depends_on_app_count
             end
             ## 
-            ## Sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
+            ## Sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. This property is read-only.
             ## @param value Value to set for the dependsOnAppCount property.
             ## @return a void
             ## 
@@ -99,8 +99,6 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_enum_value("dependencyType", @dependency_type)
-                writer.write_number_value("dependentAppCount", @dependent_app_count)
-                writer.write_number_value("dependsOnAppCount", @depends_on_app_count)
             end
         end
     end

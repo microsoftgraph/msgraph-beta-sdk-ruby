@@ -13,31 +13,31 @@ module MicrosoftGraphBeta
             # The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
             @detail
             ## 
-            # The eventTypes property
+            # List of risk event types. Deprecated. Use riskEventType instead.
             @event_types
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The riskEventTypes property
+            # The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.
             @risk_event_types
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new riskUserActivity and sets the default values.
+            ## Instantiates a new RiskUserActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @detail = value
             end
             ## 
-            ## Gets the eventTypes property value. The eventTypes property
+            ## Gets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
             ## @return a risk_event_type
             ## 
             def event_types
                 return @event_types
             end
             ## 
-            ## Sets the eventTypes property value. The eventTypes property
+            ## Sets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
             ## @param value Value to set for the eventTypes property.
             ## @return a void
             ## 
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the riskEventTypes property value. The riskEventTypes property
+            ## Gets the riskEventTypes property value. The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.
             ## @return a string
             ## 
             def risk_event_types
                 return @risk_event_types
             end
             ## 
-            ## Sets the riskEventTypes property value. The riskEventTypes property
+            ## Sets the riskEventTypes property value. The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.
             ## @param value Value to set for the riskEventTypes property.
             ## @return a void
             ## 

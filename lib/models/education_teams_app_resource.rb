@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new educationTeamsAppResource and sets the default values.
+            ## Instantiates a new EducationTeamsAppResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

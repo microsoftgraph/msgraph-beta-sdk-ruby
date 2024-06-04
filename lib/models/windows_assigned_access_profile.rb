@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @app_user_model_ids = value
             end
             ## 
-            ## Instantiates a new windowsAssignedAccessProfile and sets the default values.
+            ## Instantiates a new WindowsAssignedAccessProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

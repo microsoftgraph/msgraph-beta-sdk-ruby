@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new cloudPCConnectivityIssueCollectionResponse and sets the default values.
+            ## Instantiates a new CloudPCConnectivityIssueCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

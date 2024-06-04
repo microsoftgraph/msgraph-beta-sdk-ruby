@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            ## Instantiates a new personAnnualEvent and sets the default values.
+            ## Instantiates a new PersonAnnualEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

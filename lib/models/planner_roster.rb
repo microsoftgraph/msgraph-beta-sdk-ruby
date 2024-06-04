@@ -7,13 +7,31 @@ module MicrosoftGraphBeta
         class PlannerRoster < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The assignedSensitivityLabel property
+            @assigned_sensitivity_label
+            ## 
             # Retrieves the members of the plannerRoster.
             @members
             ## 
             # Retrieves the plans contained by the plannerRoster.
             @plans
             ## 
-            ## Instantiates a new plannerRoster and sets the default values.
+            ## Gets the assignedSensitivityLabel property value. The assignedSensitivityLabel property
+            ## @return a sensitivity_label_assignment
+            ## 
+            def assigned_sensitivity_label
+                return @assigned_sensitivity_label
+            end
+            ## 
+            ## Sets the assignedSensitivityLabel property value. The assignedSensitivityLabel property
+            ## @param value Value to set for the assignedSensitivityLabel property.
+            ## @return a void
+            ## 
+            def assigned_sensitivity_label=(value)
+                @assigned_sensitivity_label = value
+            end
+            ## 
+            ## Instantiates a new PlannerRoster and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,6 +52,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "assignedSensitivityLabel" => lambda {|n| @assigned_sensitivity_label = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SensitivityLabelAssignment.create_from_discriminator_value(pn) }) },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerRosterMember.create_from_discriminator_value(pn) }) },
                     "plans" => lambda {|n| @plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }) },
                 })
@@ -76,6 +95,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("assignedSensitivityLabel", @assigned_sensitivity_label)
                 writer.write_collection_of_object_values("members", @members)
                 writer.write_collection_of_object_values("plans", @plans)
             end

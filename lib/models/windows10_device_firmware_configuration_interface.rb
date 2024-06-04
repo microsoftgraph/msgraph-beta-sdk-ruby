@@ -147,7 +147,7 @@ module MicrosoftGraphBeta
                 @change_uefi_settings_permission = value
             end
             ## 
-            ## Instantiates a new windows10DeviceFirmwareConfigurationInterface and sets the default values.
+            ## Instantiates a new Windows10DeviceFirmwareConfigurationInterface and sets the default values.
             ## @return a void
             ## 
             def initialize()

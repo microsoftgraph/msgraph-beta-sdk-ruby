@@ -33,6 +33,14 @@ module MicrosoftGraphBeta
             ManagedIdentity: :ManagedIdentity,
             OverprivilegedApps: :OverprivilegedApps,
             UnknownFutureValue: :UnknownFutureValue,
+            LongLivedCredentials: :LongLivedCredentials,
+            AadConnectDeprecated: :AadConnectDeprecated,
+            AdalToMsalMigration: :AdalToMsalMigration,
+            OwnerlessApps: :OwnerlessApps,
+            InactiveGuests: :InactiveGuests,
+            AadGraphDeprecationApplication: :AadGraphDeprecationApplication,
+            AadGraphDeprecationServicePrincipal: :AadGraphDeprecationServicePrincipal,
+            MfaServerDeprecation: :MfaServerDeprecation,
         }
     end
 end

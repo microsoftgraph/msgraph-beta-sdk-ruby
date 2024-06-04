@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
             @scheduled_action_configurations
             ## 
-            ## Instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
+            ## Instantiates a new DeviceManagementComplianceScheduledActionForRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

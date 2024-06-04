@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Unique identifier of the team.
             @team_id
             ## 
-            ## Instantiates a new teamUnarchivedEventMessageDetail and sets the default values.
+            ## Instantiates a new TeamUnarchivedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

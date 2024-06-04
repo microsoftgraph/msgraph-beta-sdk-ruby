@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
             @updates
             ## 
-            ## Instantiates a new adminWindows and sets the default values.
+            ## Instantiates a new AdminWindows and sets the default values.
             ## @return a void
             ## 
             def initialize()

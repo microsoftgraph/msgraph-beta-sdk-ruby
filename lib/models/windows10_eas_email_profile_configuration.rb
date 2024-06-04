@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
                 @account_name = value
             end
             ## 
-            ## Instantiates a new windows10EasEmailProfileConfiguration and sets the default values.
+            ## Instantiates a new Windows10EasEmailProfileConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
