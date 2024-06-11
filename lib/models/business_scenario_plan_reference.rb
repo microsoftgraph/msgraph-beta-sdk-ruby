@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The title property of the plannerPlan.
             @title
             ## 
-            ## Instantiates a new businessScenarioPlanReference and sets the default values.
+            ## Instantiates a new BusinessScenarioPlanReference and sets the default values.
             ## @return a void
             ## 
             def initialize()

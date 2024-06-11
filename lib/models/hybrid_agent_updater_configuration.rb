@@ -20,18 +20,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The updateWindow property
+            # The time window during which the agent can receive updates.
             @update_window
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                 @allow_update_configuration_override = value
             end
             ## 
-            ## Instantiates a new hybridAgentUpdaterConfiguration and sets the default values.
+            ## Instantiates a new HybridAgentUpdaterConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -124,14 +124,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the updateWindow property value. The updateWindow property
+            ## Gets the updateWindow property value. The time window during which the agent can receive updates.
             ## @return a update_window
             ## 
             def update_window
                 return @update_window
             end
             ## 
-            ## Sets the updateWindow property value. The updateWindow property
+            ## Sets the updateWindow property value. The time window during which the agent can receive updates.
             ## @param value Value to set for the updateWindow property.
             ## @return a void
             ## 

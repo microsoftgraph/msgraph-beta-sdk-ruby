@@ -18,25 +18,25 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Not yet documented
+            # The text property
             @text
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
+            ## Instantiates a new DeviceManagementTroubleshootingErrorResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the text property value. Not yet documented
+            ## Gets the text property value. The text property
             ## @return a string
             ## 
             def text
                 return @text
             end
             ## 
-            ## Sets the text property value. Not yet documented
+            ## Sets the text property value. The text property
             ## @param value Value to set for the text property.
             ## @return a void
             ## 

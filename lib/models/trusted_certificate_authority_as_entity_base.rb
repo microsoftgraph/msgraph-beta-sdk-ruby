@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class TrustedCertificateAuthorityAsEntityBase < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The trustedCertificateAuthorities property
+            # Collection of trusted certificate authorities.
             @trusted_certificate_authorities
             ## 
-            ## Instantiates a new trustedCertificateAuthorityAsEntityBase and sets the default values.
+            ## Instantiates a new TrustedCertificateAuthorityAsEntityBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("trustedCertificateAuthorities", @trusted_certificate_authorities)
             end
             ## 
-            ## Gets the trustedCertificateAuthorities property value. The trustedCertificateAuthorities property
+            ## Gets the trustedCertificateAuthorities property value. Collection of trusted certificate authorities.
             ## @return a certificate_authority_as_entity
             ## 
             def trusted_certificate_authorities
                 return @trusted_certificate_authorities
             end
             ## 
-            ## Sets the trustedCertificateAuthorities property value. The trustedCertificateAuthorities property
+            ## Sets the trustedCertificateAuthorities property value. Collection of trusted certificate authorities.
             ## @param value Value to set for the trustedCertificateAuthorities property.
             ## @return a void
             ## 

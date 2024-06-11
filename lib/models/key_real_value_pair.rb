@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The real (floating-point) value of the key-value pair.
             @value
             ## 
-            ## Instantiates a new keyRealValuePair and sets the default values.
+            ## Instantiates a new KeyRealValuePair and sets the default values.
             ## @return a void
             ## 
             def initialize()

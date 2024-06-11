@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # The migrationStatus property
             @migration_status
             ## 
-            # Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            # Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             @migration_validation_details
             ## 
-            # This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+            # This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
             @relying_party_id
             ## 
-            # Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+            # Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
             @relying_party_name
             ## 
             # Specifies where the relying party expects to receive the token.
@@ -34,13 +34,13 @@ module MicrosoftGraphBeta
             # Number of successful sign ins on Active Directory Federation Service.
             @successful_sign_in_count
             ## 
-            # Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+            # Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
             @total_sign_in_count
             ## 
             # Number of unique users that have signed into the application.
             @unique_user_count
             ## 
-            ## Instantiates a new relyingPartyDetailedSummary and sets the default values.
+            ## Instantiates a new RelyingPartyDetailedSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @migration_status = value
             end
             ## 
-            ## Gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            ## Gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             ## @return a key_value_pair
             ## 
             def migration_validation_details
                 return @migration_validation_details
             end
             ## 
-            ## Sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+            ## Sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
             ## @param value Value to set for the migrationValidationDetails property.
             ## @return a void
             ## 
@@ -120,14 +120,14 @@ module MicrosoftGraphBeta
                 @migration_validation_details = value
             end
             ## 
-            ## Gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+            ## Gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
             ## @return a string
             ## 
             def relying_party_id
                 return @relying_party_id
             end
             ## 
-            ## Sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
+            ## Sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
             ## @param value Value to set for the relyingPartyId property.
             ## @return a void
             ## 
@@ -135,14 +135,14 @@ module MicrosoftGraphBeta
                 @relying_party_id = value
             end
             ## 
-            ## Gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+            ## Gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
             ## @return a string
             ## 
             def relying_party_name
                 return @relying_party_name
             end
             ## 
-            ## Sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
+            ## Sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
             ## @param value Value to set for the relyingPartyName property.
             ## @return a void
             ## 
@@ -230,14 +230,14 @@ module MicrosoftGraphBeta
                 @successful_sign_in_count = value
             end
             ## 
-            ## Gets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+            ## Gets the totalSignInCount property value. Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
             ## @return a int64
             ## 
             def total_sign_in_count
                 return @total_sign_in_count
             end
             ## 
-            ## Sets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
+            ## Sets the totalSignInCount property value. Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
             ## @param value Value to set for the totalSignInCount property.
             ## @return a void
             ## 

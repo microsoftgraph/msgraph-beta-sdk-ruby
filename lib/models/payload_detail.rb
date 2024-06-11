@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Payload coachmark details.
+            # The coachmarks property
             @coachmarks
             ## 
             # Payload content details.
@@ -22,29 +22,29 @@ module MicrosoftGraphBeta
             # The phishing URL used to target a user.
             @phishing_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the coachmarks property value. Payload coachmark details.
+            ## Gets the coachmarks property value. The coachmarks property
             ## @return a payload_coachmark
             ## 
             def coachmarks
                 return @coachmarks
             end
             ## 
-            ## Sets the coachmarks property value. Payload coachmark details.
+            ## Sets the coachmarks property value. The coachmarks property
             ## @param value Value to set for the coachmarks property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @coachmarks = value
             end
             ## 
-            ## Instantiates a new payloadDetail and sets the default values.
+            ## Instantiates a new PayloadDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

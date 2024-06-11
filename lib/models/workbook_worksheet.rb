@@ -28,10 +28,10 @@ module MicrosoftGraphBeta
             # Collection of tables that are part of the worksheet. Read-only.
             @tables
             ## 
-            # The tasks property
+            # Collection of document tasks on this worksheet. Read-only.
             @tasks
             ## 
-            # The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            # The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             @visibility
             ## 
             ## Gets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @charts = value
             end
             ## 
-            ## Instantiates a new workbookWorksheet and sets the default values.
+            ## Instantiates a new WorkbookWorksheet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -190,14 +190,14 @@ module MicrosoftGraphBeta
                 @tables = value
             end
             ## 
-            ## Gets the tasks property value. The tasks property
+            ## Gets the tasks property value. Collection of document tasks on this worksheet. Read-only.
             ## @return a workbook_document_task
             ## 
             def tasks
                 return @tasks
             end
             ## 
-            ## Sets the tasks property value. The tasks property
+            ## Sets the tasks property value. Collection of document tasks on this worksheet. Read-only.
             ## @param value Value to set for the tasks property.
             ## @return a void
             ## 
@@ -205,14 +205,14 @@ module MicrosoftGraphBeta
                 @tasks = value
             end
             ## 
-            ## Gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            ## Gets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             ## @return a string
             ## 
             def visibility
                 return @visibility
             end
             ## 
-            ## Sets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            ## Sets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             ## @param value Value to set for the visibility property.
             ## @return a void
             ## 

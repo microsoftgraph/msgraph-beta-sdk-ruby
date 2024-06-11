@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                 @certificate_thumbprint = value
             end
             ## 
-            ## Instantiates a new fileSecurityProfile and sets the default values.
+            ## Instantiates a new FileSecurityProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

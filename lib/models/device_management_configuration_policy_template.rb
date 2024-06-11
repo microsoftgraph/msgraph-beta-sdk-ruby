@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
                 @base_id = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationPolicyTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -147,10 +147,10 @@ module MicrosoftGraphBeta
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "displayVersion" => lambda {|n| @display_version = n.get_string_value() },
                     "lifecycleState" => lambda {|n| @lifecycle_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementTemplateLifecycleState) },
-                    "platforms" => lambda {|n| @platforms = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "platforms" => lambda {|n| @platforms = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
                     "settingTemplateCount" => lambda {|n| @setting_template_count = n.get_number_value() },
                     "settingTemplates" => lambda {|n| @setting_templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingTemplate.create_from_discriminator_value(pn) }) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                     "templateFamily" => lambda {|n| @template_family = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTemplateFamily) },
                     "version" => lambda {|n| @version = n.get_number_value() },
                 })

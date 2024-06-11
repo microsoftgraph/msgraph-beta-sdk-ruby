@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Gets or sets whether to enable expedited device check-ins.
             @enable_expedited_checkin
             ## 
-            ## Instantiates a new appleExpeditedCheckinConfigurationBase and sets the default values.
+            ## Instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

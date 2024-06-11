@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
         class ManagedTenantsCloudPcOverview < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
+            @frontline_licenses_count
+            ## 
             # Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
             @last_refreshed_date_time
             ## 
@@ -68,7 +71,7 @@ module MicrosoftGraphBeta
             # The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
             @total_enterprise_licenses
             ## 
-            ## Instantiates a new managedTenantsCloudPcOverview and sets the default values.
+            ## Instantiates a new ManagedTenantsCloudPcOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,11 +87,27 @@ module MicrosoftGraphBeta
                 return ManagedTenantsCloudPcOverview.new
             end
             ## 
+            ## Gets the frontlineLicensesCount property value. The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
+            ## @return a integer
+            ## 
+            def frontline_licenses_count
+                return @frontline_licenses_count
+            end
+            ## 
+            ## Sets the frontlineLicensesCount property value. The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
+            ## @param value Value to set for the frontlineLicensesCount property.
+            ## @return a void
+            ## 
+            def frontline_licenses_count=(value)
+                @frontline_licenses_count = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "frontlineLicensesCount" => lambda {|n| @frontline_licenses_count = n.get_number_value() },
                     "lastRefreshedDateTime" => lambda {|n| @last_refreshed_date_time = n.get_date_time_value() },
                     "numberOfCloudPcConnectionStatusFailed" => lambda {|n| @number_of_cloud_pc_connection_status_failed = n.get_number_value() },
                     "numberOfCloudPcConnectionStatusPassed" => lambda {|n| @number_of_cloud_pc_connection_status_passed = n.get_number_value() },
@@ -329,6 +348,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_number_value("frontlineLicensesCount", @frontline_licenses_count)
                 writer.write_date_time_value("lastRefreshedDateTime", @last_refreshed_date_time)
                 writer.write_number_value("numberOfCloudPcConnectionStatusFailed", @number_of_cloud_pc_connection_status_failed)
                 writer.write_number_value("numberOfCloudPcConnectionStatusPassed", @number_of_cloud_pc_connection_status_passed)

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
             @authentication_strength
             ## 
-            # The authenticationStrengths property
+            # DEPRECATED. See the authenticationStrength relationship instead.
             @authentication_strengths
             ## 
             # Read-only. Nullable. Returns a collection of the specified named locations.
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 @authentication_strength = value
             end
             ## 
-            ## Gets the authenticationStrengths property value. The authenticationStrengths property
+            ## Gets the authenticationStrengths property value. DEPRECATED. See the authenticationStrength relationship instead.
             ## @return a authentication_strength_root
             ## 
             def authentication_strengths
                 return @authentication_strengths
             end
             ## 
-            ## Sets the authenticationStrengths property value. The authenticationStrengths property
+            ## Sets the authenticationStrengths property value. DEPRECATED. See the authenticationStrength relationship instead.
             ## @param value Value to set for the authenticationStrengths property.
             ## @return a void
             ## 
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @authentication_strengths = value
             end
             ## 
-            ## Instantiates a new conditionalAccessRoot and sets the default values.
+            ## Instantiates a new ConditionalAccessRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

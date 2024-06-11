@@ -10,22 +10,22 @@ module MicrosoftGraphBeta
             # The display name of the role definition.
             @display_name
             ## 
-            # The external id of the role definition.
+            # The external ID of the role definition.
             @external_id
             ## 
             # Read-only. The associated resource for the role definition.
             @resource
             ## 
-            # Required. The id of the resource associated with the role definition.
+            # Required. The ID of the resource associated with the role definition.
             @resource_id
             ## 
             # The associated role setting for the role definition.
             @role_setting
             ## 
-            # The templateId property
+            # The unique identifier for the template.
             @template_id
             ## 
-            ## Instantiates a new governanceRoleDefinition and sets the default values.
+            ## Instantiates a new GovernanceRoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the externalId property value. The external id of the role definition.
+            ## Gets the externalId property value. The external ID of the role definition.
             ## @return a string
             ## 
             def external_id
                 return @external_id
             end
             ## 
-            ## Sets the externalId property value. The external id of the role definition.
+            ## Sets the externalId property value. The external ID of the role definition.
             ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 @resource = value
             end
             ## 
-            ## Gets the resourceId property value. Required. The id of the resource associated with the role definition.
+            ## Gets the resourceId property value. Required. The ID of the resource associated with the role definition.
             ## @return a string
             ## 
             def resource_id
                 return @resource_id
             end
             ## 
-            ## Sets the resourceId property value. Required. The id of the resource associated with the role definition.
+            ## Sets the resourceId property value. Required. The ID of the resource associated with the role definition.
             ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("templateId", @template_id)
             end
             ## 
-            ## Gets the templateId property value. The templateId property
+            ## Gets the templateId property value. The unique identifier for the template.
             ## @return a string
             ## 
             def template_id
                 return @template_id
             end
             ## 
-            ## Sets the templateId property value. The templateId property
+            ## Sets the templateId property value. The unique identifier for the template.
             ## @param value Value to set for the templateId property.
             ## @return a void
             ## 

@@ -132,7 +132,7 @@ module MicrosoftGraphBeta
                 @cache_name = value
             end
             ## 
-            ## Instantiates a new kerberosSingleSignOnExtension and sets the default values.
+            ## Instantiates a new KerberosSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

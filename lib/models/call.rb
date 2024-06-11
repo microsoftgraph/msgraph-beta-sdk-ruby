@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # The context associated with an incoming call. Read-only. Server generated.
@@ -61,31 +61,31 @@ module MicrosoftGraphBeta
             # The participants property
             @participants
             ## 
-            # The requestedModalities property
+            # The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             @requested_modalities
             ## 
-            # The resultInfo property
+            # The result information. For example, the result can hold termination reason. Read-only.
             @result_info
             ## 
-            # The ringingTimeoutInSeconds property
+            # Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
             @ringing_timeout_in_seconds
             ## 
-            # The routingPolicies property
+            # This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
             @routing_policies
             ## 
-            # The source property
+            # The originator of the call.
             @source
             ## 
-            # The state property
+            # The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
             @state
             ## 
-            # The subject property
+            # The subject of the conversation.
             @subject
             ## 
-            # The targets property
+            # The targets of the call. Required information for creating peer to peer call.
             @targets
             ## 
-            # The tenantId property
+            # Read-only. tenantId in Microsoft Entra ID.
             @tenant_id
             ## 
             # The terminationReason property
@@ -217,7 +217,7 @@ module MicrosoftGraphBeta
                 @chat_info = value
             end
             ## 
-            ## Instantiates a new call and sets the default values.
+            ## Instantiates a new Call and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -248,14 +248,14 @@ module MicrosoftGraphBeta
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 
@@ -421,14 +421,14 @@ module MicrosoftGraphBeta
                 @participants = value
             end
             ## 
-            ## Gets the requestedModalities property value. The requestedModalities property
+            ## Gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             ## @return a modality
             ## 
             def requested_modalities
                 return @requested_modalities
             end
             ## 
-            ## Sets the requestedModalities property value. The requestedModalities property
+            ## Sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             ## @param value Value to set for the requestedModalities property.
             ## @return a void
             ## 
@@ -436,14 +436,14 @@ module MicrosoftGraphBeta
                 @requested_modalities = value
             end
             ## 
-            ## Gets the resultInfo property value. The resultInfo property
+            ## Gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @return a result_info
             ## 
             def result_info
                 return @result_info
             end
             ## 
-            ## Sets the resultInfo property value. The resultInfo property
+            ## Sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @param value Value to set for the resultInfo property.
             ## @return a void
             ## 
@@ -451,14 +451,14 @@ module MicrosoftGraphBeta
                 @result_info = value
             end
             ## 
-            ## Gets the ringingTimeoutInSeconds property value. The ringingTimeoutInSeconds property
+            ## Gets the ringingTimeoutInSeconds property value. Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
             ## @return a integer
             ## 
             def ringing_timeout_in_seconds
                 return @ringing_timeout_in_seconds
             end
             ## 
-            ## Sets the ringingTimeoutInSeconds property value. The ringingTimeoutInSeconds property
+            ## Sets the ringingTimeoutInSeconds property value. Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
             ## @param value Value to set for the ringingTimeoutInSeconds property.
             ## @return a void
             ## 
@@ -466,14 +466,14 @@ module MicrosoftGraphBeta
                 @ringing_timeout_in_seconds = value
             end
             ## 
-            ## Gets the routingPolicies property value. The routingPolicies property
+            ## Gets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
             ## @return a routing_policy
             ## 
             def routing_policies
                 return @routing_policies
             end
             ## 
-            ## Sets the routingPolicies property value. The routingPolicies property
+            ## Sets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
             ## @param value Value to set for the routingPolicies property.
             ## @return a void
             ## 
@@ -520,14 +520,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("transcription", @transcription)
             end
             ## 
-            ## Gets the source property value. The source property
+            ## Gets the source property value. The originator of the call.
             ## @return a participant_info
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. The source property
+            ## Sets the source property value. The originator of the call.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -535,14 +535,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the state property value. The state property
+            ## Gets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
             ## @return a call_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state property
+            ## Sets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
             ## @param value Value to set for the state property.
             ## @return a void
             ## 
@@ -550,14 +550,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. The subject of the conversation.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. The subject of the conversation.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 
@@ -565,14 +565,14 @@ module MicrosoftGraphBeta
                 @subject = value
             end
             ## 
-            ## Gets the targets property value. The targets property
+            ## Gets the targets property value. The targets of the call. Required information for creating peer to peer call.
             ## @return a invitation_participant_info
             ## 
             def targets
                 return @targets
             end
             ## 
-            ## Sets the targets property value. The targets property
+            ## Sets the targets property value. The targets of the call. Required information for creating peer to peer call.
             ## @param value Value to set for the targets property.
             ## @return a void
             ## 
@@ -580,14 +580,14 @@ module MicrosoftGraphBeta
                 @targets = value
             end
             ## 
-            ## Gets the tenantId property value. The tenantId property
+            ## Gets the tenantId property value. Read-only. tenantId in Microsoft Entra ID.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The tenantId property
+            ## Sets the tenantId property value. Read-only. tenantId in Microsoft Entra ID.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
