@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
             @package_identifier
             ## 
-            ## Instantiates a new winGetApp and sets the default values.
+            ## Instantiates a new WinGetApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

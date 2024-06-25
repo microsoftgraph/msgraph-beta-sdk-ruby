@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class ProvisioningObjectSummary < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The action property
+            # Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).
             @action
             ## 
             # Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, gt, lt) and orderby.
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Details of each property that was modified in this provisioning action on this object.
             @modified_properties
             ## 
-            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             @provisioning_action
             ## 
             # Details of provisioning status. Supports $filter (eq, contains) for status.
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             # Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             @source_system
             ## 
-            # The statusInfo property
+            # Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.
             @status_info
             ## 
             # Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
@@ -59,17 +59,17 @@ module MicrosoftGraphBeta
             # Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             @target_system
             ## 
-            # Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            # Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             @tenant_id
             ## 
-            ## Gets the action property value. The action property
+            ## Gets the action property value. Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def action
                 return @action
             end
             ## 
-            ## Sets the action property value. The action property
+            ## Sets the action property value. Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).
             ## @param value Value to set for the action property.
             ## @return a void
             ## 
@@ -107,7 +107,7 @@ module MicrosoftGraphBeta
                 @change_id = value
             end
             ## 
-            ## Instantiates a new provisioningObjectSummary and sets the default values.
+            ## Instantiates a new ProvisioningObjectSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -224,14 +224,14 @@ module MicrosoftGraphBeta
                 @modified_properties = value
             end
             ## 
-            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             ## @return a provisioning_action
             ## 
             def provisioning_action
                 return @provisioning_action
             end
             ## 
-            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
             ## @param value Value to set for the provisioningAction property.
             ## @return a void
             ## 
@@ -341,14 +341,14 @@ module MicrosoftGraphBeta
                 @source_system = value
             end
             ## 
-            ## Gets the statusInfo property value. The statusInfo property
+            ## Gets the statusInfo property value. Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.
             ## @return a status_base
             ## 
             def status_info
                 return @status_info
             end
             ## 
-            ## Sets the statusInfo property value. The statusInfo property
+            ## Sets the statusInfo property value. Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.
             ## @param value Value to set for the statusInfo property.
             ## @return a void
             ## 
@@ -386,14 +386,14 @@ module MicrosoftGraphBeta
                 @target_system = value
             end
             ## 
-            ## Gets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            ## Gets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            ## Sets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

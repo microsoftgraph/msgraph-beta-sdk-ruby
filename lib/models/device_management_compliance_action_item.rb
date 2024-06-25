@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @action_type = value
             end
             ## 
-            ## Instantiates a new deviceManagementComplianceActionItem and sets the default values.
+            ## Instantiates a new DeviceManagementComplianceActionItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

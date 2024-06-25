@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The rolePermissions property
             @role_permissions
             ## 
-            ## Instantiates a new defaultUserRoleOverride and sets the default values.
+            ## Instantiates a new DefaultUserRoleOverride and sets the default values.
             ## @return a void
             ## 
             def initialize()

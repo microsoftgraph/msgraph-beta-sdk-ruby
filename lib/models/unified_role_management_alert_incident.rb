@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class UnifiedRoleManagementAlertIncident < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new unifiedRoleManagementAlertIncident and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

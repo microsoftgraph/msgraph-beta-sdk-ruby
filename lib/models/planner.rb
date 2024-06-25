@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @buckets = value
             end
             ## 
-            ## Instantiates a new planner and sets the default values.
+            ## Instantiates a new Planner and sets the default values.
             ## @return a void
             ## 
             def initialize()

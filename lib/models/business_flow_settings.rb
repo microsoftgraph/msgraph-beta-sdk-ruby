@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The durationInDays property
             @duration_in_days
             ## 
-            ## Instantiates a new businessFlowSettings and sets the default values.
+            ## Instantiates a new BusinessFlowSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -22,10 +22,10 @@ module MicrosoftGraphBeta
             # A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
             @origin_id
             ## 
-            # The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+            # The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup, or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
             @origin_system
             ## 
-            # The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+            # The value is PendingFulfillment before the access package assignment is delivered to the origin system, and Fulfilled after the access package assignment is delivered to the origin system.
             @status
             ## 
             ## Gets the accessPackageAssignments property value. The access package assignments resulting in this role assignment. Read-only. Nullable.
@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @access_package_subject = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentResourceRole and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentResourceRole and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -134,14 +134,14 @@ module MicrosoftGraphBeta
                 @origin_id = value
             end
             ## 
-            ## Gets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+            ## Gets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup, or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
             ## @return a string
             ## 
             def origin_system
                 return @origin_system
             end
             ## 
-            ## Sets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+            ## Sets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup, or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
             ## @param value Value to set for the originSystem property.
             ## @return a void
             ## 
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("status", @status)
             end
             ## 
-            ## Gets the status property value. The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+            ## Gets the status property value. The value is PendingFulfillment before the access package assignment is delivered to the origin system, and Fulfilled after the access package assignment is delivered to the origin system.
             ## @return a string
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+            ## Sets the status property value. The value is PendingFulfillment before the access package assignment is delivered to the origin system, and Fulfilled after the access package assignment is delivered to the origin system.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @connector_group_type = value
             end
             ## 
-            ## Instantiates a new connectorGroup and sets the default values.
+            ## Instantiates a new ConnectorGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

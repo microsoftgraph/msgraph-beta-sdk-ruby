@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class WindowsManagedDevice < MicrosoftGraphBeta::Models::ManagedDevice
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsManagedDevice and sets the default values.
+            ## Instantiates a new WindowsManagedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

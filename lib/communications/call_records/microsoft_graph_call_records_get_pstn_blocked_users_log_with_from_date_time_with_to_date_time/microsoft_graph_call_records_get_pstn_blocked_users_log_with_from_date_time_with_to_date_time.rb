@@ -1,1 +1,1 @@
-require_relative 'get_pstn_blocked_users_log_with_from_date_time_with_to_date_time_response'
+require_relative 'get_pstn_blocked_users_log_with_from_date_time_with_to_date_time_get_response'

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new windowsAutopilotDeploymentProfileCollectionResponse and sets the default values.
+            ## Instantiates a new WindowsAutopilotDeploymentProfileCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

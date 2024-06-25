@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class WindowsDeviceADAccount < MicrosoftGraphBeta::Models::WindowsDeviceAccount
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Not yet documented
+            # The domainName property
             @domain_name
             ## 
-            # Not yet documented
+            # The userName property
             @user_name
             ## 
-            ## Instantiates a new windowsDeviceADAccount and sets the default values.
+            ## Instantiates a new WindowsDeviceADAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return WindowsDeviceADAccount.new
             end
             ## 
-            ## Gets the domainName property value. Not yet documented
+            ## Gets the domainName property value. The domainName property
             ## @return a string
             ## 
             def domain_name
                 return @domain_name
             end
             ## 
-            ## Sets the domainName property value. Not yet documented
+            ## Sets the domainName property value. The domainName property
             ## @param value Value to set for the domainName property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userName", @user_name)
             end
             ## 
-            ## Gets the userName property value. Not yet documented
+            ## Gets the userName property value. The userName property
             ## @return a string
             ## 
             def user_name
                 return @user_name
             end
             ## 
-            ## Sets the userName property value. Not yet documented
+            ## Sets the userName property value. The userName property
             ## @param value Value to set for the userName property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new accessPackageCollectionResponse and sets the default values.
+            ## Instantiates a new AccessPackageCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

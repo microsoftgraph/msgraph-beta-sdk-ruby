@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The port
             @port
             ## 
-            ## Instantiates a new androidDeviceOwnerGlobalProxyDirect and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerGlobalProxyDirect and sets the default values.
             ## @return a void
             ## 
             def initialize()

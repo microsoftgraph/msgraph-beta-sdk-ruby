@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class Simulation < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            # The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             @attack_technique
             ## 
             # Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # Simulation duration in days.
             @duration_in_days
             ## 
-            # The endUserNotificationSetting property
+            # Details about the end user notification setting.
             @end_user_notification_setting
             ## 
             # Users excluded from the simulation.
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
             @is_automated
             ## 
-            # The landingPage property
+            # The landing page associated with a simulation during its creation.
             @landing_page
             ## 
             # Identity of the user who most recently modified the attack simulation and training campaign.
@@ -59,10 +59,10 @@ module MicrosoftGraphBeta
             # Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
             @launch_date_time
             ## 
-            # The loginPage property
+            # The login page associated with a simulation during its creation.
             @login_page
             ## 
-            # The oAuthConsentAppDetail property
+            # OAuth app details for the OAuth technique.
             @o_auth_consent_app_detail
             ## 
             # The payload associated with a simulation during its creation.
@@ -77,17 +77,17 @@ module MicrosoftGraphBeta
             # Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
             @status
             ## 
-            # The trainingSetting property
+            # Details about the training settings for a simulation.
             @training_setting
             ## 
-            ## Gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            ## Gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             ## @return a simulation_attack_technique
             ## 
             def attack_technique
                 return @attack_technique
             end
             ## 
-            ## Sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            ## Sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             ## @param value Value to set for the attackTechnique property.
             ## @return a void
             ## 
@@ -140,7 +140,7 @@ module MicrosoftGraphBeta
                 @completion_date_time = value
             end
             ## 
-            ## Instantiates a new simulation and sets the default values.
+            ## Instantiates a new Simulation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @duration_in_days = value
             end
             ## 
-            ## Gets the endUserNotificationSetting property value. The endUserNotificationSetting property
+            ## Gets the endUserNotificationSetting property value. Details about the end user notification setting.
             ## @return a end_user_notification_setting
             ## 
             def end_user_notification_setting
                 return @end_user_notification_setting
             end
             ## 
-            ## Sets the endUserNotificationSetting property value. The endUserNotificationSetting property
+            ## Sets the endUserNotificationSetting property value. Details about the end user notification setting.
             ## @param value Value to set for the endUserNotificationSetting property.
             ## @return a void
             ## 
@@ -323,14 +323,14 @@ module MicrosoftGraphBeta
                 @is_automated = value
             end
             ## 
-            ## Gets the landingPage property value. The landingPage property
+            ## Gets the landingPage property value. The landing page associated with a simulation during its creation.
             ## @return a landing_page
             ## 
             def landing_page
                 return @landing_page
             end
             ## 
-            ## Sets the landingPage property value. The landingPage property
+            ## Sets the landingPage property value. The landing page associated with a simulation during its creation.
             ## @param value Value to set for the landingPage property.
             ## @return a void
             ## 
@@ -383,14 +383,14 @@ module MicrosoftGraphBeta
                 @launch_date_time = value
             end
             ## 
-            ## Gets the loginPage property value. The loginPage property
+            ## Gets the loginPage property value. The login page associated with a simulation during its creation.
             ## @return a login_page
             ## 
             def login_page
                 return @login_page
             end
             ## 
-            ## Sets the loginPage property value. The loginPage property
+            ## Sets the loginPage property value. The login page associated with a simulation during its creation.
             ## @param value Value to set for the loginPage property.
             ## @return a void
             ## 
@@ -398,14 +398,14 @@ module MicrosoftGraphBeta
                 @login_page = value
             end
             ## 
-            ## Gets the oAuthConsentAppDetail property value. The oAuthConsentAppDetail property
+            ## Gets the oAuthConsentAppDetail property value. OAuth app details for the OAuth technique.
             ## @return a o_auth_consent_app_detail
             ## 
             def o_auth_consent_app_detail
                 return @o_auth_consent_app_detail
             end
             ## 
-            ## Sets the oAuthConsentAppDetail property value. The oAuthConsentAppDetail property
+            ## Sets the oAuthConsentAppDetail property value. OAuth app details for the OAuth technique.
             ## @param value Value to set for the oAuthConsentAppDetail property.
             ## @return a void
             ## 
@@ -506,14 +506,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the trainingSetting property value. The trainingSetting property
+            ## Gets the trainingSetting property value. Details about the training settings for a simulation.
             ## @return a training_setting
             ## 
             def training_setting
                 return @training_setting
             end
             ## 
-            ## Sets the trainingSetting property value. The trainingSetting property
+            ## Sets the trainingSetting property value. Details about the training settings for a simulation.
             ## @param value Value to set for the trainingSetting property.
             ## @return a void
             ## 

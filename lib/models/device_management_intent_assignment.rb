@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The assignment target
             @target
             ## 
-            ## Instantiates a new deviceManagementIntentAssignment and sets the default values.
+            ## Instantiates a new DeviceManagementIntentAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

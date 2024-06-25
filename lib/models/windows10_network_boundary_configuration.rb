@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Windows Network Isolation Policy
             @windows_network_isolation_policy
             ## 
-            ## Instantiates a new windows10NetworkBoundaryConfiguration and sets the default values.
+            ## Instantiates a new Windows10NetworkBoundaryConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

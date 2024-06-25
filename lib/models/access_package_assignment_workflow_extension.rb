@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @callback_configuration = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentWorkflowExtension and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentWorkflowExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

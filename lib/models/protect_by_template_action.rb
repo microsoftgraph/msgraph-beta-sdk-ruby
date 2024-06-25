@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The GUID of the Azure Information Protection template to apply to the information.
             @template_id
             ## 
-            ## Instantiates a new protectByTemplateAction and sets the default values.
+            ## Instantiates a new ProtectByTemplateAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

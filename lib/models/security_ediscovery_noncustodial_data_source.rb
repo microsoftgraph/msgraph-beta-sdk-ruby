@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Operation entity that represents the latest indexing for the non-custodial data source.
             @last_index_operation
             ## 
-            ## Instantiates a new securityEdiscoveryNoncustodialDataSource and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryNoncustodialDataSource and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class TenantRelationshipAccessPolicyBase < MicrosoftGraphBeta::Models::PolicyBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The definition property
+            # The raw JSON definition of the cross-tenant access policy. Deprecated. Do not use.
             @definition
             ## 
-            ## Instantiates a new tenantRelationshipAccessPolicyBase and sets the default values.
+            ## Instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 return TenantRelationshipAccessPolicyBase.new
             end
             ## 
-            ## Gets the definition property value. The definition property
+            ## Gets the definition property value. The raw JSON definition of the cross-tenant access policy. Deprecated. Do not use.
             ## @return a string
             ## 
             def definition
                 return @definition
             end
             ## 
-            ## Sets the definition property value. The definition property
+            ## Sets the definition property value. The raw JSON definition of the cross-tenant access policy. Deprecated. Do not use.
             ## @param value Value to set for the definition property.
             ## @return a void
             ## 

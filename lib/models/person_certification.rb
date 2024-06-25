@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                 @certification_id = value
             end
             ## 
-            ## Instantiates a new personCertification and sets the default values.
+            ## Instantiates a new PersonCertification and sets the default values.
             ## @return a void
             ## 
             def initialize()

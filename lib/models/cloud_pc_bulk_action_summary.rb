@@ -10,40 +10,40 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The failedCount property
+            # The number of Cloud PCs where the action failed.
             @failed_count
             ## 
-            # The inProgressCount property
+            # The number of Cloud PCs where the action is in progress.
             @in_progress_count
             ## 
-            # The notSupportedCount property
+            # The number of Cloud PCs where the action isn't supported.
             @not_supported_count
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The pendingCount property
+            # The number of Cloud PCs where the action is pending.
             @pending_count
             ## 
-            # The successfulCount property
+            # The number of Cloud PCs where the action is successful.
             @successful_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new cloudPcBulkActionSummary and sets the default values.
+            ## Instantiates a new CloudPcBulkActionSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 return CloudPcBulkActionSummary.new
             end
             ## 
-            ## Gets the failedCount property value. The failedCount property
+            ## Gets the failedCount property value. The number of Cloud PCs where the action failed.
             ## @return a integer
             ## 
             def failed_count
                 return @failed_count
             end
             ## 
-            ## Sets the failedCount property value. The failedCount property
+            ## Sets the failedCount property value. The number of Cloud PCs where the action failed.
             ## @param value Value to set for the failedCount property.
             ## @return a void
             ## 
@@ -88,14 +88,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the inProgressCount property value. The inProgressCount property
+            ## Gets the inProgressCount property value. The number of Cloud PCs where the action is in progress.
             ## @return a integer
             ## 
             def in_progress_count
                 return @in_progress_count
             end
             ## 
-            ## Sets the inProgressCount property value. The inProgressCount property
+            ## Sets the inProgressCount property value. The number of Cloud PCs where the action is in progress.
             ## @param value Value to set for the inProgressCount property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 @in_progress_count = value
             end
             ## 
-            ## Gets the notSupportedCount property value. The notSupportedCount property
+            ## Gets the notSupportedCount property value. The number of Cloud PCs where the action isn't supported.
             ## @return a integer
             ## 
             def not_supported_count
                 return @not_supported_count
             end
             ## 
-            ## Sets the notSupportedCount property value. The notSupportedCount property
+            ## Sets the notSupportedCount property value. The number of Cloud PCs where the action isn't supported.
             ## @param value Value to set for the notSupportedCount property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the pendingCount property value. The pendingCount property
+            ## Gets the pendingCount property value. The number of Cloud PCs where the action is pending.
             ## @return a integer
             ## 
             def pending_count
                 return @pending_count
             end
             ## 
-            ## Sets the pendingCount property value. The pendingCount property
+            ## Sets the pendingCount property value. The number of Cloud PCs where the action is pending.
             ## @param value Value to set for the pendingCount property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the successfulCount property value. The successfulCount property
+            ## Gets the successfulCount property value. The number of Cloud PCs where the action is successful.
             ## @return a integer
             ## 
             def successful_count
                 return @successful_count
             end
             ## 
-            ## Sets the successfulCount property value. The successfulCount property
+            ## Sets the successfulCount property value. The number of Cloud PCs where the action is successful.
             ## @param value Value to set for the successfulCount property.
             ## @return a void
             ## 

@@ -1,1 +1,1 @@
-require_relative 'import_office365_device_configuration_policies_response'
+require_relative 'import_office365_device_configuration_policies_post_response'

@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Version of the software update
             @update_version
             ## 
-            ## Instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
+            ## Instantiates a new MacOSSoftwareUpdateStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

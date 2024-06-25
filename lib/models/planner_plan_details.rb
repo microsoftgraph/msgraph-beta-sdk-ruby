@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.
             @context_details
             ## 
-            # The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
+            # The set of user IDs that this plan is shared with. If you're using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it isn't required in order for them to access the plan owned by the group.
             @shared_with
             ## 
             ## Gets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @category_descriptions = value
             end
             ## 
-            ## Instantiates a new plannerPlanDetails and sets the default values.
+            ## Instantiates a new PlannerPlanDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("sharedWith", @shared_with)
             end
             ## 
-            ## Gets the sharedWith property value. The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
+            ## Gets the sharedWith property value. The set of user IDs that this plan is shared with. If you're using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it isn't required in order for them to access the plan owned by the group.
             ## @return a planner_user_ids
             ## 
             def shared_with
                 return @shared_with
             end
             ## 
-            ## Sets the sharedWith property value. The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.
+            ## Sets the sharedWith property value. The set of user IDs that this plan is shared with. If you're using Microsoft 365 groups, use the groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it isn't required in order for them to access the plan owned by the group.
             ## @param value Value to set for the sharedWith property.
             ## @return a void
             ## 

@@ -128,7 +128,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new accessPackage and sets the default values.
+            ## Instantiates a new AccessPackage and sets the default values.
             ## @return a void
             ## 
             def initialize()

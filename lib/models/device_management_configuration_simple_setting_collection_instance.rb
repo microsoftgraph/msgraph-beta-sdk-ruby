@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Simple setting collection instance value
             @simple_setting_collection_value
             ## 
-            ## Instantiates a new deviceManagementConfigurationSimpleSettingCollectionInstance and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSimpleSettingCollectionInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

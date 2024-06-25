@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @connector_version = value
             end
             ## 
-            ## Instantiates a new ndesConnector and sets the default values.
+            ## Instantiates a new NdesConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

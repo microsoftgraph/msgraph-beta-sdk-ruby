@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Scope of the group policy setting.
             @setting_scope
             ## 
-            ## Instantiates a new unsupportedGroupPolicyExtension and sets the default values.
+            ## Instantiates a new UnsupportedGroupPolicyExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

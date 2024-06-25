@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceManagementIntentSettingSecretConstraint < MicrosoftGraphBeta::Models::DeviceManagementConstraint
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceManagementIntentSettingSecretConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementIntentSettingSecretConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

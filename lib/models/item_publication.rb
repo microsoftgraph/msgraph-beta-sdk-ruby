@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # URL referencing the publication.
             @web_url
             ## 
-            ## Instantiates a new itemPublication and sets the default values.
+            ## Instantiates a new ItemPublication and sets the default values.
             ## @return a void
             ## 
             def initialize()

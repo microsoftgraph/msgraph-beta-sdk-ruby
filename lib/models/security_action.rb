@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
             @azure_tenant_id
             ## 
-            # The clientContext property
+            # Unique client context string. Can have a maximum of 256 characters.
             @client_context
             ## 
             # Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -95,14 +95,14 @@ module MicrosoftGraphBeta
                 @azure_tenant_id = value
             end
             ## 
-            ## Gets the clientContext property value. The clientContext property
+            ## Gets the clientContext property value. Unique client context string. Can have a maximum of 256 characters.
             ## @return a string
             ## 
             def client_context
                 return @client_context
             end
             ## 
-            ## Sets the clientContext property value. The clientContext property
+            ## Sets the clientContext property value. Unique client context string. Can have a maximum of 256 characters.
             ## @param value Value to set for the clientContext property.
             ## @return a void
             ## 
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new securityAction and sets the default values.
+            ## Instantiates a new SecurityAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

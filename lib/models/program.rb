@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The name of the program.  Required on create.
             @display_name
             ## 
-            ## Instantiates a new program and sets the default values.
+            ## Instantiates a new Program and sets the default values.
             ## @return a void
             ## 
             def initialize()

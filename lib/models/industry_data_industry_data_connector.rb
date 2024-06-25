@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The sourceSystem property
             @source_system
             ## 
-            ## Instantiates a new industryDataIndustryDataConnector and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,10 +30,14 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.industryData.apiDataConnector"
+                            return IndustryDataApiDataConnector.new
                         when "#microsoft.graph.industryData.azureDataLakeConnector"
                             return IndustryDataAzureDataLakeConnector.new
                         when "#microsoft.graph.industryData.fileDataConnector"
                             return IndustryDataFileDataConnector.new
+                        when "#microsoft.graph.industryData.oneRosterApiDataConnector"
+                            return IndustryDataOneRosterApiDataConnector.new
                     end
                 end
                 return IndustryDataIndustryDataConnector.new

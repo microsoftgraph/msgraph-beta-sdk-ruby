@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The timeBasedAttribute property
             @time_based_attribute
             ## 
-            ## Instantiates a new identityGovernanceTimeBasedAttributeTrigger and sets the default values.
+            ## Instantiates a new IdentityGovernanceTimeBasedAttributeTrigger and sets the default values.
             ## @return a void
             ## 
             def initialize()

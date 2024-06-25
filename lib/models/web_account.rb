@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Contains a link to the user's profile on the cloud service if one exists.
             @web_url
             ## 
-            ## Instantiates a new webAccount and sets the default values.
+            ## Instantiates a new WebAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()

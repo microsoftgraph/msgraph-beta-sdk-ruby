@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Who created the resource.
+            # Who created the resource?
             @created_by
             ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # Display name of resource.
             @display_name
             ## 
-            # Who was the last user to modify the resource.
+            # Who was the last user to modify the resource?
             @last_modified_by
             ## 
             # Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -29,36 +29,36 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new educationResource and sets the default values.
+            ## Instantiates a new EducationResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the createdBy property value. Who created the resource.
+            ## Gets the createdBy property value. Who created the resource?
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Who created the resource.
+            ## Sets the createdBy property value. Who created the resource?
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the lastModifiedBy property value. Who was the last user to modify the resource.
+            ## Gets the lastModifiedBy property value. Who was the last user to modify the resource?
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Who was the last user to modify the resource.
+            ## Sets the lastModifiedBy property value. Who was the last user to modify the resource?
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 

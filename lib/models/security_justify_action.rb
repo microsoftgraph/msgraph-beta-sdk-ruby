@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityJustifyAction < MicrosoftGraphBeta::Models::SecurityInformationProtectionAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityJustifyAction and sets the default values.
+            ## Instantiates a new SecurityJustifyAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

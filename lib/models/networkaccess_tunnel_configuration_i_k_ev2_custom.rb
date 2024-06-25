@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # a standard specifiying Security Association lifetime with recommended values from an RFC standard.
             @sa_life_time_seconds
             ## 
-            ## Instantiates a new networkaccessTunnelConfigurationIKEv2Custom and sets the default values.
+            ## Instantiates a new NetworkaccessTunnelConfigurationIKEv2Custom and sets the default values.
             ## @return a void
             ## 
             def initialize()

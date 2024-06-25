@@ -10,41 +10,41 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Optional. The application associated with this action.
+            # The Identity of the Application. This property is read-only.
             @application
             ## 
-            # Optional. The device associated with this action.
+            # The Identity of the Device. This property is read-only.
             @device
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Optional. The user associated with this action.
+            # The Identity of the User. This property is read-only.
             @user
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the application property value. Optional. The application associated with this action.
+            ## Gets the application property value. The Identity of the Application. This property is read-only.
             ## @return a identity
             ## 
             def application
                 return @application
             end
             ## 
-            ## Sets the application property value. Optional. The application associated with this action.
+            ## Sets the application property value. The Identity of the Application. This property is read-only.
             ## @param value Value to set for the application property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @application = value
             end
             ## 
-            ## Instantiates a new identitySet and sets the default values.
+            ## Instantiates a new IdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraphBeta
                 return IdentitySet.new
             end
             ## 
-            ## Gets the device property value. Optional. The device associated with this action.
+            ## Gets the device property value. The Identity of the Device. This property is read-only.
             ## @return a identity
             ## 
             def device
                 return @device
             end
             ## 
-            ## Sets the device property value. Optional. The device associated with this action.
+            ## Sets the device property value. The Identity of the Device. This property is read-only.
             ## @param value Value to set for the device property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the user property value. Optional. The user associated with this action.
+            ## Gets the user property value. The Identity of the User. This property is read-only.
             ## @return a identity
             ## 
             def user
                 return @user
             end
             ## 
-            ## Sets the user property value. Optional. The user associated with this action.
+            ## Sets the user property value. The Identity of the User. This property is read-only.
             ## @param value Value to set for the user property.
             ## @return a void
             ## 

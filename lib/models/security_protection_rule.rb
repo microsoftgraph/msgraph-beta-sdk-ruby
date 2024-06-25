@@ -8,39 +8,39 @@ module MicrosoftGraphBeta
         class SecurityProtectionRule < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdBy property
+            # Name of the user or application that created the rule.
             @created_by
             ## 
-            # The createdDateTime property
+            # Timestamp of rule creation.
             @created_date_time
             ## 
-            # The displayName property
+            # Name of the rule.
             @display_name
             ## 
-            # The isEnabled property
+            # Whether rule is turned on for the tenant.
             @is_enabled
             ## 
-            # The lastModifiedBy property
+            # Name of the user or application who last updated the rule.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Timestamp of when the rule was last updated.
             @last_modified_date_time
             ## 
-            ## Instantiates a new securityProtectionRule and sets the default values.
+            ## Instantiates a new SecurityProtectionRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Name of the user or application that created the rule.
             ## @return a string
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Name of the user or application that created the rule.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Timestamp of rule creation.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Timestamp of rule creation.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 return SecurityProtectionRule.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Name of the rule.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Name of the rule.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -109,14 +109,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isEnabled property value. The isEnabled property
+            ## Gets the isEnabled property value. Whether rule is turned on for the tenant.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. The isEnabled property
+            ## Sets the isEnabled property value. Whether rule is turned on for the tenant.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
@@ -124,14 +124,14 @@ module MicrosoftGraphBeta
                 @is_enabled = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Name of the user or application who last updated the rule.
             ## @return a string
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Name of the user or application who last updated the rule.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Timestamp of when the rule was last updated.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Timestamp of when the rule was last updated.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 

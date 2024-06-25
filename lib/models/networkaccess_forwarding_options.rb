@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The skipDnsLookupState property
             @skip_dns_lookup_state
             ## 
-            ## Instantiates a new networkaccessForwardingOptions and sets the default values.
+            ## Instantiates a new NetworkaccessForwardingOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AndroidDeviceComplianceLocalActionLockDevice < MicrosoftGraphBeta::Models::AndroidDeviceComplianceLocalActionBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new androidDeviceComplianceLocalActionLockDevice and sets the default values.
+            ## Instantiates a new AndroidDeviceComplianceLocalActionLockDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

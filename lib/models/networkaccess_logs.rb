@@ -7,10 +7,13 @@ module MicrosoftGraphBeta
         class NetworkaccessLogs < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents a collection of log entries in the network access traffic log.
+            # A collection of remote network health events.
+            @remote_networks
+            ## 
+            # A network access traffic log entry that contains comprehensive information about network traffic events.
             @traffic
             ## 
-            ## Instantiates a new networkaccessLogs and sets the default values.
+            ## Instantiates a new NetworkaccessLogs and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -31,8 +34,24 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "remoteNetworks" => lambda {|n| @remote_networks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessRemoteNetworkHealthEvent.create_from_discriminator_value(pn) }) },
                     "traffic" => lambda {|n| @traffic = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessNetworkAccessTraffic.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the remoteNetworks property value. A collection of remote network health events.
+            ## @return a networkaccess_remote_network_health_event
+            ## 
+            def remote_networks
+                return @remote_networks
+            end
+            ## 
+            ## Sets the remoteNetworks property value. A collection of remote network health events.
+            ## @param value Value to set for the remoteNetworks property.
+            ## @return a void
+            ## 
+            def remote_networks=(value)
+                @remote_networks = value
             end
             ## 
             ## Serializes information the current object
@@ -42,17 +61,18 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("remoteNetworks", @remote_networks)
                 writer.write_collection_of_object_values("traffic", @traffic)
             end
             ## 
-            ## Gets the traffic property value. Represents a collection of log entries in the network access traffic log.
+            ## Gets the traffic property value. A network access traffic log entry that contains comprehensive information about network traffic events.
             ## @return a networkaccess_network_access_traffic
             ## 
             def traffic
                 return @traffic
             end
             ## 
-            ## Sets the traffic property value. Represents a collection of log entries in the network access traffic log.
+            ## Sets the traffic property value. A network access traffic log entry that contains comprehensive information about network traffic events.
             ## @param value Value to set for the traffic property.
             ## @return a void
             ## 

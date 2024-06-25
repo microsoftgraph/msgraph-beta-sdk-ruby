@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
             @display_name
             ## 
-            # Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+            # Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
             @type
             ## 
-            ## Instantiates a new appScope and sets the default values.
+            ## Instantiates a new AppScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("type", @type)
             end
             ## 
-            ## Gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+            ## Gets the type property value. Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+            ## Sets the type property value. Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

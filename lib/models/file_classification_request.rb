@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The sensitiveTypeIds property
             @sensitive_type_ids
             ## 
-            ## Instantiates a new fileClassificationRequest and sets the default values.
+            ## Instantiates a new FileClassificationRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

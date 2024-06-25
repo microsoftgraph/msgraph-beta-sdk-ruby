@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            ## Instantiates a new unifiedRbacResourceScope and sets the default values.
+            ## Instantiates a new UnifiedRbacResourceScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

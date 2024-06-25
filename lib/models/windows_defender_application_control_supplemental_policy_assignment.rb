@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The target group assignment defined by the admin.
             @target
             ## 
-            ## Instantiates a new windowsDefenderApplicationControlSupplementalPolicyAssignment and sets the default values.
+            ## Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

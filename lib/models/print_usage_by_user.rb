@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The UPN of the user represented by these statistics.
             @user_principal_name
             ## 
-            ## Instantiates a new printUsageByUser and sets the default values.
+            ## Instantiates a new PrintUsageByUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

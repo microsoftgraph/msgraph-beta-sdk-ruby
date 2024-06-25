@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The Id of the AAD group we are targeting the device configuration to.
             @target_group_id
             ## 
-            ## Instantiates a new deviceConfigurationGroupAssignment and sets the default values.
+            ## Instantiates a new DeviceConfigurationGroupAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

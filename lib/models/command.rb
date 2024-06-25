@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @app_service_name = value
             end
             ## 
-            ## Instantiates a new command and sets the default values.
+            ## Instantiates a new Command and sets the default values.
             ## @return a void
             ## 
             def initialize()

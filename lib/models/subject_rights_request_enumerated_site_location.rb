@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.
             @urls
             ## 
-            ## Instantiates a new subjectRightsRequestEnumeratedSiteLocation and sets the default values.
+            ## Instantiates a new SubjectRightsRequestEnumeratedSiteLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()

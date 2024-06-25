@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # It specifies the file name to be submitted.
             @file_name
             ## 
-            ## Instantiates a new securityFileThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityFileThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()

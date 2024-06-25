@@ -380,7 +380,7 @@ module MicrosoftGraphBeta
                 @certificate_validity_period_units = value
             end
             ## 
-            ## Instantiates a new managedDeviceCertificateState and sets the default values.
+            ## Instantiates a new ManagedDeviceCertificateState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -439,12 +439,12 @@ module MicrosoftGraphBeta
                     "certificateIssuer" => lambda {|n| @certificate_issuer = n.get_string_value() },
                     "certificateKeyLength" => lambda {|n| @certificate_key_length = n.get_number_value() },
                     "certificateKeyStorageProvider" => lambda {|n| @certificate_key_storage_provider = n.get_enum_value(MicrosoftGraphBeta::Models::KeyStorageProviderOption) },
-                    "certificateKeyUsage" => lambda {|n| @certificate_key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "certificateKeyUsage" => lambda {|n| @certificate_key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "certificateLastIssuanceStateChangedDateTime" => lambda {|n| @certificate_last_issuance_state_changed_date_time = n.get_date_time_value() },
                     "certificateProfileDisplayName" => lambda {|n| @certificate_profile_display_name = n.get_string_value() },
                     "certificateRevokeStatus" => lambda {|n| @certificate_revoke_status = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateRevocationStatus) },
                     "certificateSerialNumber" => lambda {|n| @certificate_serial_number = n.get_string_value() },
-                    "certificateSubjectAlternativeNameFormat" => lambda {|n| @certificate_subject_alternative_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "certificateSubjectAlternativeNameFormat" => lambda {|n| @certificate_subject_alternative_name_format = n.get_enum_values(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
                     "certificateSubjectAlternativeNameFormatString" => lambda {|n| @certificate_subject_alternative_name_format_string = n.get_string_value() },
                     "certificateSubjectNameFormat" => lambda {|n| @certificate_subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectNameFormat) },
                     "certificateSubjectNameFormatString" => lambda {|n| @certificate_subject_name_format_string = n.get_string_value() },

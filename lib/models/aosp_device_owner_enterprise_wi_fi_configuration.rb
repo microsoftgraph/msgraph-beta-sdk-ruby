@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new aospDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+            ## Instantiates a new AospDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

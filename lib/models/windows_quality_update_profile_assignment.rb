@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The assignment target that the quality update profile is assigned to.
             @target
             ## 
-            ## Instantiates a new windowsQualityUpdateProfileAssignment and sets the default values.
+            ## Instantiates a new WindowsQualityUpdateProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

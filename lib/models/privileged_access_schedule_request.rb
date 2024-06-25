@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @action = value
             end
             ## 
-            ## Instantiates a new privilegedAccessScheduleRequest and sets the default values.
+            ## Instantiates a new PrivilegedAccessScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

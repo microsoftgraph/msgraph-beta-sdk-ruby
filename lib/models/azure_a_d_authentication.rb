@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @attainments = value
             end
             ## 
-            ## Instantiates a new azureADAuthentication and sets the default values.
+            ## Instantiates a new AzureADAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,0 +1,1 @@
+require_relative 'get_cloud_pc_recommendation_reports_post_request_body'

@@ -1,0 +1,2 @@
+require_relative 'approve_post_request_body'
+require_relative 'approve_post_response'

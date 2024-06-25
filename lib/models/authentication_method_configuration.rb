@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The state of the policy. Possible values are: enabled, disabled.
             @state
             ## 
-            ## Instantiates a new authenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,8 +32,12 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.emailAuthenticationMethodConfiguration"
                             return EmailAuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.externalAuthenticationMethodConfiguration"
+                            return ExternalAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.fido2AuthenticationMethodConfiguration"
                             return Fido2AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration"
+                            return HardwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration"
                             return MicrosoftAuthenticatorAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.smsAuthenticationMethodConfiguration"

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Identity certificate for client authentication when authentication method is certificate.
             @identity_certificate
             ## 
-            ## Instantiates a new macOSVpnConfiguration and sets the default values.
+            ## Instantiates a new MacOSVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

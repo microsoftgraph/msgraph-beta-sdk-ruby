@@ -1,1 +1,0 @@
-require_relative 'evaluate_dynamic_membership_post_request_body'

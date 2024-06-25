@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @action_type = value
             end
             ## 
-            ## Instantiates a new mobileAppTroubleshootingAppStateHistory and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingAppStateHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

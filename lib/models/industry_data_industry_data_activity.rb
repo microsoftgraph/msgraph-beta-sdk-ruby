@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The readinessStatus property
             @readiness_status
             ## 
-            ## Instantiates a new industryDataIndustryDataActivity and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,6 +30,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.industryData.inboundApiFlow"
+                            return IndustryDataInboundApiFlow.new
                         when "#microsoft.graph.industryData.inboundFileFlow"
                             return IndustryDataInboundFileFlow.new
                         when "#microsoft.graph.industryData.inboundFlow"

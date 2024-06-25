@@ -1,2 +1,2 @@
 require_relative 'create_migration_report_post_request_body'
-require_relative 'create_migration_report_response'
+require_relative 'create_migration_report_post_response'

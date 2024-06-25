@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @completion_reason = value
             end
             ## 
-            ## Instantiates a new recordOperation and sets the default values.
+            ## Instantiates a new RecordOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

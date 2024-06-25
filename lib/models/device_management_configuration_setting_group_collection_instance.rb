@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationSettingGroupCollectionInstance < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingInstance
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

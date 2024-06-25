@@ -10,38 +10,38 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
+            # Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is 'Yes'.
             @auth_detail
             ## 
-            # Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
+            # Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
             @auth_method
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
+            ## Gets the authDetail property value. Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is 'Yes'.
             ## @return a string
             ## 
             def auth_detail
                 return @auth_detail
             end
             ## 
-            ## Sets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
+            ## Sets the authDetail property value. Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is 'Yes'.
             ## @param value Value to set for the authDetail property.
             ## @return a void
             ## 
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @auth_detail = value
             end
             ## 
-            ## Gets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
+            ## Gets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
             ## @return a string
             ## 
             def auth_method
                 return @auth_method
             end
             ## 
-            ## Sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
+            ## Sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
             ## @param value Value to set for the authMethod property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @auth_method = value
             end
             ## 
-            ## Instantiates a new mfaDetail and sets the default values.
+            ## Instantiates a new MfaDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

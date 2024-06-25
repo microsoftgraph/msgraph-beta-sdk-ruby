@@ -15,6 +15,9 @@ module MicrosoftGraphBeta
             # When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
             @connect_when_network_name_is_hidden
             ## 
+            # The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.
+            @mac_address_randomization_mode
+            ## 
             # Network Name
             @network_name
             ## 
@@ -75,7 +78,7 @@ module MicrosoftGraphBeta
                 @connect_when_network_name_is_hidden = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +110,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "connectAutomatically" => lambda {|n| @connect_automatically = n.get_boolean_value() },
                     "connectWhenNetworkNameIsHidden" => lambda {|n| @connect_when_network_name_is_hidden = n.get_boolean_value() },
+                    "macAddressRandomizationMode" => lambda {|n| @mac_address_randomization_mode = n.get_enum_value(MicrosoftGraphBeta::Models::MacAddressRandomizationMode) },
                     "networkName" => lambda {|n| @network_name = n.get_string_value() },
                     "preSharedKey" => lambda {|n| @pre_shared_key = n.get_string_value() },
                     "preSharedKeyIsSet" => lambda {|n| @pre_shared_key_is_set = n.get_boolean_value() },
@@ -118,6 +122,21 @@ module MicrosoftGraphBeta
                     "ssid" => lambda {|n| @ssid = n.get_string_value() },
                     "wiFiSecurityType" => lambda {|n| @wi_fi_security_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerWiFiSecurityType) },
                 })
+            end
+            ## 
+            ## Gets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.
+            ## @return a mac_address_randomization_mode
+            ## 
+            def mac_address_randomization_mode
+                return @mac_address_randomization_mode
+            end
+            ## 
+            ## Sets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.
+            ## @param value Value to set for the macAddressRandomizationMode property.
+            ## @return a void
+            ## 
+            def mac_address_randomization_mode=(value)
+                @mac_address_randomization_mode = value
             end
             ## 
             ## Gets the networkName property value. Network Name
@@ -249,6 +268,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_boolean_value("connectAutomatically", @connect_automatically)
                 writer.write_boolean_value("connectWhenNetworkNameIsHidden", @connect_when_network_name_is_hidden)
+                writer.write_enum_value("macAddressRandomizationMode", @mac_address_randomization_mode)
                 writer.write_string_value("networkName", @network_name)
                 writer.write_string_value("preSharedKey", @pre_shared_key)
                 writer.write_boolean_value("preSharedKeyIsSet", @pre_shared_key_is_set)

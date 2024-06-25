@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
             @values
             ## 
-            ## Instantiates a new directorySettingTemplate and sets the default values.
+            ## Instantiates a new DirectorySettingTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

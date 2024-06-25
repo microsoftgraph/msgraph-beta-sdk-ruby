@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class Endpoint < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+            # Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
             @capability
             ## 
             # Application id of the publishing underlying service. Not nullable. Read-only.
@@ -16,20 +16,20 @@ module MicrosoftGraphBeta
             # Name of the publishing underlying service. Read-only.
             @provider_name
             ## 
-            # For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+            # For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
             @provider_resource_id
             ## 
             # URL of the published resource. Not nullable. Read-only.
             @uri
             ## 
-            ## Gets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+            ## Gets the capability property value. Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
             ## @return a string
             ## 
             def capability
                 return @capability
             end
             ## 
-            ## Sets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+            ## Sets the capability property value. Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
             ## @param value Value to set for the capability property.
             ## @return a void
             ## 
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @capability = value
             end
             ## 
-            ## Instantiates a new endpoint and sets the default values.
+            ## Instantiates a new Endpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,14 +97,14 @@ module MicrosoftGraphBeta
                 @provider_name = value
             end
             ## 
-            ## Gets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+            ## Gets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
             ## @return a string
             ## 
             def provider_resource_id
                 return @provider_resource_id
             end
             ## 
-            ## Sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+            ## Sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
             ## @param value Value to set for the providerResourceId property.
             ## @return a void
             ## 

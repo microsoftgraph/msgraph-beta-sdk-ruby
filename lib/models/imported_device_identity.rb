@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The platform property
             @platform
             ## 
-            ## Instantiates a new importedDeviceIdentity and sets the default values.
+            ## Instantiates a new ImportedDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

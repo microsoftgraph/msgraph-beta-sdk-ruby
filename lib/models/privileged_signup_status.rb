@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Instantiates a new privilegedSignupStatus and sets the default values.
+            ## Instantiates a new PrivilegedSignupStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The handler to invoke when conditions are met for this onTokenIssuanceStartListener.
             @handler
             ## 
-            ## Instantiates a new onTokenIssuanceStartListener and sets the default values.
+            ## Instantiates a new OnTokenIssuanceStartListener and sets the default values.
             ## @return a void
             ## 
             def initialize()

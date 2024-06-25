@@ -13,25 +13,25 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The removeFromDefaultAudioGroup property
+            # Remove media from the default audio group.
             @remove_from_default_audio_group
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new mediaConfig and sets the default values.
+            ## Instantiates a new MediaConfig and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -82,14 +82,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
+            ## Gets the removeFromDefaultAudioGroup property value. Remove media from the default audio group.
             ## @return a boolean
             ## 
             def remove_from_default_audio_group
                 return @remove_from_default_audio_group
             end
             ## 
-            ## Sets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
+            ## Sets the removeFromDefaultAudioGroup property value. Remove media from the default audio group.
             ## @param value Value to set for the removeFromDefaultAudioGroup property.
             ## @return a void
             ## 

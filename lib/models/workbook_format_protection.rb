@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The locked property
             @locked
             ## 
-            ## Instantiates a new workbookFormatProtection and sets the default values.
+            ## Instantiates a new WorkbookFormatProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

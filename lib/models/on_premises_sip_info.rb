@@ -10,34 +10,34 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The isSipEnabled property
+            # Indicates whether the user is currently enabled for on-premises Skype for Business.
             @is_sip_enabled
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The sipDeploymentLocation property
+            # Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
             @sip_deployment_location
             ## 
-            # The sipPrimaryAddress property
+            # Serves as a unique identifier for each user on the on-premises Skype for Business.
             @sip_primary_address
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new onPremisesSipInfo and sets the default values.
+            ## Instantiates a new OnPremisesSipInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the isSipEnabled property value. The isSipEnabled property
+            ## Gets the isSipEnabled property value. Indicates whether the user is currently enabled for on-premises Skype for Business.
             ## @return a boolean
             ## 
             def is_sip_enabled
                 return @is_sip_enabled
             end
             ## 
-            ## Sets the isSipEnabled property value. The isSipEnabled property
+            ## Sets the isSipEnabled property value. Indicates whether the user is currently enabled for on-premises Skype for Business.
             ## @param value Value to set for the isSipEnabled property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sipDeploymentLocation property value. The sipDeploymentLocation property
+            ## Gets the sipDeploymentLocation property value. Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
             ## @return a string
             ## 
             def sip_deployment_location
                 return @sip_deployment_location
             end
             ## 
-            ## Sets the sipDeploymentLocation property value. The sipDeploymentLocation property
+            ## Sets the sipDeploymentLocation property value. Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
             ## @param value Value to set for the sipDeploymentLocation property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 @sip_deployment_location = value
             end
             ## 
-            ## Gets the sipPrimaryAddress property value. The sipPrimaryAddress property
+            ## Gets the sipPrimaryAddress property value. Serves as a unique identifier for each user on the on-premises Skype for Business.
             ## @return a string
             ## 
             def sip_primary_address
                 return @sip_primary_address
             end
             ## 
-            ## Sets the sipPrimaryAddress property value. The sipPrimaryAddress property
+            ## Sets the sipPrimaryAddress property value. Serves as a unique identifier for each user on the on-premises Skype for Business.
             ## @param value Value to set for the sipPrimaryAddress property.
             ## @return a void
             ## 

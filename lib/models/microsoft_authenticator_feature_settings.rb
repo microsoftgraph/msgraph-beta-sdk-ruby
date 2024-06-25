@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
+            # Determines whether users are able to approve push notifications on other Microsoft applications such as Outlook Mobile.
             @companion_app_allowed_state
             ## 
-            # Determines whether the user's Authenticator app will show them the client app they are signing into.
+            # Determines whether the user's Authenticator app shows them the client app they're signing into.
             @display_app_information_required_state
             ## 
-            # Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            # Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             @display_location_information_required_state
             ## 
             # Specifies whether the user needs to enter a number in the Authenticator app from the login screen to complete their login. Value is ignored for phone sign-in notifications.
@@ -25,29 +25,29 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the companionAppAllowedState property value. Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
+            ## Gets the companionAppAllowedState property value. Determines whether users are able to approve push notifications on other Microsoft applications such as Outlook Mobile.
             ## @return a authentication_method_feature_configuration
             ## 
             def companion_app_allowed_state
                 return @companion_app_allowed_state
             end
             ## 
-            ## Sets the companionAppAllowedState property value. Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
+            ## Sets the companionAppAllowedState property value. Determines whether users are able to approve push notifications on other Microsoft applications such as Outlook Mobile.
             ## @param value Value to set for the companionAppAllowedState property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @companion_app_allowed_state = value
             end
             ## 
-            ## Instantiates a new microsoftAuthenticatorFeatureSettings and sets the default values.
+            ## Instantiates a new MicrosoftAuthenticatorFeatureSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 return MicrosoftAuthenticatorFeatureSettings.new
             end
             ## 
-            ## Gets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
+            ## Gets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app shows them the client app they're signing into.
             ## @return a authentication_method_feature_configuration
             ## 
             def display_app_information_required_state
                 return @display_app_information_required_state
             end
             ## 
-            ## Sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
+            ## Sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app shows them the client app they're signing into.
             ## @param value Value to set for the displayAppInformationRequiredState property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 @display_app_information_required_state = value
             end
             ## 
-            ## Gets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            ## Gets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             ## @return a authentication_method_feature_configuration
             ## 
             def display_location_information_required_state
                 return @display_location_information_required_state
             end
             ## 
-            ## Sets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            ## Sets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             ## @param value Value to set for the displayLocationInformationRequiredState property.
             ## @return a void
             ## 

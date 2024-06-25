@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 @connected_apps_enabled = value
             end
             ## 
-            ## Instantiates a new androidForWorkMobileAppConfiguration and sets the default values.
+            ## Instantiates a new AndroidForWorkMobileAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

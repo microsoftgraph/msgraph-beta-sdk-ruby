@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # One of None, BlockSignIn, or BlockSignInAndDelete.
             @external_user_lifecycle_action
             ## 
-            ## Instantiates a new entitlementManagementSettings and sets the default values.
+            ## Instantiates a new EntitlementManagementSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

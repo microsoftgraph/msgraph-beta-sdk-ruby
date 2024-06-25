@@ -14,13 +14,13 @@ module MicrosoftGraphBeta
             # The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
             @authentication_method
             ## 
-            # Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
+            # Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (for example, cloud, AD FS, PTA, PHS).
             @authentication_method_detail
             ## 
             # Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @authentication_step_date_time
             ## 
-            # The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
+            # The step of authentication that this satisfied. For example, primary authentication, or multifactor authentication.
             @authentication_step_requirement
             ## 
             # Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
@@ -32,15 +32,15 @@ module MicrosoftGraphBeta
             # Indicates the status of the authentication step. Possible values: succeeded, failed.
             @succeeded
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Gets the authenticationMethodDetail property value. Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
+            ## Gets the authenticationMethodDetail property value. Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (for example, cloud, AD FS, PTA, PHS).
             ## @return a string
             ## 
             def authentication_method_detail
                 return @authentication_method_detail
             end
             ## 
-            ## Sets the authenticationMethodDetail property value. Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
+            ## Sets the authenticationMethodDetail property value. Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (for example, cloud, AD FS, PTA, PHS).
             ## @param value Value to set for the authenticationMethodDetail property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @authentication_step_date_time = value
             end
             ## 
-            ## Gets the authenticationStepRequirement property value. The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
+            ## Gets the authenticationStepRequirement property value. The step of authentication that this satisfied. For example, primary authentication, or multifactor authentication.
             ## @return a string
             ## 
             def authentication_step_requirement
                 return @authentication_step_requirement
             end
             ## 
-            ## Sets the authenticationStepRequirement property value. The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
+            ## Sets the authenticationStepRequirement property value. The step of authentication that this satisfied. For example, primary authentication, or multifactor authentication.
             ## @param value Value to set for the authenticationStepRequirement property.
             ## @return a void
             ## 
@@ -122,7 +122,7 @@ module MicrosoftGraphBeta
                 @authentication_step_result_detail = value
             end
             ## 
-            ## Instantiates a new authenticationDetail and sets the default values.
+            ## Instantiates a new AuthenticationDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

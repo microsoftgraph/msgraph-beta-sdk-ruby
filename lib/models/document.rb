@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @comments = value
             end
             ## 
-            ## Instantiates a new document and sets the default values.
+            ## Instantiates a new Document and sets the default values.
             ## @return a void
             ## 
             def initialize()

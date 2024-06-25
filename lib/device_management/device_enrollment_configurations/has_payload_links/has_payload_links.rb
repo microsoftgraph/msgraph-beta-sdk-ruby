@@ -1,2 +1,2 @@
 require_relative 'has_payload_links_post_request_body'
-require_relative 'has_payload_links_response'
+require_relative 'has_payload_links_post_response'

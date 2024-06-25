@@ -10,37 +10,40 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # Contains a detailed error message when the partner agent installation failed.
+            @error_message
+            ## 
             # The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
             @install_status
             ## 
-            # Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
+            # Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false.
             @is_third_party_partner
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
+            # The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.
             @partner_agent_name
             ## 
-            # Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
+            # Indicates whether the partner agent installation should be retried. The default value is false.
             @retriable
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new cloudPcPartnerAgentInstallResult and sets the default values.
+            ## Instantiates a new CloudPcPartnerAgentInstallResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,11 +59,27 @@ module MicrosoftGraphBeta
                 return CloudPcPartnerAgentInstallResult.new
             end
             ## 
+            ## Gets the errorMessage property value. Contains a detailed error message when the partner agent installation failed.
+            ## @return a string
+            ## 
+            def error_message
+                return @error_message
+            end
+            ## 
+            ## Sets the errorMessage property value. Contains a detailed error message when the partner agent installation failed.
+            ## @param value Value to set for the errorMessage property.
+            ## @return a void
+            ## 
+            def error_message=(value)
+                @error_message = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
+                    "errorMessage" => lambda {|n| @error_message = n.get_string_value() },
                     "installStatus" => lambda {|n| @install_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPartnerAgentInstallStatus) },
                     "isThirdPartyPartner" => lambda {|n| @is_third_party_partner = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -84,14 +103,14 @@ module MicrosoftGraphBeta
                 @install_status = value
             end
             ## 
-            ## Gets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
+            ## Gets the isThirdPartyPartner property value. Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false.
             ## @return a boolean
             ## 
             def is_third_party_partner
                 return @is_third_party_partner
             end
             ## 
-            ## Sets the isThirdPartyPartner property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
+            ## Sets the isThirdPartyPartner property value. Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn't known.  The default value is false.
             ## @param value Value to set for the isThirdPartyPartner property.
             ## @return a void
             ## 
@@ -114,14 +133,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
+            ## Gets the partnerAgentName property value. The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.
             ## @return a cloud_pc_partner_agent_name
             ## 
             def partner_agent_name
                 return @partner_agent_name
             end
             ## 
-            ## Sets the partnerAgentName property value. Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
+            ## Sets the partnerAgentName property value. The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.
             ## @param value Value to set for the partnerAgentName property.
             ## @return a void
             ## 
@@ -129,14 +148,14 @@ module MicrosoftGraphBeta
                 @partner_agent_name = value
             end
             ## 
-            ## Gets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
+            ## Gets the retriable property value. Indicates whether the partner agent installation should be retried. The default value is false.
             ## @return a boolean
             ## 
             def retriable
                 return @retriable
             end
             ## 
-            ## Sets the retriable property value. Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
+            ## Sets the retriable property value. Indicates whether the partner agent installation should be retried. The default value is false.
             ## @param value Value to set for the retriable property.
             ## @return a void
             ## 
@@ -150,6 +169,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_string_value("errorMessage", @error_message)
                 writer.write_enum_value("installStatus", @install_status)
                 writer.write_boolean_value("isThirdPartyPartner", @is_third_party_partner)
                 writer.write_string_value("@odata.type", @odata_type)

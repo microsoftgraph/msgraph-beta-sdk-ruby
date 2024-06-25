@@ -171,7 +171,7 @@ module MicrosoftGraphBeta
                 @cache_credentials = value
             end
             ## 
-            ## Instantiates a new windowsWiredNetworkConfiguration and sets the default values.
+            ## Instantiates a new WindowsWiredNetworkConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

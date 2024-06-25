@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Contains properties for detection operator.
             @product_version_operator
             ## 
-            ## Instantiates a new win32LobAppProductCodeDetection and sets the default values.
+            ## Instantiates a new Win32LobAppProductCodeDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "productCode" => lambda {|n| @product_code = n.get_string_value() },
                     "productVersion" => lambda {|n| @product_version = n.get_string_value() },
-                    "productVersionOperator" => lambda {|n| @product_version_operator = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
+                    "productVersionOperator" => lambda {|n| @product_version_operator = n.get_enum_values(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
                 })
             end
             ## 

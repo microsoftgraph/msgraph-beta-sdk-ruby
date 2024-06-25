@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The identifier property
             @identifier
             ## 
-            ## Instantiates a new securityImpactedDeviceAsset and sets the default values.
+            ## Instantiates a new SecurityImpactedDeviceAsset and sets the default values.
             ## @return a void
             ## 
             def initialize()

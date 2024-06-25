@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The usersCount property
             @users_count
             ## 
-            ## Instantiates a new privilegedRoleSummary and sets the default values.
+            ## Instantiates a new PrivilegedRoleSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

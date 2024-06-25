@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new applicationTemplate and sets the default values.
+            ## Instantiates a new ApplicationTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

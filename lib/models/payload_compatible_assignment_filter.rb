@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Represents the payload type AssignmentFilter is being assigned to.
             @payload_type
             ## 
-            ## Instantiates a new payloadCompatibleAssignmentFilter and sets the default values.
+            ## Instantiates a new PayloadCompatibleAssignmentFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()

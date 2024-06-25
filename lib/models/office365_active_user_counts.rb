@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
             @yammer
             ## 
-            ## Instantiates a new office365ActiveUserCounts and sets the default values.
+            ## Instantiates a new Office365ActiveUserCounts and sets the default values.
             ## @return a void
             ## 
             def initialize()

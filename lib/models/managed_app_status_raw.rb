@@ -9,30 +9,12 @@ module MicrosoftGraphBeta
         class ManagedAppStatusRaw < MicrosoftGraphBeta::Models::ManagedAppStatus
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Status report content.
-            @content
-            ## 
-            ## Instantiates a new managedAppStatusRaw and sets the default values.
+            ## Instantiates a new ManagedAppStatusRaw and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.managedAppStatusRaw"
-            end
-            ## 
-            ## Gets the content property value. Status report content.
-            ## @return a json
-            ## 
-            def content
-                return @content
-            end
-            ## 
-            ## Sets the content property value. Status report content.
-            ## @param value Value to set for the content property.
-            ## @return a void
-            ## 
-            def content=(value)
-                @content = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +31,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Json.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -60,7 +41,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("content", @content)
             end
         end
     end

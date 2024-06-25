@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 @action_name = value
             end
             ## 
-            ## Instantiates a new resourceOperation and sets the default values.
+            ## Instantiates a new ResourceOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

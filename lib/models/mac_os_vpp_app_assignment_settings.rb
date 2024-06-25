@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Whether or not to use device licensing.
             @use_device_licensing
             ## 
-            ## Instantiates a new macOsVppAppAssignmentSettings and sets the default values.
+            ## Instantiates a new MacOsVppAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

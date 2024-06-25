@@ -9,22 +9,22 @@ module MicrosoftGraphBeta
         class MobileAppRelationship < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The target mobile app's display name.
+            # The target mobile app's display name. This property is read-only.
             @target_display_name
             ## 
-            # The target mobile app's display version.
+            # The target mobile app's display version. This property is read-only.
             @target_display_version
             ## 
             # The target mobile app's app id.
             @target_id
             ## 
-            # The target mobile app's publisher.
+            # The target mobile app's publisher. This property is read-only.
             @target_publisher
             ## 
             # Indicates whether the target of a relationship is the parent or the child in the relationship.
             @target_type
             ## 
-            ## Instantiates a new mobileAppRelationship and sets the default values.
+            ## Instantiates a new MobileAppRelationship and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,21 +70,18 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("targetDisplayName", @target_display_name)
-                writer.write_string_value("targetDisplayVersion", @target_display_version)
                 writer.write_string_value("targetId", @target_id)
-                writer.write_string_value("targetPublisher", @target_publisher)
                 writer.write_enum_value("targetType", @target_type)
             end
             ## 
-            ## Gets the targetDisplayName property value. The target mobile app's display name.
+            ## Gets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
             ## @return a string
             ## 
             def target_display_name
                 return @target_display_name
             end
             ## 
-            ## Sets the targetDisplayName property value. The target mobile app's display name.
+            ## Sets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
             ## @param value Value to set for the targetDisplayName property.
             ## @return a void
             ## 
@@ -92,14 +89,14 @@ module MicrosoftGraphBeta
                 @target_display_name = value
             end
             ## 
-            ## Gets the targetDisplayVersion property value. The target mobile app's display version.
+            ## Gets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
             ## @return a string
             ## 
             def target_display_version
                 return @target_display_version
             end
             ## 
-            ## Sets the targetDisplayVersion property value. The target mobile app's display version.
+            ## Sets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
             ## @param value Value to set for the targetDisplayVersion property.
             ## @return a void
             ## 
@@ -122,14 +119,14 @@ module MicrosoftGraphBeta
                 @target_id = value
             end
             ## 
-            ## Gets the targetPublisher property value. The target mobile app's publisher.
+            ## Gets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
             ## @return a string
             ## 
             def target_publisher
                 return @target_publisher
             end
             ## 
-            ## Sets the targetPublisher property value. The target mobile app's publisher.
+            ## Sets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
             ## @param value Value to set for the targetPublisher property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Number of points a teacher is giving this submission object.
             @points
             ## 
-            ## Instantiates a new educationAssignmentPointsGrade and sets the default values.
+            ## Instantiates a new EducationAssignmentPointsGrade and sets the default values.
             ## @return a void
             ## 
             def initialize()

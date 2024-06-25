@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class DeletedChat < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deletedChat and sets the default values.
+            ## Instantiates a new DeletedChat and sets the default values.
             ## @return a void
             ## 
             def initialize()

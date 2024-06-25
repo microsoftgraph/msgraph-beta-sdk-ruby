@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @allow_mail_forwarding = value
             end
             ## 
-            ## Instantiates a new encryptWithUserDefinedRights and sets the default values.
+            ## Instantiates a new EncryptWithUserDefinedRights and sets the default values.
             ## @return a void
             ## 
             def initialize()

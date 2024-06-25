@@ -9,50 +9,50 @@ module MicrosoftGraphBeta
         class Windows10EnrollmentCompletionPageConfiguration < MicrosoftGraphBeta::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Allow or block device reset on installation failure
+            # When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.
             @allow_device_reset_on_install_failure
             ## 
-            # Allow the user to continue using the device on installation failure
+            # When TRUE, allows the user to continue using the device on installation failure. When false, blocks the user on installation failure. The default is false.
             @allow_device_use_on_install_failure
             ## 
-            # Allow or block log collection on installation failure
+            # When TRUE, allows log collection on installation failure. When false, log collection is not allowed. The default is false.
             @allow_log_collection_on_install_failure
             ## 
-            # Install all required apps as non blocking apps during white glove
+            # When TRUE, ESP (Enrollment Status Page) installs all required apps targeted during technician phase and ignores any failures for non-blocking apps. When FALSE, ESP fails on any error during app install. The default is false.
             @allow_non_blocking_app_installation
             ## 
-            # Allow the user to retry the setup on installation failure
+            # When TRUE, blocks user from retrying the setup on installation failure. When false, user is allowed to retry. The default is false.
             @block_device_setup_retry_by_user
             ## 
-            # Set custom error message to show upon installation failure
+            # The custom error message to show upon installation failure. Max length is 10000. example: 'Setup could not be completed. Please try again or contact your support person for help.'
             @custom_error_message
             ## 
-            # Only show installation progress for first user post enrollment
+            # When TRUE, disables showing installation progress for first user post enrollment. When false, enables showing progress. The default is false.
             @disable_user_status_tracking_after_first_user
             ## 
-            # Set installation progress timeout in minutes
+            # The installation progress timeout in minutes. Default is 60 minutes.
             @install_progress_timeout_in_minutes
             ## 
             # Allows quality updates installation during OOBE
             @install_quality_updates
             ## 
-            # Selected applications to track the installation status
+            # Selected applications to track the installation status. It is in the form of an array of GUIDs.
             @selected_mobile_app_ids
             ## 
-            # Show or hide installation progress to user
+            # When TRUE, shows installation progress to user. When false, hides installation progress. The default is false.
             @show_installation_progress
             ## 
-            # Only show installation progress for Autopilot enrollment scenarios
+            # When TRUE, installation progress is tracked for only Autopilot enrollment scenarios. When false, other scenarios are tracked as well. The default is false.
             @track_install_progress_for_autopilot_only
             ## 
-            ## Gets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
+            ## Gets the allowDeviceResetOnInstallFailure property value. When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.
             ## @return a boolean
             ## 
             def allow_device_reset_on_install_failure
                 return @allow_device_reset_on_install_failure
             end
             ## 
-            ## Sets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
+            ## Sets the allowDeviceResetOnInstallFailure property value. When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.
             ## @param value Value to set for the allowDeviceResetOnInstallFailure property.
             ## @return a void
             ## 
@@ -60,14 +60,14 @@ module MicrosoftGraphBeta
                 @allow_device_reset_on_install_failure = value
             end
             ## 
-            ## Gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
+            ## Gets the allowDeviceUseOnInstallFailure property value. When TRUE, allows the user to continue using the device on installation failure. When false, blocks the user on installation failure. The default is false.
             ## @return a boolean
             ## 
             def allow_device_use_on_install_failure
                 return @allow_device_use_on_install_failure
             end
             ## 
-            ## Sets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
+            ## Sets the allowDeviceUseOnInstallFailure property value. When TRUE, allows the user to continue using the device on installation failure. When false, blocks the user on installation failure. The default is false.
             ## @param value Value to set for the allowDeviceUseOnInstallFailure property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 @allow_device_use_on_install_failure = value
             end
             ## 
-            ## Gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
+            ## Gets the allowLogCollectionOnInstallFailure property value. When TRUE, allows log collection on installation failure. When false, log collection is not allowed. The default is false.
             ## @return a boolean
             ## 
             def allow_log_collection_on_install_failure
                 return @allow_log_collection_on_install_failure
             end
             ## 
-            ## Sets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
+            ## Sets the allowLogCollectionOnInstallFailure property value. When TRUE, allows log collection on installation failure. When false, log collection is not allowed. The default is false.
             ## @param value Value to set for the allowLogCollectionOnInstallFailure property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 @allow_log_collection_on_install_failure = value
             end
             ## 
-            ## Gets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
+            ## Gets the allowNonBlockingAppInstallation property value. When TRUE, ESP (Enrollment Status Page) installs all required apps targeted during technician phase and ignores any failures for non-blocking apps. When FALSE, ESP fails on any error during app install. The default is false.
             ## @return a boolean
             ## 
             def allow_non_blocking_app_installation
                 return @allow_non_blocking_app_installation
             end
             ## 
-            ## Sets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
+            ## Sets the allowNonBlockingAppInstallation property value. When TRUE, ESP (Enrollment Status Page) installs all required apps targeted during technician phase and ignores any failures for non-blocking apps. When FALSE, ESP fails on any error during app install. The default is false.
             ## @param value Value to set for the allowNonBlockingAppInstallation property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @allow_non_blocking_app_installation = value
             end
             ## 
-            ## Gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
+            ## Gets the blockDeviceSetupRetryByUser property value. When TRUE, blocks user from retrying the setup on installation failure. When false, user is allowed to retry. The default is false.
             ## @return a boolean
             ## 
             def block_device_setup_retry_by_user
                 return @block_device_setup_retry_by_user
             end
             ## 
-            ## Sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
+            ## Sets the blockDeviceSetupRetryByUser property value. When TRUE, blocks user from retrying the setup on installation failure. When false, user is allowed to retry. The default is false.
             ## @param value Value to set for the blockDeviceSetupRetryByUser property.
             ## @return a void
             ## 
@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 @block_device_setup_retry_by_user = value
             end
             ## 
-            ## Instantiates a new windows10EnrollmentCompletionPageConfiguration and sets the default values.
+            ## Instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -137,14 +137,14 @@ module MicrosoftGraphBeta
                 return Windows10EnrollmentCompletionPageConfiguration.new
             end
             ## 
-            ## Gets the customErrorMessage property value. Set custom error message to show upon installation failure
+            ## Gets the customErrorMessage property value. The custom error message to show upon installation failure. Max length is 10000. example: 'Setup could not be completed. Please try again or contact your support person for help.'
             ## @return a string
             ## 
             def custom_error_message
                 return @custom_error_message
             end
             ## 
-            ## Sets the customErrorMessage property value. Set custom error message to show upon installation failure
+            ## Sets the customErrorMessage property value. The custom error message to show upon installation failure. Max length is 10000. example: 'Setup could not be completed. Please try again or contact your support person for help.'
             ## @param value Value to set for the customErrorMessage property.
             ## @return a void
             ## 
@@ -152,14 +152,14 @@ module MicrosoftGraphBeta
                 @custom_error_message = value
             end
             ## 
-            ## Gets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
+            ## Gets the disableUserStatusTrackingAfterFirstUser property value. When TRUE, disables showing installation progress for first user post enrollment. When false, enables showing progress. The default is false.
             ## @return a boolean
             ## 
             def disable_user_status_tracking_after_first_user
                 return @disable_user_status_tracking_after_first_user
             end
             ## 
-            ## Sets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
+            ## Sets the disableUserStatusTrackingAfterFirstUser property value. When TRUE, disables showing installation progress for first user post enrollment. When false, enables showing progress. The default is false.
             ## @param value Value to set for the disableUserStatusTrackingAfterFirstUser property.
             ## @return a void
             ## 
@@ -187,14 +187,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+            ## Gets the installProgressTimeoutInMinutes property value. The installation progress timeout in minutes. Default is 60 minutes.
             ## @return a integer
             ## 
             def install_progress_timeout_in_minutes
                 return @install_progress_timeout_in_minutes
             end
             ## 
-            ## Sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+            ## Sets the installProgressTimeoutInMinutes property value. The installation progress timeout in minutes. Default is 60 minutes.
             ## @param value Value to set for the installProgressTimeoutInMinutes property.
             ## @return a void
             ## 
@@ -217,14 +217,14 @@ module MicrosoftGraphBeta
                 @install_quality_updates = value
             end
             ## 
-            ## Gets the selectedMobileAppIds property value. Selected applications to track the installation status
+            ## Gets the selectedMobileAppIds property value. Selected applications to track the installation status. It is in the form of an array of GUIDs.
             ## @return a string
             ## 
             def selected_mobile_app_ids
                 return @selected_mobile_app_ids
             end
             ## 
-            ## Sets the selectedMobileAppIds property value. Selected applications to track the installation status
+            ## Sets the selectedMobileAppIds property value. Selected applications to track the installation status. It is in the form of an array of GUIDs.
             ## @param value Value to set for the selectedMobileAppIds property.
             ## @return a void
             ## 
@@ -253,14 +253,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("trackInstallProgressForAutopilotOnly", @track_install_progress_for_autopilot_only)
             end
             ## 
-            ## Gets the showInstallationProgress property value. Show or hide installation progress to user
+            ## Gets the showInstallationProgress property value. When TRUE, shows installation progress to user. When false, hides installation progress. The default is false.
             ## @return a boolean
             ## 
             def show_installation_progress
                 return @show_installation_progress
             end
             ## 
-            ## Sets the showInstallationProgress property value. Show or hide installation progress to user
+            ## Sets the showInstallationProgress property value. When TRUE, shows installation progress to user. When false, hides installation progress. The default is false.
             ## @param value Value to set for the showInstallationProgress property.
             ## @return a void
             ## 
@@ -268,14 +268,14 @@ module MicrosoftGraphBeta
                 @show_installation_progress = value
             end
             ## 
-            ## Gets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
+            ## Gets the trackInstallProgressForAutopilotOnly property value. When TRUE, installation progress is tracked for only Autopilot enrollment scenarios. When false, other scenarios are tracked as well. The default is false.
             ## @return a boolean
             ## 
             def track_install_progress_for_autopilot_only
                 return @track_install_progress_for_autopilot_only
             end
             ## 
-            ## Sets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
+            ## Sets the trackInstallProgressForAutopilotOnly property value. When TRUE, installation progress is tracked for only Autopilot enrollment scenarios. When false, other scenarios are tracked as well. The default is false.
             ## @param value Value to set for the trackInstallProgressForAutopilotOnly property.
             ## @return a void
             ## 

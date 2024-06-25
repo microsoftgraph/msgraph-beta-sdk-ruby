@@ -1,2 +1,2 @@
 require_relative 'complete_setup_post_request_body'
-require_relative 'complete_setup_response'
+require_relative 'complete_setup_post_response'

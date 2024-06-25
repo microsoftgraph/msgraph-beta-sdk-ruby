@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # Control action category (Account, Data, Device, Apps, Infrastructure).
             @control_category
             ## 
-            # Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            # Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             @control_state_updates
             ## 
             # Flag to indicate if a control is depreciated.
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Resource cost of implemmentating control (low, moderate, high).
             @implementation_cost
             ## 
-            # The lastModifiedDateTime property
+            # Time at which the control profile entity was last modified. The Timestamp type represents date and time
             @last_modified_date_time
             ## 
             # Current obtained max score on specified date.
@@ -47,10 +47,10 @@ module MicrosoftGraphBeta
             # Description of the impact on users of the remediation.
             @remediation_impact
             ## 
-            # Service that owns the control (Exchange, Sharepoint, Azure AD).
+            # Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             @service
             ## 
-            # List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             @threats
             ## 
             # Control tier (Core, Defense in Depth, Advanced.)
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # User impact of implementing control (low, moderate, high).
             @user_impact
             ## 
-            # The vendorInformation property
+            # Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             @vendor_information
             ## 
             ## Gets the actionType property value. Control action type (Config, Review, Behavior).
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 @compliance_information = value
             end
             ## 
-            ## Instantiates a new secureScoreControlProfile and sets the default values.
+            ## Instantiates a new SecureScoreControlProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -147,14 +147,14 @@ module MicrosoftGraphBeta
                 @control_category = value
             end
             ## 
-            ## Gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            ## Gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             ## @return a secure_score_control_state_update
             ## 
             def control_state_updates
                 return @control_state_updates
             end
             ## 
-            ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             ## @param value Value to set for the controlStateUpdates property.
             ## @return a void
             ## 
@@ -228,14 +228,14 @@ module MicrosoftGraphBeta
                 @implementation_cost = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -331,14 +331,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("vendorInformation", @vendor_information)
             end
             ## 
-            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @return a string
             ## 
             def service
                 return @service
             end
             ## 
-            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @param value Value to set for the service property.
             ## @return a void
             ## 
@@ -346,14 +346,14 @@ module MicrosoftGraphBeta
                 @service = value
             end
             ## 
-            ## Gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @return a string
             ## 
             def threats
                 return @threats
             end
             ## 
-            ## Sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @param value Value to set for the threats property.
             ## @return a void
             ## 
@@ -406,14 +406,14 @@ module MicrosoftGraphBeta
                 @user_impact = value
             end
             ## 
-            ## Gets the vendorInformation property value. The vendorInformation property
+            ## Gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @return a security_vendor_information
             ## 
             def vendor_information
                 return @vendor_information
             end
             ## 
-            ## Sets the vendorInformation property value. The vendorInformation property
+            ## Sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @param value Value to set for the vendorInformation property.
             ## @return a void
             ## 

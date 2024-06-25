@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Value of the integer setting.
             @value
             ## 
-            ## Instantiates a new deviceManagementConfigurationIntegerSettingValue and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationIntegerSettingValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

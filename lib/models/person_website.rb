@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new personWebsite and sets the default values.
+            ## Instantiates a new PersonWebsite and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AccessPackageUserDirectoryAttributeStore < MicrosoftGraphBeta::Models::AccessPackageResourceAttributeDestination
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new accessPackageUserDirectoryAttributeStore and sets the default values.
+            ## Instantiates a new AccessPackageUserDirectoryAttributeStore and sets the default values.
             ## @return a void
             ## 
             def initialize()

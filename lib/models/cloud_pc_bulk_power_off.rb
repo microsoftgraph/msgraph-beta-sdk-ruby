@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CloudPcBulkPowerOff < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new cloudPcBulkPowerOff and sets the default values.
+            ## Instantiates a new CloudPcBulkPowerOff and sets the default values.
             ## @return a void
             ## 
             def initialize()

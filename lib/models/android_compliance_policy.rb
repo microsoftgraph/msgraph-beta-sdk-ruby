@@ -120,7 +120,7 @@ module MicrosoftGraphBeta
                 @condition_statement_id = value
             end
             ## 
-            ## Instantiates a new androidCompliancePolicy and sets the default values.
+            ## Instantiates a new AndroidCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

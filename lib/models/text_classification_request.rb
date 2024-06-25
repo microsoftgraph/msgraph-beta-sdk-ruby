@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The text property
             @text
             ## 
-            ## Instantiates a new textClassificationRequest and sets the default values.
+            ## Instantiates a new TextClassificationRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,8 +78,8 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "contentMetaData" => lambda {|n| @content_meta_data = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ClassificationRequestContentMetaData.create_from_discriminator_value(pn) }) },
                     "fileExtension" => lambda {|n| @file_extension = n.get_string_value() },
-                    "matchTolerancesToInclude" => lambda {|n| @match_tolerances_to_include = n.get_enum_value(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
-                    "scopesToRun" => lambda {|n| @scopes_to_run = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
+                    "matchTolerancesToInclude" => lambda {|n| @match_tolerances_to_include = n.get_enum_values(MicrosoftGraphBeta::Models::MlClassificationMatchTolerance) },
+                    "scopesToRun" => lambda {|n| @scopes_to_run = n.get_enum_values(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
                     "sensitiveTypeIds" => lambda {|n| @sensitive_type_ids = n.get_collection_of_primitive_values(String) },
                     "text" => lambda {|n| @text = n.get_string_value() },
                 })

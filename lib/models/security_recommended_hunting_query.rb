@@ -10,28 +10,28 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The kqlText property
+            # The query string.
             @kql_text
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityRecommendedHuntingQuery and sets the default values.
+            ## Instantiates a new SecurityRecommendedHuntingQuery and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the kqlText property value. The kqlText property
+            ## Gets the kqlText property value. The query string.
             ## @return a string
             ## 
             def kql_text
                 return @kql_text
             end
             ## 
-            ## Sets the kqlText property value. The kqlText property
+            ## Sets the kqlText property value. The query string.
             ## @param value Value to set for the kqlText property.
             ## @return a void
             ## 

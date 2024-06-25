@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
             @hybrid_azure_a_d_join_skip_connectivity_check
             ## 
-            ## Instantiates a new activeDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
+            ## Instantiates a new ActiveDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

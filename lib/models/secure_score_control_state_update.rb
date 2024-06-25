@@ -11,47 +11,47 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The assignedTo property
+            # Assign the control to the user who will take the action
             @assigned_to
             ## 
-            # The comment property
+            # Provides optional comment about the control
             @comment
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The state property
+            # State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)
             @state
             ## 
-            # The updatedBy property
+            # ID of the user who updated tenant state
             @updated_by
             ## 
-            # The updatedDateTime property
+            # Time at which control state was updated
             @updated_date_time
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the assignedTo property value. The assignedTo property
+            ## Gets the assignedTo property value. Assign the control to the user who will take the action
             ## @return a string
             ## 
             def assigned_to
                 return @assigned_to
             end
             ## 
-            ## Sets the assignedTo property value. The assignedTo property
+            ## Sets the assignedTo property value. Assign the control to the user who will take the action
             ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 @assigned_to = value
             end
             ## 
-            ## Gets the comment property value. The comment property
+            ## Gets the comment property value. Provides optional comment about the control
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. The comment property
+            ## Sets the comment property value. Provides optional comment about the control
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
                 @comment = value
             end
             ## 
-            ## Instantiates a new secureScoreControlStateUpdate and sets the default values.
+            ## Instantiates a new SecureScoreControlStateUpdate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -134,14 +134,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the state property value. The state property
+            ## Gets the state property value. State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)
             ## @return a string
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state property
+            ## Sets the state property value. State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)
             ## @param value Value to set for the state property.
             ## @return a void
             ## 
@@ -149,14 +149,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the updatedBy property value. The updatedBy property
+            ## Gets the updatedBy property value. ID of the user who updated tenant state
             ## @return a string
             ## 
             def updated_by
                 return @updated_by
             end
             ## 
-            ## Sets the updatedBy property value. The updatedBy property
+            ## Sets the updatedBy property value. ID of the user who updated tenant state
             ## @param value Value to set for the updatedBy property.
             ## @return a void
             ## 
@@ -164,14 +164,14 @@ module MicrosoftGraphBeta
                 @updated_by = value
             end
             ## 
-            ## Gets the updatedDateTime property value. The updatedDateTime property
+            ## Gets the updatedDateTime property value. Time at which control state was updated
             ## @return a date_time
             ## 
             def updated_date_time
                 return @updated_date_time
             end
             ## 
-            ## Sets the updatedDateTime property value. The updatedDateTime property
+            ## Sets the updatedDateTime property value. Time at which control state was updated
             ## @param value Value to set for the updatedDateTime property.
             ## @return a void
             ## 

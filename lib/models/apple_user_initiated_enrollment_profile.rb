@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @available_enrollment_type_options = value
             end
             ## 
-            ## Instantiates a new appleUserInitiatedEnrollmentProfile and sets the default values.
+            ## Instantiates a new AppleUserInitiatedEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

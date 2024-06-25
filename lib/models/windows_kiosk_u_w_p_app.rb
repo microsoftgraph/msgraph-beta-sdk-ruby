@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @app_user_model_id = value
             end
             ## 
-            ## Instantiates a new windowsKioskUWPApp and sets the default values.
+            ## Instantiates a new WindowsKioskUWPApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

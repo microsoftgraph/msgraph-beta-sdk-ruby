@@ -96,7 +96,7 @@ module MicrosoftGraphBeta
                 @azure_ad_registered = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

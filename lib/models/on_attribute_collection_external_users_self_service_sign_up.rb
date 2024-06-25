@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @attributes = value
             end
             ## 
-            ## Instantiates a new onAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
+            ## Instantiates a new OnAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Detailed information about the message type.
             @description
             ## 
-            # The fileName property
+            # Source file that contains the error.
             @file_name
             ## 
             # The OdataType property
@@ -22,22 +22,22 @@ module MicrosoftGraphBeta
             # Type of the message. Possible values are: error, warning, information.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new educationFileSynchronizationVerificationMessage and sets the default values.
+            ## Instantiates a new EducationFileSynchronizationVerificationMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the fileName property value. The fileName property
+            ## Gets the fileName property value. Source file that contains the error.
             ## @return a string
             ## 
             def file_name
                 return @file_name
             end
             ## 
-            ## Sets the fileName property value. The fileName property
+            ## Sets the fileName property value. Source file that contains the error.
             ## @param value Value to set for the fileName property.
             ## @return a void
             ## 

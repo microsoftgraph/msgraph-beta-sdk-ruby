@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                 @apply_hold_to_sources = value
             end
             ## 
-            ## Instantiates a new ediscoveryCustodian and sets the default values.
+            ## Instantiates a new EdiscoveryCustodian and sets the default values.
             ## @return a void
             ## 
             def initialize()

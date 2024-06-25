@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @answer_options = value
             end
             ## 
-            ## Instantiates a new meetingRegistrationQuestion and sets the default values.
+            ## Instantiates a new MeetingRegistrationQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

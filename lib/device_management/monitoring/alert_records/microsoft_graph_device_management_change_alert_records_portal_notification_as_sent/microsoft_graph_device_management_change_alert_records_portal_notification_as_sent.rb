@@ -1,0 +1,1 @@
+require_relative 'change_alert_records_portal_notification_as_sent_post_request_body'

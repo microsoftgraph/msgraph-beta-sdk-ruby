@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The groupSettingValue property
             @group_setting_value
             ## 
-            ## Instantiates a new deviceManagementConfigurationGroupSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationGroupSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

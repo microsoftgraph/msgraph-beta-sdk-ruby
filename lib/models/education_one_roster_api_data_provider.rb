@@ -16,13 +16,13 @@ module MicrosoftGraphBeta
             # Optional customization to be applied to the synchronization profile.
             @customizations
             ## 
-            # The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
+            # The OneRoster Service Provider name as defined by the OneRoster specification.
             @provider_name
             ## 
-            # The list of [School/Org][orgs] sourcedId to sync.
+            # The list of School/Org sourcedId to sync.
             @schools_ids
             ## 
-            # The list of [academic sessions][terms] to sync.
+            # The list of academic sessions to sync.
             @term_ids
             ## 
             ## Gets the connectionSettings property value. The connectionSettings property
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @connection_url = value
             end
             ## 
-            ## Instantiates a new educationOneRosterApiDataProvider and sets the default values.
+            ## Instantiates a new EducationOneRosterApiDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
+            ## Gets the providerName property value. The OneRoster Service Provider name as defined by the OneRoster specification.
             ## @return a string
             ## 
             def provider_name
                 return @provider_name
             end
             ## 
-            ## Sets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
+            ## Sets the providerName property value. The OneRoster Service Provider name as defined by the OneRoster specification.
             ## @param value Value to set for the providerName property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 @provider_name = value
             end
             ## 
-            ## Gets the schoolsIds property value. The list of [School/Org][orgs] sourcedId to sync.
+            ## Gets the schoolsIds property value. The list of School/Org sourcedId to sync.
             ## @return a string
             ## 
             def schools_ids
                 return @schools_ids
             end
             ## 
-            ## Sets the schoolsIds property value. The list of [School/Org][orgs] sourcedId to sync.
+            ## Sets the schoolsIds property value. The list of School/Org sourcedId to sync.
             ## @param value Value to set for the schoolsIds property.
             ## @return a void
             ## 
@@ -146,14 +146,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("termIds", @term_ids)
             end
             ## 
-            ## Gets the termIds property value. The list of [academic sessions][terms] to sync.
+            ## Gets the termIds property value. The list of academic sessions to sync.
             ## @return a string
             ## 
             def term_ids
                 return @term_ids
             end
             ## 
-            ## Sets the termIds property value. The list of [academic sessions][terms] to sync.
+            ## Sets the termIds property value. The list of academic sessions to sync.
             ## @param value Value to set for the termIds property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The replies property
             @replies
             ## 
-            ## Instantiates a new documentComment and sets the default values.
+            ## Instantiates a new DocumentComment and sets the default values.
             ## @return a void
             ## 
             def initialize()

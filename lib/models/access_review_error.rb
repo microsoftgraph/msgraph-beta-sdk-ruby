@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AccessReviewError < MicrosoftGraphBeta::Models::GenericError
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new accessReviewError and sets the default values.
+            ## Instantiates a new AccessReviewError and sets the default values.
             ## @return a void
             ## 
             def initialize()

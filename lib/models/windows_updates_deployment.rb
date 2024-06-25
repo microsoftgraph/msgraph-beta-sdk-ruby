@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                 @audience = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesDeployment and sets the default values.
+            ## Instantiates a new WindowsUpdatesDeployment and sets the default values.
             ## @return a void
             ## 
             def initialize()

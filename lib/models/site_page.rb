@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @canvas_layout = value
             end
             ## 
-            ## Instantiates a new sitePage and sets the default values.
+            ## Instantiates a new SitePage and sets the default values.
             ## @return a void
             ## 
             def initialize()

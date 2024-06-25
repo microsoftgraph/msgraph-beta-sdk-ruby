@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The HTML string in text web part.
             @inner_html
             ## 
-            ## Instantiates a new textWebPart and sets the default values.
+            ## Instantiates a new TextWebPart and sets the default values.
             ## @return a void
             ## 
             def initialize()

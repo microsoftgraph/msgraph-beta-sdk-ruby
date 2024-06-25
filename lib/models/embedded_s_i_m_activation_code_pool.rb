@@ -76,7 +76,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new embeddedSIMActivationCodePool and sets the default values.
+            ## Instantiates a new EmbeddedSIMActivationCodePool and sets the default values.
             ## @return a void
             ## 
             def initialize()

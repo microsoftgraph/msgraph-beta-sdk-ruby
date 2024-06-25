@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The name of the program control type
             @display_name
             ## 
-            ## Instantiates a new programControlType and sets the default values.
+            ## Instantiates a new ProgramControlType and sets the default values.
             ## @return a void
             ## 
             def initialize()

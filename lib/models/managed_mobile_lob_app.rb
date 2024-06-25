@@ -12,13 +12,13 @@ module MicrosoftGraphBeta
             # The internal committed content version.
             @committed_content_version
             ## 
-            # The list of content versions for this app.
+            # The list of content versions for this app. This property is read-only.
             @content_versions
             ## 
             # The name of the main Lob application file.
             @file_name
             ## 
-            # The total size, including all uploaded files.
+            # The total size, including all uploaded files. This property is read-only.
             @size
             ## 
             ## Gets the committedContentVersion property value. The internal committed content version.
@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @committed_content_version = value
             end
             ## 
-            ## Instantiates a new managedMobileLobApp and sets the default values.
+            ## Instantiates a new ManagedMobileLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,14 +44,14 @@ module MicrosoftGraphBeta
                 @odata_type = "#microsoft.graph.managedMobileLobApp"
             end
             ## 
-            ## Gets the contentVersions property value. The list of content versions for this app.
+            ## Gets the contentVersions property value. The list of content versions for this app. This property is read-only.
             ## @return a mobile_app_content
             ## 
             def content_versions
                 return @content_versions
             end
             ## 
-            ## Sets the contentVersions property value. The list of content versions for this app.
+            ## Sets the contentVersions property value. The list of content versions for this app. This property is read-only.
             ## @param value Value to set for the contentVersions property.
             ## @return a void
             ## 
@@ -115,17 +115,16 @@ module MicrosoftGraphBeta
                 writer.write_string_value("committedContentVersion", @committed_content_version)
                 writer.write_collection_of_object_values("contentVersions", @content_versions)
                 writer.write_string_value("fileName", @file_name)
-                writer.write_object_value("size", @size)
             end
             ## 
-            ## Gets the size property value. The total size, including all uploaded files.
+            ## Gets the size property value. The total size, including all uploaded files. This property is read-only.
             ## @return a int64
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. The total size, including all uploaded files.
+            ## Sets the size property value. The total size, including all uploaded files. This property is read-only.
             ## @param value Value to set for the size property.
             ## @return a void
             ## 

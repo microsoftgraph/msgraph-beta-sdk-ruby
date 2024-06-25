@@ -10,16 +10,16 @@ module MicrosoftGraphBeta
             # A list of categories defined for the user.
             @master_categories
             ## 
-            # The taskFolders property
+            # The user's Outlook task folders. Read-only. Nullable.
             @task_folders
             ## 
-            # The taskGroups property
+            # The user's Outlook task groups. Read-only. Nullable.
             @task_groups
             ## 
-            # The tasks property
+            # The user's Outlook tasks. Read-only. Nullable.
             @tasks
             ## 
-            ## Instantiates a new outlookUser and sets the default values.
+            ## Instantiates a new OutlookUser and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("tasks", @tasks)
             end
             ## 
-            ## Gets the taskFolders property value. The taskFolders property
+            ## Gets the taskFolders property value. The user's Outlook task folders. Read-only. Nullable.
             ## @return a outlook_task_folder
             ## 
             def task_folders
                 return @task_folders
             end
             ## 
-            ## Sets the taskFolders property value. The taskFolders property
+            ## Sets the taskFolders property value. The user's Outlook task folders. Read-only. Nullable.
             ## @param value Value to set for the taskFolders property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 @task_folders = value
             end
             ## 
-            ## Gets the taskGroups property value. The taskGroups property
+            ## Gets the taskGroups property value. The user's Outlook task groups. Read-only. Nullable.
             ## @return a outlook_task_group
             ## 
             def task_groups
                 return @task_groups
             end
             ## 
-            ## Sets the taskGroups property value. The taskGroups property
+            ## Sets the taskGroups property value. The user's Outlook task groups. Read-only. Nullable.
             ## @param value Value to set for the taskGroups property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @task_groups = value
             end
             ## 
-            ## Gets the tasks property value. The tasks property
+            ## Gets the tasks property value. The user's Outlook tasks. Read-only. Nullable.
             ## @return a outlook_task
             ## 
             def tasks
                 return @tasks
             end
             ## 
-            ## Sets the tasks property value. The tasks property
+            ## Sets the tasks property value. The user's Outlook tasks. Read-only. Nullable.
             ## @param value Value to set for the tasks property.
             ## @return a void
             ## 

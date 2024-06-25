@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceCustomAttributeShellScript and sets the default values.
+            ## Instantiates a new DeviceCustomAttributeShellScript and sets the default values.
             ## @return a void
             ## 
             def initialize()

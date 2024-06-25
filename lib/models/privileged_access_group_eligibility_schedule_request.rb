@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # The identifier of membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.
             @access_id
             ## 
-            # References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
+            # References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.
             @group
             ## 
             # The identifier of the group representing the scope of the membership and ownership eligibility through PIM for groups. Required.
             @group_id
             ## 
-            # References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
+            # References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand and $select nested in $expand for id only.
             @principal
             ## 
             # The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @access_id = value
             end
             ## 
-            ## Instantiates a new privilegedAccessGroupEligibilityScheduleRequest and sets the default values.
+            ## Instantiates a new PrivilegedAccessGroupEligibilityScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the group property value. References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
+            ## Gets the group property value. References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.
             ## @return a group
             ## 
             def group
                 return @group
             end
             ## 
-            ## Sets the group property value. References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
+            ## Sets the group property value. References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.
             ## @param value Value to set for the group property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 @group_id = value
             end
             ## 
-            ## Gets the principal property value. References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
+            ## Gets the principal property value. References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand and $select nested in $expand for id only.
             ## @return a directory_object
             ## 
             def principal
                 return @principal
             end
             ## 
-            ## Sets the principal property value. References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
+            ## Sets the principal property value. References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand and $select nested in $expand for id only.
             ## @param value Value to set for the principal property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Properties, in key-value pair format, of the action.
             @properties
             ## 
-            ## Instantiates a new securityCustomAction and sets the default values.
+            ## Instantiates a new SecurityCustomAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

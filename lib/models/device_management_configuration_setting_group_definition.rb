@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @child_ids = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingGroupDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

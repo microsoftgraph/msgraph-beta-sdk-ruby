@@ -19,9 +19,6 @@ module MicrosoftGraphBeta
             # Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
             @type
             ## 
-            # Represents the formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.
-            @value
-            ## 
             # Specifies whether the object is visible or not.
             @visible
             ## 
@@ -43,7 +40,7 @@ module MicrosoftGraphBeta
                 @comment = value
             end
             ## 
-            ## Instantiates a new workbookNamedItem and sets the default values.
+            ## Instantiates a new WorkbookNamedItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,7 +65,6 @@ module MicrosoftGraphBeta
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "scope" => lambda {|n| @scope = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_string_value() },
-                    "value" => lambda {|n| @value = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Json.create_from_discriminator_value(pn) }) },
                     "visible" => lambda {|n| @visible = n.get_boolean_value() },
                     "worksheet" => lambda {|n| @worksheet = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }) },
                 })
@@ -115,7 +111,6 @@ module MicrosoftGraphBeta
                 writer.write_string_value("name", @name)
                 writer.write_string_value("scope", @scope)
                 writer.write_string_value("type", @type)
-                writer.write_object_value("value", @value)
                 writer.write_boolean_value("visible", @visible)
                 writer.write_object_value("worksheet", @worksheet)
             end
@@ -133,21 +128,6 @@ module MicrosoftGraphBeta
             ## 
             def type=(value)
                 @type = value
-            end
-            ## 
-            ## Gets the value property value. Represents the formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.
-            ## @return a json
-            ## 
-            def value
-                return @value
-            end
-            ## 
-            ## Sets the value property value. Represents the formula that the name is defined to refer to. For example, =Sheet14!$B$2:$H$12 and =4.75. Read-only.
-            ## @param value Value to set for the value property.
-            ## @return a void
-            ## 
-            def value=(value)
-                @value = value
             end
             ## 
             ## Gets the visible property value. Specifies whether the object is visible or not.

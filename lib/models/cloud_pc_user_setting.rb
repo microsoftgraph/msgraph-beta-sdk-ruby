@@ -8,16 +8,19 @@ module MicrosoftGraphBeta
         class CloudPcUserSetting < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+            # Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
             @assignments
             ## 
-            # The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            # The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             @created_date_time
+            ## 
+            # The crossRegionDisasterRecoverySetting property
+            @cross_region_disaster_recovery_setting
             ## 
             # The setting name displayed in the user interface.
             @display_name
             ## 
-            # The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            # The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             @last_modified_date_time
             ## 
             # Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
@@ -29,17 +32,17 @@ module MicrosoftGraphBeta
             # Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
             @restore_point_setting
             ## 
-            # Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+            # Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
             @self_service_enabled
             ## 
-            ## Gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+            ## Gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
             ## @return a cloud_pc_user_setting_assignment
             ## 
             def assignments
                 return @assignments
             end
             ## 
-            ## Sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+            ## Sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
             ## @param value Value to set for the assignments property.
             ## @return a void
             ## 
@@ -47,21 +50,21 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new cloudPcUserSetting and sets the default values.
+            ## Instantiates a new CloudPcUserSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            ## Gets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            ## Sets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -76,6 +79,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return CloudPcUserSetting.new
+            end
+            ## 
+            ## Gets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+            ## @return a cloud_pc_cross_region_disaster_recovery_setting
+            ## 
+            def cross_region_disaster_recovery_setting
+                return @cross_region_disaster_recovery_setting
+            end
+            ## 
+            ## Sets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+            ## @param value Value to set for the crossRegionDisasterRecoverySetting property.
+            ## @return a void
+            ## 
+            def cross_region_disaster_recovery_setting=(value)
+                @cross_region_disaster_recovery_setting = value
             end
             ## 
             ## Gets the displayName property value. The setting name displayed in the user interface.
@@ -100,6 +118,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcUserSettingAssignment.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "crossRegionDisasterRecoverySetting" => lambda {|n| @cross_region_disaster_recovery_setting = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcCrossRegionDisasterRecoverySetting.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "localAdminEnabled" => lambda {|n| @local_admin_enabled = n.get_boolean_value() },
@@ -109,14 +128,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            ## Gets the lastModifiedDateTime property value. The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+            ## Sets the lastModifiedDateTime property value. The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -169,14 +188,14 @@ module MicrosoftGraphBeta
                 @restore_point_setting = value
             end
             ## 
-            ## Gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+            ## Gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
             ## @return a boolean
             ## 
             def self_service_enabled
                 return @self_service_enabled
             end
             ## 
-            ## Sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
+            ## Sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
             ## @param value Value to set for the selfServiceEnabled property.
             ## @return a void
             ## 
@@ -193,6 +212,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_object_value("crossRegionDisasterRecoverySetting", @cross_region_disaster_recovery_setting)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_boolean_value("localAdminEnabled", @local_admin_enabled)

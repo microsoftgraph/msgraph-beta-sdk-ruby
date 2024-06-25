@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new projectParticipationCollectionResponse and sets the default values.
+            ## Instantiates a new ProjectParticipationCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # JSON representation of the value
             @value_json
             ## 
-            ## Instantiates a new deviceManagementSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

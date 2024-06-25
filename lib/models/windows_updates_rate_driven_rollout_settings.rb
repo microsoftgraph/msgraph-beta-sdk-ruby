@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.
             @devices_per_offer
             ## 
-            ## Instantiates a new windowsUpdatesRateDrivenRolloutSettings and sets the default values.
+            ## Instantiates a new WindowsUpdatesRateDrivenRolloutSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

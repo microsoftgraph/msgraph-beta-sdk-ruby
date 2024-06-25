@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # The host property
             @host
             ## 
-            ## Instantiates a new securitySubdomain and sets the default values.
+            ## Instantiates a new SecuritySubdomain and sets the default values.
             ## @return a void
             ## 
             def initialize()

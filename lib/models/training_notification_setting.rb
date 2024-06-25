@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class TrainingNotificationSetting < MicrosoftGraphBeta::Models::EndUserNotificationSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The trainingAssignment property
+            # Training assignment details.
             @training_assignment
             ## 
-            # The trainingReminder property
+            # Training reminder details.
             @training_reminder
             ## 
-            ## Instantiates a new trainingNotificationSetting and sets the default values.
+            ## Instantiates a new TrainingNotificationSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,14 +51,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("trainingReminder", @training_reminder)
             end
             ## 
-            ## Gets the trainingAssignment property value. The trainingAssignment property
+            ## Gets the trainingAssignment property value. Training assignment details.
             ## @return a base_end_user_notification
             ## 
             def training_assignment
                 return @training_assignment
             end
             ## 
-            ## Sets the trainingAssignment property value. The trainingAssignment property
+            ## Sets the trainingAssignment property value. Training assignment details.
             ## @param value Value to set for the trainingAssignment property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 @training_assignment = value
             end
             ## 
-            ## Gets the trainingReminder property value. The trainingReminder property
+            ## Gets the trainingReminder property value. Training reminder details.
             ## @return a training_reminder_notification
             ## 
             def training_reminder
                 return @training_reminder
             end
             ## 
-            ## Sets the trainingReminder property value. The trainingReminder property
+            ## Sets the trainingReminder property value. Training reminder details.
             ## @param value Value to set for the trainingReminder property.
             ## @return a void
             ## 

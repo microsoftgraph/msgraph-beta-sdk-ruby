@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The web URL that can be used for downloading the image.
             @web_url
             ## 
-            ## Instantiates a new teamsAppIcon and sets the default values.
+            ## Instantiates a new TeamsAppIcon and sets the default values.
             ## @return a void
             ## 
             def initialize()

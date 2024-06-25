@@ -5,6 +5,8 @@ module MicrosoftGraphBeta
             Article: :Article,
             Home: :Home,
             UnknownFutureValue: :UnknownFutureValue,
+            NewsLink: :NewsLink,
+            VideoNewsLink: :VideoNewsLink,
         }
     end
 end

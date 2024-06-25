@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Total number of Apple Vpp licenses associated
             @total_licenses_count
             ## 
-            ## Instantiates a new revokeAppleVppLicensesActionResult and sets the default values.
+            ## Instantiates a new RevokeAppleVppLicensesActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

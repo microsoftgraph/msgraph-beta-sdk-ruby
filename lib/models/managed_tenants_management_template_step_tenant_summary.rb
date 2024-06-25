@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                 @compliant_tenants_count = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagementTemplateStepTenantSummary and sets the default values.
+            ## Instantiates a new ManagedTenantsManagementTemplateStepTenantSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

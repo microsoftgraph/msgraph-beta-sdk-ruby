@@ -103,7 +103,7 @@ module MicrosoftGraphBeta
                 @configure_wifi = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

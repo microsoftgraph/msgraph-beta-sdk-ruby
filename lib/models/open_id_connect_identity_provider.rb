@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class OpenIdConnectIdentityProvider < MicrosoftGraphBeta::Models::IdentityProviderBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.
+            # After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
             @claims_mapping
             ## 
             # The client identifier for the application obtained when registering the application with the identity provider. Required.
@@ -28,17 +28,17 @@ module MicrosoftGraphBeta
             # The responseType property
             @response_type
             ## 
-            # Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
+            # Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
             @scope
             ## 
-            ## Gets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.
+            ## Gets the claimsMapping property value. After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
             ## @return a claims_mapping
             ## 
             def claims_mapping
                 return @claims_mapping
             end
             ## 
-            ## Sets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.
+            ## Sets the claimsMapping property value. After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
             ## @param value Value to set for the claimsMapping property.
             ## @return a void
             ## 
@@ -76,7 +76,7 @@ module MicrosoftGraphBeta
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new openIdConnectIdentityProvider and sets the default values.
+            ## Instantiates a new OpenIdConnectIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -119,7 +119,7 @@ module MicrosoftGraphBeta
                     "domainHint" => lambda {|n| @domain_hint = n.get_string_value() },
                     "metadataUrl" => lambda {|n| @metadata_url = n.get_string_value() },
                     "responseMode" => lambda {|n| @response_mode = n.get_enum_value(MicrosoftGraphBeta::Models::OpenIdConnectResponseMode) },
-                    "responseType" => lambda {|n| @response_type = n.get_enum_value(MicrosoftGraphBeta::Models::OpenIdConnectResponseTypes) },
+                    "responseType" => lambda {|n| @response_type = n.get_enum_values(MicrosoftGraphBeta::Models::OpenIdConnectResponseTypes) },
                     "scope" => lambda {|n| @scope = n.get_string_value() },
                 })
             end
@@ -169,14 +169,14 @@ module MicrosoftGraphBeta
                 @response_type = value
             end
             ## 
-            ## Gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
+            ## Gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
             ## @return a string
             ## 
             def scope
                 return @scope
             end
             ## 
-            ## Sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
+            ## Sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
             ## @param value Value to set for the scope property.
             ## @return a void
             ## 

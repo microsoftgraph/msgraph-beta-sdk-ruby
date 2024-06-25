@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Define the path of a desktop app
             @path
             ## 
-            ## Instantiates a new windowsKioskDesktopApp and sets the default values.
+            ## Instantiates a new WindowsKioskDesktopApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

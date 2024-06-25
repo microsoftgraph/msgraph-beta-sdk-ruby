@@ -56,6 +56,9 @@ module MicrosoftGraphBeta
             # ELAM provides protection for the computers in your network when they start up
             @early_launch_anti_malware_driver_protection
             ## 
+            # A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+            @firmware_protection
+            ## 
             # This attribute indicates if DHA is supported for the device
             @health_attestation_supported_status
             ## 
@@ -67,6 +70,12 @@ module MicrosoftGraphBeta
             ## 
             # The Timestamp of the last update.
             @last_update_date_time
+            ## 
+            # A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            @memory_access_protection
+            ## 
+            # A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            @memory_integrity_protection
             ## 
             # The OdataType property
             @odata_type
@@ -98,27 +107,36 @@ module MicrosoftGraphBeta
             # Fingerprint of the Custom Secure Boot Configuration Policy
             @secure_boot_configuration_policy_finger_print
             ## 
+            # A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            @secured_core_p_c
+            ## 
+            # A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".
+            @system_management_mode
+            ## 
             # When test signing is allowed, the device does not enforce signature validation during boot
             @test_signing
             ## 
             # The security version number of the Boot Application
             @tpm_version
             ## 
-            # VSM is a container that protects high value assets from a compromised kernel
+            # Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are 'enabled', 'disabled' and 'notApplicable'. 'enabled' indicates Virtual Secure Mode (VSM) is enabled. 'disabled' indicates Virtual Secure Mode (VSM) is disabled. 'notApplicable' indicates the device is not a Windows 11 device. Default value is 'notApplicable'.
             @virtual_secure_mode
+            ## 
+            # A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            @virtualization_based_security
             ## 
             # Operating system running with limited services that is used to prepare a computer for Windows
             @windows_p_e
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -275,7 +293,7 @@ module MicrosoftGraphBeta
                 @code_integrity_policy = value
             end
             ## 
-            ## Instantiates a new deviceHealthAttestationState and sets the default values.
+            ## Instantiates a new DeviceHealthAttestationState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -366,6 +384,21 @@ module MicrosoftGraphBeta
                 @early_launch_anti_malware_driver_protection = value
             end
             ## 
+            ## Gets the firmwareProtection property value. A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @return a firmware_protection_type
+            ## 
+            def firmware_protection
+                return @firmware_protection
+            end
+            ## 
+            ## Sets the firmwareProtection property value. A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the firmwareProtection property.
+            ## @return a void
+            ## 
+            def firmware_protection=(value)
+                @firmware_protection = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -386,10 +419,13 @@ module MicrosoftGraphBeta
                     "dataExcutionPolicy" => lambda {|n| @data_excution_policy = n.get_string_value() },
                     "deviceHealthAttestationStatus" => lambda {|n| @device_health_attestation_status = n.get_string_value() },
                     "earlyLaunchAntiMalwareDriverProtection" => lambda {|n| @early_launch_anti_malware_driver_protection = n.get_string_value() },
+                    "firmwareProtection" => lambda {|n| @firmware_protection = n.get_enum_value(MicrosoftGraphBeta::Models::FirmwareProtectionType) },
                     "healthAttestationSupportedStatus" => lambda {|n| @health_attestation_supported_status = n.get_string_value() },
                     "healthStatusMismatchInfo" => lambda {|n| @health_status_mismatch_info = n.get_string_value() },
                     "issuedDateTime" => lambda {|n| @issued_date_time = n.get_date_time_value() },
                     "lastUpdateDateTime" => lambda {|n| @last_update_date_time = n.get_string_value() },
+                    "memoryAccessProtection" => lambda {|n| @memory_access_protection = n.get_enum_value(MicrosoftGraphBeta::Models::AzureAttestationSettingStatus) },
+                    "memoryIntegrityProtection" => lambda {|n| @memory_integrity_protection = n.get_enum_value(MicrosoftGraphBeta::Models::AzureAttestationSettingStatus) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "operatingSystemKernelDebugging" => lambda {|n| @operating_system_kernel_debugging = n.get_string_value() },
                     "operatingSystemRevListInfo" => lambda {|n| @operating_system_rev_list_info = n.get_string_value() },
@@ -400,9 +436,12 @@ module MicrosoftGraphBeta
                     "safeMode" => lambda {|n| @safe_mode = n.get_string_value() },
                     "secureBoot" => lambda {|n| @secure_boot = n.get_string_value() },
                     "secureBootConfigurationPolicyFingerPrint" => lambda {|n| @secure_boot_configuration_policy_finger_print = n.get_string_value() },
+                    "securedCorePC" => lambda {|n| @secured_core_p_c = n.get_enum_value(MicrosoftGraphBeta::Models::AzureAttestationSettingStatus) },
+                    "systemManagementMode" => lambda {|n| @system_management_mode = n.get_enum_value(MicrosoftGraphBeta::Models::SystemManagementModeLevel) },
                     "testSigning" => lambda {|n| @test_signing = n.get_string_value() },
                     "tpmVersion" => lambda {|n| @tpm_version = n.get_string_value() },
                     "virtualSecureMode" => lambda {|n| @virtual_secure_mode = n.get_string_value() },
+                    "virtualizationBasedSecurity" => lambda {|n| @virtualization_based_security = n.get_enum_value(MicrosoftGraphBeta::Models::AzureAttestationSettingStatus) },
                     "windowsPE" => lambda {|n| @windows_p_e = n.get_string_value() },
                 }
             end
@@ -465,6 +504,36 @@ module MicrosoftGraphBeta
             ## 
             def last_update_date_time=(value)
                 @last_update_date_time = value
+            end
+            ## 
+            ## Gets the memoryAccessProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @return a azure_attestation_setting_status
+            ## 
+            def memory_access_protection
+                return @memory_access_protection
+            end
+            ## 
+            ## Sets the memoryAccessProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the memoryAccessProtection property.
+            ## @return a void
+            ## 
+            def memory_access_protection=(value)
+                @memory_access_protection = value
+            end
+            ## 
+            ## Gets the memoryIntegrityProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @return a azure_attestation_setting_status
+            ## 
+            def memory_integrity_protection
+                return @memory_integrity_protection
+            end
+            ## 
+            ## Sets the memoryIntegrityProtection property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the memoryIntegrityProtection property.
+            ## @return a void
+            ## 
+            def memory_integrity_protection=(value)
+                @memory_integrity_protection = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -617,6 +686,21 @@ module MicrosoftGraphBeta
                 @secure_boot_configuration_policy_finger_print = value
             end
             ## 
+            ## Gets the securedCorePC property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @return a azure_attestation_setting_status
+            ## 
+            def secured_core_p_c
+                return @secured_core_p_c
+            end
+            ## 
+            ## Sets the securedCorePC property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the securedCorePC property.
+            ## @return a void
+            ## 
+            def secured_core_p_c=(value)
+                @secured_core_p_c = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -638,10 +722,13 @@ module MicrosoftGraphBeta
                 writer.write_string_value("dataExcutionPolicy", @data_excution_policy)
                 writer.write_string_value("deviceHealthAttestationStatus", @device_health_attestation_status)
                 writer.write_string_value("earlyLaunchAntiMalwareDriverProtection", @early_launch_anti_malware_driver_protection)
+                writer.write_enum_value("firmwareProtection", @firmware_protection)
                 writer.write_string_value("healthAttestationSupportedStatus", @health_attestation_supported_status)
                 writer.write_string_value("healthStatusMismatchInfo", @health_status_mismatch_info)
                 writer.write_date_time_value("issuedDateTime", @issued_date_time)
                 writer.write_string_value("lastUpdateDateTime", @last_update_date_time)
+                writer.write_enum_value("memoryAccessProtection", @memory_access_protection)
+                writer.write_enum_value("memoryIntegrityProtection", @memory_integrity_protection)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("operatingSystemKernelDebugging", @operating_system_kernel_debugging)
                 writer.write_string_value("operatingSystemRevListInfo", @operating_system_rev_list_info)
@@ -652,11 +739,29 @@ module MicrosoftGraphBeta
                 writer.write_string_value("safeMode", @safe_mode)
                 writer.write_string_value("secureBoot", @secure_boot)
                 writer.write_string_value("secureBootConfigurationPolicyFingerPrint", @secure_boot_configuration_policy_finger_print)
+                writer.write_enum_value("securedCorePC", @secured_core_p_c)
+                writer.write_enum_value("systemManagementMode", @system_management_mode)
                 writer.write_string_value("testSigning", @test_signing)
                 writer.write_string_value("tpmVersion", @tpm_version)
                 writer.write_string_value("virtualSecureMode", @virtual_secure_mode)
+                writer.write_enum_value("virtualizationBasedSecurity", @virtualization_based_security)
                 writer.write_string_value("windowsPE", @windows_p_e)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the systemManagementMode property value. A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".
+            ## @return a system_management_mode_level
+            ## 
+            def system_management_mode
+                return @system_management_mode
+            end
+            ## 
+            ## Sets the systemManagementMode property value. A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the systemManagementMode property.
+            ## @return a void
+            ## 
+            def system_management_mode=(value)
+                @system_management_mode = value
             end
             ## 
             ## Gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
@@ -689,19 +794,34 @@ module MicrosoftGraphBeta
                 @tpm_version = value
             end
             ## 
-            ## Gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+            ## Gets the virtualSecureMode property value. Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are 'enabled', 'disabled' and 'notApplicable'. 'enabled' indicates Virtual Secure Mode (VSM) is enabled. 'disabled' indicates Virtual Secure Mode (VSM) is disabled. 'notApplicable' indicates the device is not a Windows 11 device. Default value is 'notApplicable'.
             ## @return a string
             ## 
             def virtual_secure_mode
                 return @virtual_secure_mode
             end
             ## 
-            ## Sets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+            ## Sets the virtualSecureMode property value. Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are 'enabled', 'disabled' and 'notApplicable'. 'enabled' indicates Virtual Secure Mode (VSM) is enabled. 'disabled' indicates Virtual Secure Mode (VSM) is disabled. 'notApplicable' indicates the device is not a Windows 11 device. Default value is 'notApplicable'.
             ## @param value Value to set for the virtualSecureMode property.
             ## @return a void
             ## 
             def virtual_secure_mode=(value)
                 @virtual_secure_mode = value
+            end
+            ## 
+            ## Gets the virtualizationBasedSecurity property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @return a azure_attestation_setting_status
+            ## 
+            def virtualization_based_security
+                return @virtualization_based_security
+            end
+            ## 
+            ## Sets the virtualizationBasedSecurity property value. A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+            ## @param value Value to set for the virtualizationBasedSecurity property.
+            ## @return a void
+            ## 
+            def virtualization_based_security=(value)
+                @virtualization_based_security = value
             end
             ## 
             ## Gets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows

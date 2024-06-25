@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The name of the onPremises client machine which ran the last export.
+            # The name of the onPremises client machine that ran the last export.
             @client_machine_name
             ## 
             # The OdataType property
@@ -25,41 +25,41 @@ module MicrosoftGraphBeta
             # The count of pending updates from on-premises directory.
             @pending_objects_update
             ## 
-            # The name of the dirsync service account which is configured to connect to the directory.
+            # The name of the dirsync service account that is configured to connect to the directory.
             @service_account
             ## 
             # The count of updated links during the current directory sync export run.
             @successful_links_provisioning_count
             ## 
-            # The count of objects which were successfully provisioned during the current directory sync export run.
+            # The count of objects that were successfully provisioned during the current directory sync export run.
             @successful_objects_provisioning_count
             ## 
             # The total number of objects in the AAD Connector Space.
             @total_connector_space_objects
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the clientMachineName property value. The name of the onPremises client machine which ran the last export.
+            ## Gets the clientMachineName property value. The name of the onPremises client machine that ran the last export.
             ## @return a string
             ## 
             def client_machine_name
                 return @client_machine_name
             end
             ## 
-            ## Sets the clientMachineName property value. The name of the onPremises client machine which ran the last export.
+            ## Sets the clientMachineName property value. The name of the onPremises client machine that ran the last export.
             ## @param value Value to set for the clientMachineName property.
             ## @return a void
             ## 
@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @client_machine_name = value
             end
             ## 
-            ## Instantiates a new onPremisesCurrentExportData and sets the default values.
+            ## Instantiates a new OnPremisesCurrentExportData and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -178,14 +178,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the serviceAccount property value. The name of the dirsync service account which is configured to connect to the directory.
+            ## Gets the serviceAccount property value. The name of the dirsync service account that is configured to connect to the directory.
             ## @return a string
             ## 
             def service_account
                 return @service_account
             end
             ## 
-            ## Sets the serviceAccount property value. The name of the dirsync service account which is configured to connect to the directory.
+            ## Sets the serviceAccount property value. The name of the dirsync service account that is configured to connect to the directory.
             ## @param value Value to set for the serviceAccount property.
             ## @return a void
             ## 
@@ -208,14 +208,14 @@ module MicrosoftGraphBeta
                 @successful_links_provisioning_count = value
             end
             ## 
-            ## Gets the successfulObjectsProvisioningCount property value. The count of objects which were successfully provisioned during the current directory sync export run.
+            ## Gets the successfulObjectsProvisioningCount property value. The count of objects that were successfully provisioned during the current directory sync export run.
             ## @return a integer
             ## 
             def successful_objects_provisioning_count
                 return @successful_objects_provisioning_count
             end
             ## 
-            ## Sets the successfulObjectsProvisioningCount property value. The count of objects which were successfully provisioned during the current directory sync export run.
+            ## Sets the successfulObjectsProvisioningCount property value. The count of objects that were successfully provisioned during the current directory sync export run.
             ## @param value Value to set for the successfulObjectsProvisioningCount property.
             ## @return a void
             ## 

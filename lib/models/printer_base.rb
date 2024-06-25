@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @capabilities = value
             end
             ## 
-            ## Instantiates a new printerBase and sets the default values.
+            ## Instantiates a new PrinterBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

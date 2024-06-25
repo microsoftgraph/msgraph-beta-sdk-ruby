@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                 @boot_total_duration_in_seconds = value
             end
             ## 
-            ## Instantiates a new managedTenantsDeviceHealthStatus and sets the default values.
+            ## Instantiates a new ManagedTenantsDeviceHealthStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

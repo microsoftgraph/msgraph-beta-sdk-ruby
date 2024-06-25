@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The managementTemplates property
             @management_templates
             ## 
-            ## Instantiates a new managedTenantsManagementTemplateCollection and sets the default values.
+            ## Instantiates a new ManagedTenantsManagementTemplateCollection and sets the default values.
             ## @return a void
             ## 
             def initialize()

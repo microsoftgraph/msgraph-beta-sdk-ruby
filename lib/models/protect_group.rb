@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @allow_guest_users = value
             end
             ## 
-            ## Instantiates a new protectGroup and sets the default values.
+            ## Instantiates a new ProtectGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

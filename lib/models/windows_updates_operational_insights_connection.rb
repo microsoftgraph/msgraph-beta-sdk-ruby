@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @azure_subscription_id = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesOperationalInsightsConnection and sets the default values.
+            ## Instantiates a new WindowsUpdatesOperationalInsightsConnection and sets the default values.
             ## @return a void
             ## 
             def initialize()

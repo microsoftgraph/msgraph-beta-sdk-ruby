@@ -7,6 +7,7 @@ module MicrosoftGraphBeta
             Returned: :Returned,
             UnknownFutureValue: :UnknownFutureValue,
             Reassigned: :Reassigned,
+            Excused: :Excused,
         }
     end
 end

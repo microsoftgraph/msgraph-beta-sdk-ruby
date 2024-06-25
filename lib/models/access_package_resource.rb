@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class AccessPackageResource < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
+            # Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
             @access_package_resource_environment
             ## 
             # Read-only. Nullable. Supports $expand.
@@ -29,32 +29,32 @@ module MicrosoftGraphBeta
             # A description for the resource.
             @description
             ## 
-            # The display name of the resource, such as the application name, group name or site name.
+            # The display name of the resource, such as the application name, group name, or site name.
             @display_name
             ## 
             # True if the resource is not yet available for assignment. Read-only.
             @is_pending_onboarding
             ## 
-            # The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            # The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
             @origin_id
             ## 
-            # The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            # The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
             @origin_system
             ## 
-            # The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            # The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             @resource_type
             ## 
             # A unique resource locator for the resource, such as the URL for signing a user into an application.
             @url
             ## 
-            ## Gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
+            ## Gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
             ## @return a access_package_resource_environment
             ## 
             def access_package_resource_environment
                 return @access_package_resource_environment
             end
             ## 
-            ## Sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
+            ## Sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
             ## @param value Value to set for the accessPackageResourceEnvironment property.
             ## @return a void
             ## 
@@ -137,7 +137,7 @@ module MicrosoftGraphBeta
                 @attributes = value
             end
             ## 
-            ## Instantiates a new accessPackageResource and sets the default values.
+            ## Instantiates a new AccessPackageResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -168,14 +168,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The display name of the resource, such as the application name, group name or site name.
+            ## Gets the displayName property value. The display name of the resource, such as the application name, group name, or site name.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the resource, such as the application name, group name or site name.
+            ## Sets the displayName property value. The display name of the resource, such as the application name, group name, or site name.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -219,14 +219,14 @@ module MicrosoftGraphBeta
                 @is_pending_onboarding = value
             end
             ## 
-            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
             ## @return a string
             ## 
             def origin_id
                 return @origin_id
             end
             ## 
-            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
             ## @param value Value to set for the originId property.
             ## @return a void
             ## 
@@ -234,14 +234,14 @@ module MicrosoftGraphBeta
                 @origin_id = value
             end
             ## 
-            ## Gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            ## Gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
             ## @return a string
             ## 
             def origin_system
                 return @origin_system
             end
             ## 
-            ## Sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            ## Sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
             ## @param value Value to set for the originSystem property.
             ## @return a void
             ## 
@@ -249,14 +249,14 @@ module MicrosoftGraphBeta
                 @origin_system = value
             end
             ## 
-            ## Gets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            ## Gets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             ## @return a string
             ## 
             def resource_type
                 return @resource_type
             end
             ## 
-            ## Sets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+            ## Sets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
             ## @param value Value to set for the resourceType property.
             ## @return a void
             ## 

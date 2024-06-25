@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new trainingCollectionResponse and sets the default values.
+            ## Instantiates a new TrainingCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

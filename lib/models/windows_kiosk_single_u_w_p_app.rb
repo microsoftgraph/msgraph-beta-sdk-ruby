@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The uwpApp property
             @uwp_app
             ## 
-            ## Instantiates a new windowsKioskSingleUWPApp and sets the default values.
+            ## Instantiates a new WindowsKioskSingleUWPApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

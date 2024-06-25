@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @conditions = value
             end
             ## 
-            ## Instantiates a new authenticationEventListener and sets the default values.
+            ## Instantiates a new AuthenticationEventListener and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,6 +65,10 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.onAttributeCollectionListener"
                             return OnAttributeCollectionListener.new
+                        when "#microsoft.graph.onAttributeCollectionStartListener"
+                            return OnAttributeCollectionStartListener.new
+                        when "#microsoft.graph.onAttributeCollectionSubmitListener"
+                            return OnAttributeCollectionSubmitListener.new
                         when "#microsoft.graph.onAuthenticationMethodLoadStartListener"
                             return OnAuthenticationMethodLoadStartListener.new
                         when "#microsoft.graph.onInteractiveAuthFlowStartListener"

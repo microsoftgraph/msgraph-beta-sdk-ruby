@@ -7,16 +7,21 @@ require_relative './attribute_sets/attribute_sets_request_builder'
 require_relative './certificate_authorities/certificate_authorities_request_builder'
 require_relative './custom_security_attribute_definitions/custom_security_attribute_definitions_request_builder'
 require_relative './deleted_items/deleted_items_request_builder'
+require_relative './device_local_credentials/device_local_credentials_request_builder'
 require_relative './directory'
+require_relative './external_user_profiles/external_user_profiles_request_builder'
 require_relative './feature_rollout_policies/feature_rollout_policies_request_builder'
 require_relative './federation_configurations/federation_configurations_request_builder'
 require_relative './impacted_resources/impacted_resources_request_builder'
 require_relative './inbound_shared_user_profiles/inbound_shared_user_profiles_request_builder'
 require_relative './on_premises_synchronization/on_premises_synchronization_request_builder'
 require_relative './outbound_shared_user_profiles/outbound_shared_user_profiles_request_builder'
+require_relative './pending_external_user_profiles/pending_external_user_profiles_request_builder'
 require_relative './recommendations/recommendations_request_builder'
 require_relative './shared_email_domains/shared_email_domains_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
+require_relative './subscriptions_with_commerce_subscription_id/subscriptions_with_commerce_subscription_id_request_builder'
+require_relative './subscriptions_with_ocp_subscription_id/subscriptions_with_ocp_subscription_id_request_builder'
 
 module MicrosoftGraphBeta
     module Directory
@@ -50,6 +55,16 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Directory::DeletedItems::DeletedItemsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the deviceLocalCredentials property of the microsoft.graph.directory entity.
+            def device_local_credentials()
+                return MicrosoftGraphBeta::Directory::DeviceLocalCredentials::DeviceLocalCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.
+            def external_user_profiles()
+                return MicrosoftGraphBeta::Directory::ExternalUserProfiles::ExternalUserProfilesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
             def feature_rollout_policies()
                 return MicrosoftGraphBeta::Directory::FeatureRolloutPolicies::FeatureRolloutPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -80,6 +95,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Directory::OutboundSharedUserProfiles::OutboundSharedUserProfilesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.
+            def pending_external_user_profiles()
+                return MicrosoftGraphBeta::Directory::PendingExternalUserProfiles::PendingExternalUserProfilesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the recommendations property of the microsoft.graph.directory entity.
             def recommendations()
                 return MicrosoftGraphBeta::Directory::Recommendations::RecommendationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -101,7 +121,7 @@ module MicrosoftGraphBeta
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/directory{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/directory{?%24expand,%24select}")
             end
             ## 
             ## Get directory
@@ -113,8 +133,7 @@ module MicrosoftGraphBeta
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Directory.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -129,9 +148,26 @@ module MicrosoftGraphBeta
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::Directory.create_from_discriminator_value(pn) }, error_mapping)
+            end
+            ## 
+            ## Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+            ## @param commerce_subscription_id Alternate key of companySubscription
+            ## @return a subscriptions_with_commerce_subscription_id_request_builder
+            ## 
+            def subscriptions_with_commerce_subscription_id(commerce_subscription_id)
+                raise StandardError, 'commerce_subscription_id cannot be null' if commerce_subscription_id.nil?
+                return SubscriptionsWithCommerceSubscriptionIdRequestBuilder.new(@path_parameters, @request_adapter, commerceSubscriptionId)
+            end
+            ## 
+            ## Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+            ## @param ocp_subscription_id Alternate key of companySubscription
+            ## @return a subscriptions_with_ocp_subscription_id_request_builder
+            ## 
+            def subscriptions_with_ocp_subscription_id(ocp_subscription_id)
+                raise StandardError, 'ocp_subscription_id cannot be null' if ocp_subscription_id.nil?
+                return SubscriptionsWithOcpSubscriptionIdRequestBuilder.new(@path_parameters, @request_adapter, ocpSubscriptionId)
             end
             ## 
             ## Get directory
@@ -140,15 +176,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -160,16 +196,25 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a directory_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return DirectoryRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

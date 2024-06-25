@@ -1,1 +1,1 @@
-require_relative 'my_requests_response'
+require_relative 'my_requests_get_response'

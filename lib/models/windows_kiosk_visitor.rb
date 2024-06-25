@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class WindowsKioskVisitor < MicrosoftGraphBeta::Models::WindowsKioskUser
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsKioskVisitor and sets the default values.
+            ## Instantiates a new WindowsKioskVisitor and sets the default values.
             ## @return a void
             ## 
             def initialize()

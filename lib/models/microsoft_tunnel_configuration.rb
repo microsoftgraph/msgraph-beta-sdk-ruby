@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @advanced_settings = value
             end
             ## 
-            ## Instantiates a new microsoftTunnelConfiguration and sets the default values.
+            ## Instantiates a new MicrosoftTunnelConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

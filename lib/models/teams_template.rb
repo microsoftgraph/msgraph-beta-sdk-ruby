@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class TeamsTemplate < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new teamsTemplate and sets the default values.
+            ## Instantiates a new TeamsTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

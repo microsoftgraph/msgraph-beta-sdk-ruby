@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The Id of the AAD group we are targeting the device compliance policy to.
             @target_group_id
             ## 
-            ## Instantiates a new deviceCompliancePolicyGroupAssignment and sets the default values.
+            ## Instantiates a new DeviceCompliancePolicyGroupAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

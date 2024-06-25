@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class TrustFrameworkPolicy < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new trustFrameworkPolicy and sets the default values.
+            ## Instantiates a new TrustFrameworkPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

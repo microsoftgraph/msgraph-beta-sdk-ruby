@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The attached contact, message or event. Navigation property.
             @item
             ## 
-            ## Instantiates a new itemAttachment and sets the default values.
+            ## Instantiates a new ItemAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()

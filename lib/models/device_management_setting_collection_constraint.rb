@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The minimum number of elements in the collection
             @minimum_length
             ## 
-            ## Instantiates a new deviceManagementSettingCollectionConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingCollectionConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

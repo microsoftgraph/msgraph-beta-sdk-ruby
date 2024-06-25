@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Resource to grant access to users or groups that are transitive.
             @transitive_role_assignments
             ## 
-            ## Instantiates a new unifiedRbacApplication and sets the default values.
+            ## Instantiates a new UnifiedRbacApplication and sets the default values.
             ## @return a void
             ## 
             def initialize()

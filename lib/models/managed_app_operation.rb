@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Version of the entity.
             @version
             ## 
-            ## Instantiates a new managedAppOperation and sets the default values.
+            ## Instantiates a new ManagedAppOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

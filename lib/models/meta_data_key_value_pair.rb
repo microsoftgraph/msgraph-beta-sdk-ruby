@@ -16,25 +16,22 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Value of the metadata. Should be an object.
-            @value
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new metaDataKeyValuePair and sets the default values.
+            ## Instantiates a new MetaDataKeyValuePair and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,7 +54,6 @@ module MicrosoftGraphBeta
                 return {
                     "key" => lambda {|n| @key = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "value" => lambda {|n| @value = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Json.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -99,23 +95,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("key", @key)
                 writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("value", @value)
                 writer.write_additional_data(@additional_data)
-            end
-            ## 
-            ## Gets the value property value. Value of the metadata. Should be an object.
-            ## @return a json
-            ## 
-            def value
-                return @value
-            end
-            ## 
-            ## Sets the value property value. Value of the metadata. Should be an object.
-            ## @param value Value to set for the value property.
-            ## @return a void
-            ## 
-            def value=(value)
-                @value = value
             end
         end
     end

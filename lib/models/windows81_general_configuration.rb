@@ -414,7 +414,7 @@ module MicrosoftGraphBeta
                 @cellular_block_data_roaming = value
             end
             ## 
-            ## Instantiates a new windows81GeneralConfiguration and sets the default values.
+            ## Instantiates a new Windows81GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

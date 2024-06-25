@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The type property
             @type
             ## 
-            ## Instantiates a new itemPhone and sets the default values.
+            ## Instantiates a new ItemPhone and sets the default values.
             ## @return a void
             ## 
             def initialize()

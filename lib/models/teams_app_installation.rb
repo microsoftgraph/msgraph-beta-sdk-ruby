@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
             @consented_permission_set
             ## 
+            # The scopeInfo property
+            @scope_info
+            ## 
             # The app that is installed.
             @teams_app
             ## 
@@ -31,7 +34,7 @@ module MicrosoftGraphBeta
                 @consented_permission_set = value
             end
             ## 
-            ## Instantiates a new teamsAppInstallation and sets the default values.
+            ## Instantiates a new TeamsAppInstallation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,9 +64,25 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "consentedPermissionSet" => lambda {|n| @consented_permission_set = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppPermissionSet.create_from_discriminator_value(pn) }) },
+                    "scopeInfo" => lambda {|n| @scope_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppInstallationScopeInfo.create_from_discriminator_value(pn) }) },
                     "teamsApp" => lambda {|n| @teams_app = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsApp.create_from_discriminator_value(pn) }) },
                     "teamsAppDefinition" => lambda {|n| @teams_app_definition = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TeamsAppDefinition.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the scopeInfo property value. The scopeInfo property
+            ## @return a teams_app_installation_scope_info
+            ## 
+            def scope_info
+                return @scope_info
+            end
+            ## 
+            ## Sets the scopeInfo property value. The scopeInfo property
+            ## @param value Value to set for the scopeInfo property.
+            ## @return a void
+            ## 
+            def scope_info=(value)
+                @scope_info = value
             end
             ## 
             ## Serializes information the current object
@@ -74,6 +93,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("consentedPermissionSet", @consented_permission_set)
+                writer.write_object_value("scopeInfo", @scope_info)
                 writer.write_object_value("teamsApp", @teams_app)
                 writer.write_object_value("teamsAppDefinition", @teams_app_definition)
             end

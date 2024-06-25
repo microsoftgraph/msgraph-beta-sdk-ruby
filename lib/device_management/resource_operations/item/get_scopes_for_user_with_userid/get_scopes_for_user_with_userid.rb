@@ -1,1 +1,1 @@
-require_relative 'get_scopes_for_user_with_userid_response'
+require_relative 'get_scopes_for_user_with_userid_get_response'

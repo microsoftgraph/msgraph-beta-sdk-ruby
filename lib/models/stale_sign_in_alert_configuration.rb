@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class StaleSignInAlertConfiguration < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The number of days to look back from current timestamp within which the account has not signed in.
+            # The number of days to look back from current timestamp within which the account hasn't signed in.
             @duration
             ## 
-            ## Instantiates a new staleSignInAlertConfiguration and sets the default values.
+            ## Instantiates a new StaleSignInAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return StaleSignInAlertConfiguration.new
             end
             ## 
-            ## Gets the duration property value. The number of days to look back from current timestamp within which the account has not signed in.
+            ## Gets the duration property value. The number of days to look back from current timestamp within which the account hasn't signed in.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def duration
                 return @duration
             end
             ## 
-            ## Sets the duration property value. The number of days to look back from current timestamp within which the account has not signed in.
+            ## Sets the duration property value. The number of days to look back from current timestamp within which the account hasn't signed in.
             ## @param value Value to set for the duration property.
             ## @return a void
             ## 

@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
                 @admin_member_settings = value
             end
             ## 
-            ## Instantiates a new governanceRoleSetting and sets the default values.
+            ## Instantiates a new GovernanceRoleSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

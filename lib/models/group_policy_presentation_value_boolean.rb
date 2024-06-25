@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # An boolean value for the associated presentation.
             @value
             ## 
-            ## Instantiates a new groupPolicyPresentationValueBoolean and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationValueBoolean and sets the default values.
             ## @return a void
             ## 
             def initialize()

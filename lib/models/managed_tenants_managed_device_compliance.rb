@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # The display name for the managed tenant. Optional. Read-only.
             @tenant_display_name
             ## 
-            # The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            # The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             @tenant_id
             ## 
             ## Gets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @compliance_status = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedDeviceCompliance and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedDeviceCompliance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -306,14 +306,14 @@ module MicrosoftGraphBeta
                 @tenant_display_name = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+            ## Sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

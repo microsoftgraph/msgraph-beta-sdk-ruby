@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesUpdatableAsset < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsUpdatesUpdatableAsset and sets the default values.
+            ## Instantiates a new WindowsUpdatesUpdatableAsset and sets the default values.
             ## @return a void
             ## 
             def initialize()

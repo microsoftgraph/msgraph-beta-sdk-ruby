@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                 @alert_rules = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantAlertRuleDefinition and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantAlertRuleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

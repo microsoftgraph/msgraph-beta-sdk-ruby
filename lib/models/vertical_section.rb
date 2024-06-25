@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The set of web parts in this section.
             @webparts
             ## 
-            ## Instantiates a new verticalSection and sets the default values.
+            ## Instantiates a new VerticalSection and sets the default values.
             ## @return a void
             ## 
             def initialize()

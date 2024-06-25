@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The lastModifiedDateTime property
             @last_modified_date_time
             ## 
-            ## Instantiates a new onenoteEntityHierarchyModel and sets the default values.
+            ## Instantiates a new OnenoteEntityHierarchyModel and sets the default values.
             ## @return a void
             ## 
             def initialize()

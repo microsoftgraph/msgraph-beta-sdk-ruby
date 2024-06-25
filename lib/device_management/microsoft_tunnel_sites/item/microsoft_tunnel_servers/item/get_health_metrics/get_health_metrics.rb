@@ -1,2 +1,2 @@
 require_relative 'get_health_metrics_post_request_body'
-require_relative 'get_health_metrics_response'
+require_relative 'get_health_metrics_post_response'

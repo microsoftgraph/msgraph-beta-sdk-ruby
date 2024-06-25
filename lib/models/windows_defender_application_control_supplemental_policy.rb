@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+            ## Instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

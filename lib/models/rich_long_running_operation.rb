@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Type of the operation.
             @type
             ## 
-            ## Instantiates a new richLongRunningOperation and sets the default values.
+            ## Instantiates a new RichLongRunningOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,13 +8,13 @@ module MicrosoftGraphBeta
         class CloudPcBulkRestore < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The restorePointDateTime property
+            # The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @restore_point_date_time
             ## 
             # The timeRange property
             @time_range
             ## 
-            ## Instantiates a new cloudPcBulkRestore and sets the default values.
+            ## Instantiates a new CloudPcBulkRestore and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the restorePointDateTime property value. The restorePointDateTime property
+            ## Gets the restorePointDateTime property value. The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def restore_point_date_time
                 return @restore_point_date_time
             end
             ## 
-            ## Sets the restorePointDateTime property value. The restorePointDateTime property
+            ## Sets the restorePointDateTime property value. The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the restorePointDateTime property.
             ## @return a void
             ## 

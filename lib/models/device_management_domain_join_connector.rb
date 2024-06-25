@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The version of the connector.
             @version
             ## 
-            ## Instantiates a new deviceManagementDomainJoinConnector and sets the default values.
+            ## Instantiates a new DeviceManagementDomainJoinConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

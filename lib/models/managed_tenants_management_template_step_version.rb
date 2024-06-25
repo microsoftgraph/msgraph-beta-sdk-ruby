@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                 @accepted_for = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagementTemplateStepVersion and sets the default values.
+            ## Instantiates a new ManagedTenantsManagementTemplateStepVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

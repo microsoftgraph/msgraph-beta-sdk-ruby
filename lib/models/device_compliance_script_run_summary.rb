@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
             @no_issue_detected_device_count
             ## 
-            ## Instantiates a new deviceComplianceScriptRunSummary and sets the default values.
+            ## Instantiates a new DeviceComplianceScriptRunSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

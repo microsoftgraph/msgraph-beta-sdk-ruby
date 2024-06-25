@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The invitationStatus property
             @invitation_status
             ## 
-            ## Instantiates a new sharedEmailDomainInvitation and sets the default values.
+            ## Instantiates a new SharedEmailDomainInvitation and sets the default values.
             ## @return a void
             ## 
             def initialize()

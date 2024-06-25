@@ -111,7 +111,7 @@ module MicrosoftGraphBeta
                 @camera_blocked = value
             end
             ## 
-            ## Instantiates a new aospDeviceOwnerDeviceConfiguration and sets the default values.
+            ## Instantiates a new AospDeviceOwnerDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

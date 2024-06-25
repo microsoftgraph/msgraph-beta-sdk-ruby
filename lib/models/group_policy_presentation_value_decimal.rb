@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # An unsigned integer value for the associated presentation.
             @value
             ## 
-            ## Instantiates a new groupPolicyPresentationValueDecimal and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationValueDecimal and sets the default values.
             ## @return a void
             ## 
             def initialize()

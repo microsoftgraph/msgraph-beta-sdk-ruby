@@ -22,11 +22,14 @@ module MicrosoftGraphBeta
             # Version information for a document set version created by a user.
             @document_set_versions
             ## 
-            # For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            # For document libraries, the driveItem relationship exposes the listItem as a driveItem
             @drive_item
             ## 
             # The values of the columns set on this list item.
             @fields
+            ## 
+            # The permissions property
+            @permissions
             ## 
             # Returns identifiers useful for SharePoint REST compatibility. Read-only.
             @sharepoint_ids
@@ -64,7 +67,7 @@ module MicrosoftGraphBeta
                 @analytics = value
             end
             ## 
-            ## Instantiates a new listItem and sets the default values.
+            ## Instantiates a new ListItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -126,14 +129,14 @@ module MicrosoftGraphBeta
                 @document_set_versions = value
             end
             ## 
-            ## Gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            ## Gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
             ## @return a drive_item
             ## 
             def drive_item
                 return @drive_item
             end
             ## 
-            ## Sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+            ## Sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
             ## @param value Value to set for the driveItem property.
             ## @return a void
             ## 
@@ -168,9 +171,25 @@ module MicrosoftGraphBeta
                     "documentSetVersions" => lambda {|n| @document_set_versions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DocumentSetVersion.create_from_discriminator_value(pn) }) },
                     "driveItem" => lambda {|n| @drive_item = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }) },
                     "fields" => lambda {|n| @fields = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::FieldValueSet.create_from_discriminator_value(pn) }) },
+                    "permissions" => lambda {|n| @permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Permission.create_from_discriminator_value(pn) }) },
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SharepointIds.create_from_discriminator_value(pn) }) },
                     "versions" => lambda {|n| @versions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ListItemVersion.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the permissions property value. The permissions property
+            ## @return a permission
+            ## 
+            def permissions
+                return @permissions
+            end
+            ## 
+            ## Sets the permissions property value. The permissions property
+            ## @param value Value to set for the permissions property.
+            ## @return a void
+            ## 
+            def permissions=(value)
+                @permissions = value
             end
             ## 
             ## Serializes information the current object
@@ -187,6 +206,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("documentSetVersions", @document_set_versions)
                 writer.write_object_value("driveItem", @drive_item)
                 writer.write_object_value("fields", @fields)
+                writer.write_collection_of_object_values("permissions", @permissions)
                 writer.write_object_value("sharepointIds", @sharepoint_ids)
                 writer.write_collection_of_object_values("versions", @versions)
             end

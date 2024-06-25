@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The simpleSettingValue property
             @simple_setting_value
             ## 
-            ## Instantiates a new deviceManagementConfigurationSimpleSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSimpleSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

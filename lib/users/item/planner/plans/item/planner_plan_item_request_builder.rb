@@ -6,10 +6,13 @@ require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../planner'
 require_relative '../plans'
+require_relative './archive/archive_request_builder'
 require_relative './buckets/buckets_request_builder'
 require_relative './details/details_request_builder'
 require_relative './item'
+require_relative './move_to_container/move_to_container_request_builder'
 require_relative './tasks/tasks_request_builder'
+require_relative './unarchive/unarchive_request_builder'
 
 module MicrosoftGraphBeta
     module Users
@@ -22,6 +25,11 @@ module MicrosoftGraphBeta
                         class PlannerPlanItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
+                            # Provides operations to call the archive method.
+                            def archive()
+                                return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::Archive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
                             def buckets()
                                 return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::Buckets::BucketsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -32,9 +40,19 @@ module MicrosoftGraphBeta
                                 return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::Details::DetailsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            # Provides operations to call the moveToContainer method.
+                            def move_to_container()
+                                return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::MoveToContainer::MoveToContainerRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
                             def tasks()
                                 return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::Tasks::TasksRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the unarchive method.
+                            def unarchive()
+                                return MicrosoftGraphBeta::Users::Item::Planner::Plans::Item::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
@@ -43,7 +61,7 @@ module MicrosoftGraphBeta
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}{?%24expand,%24select}")
                             end
                             ## 
                             ## Delete navigation property plans for users
@@ -55,8 +73,7 @@ module MicrosoftGraphBeta
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
@@ -69,8 +86,7 @@ module MicrosoftGraphBeta
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -85,8 +101,7 @@ module MicrosoftGraphBeta
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlan.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -96,13 +111,14 @@ module MicrosoftGraphBeta
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
@@ -112,15 +128,15 @@ module MicrosoftGraphBeta
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
@@ -132,16 +148,25 @@ module MicrosoftGraphBeta
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a planner_plan_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return PlannerPlanItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

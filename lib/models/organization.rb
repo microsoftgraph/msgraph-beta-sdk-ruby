@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # Resource to manage the default branding for the organization. Nullable.
             @branding
             ## 
-            # Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            # Telephone number for the organization. Although this property is a string collection, only one number can be set.
             @business_phones
             ## 
             # Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Country or region abbreviation for the organization in ISO 3166-2 format.
             @country_letter_code
             ## 
-            # Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            # Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @created_date_time
             ## 
             # Two-letter ISO 3166 country code indicating the default service usage location of an organization.
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # The collection of open extensions defined for the organization resource. Nullable.
             @extensions
             ## 
-            # true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+            # true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
             @is_multiple_data_locations_for_services_enabled
             ## 
             # Not nullable.
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @on_premises_last_sync_date_time
             ## 
-            # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+            # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
             @on_premises_sync_enabled
             ## 
             # The partnerInformation property
@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
             # Postal code of the address for the organization.
             @postal_code
             ## 
-            # The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+            # The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
             @preferred_language
             ## 
             # The privacy profile of an organization.
@@ -100,6 +100,9 @@ module MicrosoftGraphBeta
             ## 
             # Not nullable.
             @technical_notification_mails
+            ## 
+            # Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
+            @tenant_type
             ## 
             # The collection of domains associated with this tenant. Not nullable.
             @verified_domains
@@ -134,14 +137,14 @@ module MicrosoftGraphBeta
                 @branding = value
             end
             ## 
-            ## Gets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            ## Gets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
             ## @return a string
             ## 
             def business_phones
                 return @business_phones
             end
             ## 
-            ## Sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            ## Sets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
             ## @param value Value to set for the businessPhones property.
             ## @return a void
             ## 
@@ -194,7 +197,7 @@ module MicrosoftGraphBeta
                 @city = value
             end
             ## 
-            ## Instantiates a new organization and sets the default values.
+            ## Instantiates a new Organization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -232,14 +235,14 @@ module MicrosoftGraphBeta
                 @country_letter_code = value
             end
             ## 
-            ## Gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Gets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Sets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -352,18 +355,19 @@ module MicrosoftGraphBeta
                     "state" => lambda {|n| @state = n.get_string_value() },
                     "street" => lambda {|n| @street = n.get_string_value() },
                     "technicalNotificationMails" => lambda {|n| @technical_notification_mails = n.get_collection_of_primitive_values(String) },
+                    "tenantType" => lambda {|n| @tenant_type = n.get_string_value() },
                     "verifiedDomains" => lambda {|n| @verified_domains = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VerifiedDomain.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+            ## Gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
             ## @return a boolean
             ## 
             def is_multiple_data_locations_for_services_enabled
                 return @is_multiple_data_locations_for_services_enabled
             end
             ## 
-            ## Sets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+            ## Sets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
             ## @param value Value to set for the isMultipleDataLocationsForServicesEnabled property.
             ## @return a void
             ## 
@@ -431,14 +435,14 @@ module MicrosoftGraphBeta
                 @on_premises_last_sync_date_time = value
             end
             ## 
-            ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+            ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
             ## @return a boolean
             ## 
             def on_premises_sync_enabled
                 return @on_premises_sync_enabled
             end
             ## 
-            ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+            ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
             ## @param value Value to set for the onPremisesSyncEnabled property.
             ## @return a void
             ## 
@@ -491,14 +495,14 @@ module MicrosoftGraphBeta
                 @postal_code = value
             end
             ## 
-            ## Gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+            ## Gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
             ## @return a string
             ## 
             def preferred_language
                 return @preferred_language
             end
             ## 
-            ## Sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+            ## Sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
             ## @param value Value to set for the preferredLanguage property.
             ## @return a void
             ## 
@@ -604,6 +608,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("state", @state)
                 writer.write_string_value("street", @street)
                 writer.write_collection_of_primitive_values("technicalNotificationMails", @technical_notification_mails)
+                writer.write_string_value("tenantType", @tenant_type)
                 writer.write_collection_of_object_values("verifiedDomains", @verified_domains)
             end
             ## 
@@ -665,6 +670,21 @@ module MicrosoftGraphBeta
             ## 
             def technical_notification_mails=(value)
                 @technical_notification_mails = value
+            end
+            ## 
+            ## Gets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
+            ## @return a string
+            ## 
+            def tenant_type
+                return @tenant_type
+            end
+            ## 
+            ## Sets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
+            ## @param value Value to set for the tenantType property.
+            ## @return a void
+            ## 
+            def tenant_type=(value)
+                @tenant_type = value
             end
             ## 
             ## Gets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.

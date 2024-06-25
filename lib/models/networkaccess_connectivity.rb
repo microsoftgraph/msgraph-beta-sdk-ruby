@@ -7,17 +7,23 @@ module MicrosoftGraphBeta
         class NetworkaccessConnectivity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Branch represent locations for connectivity.
+            # Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
             @branches
             ## 
-            ## Gets the branches property value. Branch represent locations for connectivity.
+            # Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+            @remote_networks
+            ## 
+            # The webCategories property
+            @web_categories
+            ## 
+            ## Gets the branches property value. Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
             ## @return a networkaccess_branch_site
             ## 
             def branches
                 return @branches
             end
             ## 
-            ## Sets the branches property value. Branch represent locations for connectivity.
+            ## Sets the branches property value. Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
             ## @param value Value to set for the branches property.
             ## @return a void
             ## 
@@ -25,7 +31,7 @@ module MicrosoftGraphBeta
                 @branches = value
             end
             ## 
-            ## Instantiates a new networkaccessConnectivity and sets the default values.
+            ## Instantiates a new NetworkaccessConnectivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,7 +53,24 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "branches" => lambda {|n| @branches = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessBranchSite.create_from_discriminator_value(pn) }) },
+                    "remoteNetworks" => lambda {|n| @remote_networks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessRemoteNetwork.create_from_discriminator_value(pn) }) },
+                    "webCategories" => lambda {|n| @web_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessWebCategory.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the remoteNetworks property value. Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+            ## @return a networkaccess_remote_network
+            ## 
+            def remote_networks
+                return @remote_networks
+            end
+            ## 
+            ## Sets the remoteNetworks property value. Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+            ## @param value Value to set for the remoteNetworks property.
+            ## @return a void
+            ## 
+            def remote_networks=(value)
+                @remote_networks = value
             end
             ## 
             ## Serializes information the current object
@@ -58,6 +81,23 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("branches", @branches)
+                writer.write_collection_of_object_values("remoteNetworks", @remote_networks)
+                writer.write_collection_of_object_values("webCategories", @web_categories)
+            end
+            ## 
+            ## Gets the webCategories property value. The webCategories property
+            ## @return a networkaccess_web_category
+            ## 
+            def web_categories
+                return @web_categories
+            end
+            ## 
+            ## Sets the webCategories property value. The webCategories property
+            ## @param value Value to set for the webCategories property.
+            ## @return a void
+            ## 
+            def web_categories=(value)
+                @web_categories = value
             end
         end
     end

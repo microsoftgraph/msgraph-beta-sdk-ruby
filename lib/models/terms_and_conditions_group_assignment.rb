@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Navigation link to the terms and conditions that are assigned.
             @terms_and_conditions
             ## 
-            ## Instantiates a new termsAndConditionsGroupAssignment and sets the default values.
+            ## Instantiates a new TermsAndConditionsGroupAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

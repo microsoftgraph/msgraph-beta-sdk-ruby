@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @base_type = value
             end
             ## 
-            ## Instantiates a new schema and sets the default values.
+            ## Instantiates a new Schema and sets the default values.
             ## @return a void
             ## 
             def initialize()

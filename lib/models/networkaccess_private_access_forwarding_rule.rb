@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NetworkaccessPrivateAccessForwardingRule < MicrosoftGraphBeta::Models::NetworkaccessForwardingRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new networkaccessPrivateAccessForwardingRule and sets the default values.
+            ## Instantiates a new NetworkaccessPrivateAccessForwardingRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

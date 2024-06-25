@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                 @assigned_to_me = value
             end
             ## 
-            ## Instantiates a new approvalStep and sets the default values.
+            ## Instantiates a new ApprovalStep and sets the default values.
             ## @return a void
             ## 
             def initialize()

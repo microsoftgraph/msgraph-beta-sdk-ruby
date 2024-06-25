@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # Status details message.
             @status_details
             ## 
-            ## Instantiates a new cloudPcExternalPartnerSetting and sets the default values.
+            ## Instantiates a new CloudPcExternalPartnerSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

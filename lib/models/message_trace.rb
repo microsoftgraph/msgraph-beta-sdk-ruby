@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # The subject property
             @subject
             ## 
-            ## Instantiates a new messageTrace and sets the default values.
+            ## Instantiates a new MessageTrace and sets the default values.
             ## @return a void
             ## 
             def initialize()

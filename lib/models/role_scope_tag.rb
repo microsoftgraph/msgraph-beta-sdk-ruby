@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new roleScopeTag and sets the default values.
+            ## Instantiates a new RoleScopeTag and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
             # Security Baseline Compliance State
             @state
             ## 
-            ## Instantiates a new securityBaselineSettingState and sets the default values.
+            ## Instantiates a new SecurityBaselineSettingState and sets the default values.
             ## @return a void
             ## 
             def initialize()

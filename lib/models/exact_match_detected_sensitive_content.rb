@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The matches property
             @matches
             ## 
-            ## Instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
+            ## Instantiates a new ExactMatchDetectedSensitiveContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

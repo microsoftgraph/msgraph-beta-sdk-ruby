@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
             Approve: :Approve,
             Terminate: :Terminate,
             UnknownFutureValue: :UnknownFutureValue,
+            Reject: :Reject,
         }
     end
 end

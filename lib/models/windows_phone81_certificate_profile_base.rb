@@ -60,7 +60,7 @@ module MicrosoftGraphBeta
                 @certificate_validity_period_value = value
             end
             ## 
-            ## Instantiates a new windowsPhone81CertificateProfileBase and sets the default values.
+            ## Instantiates a new WindowsPhone81CertificateProfileBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                     "extendedKeyUsages" => lambda {|n| @extended_key_usages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExtendedKeyUsage.create_from_discriminator_value(pn) }) },
                     "keyStorageProvider" => lambda {|n| @key_storage_provider = n.get_enum_value(MicrosoftGraphBeta::Models::KeyStorageProviderOption) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
-                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
+                    "subjectAlternativeNameType" => lambda {|n| @subject_alternative_name_type = n.get_enum_values(MicrosoftGraphBeta::Models::SubjectAlternativeNameType) },
                     "subjectNameFormat" => lambda {|n| @subject_name_format = n.get_enum_value(MicrosoftGraphBeta::Models::SubjectNameFormat) },
                 })
             end

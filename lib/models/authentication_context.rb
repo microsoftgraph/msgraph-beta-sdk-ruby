@@ -13,28 +13,28 @@ module MicrosoftGraphBeta
             # Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
             @detail
             ## 
-            # The identifier of a authentication context in your tenant.
+            # The identifier of an authentication context in your tenant.
             @id
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new authenticationContext and sets the default values.
+            ## Instantiates a new AuthenticationContext and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the id property value. The identifier of a authentication context in your tenant.
+            ## Gets the id property value. The identifier of an authentication context in your tenant.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The identifier of a authentication context in your tenant.
+            ## Sets the id property value. The identifier of an authentication context in your tenant.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

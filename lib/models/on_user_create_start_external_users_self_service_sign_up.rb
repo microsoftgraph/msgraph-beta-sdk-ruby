@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The type of user object to create. The possible values are: member, guest, unknownFutureValue.
             @user_type_to_create
             ## 
-            ## Instantiates a new onUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
+            ## Instantiates a new OnUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
             ## @return a void
             ## 
             def initialize()

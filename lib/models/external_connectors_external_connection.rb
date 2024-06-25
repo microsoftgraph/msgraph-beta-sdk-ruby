@@ -112,7 +112,7 @@ module MicrosoftGraphBeta
                 @connector_id = value
             end
             ## 
-            ## Instantiates a new externalConnectorsExternalConnection and sets the default values.
+            ## Instantiates a new ExternalConnectorsExternalConnection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -168,7 +168,7 @@ module MicrosoftGraphBeta
                     "configuration" => lambda {|n| @configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsConfiguration.create_from_discriminator_value(pn) }) },
                     "connectorId" => lambda {|n| @connector_id = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "enabledContentExperiences" => lambda {|n| @enabled_content_experiences = n.get_enum_value(MicrosoftGraphBeta::Models::ExternalConnectorsContentExperienceType) },
+                    "enabledContentExperiences" => lambda {|n| @enabled_content_experiences = n.get_enum_values(MicrosoftGraphBeta::Models::ExternalConnectorsContentExperienceType) },
                     "groups" => lambda {|n| @groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsExternalGroup.create_from_discriminator_value(pn) }) },
                     "ingestedItemsCount" => lambda {|n| @ingested_items_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalConnectorsExternalItem.create_from_discriminator_value(pn) }) },

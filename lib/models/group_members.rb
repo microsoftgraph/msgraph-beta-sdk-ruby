@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class GroupMembers < MicrosoftGraphBeta::Models::UserSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the group in Azure AD. Read only.
+            # The name of the group in Microsoft Entra ID. Read only.
             @description
             ## 
-            # The ID of the group in Azure AD.
+            # The ID of the group in Microsoft Entra ID.
             @id
             ## 
-            ## Instantiates a new groupMembers and sets the default values.
+            ## Instantiates a new GroupMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return GroupMembers.new
             end
             ## 
-            ## Gets the description property value. The name of the group in Azure AD. Read only.
+            ## Gets the description property value. The name of the group in Microsoft Entra ID. Read only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The name of the group in Azure AD. Read only.
+            ## Sets the description property value. The name of the group in Microsoft Entra ID. Read only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the id property value. The ID of the group in Azure AD.
+            ## Gets the id property value. The ID of the group in Microsoft Entra ID.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The ID of the group in Azure AD.
+            ## Sets the id property value. The ID of the group in Microsoft Entra ID.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

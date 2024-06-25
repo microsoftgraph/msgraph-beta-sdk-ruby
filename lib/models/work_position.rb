@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @colleagues = value
             end
             ## 
-            ## Instantiates a new workPosition and sets the default values.
+            ## Instantiates a new WorkPosition and sets the default values.
             ## @return a void
             ## 
             def initialize()

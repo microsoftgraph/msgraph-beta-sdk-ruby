@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @color = value
             end
             ## 
-            ## Instantiates a new informationProtectionLabel and sets the default values.
+            ## Instantiates a new InformationProtectionLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The geocoordinates of the address.
             @geo_coordinates
             ## 
-            ## Instantiates a new itemAddress and sets the default values.
+            ## Instantiates a new ItemAddress and sets the default values.
             ## @return a void
             ## 
             def initialize()

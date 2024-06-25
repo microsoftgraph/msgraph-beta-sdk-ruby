@@ -19,8 +19,14 @@ module MicrosoftGraphBeta
             # Schema of a custom security attributes (key-value pairs).
             @custom_security_attribute_definitions
             ## 
-            # The deletedItems property
+            # Recently deleted items. Read-only. Nullable.
             @deleted_items
+            ## 
+            # The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            @device_local_credentials
+            ## 
+            # Collection of external user profiles that represent collaborators in the directory.
+            @external_user_profiles
             ## 
             # The featureRolloutPolicies property
             @feature_rollout_policies
@@ -31,7 +37,7 @@ module MicrosoftGraphBeta
             # The impactedResources property
             @impacted_resources
             ## 
-            # A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+            # A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
             @inbound_shared_user_profiles
             ## 
             # A container for on-premises directory synchronization functionalities that are available for the organization.
@@ -40,13 +46,16 @@ module MicrosoftGraphBeta
             # The outboundSharedUserProfiles property
             @outbound_shared_user_profiles
             ## 
+            # Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+            @pending_external_user_profiles
+            ## 
             # List of recommended improvements to improve tenant posture.
             @recommendations
             ## 
             # The sharedEmailDomains property
             @shared_email_domains
             ## 
-            # List of commercial subscriptions that an organization has acquired.
+            # List of commercial subscriptions that an organization has.
             @subscriptions
             ## 
             ## Gets the administrativeUnits property value. Conceptual container for user and group directory objects.
@@ -94,7 +103,7 @@ module MicrosoftGraphBeta
                 @certificate_authorities = value
             end
             ## 
-            ## Instantiates a new directory and sets the default values.
+            ## Instantiates a new Directory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,19 +134,49 @@ module MicrosoftGraphBeta
                 @custom_security_attribute_definitions = value
             end
             ## 
-            ## Gets the deletedItems property value. The deletedItems property
+            ## Gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
             ## @return a directory_object
             ## 
             def deleted_items
                 return @deleted_items
             end
             ## 
-            ## Sets the deletedItems property value. The deletedItems property
+            ## Sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
             ## @param value Value to set for the deletedItems property.
             ## @return a void
             ## 
             def deleted_items=(value)
                 @deleted_items = value
+            end
+            ## 
+            ## Gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @return a device_local_credential_info
+            ## 
+            def device_local_credentials
+                return @device_local_credentials
+            end
+            ## 
+            ## Sets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @param value Value to set for the deviceLocalCredentials property.
+            ## @return a void
+            ## 
+            def device_local_credentials=(value)
+                @device_local_credentials = value
+            end
+            ## 
+            ## Gets the externalUserProfiles property value. Collection of external user profiles that represent collaborators in the directory.
+            ## @return a external_user_profile
+            ## 
+            def external_user_profiles
+                return @external_user_profiles
+            end
+            ## 
+            ## Sets the externalUserProfiles property value. Collection of external user profiles that represent collaborators in the directory.
+            ## @param value Value to set for the externalUserProfiles property.
+            ## @return a void
+            ## 
+            def external_user_profiles=(value)
+                @external_user_profiles = value
             end
             ## 
             ## Gets the featureRolloutPolicies property value. The featureRolloutPolicies property
@@ -180,12 +219,15 @@ module MicrosoftGraphBeta
                     "certificateAuthorities" => lambda {|n| @certificate_authorities = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CertificateAuthorityPath.create_from_discriminator_value(pn) }) },
                     "customSecurityAttributeDefinitions" => lambda {|n| @custom_security_attribute_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSecurityAttributeDefinition.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                    "deviceLocalCredentials" => lambda {|n| @device_local_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceLocalCredentialInfo.create_from_discriminator_value(pn) }) },
+                    "externalUserProfiles" => lambda {|n| @external_user_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExternalUserProfile.create_from_discriminator_value(pn) }) },
                     "featureRolloutPolicies" => lambda {|n| @feature_rollout_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::FeatureRolloutPolicy.create_from_discriminator_value(pn) }) },
                     "federationConfigurations" => lambda {|n| @federation_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
                     "impactedResources" => lambda {|n| @impacted_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ImpactedResource.create_from_discriminator_value(pn) }) },
                     "inboundSharedUserProfiles" => lambda {|n| @inbound_shared_user_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::InboundSharedUserProfile.create_from_discriminator_value(pn) }) },
                     "onPremisesSynchronization" => lambda {|n| @on_premises_synchronization = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }) },
                     "outboundSharedUserProfiles" => lambda {|n| @outbound_shared_user_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OutboundSharedUserProfile.create_from_discriminator_value(pn) }) },
+                    "pendingExternalUserProfiles" => lambda {|n| @pending_external_user_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PendingExternalUserProfile.create_from_discriminator_value(pn) }) },
                     "recommendations" => lambda {|n| @recommendations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Recommendation.create_from_discriminator_value(pn) }) },
                     "sharedEmailDomains" => lambda {|n| @shared_email_domains = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SharedEmailDomain.create_from_discriminator_value(pn) }) },
                     "subscriptions" => lambda {|n| @subscriptions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CompanySubscription.create_from_discriminator_value(pn) }) },
@@ -207,14 +249,14 @@ module MicrosoftGraphBeta
                 @impacted_resources = value
             end
             ## 
-            ## Gets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+            ## Gets the inboundSharedUserProfiles property value. A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
             ## @return a inbound_shared_user_profile
             ## 
             def inbound_shared_user_profiles
                 return @inbound_shared_user_profiles
             end
             ## 
-            ## Sets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+            ## Sets the inboundSharedUserProfiles property value. A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
             ## @param value Value to set for the inboundSharedUserProfiles property.
             ## @return a void
             ## 
@@ -252,6 +294,21 @@ module MicrosoftGraphBeta
                 @outbound_shared_user_profiles = value
             end
             ## 
+            ## Gets the pendingExternalUserProfiles property value. Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+            ## @return a pending_external_user_profile
+            ## 
+            def pending_external_user_profiles
+                return @pending_external_user_profiles
+            end
+            ## 
+            ## Sets the pendingExternalUserProfiles property value. Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+            ## @param value Value to set for the pendingExternalUserProfiles property.
+            ## @return a void
+            ## 
+            def pending_external_user_profiles=(value)
+                @pending_external_user_profiles = value
+            end
+            ## 
             ## Gets the recommendations property value. List of recommended improvements to improve tenant posture.
             ## @return a recommendation
             ## 
@@ -279,12 +336,15 @@ module MicrosoftGraphBeta
                 writer.write_object_value("certificateAuthorities", @certificate_authorities)
                 writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions)
                 writer.write_collection_of_object_values("deletedItems", @deleted_items)
+                writer.write_collection_of_object_values("deviceLocalCredentials", @device_local_credentials)
+                writer.write_collection_of_object_values("externalUserProfiles", @external_user_profiles)
                 writer.write_collection_of_object_values("featureRolloutPolicies", @feature_rollout_policies)
                 writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
                 writer.write_collection_of_object_values("impactedResources", @impacted_resources)
                 writer.write_collection_of_object_values("inboundSharedUserProfiles", @inbound_shared_user_profiles)
                 writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization)
                 writer.write_collection_of_object_values("outboundSharedUserProfiles", @outbound_shared_user_profiles)
+                writer.write_collection_of_object_values("pendingExternalUserProfiles", @pending_external_user_profiles)
                 writer.write_collection_of_object_values("recommendations", @recommendations)
                 writer.write_collection_of_object_values("sharedEmailDomains", @shared_email_domains)
                 writer.write_collection_of_object_values("subscriptions", @subscriptions)
@@ -305,14 +365,14 @@ module MicrosoftGraphBeta
                 @shared_email_domains = value
             end
             ## 
-            ## Gets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
+            ## Gets the subscriptions property value. List of commercial subscriptions that an organization has.
             ## @return a company_subscription
             ## 
             def subscriptions
                 return @subscriptions
             end
             ## 
-            ## Sets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
+            ## Sets the subscriptions property value. List of commercial subscriptions that an organization has.
             ## @param value Value to set for the subscriptions property.
             ## @return a void
             ## 

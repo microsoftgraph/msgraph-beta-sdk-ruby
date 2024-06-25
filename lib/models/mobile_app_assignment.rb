@@ -18,13 +18,13 @@ module MicrosoftGraphBeta
             # Represents source of assignment.
             @source
             ## 
-            # The identifier of the source of the assignment.
+            # The identifier of the source of the assignment. This property is read-only.
             @source_id
             ## 
             # The target group assignment defined by the admin.
             @target
             ## 
-            ## Instantiates a new mobileAppAssignment and sets the default values.
+            ## Instantiates a new MobileAppAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,7 +78,6 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("intent", @intent)
                 writer.write_object_value("settings", @settings)
                 writer.write_enum_value("source", @source)
-                writer.write_string_value("sourceId", @source_id)
                 writer.write_object_value("target", @target)
             end
             ## 
@@ -112,14 +111,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the sourceId property value. The identifier of the source of the assignment.
+            ## Gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
             ## @return a string
             ## 
             def source_id
                 return @source_id
             end
             ## 
-            ## Sets the sourceId property value. The identifier of the source of the assignment.
+            ## Sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
             ## @param value Value to set for the sourceId property.
             ## @return a void
             ## 

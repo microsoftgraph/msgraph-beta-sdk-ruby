@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class VoiceAuthenticationMethodTarget < MicrosoftGraphBeta::Models::AuthenticationMethodTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new voiceAuthenticationMethodTarget and sets the default values.
+            ## Instantiates a new VoiceAuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @connector_version = value
             end
             ## 
-            ## Instantiates a new certificateConnectorDetails and sets the default values.
+            ## Instantiates a new CertificateConnectorDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationChoiceSettingDefinition < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Default option for choice setting
+            # Default option for the choice setting.
             @default_option_id
             ## 
-            # Options for the setting that can be selected
+            # Options for the setting that can be selected.
             @options
             ## 
-            ## Instantiates a new deviceManagementConfigurationChoiceSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationChoiceSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -37,14 +37,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementConfigurationChoiceSettingDefinition.new
             end
             ## 
-            ## Gets the defaultOptionId property value. Default option for choice setting
+            ## Gets the defaultOptionId property value. Default option for the choice setting.
             ## @return a string
             ## 
             def default_option_id
                 return @default_option_id
             end
             ## 
-            ## Sets the defaultOptionId property value. Default option for choice setting
+            ## Sets the defaultOptionId property value. Default option for the choice setting.
             ## @param value Value to set for the defaultOptionId property.
             ## @return a void
             ## 
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the options property value. Options for the setting that can be selected
+            ## Gets the options property value. Options for the setting that can be selected.
             ## @return a device_management_configuration_option_definition
             ## 
             def options
                 return @options
             end
             ## 
-            ## Sets the options property value. Options for the setting that can be selected
+            ## Sets the options property value. Options for the setting that can be selected.
             ## @param value Value to set for the options property.
             ## @return a void
             ## 

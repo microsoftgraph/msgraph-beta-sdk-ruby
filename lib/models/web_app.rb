@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @app_url = value
             end
             ## 
-            ## Instantiates a new webApp and sets the default values.
+            ## Instantiates a new WebApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

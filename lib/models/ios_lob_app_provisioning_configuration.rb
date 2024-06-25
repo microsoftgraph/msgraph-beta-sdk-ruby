@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
         class IosLobAppProvisioningConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The associated group assignments for IosLobAppProvisioningConfiguration.
+            # The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
             @assignments
             ## 
             # DateTime the object was created.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Admin provided name of the device configuration.
             @display_name
             ## 
-            # Optional profile expiration date and time.
+            # Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
             @expiration_date_time
             ## 
             # The associated group assignments.
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
             # Version of the device configuration.
             @version
             ## 
-            ## Gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
+            ## Gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
             ## @return a ios_lob_app_provisioning_configuration_assignment
             ## 
             def assignments
                 return @assignments
             end
             ## 
-            ## Sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
+            ## Sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
             ## @param value Value to set for the assignments property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
+            ## Instantiates a new IosLobAppProvisioningConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -140,14 +140,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the expirationDateTime property value. Optional profile expiration date and time.
+            ## Gets the expirationDateTime property value. Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Optional profile expiration date and time.
+            ## Sets the expirationDateTime property value. Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 

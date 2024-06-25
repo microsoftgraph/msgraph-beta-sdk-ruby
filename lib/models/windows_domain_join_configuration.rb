@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
             @computer_name_suffix_random_char_count
             ## 
-            # Reference to device configurations required for network connectivity
+            # Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.
             @network_access_configurations
             ## 
             # Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @computer_name_suffix_random_char_count = value
             end
             ## 
-            ## Instantiates a new windowsDomainJoinConfiguration and sets the default values.
+            ## Instantiates a new WindowsDomainJoinConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
+            ## Gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.
             ## @return a device_configuration
             ## 
             def network_access_configurations
                 return @network_access_configurations
             end
             ## 
-            ## Sets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
+            ## Sets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.
             ## @param value Value to set for the networkAccessConfigurations property.
             ## @return a void
             ## 

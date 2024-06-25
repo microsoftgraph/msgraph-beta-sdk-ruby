@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class BaseItemVersion < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Identity of the user which last modified the version. Read-only.
+            # Identity of the user that last modified the version. Read-only.
             @last_modified_by
             ## 
             # Date and time when the version was last modified. Read-only.
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Indicates the publication status of this particular version. Read-only.
             @publication
             ## 
-            ## Instantiates a new baseItemVersion and sets the default values.
+            ## Instantiates a new BaseItemVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
+            ## Gets the lastModifiedBy property value. Identity of the user that last modified the version. Read-only.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
+            ## Sets the lastModifiedBy property value. Identity of the user that last modified the version. Read-only.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 

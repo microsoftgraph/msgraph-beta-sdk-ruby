@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Customizations for Teacher Rosters.
             @teacher_roster
             ## 
-            ## Instantiates a new educationSynchronizationCustomizations and sets the default values.
+            ## Instantiates a new EducationSynchronizationCustomizations and sets the default values.
             ## @return a void
             ## 
             def initialize()

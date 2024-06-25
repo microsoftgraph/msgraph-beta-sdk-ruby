@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SubjectRightsRequestAllMailboxLocation < MicrosoftGraphBeta::Models::SubjectRightsRequestMailboxLocation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new subjectRightsRequestAllMailboxLocation and sets the default values.
+            ## Instantiates a new SubjectRightsRequestAllMailboxLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()

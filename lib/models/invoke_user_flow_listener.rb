@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The user flow that is invoked when this action executes.
             @user_flow
             ## 
-            ## Instantiates a new invokeUserFlowListener and sets the default values.
+            ## Instantiates a new InvokeUserFlowListener and sets the default values.
             ## @return a void
             ## 
             def initialize()

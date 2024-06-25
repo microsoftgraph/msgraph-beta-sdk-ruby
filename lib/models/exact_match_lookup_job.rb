@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            ## Instantiates a new exactMatchLookupJob and sets the default values.
+            ## Instantiates a new ExactMatchLookupJob and sets the default values.
             ## @return a void
             ## 
             def initialize()

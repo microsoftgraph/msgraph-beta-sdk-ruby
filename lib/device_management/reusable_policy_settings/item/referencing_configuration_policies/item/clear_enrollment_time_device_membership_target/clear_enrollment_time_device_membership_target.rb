@@ -1,0 +1,1 @@
+require_relative 'clear_enrollment_time_device_membership_target_post_response'

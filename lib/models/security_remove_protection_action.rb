@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityRemoveProtectionAction < MicrosoftGraphBeta::Models::SecurityInformationProtectionAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityRemoveProtectionAction and sets the default values.
+            ## Instantiates a new SecurityRemoveProtectionAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

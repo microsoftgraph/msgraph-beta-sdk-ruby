@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @children = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationChoiceSettingValue and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationChoiceSettingValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

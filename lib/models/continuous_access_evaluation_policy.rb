@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
             @users
             ## 
-            ## Instantiates a new continuousAccessEvaluationPolicy and sets the default values.
+            ## Instantiates a new ContinuousAccessEvaluationPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

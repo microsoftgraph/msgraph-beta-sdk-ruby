@@ -1,1 +1,1 @@
-require_relative 'find_by_method_mode_with_authentication_method_modes_response'
+require_relative 'find_by_method_mode_with_authentication_method_modes_get_response'

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The type of groups targeted the group policy configuration.
             @target
             ## 
-            ## Instantiates a new groupPolicyConfigurationAssignment and sets the default values.
+            ## Instantiates a new GroupPolicyConfigurationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The calendar that contains the event. Navigation property. Read-only.
             @calendar
             ## 
-            # Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            # Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             @cancelled_occurrences
             ## 
             # The date, time, and time zone that the event ends. By default, the end time is in UTC.
@@ -44,103 +44,106 @@ module MicrosoftGraphBeta
             # When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
             @hide_attendees
             ## 
-            # The importance property
+            # A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+            @i_cal_u_id
+            ## 
+            # The importance of the event. Possible values are: low, normal, high.
             @importance
             ## 
-            # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             @instances
             ## 
-            # The isAllDay property
+            # Set to true if the event lasts all day. If true, regardless of whether it's a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.
             @is_all_day
             ## 
-            # The isCancelled property
+            # Set to true if the event has been canceled.
             @is_cancelled
             ## 
-            # The isDraft property
+            # Set to true if the user has updated the meeting in Outlook but hasn't sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.
             @is_draft
             ## 
-            # The isOnlineMeeting property
+            # True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.
             @is_online_meeting
             ## 
-            # The isOrganizer property
+            # Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
             @is_organizer
             ## 
-            # The isReminderOn property
+            # Set to true if an alert is set to remind the user of the event.
             @is_reminder_on
             ## 
-            # The location property
+            # The location of the event.
             @location
             ## 
-            # The locations property
+            # The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
             @locations
             ## 
             # The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             @multi_value_extended_properties
             ## 
-            # The occurrenceId property
+            # An identifier for an occurrence in a recurring event series. Null if the event isn't part of a recurring series.The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.This property can identify any occurrence in a recurring series, including an occurrence that has been modified or canceled. You can use this property to perform all operations supported by occurrences in the recurring series.
             @occurrence_id
             ## 
-            # The onlineMeeting property
+            # Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
             @online_meeting
             ## 
-            # The onlineMeetingProvider property
+            # Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.
             @online_meeting_provider
             ## 
-            # The onlineMeetingUrl property
+            # A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.
             @online_meeting_url
             ## 
-            # The organizer property
+            # The organizer of the event.
             @organizer
             ## 
-            # The originalEndTimeZone property
+            # The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             @original_end_time_zone
             ## 
-            # The originalStart property
+            # Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @original_start
             ## 
-            # The originalStartTimeZone property
+            # The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             @original_start_time_zone
             ## 
-            # The recurrence property
+            # The recurrence pattern for the event.
             @recurrence
             ## 
-            # The reminderMinutesBeforeStart property
+            # The number of minutes before the event start time that the reminder alert occurs.
             @reminder_minutes_before_start
             ## 
-            # The responseRequested property
+            # Default is true, which represents the organizer would like an invitee to send a response to the event.
             @response_requested
             ## 
-            # The responseStatus property
+            # Indicates the type of response sent in response to an event message.
             @response_status
             ## 
-            # The sensitivity property
+            # Possible values are: normal, personal, private, confidential.
             @sensitivity
             ## 
-            # The seriesMasterId property
+            # The ID for the recurring series master item, if this event is part of a recurring series.
             @series_master_id
             ## 
-            # The showAs property
+            # The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
             @show_as
             ## 
             # The collection of single-value extended properties defined for the event. Read-only. Nullable.
             @single_value_extended_properties
             ## 
-            # The start property
+            # The start date, time, and time zone of the event. By default, the start time is in UTC.
             @start
             ## 
-            # The subject property
+            # The text of the event's subject line.
             @subject
             ## 
-            # The transactionId property
+            # A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
             @transaction_id
             ## 
-            # The type property
+            # The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
             @type
             ## 
-            # The uid property
+            # A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions.
             @uid
             ## 
-            # The webLink property
+            # The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.
             @web_link
             ## 
             ## Gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
@@ -233,14 +236,14 @@ module MicrosoftGraphBeta
                 @calendar = value
             end
             ## 
-            ## Gets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            ## Gets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             ## @return a string
             ## 
             def cancelled_occurrences
                 return @cancelled_occurrences
             end
             ## 
-            ## Sets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+            ## Sets the cancelledOccurrences property value. Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
             ## @param value Value to set for the cancelledOccurrences property.
             ## @return a void
             ## 
@@ -248,7 +251,7 @@ module MicrosoftGraphBeta
                 @cancelled_occurrences = value
             end
             ## 
-            ## Instantiates a new event and sets the default values.
+            ## Instantiates a new Event and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -327,6 +330,7 @@ module MicrosoftGraphBeta
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Extension.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
                     "hideAttendees" => lambda {|n| @hide_attendees = n.get_boolean_value() },
+                    "iCalUId" => lambda {|n| @i_cal_u_id = n.get_string_value() },
                     "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraphBeta::Models::Importance) },
                     "instances" => lambda {|n| @instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Event.create_from_discriminator_value(pn) }) },
                     "isAllDay" => lambda {|n| @is_all_day = n.get_boolean_value() },
@@ -393,14 +397,29 @@ module MicrosoftGraphBeta
                 @hide_attendees = value
             end
             ## 
-            ## Gets the importance property value. The importance property
+            ## Gets the iCalUId property value. A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+            ## @return a string
+            ## 
+            def i_cal_u_id
+                return @i_cal_u_id
+            end
+            ## 
+            ## Sets the iCalUId property value. A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+            ## @param value Value to set for the iCalUId property.
+            ## @return a void
+            ## 
+            def i_cal_u_id=(value)
+                @i_cal_u_id = value
+            end
+            ## 
+            ## Gets the importance property value. The importance of the event. Possible values are: low, normal, high.
             ## @return a importance
             ## 
             def importance
                 return @importance
             end
             ## 
-            ## Sets the importance property value. The importance property
+            ## Sets the importance property value. The importance of the event. Possible values are: low, normal, high.
             ## @param value Value to set for the importance property.
             ## @return a void
             ## 
@@ -408,14 +427,14 @@ module MicrosoftGraphBeta
                 @importance = value
             end
             ## 
-            ## Gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            ## Gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             ## @return a event
             ## 
             def instances
                 return @instances
             end
             ## 
-            ## Sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+            ## Sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
             ## @param value Value to set for the instances property.
             ## @return a void
             ## 
@@ -423,14 +442,14 @@ module MicrosoftGraphBeta
                 @instances = value
             end
             ## 
-            ## Gets the isAllDay property value. The isAllDay property
+            ## Gets the isAllDay property value. Set to true if the event lasts all day. If true, regardless of whether it's a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.
             ## @return a boolean
             ## 
             def is_all_day
                 return @is_all_day
             end
             ## 
-            ## Sets the isAllDay property value. The isAllDay property
+            ## Sets the isAllDay property value. Set to true if the event lasts all day. If true, regardless of whether it's a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.
             ## @param value Value to set for the isAllDay property.
             ## @return a void
             ## 
@@ -438,14 +457,14 @@ module MicrosoftGraphBeta
                 @is_all_day = value
             end
             ## 
-            ## Gets the isCancelled property value. The isCancelled property
+            ## Gets the isCancelled property value. Set to true if the event has been canceled.
             ## @return a boolean
             ## 
             def is_cancelled
                 return @is_cancelled
             end
             ## 
-            ## Sets the isCancelled property value. The isCancelled property
+            ## Sets the isCancelled property value. Set to true if the event has been canceled.
             ## @param value Value to set for the isCancelled property.
             ## @return a void
             ## 
@@ -453,14 +472,14 @@ module MicrosoftGraphBeta
                 @is_cancelled = value
             end
             ## 
-            ## Gets the isDraft property value. The isDraft property
+            ## Gets the isDraft property value. Set to true if the user has updated the meeting in Outlook but hasn't sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.
             ## @return a boolean
             ## 
             def is_draft
                 return @is_draft
             end
             ## 
-            ## Sets the isDraft property value. The isDraft property
+            ## Sets the isDraft property value. Set to true if the user has updated the meeting in Outlook but hasn't sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.
             ## @param value Value to set for the isDraft property.
             ## @return a void
             ## 
@@ -468,14 +487,14 @@ module MicrosoftGraphBeta
                 @is_draft = value
             end
             ## 
-            ## Gets the isOnlineMeeting property value. The isOnlineMeeting property
+            ## Gets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.
             ## @return a boolean
             ## 
             def is_online_meeting
                 return @is_online_meeting
             end
             ## 
-            ## Sets the isOnlineMeeting property value. The isOnlineMeeting property
+            ## Sets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.
             ## @param value Value to set for the isOnlineMeeting property.
             ## @return a void
             ## 
@@ -483,14 +502,14 @@ module MicrosoftGraphBeta
                 @is_online_meeting = value
             end
             ## 
-            ## Gets the isOrganizer property value. The isOrganizer property
+            ## Gets the isOrganizer property value. Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
             ## @return a boolean
             ## 
             def is_organizer
                 return @is_organizer
             end
             ## 
-            ## Sets the isOrganizer property value. The isOrganizer property
+            ## Sets the isOrganizer property value. Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
             ## @param value Value to set for the isOrganizer property.
             ## @return a void
             ## 
@@ -498,14 +517,14 @@ module MicrosoftGraphBeta
                 @is_organizer = value
             end
             ## 
-            ## Gets the isReminderOn property value. The isReminderOn property
+            ## Gets the isReminderOn property value. Set to true if an alert is set to remind the user of the event.
             ## @return a boolean
             ## 
             def is_reminder_on
                 return @is_reminder_on
             end
             ## 
-            ## Sets the isReminderOn property value. The isReminderOn property
+            ## Sets the isReminderOn property value. Set to true if an alert is set to remind the user of the event.
             ## @param value Value to set for the isReminderOn property.
             ## @return a void
             ## 
@@ -513,14 +532,14 @@ module MicrosoftGraphBeta
                 @is_reminder_on = value
             end
             ## 
-            ## Gets the location property value. The location property
+            ## Gets the location property value. The location of the event.
             ## @return a location
             ## 
             def location
                 return @location
             end
             ## 
-            ## Sets the location property value. The location property
+            ## Sets the location property value. The location of the event.
             ## @param value Value to set for the location property.
             ## @return a void
             ## 
@@ -528,14 +547,14 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the locations property value. The locations property
+            ## Gets the locations property value. The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
             ## @return a location
             ## 
             def locations
                 return @locations
             end
             ## 
-            ## Sets the locations property value. The locations property
+            ## Sets the locations property value. The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
             ## @param value Value to set for the locations property.
             ## @return a void
             ## 
@@ -558,14 +577,14 @@ module MicrosoftGraphBeta
                 @multi_value_extended_properties = value
             end
             ## 
-            ## Gets the occurrenceId property value. The occurrenceId property
+            ## Gets the occurrenceId property value. An identifier for an occurrence in a recurring event series. Null if the event isn't part of a recurring series.The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.This property can identify any occurrence in a recurring series, including an occurrence that has been modified or canceled. You can use this property to perform all operations supported by occurrences in the recurring series.
             ## @return a string
             ## 
             def occurrence_id
                 return @occurrence_id
             end
             ## 
-            ## Sets the occurrenceId property value. The occurrenceId property
+            ## Sets the occurrenceId property value. An identifier for an occurrence in a recurring event series. Null if the event isn't part of a recurring series.The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.This property can identify any occurrence in a recurring series, including an occurrence that has been modified or canceled. You can use this property to perform all operations supported by occurrences in the recurring series.
             ## @param value Value to set for the occurrenceId property.
             ## @return a void
             ## 
@@ -573,14 +592,14 @@ module MicrosoftGraphBeta
                 @occurrence_id = value
             end
             ## 
-            ## Gets the onlineMeeting property value. The onlineMeeting property
+            ## Gets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
             ## @return a online_meeting_info
             ## 
             def online_meeting
                 return @online_meeting
             end
             ## 
-            ## Sets the onlineMeeting property value. The onlineMeeting property
+            ## Sets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
             ## @param value Value to set for the onlineMeeting property.
             ## @return a void
             ## 
@@ -588,14 +607,14 @@ module MicrosoftGraphBeta
                 @online_meeting = value
             end
             ## 
-            ## Gets the onlineMeetingProvider property value. The onlineMeetingProvider property
+            ## Gets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.
             ## @return a online_meeting_provider_type
             ## 
             def online_meeting_provider
                 return @online_meeting_provider
             end
             ## 
-            ## Sets the onlineMeetingProvider property value. The onlineMeetingProvider property
+            ## Sets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.
             ## @param value Value to set for the onlineMeetingProvider property.
             ## @return a void
             ## 
@@ -603,14 +622,14 @@ module MicrosoftGraphBeta
                 @online_meeting_provider = value
             end
             ## 
-            ## Gets the onlineMeetingUrl property value. The onlineMeetingUrl property
+            ## Gets the onlineMeetingUrl property value. A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.
             ## @return a string
             ## 
             def online_meeting_url
                 return @online_meeting_url
             end
             ## 
-            ## Sets the onlineMeetingUrl property value. The onlineMeetingUrl property
+            ## Sets the onlineMeetingUrl property value. A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.
             ## @param value Value to set for the onlineMeetingUrl property.
             ## @return a void
             ## 
@@ -618,14 +637,14 @@ module MicrosoftGraphBeta
                 @online_meeting_url = value
             end
             ## 
-            ## Gets the organizer property value. The organizer property
+            ## Gets the organizer property value. The organizer of the event.
             ## @return a recipient
             ## 
             def organizer
                 return @organizer
             end
             ## 
-            ## Sets the organizer property value. The organizer property
+            ## Sets the organizer property value. The organizer of the event.
             ## @param value Value to set for the organizer property.
             ## @return a void
             ## 
@@ -633,14 +652,14 @@ module MicrosoftGraphBeta
                 @organizer = value
             end
             ## 
-            ## Gets the originalEndTimeZone property value. The originalEndTimeZone property
+            ## Gets the originalEndTimeZone property value. The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             ## @return a string
             ## 
             def original_end_time_zone
                 return @original_end_time_zone
             end
             ## 
-            ## Sets the originalEndTimeZone property value. The originalEndTimeZone property
+            ## Sets the originalEndTimeZone property value. The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             ## @param value Value to set for the originalEndTimeZone property.
             ## @return a void
             ## 
@@ -648,14 +667,14 @@ module MicrosoftGraphBeta
                 @original_end_time_zone = value
             end
             ## 
-            ## Gets the originalStart property value. The originalStart property
+            ## Gets the originalStart property value. Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def original_start
                 return @original_start
             end
             ## 
-            ## Sets the originalStart property value. The originalStart property
+            ## Sets the originalStart property value. Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the originalStart property.
             ## @return a void
             ## 
@@ -663,14 +682,14 @@ module MicrosoftGraphBeta
                 @original_start = value
             end
             ## 
-            ## Gets the originalStartTimeZone property value. The originalStartTimeZone property
+            ## Gets the originalStartTimeZone property value. The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             ## @return a string
             ## 
             def original_start_time_zone
                 return @original_start_time_zone
             end
             ## 
-            ## Sets the originalStartTimeZone property value. The originalStartTimeZone property
+            ## Sets the originalStartTimeZone property value. The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
             ## @param value Value to set for the originalStartTimeZone property.
             ## @return a void
             ## 
@@ -678,14 +697,14 @@ module MicrosoftGraphBeta
                 @original_start_time_zone = value
             end
             ## 
-            ## Gets the recurrence property value. The recurrence property
+            ## Gets the recurrence property value. The recurrence pattern for the event.
             ## @return a patterned_recurrence
             ## 
             def recurrence
                 return @recurrence
             end
             ## 
-            ## Sets the recurrence property value. The recurrence property
+            ## Sets the recurrence property value. The recurrence pattern for the event.
             ## @param value Value to set for the recurrence property.
             ## @return a void
             ## 
@@ -693,14 +712,14 @@ module MicrosoftGraphBeta
                 @recurrence = value
             end
             ## 
-            ## Gets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+            ## Gets the reminderMinutesBeforeStart property value. The number of minutes before the event start time that the reminder alert occurs.
             ## @return a integer
             ## 
             def reminder_minutes_before_start
                 return @reminder_minutes_before_start
             end
             ## 
-            ## Sets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+            ## Sets the reminderMinutesBeforeStart property value. The number of minutes before the event start time that the reminder alert occurs.
             ## @param value Value to set for the reminderMinutesBeforeStart property.
             ## @return a void
             ## 
@@ -708,14 +727,14 @@ module MicrosoftGraphBeta
                 @reminder_minutes_before_start = value
             end
             ## 
-            ## Gets the responseRequested property value. The responseRequested property
+            ## Gets the responseRequested property value. Default is true, which represents the organizer would like an invitee to send a response to the event.
             ## @return a boolean
             ## 
             def response_requested
                 return @response_requested
             end
             ## 
-            ## Sets the responseRequested property value. The responseRequested property
+            ## Sets the responseRequested property value. Default is true, which represents the organizer would like an invitee to send a response to the event.
             ## @param value Value to set for the responseRequested property.
             ## @return a void
             ## 
@@ -723,14 +742,14 @@ module MicrosoftGraphBeta
                 @response_requested = value
             end
             ## 
-            ## Gets the responseStatus property value. The responseStatus property
+            ## Gets the responseStatus property value. Indicates the type of response sent in response to an event message.
             ## @return a response_status
             ## 
             def response_status
                 return @response_status
             end
             ## 
-            ## Sets the responseStatus property value. The responseStatus property
+            ## Sets the responseStatus property value. Indicates the type of response sent in response to an event message.
             ## @param value Value to set for the responseStatus property.
             ## @return a void
             ## 
@@ -738,14 +757,14 @@ module MicrosoftGraphBeta
                 @response_status = value
             end
             ## 
-            ## Gets the sensitivity property value. The sensitivity property
+            ## Gets the sensitivity property value. Possible values are: normal, personal, private, confidential.
             ## @return a sensitivity
             ## 
             def sensitivity
                 return @sensitivity
             end
             ## 
-            ## Sets the sensitivity property value. The sensitivity property
+            ## Sets the sensitivity property value. Possible values are: normal, personal, private, confidential.
             ## @param value Value to set for the sensitivity property.
             ## @return a void
             ## 
@@ -772,6 +791,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("extensions", @extensions)
                 writer.write_boolean_value("hasAttachments", @has_attachments)
                 writer.write_boolean_value("hideAttendees", @hide_attendees)
+                writer.write_string_value("iCalUId", @i_cal_u_id)
                 writer.write_enum_value("importance", @importance)
                 writer.write_collection_of_object_values("instances", @instances)
                 writer.write_boolean_value("isAllDay", @is_all_day)
@@ -807,14 +827,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("webLink", @web_link)
             end
             ## 
-            ## Gets the seriesMasterId property value. The seriesMasterId property
+            ## Gets the seriesMasterId property value. The ID for the recurring series master item, if this event is part of a recurring series.
             ## @return a string
             ## 
             def series_master_id
                 return @series_master_id
             end
             ## 
-            ## Sets the seriesMasterId property value. The seriesMasterId property
+            ## Sets the seriesMasterId property value. The ID for the recurring series master item, if this event is part of a recurring series.
             ## @param value Value to set for the seriesMasterId property.
             ## @return a void
             ## 
@@ -822,14 +842,14 @@ module MicrosoftGraphBeta
                 @series_master_id = value
             end
             ## 
-            ## Gets the showAs property value. The showAs property
+            ## Gets the showAs property value. The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
             ## @return a free_busy_status
             ## 
             def show_as
                 return @show_as
             end
             ## 
-            ## Sets the showAs property value. The showAs property
+            ## Sets the showAs property value. The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
             ## @param value Value to set for the showAs property.
             ## @return a void
             ## 
@@ -852,14 +872,14 @@ module MicrosoftGraphBeta
                 @single_value_extended_properties = value
             end
             ## 
-            ## Gets the start property value. The start property
+            ## Gets the start property value. The start date, time, and time zone of the event. By default, the start time is in UTC.
             ## @return a date_time_time_zone
             ## 
             def start
                 return @start
             end
             ## 
-            ## Sets the start property value. The start property
+            ## Sets the start property value. The start date, time, and time zone of the event. By default, the start time is in UTC.
             ## @param value Value to set for the start property.
             ## @return a void
             ## 
@@ -867,14 +887,14 @@ module MicrosoftGraphBeta
                 @start = value
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. The text of the event's subject line.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. The text of the event's subject line.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 
@@ -882,14 +902,14 @@ module MicrosoftGraphBeta
                 @subject = value
             end
             ## 
-            ## Gets the transactionId property value. The transactionId property
+            ## Gets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
             ## @return a string
             ## 
             def transaction_id
                 return @transaction_id
             end
             ## 
-            ## Sets the transactionId property value. The transactionId property
+            ## Sets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
             ## @param value Value to set for the transactionId property.
             ## @return a void
             ## 
@@ -897,14 +917,14 @@ module MicrosoftGraphBeta
                 @transaction_id = value
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
             ## @return a event_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -912,14 +932,14 @@ module MicrosoftGraphBeta
                 @type = value
             end
             ## 
-            ## Gets the uid property value. The uid property
+            ## Gets the uid property value. A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions.
             ## @return a string
             ## 
             def uid
                 return @uid
             end
             ## 
-            ## Sets the uid property value. The uid property
+            ## Sets the uid property value. A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions.
             ## @param value Value to set for the uid property.
             ## @return a void
             ## 
@@ -927,14 +947,14 @@ module MicrosoftGraphBeta
                 @uid = value
             end
             ## 
-            ## Gets the webLink property value. The webLink property
+            ## Gets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.
             ## @return a string
             ## 
             def web_link
                 return @web_link
             end
             ## 
-            ## Sets the webLink property value. The webLink property
+            ## Sets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.
             ## @param value Value to set for the webLink property.
             ## @return a void
             ## 

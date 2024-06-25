@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Version of the entity.
             @version
             ## 
-            ## Instantiates a new windowsInformationProtectionAppLockerFile and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionAppLockerFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

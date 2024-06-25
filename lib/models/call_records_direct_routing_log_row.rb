@@ -5,11 +5,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class CallRecordsDirectRoutingLogRow
-            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-            ## 
-            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            @additional_data
+        class CallRecordsDirectRoutingLogRow < MicrosoftGraphBeta::Models::CallRecordsCallLogRow
+            include MicrosoftKiotaAbstractions::Parsable
             ## 
             # In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
             @call_end_sub_reason
@@ -17,10 +14,10 @@ module MicrosoftGraphBeta
             # Call type and direction.
             @call_type
             ## 
-            # Number of the user or bot who received the call (E.164 format, but may include additional data).
+            # Number of the user or bot who received the call (E.164 format, but might include more data).
             @callee_number
             ## 
-            # Number of the user or bot who made the call (E.164 format, but may include additional data).
+            # Number of the user or bot who made the call (E.164 format, but might include more data).
             @caller_number
             ## 
             # Identifier (GUID) for the call that you can use when calling Microsoft Support.
@@ -29,22 +26,19 @@ module MicrosoftGraphBeta
             # Duration of the call in seconds.
             @duration
             ## 
-            # Only exists for successful (fully established) calls. Time when call ended.
+            # Only exists for successful (fully established) calls. The time when the call ended.
             @end_date_time
             ## 
             # Only exists for failed (not fully established) calls.
             @failure_date_time
             ## 
-            # The code with which the call ended (RFC 3261).
+            # The final response code with which the call ended (RFC 3261).
             @final_sip_code
             ## 
             # Description of the SIP code and Microsoft subcode.
             @final_sip_code_phrase
             ## 
-            # Unique call identifier (GUID).
-            @id
-            ## 
-            # When the initial invite was sent.
+            # The date and time when the initial invite was sent.
             @invite_date_time
             ## 
             # Indicates if the trunk was enabled for media bypass or not.
@@ -53,50 +47,23 @@ module MicrosoftGraphBeta
             # The data center used for media path in non-bypass call.
             @media_path_location
             ## 
-            # The OdataType property
-            @odata_type
-            ## 
-            # Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            @other_party_country_code
-            ## 
             # The data center used for signaling for both bypass and non-bypass calls.
             @signaling_location
             ## 
-            # Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+            # Call start time.For failed and unanswered calls, this value can be equal to invite or failure time.
             @start_date_time
             ## 
             # Success or attempt.
             @successful_call
             ## 
+            # Correlation ID of the call to the transferor.
+            @transferor_correlation_id
+            ## 
             # Fully qualified domain name of the session border controller.
             @trunk_fully_qualified_domain_name
             ## 
-            # Country code of the user. For details, see ISO 3166-1 alpha-2.
+            # Country/region code of the user. For details, see ISO 3166-1 alpha-2.
             @user_country_code
-            ## 
-            # Display name of the user.
-            @user_display_name
-            ## 
-            # The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
-            @user_id
-            ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            @user_principal_name
-            ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @return a i_dictionary
-            ## 
-            def additional_data
-                return @additional_data
-            end
-            ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
-            ## @return a void
-            ## 
-            def additional_data=(value)
-                @additional_data = value
-            end
             ## 
             ## Gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
             ## @return a integer
@@ -128,14 +95,14 @@ module MicrosoftGraphBeta
                 @call_type = value
             end
             ## 
-            ## Gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+            ## Gets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but might include more data).
             ## @return a string
             ## 
             def callee_number
                 return @callee_number
             end
             ## 
-            ## Sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but may include additional data).
+            ## Sets the calleeNumber property value. Number of the user or bot who received the call (E.164 format, but might include more data).
             ## @param value Value to set for the calleeNumber property.
             ## @return a void
             ## 
@@ -143,14 +110,14 @@ module MicrosoftGraphBeta
                 @callee_number = value
             end
             ## 
-            ## Gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+            ## Gets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but might include more data).
             ## @return a string
             ## 
             def caller_number
                 return @caller_number
             end
             ## 
-            ## Sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but may include additional data).
+            ## Sets the callerNumber property value. Number of the user or bot who made the call (E.164 format, but might include more data).
             ## @param value Value to set for the callerNumber property.
             ## @return a void
             ## 
@@ -158,11 +125,11 @@ module MicrosoftGraphBeta
                 @caller_number = value
             end
             ## 
-            ## Instantiates a new callRecordsDirectRoutingLogRow and sets the default values.
+            ## Instantiates a new CallRecordsDirectRoutingLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                @additional_data = Hash.new
+                super
             end
             ## 
             ## Gets the correlationId property value. Identifier (GUID) for the call that you can use when calling Microsoft Support.
@@ -204,14 +171,14 @@ module MicrosoftGraphBeta
                 @duration = value
             end
             ## 
-            ## Gets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
+            ## Gets the endDateTime property value. Only exists for successful (fully established) calls. The time when the call ended.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
+            ## Sets the endDateTime property value. Only exists for successful (fully established) calls. The time when the call ended.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -234,14 +201,14 @@ module MicrosoftGraphBeta
                 @failure_date_time = value
             end
             ## 
-            ## Gets the finalSipCode property value. The code with which the call ended (RFC 3261).
+            ## Gets the finalSipCode property value. The final response code with which the call ended (RFC 3261).
             ## @return a integer
             ## 
             def final_sip_code
                 return @final_sip_code
             end
             ## 
-            ## Sets the finalSipCode property value. The code with which the call ended (RFC 3261).
+            ## Sets the finalSipCode property value. The final response code with which the call ended (RFC 3261).
             ## @param value Value to set for the finalSipCode property.
             ## @return a void
             ## 
@@ -268,7 +235,7 @@ module MicrosoftGraphBeta
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return {
+                return super.merge({
                     "callEndSubReason" => lambda {|n| @call_end_sub_reason = n.get_number_value() },
                     "callType" => lambda {|n| @call_type = n.get_string_value() },
                     "calleeNumber" => lambda {|n| @callee_number = n.get_string_value() },
@@ -279,46 +246,26 @@ module MicrosoftGraphBeta
                     "failureDateTime" => lambda {|n| @failure_date_time = n.get_date_time_value() },
                     "finalSipCode" => lambda {|n| @final_sip_code = n.get_number_value() },
                     "finalSipCodePhrase" => lambda {|n| @final_sip_code_phrase = n.get_string_value() },
-                    "id" => lambda {|n| @id = n.get_string_value() },
                     "inviteDateTime" => lambda {|n| @invite_date_time = n.get_date_time_value() },
                     "mediaBypassEnabled" => lambda {|n| @media_bypass_enabled = n.get_boolean_value() },
                     "mediaPathLocation" => lambda {|n| @media_path_location = n.get_string_value() },
-                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "otherPartyCountryCode" => lambda {|n| @other_party_country_code = n.get_string_value() },
                     "signalingLocation" => lambda {|n| @signaling_location = n.get_string_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "successfulCall" => lambda {|n| @successful_call = n.get_boolean_value() },
+                    "transferorCorrelationId" => lambda {|n| @transferor_correlation_id = n.get_string_value() },
                     "trunkFullyQualifiedDomainName" => lambda {|n| @trunk_fully_qualified_domain_name = n.get_string_value() },
                     "userCountryCode" => lambda {|n| @user_country_code = n.get_string_value() },
-                    "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
-                    "userId" => lambda {|n| @user_id = n.get_string_value() },
-                    "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
-                }
+                })
             end
             ## 
-            ## Gets the id property value. Unique call identifier (GUID).
-            ## @return a string
-            ## 
-            def id
-                return @id
-            end
-            ## 
-            ## Sets the id property value. Unique call identifier (GUID).
-            ## @param value Value to set for the id property.
-            ## @return a void
-            ## 
-            def id=(value)
-                @id = value
-            end
-            ## 
-            ## Gets the inviteDateTime property value. When the initial invite was sent.
+            ## Gets the inviteDateTime property value. The date and time when the initial invite was sent.
             ## @return a date_time
             ## 
             def invite_date_time
                 return @invite_date_time
             end
             ## 
-            ## Sets the inviteDateTime property value. When the initial invite was sent.
+            ## Sets the inviteDateTime property value. The date and time when the initial invite was sent.
             ## @param value Value to set for the inviteDateTime property.
             ## @return a void
             ## 
@@ -356,42 +303,13 @@ module MicrosoftGraphBeta
                 @media_path_location = value
             end
             ## 
-            ## Gets the @odata.type property value. The OdataType property
-            ## @return a string
-            ## 
-            def odata_type
-                return @odata_type
-            end
-            ## 
-            ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the @odata.type property.
-            ## @return a void
-            ## 
-            def odata_type=(value)
-                @odata_type = value
-            end
-            ## 
-            ## Gets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            ## @return a string
-            ## 
-            def other_party_country_code
-                return @other_party_country_code
-            end
-            ## 
-            ## Sets the otherPartyCountryCode property value. Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
-            ## @param value Value to set for the otherPartyCountryCode property.
-            ## @return a void
-            ## 
-            def other_party_country_code=(value)
-                @other_party_country_code = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                super
                 writer.write_number_value("callEndSubReason", @call_end_sub_reason)
                 writer.write_string_value("callType", @call_type)
                 writer.write_string_value("calleeNumber", @callee_number)
@@ -402,21 +320,15 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("failureDateTime", @failure_date_time)
                 writer.write_number_value("finalSipCode", @final_sip_code)
                 writer.write_string_value("finalSipCodePhrase", @final_sip_code_phrase)
-                writer.write_string_value("id", @id)
                 writer.write_date_time_value("inviteDateTime", @invite_date_time)
                 writer.write_boolean_value("mediaBypassEnabled", @media_bypass_enabled)
                 writer.write_string_value("mediaPathLocation", @media_path_location)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("otherPartyCountryCode", @other_party_country_code)
                 writer.write_string_value("signalingLocation", @signaling_location)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_boolean_value("successfulCall", @successful_call)
+                writer.write_string_value("transferorCorrelationId", @transferor_correlation_id)
                 writer.write_string_value("trunkFullyQualifiedDomainName", @trunk_fully_qualified_domain_name)
                 writer.write_string_value("userCountryCode", @user_country_code)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the signalingLocation property value. The data center used for signaling for both bypass and non-bypass calls.
@@ -434,14 +346,14 @@ module MicrosoftGraphBeta
                 @signaling_location = value
             end
             ## 
-            ## Gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+            ## Gets the startDateTime property value. Call start time.For failed and unanswered calls, this value can be equal to invite or failure time.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+            ## Sets the startDateTime property value. Call start time.For failed and unanswered calls, this value can be equal to invite or failure time.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -464,6 +376,21 @@ module MicrosoftGraphBeta
                 @successful_call = value
             end
             ## 
+            ## Gets the transferorCorrelationId property value. Correlation ID of the call to the transferor.
+            ## @return a string
+            ## 
+            def transferor_correlation_id
+                return @transferor_correlation_id
+            end
+            ## 
+            ## Sets the transferorCorrelationId property value. Correlation ID of the call to the transferor.
+            ## @param value Value to set for the transferorCorrelationId property.
+            ## @return a void
+            ## 
+            def transferor_correlation_id=(value)
+                @transferor_correlation_id = value
+            end
+            ## 
             ## Gets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
             ## @return a string
             ## 
@@ -479,64 +406,19 @@ module MicrosoftGraphBeta
                 @trunk_fully_qualified_domain_name = value
             end
             ## 
-            ## Gets the userCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
+            ## Gets the userCountryCode property value. Country/region code of the user. For details, see ISO 3166-1 alpha-2.
             ## @return a string
             ## 
             def user_country_code
                 return @user_country_code
             end
             ## 
-            ## Sets the userCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
+            ## Sets the userCountryCode property value. Country/region code of the user. For details, see ISO 3166-1 alpha-2.
             ## @param value Value to set for the userCountryCode property.
             ## @return a void
             ## 
             def user_country_code=(value)
                 @user_country_code = value
-            end
-            ## 
-            ## Gets the userDisplayName property value. Display name of the user.
-            ## @return a string
-            ## 
-            def user_display_name
-                return @user_display_name
-            end
-            ## 
-            ## Sets the userDisplayName property value. Display name of the user.
-            ## @param value Value to set for the userDisplayName property.
-            ## @return a void
-            ## 
-            def user_display_name=(value)
-                @user_display_name = value
-            end
-            ## 
-            ## Gets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
-            ## @return a string
-            ## 
-            def user_id
-                return @user_id
-            end
-            ## 
-            ## Sets the userId property value. The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
-            ## @param value Value to set for the userId property.
-            ## @return a void
-            ## 
-            def user_id=(value)
-                @user_id = value
-            end
-            ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @return a string
-            ## 
-            def user_principal_name
-                return @user_principal_name
-            end
-            ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-            ## @param value Value to set for the userPrincipalName property.
-            ## @return a void
-            ## 
-            def user_principal_name=(value)
-                @user_principal_name = value
             end
         end
     end

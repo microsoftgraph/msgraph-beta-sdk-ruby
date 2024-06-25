@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The settings property
             @settings
             ## 
-            ## Instantiates a new businessFlow and sets the default values.
+            ## Instantiates a new BusinessFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()

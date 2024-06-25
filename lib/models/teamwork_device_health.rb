@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                 @connection = value
             end
             ## 
-            ## Instantiates a new teamworkDeviceHealth and sets the default values.
+            ## Instantiates a new TeamworkDeviceHealth and sets the default values.
             ## @return a void
             ## 
             def initialize()

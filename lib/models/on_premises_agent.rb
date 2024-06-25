@@ -13,13 +13,13 @@ module MicrosoftGraphBeta
             # The external IP address as detected by the service for the agent machine. Read-only
             @external_ip
             ## 
-            # The name of the machine that the aggent is running on. Read-only
+            # The name of the machine that the agent is running on. Read-only
             @machine_name
             ## 
             # The status property
             @status
             ## 
-            # The supportedPublishingTypes property
+            # Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
             @supported_publishing_types
             ## 
             ## Gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @agent_groups = value
             end
             ## 
-            ## Instantiates a new onPremisesAgent and sets the default values.
+            ## Instantiates a new OnPremisesAgent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the machineName property value. The name of the machine that the aggent is running on. Read-only
+            ## Gets the machineName property value. The name of the machine that the agent is running on. Read-only
             ## @return a string
             ## 
             def machine_name
                 return @machine_name
             end
             ## 
-            ## Sets the machineName property value. The name of the machine that the aggent is running on. Read-only
+            ## Sets the machineName property value. The name of the machine that the agent is running on. Read-only
             ## @param value Value to set for the machineName property.
             ## @return a void
             ## 
@@ -125,14 +125,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the supportedPublishingTypes property value. The supportedPublishingTypes property
+            ## Gets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
             ## @return a on_premises_publishing_type
             ## 
             def supported_publishing_types
                 return @supported_publishing_types
             end
             ## 
-            ## Sets the supportedPublishingTypes property value. The supportedPublishingTypes property
+            ## Sets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
             ## @param value Value to set for the supportedPublishingTypes property.
             ## @return a void
             ## 

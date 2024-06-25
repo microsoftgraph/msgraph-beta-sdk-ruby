@@ -7,6 +7,7 @@ module MicrosoftGraphBeta
             MicrosoftSupport: :MicrosoftSupport,
             ServiceProvider: :ServiceProvider,
             UnknownFutureValue: :UnknownFutureValue,
+            Passthrough: :Passthrough,
         }
     end
 end

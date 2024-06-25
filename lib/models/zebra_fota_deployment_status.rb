@@ -61,15 +61,15 @@ module MicrosoftGraphBeta
             # An integer that indicates the total number of devices where no deployment status or end state has not received, even after the scheduled end date was reached.
             @total_unknown
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @complete_or_canceled_date_time = value
             end
             ## 
-            ## Instantiates a new zebraFotaDeploymentStatus and sets the default values.
+            ## Instantiates a new ZebraFotaDeploymentStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

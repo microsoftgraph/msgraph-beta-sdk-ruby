@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The application that is linked to the tab.
             @teams_app
             ## 
-            # The teamsAppId property
+            # App definition identifier of the tab. This value can't be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.
             @teams_app_id
             ## 
             # Deep link URL of the tab instance. Read only.
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @configuration = value
             end
             ## 
-            ## Instantiates a new teamsTab and sets the default values.
+            ## Instantiates a new TeamsTab and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -150,14 +150,14 @@ module MicrosoftGraphBeta
                 @teams_app = value
             end
             ## 
-            ## Gets the teamsAppId property value. The teamsAppId property
+            ## Gets the teamsAppId property value. App definition identifier of the tab. This value can't be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.
             ## @return a string
             ## 
             def teams_app_id
                 return @teams_app_id
             end
             ## 
-            ## Sets the teamsAppId property value. The teamsAppId property
+            ## Sets the teamsAppId property value. App definition identifier of the tab. This value can't be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.
             ## @param value Value to set for the teamsAppId property.
             ## @return a void
             ## 

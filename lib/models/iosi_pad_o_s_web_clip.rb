@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @app_url = value
             end
             ## 
-            ## Instantiates a new iosiPadOSWebClip and sets the default values.
+            ## Instantiates a new IosiPadOSWebClip and sets the default values.
             ## @return a void
             ## 
             def initialize()

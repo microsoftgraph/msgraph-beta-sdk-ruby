@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                 @azure_tenant_id = value
             end
             ## 
-            ## Instantiates a new cloudAppSecurityProfile and sets the default values.
+            ## Instantiates a new CloudAppSecurityProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

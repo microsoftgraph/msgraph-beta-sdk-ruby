@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityEdiscoveryHoldOperation < MicrosoftGraphBeta::Models::SecurityCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityEdiscoveryHoldOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryHoldOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

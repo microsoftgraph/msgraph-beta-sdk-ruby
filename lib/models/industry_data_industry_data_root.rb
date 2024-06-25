@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # Set of ephemeral operations that the system runs currently. Read-only.
             @operations
             ## 
+            # The outboundProvisioningFlowSets property
+            @outbound_provisioning_flow_sets
+            ## 
             # Set of user modifiable system picker types.
             @reference_definitions
             ## 
@@ -31,7 +34,7 @@ module MicrosoftGraphBeta
             # Set of years represented in the system.
             @years
             ## 
-            ## Instantiates a new industryDataIndustryDataRoot and sets the default values.
+            ## Instantiates a new IndustryDataIndustryDataRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,6 +73,7 @@ module MicrosoftGraphBeta
                     "dataConnectors" => lambda {|n| @data_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataConnector.create_from_discriminator_value(pn) }) },
                     "inboundFlows" => lambda {|n| @inbound_flows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataInboundFlow.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LongRunningOperation.create_from_discriminator_value(pn) }) },
+                    "outboundProvisioningFlowSets" => lambda {|n| @outbound_provisioning_flow_sets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataOutboundProvisioningFlowSet.create_from_discriminator_value(pn) }) },
                     "referenceDefinitions" => lambda {|n| @reference_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataReferenceDefinition.create_from_discriminator_value(pn) }) },
                     "roleGroups" => lambda {|n| @role_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataRoleGroup.create_from_discriminator_value(pn) }) },
                     "runs" => lambda {|n| @runs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IndustryDataIndustryDataRun.create_from_discriminator_value(pn) }) },
@@ -106,6 +110,21 @@ module MicrosoftGraphBeta
             ## 
             def operations=(value)
                 @operations = value
+            end
+            ## 
+            ## Gets the outboundProvisioningFlowSets property value. The outboundProvisioningFlowSets property
+            ## @return a industry_data_outbound_provisioning_flow_set
+            ## 
+            def outbound_provisioning_flow_sets
+                return @outbound_provisioning_flow_sets
+            end
+            ## 
+            ## Sets the outboundProvisioningFlowSets property value. The outboundProvisioningFlowSets property
+            ## @param value Value to set for the outboundProvisioningFlowSets property.
+            ## @return a void
+            ## 
+            def outbound_provisioning_flow_sets=(value)
+                @outbound_provisioning_flow_sets = value
             end
             ## 
             ## Gets the referenceDefinitions property value. Set of user modifiable system picker types.
@@ -163,6 +182,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("dataConnectors", @data_connectors)
                 writer.write_collection_of_object_values("inboundFlows", @inbound_flows)
                 writer.write_collection_of_object_values("operations", @operations)
+                writer.write_collection_of_object_values("outboundProvisioningFlowSets", @outbound_provisioning_flow_sets)
                 writer.write_collection_of_object_values("referenceDefinitions", @reference_definitions)
                 writer.write_collection_of_object_values("roleGroups", @role_groups)
                 writer.write_collection_of_object_values("runs", @runs)

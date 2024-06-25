@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Possible values for username source or email source.
             @username_source
             ## 
-            ## Instantiates a new easEmailProfileConfigurationBase and sets the default values.
+            ## Instantiates a new EasEmailProfileConfigurationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

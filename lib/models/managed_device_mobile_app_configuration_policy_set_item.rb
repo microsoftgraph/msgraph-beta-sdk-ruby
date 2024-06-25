@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class ManagedDeviceMobileAppConfigurationPolicySetItem < MicrosoftGraphBeta::Models::PolicySetItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new managedDeviceMobileAppConfigurationPolicySetItem and sets the default values.
+            ## Instantiates a new ManagedDeviceMobileAppConfigurationPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

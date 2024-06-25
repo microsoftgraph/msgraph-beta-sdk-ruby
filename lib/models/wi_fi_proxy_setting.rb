@@ -6,6 +6,7 @@ module MicrosoftGraphBeta
             None: :None,
             Manual: :Manual,
             Automatic: :Automatic,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AppleManagedIdentityProvider < MicrosoftGraphBeta::Models::IdentityProviderBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The certificate data which is a long string of text from the certificate, can be null.
+            # The certificate data that is a long string of text from the certificate, can be null.
             @certificate_data
             ## 
             # The Apple developer identifier. Required.
@@ -19,14 +19,14 @@ module MicrosoftGraphBeta
             # The Apple service identifier. Required.
             @service_id
             ## 
-            ## Gets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
+            ## Gets the certificateData property value. The certificate data that is a long string of text from the certificate, can be null.
             ## @return a string
             ## 
             def certificate_data
                 return @certificate_data
             end
             ## 
-            ## Sets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
+            ## Sets the certificateData property value. The certificate data that is a long string of text from the certificate, can be null.
             ## @param value Value to set for the certificateData property.
             ## @return a void
             ## 
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @certificate_data = value
             end
             ## 
-            ## Instantiates a new appleManagedIdentityProvider and sets the default values.
+            ## Instantiates a new AppleManagedIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

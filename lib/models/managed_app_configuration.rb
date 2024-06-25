@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # List of settings contained in this App Configuration policy
             @settings
             ## 
-            ## Instantiates a new managedAppConfiguration and sets the default values.
+            ## Instantiates a new ManagedAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

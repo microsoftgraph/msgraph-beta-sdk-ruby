@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new iosEnterpriseWiFiConfiguration and sets the default values.
+            ## Instantiates a new IosEnterpriseWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

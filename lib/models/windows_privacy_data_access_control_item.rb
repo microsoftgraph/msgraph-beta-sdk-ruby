@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                 @app_package_family_name = value
             end
             ## 
-            ## Instantiates a new windowsPrivacyDataAccessControlItem and sets the default values.
+            ## Instantiates a new WindowsPrivacyDataAccessControlItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
