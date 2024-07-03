@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -15,6 +16,12 @@ module MicrosoftGraphBeta
             # The URL of the meeting to join anonymously.
             @anonymous_join_web_url
             ## 
+            # The user can stamp a custom label on the appointment.
+            @appointment_label
+            ## 
+            # The date, time, and timezone when the appointment was created.
+            @created_date_time
+            ## 
             # The SMTP address of the bookingCustomer who is booking the appointment.
             @customer_email_address
             ## 
@@ -27,7 +34,7 @@ module MicrosoftGraphBeta
             # The customer's name.
             @customer_name
             ## 
-            # Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+            # Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
             @customer_notes
             ## 
             # The customer's phone number.
@@ -63,11 +70,17 @@ module MicrosoftGraphBeta
             # The URL of the invoice in Microsoft Bookings.
             @invoice_url
             ## 
-            # True indicates that the appointment will be held online. Default value is false.
+            # Indicates that the customer can manage bookings created by the staff. The default value is false.
+            @is_customer_allowed_to_manage_booking
+            ## 
+            # Indicates that the appointment is held online. The default value is false.
             @is_location_online
             ## 
             # The URL of the online meeting for the appointment.
             @join_web_url
+            ## 
+            # The date, time and timezone when the booking business was last updated.
+            @last_updated_date_time
             ## 
             # The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
@@ -93,7 +106,7 @@ module MicrosoftGraphBeta
             # The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             @reminders
             ## 
-            # An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+            # Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
             @self_service_appointment_id
             ## 
             # The ID of the bookingService associated with this appointment.
@@ -147,11 +160,41 @@ module MicrosoftGraphBeta
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new bookingAppointment and sets the default values.
+            ## Gets the appointmentLabel property value. The user can stamp a custom label on the appointment.
+            ## @return a string
+            ## 
+            def appointment_label
+                return @appointment_label
+            end
+            ## 
+            ## Sets the appointmentLabel property value. The user can stamp a custom label on the appointment.
+            ## @param value Value to set for the appointmentLabel property.
+            ## @return a void
+            ## 
+            def appointment_label=(value)
+                @appointment_label = value
+            end
+            ## 
+            ## Instantiates a new BookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time, and timezone when the appointment was created.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time, and timezone when the appointment was created.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -223,14 +266,14 @@ module MicrosoftGraphBeta
                 @customer_name = value
             end
             ## 
-            ## Gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+            ## Gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
             ## @return a string
             ## 
             def customer_notes
                 return @customer_notes
             end
             ## 
-            ## Sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+            ## Sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
             ## @param value Value to set for the customerNotes property.
             ## @return a void
             ## 
@@ -335,6 +378,8 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                     "anonymousJoinWebUrl" => lambda {|n| @anonymous_join_web_url = n.get_string_value() },
+                    "appointmentLabel" => lambda {|n| @appointment_label = n.get_string_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customerEmailAddress" => lambda {|n| @customer_email_address = n.get_string_value() },
                     "customerId" => lambda {|n| @customer_id = n.get_string_value() },
                     "customerLocation" => lambda {|n| @customer_location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Location.create_from_discriminator_value(pn) }) },
@@ -351,8 +396,10 @@ module MicrosoftGraphBeta
                     "invoiceId" => lambda {|n| @invoice_id = n.get_string_value() },
                     "invoiceStatus" => lambda {|n| @invoice_status = n.get_enum_value(MicrosoftGraphBeta::Models::BookingInvoiceStatus) },
                     "invoiceUrl" => lambda {|n| @invoice_url = n.get_string_value() },
+                    "isCustomerAllowedToManageBooking" => lambda {|n| @is_customer_allowed_to_manage_booking = n.get_boolean_value() },
                     "isLocationOnline" => lambda {|n| @is_location_online = n.get_boolean_value() },
                     "joinWebUrl" => lambda {|n| @join_web_url = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "maximumAttendeesCount" => lambda {|n| @maximum_attendees_count = n.get_number_value() },
                     "onlineMeetingUrl" => lambda {|n| @online_meeting_url = n.get_string_value() },
                     "optOutOfCustomerEmail" => lambda {|n| @opt_out_of_customer_email = n.get_boolean_value() },
@@ -447,14 +494,29 @@ module MicrosoftGraphBeta
                 @invoice_url = value
             end
             ## 
-            ## Gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+            ## Gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @return a boolean
+            ## 
+            def is_customer_allowed_to_manage_booking
+                return @is_customer_allowed_to_manage_booking
+            end
+            ## 
+            ## Sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @param value Value to set for the isCustomerAllowedToManageBooking property.
+            ## @return a void
+            ## 
+            def is_customer_allowed_to_manage_booking=(value)
+                @is_customer_allowed_to_manage_booking = value
+            end
+            ## 
+            ## Gets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
             ## @return a boolean
             ## 
             def is_location_online
                 return @is_location_online
             end
             ## 
-            ## Sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+            ## Sets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
             ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
@@ -475,6 +537,21 @@ module MicrosoftGraphBeta
             ## 
             def join_web_url=(value)
                 @join_web_url = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
@@ -597,14 +674,14 @@ module MicrosoftGraphBeta
                 @reminders = value
             end
             ## 
-            ## Gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+            ## Gets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
             ## @return a string
             ## 
             def self_service_appointment_id
                 return @self_service_appointment_id
             end
             ## 
-            ## Sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+            ## Sets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
             ## @param value Value to set for the selfServiceAppointmentId property.
             ## @return a void
             ## 
@@ -621,6 +698,8 @@ module MicrosoftGraphBeta
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
                 writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
+                writer.write_string_value("appointmentLabel", @appointment_label)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("customerEmailAddress", @customer_email_address)
                 writer.write_string_value("customerId", @customer_id)
                 writer.write_object_value("customerLocation", @customer_location)
@@ -635,8 +714,10 @@ module MicrosoftGraphBeta
                 writer.write_string_value("invoiceId", @invoice_id)
                 writer.write_enum_value("invoiceStatus", @invoice_status)
                 writer.write_string_value("invoiceUrl", @invoice_url)
+                writer.write_boolean_value("isCustomerAllowedToManageBooking", @is_customer_allowed_to_manage_booking)
                 writer.write_boolean_value("isLocationOnline", @is_location_online)
                 writer.write_string_value("joinWebUrl", @join_web_url)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
                 writer.write_string_value("onlineMeetingUrl", @online_meeting_url)
                 writer.write_boolean_value("optOutOfCustomerEmail", @opt_out_of_customer_email)

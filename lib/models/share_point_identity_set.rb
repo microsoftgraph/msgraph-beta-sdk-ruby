@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The SharePoint user associated with this action. Optional.
             @site_user
             ## 
-            ## Instantiates a new sharePointIdentitySet and sets the default values.
+            ## Instantiates a new SharePointIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()

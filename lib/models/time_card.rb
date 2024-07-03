@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                 @confirmed_by = value
             end
             ## 
-            ## Instantiates a new timeCard and sets the default values.
+            ## Instantiates a new TimeCard and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                     "breaks" => lambda {|n| @breaks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TimeCardBreak.create_from_discriminator_value(pn) }) },
                     "clockInEvent" => lambda {|n| @clock_in_event = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeCardEvent.create_from_discriminator_value(pn) }) },
                     "clockOutEvent" => lambda {|n| @clock_out_event = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeCardEvent.create_from_discriminator_value(pn) }) },
-                    "confirmedBy" => lambda {|n| @confirmed_by = n.get_enum_value(MicrosoftGraphBeta::Models::ConfirmedBy) },
+                    "confirmedBy" => lambda {|n| @confirmed_by = n.get_enum_values(MicrosoftGraphBeta::Models::ConfirmedBy) },
                     "notes" => lambda {|n| @notes = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "originalEntry" => lambda {|n| @original_entry = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::TimeCardEntry.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraphBeta::Models::TimeCardState) },

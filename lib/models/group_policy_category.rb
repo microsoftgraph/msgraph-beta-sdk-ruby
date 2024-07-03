@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @children = value
             end
             ## 
-            ## Instantiates a new groupPolicyCategory and sets the default values.
+            ## Instantiates a new GroupPolicyCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

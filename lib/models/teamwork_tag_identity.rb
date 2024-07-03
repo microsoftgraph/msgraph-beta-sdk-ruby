@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class TeamworkTagIdentity < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new teamworkTagIdentity and sets the default values.
+            ## Instantiates a new TeamworkTagIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

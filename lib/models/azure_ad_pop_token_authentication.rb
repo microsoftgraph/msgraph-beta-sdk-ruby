@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class AzureAdPopTokenAuthentication < MicrosoftGraphBeta::Models::CustomExtensionAuthenticationConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new azureAdPopTokenAuthentication and sets the default values.
+            ## Instantiates a new AzureAdPopTokenAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

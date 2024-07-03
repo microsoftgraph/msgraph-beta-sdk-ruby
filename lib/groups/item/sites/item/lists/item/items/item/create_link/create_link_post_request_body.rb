@@ -31,6 +31,9 @@ module MicrosoftGraphBeta
                                             # The expirationDateTime property
                                             @expiration_date_time
                                             ## 
+                                            # The message property
+                                            @message
+                                            ## 
                                             # The password property
                                             @password
                                             ## 
@@ -49,22 +52,22 @@ module MicrosoftGraphBeta
                                             # The type property
                                             @type
                                             ## 
-                                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                             ## @return a i_dictionary
                                             ## 
                                             def additional_data
                                                 return @additional_data
                                             end
                                             ## 
-                                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                            ## @param value Value to set for the additionalData property.
+                                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                            ## @param value Value to set for the AdditionalData property.
                                             ## @return a void
                                             ## 
                                             def additional_data=(value)
                                                 @additional_data = value
                                             end
                                             ## 
-                                            ## Instantiates a new createLinkPostRequestBody and sets the default values.
+                                            ## Instantiates a new CreateLinkPostRequestBody and sets the default values.
                                             ## @return a void
                                             ## 
                                             def initialize()
@@ -101,6 +104,7 @@ module MicrosoftGraphBeta
                                             def get_field_deserializers()
                                                 return {
                                                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
+                                                    "message" => lambda {|n| @message = n.get_string_value() },
                                                     "password" => lambda {|n| @password = n.get_string_value() },
                                                     "recipients" => lambda {|n| @recipients = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DriveRecipient.create_from_discriminator_value(pn) }) },
                                                     "retainInheritedPermissions" => lambda {|n| @retain_inherited_permissions = n.get_boolean_value() },
@@ -108,6 +112,21 @@ module MicrosoftGraphBeta
                                                     "sendNotification" => lambda {|n| @send_notification = n.get_boolean_value() },
                                                     "type" => lambda {|n| @type = n.get_string_value() },
                                                 }
+                                            end
+                                            ## 
+                                            ## Gets the message property value. The message property
+                                            ## @return a string
+                                            ## 
+                                            def message
+                                                return @message
+                                            end
+                                            ## 
+                                            ## Sets the message property value. The message property
+                                            ## @param value Value to set for the message property.
+                                            ## @return a void
+                                            ## 
+                                            def message=(value)
+                                                @message = value
                                             end
                                             ## 
                                             ## Gets the password property value. The password property
@@ -192,6 +211,7 @@ module MicrosoftGraphBeta
                                             def serialize(writer)
                                                 raise StandardError, 'writer cannot be null' if writer.nil?
                                                 writer.write_date_time_value("expirationDateTime", @expiration_date_time)
+                                                writer.write_string_value("message", @message)
                                                 writer.write_string_value("password", @password)
                                                 writer.write_collection_of_object_values("recipients", @recipients)
                                                 writer.write_boolean_value("retainInheritedPermissions", @retain_inherited_permissions)

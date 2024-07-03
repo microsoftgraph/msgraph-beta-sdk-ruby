@@ -13,12 +13,11 @@ module MicrosoftGraphBeta
             # The isWaitlistEnabled property
             @is_waitlist_enabled
             ## 
-            ## Instantiates a new virtualEventWebinarRegistrationConfiguration and sets the default values.
+            ## Instantiates a new VirtualEventWebinarRegistrationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
-                @odata_type = "#microsoft.graph.virtualEventWebinarRegistrationConfiguration"
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value

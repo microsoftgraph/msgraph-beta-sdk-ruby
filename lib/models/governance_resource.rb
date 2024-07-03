@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The collection of role assignments for the resource.
             @role_assignments
             ## 
-            # The collection of role defintions for the resource.
+            # The collection of role definitions for the resource.
             @role_definitions
             ## 
             # The collection of role settings for the resource.
@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
             @type
             ## 
-            ## Instantiates a new governanceResource and sets the default values.
+            ## Instantiates a new GovernanceResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -181,14 +181,14 @@ module MicrosoftGraphBeta
                 @role_assignments = value
             end
             ## 
-            ## Gets the roleDefinitions property value. The collection of role defintions for the resource.
+            ## Gets the roleDefinitions property value. The collection of role definitions for the resource.
             ## @return a governance_role_definition
             ## 
             def role_definitions
                 return @role_definitions
             end
             ## 
-            ## Sets the roleDefinitions property value. The collection of role defintions for the resource.
+            ## Sets the roleDefinitions property value. The collection of role definitions for the resource.
             ## @param value Value to set for the roleDefinitions property.
             ## @return a void
             ## 

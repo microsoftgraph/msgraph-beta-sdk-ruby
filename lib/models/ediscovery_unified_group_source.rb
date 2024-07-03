@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Specifies which sources are included in this group. Possible values are: mailbox, site.
             @included_sources
             ## 
-            ## Instantiates a new ediscoveryUnifiedGroupSource and sets the default values.
+            ## Instantiates a new EdiscoveryUnifiedGroupSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Group.create_from_discriminator_value(pn) }) },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraphBeta::Models::EdiscoverySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_values(MicrosoftGraphBeta::Models::EdiscoverySourceType) },
                 })
             end
             ## 

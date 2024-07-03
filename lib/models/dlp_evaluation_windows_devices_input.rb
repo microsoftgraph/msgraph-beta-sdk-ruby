@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The sharedBy property
             @shared_by
             ## 
-            ## Instantiates a new dlpEvaluationWindowsDevicesInput and sets the default values.
+            ## Instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
             ## @return a void
             ## 
             def initialize()

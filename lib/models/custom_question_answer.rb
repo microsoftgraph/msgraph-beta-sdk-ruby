@@ -4,17 +4,11 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class CustomQuestionAnswer
-            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-            ## 
-            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            @additional_data
+        class CustomQuestionAnswer < MicrosoftGraphBeta::Models::Entity
+            include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Display name of the custom registration question. Read-only.
             @display_name
-            ## 
-            # The OdataType property
-            @odata_type
             ## 
             # ID the custom registration question. Read-only.
             @question_id
@@ -22,26 +16,11 @@ module MicrosoftGraphBeta
             # Answer to the custom registration question.
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @return a i_dictionary
-            ## 
-            def additional_data
-                return @additional_data
-            end
-            ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
-            ## @return a void
-            ## 
-            def additional_data=(value)
-                @additional_data = value
-            end
-            ## 
-            ## Instantiates a new customQuestionAnswer and sets the default values.
+            ## Instantiates a new CustomQuestionAnswer and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                @additional_data = Hash.new
+                super
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -72,27 +51,11 @@ module MicrosoftGraphBeta
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return {
+                return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "questionId" => lambda {|n| @question_id = n.get_string_value() },
                     "value" => lambda {|n| @value = n.get_string_value() },
-                }
-            end
-            ## 
-            ## Gets the @odata.type property value. The OdataType property
-            ## @return a string
-            ## 
-            def odata_type
-                return @odata_type
-            end
-            ## 
-            ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the @odata.type property.
-            ## @return a void
-            ## 
-            def odata_type=(value)
-                @odata_type = value
+                })
             end
             ## 
             ## Gets the questionId property value. ID the custom registration question. Read-only.
@@ -116,11 +79,10 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                super
                 writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("questionId", @question_id)
                 writer.write_string_value("value", @value)
-                writer.write_additional_data(@additional_data)
             end
             ## 
             ## Gets the value property value. Answer to the custom registration question.

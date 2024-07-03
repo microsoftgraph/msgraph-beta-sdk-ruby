@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new windowsUpdatesComplianceChangeCollectionResponse and sets the default values.
+            ## Instantiates a new WindowsUpdatesComplianceChangeCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

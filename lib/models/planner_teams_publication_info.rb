@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
             @publishing_team_name
             ## 
-            ## Instantiates a new plannerTeamsPublicationInfo and sets the default values.
+            ## Instantiates a new PlannerTeamsPublicationInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

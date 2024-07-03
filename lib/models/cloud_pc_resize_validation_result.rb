@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The cloudPC id that corresponds to its unique identifier.
+            # The cloudPC ID that corresponds to its unique identifier.
             @cloud_pc_id
             ## 
             # The OdataType property
@@ -19,29 +19,29 @@ module MicrosoftGraphBeta
             # Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
             @validation_result
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the cloudPcId property value. The cloudPC id that corresponds to its unique identifier.
+            ## Gets the cloudPcId property value. The cloudPC ID that corresponds to its unique identifier.
             ## @return a string
             ## 
             def cloud_pc_id
                 return @cloud_pc_id
             end
             ## 
-            ## Sets the cloudPcId property value. The cloudPC id that corresponds to its unique identifier.
+            ## Sets the cloudPcId property value. The cloudPC ID that corresponds to its unique identifier.
             ## @param value Value to set for the cloudPcId property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @cloud_pc_id = value
             end
             ## 
-            ## Instantiates a new cloudPcResizeValidationResult and sets the default values.
+            ## Instantiates a new CloudPcResizeValidationResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
