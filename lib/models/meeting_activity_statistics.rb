@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @conflicting = value
             end
             ## 
-            ## Instantiates a new meetingActivityStatistics and sets the default values.
+            ## Instantiates a new MeetingActivityStatistics and sets the default values.
             ## @return a void
             ## 
             def initialize()

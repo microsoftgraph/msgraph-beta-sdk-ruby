@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
             @is_user_name_authentication_enabled
             ## 
-            ## Instantiates a new b2cAuthenticationMethodsPolicy and sets the default values.
+            ## Instantiates a new B2cAuthenticationMethodsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

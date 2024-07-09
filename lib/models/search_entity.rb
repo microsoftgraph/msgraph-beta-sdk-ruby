@@ -7,23 +7,23 @@ module MicrosoftGraphBeta
         class SearchEntity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Administrative answer in Microsoft Search results to define common acronyms in a organization.
+            # Administrative answer in Microsoft Search results to define common acronyms in an organization.
             @acronyms
             ## 
             # Administrative answer in Microsoft Search results for common search queries in an organization.
             @bookmarks
             ## 
-            # Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+            # Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
             @qnas
             ## 
-            ## Gets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
+            ## Gets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in an organization.
             ## @return a search_acronym
             ## 
             def acronyms
                 return @acronyms
             end
             ## 
-            ## Sets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
+            ## Sets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in an organization.
             ## @param value Value to set for the acronyms property.
             ## @return a void
             ## 
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @bookmarks = value
             end
             ## 
-            ## Instantiates a new searchEntity and sets the default values.
+            ## Instantiates a new SearchEntity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+            ## Gets the qnas property value. Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
             ## @return a search_qna
             ## 
             def qnas
                 return @qnas
             end
             ## 
-            ## Sets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+            ## Sets the qnas property value. Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
             ## @param value Value to set for the qnas property.
             ## @return a void
             ## 

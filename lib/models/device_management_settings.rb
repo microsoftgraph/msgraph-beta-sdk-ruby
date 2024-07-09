@@ -46,21 +46,24 @@ module MicrosoftGraphBeta
             # Is feature enabled or not for scheduled action for rule.
             @is_scheduled_action_enabled
             ## 
+            # The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE
+            @m365_app_diagnostics_enabled
+            ## 
             # The OdataType property
             @odata_type
             ## 
             # Device should be noncompliant when there is no compliance policy targeted when this is true
             @secure_by_default
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -82,7 +85,7 @@ module MicrosoftGraphBeta
                 @android_device_administrator_enrollment_enabled = value
             end
             ## 
-            ## Instantiates a new deviceManagementSettings and sets the default values.
+            ## Instantiates a new DeviceManagementSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -250,6 +253,7 @@ module MicrosoftGraphBeta
                     "enhancedJailBreak" => lambda {|n| @enhanced_jail_break = n.get_boolean_value() },
                     "ignoreDevicesForUnsupportedSettingsEnabled" => lambda {|n| @ignore_devices_for_unsupported_settings_enabled = n.get_boolean_value() },
                     "isScheduledActionEnabled" => lambda {|n| @is_scheduled_action_enabled = n.get_boolean_value() },
+                    "m365AppDiagnosticsEnabled" => lambda {|n| @m365_app_diagnostics_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "secureByDefault" => lambda {|n| @secure_by_default = n.get_boolean_value() },
                 }
@@ -283,6 +287,21 @@ module MicrosoftGraphBeta
             ## 
             def is_scheduled_action_enabled=(value)
                 @is_scheduled_action_enabled = value
+            end
+            ## 
+            ## Gets the m365AppDiagnosticsEnabled property value. The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE
+            ## @return a boolean
+            ## 
+            def m365_app_diagnostics_enabled
+                return @m365_app_diagnostics_enabled
+            end
+            ## 
+            ## Sets the m365AppDiagnosticsEnabled property value. The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE
+            ## @param value Value to set for the m365AppDiagnosticsEnabled property.
+            ## @return a void
+            ## 
+            def m365_app_diagnostics_enabled=(value)
+                @m365_app_diagnostics_enabled = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -333,6 +352,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("enhancedJailBreak", @enhanced_jail_break)
                 writer.write_boolean_value("ignoreDevicesForUnsupportedSettingsEnabled", @ignore_devices_for_unsupported_settings_enabled)
                 writer.write_boolean_value("isScheduledActionEnabled", @is_scheduled_action_enabled)
+                writer.write_boolean_value("m365AppDiagnosticsEnabled", @m365_app_diagnostics_enabled)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_boolean_value("secureByDefault", @secure_by_default)
                 writer.write_additional_data(@additional_data)

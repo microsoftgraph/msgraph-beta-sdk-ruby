@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Trusted Root and PFX certificates for iOS EDU.
             @teacher_certificate_settings
             ## 
-            ## Instantiates a new iosEduDeviceConfiguration and sets the default values.
+            ## Instantiates a new IosEduDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

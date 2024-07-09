@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The port that both TCP and UPD will listen over on the server
             @listen_port
             ## 
-            # The subnet that will be used to allocate virtual address for the clients
+            # The IPv4 subnet that will be used to allocate virtual address for the clients
             @network
             ## 
             # List of Scope Tags for this Entity instance
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @advanced_settings = value
             end
             ## 
-            ## Instantiates a new microsoftTunnelConfiguration and sets the default values.
+            ## Instantiates a new MicrosoftTunnelConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -214,14 +214,14 @@ module MicrosoftGraphBeta
                 @listen_port = value
             end
             ## 
-            ## Gets the network property value. The subnet that will be used to allocate virtual address for the clients
+            ## Gets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
             ## @return a string
             ## 
             def network
                 return @network
             end
             ## 
-            ## Sets the network property value. The subnet that will be used to allocate virtual address for the clients
+            ## Sets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
             ## @param value Value to set for the network property.
             ## @return a void
             ## 

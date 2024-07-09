@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
             @start_date_time
             ## 
-            # The details of the Cloud PC status.
+            # The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             @status_details
             ## 
             ## Gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
@@ -65,15 +65,15 @@ module MicrosoftGraphBeta
                 @action_state = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                 @cloud_pc_id = value
             end
             ## 
-            ## Instantiates a new cloudPcRemoteActionResult and sets the default values.
+            ## Instantiates a new CloudPcRemoteActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -204,14 +204,14 @@ module MicrosoftGraphBeta
                 @start_date_time = value
             end
             ## 
-            ## Gets the statusDetails property value. The details of the Cloud PC status.
+            ## Gets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             ## @return a cloud_pc_status_details
             ## 
             def status_details
                 return @status_details
             end
             ## 
-            ## Sets the statusDetails property value. The details of the Cloud PC status.
+            ## Sets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             ## @param value Value to set for the statusDetails property.
             ## @return a void
             ## 

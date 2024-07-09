@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The urlThreats property
             @url_threats
             ## 
-            ## Instantiates a new securityThreatSubmissionRoot and sets the default values.
+            ## Instantiates a new SecurityThreatSubmissionRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

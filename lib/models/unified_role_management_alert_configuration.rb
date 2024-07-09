@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).
             @scope_id
             ## 
-            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            # The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             @scope_type
             ## 
             ## Gets the alertDefinition property value. The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @alert_definition_id = value
             end
             ## 
-            ## Instantiates a new unifiedRoleManagementAlertConfiguration and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 @scope_id = value
             end
             ## 
-            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            ## Gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @return a string
             ## 
             def scope_type
                 return @scope_type
             end
             ## 
-            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
+            ## Sets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
             ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 

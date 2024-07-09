@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Apple Volume Purchase Program Token Identifier.
             @token_id
             ## 
-            ## Instantiates a new appleVppTokenTroubleshootingEvent and sets the default values.
+            ## Instantiates a new AppleVppTokenTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,15 +19,15 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @code = value
             end
             ## 
-            ## Instantiates a new industryDataReferenceValue and sets the default values.
+            ## Instantiates a new IndustryDataReferenceValue and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,10 +66,14 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.industryData.fileFormatReferenceValue"
+                            return IndustryDataFileFormatReferenceValue.new
                         when "#microsoft.graph.industryData.identifierTypeReferenceValue"
                             return IndustryDataIdentifierTypeReferenceValue.new
                         when "#microsoft.graph.industryData.roleReferenceValue"
                             return IndustryDataRoleReferenceValue.new
+                        when "#microsoft.graph.industryData.sectionRoleReferenceValue"
+                            return IndustryDataSectionRoleReferenceValue.new
                         when "#microsoft.graph.industryData.userMatchTargetReferenceValue"
                             return IndustryDataUserMatchTargetReferenceValue.new
                         when "#microsoft.graph.industryData.yearReferenceValue"

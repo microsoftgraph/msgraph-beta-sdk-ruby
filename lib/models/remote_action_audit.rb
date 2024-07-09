@@ -67,7 +67,7 @@ module MicrosoftGraphBeta
                 @action_state = value
             end
             ## 
-            ## Instantiates a new remoteActionAudit and sets the default values.
+            ## Instantiates a new RemoteActionAudit and sets the default values.
             ## @return a void
             ## 
             def initialize()

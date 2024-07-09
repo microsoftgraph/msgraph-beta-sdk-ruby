@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityAuthorityTemplate < MicrosoftGraphBeta::Models::SecurityFilePlanDescriptorTemplate
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityAuthorityTemplate and sets the default values.
+            ## Instantiates a new SecurityAuthorityTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

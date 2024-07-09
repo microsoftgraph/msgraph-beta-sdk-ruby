@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # A list of failed health check items. If the status property is available, this property will be empty.
+            # A list of failed health check items. If the status property is available, this property is empty.
             @failed_health_check_items
             ## 
             # The OdataType property
@@ -20,25 +20,25 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            # Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+            # Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.
             @updated_date_time
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new cloudPcConnectivityResult and sets the default values.
+            ## Instantiates a new CloudPcConnectivityResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 return CloudPcConnectivityResult.new
             end
             ## 
-            ## Gets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property will be empty.
+            ## Gets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property is empty.
             ## @return a cloud_pc_health_check_item
             ## 
             def failed_health_check_items
                 return @failed_health_check_items
             end
             ## 
-            ## Sets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property will be empty.
+            ## Sets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property is empty.
             ## @param value Value to set for the failedHealthCheckItems property.
             ## @return a void
             ## 
@@ -124,14 +124,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the updatedDateTime property value. Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+            ## Gets the updatedDateTime property value. Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.
             ## @return a date_time
             ## 
             def updated_date_time
                 return @updated_date_time
             end
             ## 
-            ## Sets the updatedDateTime property value. Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+            ## Sets the updatedDateTime property value. Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.
             ## @param value Value to set for the updatedDateTime property.
             ## @return a void
             ## 

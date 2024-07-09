@@ -8,26 +8,29 @@ module MicrosoftGraphBeta
         class CloudPcBulkAction < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The actionSummary property
+            # Run summary of this bulk action.
             @action_summary
             ## 
             # The cloudPcIds property
             @cloud_pc_ids
             ## 
-            # The createdDateTime property
+            # The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The displayName property
+            # Name of the bulk action.
             @display_name
             ## 
-            ## Gets the actionSummary property value. The actionSummary property
+            # Indicates whether the bulk action is scheduled according to the maintenance window. When true, the bulk action uses the maintenance window to schedule the action; false means that the bulk action doesn't use the maintenance window. The default value is false.
+            @scheduled_during_maintenance_window
+            ## 
+            ## Gets the actionSummary property value. Run summary of this bulk action.
             ## @return a cloud_pc_bulk_action_summary
             ## 
             def action_summary
                 return @action_summary
             end
             ## 
-            ## Sets the actionSummary property value. The actionSummary property
+            ## Sets the actionSummary property value. Run summary of this bulk action.
             ## @param value Value to set for the actionSummary property.
             ## @return a void
             ## 
@@ -50,21 +53,21 @@ module MicrosoftGraphBeta
                 @cloud_pc_ids = value
             end
             ## 
-            ## Instantiates a new cloudPcBulkAction and sets the default values.
+            ## Instantiates a new CloudPcBulkAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -82,6 +85,12 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback"
+                            return CloudPcBulkDisasterRecoveryFailback.new
+                        when "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover"
+                            return CloudPcBulkDisasterRecoveryFailover.new
+                        when "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType"
+                            return CloudPcBulkModifyDiskEncryptionType.new
                         when "#microsoft.graph.cloudPcBulkPowerOff"
                             return CloudPcBulkPowerOff.new
                         when "#microsoft.graph.cloudPcBulkPowerOn"
@@ -101,14 +110,14 @@ module MicrosoftGraphBeta
                 return CloudPcBulkAction.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Name of the bulk action.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Name of the bulk action.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -125,7 +134,23 @@ module MicrosoftGraphBeta
                     "cloudPcIds" => lambda {|n| @cloud_pc_ids = n.get_collection_of_primitive_values(String) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "scheduledDuringMaintenanceWindow" => lambda {|n| @scheduled_during_maintenance_window = n.get_boolean_value() },
                 })
+            end
+            ## 
+            ## Gets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk action is scheduled according to the maintenance window. When true, the bulk action uses the maintenance window to schedule the action; false means that the bulk action doesn't use the maintenance window. The default value is false.
+            ## @return a boolean
+            ## 
+            def scheduled_during_maintenance_window
+                return @scheduled_during_maintenance_window
+            end
+            ## 
+            ## Sets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk action is scheduled according to the maintenance window. When true, the bulk action uses the maintenance window to schedule the action; false means that the bulk action doesn't use the maintenance window. The default value is false.
+            ## @param value Value to set for the scheduledDuringMaintenanceWindow property.
+            ## @return a void
+            ## 
+            def scheduled_during_maintenance_window=(value)
+                @scheduled_during_maintenance_window = value
             end
             ## 
             ## Serializes information the current object
@@ -139,6 +164,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("cloudPcIds", @cloud_pc_ids)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_boolean_value("scheduledDuringMaintenanceWindow", @scheduled_during_maintenance_window)
             end
         end
     end

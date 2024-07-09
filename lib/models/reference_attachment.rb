@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
             @thumbnail_url
             ## 
-            ## Instantiates a new referenceAttachment and sets the default values.
+            ## Instantiates a new ReferenceAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()

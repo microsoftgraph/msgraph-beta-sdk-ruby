@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
+            # Determines whether devices that satisfy the rule should be allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
             @mode
             ## 
             # The OdataType property
@@ -19,22 +19,22 @@ module MicrosoftGraphBeta
             # Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
             @rule
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new devicesFilter and sets the default values.
+            ## Instantiates a new DevicesFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,14 +61,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
+            ## Gets the mode property value. Determines whether devices that satisfy the rule should be allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
             ## @return a cross_tenant_access_policy_target_configuration_access_type
             ## 
             def mode
                 return @mode
             end
             ## 
-            ## Sets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
+            ## Sets the mode property value. Determines whether devices that satisfy the rule should be allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
             ## @param value Value to set for the mode property.
             ## @return a void
             ## 

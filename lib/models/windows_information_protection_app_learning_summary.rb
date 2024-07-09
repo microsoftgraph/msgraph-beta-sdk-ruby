@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @application_type = value
             end
             ## 
-            ## Instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionAppLearningSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

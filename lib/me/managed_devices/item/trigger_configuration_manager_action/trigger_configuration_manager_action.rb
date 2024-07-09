@@ -1,1 +1,0 @@
-require_relative 'trigger_configuration_manager_action_post_request_body'

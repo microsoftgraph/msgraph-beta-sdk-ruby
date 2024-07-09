@@ -8,68 +8,68 @@ module MicrosoftGraphBeta
         class SecurityWhoisBaseRecord < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The abuse property
+            # The contact information for the abuse contact.
             @abuse
             ## 
-            # The admin property
+            # The contact information for the admin contact.
             @admin
             ## 
-            # The billing property
+            # The contact information for the billing contact.
             @billing
             ## 
-            # The domainStatus property
+            # The domain status for this WHOIS object.
             @domain_status
             ## 
-            # The expirationDateTime property
+            # The date and time when this WHOIS record expires with the registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @expiration_date_time
             ## 
-            # The firstSeenDateTime property
+            # The first seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @first_seen_date_time
             ## 
             # The host property
             @host
             ## 
-            # The lastSeenDateTime property
+            # The last seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_seen_date_time
             ## 
-            # The lastUpdateDateTime property
+            # The date and time when this WHOIS record was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_update_date_time
             ## 
-            # The nameservers property
+            # The nameservers for this WHOIS object.
             @nameservers
             ## 
-            # The noc property
+            # The contact information for the noc contact.
             @noc
             ## 
-            # The rawWhoisText property
+            # The raw WHOIS details for this WHOIS object.
             @raw_whois_text
             ## 
-            # The registrant property
+            # The contact information for the registrant contact.
             @registrant
             ## 
-            # The registrar property
+            # The contact information for the registrar contact.
             @registrar
             ## 
-            # The registrationDateTime property
+            # The date and time when this WHOIS record was registered with a registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @registration_date_time
             ## 
-            # The technical property
+            # The contact information for the technical contact.
             @technical
             ## 
-            # The whoisServer property
+            # The WHOIS server that provides the details.
             @whois_server
             ## 
-            # The zone property
+            # The contact information for the zone contact.
             @zone
             ## 
-            ## Gets the abuse property value. The abuse property
+            ## Gets the abuse property value. The contact information for the abuse contact.
             ## @return a security_whois_contact
             ## 
             def abuse
                 return @abuse
             end
             ## 
-            ## Sets the abuse property value. The abuse property
+            ## Sets the abuse property value. The contact information for the abuse contact.
             ## @param value Value to set for the abuse property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 @abuse = value
             end
             ## 
-            ## Gets the admin property value. The admin property
+            ## Gets the admin property value. The contact information for the admin contact.
             ## @return a security_whois_contact
             ## 
             def admin
                 return @admin
             end
             ## 
-            ## Sets the admin property value. The admin property
+            ## Sets the admin property value. The contact information for the admin contact.
             ## @param value Value to set for the admin property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @admin = value
             end
             ## 
-            ## Gets the billing property value. The billing property
+            ## Gets the billing property value. The contact information for the billing contact.
             ## @return a security_whois_contact
             ## 
             def billing
                 return @billing
             end
             ## 
-            ## Sets the billing property value. The billing property
+            ## Sets the billing property value. The contact information for the billing contact.
             ## @param value Value to set for the billing property.
             ## @return a void
             ## 
@@ -107,7 +107,7 @@ module MicrosoftGraphBeta
                 @billing = value
             end
             ## 
-            ## Instantiates a new securityWhoisBaseRecord and sets the default values.
+            ## Instantiates a new SecurityWhoisBaseRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 return SecurityWhoisBaseRecord.new
             end
             ## 
-            ## Gets the domainStatus property value. The domainStatus property
+            ## Gets the domainStatus property value. The domain status for this WHOIS object.
             ## @return a string
             ## 
             def domain_status
                 return @domain_status
             end
             ## 
-            ## Sets the domainStatus property value. The domainStatus property
+            ## Sets the domainStatus property value. The domain status for this WHOIS object.
             ## @param value Value to set for the domainStatus property.
             ## @return a void
             ## 
@@ -148,14 +148,14 @@ module MicrosoftGraphBeta
                 @domain_status = value
             end
             ## 
-            ## Gets the expirationDateTime property value. The expirationDateTime property
+            ## Gets the expirationDateTime property value. The date and time when this WHOIS record expires with the registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. The expirationDateTime property
+            ## Sets the expirationDateTime property value. The date and time when this WHOIS record expires with the registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 @expiration_date_time = value
             end
             ## 
-            ## Gets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Gets the firstSeenDateTime property value. The first seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def first_seen_date_time
                 return @first_seen_date_time
             end
             ## 
-            ## Sets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Sets the firstSeenDateTime property value. The first seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the firstSeenDateTime property.
             ## @return a void
             ## 
@@ -219,14 +219,14 @@ module MicrosoftGraphBeta
                 @host = value
             end
             ## 
-            ## Gets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Gets the lastSeenDateTime property value. The last seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_seen_date_time
                 return @last_seen_date_time
             end
             ## 
-            ## Sets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Sets the lastSeenDateTime property value. The last seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastSeenDateTime property.
             ## @return a void
             ## 
@@ -234,14 +234,14 @@ module MicrosoftGraphBeta
                 @last_seen_date_time = value
             end
             ## 
-            ## Gets the lastUpdateDateTime property value. The lastUpdateDateTime property
+            ## Gets the lastUpdateDateTime property value. The date and time when this WHOIS record was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_update_date_time
                 return @last_update_date_time
             end
             ## 
-            ## Sets the lastUpdateDateTime property value. The lastUpdateDateTime property
+            ## Sets the lastUpdateDateTime property value. The date and time when this WHOIS record was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastUpdateDateTime property.
             ## @return a void
             ## 
@@ -249,14 +249,14 @@ module MicrosoftGraphBeta
                 @last_update_date_time = value
             end
             ## 
-            ## Gets the nameservers property value. The nameservers property
+            ## Gets the nameservers property value. The nameservers for this WHOIS object.
             ## @return a security_whois_nameserver
             ## 
             def nameservers
                 return @nameservers
             end
             ## 
-            ## Sets the nameservers property value. The nameservers property
+            ## Sets the nameservers property value. The nameservers for this WHOIS object.
             ## @param value Value to set for the nameservers property.
             ## @return a void
             ## 
@@ -264,14 +264,14 @@ module MicrosoftGraphBeta
                 @nameservers = value
             end
             ## 
-            ## Gets the noc property value. The noc property
+            ## Gets the noc property value. The contact information for the noc contact.
             ## @return a security_whois_contact
             ## 
             def noc
                 return @noc
             end
             ## 
-            ## Sets the noc property value. The noc property
+            ## Sets the noc property value. The contact information for the noc contact.
             ## @param value Value to set for the noc property.
             ## @return a void
             ## 
@@ -279,14 +279,14 @@ module MicrosoftGraphBeta
                 @noc = value
             end
             ## 
-            ## Gets the rawWhoisText property value. The rawWhoisText property
+            ## Gets the rawWhoisText property value. The raw WHOIS details for this WHOIS object.
             ## @return a string
             ## 
             def raw_whois_text
                 return @raw_whois_text
             end
             ## 
-            ## Sets the rawWhoisText property value. The rawWhoisText property
+            ## Sets the rawWhoisText property value. The raw WHOIS details for this WHOIS object.
             ## @param value Value to set for the rawWhoisText property.
             ## @return a void
             ## 
@@ -294,14 +294,14 @@ module MicrosoftGraphBeta
                 @raw_whois_text = value
             end
             ## 
-            ## Gets the registrant property value. The registrant property
+            ## Gets the registrant property value. The contact information for the registrant contact.
             ## @return a security_whois_contact
             ## 
             def registrant
                 return @registrant
             end
             ## 
-            ## Sets the registrant property value. The registrant property
+            ## Sets the registrant property value. The contact information for the registrant contact.
             ## @param value Value to set for the registrant property.
             ## @return a void
             ## 
@@ -309,14 +309,14 @@ module MicrosoftGraphBeta
                 @registrant = value
             end
             ## 
-            ## Gets the registrar property value. The registrar property
+            ## Gets the registrar property value. The contact information for the registrar contact.
             ## @return a security_whois_contact
             ## 
             def registrar
                 return @registrar
             end
             ## 
-            ## Sets the registrar property value. The registrar property
+            ## Sets the registrar property value. The contact information for the registrar contact.
             ## @param value Value to set for the registrar property.
             ## @return a void
             ## 
@@ -324,14 +324,14 @@ module MicrosoftGraphBeta
                 @registrar = value
             end
             ## 
-            ## Gets the registrationDateTime property value. The registrationDateTime property
+            ## Gets the registrationDateTime property value. The date and time when this WHOIS record was registered with a registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def registration_date_time
                 return @registration_date_time
             end
             ## 
-            ## Sets the registrationDateTime property value. The registrationDateTime property
+            ## Sets the registrationDateTime property value. The date and time when this WHOIS record was registered with a registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the registrationDateTime property.
             ## @return a void
             ## 
@@ -366,14 +366,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("zone", @zone)
             end
             ## 
-            ## Gets the technical property value. The technical property
+            ## Gets the technical property value. The contact information for the technical contact.
             ## @return a security_whois_contact
             ## 
             def technical
                 return @technical
             end
             ## 
-            ## Sets the technical property value. The technical property
+            ## Sets the technical property value. The contact information for the technical contact.
             ## @param value Value to set for the technical property.
             ## @return a void
             ## 
@@ -381,14 +381,14 @@ module MicrosoftGraphBeta
                 @technical = value
             end
             ## 
-            ## Gets the whoisServer property value. The whoisServer property
+            ## Gets the whoisServer property value. The WHOIS server that provides the details.
             ## @return a string
             ## 
             def whois_server
                 return @whois_server
             end
             ## 
-            ## Sets the whoisServer property value. The whoisServer property
+            ## Sets the whoisServer property value. The WHOIS server that provides the details.
             ## @param value Value to set for the whoisServer property.
             ## @return a void
             ## 
@@ -396,14 +396,14 @@ module MicrosoftGraphBeta
                 @whois_server = value
             end
             ## 
-            ## Gets the zone property value. The zone property
+            ## Gets the zone property value. The contact information for the zone contact.
             ## @return a security_whois_contact
             ## 
             def zone
                 return @zone
             end
             ## 
-            ## Sets the zone property value. The zone property
+            ## Sets the zone property value. The contact information for the zone contact.
             ## @param value Value to set for the zone property.
             ## @return a void
             ## 

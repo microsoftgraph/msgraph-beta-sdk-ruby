@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The Boolean value of the key-value pair.
             @value
             ## 
-            ## Instantiates a new keyBooleanValuePair and sets the default values.
+            ## Instantiates a new KeyBooleanValuePair and sets the default values.
             ## @return a void
             ## 
             def initialize()
