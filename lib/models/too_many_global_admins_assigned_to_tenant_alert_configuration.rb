@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.
             @percentage_of_global_admins_out_of_roles_threshold
             ## 
-            ## Instantiates a new tooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
+            ## Instantiates a new TooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

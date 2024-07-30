@@ -42,6 +42,7 @@ require_relative './device_compliance_policy_setting_state_summaries/device_comp
 require_relative './device_compliance_scripts/device_compliance_scripts_request_builder'
 require_relative './device_configuration_conflict_summary/device_configuration_conflict_summary_request_builder'
 require_relative './device_configuration_device_state_summaries/device_configuration_device_state_summaries_request_builder'
+require_relative './device_configuration_profiles/device_configuration_profiles_request_builder'
 require_relative './device_configuration_restricted_apps_violations/device_configuration_restricted_apps_violations_request_builder'
 require_relative './device_configurations/device_configurations_request_builder'
 require_relative './device_configurations_all_managed_device_certificate_states/device_configurations_all_managed_device_certificate_states_request_builder'
@@ -54,10 +55,12 @@ require_relative './device_management_scripts/device_management_scripts_request_
 require_relative './device_shell_scripts/device_shell_scripts_request_builder'
 require_relative './device_management'
 require_relative './domain_join_connectors/domain_join_connectors_request_builder'
+require_relative './elevation_requests/elevation_requests_request_builder'
 require_relative './embedded_s_i_m_activation_code_pools/embedded_s_i_m_activation_code_pools_request_builder'
 require_relative './enable_android_device_administrator_enrollment/enable_android_device_administrator_enrollment_request_builder'
 require_relative './enable_legacy_pc_management/enable_legacy_pc_management_request_builder'
 require_relative './enable_unlicensed_adminstrators/enable_unlicensed_adminstrators_request_builder'
+require_relative './endpoint_privilege_management_provisioning_status/endpoint_privilege_management_provisioning_status_request_builder'
 require_relative './evaluate_assignment_filter/evaluate_assignment_filter_request_builder'
 require_relative './exchange_connectors/exchange_connectors_request_builder'
 require_relative './exchange_on_premises_policies/exchange_on_premises_policies_request_builder'
@@ -78,15 +81,20 @@ require_relative './group_policy_definitions/group_policy_definitions_request_bu
 require_relative './group_policy_migration_reports/group_policy_migration_reports_request_builder'
 require_relative './group_policy_object_files/group_policy_object_files_request_builder'
 require_relative './group_policy_uploaded_definition_files/group_policy_uploaded_definition_files_request_builder'
+require_relative './hardware_configurations/hardware_configurations_request_builder'
+require_relative './hardware_password_details/hardware_password_details_request_builder'
+require_relative './hardware_password_info/hardware_password_info_request_builder'
 require_relative './imported_device_identities/imported_device_identities_request_builder'
 require_relative './imported_windows_autopilot_device_identities/imported_windows_autopilot_device_identities_request_builder'
 require_relative './intents/intents_request_builder'
 require_relative './intune_branding_profiles/intune_branding_profiles_request_builder'
 require_relative './ios_update_statuses/ios_update_statuses_request_builder'
 require_relative './mac_o_s_software_update_account_summaries/mac_o_s_software_update_account_summaries_request_builder'
+require_relative './managed_device_cleanup_rules/managed_device_cleanup_rules_request_builder'
 require_relative './managed_device_encryption_states/managed_device_encryption_states_request_builder'
 require_relative './managed_device_overview/managed_device_overview_request_builder'
 require_relative './managed_devices/managed_devices_request_builder'
+require_relative './managed_device_windows_o_s_images/managed_device_windows_o_s_images_request_builder'
 require_relative './microsoft_tunnel_configurations/microsoft_tunnel_configurations_request_builder'
 require_relative './microsoft_tunnel_health_thresholds/microsoft_tunnel_health_thresholds_request_builder'
 require_relative './microsoft_tunnel_server_log_collection_responses/microsoft_tunnel_server_log_collection_responses_request_builder'
@@ -96,6 +104,8 @@ require_relative './mobile_threat_defense_connectors/mobile_threat_defense_conne
 require_relative './monitoring/monitoring_request_builder'
 require_relative './ndes_connectors/ndes_connectors_request_builder'
 require_relative './notification_message_templates/notification_message_templates_request_builder'
+require_relative './operation_approval_policies/operation_approval_policies_request_builder'
+require_relative './operation_approval_requests/operation_approval_requests_request_builder'
 require_relative './privilege_management_elevations/privilege_management_elevations_request_builder'
 require_relative './remote_action_audits/remote_action_audits_request_builder'
 require_relative './remote_assistance_partners/remote_assistance_partners_request_builder'
@@ -177,6 +187,7 @@ require_relative './windows_feature_update_profiles/windows_feature_update_profi
 require_relative './windows_information_protection_app_learning_summaries/windows_information_protection_app_learning_summaries_request_builder'
 require_relative './windows_information_protection_network_learning_summaries/windows_information_protection_network_learning_summaries_request_builder'
 require_relative './windows_malware_information/windows_malware_information_request_builder'
+require_relative './windows_quality_update_policies/windows_quality_update_policies_request_builder'
 require_relative './windows_quality_update_profiles/windows_quality_update_profiles_request_builder'
 require_relative './windows_update_catalog_items/windows_update_catalog_items_request_builder'
 require_relative './zebra_fota_artifacts/zebra_fota_artifacts_request_builder'
@@ -390,6 +401,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::DeviceManagement::DeviceConfigurationDeviceStateSummaries::DeviceConfigurationDeviceStateSummariesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.
+            def device_configuration_profiles()
+                return MicrosoftGraphBeta::DeviceManagement::DeviceConfigurationProfiles::DeviceConfigurationProfilesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
             def device_configuration_restricted_apps_violations()
                 return MicrosoftGraphBeta::DeviceManagement::DeviceConfigurationRestrictedAppsViolations::DeviceConfigurationRestrictedAppsViolationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -445,6 +461,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::DeviceManagement::DomainJoinConnectors::DomainJoinConnectorsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
+            def elevation_requests()
+                return MicrosoftGraphBeta::DeviceManagement::ElevationRequests::ElevationRequestsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
             def embedded_s_i_m_activation_code_pools()
                 return MicrosoftGraphBeta::DeviceManagement::EmbeddedSIMActivationCodePools::EmbeddedSIMActivationCodePoolsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -463,6 +484,11 @@ module MicrosoftGraphBeta
             # Provides operations to call the enableUnlicensedAdminstrators method.
             def enable_unlicensed_adminstrators()
                 return MicrosoftGraphBeta::DeviceManagement::EnableUnlicensedAdminstrators::EnableUnlicensedAdminstratorsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the endpointPrivilegeManagementProvisioningStatus property of the microsoft.graph.deviceManagement entity.
+            def endpoint_privilege_management_provisioning_status()
+                return MicrosoftGraphBeta::DeviceManagement::EndpointPrivilegeManagementProvisioningStatus::EndpointPrivilegeManagementProvisioningStatusRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the evaluateAssignmentFilter method.
@@ -545,6 +571,21 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::DeviceManagement::GroupPolicyUploadedDefinitionFiles::GroupPolicyUploadedDefinitionFilesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.
+            def hardware_configurations()
+                return MicrosoftGraphBeta::DeviceManagement::HardwareConfigurations::HardwareConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the hardwarePasswordDetails property of the microsoft.graph.deviceManagement entity.
+            def hardware_password_details()
+                return MicrosoftGraphBeta::DeviceManagement::HardwarePasswordDetails::HardwarePasswordDetailsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.
+            def hardware_password_info()
+                return MicrosoftGraphBeta::DeviceManagement::HardwarePasswordInfo::HardwarePasswordInfoRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
             def imported_device_identities()
                 return MicrosoftGraphBeta::DeviceManagement::ImportedDeviceIdentities::ImportedDeviceIdentitiesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -575,6 +616,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::DeviceManagement::MacOSSoftwareUpdateAccountSummaries::MacOSSoftwareUpdateAccountSummariesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the managedDeviceCleanupRules property of the microsoft.graph.deviceManagement entity.
+            def managed_device_cleanup_rules()
+                return MicrosoftGraphBeta::DeviceManagement::ManagedDeviceCleanupRules::ManagedDeviceCleanupRulesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.
             def managed_device_encryption_states()
                 return MicrosoftGraphBeta::DeviceManagement::ManagedDeviceEncryptionStates::ManagedDeviceEncryptionStatesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -588,6 +634,11 @@ module MicrosoftGraphBeta
             # Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
             def managed_devices()
                 return MicrosoftGraphBeta::DeviceManagement::ManagedDevices::ManagedDevicesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the managedDeviceWindowsOSImages property of the microsoft.graph.deviceManagement entity.
+            def managed_device_windows_o_s_images()
+                return MicrosoftGraphBeta::DeviceManagement::ManagedDeviceWindowsOSImages::ManagedDeviceWindowsOSImagesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
@@ -633,6 +684,16 @@ module MicrosoftGraphBeta
             # Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
             def notification_message_templates()
                 return MicrosoftGraphBeta::DeviceManagement::NotificationMessageTemplates::NotificationMessageTemplatesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the operationApprovalPolicies property of the microsoft.graph.deviceManagement entity.
+            def operation_approval_policies()
+                return MicrosoftGraphBeta::DeviceManagement::OperationApprovalPolicies::OperationApprovalPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.
+            def operation_approval_requests()
+                return MicrosoftGraphBeta::DeviceManagement::OperationApprovalRequests::OperationApprovalRequestsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.
@@ -1030,6 +1091,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::DeviceManagement::WindowsMalwareInformation::WindowsMalwareInformationRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the windowsQualityUpdatePolicies property of the microsoft.graph.deviceManagement entity.
+            def windows_quality_update_policies()
+                return MicrosoftGraphBeta::DeviceManagement::WindowsQualityUpdatePolicies::WindowsQualityUpdatePoliciesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
             def windows_quality_update_profiles()
                 return MicrosoftGraphBeta::DeviceManagement::WindowsQualityUpdateProfiles::WindowsQualityUpdateProfilesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -1061,7 +1127,7 @@ module MicrosoftGraphBeta
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement{?%24expand,%24select}")
             end
             ## 
             ## Get deviceManagement
@@ -1073,8 +1139,7 @@ module MicrosoftGraphBeta
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -1125,8 +1190,7 @@ module MicrosoftGraphBeta
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -1145,15 +1209,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -1165,15 +1229,15 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -1184,6 +1248,15 @@ module MicrosoftGraphBeta
             def verify_windows_enrollment_auto_discovery_with_domain_name(domain_name)
                 raise StandardError, 'domain_name cannot be null' if domain_name.nil?
                 return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a device_management_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return DeviceManagementRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

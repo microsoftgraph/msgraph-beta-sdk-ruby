@@ -8,37 +8,37 @@ module MicrosoftGraphBeta
         class SecuritySslCertificate < MicrosoftGraphBeta::Models::SecurityArtifact
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The expirationDateTime property
+            # The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @expiration_date_time
             ## 
-            # The fingerprint property
+            # A hash of the certificate calculated on the data and signature.
             @fingerprint
             ## 
-            # The firstSeenDateTime property
+            # The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @first_seen_date_time
             ## 
-            # The issueDateTime property
+            # The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @issue_date_time
             ## 
-            # The issuer property
+            # The entity that grants this certificate.
             @issuer
             ## 
-            # The lastSeenDateTime property
+            # The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_seen_date_time
             ## 
-            # The relatedHosts property
+            # The host resources related with this sslCertificate.
             @related_hosts
             ## 
-            # The serialNumber property
+            # The serial number associated with an SSL certificate.
             @serial_number
             ## 
-            # The sha1 property
+            # A SHA-1 hash of the certificate. Note: This is not the signature.
             @sha1
             ## 
-            # The subject property
+            # The person, site, machine, and so on, this certificate is for.
             @subject
             ## 
-            ## Instantiates a new securitySslCertificate and sets the default values.
+            ## Instantiates a new SecuritySslCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 return SecuritySslCertificate.new
             end
             ## 
-            ## Gets the expirationDateTime property value. The expirationDateTime property
+            ## Gets the expirationDateTime property value. The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. The expirationDateTime property
+            ## Sets the expirationDateTime property value. The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 @expiration_date_time = value
             end
             ## 
-            ## Gets the fingerprint property value. The fingerprint property
+            ## Gets the fingerprint property value. A hash of the certificate calculated on the data and signature.
             ## @return a string
             ## 
             def fingerprint
                 return @fingerprint
             end
             ## 
-            ## Sets the fingerprint property value. The fingerprint property
+            ## Sets the fingerprint property value. A hash of the certificate calculated on the data and signature.
             ## @param value Value to set for the fingerprint property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @fingerprint = value
             end
             ## 
-            ## Gets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Gets the firstSeenDateTime property value. The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def first_seen_date_time
                 return @first_seen_date_time
             end
             ## 
-            ## Sets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Sets the firstSeenDateTime property value. The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the firstSeenDateTime property.
             ## @return a void
             ## 
@@ -118,14 +118,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the issueDateTime property value. The issueDateTime property
+            ## Gets the issueDateTime property value. The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def issue_date_time
                 return @issue_date_time
             end
             ## 
-            ## Sets the issueDateTime property value. The issueDateTime property
+            ## Sets the issueDateTime property value. The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the issueDateTime property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @issue_date_time = value
             end
             ## 
-            ## Gets the issuer property value. The issuer property
+            ## Gets the issuer property value. The entity that grants this certificate.
             ## @return a security_ssl_certificate_entity
             ## 
             def issuer
                 return @issuer
             end
             ## 
-            ## Sets the issuer property value. The issuer property
+            ## Sets the issuer property value. The entity that grants this certificate.
             ## @param value Value to set for the issuer property.
             ## @return a void
             ## 
@@ -148,14 +148,14 @@ module MicrosoftGraphBeta
                 @issuer = value
             end
             ## 
-            ## Gets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Gets the lastSeenDateTime property value. The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_seen_date_time
                 return @last_seen_date_time
             end
             ## 
-            ## Sets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Sets the lastSeenDateTime property value. The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastSeenDateTime property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 @last_seen_date_time = value
             end
             ## 
-            ## Gets the relatedHosts property value. The relatedHosts property
+            ## Gets the relatedHosts property value. The host resources related with this sslCertificate.
             ## @return a security_host
             ## 
             def related_hosts
                 return @related_hosts
             end
             ## 
-            ## Sets the relatedHosts property value. The relatedHosts property
+            ## Sets the relatedHosts property value. The host resources related with this sslCertificate.
             ## @param value Value to set for the relatedHosts property.
             ## @return a void
             ## 
@@ -178,14 +178,14 @@ module MicrosoftGraphBeta
                 @related_hosts = value
             end
             ## 
-            ## Gets the serialNumber property value. The serialNumber property
+            ## Gets the serialNumber property value. The serial number associated with an SSL certificate.
             ## @return a string
             ## 
             def serial_number
                 return @serial_number
             end
             ## 
-            ## Sets the serialNumber property value. The serialNumber property
+            ## Sets the serialNumber property value. The serial number associated with an SSL certificate.
             ## @param value Value to set for the serialNumber property.
             ## @return a void
             ## 
@@ -212,14 +212,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("subject", @subject)
             end
             ## 
-            ## Gets the sha1 property value. The sha1 property
+            ## Gets the sha1 property value. A SHA-1 hash of the certificate. Note: This is not the signature.
             ## @return a string
             ## 
             def sha1
                 return @sha1
             end
             ## 
-            ## Sets the sha1 property value. The sha1 property
+            ## Sets the sha1 property value. A SHA-1 hash of the certificate. Note: This is not the signature.
             ## @param value Value to set for the sha1 property.
             ## @return a void
             ## 
@@ -227,14 +227,14 @@ module MicrosoftGraphBeta
                 @sha1 = value
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. The person, site, machine, and so on, this certificate is for.
             ## @return a security_ssl_certificate_entity
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. The person, site, machine, and so on, this certificate is for.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 

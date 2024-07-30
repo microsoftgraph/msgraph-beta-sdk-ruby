@@ -48,7 +48,7 @@ module MicrosoftGraphBeta
                 @configurations = value
             end
             ## 
-            ## Instantiates a new iosAzureAdSingleSignOnExtension and sets the default values.
+            ## Instantiates a new IosAzureAdSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

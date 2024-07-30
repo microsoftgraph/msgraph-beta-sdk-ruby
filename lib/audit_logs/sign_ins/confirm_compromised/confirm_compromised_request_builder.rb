@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
                         super(path_parameters, request_adapter, "{+baseurl}/auditLogs/signIns/confirmCompromised")
                     end
                     ## 
-                    ## Allow admins to mark an event in the Azure AD sign in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
+                    ## Allow admins to mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
@@ -34,12 +34,11 @@ module MicrosoftGraphBeta
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Allow admins to mark an event in the Azure AD sign in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
+                    ## Allow admins to mark an event in the Microsoft Entra sign-in logs as risky. Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states. Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky. For details about investigating Identity Protection risks, see How to investigate risk.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -47,15 +46,25 @@ module MicrosoftGraphBeta
                     def to_post_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :POST
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :POST
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a confirm_compromised_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ConfirmCompromisedRequestBuilder.new(raw_url, @request_adapter)
                     end
                 end
             end

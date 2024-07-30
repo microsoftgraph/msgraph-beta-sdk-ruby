@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @color = value
             end
             ## 
-            ## Instantiates a new securitySensitivityLabel and sets the default values.
+            ## Instantiates a new SecuritySensitivityLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()

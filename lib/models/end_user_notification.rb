@@ -8,54 +8,54 @@ module MicrosoftGraphBeta
         class EndUserNotification < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdBy property
+            # Identity of the user who created the notification.
             @created_by
             ## 
-            # The createdDateTime property
+            # Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The description property
+            # Description of the notification as defined by the user.
             @description
             ## 
             # The details property
             @details
             ## 
-            # The displayName property
+            # Name of the notification as defined by the user.
             @display_name
             ## 
-            # The lastModifiedBy property
+            # Identity of the user who last modified the notification.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The notificationType property
+            # Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
             @notification_type
             ## 
-            # The source property
+            # The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             @source
             ## 
-            # The status property
+            # The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             @status
             ## 
-            # The supportedLocales property
+            # Supported locales for endUserNotification content.
             @supported_locales
             ## 
-            ## Instantiates a new endUserNotification and sets the default values.
+            ## Instantiates a new EndUserNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the notification.
             ## @return a email_identity
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the notification.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 return EndUserNotification.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the notification as defined by the user.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the notification as defined by the user.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -117,14 +117,14 @@ module MicrosoftGraphBeta
                 @details = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Name of the notification as defined by the user.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Name of the notification as defined by the user.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -151,14 +151,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Identity of the user who last modified the notification.
             ## @return a email_identity
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Identity of the user who last modified the notification.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -181,14 +181,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the notificationType property value. The notificationType property
+            ## Gets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
             ## @return a end_user_notification_type
             ## 
             def notification_type
                 return @notification_type
             end
             ## 
-            ## Sets the notificationType property value. The notificationType property
+            ## Sets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
             ## @param value Value to set for the notificationType property.
             ## @return a void
             ## 
@@ -216,14 +216,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("supportedLocales", @supported_locales)
             end
             ## 
-            ## Gets the source property value. The source property
+            ## Gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @return a simulation_content_source
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. The source property
+            ## Sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @return a simulation_content_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the supportedLocales property value. The supportedLocales property
+            ## Gets the supportedLocales property value. Supported locales for endUserNotification content.
             ## @return a string
             ## 
             def supported_locales
                 return @supported_locales
             end
             ## 
-            ## Sets the supportedLocales property value. The supportedLocales property
+            ## Sets the supportedLocales property value. Supported locales for endUserNotification content.
             ## @param value Value to set for the supportedLocales property.
             ## @return a void
             ## 

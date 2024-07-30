@@ -9,19 +9,25 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthModelPerformance < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices for that model. Valid values -2147483648 to 2147483647
+            # Number of active devices for that model. Valid values 0 to 2147483647
             @active_devices
             ## 
-            # The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            # The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             @average_battery_age_in_days
             ## 
-            # The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            # The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             @average_estimated_runtime_in_minutes
             ## 
-            # The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            # The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             @average_max_capacity_percentage
             ## 
-            # Name of the device manufacturer.
+            # The manufacturer name of the device.
+            @device_manufacturer_name
+            ## 
+            # The model name of the device.
+            @device_model_name
+            ## 
+            # Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
             @manufacturer
             ## 
             # The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
@@ -36,23 +42,23 @@ module MicrosoftGraphBeta
             # The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             @median_max_capacity_percentage
             ## 
-            # The model name of the device.
+            # The model name of the device. Deprecated in favor of DeviceModelName.
             @model
             ## 
-            # A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            # A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             @model_battery_health_score
             ## 
             # The modelHealthStatus property
             @model_health_status
             ## 
-            ## Gets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices for that model. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -60,14 +66,14 @@ module MicrosoftGraphBeta
                 @active_devices = value
             end
             ## 
-            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_battery_age_in_days
                 return @average_battery_age_in_days
             end
             ## 
-            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @param value Value to set for the averageBatteryAgeInDays property.
             ## @return a void
             ## 
@@ -75,14 +81,14 @@ module MicrosoftGraphBeta
                 @average_battery_age_in_days = value
             end
             ## 
-            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_estimated_runtime_in_minutes
                 return @average_estimated_runtime_in_minutes
             end
             ## 
-            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
             ## @param value Value to set for the averageEstimatedRuntimeInMinutes property.
             ## @return a void
             ## 
@@ -90,14 +96,14 @@ module MicrosoftGraphBeta
                 @average_estimated_runtime_in_minutes = value
             end
             ## 
-            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_max_capacity_percentage
                 return @average_max_capacity_percentage
             end
             ## 
-            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @param value Value to set for the averageMaxCapacityPercentage property.
             ## @return a void
             ## 
@@ -105,7 +111,7 @@ module MicrosoftGraphBeta
                 @average_max_capacity_percentage = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -121,6 +127,36 @@ module MicrosoftGraphBeta
                 return UserExperienceAnalyticsBatteryHealthModelPerformance.new
             end
             ## 
+            ## Gets the deviceManufacturerName property value. The manufacturer name of the device.
+            ## @return a string
+            ## 
+            def device_manufacturer_name
+                return @device_manufacturer_name
+            end
+            ## 
+            ## Sets the deviceManufacturerName property value. The manufacturer name of the device.
+            ## @param value Value to set for the deviceManufacturerName property.
+            ## @return a void
+            ## 
+            def device_manufacturer_name=(value)
+                @device_manufacturer_name = value
+            end
+            ## 
+            ## Gets the deviceModelName property value. The model name of the device.
+            ## @return a string
+            ## 
+            def device_model_name
+                return @device_model_name
+            end
+            ## 
+            ## Sets the deviceModelName property value. The model name of the device.
+            ## @param value Value to set for the deviceModelName property.
+            ## @return a void
+            ## 
+            def device_model_name=(value)
+                @device_model_name = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -130,6 +166,8 @@ module MicrosoftGraphBeta
                     "averageBatteryAgeInDays" => lambda {|n| @average_battery_age_in_days = n.get_number_value() },
                     "averageEstimatedRuntimeInMinutes" => lambda {|n| @average_estimated_runtime_in_minutes = n.get_number_value() },
                     "averageMaxCapacityPercentage" => lambda {|n| @average_max_capacity_percentage = n.get_number_value() },
+                    "deviceManufacturerName" => lambda {|n| @device_manufacturer_name = n.get_string_value() },
+                    "deviceModelName" => lambda {|n| @device_model_name = n.get_string_value() },
                     "manufacturer" => lambda {|n| @manufacturer = n.get_string_value() },
                     "meanFullBatteryDrainCount" => lambda {|n| @mean_full_battery_drain_count = n.get_number_value() },
                     "medianEstimatedRuntimeInMinutes" => lambda {|n| @median_estimated_runtime_in_minutes = n.get_number_value() },
@@ -141,14 +179,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the manufacturer property value. Name of the device manufacturer.
+            ## Gets the manufacturer property value. Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
             ## @return a string
             ## 
             def manufacturer
                 return @manufacturer
             end
             ## 
-            ## Sets the manufacturer property value. Name of the device manufacturer.
+            ## Sets the manufacturer property value. Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
             ## @param value Value to set for the manufacturer property.
             ## @return a void
             ## 
@@ -216,14 +254,14 @@ module MicrosoftGraphBeta
                 @median_max_capacity_percentage = value
             end
             ## 
-            ## Gets the model property value. The model name of the device.
+            ## Gets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
             ## @return a string
             ## 
             def model
                 return @model
             end
             ## 
-            ## Sets the model property value. The model name of the device.
+            ## Sets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
             ## @param value Value to set for the model property.
             ## @return a void
             ## 
@@ -231,14 +269,14 @@ module MicrosoftGraphBeta
                 @model = value
             end
             ## 
-            ## Gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def model_battery_health_score
                 return @model_battery_health_score
             end
             ## 
-            ## Sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+            ## Sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
             ## @param value Value to set for the modelBatteryHealthScore property.
             ## @return a void
             ## 
@@ -272,6 +310,8 @@ module MicrosoftGraphBeta
                 writer.write_number_value("averageBatteryAgeInDays", @average_battery_age_in_days)
                 writer.write_number_value("averageEstimatedRuntimeInMinutes", @average_estimated_runtime_in_minutes)
                 writer.write_number_value("averageMaxCapacityPercentage", @average_max_capacity_percentage)
+                writer.write_string_value("deviceManufacturerName", @device_manufacturer_name)
+                writer.write_string_value("deviceModelName", @device_model_name)
                 writer.write_string_value("manufacturer", @manufacturer)
                 writer.write_number_value("meanFullBatteryDrainCount", @mean_full_battery_drain_count)
                 writer.write_number_value("medianEstimatedRuntimeInMinutes", @median_estimated_runtime_in_minutes)

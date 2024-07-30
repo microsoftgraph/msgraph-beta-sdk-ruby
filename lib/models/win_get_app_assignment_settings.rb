@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The reboot settings to apply for this app assignment.
             @restart_settings
             ## 
-            ## Instantiates a new winGetAppAssignmentSettings and sets the default values.
+            ## Instantiates a new WinGetAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

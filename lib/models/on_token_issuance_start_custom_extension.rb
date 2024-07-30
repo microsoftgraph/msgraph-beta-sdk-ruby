@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @claims_for_token_configuration = value
             end
             ## 
-            ## Instantiates a new onTokenIssuanceStartCustomExtension and sets the default values.
+            ## Instantiates a new OnTokenIssuanceStartCustomExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

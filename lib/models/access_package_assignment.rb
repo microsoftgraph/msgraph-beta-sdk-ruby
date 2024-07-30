@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
             @assignment_state
             ## 
-            # More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            # More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             @assignment_status
             ## 
             # The identifier of the catalog containing the access package. Read-only.
@@ -158,14 +158,14 @@ module MicrosoftGraphBeta
                 @assignment_state = value
             end
             ## 
-            ## Gets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            ## Gets the assignmentStatus property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             ## @return a string
             ## 
             def assignment_status
                 return @assignment_status
             end
             ## 
-            ## Sets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            ## Sets the assignmentStatus property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             ## @param value Value to set for the assignmentStatus property.
             ## @return a void
             ## 
@@ -188,7 +188,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignment and sets the default values.
+            ## Instantiates a new AccessPackageAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

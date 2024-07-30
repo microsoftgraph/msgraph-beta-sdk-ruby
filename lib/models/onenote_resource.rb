@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class OnenoteResource < MicrosoftGraphBeta::Models::OnenoteEntityBaseModel
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content property
+            # The content of the resource.
             @content
             ## 
-            # The contentUrl property
+            # The URL for the content stream.
             @content_url
             ## 
-            ## Instantiates a new onenoteResource and sets the default values.
+            ## Instantiates a new OnenoteResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -21,14 +21,14 @@ module MicrosoftGraphBeta
                 @odata_type = "#microsoft.graph.onenoteResource"
             end
             ## 
-            ## Gets the content property value. The content property
+            ## Gets the content property value. The content of the resource.
             ## @return a base64url
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content property
+            ## Sets the content property value. The content of the resource.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 @content = value
             end
             ## 
-            ## Gets the contentUrl property value. The contentUrl property
+            ## Gets the contentUrl property value. The URL for the content stream.
             ## @return a string
             ## 
             def content_url
                 return @content_url
             end
             ## 
-            ## Sets the contentUrl property value. The contentUrl property
+            ## Sets the contentUrl property value. The URL for the content stream.
             ## @param value Value to set for the contentUrl property.
             ## @return a void
             ## 

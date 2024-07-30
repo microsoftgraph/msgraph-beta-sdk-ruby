@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityProtectDoNotForwardAction < MicrosoftGraphBeta::Models::SecurityInformationProtectionAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityProtectDoNotForwardAction and sets the default values.
+            ## Instantiates a new SecurityProtectDoNotForwardAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

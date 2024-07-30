@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class MobileContainedApp < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new mobileContainedApp and sets the default values.
+            ## Instantiates a new MobileContainedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

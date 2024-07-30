@@ -10,38 +10,38 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The averageScore property
+            # Average score within a specified basis.
             @average_score
             ## 
-            # The basis property
+            # Scope type (by AllTenants, TotalSeats, IndustryTypes).
             @basis
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the averageScore property value. The averageScore property
+            ## Gets the averageScore property value. Average score within a specified basis.
             ## @return a double
             ## 
             def average_score
                 return @average_score
             end
             ## 
-            ## Sets the averageScore property value. The averageScore property
+            ## Sets the averageScore property value. Average score within a specified basis.
             ## @param value Value to set for the averageScore property.
             ## @return a void
             ## 
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @average_score = value
             end
             ## 
-            ## Gets the basis property value. The basis property
+            ## Gets the basis property value. Scope type (by AllTenants, TotalSeats, IndustryTypes).
             ## @return a string
             ## 
             def basis
                 return @basis
             end
             ## 
-            ## Sets the basis property value. The basis property
+            ## Sets the basis property value. Scope type (by AllTenants, TotalSeats, IndustryTypes).
             ## @param value Value to set for the basis property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @basis = value
             end
             ## 
-            ## Instantiates a new averageComparativeScore and sets the default values.
+            ## Instantiates a new AverageComparativeScore and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AndroidManagedStoreWebApp < MicrosoftGraphBeta::Models::AndroidManagedStoreApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new androidManagedStoreWebApp and sets the default values.
+            ## Instantiates a new AndroidManagedStoreWebApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

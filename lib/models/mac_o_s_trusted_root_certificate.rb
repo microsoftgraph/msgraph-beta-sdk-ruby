@@ -12,6 +12,9 @@ module MicrosoftGraphBeta
             # File name to display in UI.
             @cert_file_name
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # Trusted Root Certificate.
             @trusted_root_certificate
             ## 
@@ -30,7 +33,7 @@ module MicrosoftGraphBeta
                 @cert_file_name = value
             end
             ## 
-            ## Instantiates a new macOSTrustedRootCertificate and sets the default values.
+            ## Instantiates a new MacOSTrustedRootCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,12 +50,28 @@ module MicrosoftGraphBeta
                 return MacOSTrustedRootCertificate.new
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "certFileName" => lambda {|n| @cert_file_name = n.get_string_value() },
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "trustedRootCertificate" => lambda {|n| @trusted_root_certificate = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -65,6 +84,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("certFileName", @cert_file_name)
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_object_value("trustedRootCertificate", @trusted_root_certificate)
             end
             ## 

@@ -8,7 +8,10 @@ module MicrosoftGraphBeta
         class CloudPcOnPremisesConnectionHealthCheck
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details about the health check or the recommended action.
+            # More details about the health check or the recommended action. Read-only.
+            @additional_detail
+            ## 
+            # More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.
             @additional_details
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -38,29 +41,44 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the additionalDetails property value. Additional details about the health check or the recommended action.
+            ## Gets the additionalDetail property value. More details about the health check or the recommended action. Read-only.
+            ## @return a string
+            ## 
+            def additional_detail
+                return @additional_detail
+            end
+            ## 
+            ## Sets the additionalDetail property value. More details about the health check or the recommended action. Read-only.
+            ## @param value Value to set for the additionalDetail property.
+            ## @return a void
+            ## 
+            def additional_detail=(value)
+                @additional_detail = value
+            end
+            ## 
+            ## Gets the additionalDetails property value. More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details about the health check or the recommended action.
+            ## Sets the additionalDetails property value. More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
@@ -68,7 +86,7 @@ module MicrosoftGraphBeta
                 @additional_details = value
             end
             ## 
-            ## Instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
+            ## Instantiates a new CloudPcOnPremisesConnectionHealthCheck and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -149,6 +167,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "additionalDetail" => lambda {|n| @additional_detail = n.get_string_value() },
                     "additionalDetails" => lambda {|n| @additional_details = n.get_string_value() },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -197,6 +216,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_string_value("additionalDetail", @additional_detail)
                 writer.write_string_value("additionalDetails", @additional_details)
                 writer.write_string_value("correlationId", @correlation_id)
                 writer.write_string_value("displayName", @display_name)

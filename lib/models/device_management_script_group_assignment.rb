@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The Id of the Azure Active Directory group we are targeting the script to.
             @target_group_id
             ## 
-            ## Instantiates a new deviceManagementScriptGroupAssignment and sets the default values.
+            ## Instantiates a new DeviceManagementScriptGroupAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

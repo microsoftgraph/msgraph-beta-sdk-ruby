@@ -8,13 +8,13 @@ module MicrosoftGraphBeta
         class PrivilegedAccessScheduleInstance < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # When the schedule instance ends. Required.
+            # When the schedule instance ends, and is required.
             @end_date_time
             ## 
-            # When this instance starts. Required.
+            # When this instance starts, and is required.
             @start_date_time
             ## 
-            ## Instantiates a new privilegedAccessScheduleInstance and sets the default values.
+            ## Instantiates a new PrivilegedAccessScheduleInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 return PrivilegedAccessScheduleInstance.new
             end
             ## 
-            ## Gets the endDateTime property value. When the schedule instance ends. Required.
+            ## Gets the endDateTime property value. When the schedule instance ends, and is required.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. When the schedule instance ends. Required.
+            ## Sets the endDateTime property value. When the schedule instance ends, and is required.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("startDateTime", @start_date_time)
             end
             ## 
-            ## Gets the startDateTime property value. When this instance starts. Required.
+            ## Gets the startDateTime property value. When this instance starts, and is required.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. When this instance starts. Required.
+            ## Sets the startDateTime property value. When this instance starts, and is required.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 

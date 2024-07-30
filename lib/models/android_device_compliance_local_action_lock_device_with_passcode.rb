@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
             @passcode_sign_in_failure_count_before_wipe
             ## 
-            ## Instantiates a new androidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
+            ## Instantiates a new AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @bypass_proxy_server_for_local_address = value
             end
             ## 
-            ## Instantiates a new windows10VpnProxyServer and sets the default values.
+            ## Instantiates a new Windows10VpnProxyServer and sets the default values.
             ## @return a void
             ## 
             def initialize()

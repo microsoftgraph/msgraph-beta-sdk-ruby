@@ -14,13 +14,13 @@ module MicrosoftGraphBeta
             # Display name of the device that the local credentials are associated with.
             @device_name
             ## 
-            # When the local administrator account credential was backed up to Azure Active Directory.
+            # When the local administrator account credential was backed up to Microsoft Entra ID.
             @last_backup_date_time
             ## 
-            # When the local administrator account credential will be refreshed and backed up to Azure Active Directory.
+            # When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
             @refresh_date_time
             ## 
-            ## Instantiates a new deviceLocalCredentialInfo and sets the default values.
+            ## Instantiates a new DeviceLocalCredentialInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastBackupDateTime property value. When the local administrator account credential was backed up to Azure Active Directory.
+            ## Gets the lastBackupDateTime property value. When the local administrator account credential was backed up to Microsoft Entra ID.
             ## @return a date_time
             ## 
             def last_backup_date_time
                 return @last_backup_date_time
             end
             ## 
-            ## Sets the lastBackupDateTime property value. When the local administrator account credential was backed up to Azure Active Directory.
+            ## Sets the lastBackupDateTime property value. When the local administrator account credential was backed up to Microsoft Entra ID.
             ## @param value Value to set for the lastBackupDateTime property.
             ## @return a void
             ## 
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 @last_backup_date_time = value
             end
             ## 
-            ## Gets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Azure Active Directory.
+            ## Gets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
             ## @return a date_time
             ## 
             def refresh_date_time
                 return @refresh_date_time
             end
             ## 
-            ## Sets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Azure Active Directory.
+            ## Sets the refreshDateTime property value. When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
             ## @param value Value to set for the refreshDateTime property.
             ## @return a void
             ## 

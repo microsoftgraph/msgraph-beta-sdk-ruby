@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new directoryRoleTemplateCollectionResponse and sets the default values.
+            ## Instantiates a new DirectoryRoleTemplateCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @authentication_certificate_id = value
             end
             ## 
-            ## Instantiates a new windows10XWifiConfiguration and sets the default values.
+            ## Instantiates a new Windows10XWifiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

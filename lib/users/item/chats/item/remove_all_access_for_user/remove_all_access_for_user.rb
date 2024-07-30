@@ -1,0 +1,1 @@
+require_relative 'remove_all_access_for_user_post_request_body'
