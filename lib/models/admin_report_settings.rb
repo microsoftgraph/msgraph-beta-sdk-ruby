@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
             @display_concealed_names
             ## 
-            ## Instantiates a new adminReportSettings and sets the default values.
+            ## Instantiates a new AdminReportSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

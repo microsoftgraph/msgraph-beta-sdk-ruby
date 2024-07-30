@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The registry URI.
             @registry
             ## 
-            ## Instantiates a new securityContainerRegistryEvidence and sets the default values.
+            ## Instantiates a new SecurityContainerRegistryEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

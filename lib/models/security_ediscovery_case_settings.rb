@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The Topic Modeling (Themes) settings for the case.
             @topic_modeling
             ## 
-            ## Instantiates a new securityEdiscoveryCaseSettings and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryCaseSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

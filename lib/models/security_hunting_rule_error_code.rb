@@ -10,6 +10,7 @@ module MicrosoftGraphBeta
             AlertReportNotFound: :AlertReportNotFound,
             PartialRowsFailed: :PartialRowsFailed,
             UnknownFutureValue: :UnknownFutureValue,
+            NoImpactedEntity: :NoImpactedEntity,
         }
     end
 end

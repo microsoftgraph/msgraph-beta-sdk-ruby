@@ -1,4 +1,3 @@
-require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -7,9 +6,6 @@ module MicrosoftGraphBeta
     module Models
         class WindowsHelloForBusinessAuthenticationMethod < MicrosoftGraphBeta::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
-            ## 
-            # The date and time that this Windows Hello for Business key was registered.
-            @created_date_time
             ## 
             # The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
             @device
@@ -20,27 +16,12 @@ module MicrosoftGraphBeta
             # Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
             @key_strength
             ## 
-            ## Instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
+            ## Instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +68,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "device" => lambda {|n| @device = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Device.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "keyStrength" => lambda {|n| @key_strength = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodKeyStrength) },
@@ -116,7 +96,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_object_value("device", @device)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_enum_value("keyStrength", @key_strength)

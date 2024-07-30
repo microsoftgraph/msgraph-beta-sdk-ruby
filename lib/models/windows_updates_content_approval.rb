@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Deployments created as a result of applying the approval.
             @deployments
             ## 
-            ## Instantiates a new windowsUpdatesContentApproval and sets the default values.
+            ## Instantiates a new WindowsUpdatesContentApproval and sets the default values.
             ## @return a void
             ## 
             def initialize()

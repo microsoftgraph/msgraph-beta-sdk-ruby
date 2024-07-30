@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
             @identity
             ## 
-            # Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            # Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             @registrant_id
             ## 
             # Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @attendance_intervals = value
             end
             ## 
-            ## Instantiates a new attendanceRecord and sets the default values.
+            ## Instantiates a new AttendanceRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 @identity = value
             end
             ## 
-            ## Gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            ## Gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             ## @return a string
             ## 
             def registrant_id
                 return @registrant_id
             end
             ## 
-            ## Sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            ## Sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             ## @param value Value to set for the registrantId property.
             ## @return a void
             ## 

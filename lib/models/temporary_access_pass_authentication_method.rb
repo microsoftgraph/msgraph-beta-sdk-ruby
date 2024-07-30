@@ -8,9 +8,6 @@ module MicrosoftGraphBeta
         class TemporaryAccessPassAuthenticationMethod < MicrosoftGraphBeta::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time when the Temporary Access Pass was created.
-            @created_date_time
-            ## 
             # Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.
             @is_usable_once
             ## 
@@ -23,27 +20,12 @@ module MicrosoftGraphBeta
             # The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
             @temporary_access_pass
             ## 
-            ## Instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
+            ## Instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.temporaryAccessPassAuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +42,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "isUsableOnce" => lambda {|n| @is_usable_once = n.get_boolean_value() },
                     "lifetimeInMinutes" => lambda {|n| @lifetime_in_minutes = n.get_number_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
@@ -105,7 +86,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_boolean_value("isUsableOnce", @is_usable_once)
                 writer.write_number_value("lifetimeInMinutes", @lifetime_in_minutes)
                 writer.write_date_time_value("startDateTime", @start_date_time)

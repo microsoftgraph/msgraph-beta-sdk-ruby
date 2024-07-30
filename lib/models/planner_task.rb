@@ -8,70 +8,82 @@ module MicrosoftGraphBeta
         class PlannerTask < MicrosoftGraphBeta::Models::PlannerDelta
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of checklist items with value set to false, representing incomplete items.
+            # The number of checklist items with value set to false, representing incomplete items.
             @active_checklist_item_count
             ## 
-            # The categories to which the task has been applied. See applied Categories for possible values.
+            # The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
             @applied_categories
+            ## 
+            # Read-only. Nullable. Contains information about who archived or unarchived the task and why.
+            @archival_info
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
             @assigned_to_task_board_format
             ## 
-            # Hint used to order items of this type in a list view. The format is defined as outlined here.
+            # A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.
             @assignee_priority
             ## 
             # The set of assignees the task is assigned to.
             @assignments
             ## 
-            # Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            # Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
             @bucket_id
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
             @bucket_task_board_format
             ## 
-            # Number of checklist items that are present on the task.
+            # The number of checklist items that are present on the task.
             @checklist_item_count
             ## 
-            # Identity of the user that completed the task.
+            # The identity of the user that completed the task.
             @completed_by
             ## 
-            # Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Read-only. The date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @completed_date_time
             ## 
-            # Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+            # The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
             @conversation_thread_id
             ## 
-            # Identity of the user that created the task.
+            # The identity of the user who created the task.
             @created_by
             ## 
-            # Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @created_date_time
             ## 
-            # Contains information about the origin of the task.
+            # Information about the origin of the task.
             @creation_source
             ## 
-            # Read-only. Nullable. Additional details about the task.
+            # Read-only. Nullable. More details about the task.
             @details
             ## 
-            # Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @due_date_time
             ## 
-            # Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            # Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
             @has_description
             ## 
-            # Hint used to order items of this type in a list view. The format is defined as outlined here.
+            # Read-only. If set to true, the task is archived. An archived task is read-only.
+            @is_archived
+            ## 
+            # Indicates whether to show this task in the MyDay view. If true, it shows the task.
+            @is_on_my_day
+            ## 
+            # Read-only. The date on which task is added to or removed from MyDay.
+            @is_on_my_day_last_modified_date
+            ## 
+            # The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
             @order_hint
             ## 
-            # Percentage of task completion. When set to 100, the task is considered completed.
+            # The percentage of task completion. When set to 100, the task is completed.
             @percent_complete
             ## 
             # Plan ID to which the task belongs.
             @plan_id
             ## 
-            # This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+            # The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
             @preview_type
             ## 
-            # Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            # The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             @priority
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
@@ -83,7 +95,7 @@ module MicrosoftGraphBeta
             # Number of external references that exist on the task.
             @reference_count
             ## 
-            # Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+            # Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
             @specified_completion_requirements
             ## 
             # Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -92,14 +104,14 @@ module MicrosoftGraphBeta
             # Title of the task.
             @title
             ## 
-            ## Gets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
+            ## Gets the activeChecklistItemCount property value. The number of checklist items with value set to false, representing incomplete items.
             ## @return a integer
             ## 
             def active_checklist_item_count
                 return @active_checklist_item_count
             end
             ## 
-            ## Sets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
+            ## Sets the activeChecklistItemCount property value. The number of checklist items with value set to false, representing incomplete items.
             ## @param value Value to set for the activeChecklistItemCount property.
             ## @return a void
             ## 
@@ -107,19 +119,34 @@ module MicrosoftGraphBeta
                 @active_checklist_item_count = value
             end
             ## 
-            ## Gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+            ## Gets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
             ## @return a planner_applied_categories
             ## 
             def applied_categories
                 return @applied_categories
             end
             ## 
-            ## Sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+            ## Sets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
             ## @param value Value to set for the appliedCategories property.
             ## @return a void
             ## 
             def applied_categories=(value)
                 @applied_categories = value
+            end
+            ## 
+            ## Gets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the task and why.
+            ## @return a planner_archival_info
+            ## 
+            def archival_info
+                return @archival_info
+            end
+            ## 
+            ## Sets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the task and why.
+            ## @param value Value to set for the archivalInfo property.
+            ## @return a void
+            ## 
+            def archival_info=(value)
+                @archival_info = value
             end
             ## 
             ## Gets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
@@ -137,14 +164,14 @@ module MicrosoftGraphBeta
                 @assigned_to_task_board_format = value
             end
             ## 
-            ## Gets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+            ## Gets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.
             ## @return a string
             ## 
             def assignee_priority
                 return @assignee_priority
             end
             ## 
-            ## Sets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+            ## Sets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.
             ## @param value Value to set for the assigneePriority property.
             ## @return a void
             ## 
@@ -167,14 +194,14 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
             ## @return a string
             ## 
             def bucket_id
                 return @bucket_id
             end
             ## 
-            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
             ## @param value Value to set for the bucketId property.
             ## @return a void
             ## 
@@ -197,14 +224,14 @@ module MicrosoftGraphBeta
                 @bucket_task_board_format = value
             end
             ## 
-            ## Gets the checklistItemCount property value. Number of checklist items that are present on the task.
+            ## Gets the checklistItemCount property value. The number of checklist items that are present on the task.
             ## @return a integer
             ## 
             def checklist_item_count
                 return @checklist_item_count
             end
             ## 
-            ## Sets the checklistItemCount property value. Number of checklist items that are present on the task.
+            ## Sets the checklistItemCount property value. The number of checklist items that are present on the task.
             ## @param value Value to set for the checklistItemCount property.
             ## @return a void
             ## 
@@ -212,14 +239,14 @@ module MicrosoftGraphBeta
                 @checklist_item_count = value
             end
             ## 
-            ## Gets the completedBy property value. Identity of the user that completed the task.
+            ## Gets the completedBy property value. The identity of the user that completed the task.
             ## @return a identity_set
             ## 
             def completed_by
                 return @completed_by
             end
             ## 
-            ## Sets the completedBy property value. Identity of the user that completed the task.
+            ## Sets the completedBy property value. The identity of the user that completed the task.
             ## @param value Value to set for the completedBy property.
             ## @return a void
             ## 
@@ -227,14 +254,14 @@ module MicrosoftGraphBeta
                 @completed_by = value
             end
             ## 
-            ## Gets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the completedDateTime property value. Read-only. The date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def completed_date_time
                 return @completed_date_time
             end
             ## 
-            ## Sets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the completedDateTime property value. Read-only. The date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the completedDateTime property.
             ## @return a void
             ## 
@@ -242,21 +269,21 @@ module MicrosoftGraphBeta
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new plannerTask and sets the default values.
+            ## Instantiates a new PlannerTask and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+            ## Gets the conversationThreadId property value. The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
             ## @return a string
             ## 
             def conversation_thread_id
                 return @conversation_thread_id
             end
             ## 
-            ## Sets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+            ## Sets the conversationThreadId property value. The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
             ## @param value Value to set for the conversationThreadId property.
             ## @return a void
             ## 
@@ -264,14 +291,14 @@ module MicrosoftGraphBeta
                 @conversation_thread_id = value
             end
             ## 
-            ## Gets the createdBy property value. Identity of the user that created the task.
+            ## Gets the createdBy property value. The identity of the user who created the task.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Identity of the user that created the task.
+            ## Sets the createdBy property value. The identity of the user who created the task.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -279,14 +306,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the createdDateTime property value. Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the createdDateTime property value. Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -311,14 +338,14 @@ module MicrosoftGraphBeta
                 return PlannerTask.new
             end
             ## 
-            ## Gets the creationSource property value. Contains information about the origin of the task.
+            ## Gets the creationSource property value. Information about the origin of the task.
             ## @return a planner_task_creation
             ## 
             def creation_source
                 return @creation_source
             end
             ## 
-            ## Sets the creationSource property value. Contains information about the origin of the task.
+            ## Sets the creationSource property value. Information about the origin of the task.
             ## @param value Value to set for the creationSource property.
             ## @return a void
             ## 
@@ -326,14 +353,14 @@ module MicrosoftGraphBeta
                 @creation_source = value
             end
             ## 
-            ## Gets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Gets the details property value. Read-only. Nullable. More details about the task.
             ## @return a planner_task_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Sets the details property value. Read-only. Nullable. More details about the task.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -341,14 +368,14 @@ module MicrosoftGraphBeta
                 @details = value
             end
             ## 
-            ## Gets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def due_date_time
                 return @due_date_time
             end
             ## 
-            ## Sets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the dueDateTime property.
             ## @return a void
             ## 
@@ -363,6 +390,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "activeChecklistItemCount" => lambda {|n| @active_checklist_item_count = n.get_number_value() },
                     "appliedCategories" => lambda {|n| @applied_categories = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAppliedCategories.create_from_discriminator_value(pn) }) },
+                    "archivalInfo" => lambda {|n| @archival_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerArchivalInfo.create_from_discriminator_value(pn) }) },
                     "assignedToTaskBoardFormat" => lambda {|n| @assigned_to_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignedToTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "assigneePriority" => lambda {|n| @assignee_priority = n.get_string_value() },
                     "assignments" => lambda {|n| @assignments = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerAssignments.create_from_discriminator_value(pn) }) },
@@ -378,6 +406,9 @@ module MicrosoftGraphBeta
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskDetails.create_from_discriminator_value(pn) }) },
                     "dueDateTime" => lambda {|n| @due_date_time = n.get_date_time_value() },
                     "hasDescription" => lambda {|n| @has_description = n.get_boolean_value() },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
+                    "isOnMyDay" => lambda {|n| @is_on_my_day = n.get_boolean_value() },
+                    "isOnMyDayLastModifiedDate" => lambda {|n| @is_on_my_day_last_modified_date = n.get_date_value() },
                     "orderHint" => lambda {|n| @order_hint = n.get_string_value() },
                     "percentComplete" => lambda {|n| @percent_complete = n.get_number_value() },
                     "planId" => lambda {|n| @plan_id = n.get_string_value() },
@@ -386,20 +417,20 @@ module MicrosoftGraphBeta
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTaskRecurrence.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
-                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_value(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
+                    "specifiedCompletionRequirements" => lambda {|n| @specified_completion_requirements = n.get_enum_values(MicrosoftGraphBeta::Models::PlannerTaskCompletionRequirements) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "title" => lambda {|n| @title = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Gets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
             ## @return a boolean
             ## 
             def has_description
                 return @has_description
             end
             ## 
-            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Sets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
             ## @param value Value to set for the hasDescription property.
             ## @return a void
             ## 
@@ -407,14 +438,59 @@ module MicrosoftGraphBeta
                 @has_description = value
             end
             ## 
-            ## Gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+            ## Gets the isArchived property value. Read-only. If set to true, the task is archived. An archived task is read-only.
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. Read-only. If set to true, the task is archived. An archived task is read-only.
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
+            end
+            ## 
+            ## Gets the isOnMyDay property value. Indicates whether to show this task in the MyDay view. If true, it shows the task.
+            ## @return a boolean
+            ## 
+            def is_on_my_day
+                return @is_on_my_day
+            end
+            ## 
+            ## Sets the isOnMyDay property value. Indicates whether to show this task in the MyDay view. If true, it shows the task.
+            ## @param value Value to set for the isOnMyDay property.
+            ## @return a void
+            ## 
+            def is_on_my_day=(value)
+                @is_on_my_day = value
+            end
+            ## 
+            ## Gets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
+            ## @return a date
+            ## 
+            def is_on_my_day_last_modified_date
+                return @is_on_my_day_last_modified_date
+            end
+            ## 
+            ## Sets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
+            ## @param value Value to set for the isOnMyDayLastModifiedDate property.
+            ## @return a void
+            ## 
+            def is_on_my_day_last_modified_date=(value)
+                @is_on_my_day_last_modified_date = value
+            end
+            ## 
+            ## Gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
             ## @return a string
             ## 
             def order_hint
                 return @order_hint
             end
             ## 
-            ## Sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+            ## Sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
             ## @param value Value to set for the orderHint property.
             ## @return a void
             ## 
@@ -422,14 +498,14 @@ module MicrosoftGraphBeta
                 @order_hint = value
             end
             ## 
-            ## Gets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
+            ## Gets the percentComplete property value. The percentage of task completion. When set to 100, the task is completed.
             ## @return a integer
             ## 
             def percent_complete
                 return @percent_complete
             end
             ## 
-            ## Sets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
+            ## Sets the percentComplete property value. The percentage of task completion. When set to 100, the task is completed.
             ## @param value Value to set for the percentComplete property.
             ## @return a void
             ## 
@@ -452,14 +528,14 @@ module MicrosoftGraphBeta
                 @plan_id = value
             end
             ## 
-            ## Gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+            ## Gets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
             ## @return a planner_preview_type
             ## 
             def preview_type
                 return @preview_type
             end
             ## 
-            ## Sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+            ## Sets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
             ## @param value Value to set for the previewType property.
             ## @return a void
             ## 
@@ -467,14 +543,14 @@ module MicrosoftGraphBeta
                 @preview_type = value
             end
             ## 
-            ## Gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            ## Gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             ## @return a integer
             ## 
             def priority
                 return @priority
             end
             ## 
-            ## Sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+            ## Sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
             ## @param value Value to set for the priority property.
             ## @return a void
             ## 
@@ -536,6 +612,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_number_value("activeChecklistItemCount", @active_checklist_item_count)
                 writer.write_object_value("appliedCategories", @applied_categories)
+                writer.write_object_value("archivalInfo", @archival_info)
                 writer.write_object_value("assignedToTaskBoardFormat", @assigned_to_task_board_format)
                 writer.write_string_value("assigneePriority", @assignee_priority)
                 writer.write_object_value("assignments", @assignments)
@@ -551,6 +628,9 @@ module MicrosoftGraphBeta
                 writer.write_object_value("details", @details)
                 writer.write_date_time_value("dueDateTime", @due_date_time)
                 writer.write_boolean_value("hasDescription", @has_description)
+                writer.write_boolean_value("isArchived", @is_archived)
+                writer.write_boolean_value("isOnMyDay", @is_on_my_day)
+                writer.write_date_value("isOnMyDayLastModifiedDate", @is_on_my_day_last_modified_date)
                 writer.write_string_value("orderHint", @order_hint)
                 writer.write_number_value("percentComplete", @percent_complete)
                 writer.write_string_value("planId", @plan_id)
@@ -564,14 +644,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("title", @title)
             end
             ## 
-            ## Gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+            ## Gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
             ## @return a planner_task_completion_requirements
             ## 
             def specified_completion_requirements
                 return @specified_completion_requirements
             end
             ## 
-            ## Sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+            ## Sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
             ## @param value Value to set for the specifiedCompletionRequirements property.
             ## @return a void
             ## 

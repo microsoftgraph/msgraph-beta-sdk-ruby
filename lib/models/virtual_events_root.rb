@@ -10,10 +10,13 @@ module MicrosoftGraphBeta
             # The events property
             @events
             ## 
-            # The webinars property
+            # A collection of town halls. Nullable.
+            @townhalls
+            ## 
+            # A collection of webinars. Nullable.
             @webinars
             ## 
-            ## Instantiates a new virtualEventsRoot and sets the default values.
+            ## Instantiates a new VirtualEventsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,6 +53,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "events" => lambda {|n| @events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEvent.create_from_discriminator_value(pn) }) },
+                    "townhalls" => lambda {|n| @townhalls = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventTownhall.create_from_discriminator_value(pn) }) },
                     "webinars" => lambda {|n| @webinars = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventWebinar.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -62,17 +66,33 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("events", @events)
+                writer.write_collection_of_object_values("townhalls", @townhalls)
                 writer.write_collection_of_object_values("webinars", @webinars)
             end
             ## 
-            ## Gets the webinars property value. The webinars property
+            ## Gets the townhalls property value. A collection of town halls. Nullable.
+            ## @return a virtual_event_townhall
+            ## 
+            def townhalls
+                return @townhalls
+            end
+            ## 
+            ## Sets the townhalls property value. A collection of town halls. Nullable.
+            ## @param value Value to set for the townhalls property.
+            ## @return a void
+            ## 
+            def townhalls=(value)
+                @townhalls = value
+            end
+            ## 
+            ## Gets the webinars property value. A collection of webinars. Nullable.
             ## @return a virtual_event_webinar
             ## 
             def webinars
                 return @webinars
             end
             ## 
-            ## Sets the webinars property value. The webinars property
+            ## Sets the webinars property value. A collection of webinars. Nullable.
             ## @param value Value to set for the webinars property.
             ## @return a void
             ## 

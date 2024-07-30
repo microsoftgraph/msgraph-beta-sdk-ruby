@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class EducationPointsOutcome < MicrosoftGraphBeta::Models::EducationOutcome
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The numeric grade the teacher has given the student for this assignment.
+            # The numeric grade that the teacher gave the student for this assignment.
             @points
             ## 
             # A copy of the points property that is made when the grade is released to the student.
             @published_points
             ## 
-            ## Instantiates a new educationPointsOutcome and sets the default values.
+            ## Instantiates a new EducationPointsOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the points property value. The numeric grade the teacher has given the student for this assignment.
+            ## Gets the points property value. The numeric grade that the teacher gave the student for this assignment.
             ## @return a education_assignment_points_grade
             ## 
             def points
                 return @points
             end
             ## 
-            ## Sets the points property value. The numeric grade the teacher has given the student for this assignment.
+            ## Sets the points property value. The numeric grade that the teacher gave the student for this assignment.
             ## @param value Value to set for the points property.
             ## @return a void
             ## 

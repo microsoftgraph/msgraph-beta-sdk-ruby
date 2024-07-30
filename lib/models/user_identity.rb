@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class UserIdentity < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the client IP address used by user performing the activity (audit log only).
+            # Indicates the client IP address associated with the user performing the activity (audit log only).
             @ip_address
             ## 
             # The userPrincipalName attribute of the user.
             @user_principal_name
             ## 
-            ## Instantiates a new userIdentity and sets the default values.
+            ## Instantiates a new UserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
+            ## Gets the ipAddress property value. Indicates the client IP address associated with the user performing the activity (audit log only).
             ## @return a string
             ## 
             def ip_address
                 return @ip_address
             end
             ## 
-            ## Sets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
+            ## Sets the ipAddress property value. Indicates the client IP address associated with the user performing the activity (audit log only).
             ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 

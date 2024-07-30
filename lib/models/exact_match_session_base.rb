@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # The uploadCompletionDateTime property
             @upload_completion_date_time
             ## 
-            ## Instantiates a new exactMatchSessionBase and sets the default values.
+            ## Instantiates a new ExactMatchSessionBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -63,6 +63,9 @@ module MicrosoftGraphBeta
             # Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
             @detailed_help_text
             ## 
+            # Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
+            @device_location_mode
+            ## 
             # Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
             @device_owner_lock_screen_message
             ## 
@@ -329,6 +332,9 @@ module MicrosoftGraphBeta
             ## 
             # Indicates whether or not verify apps is required.
             @security_require_verify_apps
+            ## 
+            # Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            @share_device_location_disabled
             ## 
             # Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
             @short_help_text
@@ -600,7 +606,7 @@ module MicrosoftGraphBeta
                 @certificate_credential_configuration_disabled = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -707,6 +713,21 @@ module MicrosoftGraphBeta
                 @detailed_help_text = value
             end
             ## 
+            ## Gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
+            ## @return a android_device_owner_location_mode
+            ## 
+            def device_location_mode
+                return @device_location_mode
+            end
+            ## 
+            ## Sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
+            ## @param value Value to set for the deviceLocationMode property.
+            ## @return a void
+            ## 
+            def device_location_mode=(value)
+                @device_location_mode = value
+            end
+            ## 
             ## Gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
             ## @return a android_device_owner_user_facing_message
             ## 
@@ -790,6 +811,7 @@ module MicrosoftGraphBeta
                     "dataRoamingBlocked" => lambda {|n| @data_roaming_blocked = n.get_boolean_value() },
                     "dateTimeConfigurationBlocked" => lambda {|n| @date_time_configuration_blocked = n.get_boolean_value() },
                     "detailedHelpText" => lambda {|n| @detailed_help_text = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
+                    "deviceLocationMode" => lambda {|n| @device_location_mode = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerLocationMode) },
                     "deviceOwnerLockScreenMessage" => lambda {|n| @device_owner_lock_screen_message = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
                     "enrollmentProfile" => lambda {|n| @enrollment_profile = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidDeviceOwnerEnrollmentProfileType) },
                     "factoryResetBlocked" => lambda {|n| @factory_reset_blocked = n.get_boolean_value() },
@@ -879,6 +901,7 @@ module MicrosoftGraphBeta
                     "securityCommonCriteriaModeEnabled" => lambda {|n| @security_common_criteria_mode_enabled = n.get_boolean_value() },
                     "securityDeveloperSettingsEnabled" => lambda {|n| @security_developer_settings_enabled = n.get_boolean_value() },
                     "securityRequireVerifyApps" => lambda {|n| @security_require_verify_apps = n.get_boolean_value() },
+                    "shareDeviceLocationDisabled" => lambda {|n| @share_device_location_disabled = n.get_boolean_value() },
                     "shortHelpText" => lambda {|n| @short_help_text = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerUserFacingMessage.create_from_discriminator_value(pn) }) },
                     "statusBarBlocked" => lambda {|n| @status_bar_blocked = n.get_boolean_value() },
                     "stayOnModes" => lambda {|n| @stay_on_modes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerBatteryPluggedMode.create_from_discriminator_value(pn) }) },
@@ -2212,6 +2235,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("dataRoamingBlocked", @data_roaming_blocked)
                 writer.write_boolean_value("dateTimeConfigurationBlocked", @date_time_configuration_blocked)
                 writer.write_object_value("detailedHelpText", @detailed_help_text)
+                writer.write_enum_value("deviceLocationMode", @device_location_mode)
                 writer.write_object_value("deviceOwnerLockScreenMessage", @device_owner_lock_screen_message)
                 writer.write_enum_value("enrollmentProfile", @enrollment_profile)
                 writer.write_boolean_value("factoryResetBlocked", @factory_reset_blocked)
@@ -2301,6 +2325,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("securityCommonCriteriaModeEnabled", @security_common_criteria_mode_enabled)
                 writer.write_boolean_value("securityDeveloperSettingsEnabled", @security_developer_settings_enabled)
                 writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
+                writer.write_boolean_value("shareDeviceLocationDisabled", @share_device_location_disabled)
                 writer.write_object_value("shortHelpText", @short_help_text)
                 writer.write_boolean_value("statusBarBlocked", @status_bar_blocked)
                 writer.write_collection_of_object_values("stayOnModes", @stay_on_modes)
@@ -2331,6 +2356,21 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("workProfilePasswordRequireUnlock", @work_profile_password_require_unlock)
                 writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type)
                 writer.write_number_value("workProfilePasswordSignInFailureCountBeforeFactoryReset", @work_profile_password_sign_in_failure_count_before_factory_reset)
+            end
+            ## 
+            ## Gets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            ## @return a boolean
+            ## 
+            def share_device_location_disabled
+                return @share_device_location_disabled
+            end
+            ## 
+            ## Sets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+            ## @param value Value to set for the shareDeviceLocationDisabled property.
+            ## @return a void
+            ## 
+            def share_device_location_disabled=(value)
+                @share_device_location_disabled = value
             end
             ## 
             ## Gets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.

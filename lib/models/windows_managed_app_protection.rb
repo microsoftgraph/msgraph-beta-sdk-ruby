@@ -30,6 +30,9 @@ module MicrosoftGraphBeta
             # Indicates the total number of applications for which the current policy is deployed.
             @deployed_app_count
             ## 
+            # Navigation property to deployment summary of the configuration.
+            @deployment_summary
+            ## 
             # When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.
             @is_assigned
             ## 
@@ -171,7 +174,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new windowsManagedAppProtection and sets the default values.
+            ## Instantiates a new WindowsManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -203,6 +206,21 @@ module MicrosoftGraphBeta
                 @deployed_app_count = value
             end
             ## 
+            ## Gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+            ## @return a managed_app_policy_deployment_summary
+            ## 
+            def deployment_summary
+                return @deployment_summary
+            end
+            ## 
+            ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+            ## @param value Value to set for the deploymentSummary property.
+            ## @return a void
+            ## 
+            def deployment_summary=(value)
+                @deployment_summary = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -215,6 +233,7 @@ module MicrosoftGraphBeta
                     "apps" => lambda {|n| @apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedMobileApp.create_from_discriminator_value(pn) }) },
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TargetedManagedAppPolicyAssignment.create_from_discriminator_value(pn) }) },
                     "deployedAppCount" => lambda {|n| @deployed_app_count = n.get_number_value() },
+                    "deploymentSummary" => lambda {|n| @deployment_summary = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppPolicyDeploymentSummary.create_from_discriminator_value(pn) }) },
                     "isAssigned" => lambda {|n| @is_assigned = n.get_boolean_value() },
                     "maximumAllowedDeviceThreatLevel" => lambda {|n| @maximum_allowed_device_threat_level = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedAppDeviceThreatLevel) },
                     "maximumRequiredOsVersion" => lambda {|n| @maximum_required_os_version = n.get_string_value() },
@@ -504,6 +523,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("apps", @apps)
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_number_value("deployedAppCount", @deployed_app_count)
+                writer.write_object_value("deploymentSummary", @deployment_summary)
                 writer.write_boolean_value("isAssigned", @is_assigned)
                 writer.write_enum_value("maximumAllowedDeviceThreatLevel", @maximum_allowed_device_threat_level)
                 writer.write_string_value("maximumRequiredOsVersion", @maximum_required_os_version)

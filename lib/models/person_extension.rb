@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PersonExtension < MicrosoftGraphBeta::Models::Extension
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new personExtension and sets the default values.
+            ## Instantiates a new PersonExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

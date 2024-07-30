@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The eventType property
             @event_type
             ## 
-            ## Instantiates a new messageEvent and sets the default values.
+            ## Instantiates a new MessageEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

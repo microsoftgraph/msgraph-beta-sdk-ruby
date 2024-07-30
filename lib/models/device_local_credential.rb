@@ -14,10 +14,10 @@ module MicrosoftGraphBeta
             # The SID of the local admin account for which LAPS is enabled.
             @account_sid
             ## 
-            # When the local adminstrator account credential for the device object was backed up to Azure Active Directory.
+            # When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
             @backup_date_time
             ## 
-            # The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
+            # The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
             @password_base64
             ## 
             ## Gets the accountName property value. The name of the local admin account for which LAPS is enabled.
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @account_sid = value
             end
             ## 
-            ## Gets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Azure Active Directory.
+            ## Gets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
             ## @return a date_time
             ## 
             def backup_date_time
                 return @backup_date_time
             end
             ## 
-            ## Sets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Azure Active Directory.
+            ## Sets the backupDateTime property value. When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
             ## @param value Value to set for the backupDateTime property.
             ## @return a void
             ## 
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @backup_date_time = value
             end
             ## 
-            ## Instantiates a new deviceLocalCredential and sets the default values.
+            ## Instantiates a new DeviceLocalCredential and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
+            ## Gets the passwordBase64 property value. The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
             ## @return a string
             ## 
             def password_base64
                 return @password_base64
             end
             ## 
-            ## Sets the passwordBase64 property value. The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.
+            ## Sets the passwordBase64 property value. The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
             ## @param value Value to set for the passwordBase64 property.
             ## @return a void
             ## 

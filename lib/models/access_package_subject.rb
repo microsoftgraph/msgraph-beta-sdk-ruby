@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -9,6 +10,9 @@ module MicrosoftGraphBeta
             ## 
             # Not Supported.
             @alt_sec_id
+            ## 
+            # The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+            @cleanup_scheduled_date_time
             ## 
             # The connected organization of the subject. Read-only. Nullable.
             @connected_organization
@@ -22,10 +26,10 @@ module MicrosoftGraphBeta
             # The email address of the subject.
             @email
             ## 
-            # The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+            # The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
             @object_id_escaped
             ## 
-            # The onPremisesSecurityIdentifier property
+            # A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             @on_premises_security_identifier
             ## 
             # The principal name, if known, of the subject.
@@ -50,6 +54,21 @@ module MicrosoftGraphBeta
             ## 
             def alt_sec_id=(value)
                 @alt_sec_id = value
+            end
+            ## 
+            ## Gets the cleanupScheduledDateTime property value. The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+            ## @return a date_time
+            ## 
+            def cleanup_scheduled_date_time
+                return @cleanup_scheduled_date_time
+            end
+            ## 
+            ## Sets the cleanupScheduledDateTime property value. The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+            ## @param value Value to set for the cleanupScheduledDateTime property.
+            ## @return a void
+            ## 
+            def cleanup_scheduled_date_time=(value)
+                @cleanup_scheduled_date_time = value
             end
             ## 
             ## Gets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
@@ -82,7 +101,7 @@ module MicrosoftGraphBeta
                 @connected_organization_id = value
             end
             ## 
-            ## Instantiates a new accessPackageSubject and sets the default values.
+            ## Instantiates a new AccessPackageSubject and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -134,6 +153,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "altSecId" => lambda {|n| @alt_sec_id = n.get_string_value() },
+                    "cleanupScheduledDateTime" => lambda {|n| @cleanup_scheduled_date_time = n.get_date_time_value() },
                     "connectedOrganization" => lambda {|n| @connected_organization = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
                     "connectedOrganizationId" => lambda {|n| @connected_organization_id = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -146,14 +166,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+            ## Gets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
             ## @return a string
             ## 
             def object_id_escaped
                 return @object_id_escaped
             end
             ## 
-            ## Sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+            ## Sets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
             ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
@@ -161,14 +181,14 @@ module MicrosoftGraphBeta
                 @object_id_escaped = value
             end
             ## 
-            ## Gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## Gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             ## @return a string
             ## 
             def on_premises_security_identifier
                 return @on_premises_security_identifier
             end
             ## 
-            ## Sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## Sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
@@ -199,6 +219,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("altSecId", @alt_sec_id)
+                writer.write_date_time_value("cleanupScheduledDateTime", @cleanup_scheduled_date_time)
                 writer.write_object_value("connectedOrganization", @connected_organization)
                 writer.write_string_value("connectedOrganizationId", @connected_organization_id)
                 writer.write_string_value("displayName", @display_name)

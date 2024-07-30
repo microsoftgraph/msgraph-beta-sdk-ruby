@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @asset_tag_template = value
             end
             ## 
-            ## Instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
+            ## Instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

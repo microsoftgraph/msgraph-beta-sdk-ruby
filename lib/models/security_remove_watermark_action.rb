@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name of the UI element of watermark to be removed.
             @ui_element_names
             ## 
-            ## Instantiates a new securityRemoveWatermarkAction and sets the default values.
+            ## Instantiates a new SecurityRemoveWatermarkAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class CrossTenantAccessPolicyTenantRestrictions < MicrosoftGraphBeta::Models::CrossTenantAccessPolicyB2BSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
+            # Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. This property isn't supported on the server side yet.
             @devices
             ## 
-            ## Instantiates a new crossTenantAccessPolicyTenantRestrictions and sets the default values.
+            ## Instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return CrossTenantAccessPolicyTenantRestrictions.new
             end
             ## 
-            ## Gets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
+            ## Gets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. This property isn't supported on the server side yet.
             ## @return a devices_filter
             ## 
             def devices
                 return @devices
             end
             ## 
-            ## Sets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
+            ## Sets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. This property isn't supported on the server side yet.
             ## @param value Value to set for the devices property.
             ## @return a void
             ## 
