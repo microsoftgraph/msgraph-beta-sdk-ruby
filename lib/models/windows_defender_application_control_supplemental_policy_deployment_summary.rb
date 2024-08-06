@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
             @failed_device_count
             ## 
-            ## Instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
+            ## Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

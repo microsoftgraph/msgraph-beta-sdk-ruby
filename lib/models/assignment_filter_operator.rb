@@ -14,6 +14,11 @@ module MicrosoftGraphBeta
             NotIn: :NotIn,
             EndsWith: :EndsWith,
             NotEndsWith: :NotEndsWith,
+            GreaterThan: :GreaterThan,
+            GreaterThanOrEquals: :GreaterThanOrEquals,
+            LessThan: :LessThan,
+            LessThanOrEquals: :LessThanOrEquals,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

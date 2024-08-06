@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
                 @code = value
             end
             ## 
-            ## Instantiates a new taxGroup and sets the default values.
+            ## Instantiates a new TaxGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

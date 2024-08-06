@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                 @assignee_user_principal_name = value
             end
             ## 
-            ## Instantiates a new sequentialActivationRenewalsAlertIncident and sets the default values.
+            ## Instantiates a new SequentialActivationRenewalsAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

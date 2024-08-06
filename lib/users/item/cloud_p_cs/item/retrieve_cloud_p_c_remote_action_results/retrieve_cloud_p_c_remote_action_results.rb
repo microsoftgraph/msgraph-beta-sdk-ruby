@@ -1,0 +1,1 @@
+require_relative 'retrieve_cloud_p_c_remote_action_results_get_response'

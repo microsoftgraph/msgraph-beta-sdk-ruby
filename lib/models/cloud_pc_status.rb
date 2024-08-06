@@ -15,6 +15,7 @@ module MicrosoftGraphBeta
             MovingRegion: :MovingRegion,
             ResizePendingLicense: :ResizePendingLicense,
             UpdatingSingleSignOn: :UpdatingSingleSignOn,
+            ModifyingSingleSignOn: :ModifyingSingleSignOn,
         }
     end
 end

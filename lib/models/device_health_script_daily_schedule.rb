@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceHealthScriptDailySchedule < MicrosoftGraphBeta::Models::DeviceHealthScriptTimeSchedule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceHealthScriptDailySchedule and sets the default values.
+            ## Instantiates a new DeviceHealthScriptDailySchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

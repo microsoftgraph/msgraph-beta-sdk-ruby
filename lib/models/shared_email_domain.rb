@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The provisioningStatus property
             @provisioning_status
             ## 
-            ## Instantiates a new sharedEmailDomain and sets the default values.
+            ## Instantiates a new SharedEmailDomain and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The reason property
             @reason
             ## 
-            ## Instantiates a new windowsUpdatesAzureADDeviceRegistrationError and sets the default values.
+            ## Instantiates a new WindowsUpdatesAzureADDeviceRegistrationError and sets the default values.
             ## @return a void
             ## 
             def initialize()

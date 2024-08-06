@@ -9,16 +9,16 @@ module MicrosoftGraphBeta
         class MobileAppSupersedence < MicrosoftGraphBeta::Models::MobileAppRelationship
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The total number of apps directly or indirectly superseded by the child app.
+            # The total number of apps directly or indirectly superseded by the child app. This property is read-only.
             @superseded_app_count
             ## 
             # Indicates the supersedence type associated with a relationship between two mobile apps.
             @supersedence_type
             ## 
-            # The total number of apps directly or indirectly superseding the parent app.
+            # The total number of apps directly or indirectly superseding the parent app. This property is read-only.
             @superseding_app_count
             ## 
-            ## Instantiates a new mobileAppSupersedence and sets the default values.
+            ## Instantiates a new MobileAppSupersedence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,19 +53,17 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("supersededAppCount", @superseded_app_count)
                 writer.write_enum_value("supersedenceType", @supersedence_type)
-                writer.write_number_value("supersedingAppCount", @superseding_app_count)
             end
             ## 
-            ## Gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
+            ## Gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app. This property is read-only.
             ## @return a integer
             ## 
             def superseded_app_count
                 return @superseded_app_count
             end
             ## 
-            ## Sets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
+            ## Sets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app. This property is read-only.
             ## @param value Value to set for the supersededAppCount property.
             ## @return a void
             ## 
@@ -88,14 +86,14 @@ module MicrosoftGraphBeta
                 @supersedence_type = value
             end
             ## 
-            ## Gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
+            ## Gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app. This property is read-only.
             ## @return a integer
             ## 
             def superseding_app_count
                 return @superseding_app_count
             end
             ## 
-            ## Sets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
+            ## Sets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app. This property is read-only.
             ## @param value Value to set for the supersedingAppCount property.
             ## @return a void
             ## 

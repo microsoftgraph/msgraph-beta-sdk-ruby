@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # User principal name of the subject that the incident applies to. Applies to user principals.
             @assignee_user_principal_name
             ## 
-            # The assignmentCreatedDateTime property
+            # Date and time of assignment creation.
             @assignment_created_date_time
             ## 
             # The identifier for the directory role definition that's in scope of this incident.
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 @assignee_user_principal_name = value
             end
             ## 
-            ## Gets the assignmentCreatedDateTime property value. The assignmentCreatedDateTime property
+            ## Gets the assignmentCreatedDateTime property value. Date and time of assignment creation.
             ## @return a date_time
             ## 
             def assignment_created_date_time
                 return @assignment_created_date_time
             end
             ## 
-            ## Sets the assignmentCreatedDateTime property value. The assignmentCreatedDateTime property
+            ## Sets the assignmentCreatedDateTime property value. Date and time of assignment creation.
             ## @param value Value to set for the assignmentCreatedDateTime property.
             ## @return a void
             ## 
@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                 @assignment_created_date_time = value
             end
             ## 
-            ## Instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
+            ## Instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
             ## @return a void
             ## 
             def initialize()

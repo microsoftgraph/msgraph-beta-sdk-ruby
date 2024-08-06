@@ -25,6 +25,7 @@ require_relative './identity_security_defaults_enforcement_policy/identity_secur
 require_relative './mobile_app_management_policies/mobile_app_management_policies_request_builder'
 require_relative './mobile_device_management_policies/mobile_device_management_policies_request_builder'
 require_relative './permission_grant_policies/permission_grant_policies_request_builder'
+require_relative './permission_grant_pre_approval_policies/permission_grant_pre_approval_policies_request_builder'
 require_relative './policies'
 require_relative './role_management_policies/role_management_policies_request_builder'
 require_relative './role_management_policy_assignments/role_management_policy_assignments_request_builder'
@@ -154,6 +155,11 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Policies::PermissionGrantPolicies::PermissionGrantPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.policyRoot entity.
+            def permission_grant_pre_approval_policies()
+                return MicrosoftGraphBeta::Policies::PermissionGrantPreApprovalPolicies::PermissionGrantPreApprovalPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
             def role_management_policies()
                 return MicrosoftGraphBeta::Policies::RoleManagementPolicies::RoleManagementPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -185,7 +191,7 @@ module MicrosoftGraphBeta
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/policies{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/policies{?%24expand,%24select}")
             end
             ## 
             ## Get policies
@@ -197,8 +203,7 @@ module MicrosoftGraphBeta
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PolicyRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -213,8 +218,7 @@ module MicrosoftGraphBeta
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::PolicyRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -224,15 +228,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -244,16 +248,25 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a policies_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return PoliciesRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

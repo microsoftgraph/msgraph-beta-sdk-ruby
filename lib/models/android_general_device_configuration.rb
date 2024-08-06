@@ -369,7 +369,7 @@ module MicrosoftGraphBeta
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new androidGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new AndroidGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

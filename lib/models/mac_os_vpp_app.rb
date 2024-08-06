@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new macOsVppApp and sets the default values.
+            ## Instantiates a new MacOsVppApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

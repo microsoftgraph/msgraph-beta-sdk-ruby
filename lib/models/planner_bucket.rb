@@ -7,8 +7,14 @@ module MicrosoftGraphBeta
         class PlannerBucket < MicrosoftGraphBeta::Models::PlannerDelta
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Read-only. Nullable. Contains information about who archived or unarchived the bucket and why.
+            @archival_info
+            ## 
             # Contains information about the origin of the bucket.
             @creation_source
+            ## 
+            # Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.
+            @is_archived
             ## 
             # Name of the bucket.
             @name
@@ -22,7 +28,22 @@ module MicrosoftGraphBeta
             # Read-only. Nullable. The collection of tasks in the bucket.
             @tasks
             ## 
-            ## Instantiates a new plannerBucket and sets the default values.
+            ## Gets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the bucket and why.
+            ## @return a planner_archival_info
+            ## 
+            def archival_info
+                return @archival_info
+            end
+            ## 
+            ## Sets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the bucket and why.
+            ## @param value Value to set for the archivalInfo property.
+            ## @return a void
+            ## 
+            def archival_info=(value)
+                @archival_info = value
+            end
+            ## 
+            ## Instantiates a new PlannerBucket and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,12 +79,29 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "archivalInfo" => lambda {|n| @archival_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerArchivalInfo.create_from_discriminator_value(pn) }) },
                     "creationSource" => lambda {|n| @creation_source = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerBucketCreation.create_from_discriminator_value(pn) }) },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "orderHint" => lambda {|n| @order_hint = n.get_string_value() },
                     "planId" => lambda {|n| @plan_id = n.get_string_value() },
                     "tasks" => lambda {|n| @tasks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTask.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the isArchived property value. Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
             end
             ## 
             ## Gets the name property value. Name of the bucket.
@@ -118,7 +156,9 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("archivalInfo", @archival_info)
                 writer.write_object_value("creationSource", @creation_source)
+                writer.write_boolean_value("isArchived", @is_archived)
                 writer.write_string_value("name", @name)
                 writer.write_string_value("orderHint", @order_hint)
                 writer.write_string_value("planId", @plan_id)

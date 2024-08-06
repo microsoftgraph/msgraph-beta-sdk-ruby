@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
         AppleDeploymentChannel = {
             DeviceChannel: :DeviceChannel,
             UserChannel: :UserChannel,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

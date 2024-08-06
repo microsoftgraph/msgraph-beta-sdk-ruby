@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Instantiates a new browserSiteList and sets the default values.
+            ## Instantiates a new BrowserSiteList and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ExternalMeetingRegistration < MicrosoftGraphBeta::Models::MeetingRegistrationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new externalMeetingRegistration and sets the default values.
+            ## Instantiates a new ExternalMeetingRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

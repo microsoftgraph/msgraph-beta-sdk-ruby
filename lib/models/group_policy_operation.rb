@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The group policy operation status detail.
             @status_details
             ## 
-            ## Instantiates a new groupPolicyOperation and sets the default values.
+            ## Instantiates a new GroupPolicyOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

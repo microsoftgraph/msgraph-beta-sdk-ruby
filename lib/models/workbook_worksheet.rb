@@ -7,41 +7,41 @@ module MicrosoftGraphBeta
         class WorkbookWorksheet < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Returns collection of charts that are part of the worksheet. Read-only.
+            # The list of charts that are part of the worksheet. Read-only.
             @charts
             ## 
             # The display name of the worksheet.
             @name
             ## 
-            # Returns collection of names that are associated with the worksheet. Read-only.
+            # The list of names that are associated with the worksheet. Read-only.
             @names
             ## 
-            # Collection of PivotTables that are part of the worksheet.
+            # The list of piot tables that are part of the worksheet.
             @pivot_tables
             ## 
             # The zero-based position of the worksheet within the workbook.
             @position
             ## 
-            # Returns sheet protection object for a worksheet. Read-only.
+            # The sheet protection object for a worksheet. Read-only.
             @protection
             ## 
-            # Collection of tables that are part of the worksheet. Read-only.
+            # The list of tables that are part of the worksheet. Read-only.
             @tables
             ## 
-            # The tasks property
+            # Collection of document tasks on this worksheet. Read-only.
             @tasks
             ## 
-            # The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            # The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             @visibility
             ## 
-            ## Gets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
+            ## Gets the charts property value. The list of charts that are part of the worksheet. Read-only.
             ## @return a workbook_chart
             ## 
             def charts
                 return @charts
             end
             ## 
-            ## Sets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
+            ## Sets the charts property value. The list of charts that are part of the worksheet. Read-only.
             ## @param value Value to set for the charts property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @charts = value
             end
             ## 
-            ## Instantiates a new workbookWorksheet and sets the default values.
+            ## Instantiates a new WorkbookWorksheet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,14 +97,14 @@ module MicrosoftGraphBeta
                 @name = value
             end
             ## 
-            ## Gets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
+            ## Gets the names property value. The list of names that are associated with the worksheet. Read-only.
             ## @return a workbook_named_item
             ## 
             def names
                 return @names
             end
             ## 
-            ## Sets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
+            ## Sets the names property value. The list of names that are associated with the worksheet. Read-only.
             ## @param value Value to set for the names property.
             ## @return a void
             ## 
@@ -112,14 +112,14 @@ module MicrosoftGraphBeta
                 @names = value
             end
             ## 
-            ## Gets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
+            ## Gets the pivotTables property value. The list of piot tables that are part of the worksheet.
             ## @return a workbook_pivot_table
             ## 
             def pivot_tables
                 return @pivot_tables
             end
             ## 
-            ## Sets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
+            ## Sets the pivotTables property value. The list of piot tables that are part of the worksheet.
             ## @param value Value to set for the pivotTables property.
             ## @return a void
             ## 
@@ -142,14 +142,14 @@ module MicrosoftGraphBeta
                 @position = value
             end
             ## 
-            ## Gets the protection property value. Returns sheet protection object for a worksheet. Read-only.
+            ## Gets the protection property value. The sheet protection object for a worksheet. Read-only.
             ## @return a workbook_worksheet_protection
             ## 
             def protection
                 return @protection
             end
             ## 
-            ## Sets the protection property value. Returns sheet protection object for a worksheet. Read-only.
+            ## Sets the protection property value. The sheet protection object for a worksheet. Read-only.
             ## @param value Value to set for the protection property.
             ## @return a void
             ## 
@@ -175,14 +175,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("visibility", @visibility)
             end
             ## 
-            ## Gets the tables property value. Collection of tables that are part of the worksheet. Read-only.
+            ## Gets the tables property value. The list of tables that are part of the worksheet. Read-only.
             ## @return a workbook_table
             ## 
             def tables
                 return @tables
             end
             ## 
-            ## Sets the tables property value. Collection of tables that are part of the worksheet. Read-only.
+            ## Sets the tables property value. The list of tables that are part of the worksheet. Read-only.
             ## @param value Value to set for the tables property.
             ## @return a void
             ## 
@@ -190,14 +190,14 @@ module MicrosoftGraphBeta
                 @tables = value
             end
             ## 
-            ## Gets the tasks property value. The tasks property
+            ## Gets the tasks property value. Collection of document tasks on this worksheet. Read-only.
             ## @return a workbook_document_task
             ## 
             def tasks
                 return @tasks
             end
             ## 
-            ## Sets the tasks property value. The tasks property
+            ## Sets the tasks property value. Collection of document tasks on this worksheet. Read-only.
             ## @param value Value to set for the tasks property.
             ## @return a void
             ## 
@@ -205,14 +205,14 @@ module MicrosoftGraphBeta
                 @tasks = value
             end
             ## 
-            ## Gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            ## Gets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             ## @return a string
             ## 
             def visibility
                 return @visibility
             end
             ## 
-            ## Sets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+            ## Sets the visibility property value. The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
             ## @param value Value to set for the visibility property.
             ## @return a void
             ## 

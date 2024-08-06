@@ -1,1 +1,1 @@
-require_relative 'disconnect_response'
+require_relative 'disconnect_post_response'

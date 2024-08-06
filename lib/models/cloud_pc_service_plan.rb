@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name for the service plan. Read-only.
             @display_name
             ## 
-            # Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+            # Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
             @provisioning_type
             ## 
             # The size of the RAM in GB. Read-only.
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # The number of vCPUs. Read-only.
             @v_cpu_count
             ## 
-            ## Instantiates a new cloudPcServicePlan and sets the default values.
+            ## Instantiates a new CloudPcServicePlan and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,21 +71,21 @@ module MicrosoftGraphBeta
                     "provisioningType" => lambda {|n| @provisioning_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcProvisioningType) },
                     "ramInGB" => lambda {|n| @ram_in_g_b = n.get_number_value() },
                     "storageInGB" => lambda {|n| @storage_in_g_b = n.get_number_value() },
-                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "supportedSolution" => lambda {|n| @supported_solution = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcServicePlanType) },
                     "userProfileInGB" => lambda {|n| @user_profile_in_g_b = n.get_number_value() },
                     "vCpuCount" => lambda {|n| @v_cpu_count = n.get_number_value() },
                 })
             end
             ## 
-            ## Gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+            ## Gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
             ## @return a cloud_pc_provisioning_type
             ## 
             def provisioning_type
                 return @provisioning_type
             end
             ## 
-            ## Sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+            ## Sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
             ## @param value Value to set for the provisioningType property.
             ## @return a void
             ## 

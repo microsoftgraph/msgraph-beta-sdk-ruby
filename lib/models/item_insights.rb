@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ItemInsights < MicrosoftGraphBeta::Models::OfficeGraphInsights
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new itemInsights and sets the default values.
+            ## Instantiates a new ItemInsights and sets the default values.
             ## @return a void
             ## 
             def initialize()

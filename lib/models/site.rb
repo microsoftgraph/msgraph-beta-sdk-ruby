@@ -7,11 +7,14 @@ module MicrosoftGraphBeta
         class Site < MicrosoftGraphBeta::Models::BaseItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Analytics about the view activities that took place in this site.
+            # Analytics about the view activities that took place on this site.
             @analytics
             ## 
             # The collection of column definitions reusable across lists under this site.
             @columns
+            ## 
+            # The collection of content models applied to this site.
+            @content_models
             ## 
             # The collection of content types defined for this site.
             @content_types
@@ -22,19 +25,25 @@ module MicrosoftGraphBeta
             # The full title for the site. Read-only.
             @display_name
             ## 
+            # The document processing jobs running on this site.
+            @document_processing_jobs
+            ## 
             # The default drive (document library) for this site.
             @drive
             ## 
             # The collection of drives (document libraries) under this site.
             @drives
             ## 
-            # The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+            # The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
             @external_columns
             ## 
             # The informationProtection property
             @information_protection
             ## 
-            # Used to address any item contained in this site. This collection cannot be enumerated.
+            # The isPersonalSite property
+            @is_personal_site
+            ## 
+            # Used to address any item contained in this site. This collection can't be enumerated.
             @items
             ## 
             # The collection of lists under this site.
@@ -46,13 +55,16 @@ module MicrosoftGraphBeta
             # The collection of long running operations for the site.
             @operations
             ## 
-            # The collection of pages in the baseSitePages list in this site.
+            # The collection of pages in the baseSitePages list on this site.
             @pages
             ## 
             # The permissions associated with the site. Nullable.
             @permissions
             ## 
-            # If present, indicates that this is the root site in the site collection. Read-only.
+            # A container for a collection of recycleBinItem resources in this site.
+            @recycle_bin
+            ## 
+            # If present, provides the root site in the site collection. Read-only.
             @root
             ## 
             # The settings on this site. Read-only.
@@ -70,14 +82,14 @@ module MicrosoftGraphBeta
             # The termStore under this site.
             @term_store
             ## 
-            ## Gets the analytics property value. Analytics about the view activities that took place in this site.
+            ## Gets the analytics property value. Analytics about the view activities that took place on this site.
             ## @return a item_analytics
             ## 
             def analytics
                 return @analytics
             end
             ## 
-            ## Sets the analytics property value. Analytics about the view activities that took place in this site.
+            ## Sets the analytics property value. Analytics about the view activities that took place on this site.
             ## @param value Value to set for the analytics property.
             ## @return a void
             ## 
@@ -100,12 +112,27 @@ module MicrosoftGraphBeta
                 @columns = value
             end
             ## 
-            ## Instantiates a new site and sets the default values.
+            ## Instantiates a new Site and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.site"
+            end
+            ## 
+            ## Gets the contentModels property value. The collection of content models applied to this site.
+            ## @return a content_model
+            ## 
+            def content_models
+                return @content_models
+            end
+            ## 
+            ## Sets the contentModels property value. The collection of content models applied to this site.
+            ## @param value Value to set for the contentModels property.
+            ## @return a void
+            ## 
+            def content_models=(value)
+                @content_models = value
             end
             ## 
             ## Gets the contentTypes property value. The collection of content types defined for this site.
@@ -162,6 +189,21 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
+            ## Gets the documentProcessingJobs property value. The document processing jobs running on this site.
+            ## @return a document_processing_job
+            ## 
+            def document_processing_jobs
+                return @document_processing_jobs
+            end
+            ## 
+            ## Sets the documentProcessingJobs property value. The document processing jobs running on this site.
+            ## @param value Value to set for the documentProcessingJobs property.
+            ## @return a void
+            ## 
+            def document_processing_jobs=(value)
+                @document_processing_jobs = value
+            end
+            ## 
             ## Gets the drive property value. The default drive (document library) for this site.
             ## @return a drive
             ## 
@@ -192,14 +234,14 @@ module MicrosoftGraphBeta
                 @drives = value
             end
             ## 
-            ## Gets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+            ## Gets the externalColumns property value. The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
             ## @return a column_definition
             ## 
             def external_columns
                 return @external_columns
             end
             ## 
-            ## Sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+            ## Sets the externalColumns property value. The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
             ## @param value Value to set for the externalColumns property.
             ## @return a void
             ## 
@@ -214,19 +256,23 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "analytics" => lambda {|n| @analytics = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemAnalytics.create_from_discriminator_value(pn) }) },
                     "columns" => lambda {|n| @columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ColumnDefinition.create_from_discriminator_value(pn) }) },
+                    "contentModels" => lambda {|n| @content_models = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ContentModel.create_from_discriminator_value(pn) }) },
                     "contentTypes" => lambda {|n| @content_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ContentType.create_from_discriminator_value(pn) }) },
                     "deleted" => lambda {|n| @deleted = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Deleted.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "documentProcessingJobs" => lambda {|n| @document_processing_jobs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DocumentProcessingJob.create_from_discriminator_value(pn) }) },
                     "drive" => lambda {|n| @drive = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Drive.create_from_discriminator_value(pn) }) },
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Drive.create_from_discriminator_value(pn) }) },
                     "externalColumns" => lambda {|n| @external_columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ColumnDefinition.create_from_discriminator_value(pn) }) },
                     "informationProtection" => lambda {|n| @information_protection = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::InformationProtection.create_from_discriminator_value(pn) }) },
+                    "isPersonalSite" => lambda {|n| @is_personal_site = n.get_boolean_value() },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BaseItem.create_from_discriminator_value(pn) }) },
                     "lists" => lambda {|n| @lists = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::List.create_from_discriminator_value(pn) }) },
                     "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Onenote.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RichLongRunningOperation.create_from_discriminator_value(pn) }) },
                     "pages" => lambda {|n| @pages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BaseSitePage.create_from_discriminator_value(pn) }) },
                     "permissions" => lambda {|n| @permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Permission.create_from_discriminator_value(pn) }) },
+                    "recycleBin" => lambda {|n| @recycle_bin = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RecycleBin.create_from_discriminator_value(pn) }) },
                     "root" => lambda {|n| @root = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Root.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SiteSettings.create_from_discriminator_value(pn) }) },
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SharepointIds.create_from_discriminator_value(pn) }) },
@@ -251,14 +297,29 @@ module MicrosoftGraphBeta
                 @information_protection = value
             end
             ## 
-            ## Gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+            ## Gets the isPersonalSite property value. The isPersonalSite property
+            ## @return a boolean
+            ## 
+            def is_personal_site
+                return @is_personal_site
+            end
+            ## 
+            ## Sets the isPersonalSite property value. The isPersonalSite property
+            ## @param value Value to set for the isPersonalSite property.
+            ## @return a void
+            ## 
+            def is_personal_site=(value)
+                @is_personal_site = value
+            end
+            ## 
+            ## Gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
             ## @return a base_item
             ## 
             def items
                 return @items
             end
             ## 
-            ## Sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+            ## Sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
             ## @param value Value to set for the items property.
             ## @return a void
             ## 
@@ -311,14 +372,14 @@ module MicrosoftGraphBeta
                 @operations = value
             end
             ## 
-            ## Gets the pages property value. The collection of pages in the baseSitePages list in this site.
+            ## Gets the pages property value. The collection of pages in the baseSitePages list on this site.
             ## @return a base_site_page
             ## 
             def pages
                 return @pages
             end
             ## 
-            ## Sets the pages property value. The collection of pages in the baseSitePages list in this site.
+            ## Sets the pages property value. The collection of pages in the baseSitePages list on this site.
             ## @param value Value to set for the pages property.
             ## @return a void
             ## 
@@ -341,14 +402,29 @@ module MicrosoftGraphBeta
                 @permissions = value
             end
             ## 
-            ## Gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+            ## Gets the recycleBin property value. A container for a collection of recycleBinItem resources in this site.
+            ## @return a recycle_bin
+            ## 
+            def recycle_bin
+                return @recycle_bin
+            end
+            ## 
+            ## Sets the recycleBin property value. A container for a collection of recycleBinItem resources in this site.
+            ## @param value Value to set for the recycleBin property.
+            ## @return a void
+            ## 
+            def recycle_bin=(value)
+                @recycle_bin = value
+            end
+            ## 
+            ## Gets the root property value. If present, provides the root site in the site collection. Read-only.
             ## @return a root
             ## 
             def root
                 return @root
             end
             ## 
-            ## Sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+            ## Sets the root property value. If present, provides the root site in the site collection. Read-only.
             ## @param value Value to set for the root property.
             ## @return a void
             ## 
@@ -365,19 +441,23 @@ module MicrosoftGraphBeta
                 super
                 writer.write_object_value("analytics", @analytics)
                 writer.write_collection_of_object_values("columns", @columns)
+                writer.write_collection_of_object_values("contentModels", @content_models)
                 writer.write_collection_of_object_values("contentTypes", @content_types)
                 writer.write_object_value("deleted", @deleted)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_collection_of_object_values("documentProcessingJobs", @document_processing_jobs)
                 writer.write_object_value("drive", @drive)
                 writer.write_collection_of_object_values("drives", @drives)
                 writer.write_collection_of_object_values("externalColumns", @external_columns)
                 writer.write_object_value("informationProtection", @information_protection)
+                writer.write_boolean_value("isPersonalSite", @is_personal_site)
                 writer.write_collection_of_object_values("items", @items)
                 writer.write_collection_of_object_values("lists", @lists)
                 writer.write_object_value("onenote", @onenote)
                 writer.write_collection_of_object_values("operations", @operations)
                 writer.write_collection_of_object_values("pages", @pages)
                 writer.write_collection_of_object_values("permissions", @permissions)
+                writer.write_object_value("recycleBin", @recycle_bin)
                 writer.write_object_value("root", @root)
                 writer.write_object_value("settings", @settings)
                 writer.write_object_value("sharepointIds", @sharepoint_ids)
