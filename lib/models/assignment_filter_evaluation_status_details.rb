@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # PayloadId on which filter has been applied.
             @payload_id
             ## 
-            ## Instantiates a new assignmentFilterEvaluationStatusDetails and sets the default values.
+            ## Instantiates a new AssignmentFilterEvaluationStatusDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The identifier property
             @identifier
             ## 
-            ## Instantiates a new securityMarkUserAsCompromisedResponseAction and sets the default values.
+            ## Instantiates a new SecurityMarkUserAsCompromisedResponseAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityMarkUserAsCompromisedEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityMarkUserAsCompromisedEntityIdentifier) },
                 })
             end
             ## 

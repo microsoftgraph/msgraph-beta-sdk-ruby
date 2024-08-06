@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @alignment = value
             end
             ## 
-            ## Instantiates a new addContentHeaderAction and sets the default values.
+            ## Instantiates a new AddContentHeaderAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

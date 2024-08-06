@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # A list of pairs for the associated presentation.
             @values
             ## 
-            ## Instantiates a new groupPolicyPresentationValueList and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationValueList and sets the default values.
             ## @return a void
             ## 
             def initialize()

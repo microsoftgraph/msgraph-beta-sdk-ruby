@@ -27,6 +27,9 @@ module MicrosoftGraphBeta
             # Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
             @custom_subject_alternative_names
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
             @managed_device_certificate_states
             ## 
@@ -111,7 +114,7 @@ module MicrosoftGraphBeta
                 @certification_authority_name = value
             end
             ## 
-            ## Instantiates a new macOSPkcsCertificateProfile and sets the default values.
+            ## Instantiates a new MacOSPkcsCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -143,6 +146,21 @@ module MicrosoftGraphBeta
                 @custom_subject_alternative_names = value
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -154,6 +172,7 @@ module MicrosoftGraphBeta
                     "certificationAuthority" => lambda {|n| @certification_authority = n.get_string_value() },
                     "certificationAuthorityName" => lambda {|n| @certification_authority_name = n.get_string_value() },
                     "customSubjectAlternativeNames" => lambda {|n| @custom_subject_alternative_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSubjectAlternativeName.create_from_discriminator_value(pn) }) },
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "subjectAlternativeNameFormatString" => lambda {|n| @subject_alternative_name_format_string = n.get_string_value() },
                     "subjectNameFormatString" => lambda {|n| @subject_name_format_string = n.get_string_value() },
@@ -188,6 +207,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("certificationAuthority", @certification_authority)
                 writer.write_string_value("certificationAuthorityName", @certification_authority_name)
                 writer.write_collection_of_object_values("customSubjectAlternativeNames", @custom_subject_alternative_names)
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_collection_of_object_values("managedDeviceCertificateStates", @managed_device_certificate_states)
                 writer.write_string_value("subjectAlternativeNameFormatString", @subject_alternative_name_format_string)
                 writer.write_string_value("subjectNameFormatString", @subject_name_format_string)

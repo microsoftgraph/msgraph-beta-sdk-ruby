@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -15,8 +16,14 @@ module MicrosoftGraphBeta
             # List of possible answer values.
             @answer_options
             ## 
+            # The date, time and timezone when the custom question was created.
+            @created_date_time
+            ## 
             # Display name of this entity.
             @display_name
+            ## 
+            # The date, time and timezone when the custom question was last updated.
+            @last_updated_date_time
             ## 
             ## Gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
             ## @return a answer_input_type
@@ -48,11 +55,26 @@ module MicrosoftGraphBeta
                 @answer_options = value
             end
             ## 
-            ## Instantiates a new bookingCustomQuestion and sets the default values.
+            ## Instantiates a new BookingCustomQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time and timezone when the custom question was created.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time and timezone when the custom question was created.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -86,8 +108,25 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraphBeta::Models::AnswerInputType) },
                     "answerOptions" => lambda {|n| @answer_options = n.get_collection_of_primitive_values(String) },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                 })
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time and timezone when the custom question was last updated.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time and timezone when the custom question was last updated.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Serializes information the current object
@@ -99,7 +138,9 @@ module MicrosoftGraphBeta
                 super
                 writer.write_enum_value("answerInputType", @answer_input_type)
                 writer.write_collection_of_primitive_values("answerOptions", @answer_options)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
             end
         end
     end

@@ -1,4 +1,3 @@
-require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -8,17 +7,14 @@ module MicrosoftGraphBeta
         class Fido2AuthenticationMethod < MicrosoftGraphBeta::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+            # Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
             @aa_guid
             ## 
-            # The attestation certificate(s) attached to this security key.
+            # The attestation certificate or certificates attached to this security key.
             @attestation_certificates
             ## 
             # The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
             @attestation_level
-            ## 
-            # The timestamp when this key was registered to the user.
-            @created_date_time
             ## 
             # The display name of the key as given by the user.
             @display_name
@@ -26,14 +22,17 @@ module MicrosoftGraphBeta
             # The manufacturer-assigned model of the FIDO2 security key.
             @model
             ## 
-            ## Gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+            # Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
+            @public_key_credential
+            ## 
+            ## Gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
             ## @return a string
             ## 
             def aa_guid
                 return @aa_guid
             end
             ## 
-            ## Sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+            ## Sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
             ## @param value Value to set for the aaGuid property.
             ## @return a void
             ## 
@@ -41,14 +40,14 @@ module MicrosoftGraphBeta
                 @aa_guid = value
             end
             ## 
-            ## Gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+            ## Gets the attestationCertificates property value. The attestation certificate or certificates attached to this security key.
             ## @return a string
             ## 
             def attestation_certificates
                 return @attestation_certificates
             end
             ## 
-            ## Sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+            ## Sets the attestationCertificates property value. The attestation certificate or certificates attached to this security key.
             ## @param value Value to set for the attestationCertificates property.
             ## @return a void
             ## 
@@ -71,27 +70,12 @@ module MicrosoftGraphBeta
                 @attestation_level = value
             end
             ## 
-            ## Instantiates a new fido2AuthenticationMethod and sets the default values.
+            ## Instantiates a new Fido2AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.fido2AuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The timestamp when this key was registered to the user.
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The timestamp when this key was registered to the user.
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -126,9 +110,9 @@ module MicrosoftGraphBeta
                     "aaGuid" => lambda {|n| @aa_guid = n.get_string_value() },
                     "attestationCertificates" => lambda {|n| @attestation_certificates = n.get_collection_of_primitive_values(String) },
                     "attestationLevel" => lambda {|n| @attestation_level = n.get_enum_value(MicrosoftGraphBeta::Models::AttestationLevel) },
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "model" => lambda {|n| @model = n.get_string_value() },
+                    "publicKeyCredential" => lambda {|n| @public_key_credential = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WebauthnPublicKeyCredential.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -147,6 +131,21 @@ module MicrosoftGraphBeta
                 @model = value
             end
             ## 
+            ## Gets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
+            ## @return a webauthn_public_key_credential
+            ## 
+            def public_key_credential
+                return @public_key_credential
+            end
+            ## 
+            ## Sets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
+            ## @param value Value to set for the publicKeyCredential property.
+            ## @return a void
+            ## 
+            def public_key_credential=(value)
+                @public_key_credential = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -157,9 +156,9 @@ module MicrosoftGraphBeta
                 writer.write_string_value("aaGuid", @aa_guid)
                 writer.write_collection_of_primitive_values("attestationCertificates", @attestation_certificates)
                 writer.write_enum_value("attestationLevel", @attestation_level)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("model", @model)
+                writer.write_object_value("publicKeyCredential", @public_key_credential)
             end
         end
     end

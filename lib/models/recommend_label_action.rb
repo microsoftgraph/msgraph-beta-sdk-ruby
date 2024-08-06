@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @actions = value
             end
             ## 
-            ## Instantiates a new recommendLabelAction and sets the default values.
+            ## Instantiates a new RecommendLabelAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

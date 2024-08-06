@@ -12,6 +12,9 @@ module MicrosoftGraphBeta
             # Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
             @authentication_method
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
             @eap_fast_configuration
             ## 
@@ -54,7 +57,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new macOSWiredNetworkConfiguration and sets the default values.
+            ## Instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -69,6 +72,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return MacOSWiredNetworkConfiguration.new
+            end
+            ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
             end
             ## 
             ## Gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
@@ -122,6 +140,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "authenticationMethod" => lambda {|n| @authentication_method = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiAuthenticationMethod) },
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "eapFastConfiguration" => lambda {|n| @eap_fast_configuration = n.get_enum_value(MicrosoftGraphBeta::Models::EapFastConfiguration) },
                     "eapType" => lambda {|n| @eap_type = n.get_enum_value(MicrosoftGraphBeta::Models::EapType) },
                     "enableOuterIdentityPrivacy" => lambda {|n| @enable_outer_identity_privacy = n.get_string_value() },
@@ -217,6 +236,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_enum_value("authenticationMethod", @authentication_method)
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_enum_value("eapFastConfiguration", @eap_fast_configuration)
                 writer.write_enum_value("eapType", @eap_type)
                 writer.write_string_value("enableOuterIdentityPrivacy", @enable_outer_identity_privacy)

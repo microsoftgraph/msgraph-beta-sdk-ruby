@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class PositiveReinforcementNotification < MicrosoftGraphBeta::Models::BaseEndUserNotification
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deliveryPreference property
+            # Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
             @delivery_preference
             ## 
-            ## Instantiates a new positiveReinforcementNotification and sets the default values.
+            ## Instantiates a new PositiveReinforcementNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return PositiveReinforcementNotification.new
             end
             ## 
-            ## Gets the deliveryPreference property value. The deliveryPreference property
+            ## Gets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
             ## @return a notification_delivery_preference
             ## 
             def delivery_preference
                 return @delivery_preference
             end
             ## 
-            ## Sets the deliveryPreference property value. The deliveryPreference property
+            ## Sets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
             ## @param value Value to set for the deliveryPreference property.
             ## @return a void
             ## 

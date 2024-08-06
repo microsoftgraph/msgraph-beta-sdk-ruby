@@ -16,31 +16,31 @@ module MicrosoftGraphBeta
             # The unique identifier for the Private Link policy.
             @policy_id
             ## 
-            # The name of the Private Link policy in Azure AD.
+            # The name of the Private Link policy in Microsoft Entra ID.
             @policy_name
             ## 
-            # The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+            # The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.
             @policy_tenant_id
             ## 
             # The Azure Resource Manager (ARM) path for the Private Link policy resource.
             @resource_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new privateLinkDetails and sets the default values.
+            ## Instantiates a new PrivateLinkDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 @policy_id = value
             end
             ## 
-            ## Gets the policyName property value. The name of the Private Link policy in Azure AD.
+            ## Gets the policyName property value. The name of the Private Link policy in Microsoft Entra ID.
             ## @return a string
             ## 
             def policy_name
                 return @policy_name
             end
             ## 
-            ## Sets the policyName property value. The name of the Private Link policy in Azure AD.
+            ## Sets the policyName property value. The name of the Private Link policy in Microsoft Entra ID.
             ## @param value Value to set for the policyName property.
             ## @return a void
             ## 
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @policy_name = value
             end
             ## 
-            ## Gets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+            ## Gets the policyTenantId property value. The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.
             ## @return a string
             ## 
             def policy_tenant_id
                 return @policy_tenant_id
             end
             ## 
-            ## Sets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
+            ## Sets the policyTenantId property value. The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.
             ## @param value Value to set for the policyTenantId property.
             ## @return a void
             ## 

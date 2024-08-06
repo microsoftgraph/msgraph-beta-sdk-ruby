@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The category property
             @category
             ## 
-            # The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+            # The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
             @ports
             ## 
             # The protocol property
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Instantiates a new networkaccessM365ForwardingRule and sets the default values.
+            ## Instantiates a new NetworkaccessM365ForwardingRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the ports property value. The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+            ## Gets the ports property value. The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
             ## @return a string
             ## 
             def ports
                 return @ports
             end
             ## 
-            ## Sets the ports property value. The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+            ## Sets the ports property value. The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
             ## @param value Value to set for the ports property.
             ## @return a void
             ## 

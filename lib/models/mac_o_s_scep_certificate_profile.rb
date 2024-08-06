@@ -18,6 +18,9 @@ module MicrosoftGraphBeta
             # Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
             @custom_subject_alternative_names
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
             @extended_key_usages
             ## 
@@ -75,7 +78,7 @@ module MicrosoftGraphBeta
                 @certificate_store = value
             end
             ## 
-            ## Instantiates a new macOSScepCertificateProfile and sets the default values.
+            ## Instantiates a new MacOSScepCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +110,21 @@ module MicrosoftGraphBeta
                 @custom_subject_alternative_names = value
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## Gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
             ## @return a extended_key_usage
             ## 
@@ -130,10 +148,11 @@ module MicrosoftGraphBeta
                     "allowAllAppsAccess" => lambda {|n| @allow_all_apps_access = n.get_boolean_value() },
                     "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
                     "customSubjectAlternativeNames" => lambda {|n| @custom_subject_alternative_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSubjectAlternativeName.create_from_discriminator_value(pn) }) },
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "extendedKeyUsages" => lambda {|n| @extended_key_usages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ExtendedKeyUsage.create_from_discriminator_value(pn) }) },
-                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::HashAlgorithms) },
+                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_values(MicrosoftGraphBeta::Models::HashAlgorithms) },
                     "keySize" => lambda {|n| @key_size = n.get_enum_value(MicrosoftGraphBeta::Models::KeySize) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "rootCertificate" => lambda {|n| @root_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSTrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "scepServerUrls" => lambda {|n| @scep_server_urls = n.get_collection_of_primitive_values(String) },
@@ -242,6 +261,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("allowAllAppsAccess", @allow_all_apps_access)
                 writer.write_enum_value("certificateStore", @certificate_store)
                 writer.write_collection_of_object_values("customSubjectAlternativeNames", @custom_subject_alternative_names)
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_collection_of_object_values("extendedKeyUsages", @extended_key_usages)
                 writer.write_enum_value("hashAlgorithm", @hash_algorithm)
                 writer.write_enum_value("keySize", @key_size)

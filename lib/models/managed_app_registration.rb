@@ -49,6 +49,9 @@ module MicrosoftGraphBeta
             # Date and time of last the app synced with management service.
             @last_sync_date_time
             ## 
+            # Zero or more log collection requests triggered for the app.
+            @managed_app_log_collection_requests
+            ## 
             # The Managed Device identifier of the host device. Value could be empty even when the host device is managed.
             @managed_device_id
             ## 
@@ -127,7 +130,7 @@ module MicrosoftGraphBeta
                 @azure_a_d_device_id = value
             end
             ## 
-            ## Instantiates a new managedAppRegistration and sets the default values.
+            ## Instantiates a new ManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -163,6 +166,8 @@ module MicrosoftGraphBeta
                             return AndroidManagedAppRegistration.new
                         when "#microsoft.graph.iosManagedAppRegistration"
                             return IosManagedAppRegistration.new
+                        when "#microsoft.graph.windowsManagedAppRegistration"
+                            return WindowsManagedAppRegistration.new
                     end
                 end
                 return ManagedAppRegistration.new
@@ -276,6 +281,7 @@ module MicrosoftGraphBeta
                     "flaggedReasons" => lambda {|n| @flagged_reasons = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppFlaggedReason.create_from_discriminator_value(pn) }) },
                     "intendedPolicies" => lambda {|n| @intended_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppPolicy.create_from_discriminator_value(pn) }) },
                     "lastSyncDateTime" => lambda {|n| @last_sync_date_time = n.get_date_time_value() },
+                    "managedAppLogCollectionRequests" => lambda {|n| @managed_app_log_collection_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppLogCollectionRequest.create_from_discriminator_value(pn) }) },
                     "managedDeviceId" => lambda {|n| @managed_device_id = n.get_string_value() },
                     "managementSdkVersion" => lambda {|n| @management_sdk_version = n.get_string_value() },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedAppOperation.create_from_discriminator_value(pn) }) },
@@ -313,6 +319,21 @@ module MicrosoftGraphBeta
             ## 
             def last_sync_date_time=(value)
                 @last_sync_date_time = value
+            end
+            ## 
+            ## Gets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the app.
+            ## @return a managed_app_log_collection_request
+            ## 
+            def managed_app_log_collection_requests
+                return @managed_app_log_collection_requests
+            end
+            ## 
+            ## Sets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the app.
+            ## @param value Value to set for the managedAppLogCollectionRequests property.
+            ## @return a void
+            ## 
+            def managed_app_log_collection_requests=(value)
+                @managed_app_log_collection_requests = value
             end
             ## 
             ## Gets the managedDeviceId property value. The Managed Device identifier of the host device. Value could be empty even when the host device is managed.
@@ -395,6 +416,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("flaggedReasons", @flagged_reasons)
                 writer.write_collection_of_object_values("intendedPolicies", @intended_policies)
                 writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time)
+                writer.write_collection_of_object_values("managedAppLogCollectionRequests", @managed_app_log_collection_requests)
                 writer.write_string_value("managedDeviceId", @managed_device_id)
                 writer.write_string_value("managementSdkVersion", @management_sdk_version)
                 writer.write_collection_of_object_values("operations", @operations)

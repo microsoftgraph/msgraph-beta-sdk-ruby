@@ -7,30 +7,30 @@ module MicrosoftGraphBeta
         class WorkbookCommentReply < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content of replied comment.
+            # The content of the reply.
             @content
             ## 
-            # Indicates the type for the replied comment.
+            # The content type for the reply.
             @content_type
             ## 
-            # The task property
+            # The task associated with the comment thread.
             @task
             ## 
-            ## Instantiates a new workbookCommentReply and sets the default values.
+            ## Instantiates a new WorkbookCommentReply and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the content property value. The content of replied comment.
+            ## Gets the content property value. The content of the reply.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content of replied comment.
+            ## Sets the content property value. The content of the reply.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -38,14 +38,14 @@ module MicrosoftGraphBeta
                 @content = value
             end
             ## 
-            ## Gets the contentType property value. Indicates the type for the replied comment.
+            ## Gets the contentType property value. The content type for the reply.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Indicates the type for the replied comment.
+            ## Sets the contentType property value. The content type for the reply.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("task", @task)
             end
             ## 
-            ## Gets the task property value. The task property
+            ## Gets the task property value. The task associated with the comment thread.
             ## @return a workbook_document_task
             ## 
             def task
                 return @task
             end
             ## 
-            ## Sets the task property value. The task property
+            ## Sets the task property value. The task associated with the comment thread.
             ## @param value Value to set for the task property.
             ## @return a void
             ## 

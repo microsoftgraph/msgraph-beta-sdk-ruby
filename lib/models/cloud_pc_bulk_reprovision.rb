@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CloudPcBulkReprovision < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new cloudPcBulkReprovision and sets the default values.
+            ## Instantiates a new CloudPcBulkReprovision and sets the default values.
             ## @return a void
             ## 
             def initialize()

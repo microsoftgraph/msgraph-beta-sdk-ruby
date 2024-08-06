@@ -55,6 +55,23 @@ module MicrosoftGraphBeta
             BadReclassifiedAsBad: :BadReclassifiedAsBad,
             BadReclassifiedAsCannotMakeDecision: :BadReclassifiedAsCannotMakeDecision,
             UnknownFutureValue: :UnknownFutureValue,
+            WillNotifyOnceDone: :WillNotifyOnceDone,
+            CheckUserReportedSettings: :CheckUserReportedSettings,
+            PartOfEducationCampaign: :PartOfEducationCampaign,
+            AllowedByAdvancedDelivery: :AllowedByAdvancedDelivery,
+            AllowedByEnhancedFiltering: :AllowedByEnhancedFiltering,
+            ItemDeleted: :ItemDeleted,
+            ItemFoundClean: :ItemFoundClean,
+            ItemFoundMalicious: :ItemFoundMalicious,
+            UnableToMakeDecision: :UnableToMakeDecision,
+            DomainResembledYourOrganization: :DomainResembledYourOrganization,
+            EndUserBeingImpersonated: :EndUserBeingImpersonated,
+            AssociatedWithBrand: :AssociatedWithBrand,
+            SenderFailedAuthentication: :SenderFailedAuthentication,
+            EndUserBeingSpoofed: :EndUserBeingSpoofed,
+            ItemFoundBulk: :ItemFoundBulk,
+            ItemNotReceivedByService: :ItemNotReceivedByService,
+            ItemFoundSpam: :ItemFoundSpam,
         }
     end
 end

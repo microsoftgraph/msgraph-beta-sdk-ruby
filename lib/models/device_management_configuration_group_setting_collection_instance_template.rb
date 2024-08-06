@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @allow_unmanaged_values = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

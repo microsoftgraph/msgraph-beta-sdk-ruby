@@ -8,9 +8,6 @@ module MicrosoftGraphBeta
         class PasswordlessMicrosoftAuthenticatorAuthenticationMethod < MicrosoftGraphBeta::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdDateTime property
-            @created_date_time
-            ## 
             # The timestamp when this method was registered to the user.
             @creation_date_time
             ## 
@@ -20,27 +17,12 @@ module MicrosoftGraphBeta
             # The display name of the mobile device as given by the user.
             @display_name
             ## 
-            ## Instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -102,7 +84,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "creationDateTime" => lambda {|n| @creation_date_time = n.get_date_time_value() },
                     "device" => lambda {|n| @device = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Device.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -116,7 +97,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_date_time_value("creationDateTime", @creation_date_time)
                 writer.write_object_value("device", @device)
                 writer.write_string_value("displayName", @display_name)

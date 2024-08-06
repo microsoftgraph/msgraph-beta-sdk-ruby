@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WebPart < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new webPart and sets the default values.
+            ## Instantiates a new WebPart and sets the default values.
             ## @return a void
             ## 
             def initialize()

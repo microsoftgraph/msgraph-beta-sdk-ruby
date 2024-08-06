@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @bundle_i_d = value
             end
             ## 
-            ## Instantiates a new iosHomeScreenApp and sets the default values.
+            ## Instantiates a new IosHomeScreenApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
