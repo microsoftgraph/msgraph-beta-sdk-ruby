@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The year property
             @year
             ## 
-            ## Instantiates a new industryDataYearTimePeriodDefinition and sets the default values.
+            ## Instantiates a new IndustryDataYearTimePeriodDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @class_type = value
             end
             ## 
-            ## Instantiates a new groupPolicyDefinition and sets the default values.
+            ## Instantiates a new GroupPolicyDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The groups whose members are ineligible to be assigned this access package.
             @incompatible_groups
             ## 
-            # Whether the access package is hidden from the requestor.
+            # Indicates whether the access package is hidden from the requestor.
             @is_hidden
             ## 
             # Indicates whether role scopes are visible.
@@ -128,7 +128,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new accessPackage and sets the default values.
+            ## Instantiates a new AccessPackage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -257,14 +257,14 @@ module MicrosoftGraphBeta
                 @incompatible_groups = value
             end
             ## 
-            ## Gets the isHidden property value. Whether the access package is hidden from the requestor.
+            ## Gets the isHidden property value. Indicates whether the access package is hidden from the requestor.
             ## @return a boolean
             ## 
             def is_hidden
                 return @is_hidden
             end
             ## 
-            ## Sets the isHidden property value. Whether the access package is hidden from the requestor.
+            ## Sets the isHidden property value. Indicates whether the access package is hidden from the requestor.
             ## @param value Value to set for the isHidden property.
             ## @return a void
             ## 

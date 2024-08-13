@@ -41,82 +41,82 @@ module MicrosoftGraphBeta
             # The contact's gender.
             @gender
             ## 
-            # The contact's generation.
+            # The contact's suffix.
             @generation
             ## 
             # The contact's given name.
             @given_name
             ## 
-            # The imAddresses property
+            # The contact's instant messaging (IM) addresses.
             @im_addresses
             ## 
-            # The initials property
+            # The contact's initials.
             @initials
             ## 
             # The isFavorite property
             @is_favorite
             ## 
-            # The jobTitle property
+            # The contact’s job title.
             @job_title
             ## 
-            # The manager property
+            # The name of the contact's manager.
             @manager
             ## 
-            # The middleName property
+            # The contact's middle name.
             @middle_name
             ## 
             # The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             @multi_value_extended_properties
             ## 
-            # The nickName property
+            # The contact's nickname.
             @nick_name
             ## 
-            # The officeLocation property
+            # The location of the contact's office.
             @office_location
             ## 
-            # The parentFolderId property
+            # The ID of the contact's parent folder.
             @parent_folder_id
             ## 
-            # The personalNotes property
+            # The user's notes about the contact.
             @personal_notes
             ## 
-            # The phones property
+            # Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
             @phones
             ## 
             # Optional contact picture. You can get or set a photo for a contact.
             @photo
             ## 
-            # The postalAddresses property
+            # Addresses associated with the contact, for example, home address and business address.
             @postal_addresses
             ## 
-            # The profession property
+            # The contact's profession.
             @profession
             ## 
             # The collection of single-value extended properties defined for the contact. Read-only. Nullable.
             @single_value_extended_properties
             ## 
-            # The spouseName property
+            # The name of the contact's spouse/partner.
             @spouse_name
             ## 
-            # The surname property
+            # The contact's surname.
             @surname
             ## 
-            # The title property
+            # The contact's title.
             @title
             ## 
-            # The websites property
+            # Web sites associated with the contact.
             @websites
             ## 
-            # The weddingAnniversary property
+            # The contact's wedding anniversary.
             @wedding_anniversary
             ## 
-            # The yomiCompanyName property
+            # The phonetic Japanese company name of the contact.
             @yomi_company_name
             ## 
-            # The yomiGivenName property
+            # The phonetic Japanese given name (first name) of the contact.
             @yomi_given_name
             ## 
-            # The yomiSurname property
+            # The phonetic Japanese surname (last name)  of the contact.
             @yomi_surname
             ## 
             ## Gets the assistantName property value. The name of the contact's assistant.
@@ -179,7 +179,7 @@ module MicrosoftGraphBeta
                 @company_name = value
             end
             ## 
-            ## Instantiates a new contact and sets the default values.
+            ## Instantiates a new Contact and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -301,14 +301,14 @@ module MicrosoftGraphBeta
                 @gender = value
             end
             ## 
-            ## Gets the generation property value. The contact's generation.
+            ## Gets the generation property value. The contact's suffix.
             ## @return a string
             ## 
             def generation
                 return @generation
             end
             ## 
-            ## Sets the generation property value. The contact's generation.
+            ## Sets the generation property value. The contact's suffix.
             ## @param value Value to set for the generation property.
             ## @return a void
             ## 
@@ -376,14 +376,14 @@ module MicrosoftGraphBeta
                 @given_name = value
             end
             ## 
-            ## Gets the imAddresses property value. The imAddresses property
+            ## Gets the imAddresses property value. The contact's instant messaging (IM) addresses.
             ## @return a string
             ## 
             def im_addresses
                 return @im_addresses
             end
             ## 
-            ## Sets the imAddresses property value. The imAddresses property
+            ## Sets the imAddresses property value. The contact's instant messaging (IM) addresses.
             ## @param value Value to set for the imAddresses property.
             ## @return a void
             ## 
@@ -391,14 +391,14 @@ module MicrosoftGraphBeta
                 @im_addresses = value
             end
             ## 
-            ## Gets the initials property value. The initials property
+            ## Gets the initials property value. The contact's initials.
             ## @return a string
             ## 
             def initials
                 return @initials
             end
             ## 
-            ## Sets the initials property value. The initials property
+            ## Sets the initials property value. The contact's initials.
             ## @param value Value to set for the initials property.
             ## @return a void
             ## 
@@ -421,14 +421,14 @@ module MicrosoftGraphBeta
                 @is_favorite = value
             end
             ## 
-            ## Gets the jobTitle property value. The jobTitle property
+            ## Gets the jobTitle property value. The contact’s job title.
             ## @return a string
             ## 
             def job_title
                 return @job_title
             end
             ## 
-            ## Sets the jobTitle property value. The jobTitle property
+            ## Sets the jobTitle property value. The contact’s job title.
             ## @param value Value to set for the jobTitle property.
             ## @return a void
             ## 
@@ -436,14 +436,14 @@ module MicrosoftGraphBeta
                 @job_title = value
             end
             ## 
-            ## Gets the manager property value. The manager property
+            ## Gets the manager property value. The name of the contact's manager.
             ## @return a string
             ## 
             def manager
                 return @manager
             end
             ## 
-            ## Sets the manager property value. The manager property
+            ## Sets the manager property value. The name of the contact's manager.
             ## @param value Value to set for the manager property.
             ## @return a void
             ## 
@@ -451,14 +451,14 @@ module MicrosoftGraphBeta
                 @manager = value
             end
             ## 
-            ## Gets the middleName property value. The middleName property
+            ## Gets the middleName property value. The contact's middle name.
             ## @return a string
             ## 
             def middle_name
                 return @middle_name
             end
             ## 
-            ## Sets the middleName property value. The middleName property
+            ## Sets the middleName property value. The contact's middle name.
             ## @param value Value to set for the middleName property.
             ## @return a void
             ## 
@@ -481,14 +481,14 @@ module MicrosoftGraphBeta
                 @multi_value_extended_properties = value
             end
             ## 
-            ## Gets the nickName property value. The nickName property
+            ## Gets the nickName property value. The contact's nickname.
             ## @return a string
             ## 
             def nick_name
                 return @nick_name
             end
             ## 
-            ## Sets the nickName property value. The nickName property
+            ## Sets the nickName property value. The contact's nickname.
             ## @param value Value to set for the nickName property.
             ## @return a void
             ## 
@@ -496,14 +496,14 @@ module MicrosoftGraphBeta
                 @nick_name = value
             end
             ## 
-            ## Gets the officeLocation property value. The officeLocation property
+            ## Gets the officeLocation property value. The location of the contact's office.
             ## @return a string
             ## 
             def office_location
                 return @office_location
             end
             ## 
-            ## Sets the officeLocation property value. The officeLocation property
+            ## Sets the officeLocation property value. The location of the contact's office.
             ## @param value Value to set for the officeLocation property.
             ## @return a void
             ## 
@@ -511,14 +511,14 @@ module MicrosoftGraphBeta
                 @office_location = value
             end
             ## 
-            ## Gets the parentFolderId property value. The parentFolderId property
+            ## Gets the parentFolderId property value. The ID of the contact's parent folder.
             ## @return a string
             ## 
             def parent_folder_id
                 return @parent_folder_id
             end
             ## 
-            ## Sets the parentFolderId property value. The parentFolderId property
+            ## Sets the parentFolderId property value. The ID of the contact's parent folder.
             ## @param value Value to set for the parentFolderId property.
             ## @return a void
             ## 
@@ -526,14 +526,14 @@ module MicrosoftGraphBeta
                 @parent_folder_id = value
             end
             ## 
-            ## Gets the personalNotes property value. The personalNotes property
+            ## Gets the personalNotes property value. The user's notes about the contact.
             ## @return a string
             ## 
             def personal_notes
                 return @personal_notes
             end
             ## 
-            ## Sets the personalNotes property value. The personalNotes property
+            ## Sets the personalNotes property value. The user's notes about the contact.
             ## @param value Value to set for the personalNotes property.
             ## @return a void
             ## 
@@ -541,14 +541,14 @@ module MicrosoftGraphBeta
                 @personal_notes = value
             end
             ## 
-            ## Gets the phones property value. The phones property
+            ## Gets the phones property value. Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
             ## @return a phone
             ## 
             def phones
                 return @phones
             end
             ## 
-            ## Sets the phones property value. The phones property
+            ## Sets the phones property value. Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
             ## @param value Value to set for the phones property.
             ## @return a void
             ## 
@@ -571,14 +571,14 @@ module MicrosoftGraphBeta
                 @photo = value
             end
             ## 
-            ## Gets the postalAddresses property value. The postalAddresses property
+            ## Gets the postalAddresses property value. Addresses associated with the contact, for example, home address and business address.
             ## @return a physical_address
             ## 
             def postal_addresses
                 return @postal_addresses
             end
             ## 
-            ## Sets the postalAddresses property value. The postalAddresses property
+            ## Sets the postalAddresses property value. Addresses associated with the contact, for example, home address and business address.
             ## @param value Value to set for the postalAddresses property.
             ## @return a void
             ## 
@@ -586,14 +586,14 @@ module MicrosoftGraphBeta
                 @postal_addresses = value
             end
             ## 
-            ## Gets the profession property value. The profession property
+            ## Gets the profession property value. The contact's profession.
             ## @return a string
             ## 
             def profession
                 return @profession
             end
             ## 
-            ## Sets the profession property value. The profession property
+            ## Sets the profession property value. The contact's profession.
             ## @param value Value to set for the profession property.
             ## @return a void
             ## 
@@ -662,14 +662,14 @@ module MicrosoftGraphBeta
                 @single_value_extended_properties = value
             end
             ## 
-            ## Gets the spouseName property value. The spouseName property
+            ## Gets the spouseName property value. The name of the contact's spouse/partner.
             ## @return a string
             ## 
             def spouse_name
                 return @spouse_name
             end
             ## 
-            ## Sets the spouseName property value. The spouseName property
+            ## Sets the spouseName property value. The name of the contact's spouse/partner.
             ## @param value Value to set for the spouseName property.
             ## @return a void
             ## 
@@ -677,14 +677,14 @@ module MicrosoftGraphBeta
                 @spouse_name = value
             end
             ## 
-            ## Gets the surname property value. The surname property
+            ## Gets the surname property value. The contact's surname.
             ## @return a string
             ## 
             def surname
                 return @surname
             end
             ## 
-            ## Sets the surname property value. The surname property
+            ## Sets the surname property value. The contact's surname.
             ## @param value Value to set for the surname property.
             ## @return a void
             ## 
@@ -692,14 +692,14 @@ module MicrosoftGraphBeta
                 @surname = value
             end
             ## 
-            ## Gets the title property value. The title property
+            ## Gets the title property value. The contact's title.
             ## @return a string
             ## 
             def title
                 return @title
             end
             ## 
-            ## Sets the title property value. The title property
+            ## Sets the title property value. The contact's title.
             ## @param value Value to set for the title property.
             ## @return a void
             ## 
@@ -707,14 +707,14 @@ module MicrosoftGraphBeta
                 @title = value
             end
             ## 
-            ## Gets the websites property value. The websites property
+            ## Gets the websites property value. Web sites associated with the contact.
             ## @return a website
             ## 
             def websites
                 return @websites
             end
             ## 
-            ## Sets the websites property value. The websites property
+            ## Sets the websites property value. Web sites associated with the contact.
             ## @param value Value to set for the websites property.
             ## @return a void
             ## 
@@ -722,14 +722,14 @@ module MicrosoftGraphBeta
                 @websites = value
             end
             ## 
-            ## Gets the weddingAnniversary property value. The weddingAnniversary property
+            ## Gets the weddingAnniversary property value. The contact's wedding anniversary.
             ## @return a date
             ## 
             def wedding_anniversary
                 return @wedding_anniversary
             end
             ## 
-            ## Sets the weddingAnniversary property value. The weddingAnniversary property
+            ## Sets the weddingAnniversary property value. The contact's wedding anniversary.
             ## @param value Value to set for the weddingAnniversary property.
             ## @return a void
             ## 
@@ -737,14 +737,14 @@ module MicrosoftGraphBeta
                 @wedding_anniversary = value
             end
             ## 
-            ## Gets the yomiCompanyName property value. The yomiCompanyName property
+            ## Gets the yomiCompanyName property value. The phonetic Japanese company name of the contact.
             ## @return a string
             ## 
             def yomi_company_name
                 return @yomi_company_name
             end
             ## 
-            ## Sets the yomiCompanyName property value. The yomiCompanyName property
+            ## Sets the yomiCompanyName property value. The phonetic Japanese company name of the contact.
             ## @param value Value to set for the yomiCompanyName property.
             ## @return a void
             ## 
@@ -752,14 +752,14 @@ module MicrosoftGraphBeta
                 @yomi_company_name = value
             end
             ## 
-            ## Gets the yomiGivenName property value. The yomiGivenName property
+            ## Gets the yomiGivenName property value. The phonetic Japanese given name (first name) of the contact.
             ## @return a string
             ## 
             def yomi_given_name
                 return @yomi_given_name
             end
             ## 
-            ## Sets the yomiGivenName property value. The yomiGivenName property
+            ## Sets the yomiGivenName property value. The phonetic Japanese given name (first name) of the contact.
             ## @param value Value to set for the yomiGivenName property.
             ## @return a void
             ## 
@@ -767,14 +767,14 @@ module MicrosoftGraphBeta
                 @yomi_given_name = value
             end
             ## 
-            ## Gets the yomiSurname property value. The yomiSurname property
+            ## Gets the yomiSurname property value. The phonetic Japanese surname (last name)  of the contact.
             ## @return a string
             ## 
             def yomi_surname
                 return @yomi_surname
             end
             ## 
-            ## Sets the yomiSurname property value. The yomiSurname property
+            ## Sets the yomiSurname property value. The phonetic Japanese surname (last name)  of the contact.
             ## @param value Value to set for the yomiSurname property.
             ## @return a void
             ## 

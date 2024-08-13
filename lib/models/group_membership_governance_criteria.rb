@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The groupId property
             @group_id
             ## 
-            ## Instantiates a new groupMembershipGovernanceCriteria and sets the default values.
+            ## Instantiates a new GroupMembershipGovernanceCriteria and sets the default values.
             ## @return a void
             ## 
             def initialize()

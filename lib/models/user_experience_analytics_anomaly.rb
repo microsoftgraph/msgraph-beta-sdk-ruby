@@ -169,7 +169,7 @@ module MicrosoftGraphBeta
                 @asset_version = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAnomaly and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAnomaly and sets the default values.
             ## @return a void
             ## 
             def initialize()

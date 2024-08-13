@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataIdentifierTypeReferenceValue < MicrosoftGraphBeta::Models::IndustryDataReferenceValue
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataIdentifierTypeReferenceValue and sets the default values.
+            ## Instantiates a new IndustryDataIdentifierTypeReferenceValue and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @app = value
             end
             ## 
-            ## Instantiates a new mobileAppInstallStatus and sets the default values.
+            ## Instantiates a new MobileAppInstallStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

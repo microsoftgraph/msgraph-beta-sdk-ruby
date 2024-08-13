@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Success user count.
             @success_user_count
             ## 
-            ## Instantiates a new deviceManagementScriptRunSummary and sets the default values.
+            ## Instantiates a new DeviceManagementScriptRunSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

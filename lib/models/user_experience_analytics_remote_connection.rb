@@ -93,7 +93,7 @@ module MicrosoftGraphBeta
                 @cloud_pc_sign_in_time = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsRemoteConnection and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsRemoteConnection and sets the default values.
             ## @return a void
             ## 
             def initialize()

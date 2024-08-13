@@ -1,0 +1,1 @@
+require_relative 'get_all_managed_device_windows_o_s_images_get_response'

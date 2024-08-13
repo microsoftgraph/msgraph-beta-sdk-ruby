@@ -10,38 +10,92 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The businessScenarios property
+            # The backupRestore property
+            @backup_restore
+            ## 
+            # A collection of businesses in Microsoft Bookings. Read-only. Nullable.
+            @booking_businesses
+            ## 
+            # A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
+            @booking_currencies
+            ## 
+            # A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
             @business_scenarios
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The virtualEvents property
+            # A collection of virtual events.
             @virtual_events
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the businessScenarios property value. The businessScenarios property
+            ## Gets the backupRestore property value. The backupRestore property
+            ## @return a backup_restore_root
+            ## 
+            def backup_restore
+                return @backup_restore
+            end
+            ## 
+            ## Sets the backupRestore property value. The backupRestore property
+            ## @param value Value to set for the backupRestore property.
+            ## @return a void
+            ## 
+            def backup_restore=(value)
+                @backup_restore = value
+            end
+            ## 
+            ## Gets the bookingBusinesses property value. A collection of businesses in Microsoft Bookings. Read-only. Nullable.
+            ## @return a booking_business
+            ## 
+            def booking_businesses
+                return @booking_businesses
+            end
+            ## 
+            ## Sets the bookingBusinesses property value. A collection of businesses in Microsoft Bookings. Read-only. Nullable.
+            ## @param value Value to set for the bookingBusinesses property.
+            ## @return a void
+            ## 
+            def booking_businesses=(value)
+                @booking_businesses = value
+            end
+            ## 
+            ## Gets the bookingCurrencies property value. A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
+            ## @return a booking_currency
+            ## 
+            def booking_currencies
+                return @booking_currencies
+            end
+            ## 
+            ## Sets the bookingCurrencies property value. A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
+            ## @param value Value to set for the bookingCurrencies property.
+            ## @return a void
+            ## 
+            def booking_currencies=(value)
+                @booking_currencies = value
+            end
+            ## 
+            ## Gets the businessScenarios property value. A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
             ## @return a business_scenario
             ## 
             def business_scenarios
                 return @business_scenarios
             end
             ## 
-            ## Sets the businessScenarios property value. The businessScenarios property
+            ## Sets the businessScenarios property value. A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
             ## @param value Value to set for the businessScenarios property.
             ## @return a void
             ## 
@@ -49,7 +103,7 @@ module MicrosoftGraphBeta
                 @business_scenarios = value
             end
             ## 
-            ## Instantiates a new solutionsRoot and sets the default values.
+            ## Instantiates a new SolutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,6 +124,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "backupRestore" => lambda {|n| @backup_restore = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::BackupRestoreRoot.create_from_discriminator_value(pn) }) },
+                    "bookingBusinesses" => lambda {|n| @booking_businesses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingBusiness.create_from_discriminator_value(pn) }) },
+                    "bookingCurrencies" => lambda {|n| @booking_currencies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BookingCurrency.create_from_discriminator_value(pn) }) },
                     "businessScenarios" => lambda {|n| @business_scenarios = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::BusinessScenario.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "virtualEvents" => lambda {|n| @virtual_events = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::VirtualEventsRoot.create_from_discriminator_value(pn) }) },
@@ -97,20 +154,23 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("backupRestore", @backup_restore)
+                writer.write_collection_of_object_values("bookingBusinesses", @booking_businesses)
+                writer.write_collection_of_object_values("bookingCurrencies", @booking_currencies)
                 writer.write_collection_of_object_values("businessScenarios", @business_scenarios)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("virtualEvents", @virtual_events)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the virtualEvents property value. The virtualEvents property
+            ## Gets the virtualEvents property value. A collection of virtual events.
             ## @return a virtual_events_root
             ## 
             def virtual_events
                 return @virtual_events
             end
             ## 
-            ## Sets the virtualEvents property value. The virtualEvents property
+            ## Sets the virtualEvents property value. A collection of virtual events.
             ## @param value Value to set for the virtualEvents property.
             ## @return a void
             ## 

@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Settings of the MobileAppPolicySetItem.
             @settings
             ## 
-            ## Instantiates a new mobileAppPolicySetItem and sets the default values.
+            ## Instantiates a new MobileAppPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

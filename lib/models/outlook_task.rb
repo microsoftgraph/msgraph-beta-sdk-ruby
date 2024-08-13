@@ -25,40 +25,40 @@ module MicrosoftGraphBeta
             # Set to true if the task has attachments.
             @has_attachments
             ## 
-            # The importance property
+            # The importance of the event. Possible values are: low, normal, high.
             @importance
             ## 
-            # The isReminderOn property
+            # Set to true if an alert is set to remind the user of the task.
             @is_reminder_on
             ## 
             # The collection of multi-value extended properties defined for the task. Read-only. Nullable.
             @multi_value_extended_properties
             ## 
-            # The owner property
+            # The name of the person who created the task.
             @owner
             ## 
-            # The parentFolderId property
+            # The unique identifier for the task's parent folder.
             @parent_folder_id
             ## 
-            # The recurrence property
+            # The recurrence pattern for the task.
             @recurrence
             ## 
-            # The reminderDateTime property
+            # The date and time for a reminder alert of the task to occur.
             @reminder_date_time
             ## 
-            # The sensitivity property
+            # Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
             @sensitivity
             ## 
             # The collection of single-value extended properties defined for the task. Read-only. Nullable.
             @single_value_extended_properties
             ## 
-            # The startDateTime property
+            # The date in the specified time zone when the task is to begin.
             @start_date_time
             ## 
-            # The status property
+            # Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
             @status
             ## 
-            # The subject property
+            # A brief description or title of the task.
             @subject
             ## 
             ## Gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
@@ -121,7 +121,7 @@ module MicrosoftGraphBeta
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new outlookTask and sets the default values.
+            ## Instantiates a new OutlookTask and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -194,14 +194,14 @@ module MicrosoftGraphBeta
                 @has_attachments = value
             end
             ## 
-            ## Gets the importance property value. The importance property
+            ## Gets the importance property value. The importance of the event. Possible values are: low, normal, high.
             ## @return a importance
             ## 
             def importance
                 return @importance
             end
             ## 
-            ## Sets the importance property value. The importance property
+            ## Sets the importance property value. The importance of the event. Possible values are: low, normal, high.
             ## @param value Value to set for the importance property.
             ## @return a void
             ## 
@@ -209,14 +209,14 @@ module MicrosoftGraphBeta
                 @importance = value
             end
             ## 
-            ## Gets the isReminderOn property value. The isReminderOn property
+            ## Gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
             ## @return a boolean
             ## 
             def is_reminder_on
                 return @is_reminder_on
             end
             ## 
-            ## Sets the isReminderOn property value. The isReminderOn property
+            ## Sets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
             ## @param value Value to set for the isReminderOn property.
             ## @return a void
             ## 
@@ -239,14 +239,14 @@ module MicrosoftGraphBeta
                 @multi_value_extended_properties = value
             end
             ## 
-            ## Gets the owner property value. The owner property
+            ## Gets the owner property value. The name of the person who created the task.
             ## @return a string
             ## 
             def owner
                 return @owner
             end
             ## 
-            ## Sets the owner property value. The owner property
+            ## Sets the owner property value. The name of the person who created the task.
             ## @param value Value to set for the owner property.
             ## @return a void
             ## 
@@ -254,14 +254,14 @@ module MicrosoftGraphBeta
                 @owner = value
             end
             ## 
-            ## Gets the parentFolderId property value. The parentFolderId property
+            ## Gets the parentFolderId property value. The unique identifier for the task's parent folder.
             ## @return a string
             ## 
             def parent_folder_id
                 return @parent_folder_id
             end
             ## 
-            ## Sets the parentFolderId property value. The parentFolderId property
+            ## Sets the parentFolderId property value. The unique identifier for the task's parent folder.
             ## @param value Value to set for the parentFolderId property.
             ## @return a void
             ## 
@@ -269,14 +269,14 @@ module MicrosoftGraphBeta
                 @parent_folder_id = value
             end
             ## 
-            ## Gets the recurrence property value. The recurrence property
+            ## Gets the recurrence property value. The recurrence pattern for the task.
             ## @return a patterned_recurrence
             ## 
             def recurrence
                 return @recurrence
             end
             ## 
-            ## Sets the recurrence property value. The recurrence property
+            ## Sets the recurrence property value. The recurrence pattern for the task.
             ## @param value Value to set for the recurrence property.
             ## @return a void
             ## 
@@ -284,14 +284,14 @@ module MicrosoftGraphBeta
                 @recurrence = value
             end
             ## 
-            ## Gets the reminderDateTime property value. The reminderDateTime property
+            ## Gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
             ## @return a date_time_time_zone
             ## 
             def reminder_date_time
                 return @reminder_date_time
             end
             ## 
-            ## Sets the reminderDateTime property value. The reminderDateTime property
+            ## Sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
             ## @param value Value to set for the reminderDateTime property.
             ## @return a void
             ## 
@@ -299,14 +299,14 @@ module MicrosoftGraphBeta
                 @reminder_date_time = value
             end
             ## 
-            ## Gets the sensitivity property value. The sensitivity property
+            ## Gets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
             ## @return a sensitivity
             ## 
             def sensitivity
                 return @sensitivity
             end
             ## 
-            ## Sets the sensitivity property value. The sensitivity property
+            ## Sets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
             ## @param value Value to set for the sensitivity property.
             ## @return a void
             ## 
@@ -356,14 +356,14 @@ module MicrosoftGraphBeta
                 @single_value_extended_properties = value
             end
             ## 
-            ## Gets the startDateTime property value. The startDateTime property
+            ## Gets the startDateTime property value. The date in the specified time zone when the task is to begin.
             ## @return a date_time_time_zone
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The startDateTime property
+            ## Sets the startDateTime property value. The date in the specified time zone when the task is to begin.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -371,14 +371,14 @@ module MicrosoftGraphBeta
                 @start_date_time = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
             ## @return a task_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -386,14 +386,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. A brief description or title of the task.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. A brief description or title of the task.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 

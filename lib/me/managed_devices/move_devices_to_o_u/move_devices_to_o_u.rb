@@ -1,1 +1,0 @@
-require_relative 'move_devices_to_o_u_post_request_body'

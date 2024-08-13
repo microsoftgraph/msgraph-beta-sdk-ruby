@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The self property
             @self_escaped
             ## 
-            ## Instantiates a new onenoteEntityBaseModel and sets the default values.
+            ## Instantiates a new OnenoteEntityBaseModel and sets the default values.
             ## @return a void
             ## 
             def initialize()

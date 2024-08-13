@@ -13,31 +13,40 @@ module MicrosoftGraphBeta
             # The identifier of the X.509 certificate. Required.
             @identifier
             ## 
+            # The identifier of the certificate issuer.
+            @issuer_subject_identifier
+            ## 
             # The OdataType property
             @odata_type
+            ## 
+            # The identifier of the X.509 certificate policyOID.
+            @policy_oid_identifier
             ## 
             # The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
             @x509_certificate_authentication_mode
             ## 
-            # The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
+            # The possible values are: low, high, unknownFutureValue.
+            @x509_certificate_required_affinity_level
+            ## 
+            # The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
             @x509_certificate_rule_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new x509CertificateRule and sets the default values.
+            ## Instantiates a new X509CertificateRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,8 +68,11 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "identifier" => lambda {|n| @identifier = n.get_string_value() },
+                    "issuerSubjectIdentifier" => lambda {|n| @issuer_subject_identifier = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "policyOidIdentifier" => lambda {|n| @policy_oid_identifier = n.get_string_value() },
                     "x509CertificateAuthenticationMode" => lambda {|n| @x509_certificate_authentication_mode = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateAuthenticationMode) },
+                    "x509CertificateRequiredAffinityLevel" => lambda {|n| @x509_certificate_required_affinity_level = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateAffinityLevel) },
                     "x509CertificateRuleType" => lambda {|n| @x509_certificate_rule_type = n.get_enum_value(MicrosoftGraphBeta::Models::X509CertificateRuleType) },
                 }
             end
@@ -80,6 +92,21 @@ module MicrosoftGraphBeta
                 @identifier = value
             end
             ## 
+            ## Gets the issuerSubjectIdentifier property value. The identifier of the certificate issuer.
+            ## @return a string
+            ## 
+            def issuer_subject_identifier
+                return @issuer_subject_identifier
+            end
+            ## 
+            ## Sets the issuerSubjectIdentifier property value. The identifier of the certificate issuer.
+            ## @param value Value to set for the issuerSubjectIdentifier property.
+            ## @return a void
+            ## 
+            def issuer_subject_identifier=(value)
+                @issuer_subject_identifier = value
+            end
+            ## 
             ## Gets the @odata.type property value. The OdataType property
             ## @return a string
             ## 
@@ -95,6 +122,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the policyOidIdentifier property value. The identifier of the X.509 certificate policyOID.
+            ## @return a string
+            ## 
+            def policy_oid_identifier
+                return @policy_oid_identifier
+            end
+            ## 
+            ## Sets the policyOidIdentifier property value. The identifier of the X.509 certificate policyOID.
+            ## @param value Value to set for the policyOidIdentifier property.
+            ## @return a void
+            ## 
+            def policy_oid_identifier=(value)
+                @policy_oid_identifier = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -102,8 +144,11 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("identifier", @identifier)
+                writer.write_string_value("issuerSubjectIdentifier", @issuer_subject_identifier)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("policyOidIdentifier", @policy_oid_identifier)
                 writer.write_enum_value("x509CertificateAuthenticationMode", @x509_certificate_authentication_mode)
+                writer.write_enum_value("x509CertificateRequiredAffinityLevel", @x509_certificate_required_affinity_level)
                 writer.write_enum_value("x509CertificateRuleType", @x509_certificate_rule_type)
                 writer.write_additional_data(@additional_data)
             end
@@ -123,14 +168,29 @@ module MicrosoftGraphBeta
                 @x509_certificate_authentication_mode = value
             end
             ## 
-            ## Gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
+            ## Gets the x509CertificateRequiredAffinityLevel property value. The possible values are: low, high, unknownFutureValue.
+            ## @return a x509_certificate_affinity_level
+            ## 
+            def x509_certificate_required_affinity_level
+                return @x509_certificate_required_affinity_level
+            end
+            ## 
+            ## Sets the x509CertificateRequiredAffinityLevel property value. The possible values are: low, high, unknownFutureValue.
+            ## @param value Value to set for the x509CertificateRequiredAffinityLevel property.
+            ## @return a void
+            ## 
+            def x509_certificate_required_affinity_level=(value)
+                @x509_certificate_required_affinity_level = value
+            end
+            ## 
+            ## Gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
             ## @return a x509_certificate_rule_type
             ## 
             def x509_certificate_rule_type
                 return @x509_certificate_rule_type
             end
             ## 
-            ## Sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
+            ## Sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
             ## @param value Value to set for the x509CertificateRuleType property.
             ## @return a void
             ## 

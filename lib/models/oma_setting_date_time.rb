@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Value.
             @value
             ## 
-            ## Instantiates a new omaSettingDateTime and sets the default values.
+            ## Instantiates a new OmaSettingDateTime and sets the default values.
             ## @return a void
             ## 
             def initialize()

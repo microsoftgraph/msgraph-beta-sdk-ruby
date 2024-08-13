@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @active_peripherals = value
             end
             ## 
-            ## Instantiates a new teamworkDeviceActivity and sets the default values.
+            ## Instantiates a new TeamworkDeviceActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,6 +13,9 @@ module MicrosoftGraphBeta
             # Address of the company.
             @address
             ## 
+            # Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.
+            @company_code
+            ## 
             # Department Name within a company.
             @department
             ## 
@@ -28,18 +31,21 @@ module MicrosoftGraphBeta
             # Pronunciation guide for the company name.
             @pronunciation
             ## 
+            # The secondaryDepartment property
+            @secondary_department
+            ## 
             # Link to the company home page.
             @web_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +67,22 @@ module MicrosoftGraphBeta
                 @address = value
             end
             ## 
-            ## Instantiates a new companyDetail and sets the default values.
+            ## Gets the companyCode property value. Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.
+            ## @return a string
+            ## 
+            def company_code
+                return @company_code
+            end
+            ## 
+            ## Sets the companyCode property value. Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.
+            ## @param value Value to set for the companyCode property.
+            ## @return a void
+            ## 
+            def company_code=(value)
+                @company_code = value
+            end
+            ## 
+            ## Instantiates a new CompanyDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,11 +134,13 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "address" => lambda {|n| @address = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PhysicalAddress.create_from_discriminator_value(pn) }) },
+                    "companyCode" => lambda {|n| @company_code = n.get_string_value() },
                     "department" => lambda {|n| @department = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "officeLocation" => lambda {|n| @office_location = n.get_string_value() },
                     "pronunciation" => lambda {|n| @pronunciation = n.get_string_value() },
+                    "secondaryDepartment" => lambda {|n| @secondary_department = n.get_string_value() },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 }
             end
@@ -167,6 +190,21 @@ module MicrosoftGraphBeta
                 @pronunciation = value
             end
             ## 
+            ## Gets the secondaryDepartment property value. The secondaryDepartment property
+            ## @return a string
+            ## 
+            def secondary_department
+                return @secondary_department
+            end
+            ## 
+            ## Sets the secondaryDepartment property value. The secondaryDepartment property
+            ## @param value Value to set for the secondaryDepartment property.
+            ## @return a void
+            ## 
+            def secondary_department=(value)
+                @secondary_department = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -174,11 +212,13 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("address", @address)
+                writer.write_string_value("companyCode", @company_code)
                 writer.write_string_value("department", @department)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("officeLocation", @office_location)
                 writer.write_string_value("pronunciation", @pronunciation)
+                writer.write_string_value("secondaryDepartment", @secondary_department)
                 writer.write_string_value("webUrl", @web_url)
                 writer.write_additional_data(@additional_data)
             end

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class IosSingleSignOnExtension < MicrosoftGraphBeta::Models::SingleSignOnExtension
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosSingleSignOnExtension and sets the default values.
+            ## Instantiates a new IosSingleSignOnExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,16 +19,22 @@ module MicrosoftGraphBeta
             # The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
             @alternate_resource_url
             ## 
+            # Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
+            @connection_type
+            ## 
             # The display name for the Azure network connection.
             @display_name
             ## 
             # The healthCheckStatus property
             @health_check_status
             ## 
+            # Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            @health_check_status_detail
+            ## 
             # The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             @health_check_status_details
             ## 
-            # When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            # When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             @in_use
             ## 
             # The managedBy property
@@ -40,22 +46,25 @@ module MicrosoftGraphBeta
             # The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
             @resource_group_id
             ## 
+            # The scopeIds property
+            @scope_ids
+            ## 
             # The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
             @subnet_id
             ## 
-            # The ID of the target Azure subscription that’s associated with your tenant.
+            # The ID of the target Azure subscription associated with your tenant.
             @subscription_id
             ## 
             # The name of the target Azure subscription. Read-only.
             @subscription_name
             ## 
-            # Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            # Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.
             @type
             ## 
             # The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
             @virtual_network_id
             ## 
-            # Indicates resource location of the virtual target network. Read-only, computed value.
+            # Indicates the resource location of the virtual target network. Read-only, computed value.
             @virtual_network_location
             ## 
             ## Gets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -118,7 +127,22 @@ module MicrosoftGraphBeta
                 @alternate_resource_url = value
             end
             ## 
-            ## Instantiates a new cloudPcOnPremisesConnection and sets the default values.
+            ## Gets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
+            ## @return a cloud_pc_on_premises_connection_type
+            ## 
+            def connection_type
+                return @connection_type
+            end
+            ## 
+            ## Sets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
+            ## @param value Value to set for the connectionType property.
+            ## @return a void
+            ## 
+            def connection_type=(value)
+                @connection_type = value
+            end
+            ## 
+            ## Instantiates a new CloudPcOnPremisesConnection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -158,13 +182,16 @@ module MicrosoftGraphBeta
                     "adDomainPassword" => lambda {|n| @ad_domain_password = n.get_string_value() },
                     "adDomainUsername" => lambda {|n| @ad_domain_username = n.get_string_value() },
                     "alternateResourceUrl" => lambda {|n| @alternate_resource_url = n.get_string_value() },
+                    "connectionType" => lambda {|n| @connection_type = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionType) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "healthCheckStatus" => lambda {|n| @health_check_status = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatus) },
+                    "healthCheckStatusDetail" => lambda {|n| @health_check_status_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatusDetail.create_from_discriminator_value(pn) }) },
                     "healthCheckStatusDetails" => lambda {|n| @health_check_status_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcOnPremisesConnectionStatusDetails.create_from_discriminator_value(pn) }) },
                     "inUse" => lambda {|n| @in_use = n.get_boolean_value() },
-                    "managedBy" => lambda {|n| @managed_by = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcManagementService) },
+                    "managedBy" => lambda {|n| @managed_by = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcManagementService) },
                     "organizationalUnit" => lambda {|n| @organizational_unit = n.get_string_value() },
                     "resourceGroupId" => lambda {|n| @resource_group_id = n.get_string_value() },
+                    "scopeIds" => lambda {|n| @scope_ids = n.get_collection_of_primitive_values(String) },
                     "subnetId" => lambda {|n| @subnet_id = n.get_string_value() },
                     "subscriptionId" => lambda {|n| @subscription_id = n.get_string_value() },
                     "subscriptionName" => lambda {|n| @subscription_name = n.get_string_value() },
@@ -189,6 +216,21 @@ module MicrosoftGraphBeta
                 @health_check_status = value
             end
             ## 
+            ## Gets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## @return a cloud_pc_on_premises_connection_status_detail
+            ## 
+            def health_check_status_detail
+                return @health_check_status_detail
+            end
+            ## 
+            ## Sets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## @param value Value to set for the healthCheckStatusDetail property.
+            ## @return a void
+            ## 
+            def health_check_status_detail=(value)
+                @health_check_status_detail = value
+            end
+            ## 
             ## Gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             ## @return a cloud_pc_on_premises_connection_status_details
             ## 
@@ -204,14 +246,14 @@ module MicrosoftGraphBeta
                 @health_check_status_details = value
             end
             ## 
-            ## Gets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## Gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             ## @return a boolean
             ## 
             def in_use
                 return @in_use
             end
             ## 
-            ## Sets the inUse property value. When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+            ## Sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
             ## @param value Value to set for the inUse property.
             ## @return a void
             ## 
@@ -264,6 +306,21 @@ module MicrosoftGraphBeta
                 @resource_group_id = value
             end
             ## 
+            ## Gets the scopeIds property value. The scopeIds property
+            ## @return a string
+            ## 
+            def scope_ids
+                return @scope_ids
+            end
+            ## 
+            ## Sets the scopeIds property value. The scopeIds property
+            ## @param value Value to set for the scopeIds property.
+            ## @return a void
+            ## 
+            def scope_ids=(value)
+                @scope_ids = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -275,13 +332,16 @@ module MicrosoftGraphBeta
                 writer.write_string_value("adDomainPassword", @ad_domain_password)
                 writer.write_string_value("adDomainUsername", @ad_domain_username)
                 writer.write_string_value("alternateResourceUrl", @alternate_resource_url)
+                writer.write_enum_value("connectionType", @connection_type)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_enum_value("healthCheckStatus", @health_check_status)
+                writer.write_object_value("healthCheckStatusDetail", @health_check_status_detail)
                 writer.write_object_value("healthCheckStatusDetails", @health_check_status_details)
                 writer.write_boolean_value("inUse", @in_use)
                 writer.write_enum_value("managedBy", @managed_by)
                 writer.write_string_value("organizationalUnit", @organizational_unit)
                 writer.write_string_value("resourceGroupId", @resource_group_id)
+                writer.write_collection_of_primitive_values("scopeIds", @scope_ids)
                 writer.write_string_value("subnetId", @subnet_id)
                 writer.write_string_value("subscriptionId", @subscription_id)
                 writer.write_string_value("subscriptionName", @subscription_name)
@@ -305,14 +365,14 @@ module MicrosoftGraphBeta
                 @subnet_id = value
             end
             ## 
-            ## Gets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
+            ## Gets the subscriptionId property value. The ID of the target Azure subscription associated with your tenant.
             ## @return a string
             ## 
             def subscription_id
                 return @subscription_id
             end
             ## 
-            ## Sets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
+            ## Sets the subscriptionId property value. The ID of the target Azure subscription associated with your tenant.
             ## @param value Value to set for the subscriptionId property.
             ## @return a void
             ## 
@@ -335,14 +395,14 @@ module MicrosoftGraphBeta
                 @subscription_name = value
             end
             ## 
-            ## Gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            ## Gets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.
             ## @return a cloud_pc_on_premises_connection_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+            ## Sets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -365,14 +425,14 @@ module MicrosoftGraphBeta
                 @virtual_network_id = value
             end
             ## 
-            ## Gets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
+            ## Gets the virtualNetworkLocation property value. Indicates the resource location of the virtual target network. Read-only, computed value.
             ## @return a string
             ## 
             def virtual_network_location
                 return @virtual_network_location
             end
             ## 
-            ## Sets the virtualNetworkLocation property value. Indicates resource location of the virtual target network. Read-only, computed value.
+            ## Sets the virtualNetworkLocation property value. Indicates the resource location of the virtual target network. Read-only, computed value.
             ## @param value Value to set for the virtualNetworkLocation property.
             ## @return a void
             ## 

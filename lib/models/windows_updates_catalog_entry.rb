@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @release_date_time
             ## 
-            ## Instantiates a new windowsUpdatesCatalogEntry and sets the default values.
+            ## Instantiates a new WindowsUpdatesCatalogEntry and sets the default values.
             ## @return a void
             ## 
             def initialize()

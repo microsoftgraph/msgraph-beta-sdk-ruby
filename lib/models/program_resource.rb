@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Type of the resource, indicating whether it is a group or an app.
             @type
             ## 
-            ## Instantiates a new programResource and sets the default values.
+            ## Instantiates a new ProgramResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
