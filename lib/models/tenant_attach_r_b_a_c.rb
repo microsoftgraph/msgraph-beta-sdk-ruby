@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class TenantAttachRBAC < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new tenantAttachRBAC and sets the default values.
+            ## Instantiates a new TenantAttachRBAC and sets the default values.
             ## @return a void
             ## 
             def initialize()

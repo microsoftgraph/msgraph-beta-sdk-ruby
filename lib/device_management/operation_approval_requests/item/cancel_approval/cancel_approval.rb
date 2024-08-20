@@ -1,0 +1,2 @@
+require_relative 'cancel_approval_post_request_body'
+require_relative 'cancel_approval_post_response'

@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @actions = value
             end
             ## 
-            ## Instantiates a new securityApplyLabelAction and sets the default values.
+            ## Instantiates a new SecurityApplyLabelAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

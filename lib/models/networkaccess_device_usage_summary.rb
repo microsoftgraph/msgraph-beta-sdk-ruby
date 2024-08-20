@@ -7,29 +7,29 @@ module MicrosoftGraphBeta
         class NetworkaccessDeviceUsageSummary
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.
+            # The number of distinct device IDs between the discovery pivot time and the end of the reporting period.
             @active_device_count
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The number of distinct device IDs havn't seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.
+            # The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.
             @inactive_device_count
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The number of distinct device IDs in the time frame between startDateTime and endDateTime.
+            # The total number of distinct device IDs that were seen during the reporting period.
             @total_device_count
             ## 
-            ## Gets the activeDeviceCount property value. The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.
+            ## Gets the activeDeviceCount property value. The number of distinct device IDs between the discovery pivot time and the end of the reporting period.
             ## @return a integer
             ## 
             def active_device_count
                 return @active_device_count
             end
             ## 
-            ## Sets the activeDeviceCount property value. The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.
+            ## Sets the activeDeviceCount property value. The number of distinct device IDs between the discovery pivot time and the end of the reporting period.
             ## @param value Value to set for the activeDeviceCount property.
             ## @return a void
             ## 
@@ -37,22 +37,22 @@ module MicrosoftGraphBeta
                 @active_device_count = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new networkaccessDeviceUsageSummary and sets the default values.
+            ## Instantiates a new NetworkaccessDeviceUsageSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the inactiveDeviceCount property value. The number of distinct device IDs havn't seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.
+            ## Gets the inactiveDeviceCount property value. The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.
             ## @return a integer
             ## 
             def inactive_device_count
                 return @inactive_device_count
             end
             ## 
-            ## Sets the inactiveDeviceCount property value. The number of distinct device IDs havn't seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.
+            ## Sets the inactiveDeviceCount property value. The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.
             ## @param value Value to set for the inactiveDeviceCount property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the totalDeviceCount property value. The number of distinct device IDs in the time frame between startDateTime and endDateTime.
+            ## Gets the totalDeviceCount property value. The total number of distinct device IDs that were seen during the reporting period.
             ## @return a integer
             ## 
             def total_device_count
                 return @total_device_count
             end
             ## 
-            ## Sets the totalDeviceCount property value. The number of distinct device IDs in the time frame between startDateTime and endDateTime.
+            ## Sets the totalDeviceCount property value. The total number of distinct device IDs that were seen during the reporting period.
             ## @param value Value to set for the totalDeviceCount property.
             ## @return a void
             ## 

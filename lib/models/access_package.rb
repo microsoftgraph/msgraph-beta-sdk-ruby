@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The groups whose members are ineligible to be assigned this access package.
             @incompatible_groups
             ## 
-            # Whether the access package is hidden from the requestor.
+            # Indicates whether the access package is hidden from the requestor.
             @is_hidden
             ## 
             # Indicates whether role scopes are visible.
@@ -52,6 +52,9 @@ module MicrosoftGraphBeta
             ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
+            ## 
+            # The uniqueName property
+            @unique_name
             ## 
             ## Gets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
             ## @return a access_package_assignment_policy
@@ -128,7 +131,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new accessPackage and sets the default values.
+            ## Instantiates a new AccessPackage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -224,6 +227,7 @@ module MicrosoftGraphBeta
                     "isRoleScopesVisible" => lambda {|n| @is_role_scopes_visible = n.get_boolean_value() },
                     "modifiedBy" => lambda {|n| @modified_by = n.get_string_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "uniqueName" => lambda {|n| @unique_name = n.get_string_value() },
                 })
             end
             ## 
@@ -257,14 +261,14 @@ module MicrosoftGraphBeta
                 @incompatible_groups = value
             end
             ## 
-            ## Gets the isHidden property value. Whether the access package is hidden from the requestor.
+            ## Gets the isHidden property value. Indicates whether the access package is hidden from the requestor.
             ## @return a boolean
             ## 
             def is_hidden
                 return @is_hidden
             end
             ## 
-            ## Sets the isHidden property value. Whether the access package is hidden from the requestor.
+            ## Sets the isHidden property value. Indicates whether the access package is hidden from the requestor.
             ## @param value Value to set for the isHidden property.
             ## @return a void
             ## 
@@ -339,6 +343,22 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("isRoleScopesVisible", @is_role_scopes_visible)
                 writer.write_string_value("modifiedBy", @modified_by)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_string_value("uniqueName", @unique_name)
+            end
+            ## 
+            ## Gets the uniqueName property value. The uniqueName property
+            ## @return a string
+            ## 
+            def unique_name
+                return @unique_name
+            end
+            ## 
+            ## Sets the uniqueName property value. The uniqueName property
+            ## @param value Value to set for the uniqueName property.
+            ## @return a void
+            ## 
+            def unique_name=(value)
+                @unique_name = value
             end
         end
     end

@@ -7,17 +7,17 @@ module MicrosoftGraphBeta
         class AccessReviewInstanceDecisionItemServicePrincipalResource < MicrosoftGraphBeta::Models::AccessReviewInstanceDecisionItemResource
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The globally unique identifier of the application to which access has been granted.
+            # The globally unique identifier of the application to which access is granted.
             @app_id
             ## 
-            ## Gets the appId property value. The globally unique identifier of the application to which access has been granted.
+            ## Gets the appId property value. The globally unique identifier of the application to which access is granted.
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The globally unique identifier of the application to which access has been granted.
+            ## Sets the appId property value. The globally unique identifier of the application to which access is granted.
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

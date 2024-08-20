@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
             # User name
             @user_name
             ## 
-            ## Instantiates a new restrictedAppsViolation and sets the default values.
+            ## Instantiates a new RestrictedAppsViolation and sets the default values.
             ## @return a void
             ## 
             def initialize()

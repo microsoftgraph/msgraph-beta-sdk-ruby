@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @connect_when_network_name_is_hidden = value
             end
             ## 
-            ## Instantiates a new androidWorkProfileWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

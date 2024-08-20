@@ -82,7 +82,7 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Instantiates a new windowsDriverUpdateInventory and sets the default values.
+            ## Instantiates a new WindowsDriverUpdateInventory and sets the default values.
             ## @return a void
             ## 
             def initialize()

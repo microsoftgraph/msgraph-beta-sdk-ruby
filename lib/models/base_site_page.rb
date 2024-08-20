@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Title of the sitePage.
             @title
             ## 
-            ## Instantiates a new baseSitePage and sets the default values.
+            ## Instantiates a new BaseSitePage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,8 +34,12 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.newsLinkPage"
+                            return NewsLinkPage.new
                         when "#microsoft.graph.sitePage"
                             return SitePage.new
+                        when "#microsoft.graph.videoNewsLinkPage"
+                            return VideoNewsLinkPage.new
                     end
                 end
                 return BaseSitePage.new

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AzureADWindowsAutopilotDeploymentProfile < MicrosoftGraphBeta::Models::WindowsAutopilotDeploymentProfile
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new azureADWindowsAutopilotDeploymentProfile and sets the default values.
+            ## Instantiates a new AzureADWindowsAutopilotDeploymentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

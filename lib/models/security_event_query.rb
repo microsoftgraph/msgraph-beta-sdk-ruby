@@ -13,28 +13,28 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The query property
+            # Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
             @query
             ## 
-            # The queryType property
+            # Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
             @query_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityEventQuery and sets the default values.
+            ## Instantiates a new SecurityEventQuery and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the query property value. The query property
+            ## Gets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
             ## @return a string
             ## 
             def query
                 return @query
             end
             ## 
-            ## Sets the query property value. The query property
+            ## Sets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
             ## @param value Value to set for the query property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraphBeta
                 @query = value
             end
             ## 
-            ## Gets the queryType property value. The queryType property
+            ## Gets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
             ## @return a security_query_type
             ## 
             def query_type
                 return @query_type
             end
             ## 
-            ## Sets the queryType property value. The queryType property
+            ## Sets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
             ## @param value Value to set for the queryType property.
             ## @return a void
             ## 

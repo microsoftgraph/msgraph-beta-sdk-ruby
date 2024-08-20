@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # If present, represents a tag @mentioned in a team message.
             @tag
             ## 
-            ## Instantiates a new chatMessageMentionedIdentitySet and sets the default values.
+            ## Instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()

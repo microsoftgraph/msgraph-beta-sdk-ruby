@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class ServiceProvisioningXmlError < MicrosoftGraphBeta::Models::ServiceProvisioningError
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Error Information published by the Federated Service as an xml string .
+            # Error Information published by the Federated Service as an xml string.
             @error_detail
             ## 
-            ## Instantiates a new serviceProvisioningXmlError and sets the default values.
+            ## Instantiates a new ServiceProvisioningXmlError and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return ServiceProvisioningXmlError.new
             end
             ## 
-            ## Gets the errorDetail property value. Error Information published by the Federated Service as an xml string .
+            ## Gets the errorDetail property value. Error Information published by the Federated Service as an xml string.
             ## @return a string
             ## 
             def error_detail
                 return @error_detail
             end
             ## 
-            ## Sets the errorDetail property value. Error Information published by the Federated Service as an xml string .
+            ## Sets the errorDetail property value. Error Information published by the Federated Service as an xml string.
             ## @param value Value to set for the errorDetail property.
             ## @return a void
             ## 
