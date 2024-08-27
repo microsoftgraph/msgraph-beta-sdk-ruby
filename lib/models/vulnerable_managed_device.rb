@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # The Intune managed device ID.
             @managed_device_id
             ## 
-            ## Instantiates a new vulnerableManagedDevice and sets the default values.
+            ## Instantiates a new VulnerableManagedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

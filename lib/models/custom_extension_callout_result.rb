@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @callout_date_time = value
             end
             ## 
-            ## Instantiates a new customExtensionCalloutResult and sets the default values.
+            ## Instantiates a new CustomExtensionCalloutResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

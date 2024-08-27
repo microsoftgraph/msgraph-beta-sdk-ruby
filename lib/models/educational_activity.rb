@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
                 @completion_month_year = value
             end
             ## 
-            ## Instantiates a new educationalActivity and sets the default values.
+            ## Instantiates a new EducationalActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

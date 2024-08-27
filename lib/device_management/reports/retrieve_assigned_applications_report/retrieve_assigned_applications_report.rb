@@ -1,0 +1,1 @@
+require_relative 'retrieve_assigned_applications_report_post_request_body'

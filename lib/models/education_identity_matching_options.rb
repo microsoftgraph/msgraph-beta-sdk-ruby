@@ -22,18 +22,18 @@ module MicrosoftGraphBeta
             # The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
             @target_domain
             ## 
-            # The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            # The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
             @target_property_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new educationIdentityMatchingOptions and sets the default values.
+            ## Instantiates a new EducationIdentityMatchingOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @target_domain = value
             end
             ## 
-            ## Gets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            ## Gets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
             ## @return a string
             ## 
             def target_property_name
                 return @target_property_name
             end
             ## 
-            ## Sets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            ## Sets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
             ## @param value Value to set for the targetPropertyName property.
             ## @return a void
             ## 

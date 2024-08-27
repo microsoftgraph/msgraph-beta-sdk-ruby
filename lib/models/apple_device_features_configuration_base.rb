@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @air_print_destinations = value
             end
             ## 
-            ## Instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
+            ## Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

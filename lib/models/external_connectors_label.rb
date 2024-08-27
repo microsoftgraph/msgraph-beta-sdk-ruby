@@ -11,9 +11,9 @@ module MicrosoftGraphBeta
             FileName: :FileName,
             FileExtension: :FileExtension,
             UnknownFutureValue: :UnknownFutureValue,
-            IconUrl: :IconUrl,
             ContainerName: :ContainerName,
             ContainerUrl: :ContainerUrl,
+            IconUrl: :IconUrl,
         }
     end
 end

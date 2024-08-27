@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # The specific date and time that the presentation request will expire and a new one will need to be generated.
             @expiry_date_time
             ## 
-            ## Instantiates a new verifiableCredentialRetrieved and sets the default values.
+            ## Instantiates a new VerifiableCredentialRetrieved and sets the default values.
             ## @return a void
             ## 
             def initialize()

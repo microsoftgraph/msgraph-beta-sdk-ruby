@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class TargetUserSponsors < MicrosoftGraphBeta::Models::UserSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new targetUserSponsors and sets the default values.
+            ## Instantiates a new TargetUserSponsors and sets the default values.
             ## @return a void
             ## 
             def initialize()

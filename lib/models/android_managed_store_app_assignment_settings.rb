@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @auto_update_mode = value
             end
             ## 
-            ## Instantiates a new androidManagedStoreAppAssignmentSettings and sets the default values.
+            ## Instantiates a new AndroidManagedStoreAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

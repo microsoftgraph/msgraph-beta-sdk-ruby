@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Minimum number of simple settings in the collection
             @minimum_count
             ## 
-            ## Instantiates a new deviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
