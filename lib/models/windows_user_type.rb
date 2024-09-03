@@ -3,6 +3,7 @@ module MicrosoftGraphBeta
         WindowsUserType = {
             Administrator: :Administrator,
             Standard: :Standard,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

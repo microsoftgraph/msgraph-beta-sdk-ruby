@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The name of the local group that will be locked to this kiosk configuration
             @group_name
             ## 
-            ## Instantiates a new windowsKioskLocalGroup and sets the default values.
+            ## Instantiates a new WindowsKioskLocalGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

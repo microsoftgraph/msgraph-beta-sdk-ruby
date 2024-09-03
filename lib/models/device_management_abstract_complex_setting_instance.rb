@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The values that make up the complex setting
             @value
             ## 
-            ## Instantiates a new deviceManagementAbstractComplexSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

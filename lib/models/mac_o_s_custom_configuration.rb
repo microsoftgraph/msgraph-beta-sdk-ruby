@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # Name that is displayed to the user.
             @payload_name
             ## 
-            ## Instantiates a new macOSCustomConfiguration and sets the default values.
+            ## Instantiates a new MacOSCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

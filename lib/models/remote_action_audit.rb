@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # The actionState property
             @action_state
             ## 
+            # BulkAction ID
+            @bulk_device_action_id
+            ## 
             # Intune device name.
             @device_display_name
             ## 
@@ -67,7 +70,22 @@ module MicrosoftGraphBeta
                 @action_state = value
             end
             ## 
-            ## Instantiates a new remoteActionAudit and sets the default values.
+            ## Gets the bulkDeviceActionId property value. BulkAction ID
+            ## @return a string
+            ## 
+            def bulk_device_action_id
+                return @bulk_device_action_id
+            end
+            ## 
+            ## Sets the bulkDeviceActionId property value. BulkAction ID
+            ## @param value Value to set for the bulkDeviceActionId property.
+            ## @return a void
+            ## 
+            def bulk_device_action_id=(value)
+                @bulk_device_action_id = value
+            end
+            ## 
+            ## Instantiates a new RemoteActionAudit and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -135,6 +153,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraphBeta::Models::RemoteAction) },
                     "actionState" => lambda {|n| @action_state = n.get_enum_value(MicrosoftGraphBeta::Models::ActionState) },
+                    "bulkDeviceActionId" => lambda {|n| @bulk_device_action_id = n.get_string_value() },
                     "deviceDisplayName" => lambda {|n| @device_display_name = n.get_string_value() },
                     "deviceIMEI" => lambda {|n| @device_i_m_e_i = n.get_string_value() },
                     "deviceOwnerUserPrincipalName" => lambda {|n| @device_owner_user_principal_name = n.get_string_value() },
@@ -199,6 +218,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_enum_value("action", @action)
                 writer.write_enum_value("actionState", @action_state)
+                writer.write_string_value("bulkDeviceActionId", @bulk_device_action_id)
                 writer.write_string_value("deviceDisplayName", @device_display_name)
                 writer.write_string_value("deviceIMEI", @device_i_m_e_i)
                 writer.write_string_value("deviceOwnerUserPrincipalName", @device_owner_user_principal_name)

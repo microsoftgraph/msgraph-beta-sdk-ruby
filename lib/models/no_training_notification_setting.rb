@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class NoTrainingNotificationSetting < MicrosoftGraphBeta::Models::EndUserNotificationSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The simulationNotification property
+            # The notification for the user who is part of the simulation.
             @simulation_notification
             ## 
-            ## Instantiates a new noTrainingNotificationSetting and sets the default values.
+            ## Instantiates a new NoTrainingNotificationSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("simulationNotification", @simulation_notification)
             end
             ## 
-            ## Gets the simulationNotification property value. The simulationNotification property
+            ## Gets the simulationNotification property value. The notification for the user who is part of the simulation.
             ## @return a simulation_notification
             ## 
             def simulation_notification
                 return @simulation_notification
             end
             ## 
-            ## Sets the simulationNotification property value. The simulationNotification property
+            ## Sets the simulationNotification property value. The notification for the user who is part of the simulation.
             ## @param value Value to set for the simulationNotification property.
             ## @return a void
             ## 

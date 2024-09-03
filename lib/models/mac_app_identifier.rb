@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new macAppIdentifier and sets the default values.
+            ## Instantiates a new MacAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()

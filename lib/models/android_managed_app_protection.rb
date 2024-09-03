@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # List of device models allowed, as a string, for the managed app to work.
             @allowed_android_device_models
             ## 
-            # Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+            # Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
             @app_action_if_account_is_clocked_out
             ## 
             # An admin initiated action to be applied on a managed app.
@@ -33,16 +33,16 @@ module MicrosoftGraphBeta
             # An admin initiated action to be applied on a managed app.
             @app_action_if_device_lock_not_set
             ## 
-            # If the device does not have a passcode of high complexity or higher, trigger the stored action.
+            # If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             @app_action_if_device_passcode_complexity_less_than_high
             ## 
-            # If the device does not have a passcode of low complexity or higher, trigger the stored action.
+            # If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             @app_action_if_device_passcode_complexity_less_than_low
             ## 
-            # If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+            # If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             @app_action_if_device_passcode_complexity_less_than_medium
             ## 
-            # Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+            # Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.
             @app_action_if_samsung_knox_attestation_required
             ## 
             # If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
@@ -95,6 +95,12 @@ module MicrosoftGraphBeta
             ## 
             # Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
             @keyboards_restricted
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            @messaging_redirect_app_display_name
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            @messaging_redirect_app_package_id
             ## 
             # Minimum version of the Company portal that must be installed on the device or app access will be blocked
             @minimum_required_company_portal_version
@@ -168,14 +174,14 @@ module MicrosoftGraphBeta
                 @allowed_android_device_models = value
             end
             ## 
-            ## Gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+            ## Gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
             ## @return a managed_app_remediation_action
             ## 
             def app_action_if_account_is_clocked_out
                 return @app_action_if_account_is_clocked_out
             end
             ## 
-            ## Sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+            ## Sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
             ## @param value Value to set for the appActionIfAccountIsClockedOut property.
             ## @return a void
             ## 
@@ -258,14 +264,14 @@ module MicrosoftGraphBeta
                 @app_action_if_device_lock_not_set = value
             end
             ## 
-            ## Gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+            ## Gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @return a managed_app_remediation_action
             ## 
             def app_action_if_device_passcode_complexity_less_than_high
                 return @app_action_if_device_passcode_complexity_less_than_high
             end
             ## 
-            ## Sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+            ## Sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @param value Value to set for the appActionIfDevicePasscodeComplexityLessThanHigh property.
             ## @return a void
             ## 
@@ -273,14 +279,14 @@ module MicrosoftGraphBeta
                 @app_action_if_device_passcode_complexity_less_than_high = value
             end
             ## 
-            ## Gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+            ## Gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @return a managed_app_remediation_action
             ## 
             def app_action_if_device_passcode_complexity_less_than_low
                 return @app_action_if_device_passcode_complexity_less_than_low
             end
             ## 
-            ## Sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+            ## Sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @param value Value to set for the appActionIfDevicePasscodeComplexityLessThanLow property.
             ## @return a void
             ## 
@@ -288,14 +294,14 @@ module MicrosoftGraphBeta
                 @app_action_if_device_passcode_complexity_less_than_low = value
             end
             ## 
-            ## Gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+            ## Gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @return a managed_app_remediation_action
             ## 
             def app_action_if_device_passcode_complexity_less_than_medium
                 return @app_action_if_device_passcode_complexity_less_than_medium
             end
             ## 
-            ## Sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+            ## Sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
             ## @param value Value to set for the appActionIfDevicePasscodeComplexityLessThanMedium property.
             ## @return a void
             ## 
@@ -303,14 +309,14 @@ module MicrosoftGraphBeta
                 @app_action_if_device_passcode_complexity_less_than_medium = value
             end
             ## 
-            ## Gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+            ## Gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.
             ## @return a managed_app_remediation_action
             ## 
             def app_action_if_samsung_knox_attestation_required
                 return @app_action_if_samsung_knox_attestation_required
             end
             ## 
-            ## Sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+            ## Sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.
             ## @param value Value to set for the appActionIfSamsungKnoxAttestationRequired property.
             ## @return a void
             ## 
@@ -393,7 +399,7 @@ module MicrosoftGraphBeta
                 @connect_to_vpn_on_launch = value
             end
             ## 
-            ## Instantiates a new androidManagedAppProtection and sets the default values.
+            ## Instantiates a new AndroidManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -609,6 +615,8 @@ module MicrosoftGraphBeta
                     "exemptedAppPackages" => lambda {|n| @exempted_app_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
                     "fingerprintAndBiometricEnabled" => lambda {|n| @fingerprint_and_biometric_enabled = n.get_boolean_value() },
                     "keyboardsRestricted" => lambda {|n| @keyboards_restricted = n.get_boolean_value() },
+                    "messagingRedirectAppDisplayName" => lambda {|n| @messaging_redirect_app_display_name = n.get_string_value() },
+                    "messagingRedirectAppPackageId" => lambda {|n| @messaging_redirect_app_package_id = n.get_string_value() },
                     "minimumRequiredCompanyPortalVersion" => lambda {|n| @minimum_required_company_portal_version = n.get_string_value() },
                     "minimumRequiredPatchVersion" => lambda {|n| @minimum_required_patch_version = n.get_string_value() },
                     "minimumWarningCompanyPortalVersion" => lambda {|n| @minimum_warning_company_portal_version = n.get_string_value() },
@@ -639,6 +647,36 @@ module MicrosoftGraphBeta
             ## 
             def keyboards_restricted=(value)
                 @keyboards_restricted = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_display_name
+                return @messaging_redirect_app_display_name
+            end
+            ## 
+            ## Sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppDisplayName property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_display_name=(value)
+                @messaging_redirect_app_display_name = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_package_id
+                return @messaging_redirect_app_package_id
+            end
+            ## 
+            ## Sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppPackageId property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_package_id=(value)
+                @messaging_redirect_app_package_id = value
             end
             ## 
             ## Gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -857,6 +895,8 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("exemptedAppPackages", @exempted_app_packages)
                 writer.write_boolean_value("fingerprintAndBiometricEnabled", @fingerprint_and_biometric_enabled)
                 writer.write_boolean_value("keyboardsRestricted", @keyboards_restricted)
+                writer.write_string_value("messagingRedirectAppDisplayName", @messaging_redirect_app_display_name)
+                writer.write_string_value("messagingRedirectAppPackageId", @messaging_redirect_app_package_id)
                 writer.write_string_value("minimumRequiredCompanyPortalVersion", @minimum_required_company_portal_version)
                 writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version)
                 writer.write_string_value("minimumWarningCompanyPortalVersion", @minimum_warning_company_portal_version)

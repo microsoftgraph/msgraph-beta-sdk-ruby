@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.
             @redirect_reason
             ## 
-            ## Instantiates a new deviceManagementConfigurationRedirectSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationRedirectSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

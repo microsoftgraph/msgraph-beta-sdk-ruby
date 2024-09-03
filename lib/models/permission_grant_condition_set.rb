@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
             @client_application_publisher_ids
             ## 
-            # A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            # A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             @client_application_tenant_ids
             ## 
             # Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
@@ -33,6 +33,9 @@ module MicrosoftGraphBeta
             ## 
             # The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
             @resource_application
+            ## 
+            # The scopeSensitivityLabels property
+            @scope_sensitivity_labels
             ## 
             ## Gets the certifiedClientApplicationsOnly property value. Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
             ## @return a boolean
@@ -79,14 +82,14 @@ module MicrosoftGraphBeta
                 @client_application_publisher_ids = value
             end
             ## 
-            ## Gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            ## Gets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             ## @return a string
             ## 
             def client_application_tenant_ids
                 return @client_application_tenant_ids
             end
             ## 
-            ## Sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+            ## Sets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
             ## @param value Value to set for the clientApplicationTenantIds property.
             ## @return a void
             ## 
@@ -109,7 +112,7 @@ module MicrosoftGraphBeta
                 @client_applications_from_verified_publisher_only = value
             end
             ## 
-            ## Instantiates a new permissionGrantConditionSet and sets the default values.
+            ## Instantiates a new PermissionGrantConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -139,6 +142,7 @@ module MicrosoftGraphBeta
                     "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraphBeta::Models::PermissionType) },
                     "permissions" => lambda {|n| @permissions = n.get_collection_of_primitive_values(String) },
                     "resourceApplication" => lambda {|n| @resource_application = n.get_string_value() },
+                    "scopeSensitivityLabels" => lambda {|n| @scope_sensitivity_labels = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ScopeSensitivityLabels.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -202,6 +206,21 @@ module MicrosoftGraphBeta
                 @resource_application = value
             end
             ## 
+            ## Gets the scopeSensitivityLabels property value. The scopeSensitivityLabels property
+            ## @return a scope_sensitivity_labels
+            ## 
+            def scope_sensitivity_labels
+                return @scope_sensitivity_labels
+            end
+            ## 
+            ## Sets the scopeSensitivityLabels property value. The scopeSensitivityLabels property
+            ## @param value Value to set for the scopeSensitivityLabels property.
+            ## @return a void
+            ## 
+            def scope_sensitivity_labels=(value)
+                @scope_sensitivity_labels = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -218,6 +237,7 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("permissionType", @permission_type)
                 writer.write_collection_of_primitive_values("permissions", @permissions)
                 writer.write_string_value("resourceApplication", @resource_application)
+                writer.write_object_value("scopeSensitivityLabels", @scope_sensitivity_labels)
             end
         end
     end

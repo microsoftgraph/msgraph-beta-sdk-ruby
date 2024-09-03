@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @classification = value
             end
             ## 
-            ## Instantiates a new windowsQualityUpdateCatalogItem and sets the default values.
+            ## Instantiates a new WindowsQualityUpdateCatalogItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

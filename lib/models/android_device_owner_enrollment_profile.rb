@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The enrollment token type for an enrollment profile.
             @enrollment_token_type
             ## 
-            # Total number of AOSP devices that have enrolled using the current token.
+            # Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
             @enrollment_token_usage_count
             ## 
             # Boolean indicating if this profile is an Android AOSP for Teams device profile.
@@ -103,7 +103,7 @@ module MicrosoftGraphBeta
                 @configure_wifi = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -209,14 +209,14 @@ module MicrosoftGraphBeta
                 @enrollment_token_type = value
             end
             ## 
-            ## Gets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
+            ## Gets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
             ## @return a integer
             ## 
             def enrollment_token_usage_count
                 return @enrollment_token_usage_count
             end
             ## 
-            ## Sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
+            ## Sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
             ## @param value Value to set for the enrollmentTokenUsageCount property.
             ## @return a void
             ## 

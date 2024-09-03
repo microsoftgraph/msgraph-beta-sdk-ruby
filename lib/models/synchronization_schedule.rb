@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @expiration
             ## 
-            # The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
+            # The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.
             @interval
             ## 
             # The OdataType property
@@ -23,22 +23,22 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new synchronizationSchedule and sets the default values.
+            ## Instantiates a new SynchronizationSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
+            ## Gets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def interval
                 return @interval
             end
             ## 
-            ## Sets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
+            ## Sets the interval property value. The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.
             ## @param value Value to set for the interval property.
             ## @return a void
             ## 

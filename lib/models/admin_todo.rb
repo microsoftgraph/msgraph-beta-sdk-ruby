@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The settings property
             @settings
             ## 
-            ## Instantiates a new adminTodo and sets the default values.
+            ## Instantiates a new AdminTodo and sets the default values.
             ## @return a void
             ## 
             def initialize()
