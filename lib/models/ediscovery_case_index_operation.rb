@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class EdiscoveryCaseIndexOperation < MicrosoftGraphBeta::Models::EdiscoveryCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ediscoveryCaseIndexOperation and sets the default values.
+            ## Instantiates a new EdiscoveryCaseIndexOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

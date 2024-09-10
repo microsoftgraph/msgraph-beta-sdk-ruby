@@ -29,7 +29,7 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Instantiates a new securityPolicyBase and sets the default values.
+            ## Instantiates a new SecurityPolicyBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

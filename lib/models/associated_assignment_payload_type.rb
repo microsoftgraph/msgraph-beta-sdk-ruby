@@ -15,6 +15,7 @@ module MicrosoftGraphBeta
             ResourceAccessPolicy: :ResourceAccessPolicy,
             Win32app: :Win32app,
             DeviceManagmentConfigurationAndCompliancePolicy: :DeviceManagmentConfigurationAndCompliancePolicy,
+            HardwareConfiguration: :HardwareConfiguration,
         }
     end
 end

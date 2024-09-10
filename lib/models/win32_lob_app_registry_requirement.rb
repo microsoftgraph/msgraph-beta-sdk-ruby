@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @check32_bit_on64_system = value
             end
             ## 
-            ## Instantiates a new win32LobAppRegistryRequirement and sets the default values.
+            ## Instantiates a new Win32LobAppRegistryRequirement and sets the default values.
             ## @return a void
             ## 
             def initialize()

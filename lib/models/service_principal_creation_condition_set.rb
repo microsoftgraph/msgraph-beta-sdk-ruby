@@ -97,7 +97,7 @@ module MicrosoftGraphBeta
                 @certified_applications_only = value
             end
             ## 
-            ## Instantiates a new servicePrincipalCreationConditionSet and sets the default values.
+            ## Instantiates a new ServicePrincipalCreationConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

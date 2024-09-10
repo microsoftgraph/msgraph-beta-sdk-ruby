@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The user principal name that is being reported on a device
             @user_principal_name
             ## 
-            ## Instantiates a new deviceManagementIntentDeviceState and sets the default values.
+            ## Instantiates a new DeviceManagementIntentDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,29 +7,29 @@ module MicrosoftGraphBeta
         class CustomTrainingSetting < MicrosoftGraphBeta::Models::TrainingSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The assignedTo property
+            # A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             @assigned_to
             ## 
-            # The description property
+            # The description of the custom training setting.
             @description
             ## 
-            # The displayName property
+            # The display name of the custom training setting.
             @display_name
             ## 
-            # The durationInMinutes property
+            # Training duration.
             @duration_in_minutes
             ## 
-            # The url property
+            # The training URL.
             @url
             ## 
-            ## Gets the assignedTo property value. The assignedTo property
+            ## Gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             ## @return a training_assigned_to
             ## 
             def assigned_to
                 return @assigned_to
             end
             ## 
-            ## Sets the assignedTo property value. The assignedTo property
+            ## Sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
             ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @assigned_to = value
             end
             ## 
-            ## Instantiates a new customTrainingSetting and sets the default values.
+            ## Instantiates a new CustomTrainingSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 return CustomTrainingSetting.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. The description of the custom training setting.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. The description of the custom training setting.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -69,14 +69,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The display name of the custom training setting.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The display name of the custom training setting.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -84,14 +84,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the durationInMinutes property value. The durationInMinutes property
-            ## @return a string
+            ## Gets the durationInMinutes property value. Training duration.
+            ## @return a integer
             ## 
             def duration_in_minutes
                 return @duration_in_minutes
             end
             ## 
-            ## Sets the durationInMinutes property value. The durationInMinutes property
+            ## Sets the durationInMinutes property value. Training duration.
             ## @param value Value to set for the durationInMinutes property.
             ## @return a void
             ## 
@@ -107,7 +107,7 @@ module MicrosoftGraphBeta
                     "assignedTo" => lambda {|n| @assigned_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TrainingAssignedTo.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "durationInMinutes" => lambda {|n| @duration_in_minutes = n.get_string_value() },
+                    "durationInMinutes" => lambda {|n| @duration_in_minutes = n.get_number_value() },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 })
             end
@@ -122,18 +122,18 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("assignedTo", @assigned_to)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("durationInMinutes", @duration_in_minutes)
+                writer.write_number_value("durationInMinutes", @duration_in_minutes)
                 writer.write_string_value("url", @url)
             end
             ## 
-            ## Gets the url property value. The url property
+            ## Gets the url property value. The training URL.
             ## @return a string
             ## 
             def url
                 return @url
             end
             ## 
-            ## Sets the url property value. The url property
+            ## Sets the url property value. The training URL.
             ## @param value Value to set for the url property.
             ## @return a void
             ## 

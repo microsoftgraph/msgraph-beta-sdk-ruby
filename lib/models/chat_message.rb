@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new chatMessage and sets the default values.
+            ## Instantiates a new ChatMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()

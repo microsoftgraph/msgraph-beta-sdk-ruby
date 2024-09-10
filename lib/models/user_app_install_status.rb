@@ -5,7 +5,7 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
+        # Contains properties for the installation status for a user. This will be deprecated in May, 2023
         class UserAppInstallStatus < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @app = value
             end
             ## 
-            ## Instantiates a new userAppInstallStatus and sets the default values.
+            ## Instantiates a new UserAppInstallStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

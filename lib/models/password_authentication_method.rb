@@ -1,4 +1,3 @@
-require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -8,33 +7,15 @@ module MicrosoftGraphBeta
         class PasswordAuthenticationMethod < MicrosoftGraphBeta::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            @created_date_time
-            ## 
             # For security, the password is always returned as null from a LIST or GET operation.
             @password
             ## 
-            ## Instantiates a new passwordAuthenticationMethod and sets the default values.
+            ## Instantiates a new PasswordAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.passwordAuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +32,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "password" => lambda {|n| @password = n.get_string_value() },
                 })
             end
@@ -78,7 +58,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("password", @password)
             end
         end
