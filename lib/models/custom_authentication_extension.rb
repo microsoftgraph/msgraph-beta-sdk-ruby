@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CustomAuthenticationExtension < MicrosoftGraphBeta::Models::CustomCalloutExtension
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new customAuthenticationExtension and sets the default values.
+            ## Instantiates a new CustomAuthenticationExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -25,6 +25,10 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.onAttributeCollectionStartCustomExtension"
+                            return OnAttributeCollectionStartCustomExtension.new
+                        when "#microsoft.graph.onAttributeCollectionSubmitCustomExtension"
+                            return OnAttributeCollectionSubmitCustomExtension.new
                         when "#microsoft.graph.onTokenIssuanceStartCustomExtension"
                             return OnTokenIssuanceStartCustomExtension.new
                     end

@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                 @app_publisher = value
             end
             ## 
-            ## Instantiates a new managedTenantsAppPerformance and sets the default values.
+            ## Instantiates a new ManagedTenantsAppPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

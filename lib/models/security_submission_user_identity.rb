@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The email of user who is making the submission when logged in (delegated token case).
             @email
             ## 
-            ## Instantiates a new securitySubmissionUserIdentity and sets the default values.
+            ## Instantiates a new SecuritySubmissionUserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

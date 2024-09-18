@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @alternate_url = value
             end
             ## 
-            ## Instantiates a new webApplicationSegment and sets the default values.
+            ## Instantiates a new WebApplicationSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()

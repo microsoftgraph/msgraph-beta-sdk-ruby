@@ -20,7 +20,7 @@ module MicrosoftGraphBeta
             # The queries property
             @queries
             ## 
-            ## Instantiates a new ediscoveryReviewSet and sets the default values.
+            ## Instantiates a new EdiscoveryReviewSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

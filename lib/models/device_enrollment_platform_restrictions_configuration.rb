@@ -63,7 +63,7 @@ module MicrosoftGraphBeta
                 @android_restriction = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

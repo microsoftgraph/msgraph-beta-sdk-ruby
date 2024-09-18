@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @body = value
             end
             ## 
-            ## Instantiates a new note and sets the default values.
+            ## Instantiates a new Note and sets the default values.
             ## @return a void
             ## 
             def initialize()

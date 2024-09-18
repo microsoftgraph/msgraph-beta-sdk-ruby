@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new windowsInformationProtectionAppLearningSummaryCollectionResponse and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionAppLearningSummaryCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

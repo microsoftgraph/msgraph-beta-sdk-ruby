@@ -8,10 +8,10 @@ module MicrosoftGraphBeta
         class OutlookItem < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The categories property
+            # The categories associated with the item.
             @categories
             ## 
-            # The changeKey property
+            # Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             @change_key
             ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -20,14 +20,14 @@ module MicrosoftGraphBeta
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
-            ## Gets the categories property value. The categories property
+            ## Gets the categories property value. The categories associated with the item.
             ## @return a string
             ## 
             def categories
                 return @categories
             end
             ## 
-            ## Sets the categories property value. The categories property
+            ## Sets the categories property value. The categories associated with the item.
             ## @param value Value to set for the categories property.
             ## @return a void
             ## 
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Gets the changeKey property value. The changeKey property
+            ## Gets the changeKey property value. Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             ## @return a string
             ## 
             def change_key
                 return @change_key
             end
             ## 
-            ## Sets the changeKey property value. The changeKey property
+            ## Sets the changeKey property value. Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
             ## @param value Value to set for the changeKey property.
             ## @return a void
             ## 
@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                 @change_key = value
             end
             ## 
-            ## Instantiates a new outlookItem and sets the default values.
+            ## Instantiates a new OutlookItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

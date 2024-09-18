@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The category name
             @display_name
             ## 
-            ## Instantiates a new securityBaselineCategoryStateSummary and sets the default values.
+            ## Instantiates a new SecurityBaselineCategoryStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

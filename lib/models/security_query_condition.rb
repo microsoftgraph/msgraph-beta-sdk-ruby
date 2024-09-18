@@ -11,31 +11,31 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The lastModifiedDateTime property
+            # Timestamp of when the query in the custom detection rule was last updated.
             @last_modified_date_time
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The queryText property
+            # Contents of the query.
             @query_text
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityQueryCondition and sets the default values.
+            ## Instantiates a new SecurityQueryCondition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the queryText property value. The queryText property
+            ## Gets the queryText property value. Contents of the query.
             ## @return a string
             ## 
             def query_text
                 return @query_text
             end
             ## 
-            ## Sets the queryText property value. The queryText property
+            ## Sets the queryText property value. Contents of the query.
             ## @param value Value to set for the queryText property.
             ## @return a void
             ## 

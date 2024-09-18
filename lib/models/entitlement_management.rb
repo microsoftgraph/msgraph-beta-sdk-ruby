@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
             @access_package_assignment_policies
             ## 
-            # Represents access package assignment requests created by or on behalf of a user.
+            # Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
             @access_package_assignment_requests
             ## 
             # Represents the resource-specific role which a subject has been assigned through an access package assignment.
@@ -40,10 +40,13 @@ module MicrosoftGraphBeta
             # Represents access package objects.
             @access_packages
             ## 
+            # Represents access package assignment requests created by or on behalf of a user.
+            @assignment_requests
+            ## 
             # Represents references to a directory or domain of another organization whose users can request access.
             @connected_organizations
             ## 
-            # Represents the settings that control the behavior of Azure AD entitlement management.
+            # Represents the settings that control the behavior of Microsoft Entra entitlement management.
             @settings
             ## 
             # Represents the subjects within entitlement management.
@@ -79,14 +82,14 @@ module MicrosoftGraphBeta
                 @access_package_assignment_policies = value
             end
             ## 
-            ## Gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+            ## Gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
             ## @return a access_package_assignment_request
             ## 
             def access_package_assignment_requests
                 return @access_package_assignment_requests
             end
             ## 
-            ## Sets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+            ## Sets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
             ## @param value Value to set for the accessPackageAssignmentRequests property.
             ## @return a void
             ## 
@@ -214,6 +217,21 @@ module MicrosoftGraphBeta
                 @access_packages = value
             end
             ## 
+            ## Gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+            ## @return a access_package_assignment_request
+            ## 
+            def assignment_requests
+                return @assignment_requests
+            end
+            ## 
+            ## Sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+            ## @param value Value to set for the assignmentRequests property.
+            ## @return a void
+            ## 
+            def assignment_requests=(value)
+                @assignment_requests = value
+            end
+            ## 
             ## Gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
             ## @return a connected_organization
             ## 
@@ -229,7 +247,7 @@ module MicrosoftGraphBeta
                 @connected_organizations = value
             end
             ## 
-            ## Instantiates a new entitlementManagement and sets the default values.
+            ## Instantiates a new EntitlementManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -261,6 +279,7 @@ module MicrosoftGraphBeta
                     "accessPackageResourceRoleScopes" => lambda {|n| @access_package_resource_role_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AccessPackageResourceRoleScope.create_from_discriminator_value(pn) }) },
                     "accessPackageResources" => lambda {|n| @access_package_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AccessPackageResource.create_from_discriminator_value(pn) }) },
                     "accessPackages" => lambda {|n| @access_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AccessPackage.create_from_discriminator_value(pn) }) },
+                    "assignmentRequests" => lambda {|n| @assignment_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AccessPackageAssignmentRequest.create_from_discriminator_value(pn) }) },
                     "connectedOrganizations" => lambda {|n| @connected_organizations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EntitlementManagementSettings.create_from_discriminator_value(pn) }) },
                     "subjects" => lambda {|n| @subjects = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AccessPackageSubject.create_from_discriminator_value(pn) }) },
@@ -285,19 +304,20 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("accessPackageResourceRoleScopes", @access_package_resource_role_scopes)
                 writer.write_collection_of_object_values("accessPackageResources", @access_package_resources)
                 writer.write_collection_of_object_values("accessPackages", @access_packages)
+                writer.write_collection_of_object_values("assignmentRequests", @assignment_requests)
                 writer.write_collection_of_object_values("connectedOrganizations", @connected_organizations)
                 writer.write_object_value("settings", @settings)
                 writer.write_collection_of_object_values("subjects", @subjects)
             end
             ## 
-            ## Gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+            ## Gets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
             ## @return a entitlement_management_settings
             ## 
             def settings
                 return @settings
             end
             ## 
-            ## Sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
+            ## Sets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
             ## @param value Value to set for the settings property.
             ## @return a void
             ## 

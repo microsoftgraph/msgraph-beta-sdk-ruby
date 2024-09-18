@@ -13,6 +13,9 @@ module MicrosoftGraphBeta
             # List of existing onPremisesAgent objects. Read-only. Nullable.
             @agents
             ## 
+            # The applicationSegments property
+            @application_segments
+            ## 
             # List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
             @connector_groups
             ## 
@@ -25,7 +28,7 @@ module MicrosoftGraphBeta
             # The isDefaultAccessEnabled property
             @is_default_access_enabled
             ## 
-            # Represents if Azure AD Application Proxy is enabled for the tenant.
+            # Represents if Microsoft Entra application proxy is enabled for the tenant.
             @is_enabled
             ## 
             # List of existing publishedResource objects. Read-only. Nullable.
@@ -61,6 +64,21 @@ module MicrosoftGraphBeta
                 @agents = value
             end
             ## 
+            ## Gets the applicationSegments property value. The applicationSegments property
+            ## @return a ip_application_segment
+            ## 
+            def application_segments
+                return @application_segments
+            end
+            ## 
+            ## Sets the applicationSegments property value. The applicationSegments property
+            ## @param value Value to set for the applicationSegments property.
+            ## @return a void
+            ## 
+            def application_segments=(value)
+                @application_segments = value
+            end
+            ## 
             ## Gets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
             ## @return a connector_group
             ## 
@@ -91,7 +109,7 @@ module MicrosoftGraphBeta
                 @connectors = value
             end
             ## 
-            ## Instantiates a new onPremisesPublishingProfile and sets the default values.
+            ## Instantiates a new OnPremisesPublishingProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -114,6 +132,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "agentGroups" => lambda {|n| @agent_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OnPremisesAgentGroup.create_from_discriminator_value(pn) }) },
                     "agents" => lambda {|n| @agents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::OnPremisesAgent.create_from_discriminator_value(pn) }) },
+                    "applicationSegments" => lambda {|n| @application_segments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IpApplicationSegment.create_from_discriminator_value(pn) }) },
                     "connectorGroups" => lambda {|n| @connector_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConnectorGroup.create_from_discriminator_value(pn) }) },
                     "connectors" => lambda {|n| @connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Connector.create_from_discriminator_value(pn) }) },
                     "hybridAgentUpdaterConfiguration" => lambda {|n| @hybrid_agent_updater_configuration = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::HybridAgentUpdaterConfiguration.create_from_discriminator_value(pn) }) },
@@ -153,14 +172,14 @@ module MicrosoftGraphBeta
                 @is_default_access_enabled = value
             end
             ## 
-            ## Gets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+            ## Gets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
+            ## Sets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
@@ -192,6 +211,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("agentGroups", @agent_groups)
                 writer.write_collection_of_object_values("agents", @agents)
+                writer.write_collection_of_object_values("applicationSegments", @application_segments)
                 writer.write_collection_of_object_values("connectorGroups", @connector_groups)
                 writer.write_collection_of_object_values("connectors", @connectors)
                 writer.write_object_value("hybridAgentUpdaterConfiguration", @hybrid_agent_updater_configuration)

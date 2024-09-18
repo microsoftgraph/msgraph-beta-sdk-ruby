@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class GroupPolicyPresentationText < MicrosoftGraphBeta::Models::GroupPolicyUploadedPresentation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new groupPolicyPresentationText and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationText and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @catalog_entry = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesCatalogContent and sets the default values.
+            ## Instantiates a new WindowsUpdatesCatalogContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

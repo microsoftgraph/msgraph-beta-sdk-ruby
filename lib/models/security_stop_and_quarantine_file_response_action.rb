@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The identifier property
             @identifier
             ## 
-            ## Instantiates a new securityStopAndQuarantineFileResponseAction and sets the default values.
+            ## Instantiates a new SecurityStopAndQuarantineFileResponseAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "identifier" => lambda {|n| @identifier = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityStopAndQuarantineFileEntityIdentifier) },
+                    "identifier" => lambda {|n| @identifier = n.get_enum_values(MicrosoftGraphBeta::Models::SecurityStopAndQuarantineFileEntityIdentifier) },
                 })
             end
             ## 

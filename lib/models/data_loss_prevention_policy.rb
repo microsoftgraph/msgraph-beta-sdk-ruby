@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The name property
             @name
             ## 
-            ## Instantiates a new dataLossPreventionPolicy and sets the default values.
+            ## Instantiates a new DataLossPreventionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

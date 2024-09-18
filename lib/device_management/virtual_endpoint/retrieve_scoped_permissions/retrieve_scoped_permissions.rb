@@ -1,0 +1,1 @@
+require_relative 'retrieve_scoped_permissions_get_response'

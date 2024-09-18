@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
             @title
             ## 
-            ## Instantiates a new personName and sets the default values.
+            ## Instantiates a new PersonName and sets the default values.
             ## @return a void
             ## 
             def initialize()

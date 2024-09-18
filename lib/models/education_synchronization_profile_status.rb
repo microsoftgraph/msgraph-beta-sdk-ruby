@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # Status message for the synchronization stage of the current profile.
             @status_message
             ## 
-            ## Instantiates a new educationSynchronizationProfileStatus and sets the default values.
+            ## Instantiates a new EducationSynchronizationProfileStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()
