@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @cluster_i_p = value
             end
             ## 
-            ## Instantiates a new securityKubernetesServiceEvidence and sets the default values.
+            ## Instantiates a new SecurityKubernetesServiceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

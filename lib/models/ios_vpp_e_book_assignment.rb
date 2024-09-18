@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class IosVppEBookAssignment < MicrosoftGraphBeta::Models::ManagedEBookAssignment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosVppEBookAssignment and sets the default values.
+            ## Instantiates a new IosVppEBookAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

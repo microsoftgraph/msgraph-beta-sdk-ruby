@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @cases = value
             end
             ## 
-            ## Instantiates a new ediscoveryEdiscoveryroot and sets the default values.
+            ## Instantiates a new EdiscoveryEdiscoveryroot and sets the default values.
             ## @return a void
             ## 
             def initialize()

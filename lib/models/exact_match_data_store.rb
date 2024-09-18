@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The sessions property
             @sessions
             ## 
-            ## Instantiates a new exactMatchDataStore and sets the default values.
+            ## Instantiates a new ExactMatchDataStore and sets the default values.
             ## @return a void
             ## 
             def initialize()

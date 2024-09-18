@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
         MobileAppDependencyType = {
             Detect: :Detect,
             AutoInstall: :AutoInstall,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

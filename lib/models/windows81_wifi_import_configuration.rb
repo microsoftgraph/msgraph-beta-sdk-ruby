@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Profile name displayed in the UI.
             @profile_name
             ## 
-            ## Instantiates a new windows81WifiImportConfiguration and sets the default values.
+            ## Instantiates a new Windows81WifiImportConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

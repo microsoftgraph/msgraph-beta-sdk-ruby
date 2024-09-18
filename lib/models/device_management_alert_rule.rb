@@ -7,8 +7,11 @@ module MicrosoftGraphBeta
         class DeviceManagementAlertRule < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+            # The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
             @alert_rule_template
+            ## 
+            # The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+            @conditions
             ## 
             # The rule description.
             @description
@@ -19,7 +22,7 @@ module MicrosoftGraphBeta
             # The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
             @enabled
             ## 
-            # Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
+            # Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
             @is_system_rule
             ## 
             # The notification channels of the rule selected by the user.
@@ -28,17 +31,17 @@ module MicrosoftGraphBeta
             # The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
             @severity
             ## 
-            # The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
+            # The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.
             @threshold
             ## 
-            ## Gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+            ## Gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
             ## @return a device_management_alert_rule_template
             ## 
             def alert_rule_template
                 return @alert_rule_template
             end
             ## 
-            ## Sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+            ## Sets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
             ## @param value Value to set for the alertRuleTemplate property.
             ## @return a void
             ## 
@@ -46,7 +49,22 @@ module MicrosoftGraphBeta
                 @alert_rule_template = value
             end
             ## 
-            ## Instantiates a new deviceManagementAlertRule and sets the default values.
+            ## Gets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+            ## @return a device_management_rule_condition
+            ## 
+            def conditions
+                return @conditions
+            end
+            ## 
+            ## Sets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+            ## @param value Value to set for the conditions property.
+            ## @return a void
+            ## 
+            def conditions=(value)
+                @conditions = value
+            end
+            ## 
+            ## Instantiates a new DeviceManagementAlertRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,6 +131,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "alertRuleTemplate" => lambda {|n| @alert_rule_template = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementAlertRuleTemplate) },
+                    "conditions" => lambda {|n| @conditions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementRuleCondition.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
@@ -123,14 +142,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
+            ## Gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
             ## @return a boolean
             ## 
             def is_system_rule
                 return @is_system_rule
             end
             ## 
-            ## Sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
+            ## Sets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
             ## @param value Value to set for the isSystemRule property.
             ## @return a void
             ## 
@@ -161,6 +180,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_enum_value("alertRuleTemplate", @alert_rule_template)
+                writer.write_collection_of_object_values("conditions", @conditions)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_boolean_value("enabled", @enabled)
@@ -185,14 +205,14 @@ module MicrosoftGraphBeta
                 @severity = value
             end
             ## 
-            ## Gets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
+            ## Gets the threshold property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.
             ## @return a device_management_rule_threshold
             ## 
             def threshold
                 return @threshold
             end
             ## 
-            ## Sets the threshold property value. The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
+            ## Sets the threshold property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.
             ## @param value Value to set for the threshold property.
             ## @return a void
             ## 

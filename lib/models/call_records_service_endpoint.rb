@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CallRecordsServiceEndpoint < MicrosoftGraphBeta::Models::CallRecordsEndpoint
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new callRecordsServiceEndpoint and sets the default values.
+            ## Instantiates a new CallRecordsServiceEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

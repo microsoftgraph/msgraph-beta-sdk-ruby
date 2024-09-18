@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Time interval between activations to trigger an alert.
             @time_interval_between_activations
             ## 
-            ## Instantiates a new sequentialActivationRenewalsAlertConfiguration and sets the default values.
+            ## Instantiates a new SequentialActivationRenewalsAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

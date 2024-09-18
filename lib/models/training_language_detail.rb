@@ -8,48 +8,48 @@ module MicrosoftGraphBeta
         class TrainingLanguageDetail < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content property
+            # Language specific content for the training.
             @content
             ## 
-            # The createdBy property
+            # Identity of the user who created the language details.
             @created_by
             ## 
-            # The createdDateTime property
+            # Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The description property
+            # Description as defined by the user.
             @description
             ## 
-            # The displayName property
+            # Display name as defined by the user.
             @display_name
             ## 
-            # The isDefaultLangauge property
+            # Indicates whether the training has a default language.
             @is_default_langauge
             ## 
-            # The lastModifiedBy property
+            # Identity of the user who last modified the details.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The locale property
+            # Content locale for the training detail.
             @locale
             ## 
-            ## Instantiates a new trainingLanguageDetail and sets the default values.
+            ## Instantiates a new TrainingLanguageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the content property value. The content property
+            ## Gets the content property value. Language specific content for the training.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content property
+            ## Sets the content property value. Language specific content for the training.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 @content = value
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the language details.
             ## @return a email_identity
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the language details.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraphBeta
                 return TrainingLanguageDetail.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description as defined by the user.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description as defined by the user.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Display name as defined by the user.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Display name as defined by the user.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Gets the isDefaultLangauge property value. Indicates whether the training has a default language.
             ## @return a boolean
             ## 
             def is_default_langauge
                 return @is_default_langauge
             end
             ## 
-            ## Sets the isDefaultLangauge property value. The isDefaultLangauge property
+            ## Sets the isDefaultLangauge property value. Indicates whether the training has a default language.
             ## @param value Value to set for the isDefaultLangauge property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraphBeta
                 @is_default_langauge = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Identity of the user who last modified the details.
             ## @return a email_identity
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Identity of the user who last modified the details.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -173,14 +173,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -188,14 +188,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the locale property value. The locale property
+            ## Gets the locale property value. Content locale for the training detail.
             ## @return a string
             ## 
             def locale
                 return @locale
             end
             ## 
-            ## Sets the locale property value. The locale property
+            ## Sets the locale property value. Content locale for the training detail.
             ## @param value Value to set for the locale property.
             ## @return a void
             ## 

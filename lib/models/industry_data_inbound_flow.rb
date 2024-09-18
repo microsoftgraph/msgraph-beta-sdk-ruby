@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # The year property
             @year
             ## 
-            ## Instantiates a new industryDataInboundFlow and sets the default values.
+            ## Instantiates a new IndustryDataInboundFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,6 +41,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.industryData.inboundApiFlow"
+                            return IndustryDataInboundApiFlow.new
                         when "#microsoft.graph.industryData.inboundFileFlow"
                             return IndustryDataInboundFileFlow.new
                     end

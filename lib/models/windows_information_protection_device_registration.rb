@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # UserId associated with this device registration record.
             @user_id
             ## 
-            ## Instantiates a new windowsInformationProtectionDeviceRegistration and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionDeviceRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()
