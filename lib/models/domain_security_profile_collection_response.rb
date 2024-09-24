@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new domainSecurityProfileCollectionResponse and sets the default values.
+            ## Instantiates a new DomainSecurityProfileCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

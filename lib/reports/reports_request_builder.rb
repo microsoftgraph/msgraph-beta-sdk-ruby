@@ -45,6 +45,9 @@ require_relative './get_mailbox_usage_detail_with_period/get_mailbox_usage_detai
 require_relative './get_mailbox_usage_mailbox_counts_with_period/get_mailbox_usage_mailbox_counts_with_period_request_builder'
 require_relative './get_mailbox_usage_quota_status_mailbox_counts_with_period/get_mailbox_usage_quota_status_mailbox_counts_with_period_request_builder'
 require_relative './get_mailbox_usage_storage_with_period/get_mailbox_usage_storage_with_period_request_builder'
+require_relative './get_microsoft365_copilot_usage_user_detail_with_period/get_microsoft365_copilot_usage_user_detail_with_period_request_builder'
+require_relative './get_microsoft365_copilot_user_count_summary_with_period/get_microsoft365_copilot_user_count_summary_with_period_request_builder'
+require_relative './get_microsoft365_copilot_user_count_trend_with_period/get_microsoft365_copilot_user_count_trend_with_period_request_builder'
 require_relative './get_office365_activation_counts/get_office365_activation_counts_request_builder'
 require_relative './get_office365_activations_user_counts/get_office365_activations_user_counts_request_builder'
 require_relative './get_office365_activations_user_detail/get_office365_activations_user_detail_request_builder'
@@ -141,11 +144,14 @@ require_relative './monthly_print_usage_by_printer/monthly_print_usage_by_printe
 require_relative './monthly_print_usage_by_user/monthly_print_usage_by_user_request_builder'
 require_relative './monthly_print_usage_summaries_by_printer/monthly_print_usage_summaries_by_printer_request_builder'
 require_relative './monthly_print_usage_summaries_by_user/monthly_print_usage_summaries_by_user_request_builder'
+require_relative './partners/partners_request_builder'
 require_relative './reports'
 require_relative './security/security_request_builder'
+require_relative './service_activity/service_activity_request_builder'
 require_relative './service_principal_sign_in_activities/service_principal_sign_in_activities_request_builder'
 require_relative './sla/sla_request_builder'
 require_relative './user_credential_usage_details/user_credential_usage_details_request_builder'
+require_relative './user_insights/user_insights_request_builder'
 
 module MicrosoftGraphBeta
     module Reports
@@ -279,9 +285,19 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Reports::MonthlyPrintUsageSummariesByUser::MonthlyPrintUsageSummariesByUserRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the partners property of the microsoft.graph.reportRoot entity.
+            def partners()
+                return MicrosoftGraphBeta::Reports::Partners::PartnersRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the security property of the microsoft.graph.reportRoot entity.
             def security()
                 return MicrosoftGraphBeta::Reports::Security::SecurityRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the serviceActivity property of the microsoft.graph.reportRoot entity.
+            def service_activity()
+                return MicrosoftGraphBeta::Reports::ServiceActivity::ServiceActivityRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
@@ -299,13 +315,18 @@ module MicrosoftGraphBeta
                 return MicrosoftGraphBeta::Reports::UserCredentialUsageDetails::UserCredentialUsageDetailsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the userInsights property of the microsoft.graph.reportRoot entity.
+            def user_insights()
+                return MicrosoftGraphBeta::Reports::UserInsights::UserInsightsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             ## Instantiates a new ReportsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/reports{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/reports{?%24expand,%24select}")
             end
             ## 
             ## Get reports
@@ -317,8 +338,7 @@ module MicrosoftGraphBeta
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -567,6 +587,33 @@ module MicrosoftGraphBeta
             def get_mailbox_usage_storage_with_period(period)
                 raise StandardError, 'period cannot be null' if period.nil?
                 return GetMailboxUsageStorageWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_microsoft365_copilot_usage_user_detail_with_period_request_builder
+            ## 
+            def get_microsoft365_copilot_usage_user_detail_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_microsoft365_copilot_user_count_summary_with_period_request_builder
+            ## 
+            def get_microsoft365_copilot_user_count_summary_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_microsoft365_copilot_user_count_trend_with_period_request_builder
+            ## 
+            def get_microsoft365_copilot_user_count_trend_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
             end
             ## 
             ## Provides operations to call the getOffice365ActiveUserCounts method.
@@ -1380,8 +1427,7 @@ module MicrosoftGraphBeta
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -1391,15 +1437,15 @@ module MicrosoftGraphBeta
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -1411,16 +1457,25 @@ module MicrosoftGraphBeta
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a reports_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return ReportsRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

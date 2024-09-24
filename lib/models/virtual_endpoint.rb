@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Cloud PC audit event.
             @audit_events
             ## 
-            # The bulkActions property
+            # Bulk actions applied to a Cloud PC.
             @bulk_actions
             ## 
             # Cloud managed virtual desktops.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The external partner settings on a Cloud PC.
             @external_partner_settings
             ## 
-            # The frontLineServicePlans property
+            # Front-line service plans for a Cloud PC.
             @front_line_service_plans
             ## 
             # The gallery image resource on Cloud PC.
@@ -45,9 +45,6 @@ module MicrosoftGraphBeta
             ## 
             # Cloud PC service plans.
             @service_plans
-            ## 
-            # Cloud PC shared-use service plans.
-            @shared_use_service_plans
             ## 
             # Cloud PC snapshots.
             @snapshots
@@ -73,14 +70,14 @@ module MicrosoftGraphBeta
                 @audit_events = value
             end
             ## 
-            ## Gets the bulkActions property value. The bulkActions property
+            ## Gets the bulkActions property value. Bulk actions applied to a Cloud PC.
             ## @return a cloud_pc_bulk_action
             ## 
             def bulk_actions
                 return @bulk_actions
             end
             ## 
-            ## Sets the bulkActions property value. The bulkActions property
+            ## Sets the bulkActions property value. Bulk actions applied to a Cloud PC.
             ## @param value Value to set for the bulkActions property.
             ## @return a void
             ## 
@@ -103,7 +100,7 @@ module MicrosoftGraphBeta
                 @cloud_p_cs = value
             end
             ## 
-            ## Instantiates a new virtualEndpoint and sets the default values.
+            ## Instantiates a new VirtualEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -164,14 +161,14 @@ module MicrosoftGraphBeta
                 @external_partner_settings = value
             end
             ## 
-            ## Gets the frontLineServicePlans property value. The frontLineServicePlans property
+            ## Gets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
             ## @return a cloud_pc_front_line_service_plan
             ## 
             def front_line_service_plans
                 return @front_line_service_plans
             end
             ## 
-            ## Sets the frontLineServicePlans property value. The frontLineServicePlans property
+            ## Sets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
             ## @param value Value to set for the frontLineServicePlans property.
             ## @return a void
             ## 
@@ -212,7 +209,6 @@ module MicrosoftGraphBeta
                     "provisioningPolicies" => lambda {|n| @provisioning_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcProvisioningPolicy.create_from_discriminator_value(pn) }) },
                     "reports" => lambda {|n| @reports = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcReports.create_from_discriminator_value(pn) }) },
                     "servicePlans" => lambda {|n| @service_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcServicePlan.create_from_discriminator_value(pn) }) },
-                    "sharedUseServicePlans" => lambda {|n| @shared_use_service_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcSharedUseServicePlan.create_from_discriminator_value(pn) }) },
                     "snapshots" => lambda {|n| @snapshots = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcSnapshot.create_from_discriminator_value(pn) }) },
                     "supportedRegions" => lambda {|n| @supported_regions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcSupportedRegion.create_from_discriminator_value(pn) }) },
                     "userSettings" => lambda {|n| @user_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcUserSetting.create_from_discriminator_value(pn) }) },
@@ -299,7 +295,6 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("provisioningPolicies", @provisioning_policies)
                 writer.write_object_value("reports", @reports)
                 writer.write_collection_of_object_values("servicePlans", @service_plans)
-                writer.write_collection_of_object_values("sharedUseServicePlans", @shared_use_service_plans)
                 writer.write_collection_of_object_values("snapshots", @snapshots)
                 writer.write_collection_of_object_values("supportedRegions", @supported_regions)
                 writer.write_collection_of_object_values("userSettings", @user_settings)
@@ -318,21 +313,6 @@ module MicrosoftGraphBeta
             ## 
             def service_plans=(value)
                 @service_plans = value
-            end
-            ## 
-            ## Gets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
-            ## @return a cloud_pc_shared_use_service_plan
-            ## 
-            def shared_use_service_plans
-                return @shared_use_service_plans
-            end
-            ## 
-            ## Sets the sharedUseServicePlans property value. Cloud PC shared-use service plans.
-            ## @param value Value to set for the sharedUseServicePlans property.
-            ## @return a void
-            ## 
-            def shared_use_service_plans=(value)
-                @shared_use_service_plans = value
             end
             ## 
             ## Gets the snapshots property value. Cloud PC snapshots.

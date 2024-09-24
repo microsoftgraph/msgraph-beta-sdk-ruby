@@ -20,6 +20,8 @@ module MicrosoftGraphBeta
             AndroidEnterpriseDedicatedDevice: :AndroidEnterpriseDedicatedDevice,
             AndroidEnterpriseFullyManaged: :AndroidEnterpriseFullyManaged,
             AndroidEnterpriseCorporateWorkProfile: :AndroidEnterpriseCorporateWorkProfile,
+            AndroidAOSPUserOwnedDeviceEnrollment: :AndroidAOSPUserOwnedDeviceEnrollment,
+            AndroidAOSPUserlessDeviceEnrollment: :AndroidAOSPUserlessDeviceEnrollment,
         }
     end
 end

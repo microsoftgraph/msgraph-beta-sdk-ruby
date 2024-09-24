@@ -1,0 +1,18 @@
+module MicrosoftGraphBeta
+    module Models
+        ## 
+        # Platform Type
+        PlatformType = {
+            None: :None,
+            Android: :Android,
+            IOS: :IOS,
+            MacOS: :MacOS,
+            Windows10X: :Windows10X,
+            Windows10: :Windows10,
+            Linux: :Linux,
+            UnknownFutureValue: :UnknownFutureValue,
+            AndroidEnterprise: :AndroidEnterprise,
+            Aosp: :Aosp,
+        }
+    end
+end

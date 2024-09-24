@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @assigned_users = value
             end
             ## 
-            ## Instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
+            ## Instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new deviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
+            ## Instantiates a new DeviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

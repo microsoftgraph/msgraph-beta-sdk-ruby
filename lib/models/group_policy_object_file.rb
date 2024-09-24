@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The list of scope tags for the configuration.
             @role_scope_tag_ids
             ## 
-            ## Instantiates a new groupPolicyObjectFile and sets the default values.
+            ## Instantiates a new GroupPolicyObjectFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

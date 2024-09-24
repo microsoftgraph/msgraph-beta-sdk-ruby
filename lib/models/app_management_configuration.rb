@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Collection of keyCredential restrictions settings to be applied to an application or service principal.
+            # Collection of certificate restrictions settings to be applied to an application or service principal.
             @key_credentials
             ## 
             # The OdataType property
@@ -19,22 +19,22 @@ module MicrosoftGraphBeta
             # Collection of password restrictions settings to be applied to an application or service principal.
             @password_credentials
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new appManagementConfiguration and sets the default values.
+            ## Instantiates a new AppManagementConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,6 +47,18 @@ module MicrosoftGraphBeta
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.appManagementApplicationConfiguration"
+                            return AppManagementApplicationConfiguration.new
+                        when "#microsoft.graph.appManagementServicePrincipalConfiguration"
+                            return AppManagementServicePrincipalConfiguration.new
+                        when "#microsoft.graph.customAppManagementConfiguration"
+                            return CustomAppManagementConfiguration.new
+                    end
+                end
                 return AppManagementConfiguration.new
             end
             ## 
@@ -61,14 +73,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
+            ## Gets the keyCredentials property value. Collection of certificate restrictions settings to be applied to an application or service principal.
             ## @return a key_credential_configuration
             ## 
             def key_credentials
                 return @key_credentials
             end
             ## 
-            ## Sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
+            ## Sets the keyCredentials property value. Collection of certificate restrictions settings to be applied to an application or service principal.
             ## @param value Value to set for the keyCredentials property.
             ## @return a void
             ## 

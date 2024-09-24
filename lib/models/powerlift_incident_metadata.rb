@@ -40,15 +40,15 @@ module MicrosoftGraphBeta
             # The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
             @powerlift_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
                 @client_version = value
             end
             ## 
-            ## Instantiates a new powerliftIncidentMetadata and sets the default values.
+            ## Instantiates a new PowerliftIncidentMetadata and sets the default values.
             ## @return a void
             ## 
             def initialize()

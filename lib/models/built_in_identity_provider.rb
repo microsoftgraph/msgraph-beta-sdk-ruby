@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            ## Instantiates a new builtInIdentityProvider and sets the default values.
+            ## Instantiates a new BuiltInIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

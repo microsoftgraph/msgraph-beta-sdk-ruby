@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
             # Specifies the logical name that refers to the namespace within the ADMX file.
             @target_prefix
             ## 
-            ## Instantiates a new groupPolicyDefinitionFile and sets the default values.
+            ## Instantiates a new GroupPolicyDefinitionFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

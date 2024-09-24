@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The lastModfiedBy property
             @last_modfied_by
             ## 
-            ## Instantiates a new dlpWindowsDevicesNotification and sets the default values.
+            ## Instantiates a new DlpWindowsDevicesNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()

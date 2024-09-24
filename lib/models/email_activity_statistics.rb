@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @after_hours = value
             end
             ## 
-            ## Instantiates a new emailActivityStatistics and sets the default values.
+            ## Instantiates a new EmailActivityStatistics and sets the default values.
             ## @return a void
             ## 
             def initialize()
