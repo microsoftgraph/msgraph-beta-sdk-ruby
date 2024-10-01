@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class NoMfaOnRoleActivationAlertConfiguration < MicrosoftGraphBeta::Models::UnifiedRoleManagementAlertConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new noMfaOnRoleActivationAlertConfiguration and sets the default values.
+            ## Instantiates a new NoMfaOnRoleActivationAlertConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

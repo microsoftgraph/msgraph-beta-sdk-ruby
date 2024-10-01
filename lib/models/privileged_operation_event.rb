@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @additional_information = value
             end
             ## 
-            ## Instantiates a new privilegedOperationEvent and sets the default values.
+            ## Instantiates a new PrivilegedOperationEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

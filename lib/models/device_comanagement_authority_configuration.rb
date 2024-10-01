@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @configuration_manager_agent_command_line_argument = value
             end
             ## 
-            ## Instantiates a new deviceComanagementAuthorityConfiguration and sets the default values.
+            ## Instantiates a new DeviceComanagementAuthorityConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

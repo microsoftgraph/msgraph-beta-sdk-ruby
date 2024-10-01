@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class AdminReportSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+            # If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
             @display_concealed_names
             ## 
-            ## Instantiates a new adminReportSettings and sets the default values.
+            ## Instantiates a new AdminReportSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -26,14 +26,14 @@ module MicrosoftGraphBeta
                 return AdminReportSettings.new
             end
             ## 
-            ## Gets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+            ## Gets the displayConcealedNames property value. If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
             ## @return a boolean
             ## 
             def display_concealed_names
                 return @display_concealed_names
             end
             ## 
-            ## Sets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+            ## Sets the displayConcealedNames property value. If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
             ## @param value Value to set for the displayConcealedNames property.
             ## @return a void
             ## 

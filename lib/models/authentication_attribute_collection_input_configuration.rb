@@ -13,19 +13,19 @@ module MicrosoftGraphBeta
             # The built-in or custom attribute for which a value is being collected.
             @attribute
             ## 
-            # The default value of the attribute displayed to the end user.
+            # The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
             @default_value
             ## 
-            # Whether the attribute is editable by the end user.
+            # Defines whether the attribute is editable by the end user.
             @editable
             ## 
-            # Whether the attribute is displayed to the end user.
+            # Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
             @hidden
             ## 
             # The inputType property
             @input_type
             ## 
-            # The label of the attribute field that will be displayed to end user, unless overridden.
+            # The label of the attribute field that's displayed to end user, unless overridden.
             @label
             ## 
             # The OdataType property
@@ -34,24 +34,24 @@ module MicrosoftGraphBeta
             # The option values for certain multiple-option input types.
             @options
             ## 
-            # Whether the field is required.
+            # Defines whether the field is required.
             @required
             ## 
-            # The regex for the value of the field.
+            # The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.
             @validation_reg_ex
             ## 
-            # Whether the value collected will be stored.
+            # Defines whether Microsoft Entra ID stores the value that it collects.
             @write_to_directory
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                 @attribute = value
             end
             ## 
-            ## Instantiates a new authenticationAttributeCollectionInputConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationAttributeCollectionInputConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 return AuthenticationAttributeCollectionInputConfiguration.new
             end
             ## 
-            ## Gets the defaultValue property value. The default value of the attribute displayed to the end user.
+            ## Gets the defaultValue property value. The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
             ## @return a string
             ## 
             def default_value
                 return @default_value
             end
             ## 
-            ## Sets the defaultValue property value. The default value of the attribute displayed to the end user.
+            ## Sets the defaultValue property value. The default value of the attribute displayed to the end user. The capability to set the default value isn't available through the Microsoft Entra admin center.
             ## @param value Value to set for the defaultValue property.
             ## @return a void
             ## 
@@ -104,14 +104,14 @@ module MicrosoftGraphBeta
                 @default_value = value
             end
             ## 
-            ## Gets the editable property value. Whether the attribute is editable by the end user.
+            ## Gets the editable property value. Defines whether the attribute is editable by the end user.
             ## @return a boolean
             ## 
             def editable
                 return @editable
             end
             ## 
-            ## Sets the editable property value. Whether the attribute is editable by the end user.
+            ## Sets the editable property value. Defines whether the attribute is editable by the end user.
             ## @param value Value to set for the editable property.
             ## @return a void
             ## 
@@ -138,14 +138,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the hidden property value. Whether the attribute is displayed to the end user.
+            ## Gets the hidden property value. Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
             ## @return a boolean
             ## 
             def hidden
                 return @hidden
             end
             ## 
-            ## Sets the hidden property value. Whether the attribute is displayed to the end user.
+            ## Sets the hidden property value. Defines whether the attribute is displayed to the end user. The capability to hide isn't available through the Microsoft Entra admin center.
             ## @param value Value to set for the hidden property.
             ## @return a void
             ## 
@@ -168,14 +168,14 @@ module MicrosoftGraphBeta
                 @input_type = value
             end
             ## 
-            ## Gets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+            ## Gets the label property value. The label of the attribute field that's displayed to end user, unless overridden.
             ## @return a string
             ## 
             def label
                 return @label
             end
             ## 
-            ## Sets the label property value. The label of the attribute field that will be displayed to end user, unless overridden.
+            ## Sets the label property value. The label of the attribute field that's displayed to end user, unless overridden.
             ## @param value Value to set for the label property.
             ## @return a void
             ## 
@@ -213,14 +213,14 @@ module MicrosoftGraphBeta
                 @options = value
             end
             ## 
-            ## Gets the required property value. Whether the field is required.
+            ## Gets the required property value. Defines whether the field is required.
             ## @return a boolean
             ## 
             def required
                 return @required
             end
             ## 
-            ## Sets the required property value. Whether the field is required.
+            ## Sets the required property value. Defines whether the field is required.
             ## @param value Value to set for the required property.
             ## @return a void
             ## 
@@ -248,14 +248,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the validationRegEx property value. The regex for the value of the field.
+            ## Gets the validationRegEx property value. The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.
             ## @return a string
             ## 
             def validation_reg_ex
                 return @validation_reg_ex
             end
             ## 
-            ## Sets the validationRegEx property value. The regex for the value of the field.
+            ## Sets the validationRegEx property value. The regex for the value of the field. For more information about the supported regexes, see validationRegEx values for inputType objects. To understand how to specify regexes, see the Regular expressions cheat sheet.
             ## @param value Value to set for the validationRegEx property.
             ## @return a void
             ## 
@@ -263,14 +263,14 @@ module MicrosoftGraphBeta
                 @validation_reg_ex = value
             end
             ## 
-            ## Gets the writeToDirectory property value. Whether the value collected will be stored.
+            ## Gets the writeToDirectory property value. Defines whether Microsoft Entra ID stores the value that it collects.
             ## @return a boolean
             ## 
             def write_to_directory
                 return @write_to_directory
             end
             ## 
-            ## Sets the writeToDirectory property value. Whether the value collected will be stored.
+            ## Sets the writeToDirectory property value. Defines whether Microsoft Entra ID stores the value that it collects.
             ## @param value Value to set for the writeToDirectory property.
             ## @return a void
             ## 

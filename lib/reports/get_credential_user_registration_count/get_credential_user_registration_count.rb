@@ -1,1 +1,1 @@
-require_relative 'get_credential_user_registration_count_response'
+require_relative 'get_credential_user_registration_count_get_response'

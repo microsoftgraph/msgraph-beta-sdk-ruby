@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
             @visible_history_start_date_time
             ## 
-            ## Instantiates a new conversationMember and sets the default values.
+            ## Instantiates a new ConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

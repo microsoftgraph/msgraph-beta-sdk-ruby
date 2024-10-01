@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Mapping between the user account and the options to use to uniquely identify the user to update.
             @matching_options
             ## 
-            ## Instantiates a new educationIdentityMatchingConfiguration and sets the default values.
+            ## Instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

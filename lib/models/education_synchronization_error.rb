@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The identifier of this error entry.
             @reportable_identifier
             ## 
-            ## Instantiates a new educationSynchronizationError and sets the default values.
+            ## Instantiates a new EducationSynchronizationError and sets the default values.
             ## @return a void
             ## 
             def initialize()

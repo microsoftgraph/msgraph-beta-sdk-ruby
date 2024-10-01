@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The site property
             @site
             ## 
-            ## Instantiates a new ediscoverySiteSource and sets the default values.
+            ## Instantiates a new EdiscoverySiteSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
