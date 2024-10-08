@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @allowed_abstract_implementation_definition_ids = value
             end
             ## 
-            ## Instantiates a new deviceManagementSettingAbstractImplementationConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingAbstractImplementationConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

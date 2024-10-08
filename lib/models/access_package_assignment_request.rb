@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
             @access_package
             ## 
-            # For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+            # For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
             @access_package_assignment
             ## 
             # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
@@ -29,22 +29,22 @@ module MicrosoftGraphBeta
             # A collection of custom workflow extension instances being run on an assignment request. Read-only.
             @custom_extension_handler_instances
             ## 
-            # The expirationDateTime property
+            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @expiration_date_time
             ## 
-            # True if the request is not to be processed for assignment.
+            # True if the request isn't to be processed for assignment.
             @is_validation_only
             ## 
             # The requestor's supplied justification.
             @justification
             ## 
-            # One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+            # One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.
             @request_state
             ## 
             # More information on the request processing status. Read-only.
             @request_status
             ## 
-            # One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+            # One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
             @request_type
             ## 
             # The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
             # The range of dates that access is to be assigned to the requestor. Read-only.
             @schedule
             ## 
-            # The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+            # The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.
             @verified_credentials_data
             ## 
             ## Gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 @access_package = value
             end
             ## 
-            ## Gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+            ## Gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
             ## @return a access_package_assignment
             ## 
             def access_package_assignment
                 return @access_package_assignment
             end
             ## 
-            ## Sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+            ## Sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
             ## @param value Value to set for the accessPackageAssignment property.
             ## @return a void
             ## 
@@ -116,7 +116,7 @@ module MicrosoftGraphBeta
                 @completed_date = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentRequest and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -177,14 +177,14 @@ module MicrosoftGraphBeta
                 @custom_extension_handler_instances = value
             end
             ## 
-            ## Gets the expirationDateTime property value. The expirationDateTime property
+            ## Gets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. The expirationDateTime property
+            ## Sets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -216,14 +216,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isValidationOnly property value. True if the request is not to be processed for assignment.
+            ## Gets the isValidationOnly property value. True if the request isn't to be processed for assignment.
             ## @return a boolean
             ## 
             def is_validation_only
                 return @is_validation_only
             end
             ## 
-            ## Sets the isValidationOnly property value. True if the request is not to be processed for assignment.
+            ## Sets the isValidationOnly property value. True if the request isn't to be processed for assignment.
             ## @param value Value to set for the isValidationOnly property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @justification = value
             end
             ## 
-            ## Gets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+            ## Gets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.
             ## @return a string
             ## 
             def request_state
                 return @request_state
             end
             ## 
-            ## Sets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+            ## Sets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.
             ## @param value Value to set for the requestState property.
             ## @return a void
             ## 
@@ -276,14 +276,14 @@ module MicrosoftGraphBeta
                 @request_status = value
             end
             ## 
-            ## Gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+            ## Gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
             ## @return a string
             ## 
             def request_type
                 return @request_type
             end
             ## 
-            ## Sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+            ## Sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
             ## @param value Value to set for the requestType property.
             ## @return a void
             ## 
@@ -346,14 +346,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("verifiedCredentialsData", @verified_credentials_data)
             end
             ## 
-            ## Gets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+            ## Gets the verifiedCredentialsData property value. The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.
             ## @return a verified_credential_data
             ## 
             def verified_credentials_data
                 return @verified_credentials_data
             end
             ## 
-            ## Sets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+            ## Sets the verifiedCredentialsData property value. The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.
             ## @param value Value to set for the verifiedCredentialsData property.
             ## @return a void
             ## 

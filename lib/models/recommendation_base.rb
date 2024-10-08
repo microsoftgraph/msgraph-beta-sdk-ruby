@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # List of actions to take to complete a recommendation.
             @action_steps
             ## 
-            # An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            # An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             @benefits
             ## 
             # The category property
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             # The list of directory objects associated with the recommendation.
             @impacted_resources
             ## 
-            # Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            # Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             @insights
             ## 
             # The most recent date and time a recommendation was deemed applicable to your directory.
@@ -59,11 +59,17 @@ module MicrosoftGraphBeta
             # The priority property
             @priority
             ## 
-            # Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
+            # Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests, aadGraphDeprecationApplication, aadGraphDeprecationServicePrincipal, mfaServerDeprecation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials , aadConnectDeprecated , adalToMsalMigration , ownerlessApps , inactiveGuests , aadGraphDeprecationApplication , aadGraphDeprecationServicePrincipal , mfaServerDeprecation.
             @recommendation_type
+            ## 
+            # The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            @release_type
             ## 
             # Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
             @remediation_impact
+            ## 
+            # The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+            @required_licenses
             ## 
             # The status property
             @status
@@ -83,14 +89,14 @@ module MicrosoftGraphBeta
                 @action_steps = value
             end
             ## 
-            ## Gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            ## Gets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def benefits
                 return @benefits
             end
             ## 
-            ## Sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
+            ## Sets the benefits property value. An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
             ## @param value Value to set for the benefits property.
             ## @return a void
             ## 
@@ -113,7 +119,7 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Instantiates a new recommendationBase and sets the default values.
+            ## Instantiates a new RecommendationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -153,7 +159,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the currentScore property value. The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
-            ## @return a double
+            ## @return a recommendation_base_current_score
             ## 
             def current_score
                 return @current_score
@@ -206,7 +212,7 @@ module MicrosoftGraphBeta
                     "benefits" => lambda {|n| @benefits = n.get_string_value() },
                     "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationCategory) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                    "currentScore" => lambda {|n| @current_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "currentScore" => lambda {|n| @current_score = n.get_object_value(lambda {|pn| RecommendationBase::RecommendationBaseCurrentScore.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "featureAreas" => lambda {|n| @feature_areas = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RecommendationFeatureAreas.create_from_discriminator_value(pn) }) },
                     "impactStartDateTime" => lambda {|n| @impact_start_date_time = n.get_date_time_value() },
@@ -216,11 +222,13 @@ module MicrosoftGraphBeta
                     "lastCheckedDateTime" => lambda {|n| @last_checked_date_time = n.get_date_time_value() },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "maxScore" => lambda {|n| @max_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "maxScore" => lambda {|n| @max_score = n.get_object_value(lambda {|pn| RecommendationBase::RecommendationBaseMaxScore.create_from_discriminator_value(pn) }) },
                     "postponeUntilDateTime" => lambda {|n| @postpone_until_date_time = n.get_date_time_value() },
                     "priority" => lambda {|n| @priority = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationPriority) },
                     "recommendationType" => lambda {|n| @recommendation_type = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationType) },
+                    "releaseType" => lambda {|n| @release_type = n.get_string_value() },
                     "remediationImpact" => lambda {|n| @remediation_impact = n.get_string_value() },
+                    "requiredLicenses" => lambda {|n| @required_licenses = n.get_enum_value(MicrosoftGraphBeta::Models::RequiredLicenses) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::RecommendationStatus) },
                 })
             end
@@ -270,14 +278,14 @@ module MicrosoftGraphBeta
                 @impacted_resources = value
             end
             ## 
-            ## Gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            ## Gets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def insights
                 return @insights
             end
             ## 
-            ## Sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
+            ## Sets the insights property value. Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
             ## @param value Value to set for the insights property.
             ## @return a void
             ## 
@@ -331,7 +339,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the maxScore property value. The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
-            ## @return a double
+            ## @return a recommendation_base_max_score
             ## 
             def max_score
                 return @max_score
@@ -375,19 +383,34 @@ module MicrosoftGraphBeta
                 @priority = value
             end
             ## 
-            ## Gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
+            ## Gets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests, aadGraphDeprecationApplication, aadGraphDeprecationServicePrincipal, mfaServerDeprecation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials , aadConnectDeprecated , adalToMsalMigration , ownerlessApps , inactiveGuests , aadGraphDeprecationApplication , aadGraphDeprecationServicePrincipal , mfaServerDeprecation.
             ## @return a recommendation_type
             ## 
             def recommendation_type
                 return @recommendation_type
             end
             ## 
-            ## Sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.
+            ## Sets the recommendationType property value. Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests, aadGraphDeprecationApplication, aadGraphDeprecationServicePrincipal, mfaServerDeprecation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials , aadConnectDeprecated , adalToMsalMigration , ownerlessApps , inactiveGuests , aadGraphDeprecationApplication , aadGraphDeprecationServicePrincipal , mfaServerDeprecation.
             ## @param value Value to set for the recommendationType property.
             ## @return a void
             ## 
             def recommendation_type=(value)
                 @recommendation_type = value
+            end
+            ## 
+            ## Gets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @return a string
+            ## 
+            def release_type
+                return @release_type
+            end
+            ## 
+            ## Sets the releaseType property value. The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+            ## @param value Value to set for the releaseType property.
+            ## @return a void
+            ## 
+            def release_type=(value)
+                @release_type = value
             end
             ## 
             ## Gets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
@@ -403,6 +426,21 @@ module MicrosoftGraphBeta
             ## 
             def remediation_impact=(value)
                 @remediation_impact = value
+            end
+            ## 
+            ## Gets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+            ## @return a required_licenses
+            ## 
+            def required_licenses
+                return @required_licenses
+            end
+            ## 
+            ## Sets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+            ## @param value Value to set for the requiredLicenses property.
+            ## @return a void
+            ## 
+            def required_licenses=(value)
+                @required_licenses = value
             end
             ## 
             ## Serializes information the current object
@@ -430,7 +468,9 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("postponeUntilDateTime", @postpone_until_date_time)
                 writer.write_enum_value("priority", @priority)
                 writer.write_enum_value("recommendationType", @recommendation_type)
+                writer.write_string_value("releaseType", @release_type)
                 writer.write_string_value("remediationImpact", @remediation_impact)
+                writer.write_enum_value("requiredLicenses", @required_licenses)
                 writer.write_enum_value("status", @status)
             end
             ## 
@@ -447,6 +487,204 @@ module MicrosoftGraphBeta
             ## 
             def status=(value)
                 @status = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class RecommendationBaseCurrentScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a recommendation_base_current_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return RecommendationBaseCurrentScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class RecommendationBaseMaxScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a recommendation_base_max_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return RecommendationBaseMaxScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

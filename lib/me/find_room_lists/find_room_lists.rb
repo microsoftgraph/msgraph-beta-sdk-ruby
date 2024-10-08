@@ -1,1 +1,0 @@
-require_relative 'find_room_lists_response'

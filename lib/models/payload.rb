@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class Payload < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+            # The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
             @brand
             ## 
-            # The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
+            # The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
             @complexity
             ## 
             # Identity of the user who created the attack simulation and training campaign payload.
             @created_by
             ## 
-            # Date and time when the attack simulation and training campaign payload.
+            # Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
             # Description of the attack simulation and training campaign payload.
@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # Identity of the user who most recently modified the attack simulation and training campaign payload.
             @last_modified_by
             ## 
-            # Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            # Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
             # Free text tags for a payload.
@@ -65,23 +65,23 @@ module MicrosoftGraphBeta
             # The source property
             @source
             ## 
-            # Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
+            # Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             @status
             ## 
-            # The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            # The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             @technique
             ## 
-            # The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+            # The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
             @theme
             ## 
-            ## Gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+            ## Gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
             ## @return a payload_brand
             ## 
             def brand
                 return @brand
             end
             ## 
-            ## Sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+            ## Sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
             ## @param value Value to set for the brand property.
             ## @return a void
             ## 
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 @brand = value
             end
             ## 
-            ## Gets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
+            ## Gets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
             ## @return a payload_complexity
             ## 
             def complexity
                 return @complexity
             end
             ## 
-            ## Sets the complexity property value. The complexity of a payload.Possible values are: unknown, low, medium, high, unknownFutureValue
+            ## Sets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
             ## @param value Value to set for the complexity property.
             ## @return a void
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraphBeta
                 @complexity = value
             end
             ## 
-            ## Instantiates a new payload and sets the default values.
+            ## Instantiates a new Payload and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
+            ## Gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Date and time when the attack simulation and training campaign payload.
+            ## Sets the createdDateTime property value. Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -216,7 +216,7 @@ module MicrosoftGraphBeta
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "payloadTags" => lambda {|n| @payload_tags = n.get_collection_of_primitive_values(String) },
                     "platform" => lambda {|n| @platform = n.get_enum_value(MicrosoftGraphBeta::Models::PayloadDeliveryPlatform) },
-                    "predictedCompromiseRate" => lambda {|n| @predicted_compromise_rate = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "predictedCompromiseRate" => lambda {|n| @predicted_compromise_rate = n.get_object_value(lambda {|pn| Payload::PayloadPredictedCompromiseRate.create_from_discriminator_value(pn) }) },
                     "simulationAttackType" => lambda {|n| @simulation_attack_type = n.get_enum_value(MicrosoftGraphBeta::Models::SimulationAttackType) },
                     "source" => lambda {|n| @source = n.get_enum_value(MicrosoftGraphBeta::Models::SimulationContentSource) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::SimulationContentStatus) },
@@ -315,14 +315,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Sets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -361,7 +361,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the predictedCompromiseRate property value. Predicted probability for a payload to phish a targeted user.
-            ## @return a double
+            ## @return a payload_predicted_compromise_rate
             ## 
             def predicted_compromise_rate
                 return @predicted_compromise_rate
@@ -436,14 +436,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
+            ## Gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @return a simulation_content_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue. Inherited from simulation.
+            ## Sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -451,14 +451,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            ## Gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             ## @return a simulation_attack_technique
             ## 
             def technique
                 return @technique
             end
             ## 
-            ## Sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
+            ## Sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
             ## @param value Value to set for the technique property.
             ## @return a void
             ## 
@@ -466,19 +466,118 @@ module MicrosoftGraphBeta
                 @technique = value
             end
             ## 
-            ## Gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+            ## Gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
             ## @return a payload_theme
             ## 
             def theme
                 return @theme
             end
             ## 
-            ## Sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+            ## Sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
             ## @param value Value to set for the theme property.
             ## @return a void
             ## 
             def theme=(value)
                 @theme = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class PayloadPredictedCompromiseRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a payload_predicted_compromise_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return PayloadPredictedCompromiseRate.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

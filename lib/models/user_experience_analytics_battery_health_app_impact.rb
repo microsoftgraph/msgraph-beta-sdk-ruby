@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthAppImpact < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            # Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             @active_devices
             ## 
             # User friendly display name for the app. Eg: Outlook
@@ -21,20 +21,20 @@ module MicrosoftGraphBeta
             # App publisher. Eg: Microsoft Corporation
             @app_publisher
             ## 
-            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             @battery_usage_percentage
             ## 
             # true if the user had active interaction with the app.
             @is_foreground_app
             ## 
-            ## Gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 @app_publisher = value
             end
             ## 
-            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
+            ## @return a user_experience_analytics_battery_health_app_impact_battery_usage_percentage
             ## 
             def battery_usage_percentage
                 return @battery_usage_percentage
             end
             ## 
-            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             ## @param value Value to set for the batteryUsagePercentage property.
             ## @return a void
             ## 
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
                 @battery_usage_percentage = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
                     "appName" => lambda {|n| @app_name = n.get_string_value() },
                     "appPublisher" => lambda {|n| @app_publisher = n.get_string_value() },
-                    "batteryUsagePercentage" => lambda {|n| @battery_usage_percentage = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "batteryUsagePercentage" => lambda {|n| @battery_usage_percentage = n.get_object_value(lambda {|pn| UserExperienceAnalyticsBatteryHealthAppImpact::UserExperienceAnalyticsBatteryHealthAppImpactBatteryUsagePercentage.create_from_discriminator_value(pn) }) },
                     "isForegroundApp" => lambda {|n| @is_foreground_app = n.get_boolean_value() },
                 })
             end
@@ -160,6 +160,105 @@ module MicrosoftGraphBeta
                 writer.write_string_value("appPublisher", @app_publisher)
                 writer.write_object_value("batteryUsagePercentage", @battery_usage_percentage)
                 writer.write_boolean_value("isForegroundApp", @is_foreground_app)
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsBatteryHealthAppImpactBatteryUsagePercentage
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_battery_health_app_impact_battery_usage_percentage
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsBatteryHealthAppImpactBatteryUsagePercentage.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

@@ -5,38 +5,38 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Custom Extended Key Usage definition
+        # Complex type that represents the extended key usage of a certificate. This is shared complex type.
         class ExtendedKeyUsage
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Extended Key Usage Name
+            # The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
             @name
             ## 
-            # Extended Key Usage Object Identifier
+            # The object identifier (OID) of an extended key usage of a certificate. For example, '1.3.6.1.5.5.7.3.2' for client authentication.
             @object_identifier
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new extendedKeyUsage and sets the default values.
+            ## Instantiates a new ExtendedKeyUsage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,14 +63,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the name property value. Extended Key Usage Name
+            ## Gets the name property value. The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Extended Key Usage Name
+            ## Sets the name property value. The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 @name = value
             end
             ## 
-            ## Gets the objectIdentifier property value. Extended Key Usage Object Identifier
+            ## Gets the objectIdentifier property value. The object identifier (OID) of an extended key usage of a certificate. For example, '1.3.6.1.5.5.7.3.2' for client authentication.
             ## @return a string
             ## 
             def object_identifier
                 return @object_identifier
             end
             ## 
-            ## Sets the objectIdentifier property value. Extended Key Usage Object Identifier
+            ## Sets the objectIdentifier property value. The object identifier (OID) of an extended key usage of a certificate. For example, '1.3.6.1.5.5.7.3.2' for client authentication.
             ## @param value Value to set for the objectIdentifier property.
             ## @return a void
             ## 

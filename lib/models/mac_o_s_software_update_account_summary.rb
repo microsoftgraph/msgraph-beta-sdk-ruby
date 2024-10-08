@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                 @category_summaries = value
             end
             ## 
-            ## Instantiates a new macOSSoftwareUpdateAccountSummary and sets the default values.
+            ## Instantiates a new MacOSSoftwareUpdateAccountSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

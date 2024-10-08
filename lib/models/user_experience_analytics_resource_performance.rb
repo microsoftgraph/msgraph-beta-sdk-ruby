@@ -12,6 +12,12 @@ module MicrosoftGraphBeta
             # AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
             @average_spike_time_score
             ## 
+            # The clock speed of the processor, in MHz. Valid values 0 to 1000000
+            @cpu_clock_speed_in_m_hz
+            ## 
+            # The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+            @cpu_display_name
+            ## 
             # CPU spike time in percentage. Valid values 0 to 100
             @cpu_spike_time_percentage
             ## 
@@ -33,6 +39,15 @@ module MicrosoftGraphBeta
             # Resource performance score of a specific device. Valid values 0 to 100
             @device_resource_performance_score
             ## 
+            # The diskType property
+            @disk_type
+            ## 
+            # The healthStatus property
+            @health_status
+            ## 
+            # Indicates if machine is physical or virtual. Possible values are: physical or virtual
+            @machine_type
+            ## 
             # The user experience analytics device manufacturer.
             @manufacturer
             ## 
@@ -47,6 +62,12 @@ module MicrosoftGraphBeta
             ## 
             # The user experience analytics device RAM spike time score. Valid values 0 to 100
             @ram_spike_time_score
+            ## 
+            # The count of cores of the processor of device. Valid values 0 to 512
+            @total_processor_core_count
+            ## 
+            # The total RAM of the device, in MB. Valid values 0 to 1000000
+            @total_ram_in_m_b
             ## 
             ## Gets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
             ## @return a integer
@@ -63,15 +84,45 @@ module MicrosoftGraphBeta
                 @average_spike_time_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsResourcePerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
+            ## Gets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
+            ## @return a user_experience_analytics_resource_performance_cpu_clock_speed_in_m_hz
+            ## 
+            def cpu_clock_speed_in_m_hz
+                return @cpu_clock_speed_in_m_hz
+            end
+            ## 
+            ## Sets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
+            ## @param value Value to set for the cpuClockSpeedInMHz property.
+            ## @return a void
+            ## 
+            def cpu_clock_speed_in_m_hz=(value)
+                @cpu_clock_speed_in_m_hz = value
+            end
+            ## 
+            ## Gets the cpuDisplayName property value. The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+            ## @return a string
+            ## 
+            def cpu_display_name
+                return @cpu_display_name
+            end
+            ## 
+            ## Sets the cpuDisplayName property value. The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+            ## @param value Value to set for the cpuDisplayName property.
+            ## @return a void
+            ## 
+            def cpu_display_name=(value)
+                @cpu_display_name = value
+            end
+            ## 
             ## Gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
-            ## @return a double
+            ## @return a user_experience_analytics_resource_performance_cpu_spike_time_percentage
             ## 
             def cpu_spike_time_percentage
                 return @cpu_spike_time_percentage
@@ -86,7 +137,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
-            ## @return a double
+            ## @return a user_experience_analytics_resource_performance_cpu_spike_time_percentage_threshold
             ## 
             def cpu_spike_time_percentage_threshold
                 return @cpu_spike_time_percentage_threshold
@@ -184,25 +235,77 @@ module MicrosoftGraphBeta
                 @device_resource_performance_score = value
             end
             ## 
+            ## Gets the diskType property value. The diskType property
+            ## @return a disk_type
+            ## 
+            def disk_type
+                return @disk_type
+            end
+            ## 
+            ## Sets the diskType property value. The diskType property
+            ## @param value Value to set for the diskType property.
+            ## @return a void
+            ## 
+            def disk_type=(value)
+                @disk_type = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "averageSpikeTimeScore" => lambda {|n| @average_spike_time_score = n.get_number_value() },
-                    "cpuSpikeTimePercentage" => lambda {|n| @cpu_spike_time_percentage = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "cpuSpikeTimePercentageThreshold" => lambda {|n| @cpu_spike_time_percentage_threshold = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "cpuClockSpeedInMHz" => lambda {|n| @cpu_clock_speed_in_m_hz = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceCpuClockSpeedInMHz.create_from_discriminator_value(pn) }) },
+                    "cpuDisplayName" => lambda {|n| @cpu_display_name = n.get_string_value() },
+                    "cpuSpikeTimePercentage" => lambda {|n| @cpu_spike_time_percentage = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentage.create_from_discriminator_value(pn) }) },
+                    "cpuSpikeTimePercentageThreshold" => lambda {|n| @cpu_spike_time_percentage_threshold = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentageThreshold.create_from_discriminator_value(pn) }) },
                     "cpuSpikeTimeScore" => lambda {|n| @cpu_spike_time_score = n.get_number_value() },
                     "deviceCount" => lambda {|n| @device_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
                     "deviceName" => lambda {|n| @device_name = n.get_string_value() },
                     "deviceResourcePerformanceScore" => lambda {|n| @device_resource_performance_score = n.get_number_value() },
+                    "diskType" => lambda {|n| @disk_type = n.get_enum_value(MicrosoftGraphBeta::Models::DiskType) },
+                    "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraphBeta::Models::UserExperienceAnalyticsHealthState) },
+                    "machineType" => lambda {|n| @machine_type = n.get_enum_value(MicrosoftGraphBeta::Models::UserExperienceAnalyticsMachineType) },
                     "manufacturer" => lambda {|n| @manufacturer = n.get_string_value() },
                     "model" => lambda {|n| @model = n.get_string_value() },
-                    "ramSpikeTimePercentage" => lambda {|n| @ram_spike_time_percentage = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "ramSpikeTimePercentageThreshold" => lambda {|n| @ram_spike_time_percentage_threshold = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "ramSpikeTimePercentage" => lambda {|n| @ram_spike_time_percentage = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentage.create_from_discriminator_value(pn) }) },
+                    "ramSpikeTimePercentageThreshold" => lambda {|n| @ram_spike_time_percentage_threshold = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentageThreshold.create_from_discriminator_value(pn) }) },
                     "ramSpikeTimeScore" => lambda {|n| @ram_spike_time_score = n.get_number_value() },
+                    "totalProcessorCoreCount" => lambda {|n| @total_processor_core_count = n.get_number_value() },
+                    "totalRamInMB" => lambda {|n| @total_ram_in_m_b = n.get_object_value(lambda {|pn| UserExperienceAnalyticsResourcePerformance::UserExperienceAnalyticsResourcePerformanceTotalRamInMB.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the healthStatus property value. The healthStatus property
+            ## @return a user_experience_analytics_health_state
+            ## 
+            def health_status
+                return @health_status
+            end
+            ## 
+            ## Sets the healthStatus property value. The healthStatus property
+            ## @param value Value to set for the healthStatus property.
+            ## @return a void
+            ## 
+            def health_status=(value)
+                @health_status = value
+            end
+            ## 
+            ## Gets the machineType property value. Indicates if machine is physical or virtual. Possible values are: physical or virtual
+            ## @return a user_experience_analytics_machine_type
+            ## 
+            def machine_type
+                return @machine_type
+            end
+            ## 
+            ## Sets the machineType property value. Indicates if machine is physical or virtual. Possible values are: physical or virtual
+            ## @param value Value to set for the machineType property.
+            ## @return a void
+            ## 
+            def machine_type=(value)
+                @machine_type = value
             end
             ## 
             ## Gets the manufacturer property value. The user experience analytics device manufacturer.
@@ -236,7 +339,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
-            ## @return a double
+            ## @return a user_experience_analytics_resource_performance_ram_spike_time_percentage
             ## 
             def ram_spike_time_percentage
                 return @ram_spike_time_percentage
@@ -251,7 +354,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
-            ## @return a double
+            ## @return a user_experience_analytics_resource_performance_ram_spike_time_percentage_threshold
             ## 
             def ram_spike_time_percentage_threshold
                 return @ram_spike_time_percentage_threshold
@@ -288,6 +391,8 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_number_value("averageSpikeTimeScore", @average_spike_time_score)
+                writer.write_object_value("cpuClockSpeedInMHz", @cpu_clock_speed_in_m_hz)
+                writer.write_string_value("cpuDisplayName", @cpu_display_name)
                 writer.write_object_value("cpuSpikeTimePercentage", @cpu_spike_time_percentage)
                 writer.write_object_value("cpuSpikeTimePercentageThreshold", @cpu_spike_time_percentage_threshold)
                 writer.write_number_value("cpuSpikeTimeScore", @cpu_spike_time_score)
@@ -295,11 +400,640 @@ module MicrosoftGraphBeta
                 writer.write_string_value("deviceId", @device_id)
                 writer.write_string_value("deviceName", @device_name)
                 writer.write_number_value("deviceResourcePerformanceScore", @device_resource_performance_score)
+                writer.write_enum_value("diskType", @disk_type)
+                writer.write_enum_value("healthStatus", @health_status)
+                writer.write_enum_value("machineType", @machine_type)
                 writer.write_string_value("manufacturer", @manufacturer)
                 writer.write_string_value("model", @model)
                 writer.write_object_value("ramSpikeTimePercentage", @ram_spike_time_percentage)
                 writer.write_object_value("ramSpikeTimePercentageThreshold", @ram_spike_time_percentage_threshold)
                 writer.write_number_value("ramSpikeTimeScore", @ram_spike_time_score)
+                writer.write_number_value("totalProcessorCoreCount", @total_processor_core_count)
+                writer.write_object_value("totalRamInMB", @total_ram_in_m_b)
+            end
+            ## 
+            ## Gets the totalProcessorCoreCount property value. The count of cores of the processor of device. Valid values 0 to 512
+            ## @return a integer
+            ## 
+            def total_processor_core_count
+                return @total_processor_core_count
+            end
+            ## 
+            ## Sets the totalProcessorCoreCount property value. The count of cores of the processor of device. Valid values 0 to 512
+            ## @param value Value to set for the totalProcessorCoreCount property.
+            ## @return a void
+            ## 
+            def total_processor_core_count=(value)
+                @total_processor_core_count = value
+            end
+            ## 
+            ## Gets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
+            ## @return a user_experience_analytics_resource_performance_total_ram_in_m_b
+            ## 
+            def total_ram_in_m_b
+                return @total_ram_in_m_b
+            end
+            ## 
+            ## Sets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
+            ## @param value Value to set for the totalRamInMB property.
+            ## @return a void
+            ## 
+            def total_ram_in_m_b=(value)
+                @total_ram_in_m_b = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceCpuClockSpeedInMHz
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_cpu_clock_speed_in_m_hz
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceCpuClockSpeedInMHz.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentage
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_cpu_spike_time_percentage
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentage.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentageThreshold
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_cpu_spike_time_percentage_threshold
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceCpuSpikeTimePercentageThreshold.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentage
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_ram_spike_time_percentage
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentage.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentageThreshold
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_ram_spike_time_percentage_threshold
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceRamSpikeTimePercentageThreshold.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsResourcePerformanceTotalRamInMB
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_resource_performance_total_ram_in_m_b
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsResourcePerformanceTotalRamInMB.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

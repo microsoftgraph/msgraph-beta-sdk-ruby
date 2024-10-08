@@ -1,1 +1,1 @@
-require_relative 'get_supported_properties_response'
+require_relative 'get_supported_properties_get_response'

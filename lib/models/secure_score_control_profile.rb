@@ -23,7 +23,7 @@ module MicrosoftGraphBeta
             # Control action category (Account, Data, Device, Apps, Infrastructure).
             @control_category
             ## 
-            # Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            # Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             @control_state_updates
             ## 
             # Flag to indicate if a control is depreciated.
@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # Resource cost of implemmentating control (low, moderate, high).
             @implementation_cost
             ## 
-            # The lastModifiedDateTime property
+            # Time at which the control profile entity was last modified. The Timestamp type represents date and time
             @last_modified_date_time
             ## 
             # Current obtained max score on specified date.
@@ -47,10 +47,10 @@ module MicrosoftGraphBeta
             # Description of the impact on users of the remediation.
             @remediation_impact
             ## 
-            # Service that owns the control (Exchange, Sharepoint, Azure AD).
+            # Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             @service
             ## 
-            # List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             @threats
             ## 
             # Control tier (Core, Defense in Depth, Advanced.)
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
             # User impact of implementing control (low, moderate, high).
             @user_impact
             ## 
-            # The vendorInformation property
+            # Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             @vendor_information
             ## 
             ## Gets the actionType property value. Control action type (Config, Review, Behavior).
@@ -125,7 +125,7 @@ module MicrosoftGraphBeta
                 @compliance_information = value
             end
             ## 
-            ## Instantiates a new secureScoreControlProfile and sets the default values.
+            ## Instantiates a new SecureScoreControlProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -147,14 +147,14 @@ module MicrosoftGraphBeta
                 @control_category = value
             end
             ## 
-            ## Gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            ## Gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             ## @return a secure_score_control_state_update
             ## 
             def control_state_updates
                 return @control_state_updates
             end
             ## 
-            ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+            ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
             ## @param value Value to set for the controlStateUpdates property.
             ## @return a void
             ## 
@@ -200,7 +200,7 @@ module MicrosoftGraphBeta
                     "deprecated" => lambda {|n| @deprecated = n.get_boolean_value() },
                     "implementationCost" => lambda {|n| @implementation_cost = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "maxScore" => lambda {|n| @max_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "maxScore" => lambda {|n| @max_score = n.get_object_value(lambda {|pn| SecureScoreControlProfile::SecureScoreControlProfileMaxScore.create_from_discriminator_value(pn) }) },
                     "rank" => lambda {|n| @rank = n.get_number_value() },
                     "remediation" => lambda {|n| @remediation = n.get_string_value() },
                     "remediationImpact" => lambda {|n| @remediation_impact = n.get_string_value() },
@@ -228,14 +228,14 @@ module MicrosoftGraphBeta
                 @implementation_cost = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -244,7 +244,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the maxScore property value. Current obtained max score on specified date.
-            ## @return a double
+            ## @return a secure_score_control_profile_max_score
             ## 
             def max_score
                 return @max_score
@@ -331,14 +331,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("vendorInformation", @vendor_information)
             end
             ## 
-            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @return a string
             ## 
             def service
                 return @service
             end
             ## 
-            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @param value Value to set for the service property.
             ## @return a void
             ## 
@@ -346,14 +346,14 @@ module MicrosoftGraphBeta
                 @service = value
             end
             ## 
-            ## Gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @return a string
             ## 
             def threats
                 return @threats
             end
             ## 
-            ## Sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @param value Value to set for the threats property.
             ## @return a void
             ## 
@@ -406,19 +406,118 @@ module MicrosoftGraphBeta
                 @user_impact = value
             end
             ## 
-            ## Gets the vendorInformation property value. The vendorInformation property
+            ## Gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @return a security_vendor_information
             ## 
             def vendor_information
                 return @vendor_information
             end
             ## 
-            ## Sets the vendorInformation property value. The vendorInformation property
+            ## Sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @param value Value to set for the vendorInformation property.
             ## @return a void
             ## 
             def vendor_information=(value)
                 @vendor_information = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class SecureScoreControlProfileMaxScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a secure_score_control_profile_max_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return SecureScoreControlProfileMaxScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraphBeta::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

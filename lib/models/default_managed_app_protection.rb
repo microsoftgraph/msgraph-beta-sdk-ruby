@@ -9,6 +9,9 @@ module MicrosoftGraphBeta
         class DefaultManagedAppProtection < MicrosoftGraphBeta::Models::ManagedAppProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Indicates  if content sync for widgets is allowed for iOS on App Protection Policies
+            @allow_widget_content_sync
+            ## 
             # Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
             @allowed_android_device_manufacturers
             ## 
@@ -117,6 +120,15 @@ module MicrosoftGraphBeta
             # Indicate to the client to enable both biometrics and fingerprints for the app.
             @fingerprint_and_biometric_enabled
             ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            @messaging_redirect_app_display_name
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            @messaging_redirect_app_package_id
+            ## 
+            # When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            @messaging_redirect_app_url_scheme
+            ## 
             # Minimum version of the Company portal that must be installed on the device or app access will be blocked
             @minimum_required_company_portal_version
             ## 
@@ -173,6 +185,21 @@ module MicrosoftGraphBeta
             ## 
             # Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
             @wipe_after_company_portal_update_deferral_in_days
+            ## 
+            ## Gets the allowWidgetContentSync property value. Indicates  if content sync for widgets is allowed for iOS on App Protection Policies
+            ## @return a boolean
+            ## 
+            def allow_widget_content_sync
+                return @allow_widget_content_sync
+            end
+            ## 
+            ## Sets the allowWidgetContentSync property value. Indicates  if content sync for widgets is allowed for iOS on App Protection Policies
+            ## @param value Value to set for the allowWidgetContentSync property.
+            ## @return a void
+            ## 
+            def allow_widget_content_sync=(value)
+                @allow_widget_content_sync = value
+            end
             ## 
             ## Gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
             ## @return a string
@@ -444,7 +471,7 @@ module MicrosoftGraphBeta
                 @connect_to_vpn_on_launch = value
             end
             ## 
-            ## Instantiates a new defaultManagedAppProtection and sets the default values.
+            ## Instantiates a new DefaultManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -736,6 +763,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "allowWidgetContentSync" => lambda {|n| @allow_widget_content_sync = n.get_boolean_value() },
                     "allowedAndroidDeviceManufacturers" => lambda {|n| @allowed_android_device_manufacturers = n.get_string_value() },
                     "allowedAndroidDeviceModels" => lambda {|n| @allowed_android_device_models = n.get_collection_of_primitive_values(String) },
                     "allowedIosDeviceModels" => lambda {|n| @allowed_ios_device_models = n.get_string_value() },
@@ -772,6 +800,9 @@ module MicrosoftGraphBeta
                     "faceIdBlocked" => lambda {|n| @face_id_blocked = n.get_boolean_value() },
                     "filterOpenInToOnlyManagedApps" => lambda {|n| @filter_open_in_to_only_managed_apps = n.get_boolean_value() },
                     "fingerprintAndBiometricEnabled" => lambda {|n| @fingerprint_and_biometric_enabled = n.get_boolean_value() },
+                    "messagingRedirectAppDisplayName" => lambda {|n| @messaging_redirect_app_display_name = n.get_string_value() },
+                    "messagingRedirectAppPackageId" => lambda {|n| @messaging_redirect_app_package_id = n.get_string_value() },
+                    "messagingRedirectAppUrlScheme" => lambda {|n| @messaging_redirect_app_url_scheme = n.get_string_value() },
                     "minimumRequiredCompanyPortalVersion" => lambda {|n| @minimum_required_company_portal_version = n.get_string_value() },
                     "minimumRequiredPatchVersion" => lambda {|n| @minimum_required_patch_version = n.get_string_value() },
                     "minimumRequiredSdkVersion" => lambda {|n| @minimum_required_sdk_version = n.get_string_value() },
@@ -792,6 +823,51 @@ module MicrosoftGraphBeta
                     "warnAfterCompanyPortalUpdateDeferralInDays" => lambda {|n| @warn_after_company_portal_update_deferral_in_days = n.get_number_value() },
                     "wipeAfterCompanyPortalUpdateDeferralInDays" => lambda {|n| @wipe_after_company_portal_update_deferral_in_days = n.get_number_value() },
                 })
+            end
+            ## 
+            ## Gets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_display_name
+                return @messaging_redirect_app_display_name
+            end
+            ## 
+            ## Sets the messagingRedirectAppDisplayName property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppDisplayName property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_display_name=(value)
+                @messaging_redirect_app_display_name = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_package_id
+                return @messaging_redirect_app_package_id
+            end
+            ## 
+            ## Sets the messagingRedirectAppPackageId property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppPackageId property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_package_id=(value)
+                @messaging_redirect_app_package_id = value
+            end
+            ## 
+            ## Gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @return a string
+            ## 
+            def messaging_redirect_app_url_scheme
+                return @messaging_redirect_app_url_scheme
+            end
+            ## 
+            ## Sets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+            ## @param value Value to set for the messagingRedirectAppUrlScheme property.
+            ## @return a void
+            ## 
+            def messaging_redirect_app_url_scheme=(value)
+                @messaging_redirect_app_url_scheme = value
             end
             ## 
             ## Gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -1041,6 +1117,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_boolean_value("allowWidgetContentSync", @allow_widget_content_sync)
                 writer.write_string_value("allowedAndroidDeviceManufacturers", @allowed_android_device_manufacturers)
                 writer.write_collection_of_primitive_values("allowedAndroidDeviceModels", @allowed_android_device_models)
                 writer.write_string_value("allowedIosDeviceModels", @allowed_ios_device_models)
@@ -1077,6 +1154,9 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
                 writer.write_boolean_value("filterOpenInToOnlyManagedApps", @filter_open_in_to_only_managed_apps)
                 writer.write_boolean_value("fingerprintAndBiometricEnabled", @fingerprint_and_biometric_enabled)
+                writer.write_string_value("messagingRedirectAppDisplayName", @messaging_redirect_app_display_name)
+                writer.write_string_value("messagingRedirectAppPackageId", @messaging_redirect_app_package_id)
+                writer.write_string_value("messagingRedirectAppUrlScheme", @messaging_redirect_app_url_scheme)
                 writer.write_string_value("minimumRequiredCompanyPortalVersion", @minimum_required_company_portal_version)
                 writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version)
                 writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)

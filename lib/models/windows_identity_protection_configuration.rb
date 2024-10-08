@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             # Boolean value that blocks Windows Hello for Business as a method for signing into Windows.
             @windows_hello_for_business_blocked
             ## 
-            ## Instantiates a new windowsIdentityProtectionConfiguration and sets the default values.
+            ## Instantiates a new WindowsIdentityProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

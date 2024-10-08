@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The labels property
             @labels
             ## 
-            ## Instantiates a new informationProtectionPolicy and sets the default values.
+            ## Instantiates a new InformationProtectionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
