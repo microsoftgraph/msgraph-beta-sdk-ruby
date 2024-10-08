@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new applicationSignInDetailedSummary and sets the default values.
+            ## Instantiates a new ApplicationSignInDetailedSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

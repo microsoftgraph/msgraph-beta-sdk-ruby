@@ -9,16 +9,16 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthOsPerformance < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices for that os version. Valid values -2147483648 to 2147483647
+            # Number of active devices for that os version. Valid values 0 to 2147483647
             @active_devices
             ## 
-            # The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            # The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
             @average_battery_age_in_days
             ## 
-            # The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+            # The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
             @average_estimated_runtime_in_minutes
             ## 
-            # The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            # The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             @average_max_capacity_percentage
             ## 
             # The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices running a particular operating system version in a tenant. Valid values 0 to 2147483647
@@ -45,14 +45,14 @@ module MicrosoftGraphBeta
             # Version of the operating system.
             @os_version
             ## 
-            ## Gets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices for that os version. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices for that os version. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -60,14 +60,14 @@ module MicrosoftGraphBeta
                 @active_devices = value
             end
             ## 
-            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_battery_age_in_days
                 return @average_battery_age_in_days
             end
             ## 
-            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+            ## Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
             ## @param value Value to set for the averageBatteryAgeInDays property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 @average_battery_age_in_days = value
             end
             ## 
-            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_estimated_runtime_in_minutes
                 return @average_estimated_runtime_in_minutes
             end
             ## 
-            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+            ## Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
             ## @param value Value to set for the averageEstimatedRuntimeInMinutes property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraphBeta
                 @average_estimated_runtime_in_minutes = value
             end
             ## 
-            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def average_max_capacity_percentage
                 return @average_max_capacity_percentage
             end
             ## 
-            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+            ## Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
             ## @param value Value to set for the averageMaxCapacityPercentage property.
             ## @return a void
             ## 
@@ -105,7 +105,7 @@ module MicrosoftGraphBeta
                 @average_max_capacity_percentage = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

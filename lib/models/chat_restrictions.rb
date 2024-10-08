@@ -10,35 +10,35 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The allowTextOnly property
+            # Indicates whether only text is allowed in the meeting chat. Optional.
             @allow_text_only
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowTextOnly property value. The allowTextOnly property
+            ## Gets the allowTextOnly property value. Indicates whether only text is allowed in the meeting chat. Optional.
             ## @return a boolean
             ## 
             def allow_text_only
                 return @allow_text_only
             end
             ## 
-            ## Sets the allowTextOnly property value. The allowTextOnly property
+            ## Sets the allowTextOnly property value. Indicates whether only text is allowed in the meeting chat. Optional.
             ## @param value Value to set for the allowTextOnly property.
             ## @return a void
             ## 
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @allow_text_only = value
             end
             ## 
-            ## Instantiates a new chatRestrictions and sets the default values.
+            ## Instantiates a new ChatRestrictions and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,4 +1,3 @@
-require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -11,10 +10,7 @@ module MicrosoftGraphBeta
             # The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
             @client_app_name
             ## 
-            # The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-            @created_date_time
-            ## 
-            # The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            # The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             @device
             ## 
             # Tags containing app metadata.
@@ -41,27 +37,12 @@ module MicrosoftGraphBeta
                 @client_app_name = value
             end
             ## 
-            ## Instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod"
-            end
-            ## 
-            ## Gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-            ## @return a date_time
-            ## 
-            def created_date_time
-                return @created_date_time
-            end
-            ## 
-            ## Sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-            ## @param value Value to set for the createdDateTime property.
-            ## @return a void
-            ## 
-            def created_date_time=(value)
-                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -73,14 +54,14 @@ module MicrosoftGraphBeta
                 return MicrosoftAuthenticatorAuthenticationMethod.new
             end
             ## 
-            ## Gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @return a device
             ## 
             def device
                 return @device
             end
             ## 
-            ## Sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @param value Value to set for the device property.
             ## @return a void
             ## 
@@ -124,7 +105,6 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "clientAppName" => lambda {|n| @client_app_name = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftAuthenticatorAuthenticationMethodClientAppName) },
-                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "device" => lambda {|n| @device = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Device.create_from_discriminator_value(pn) }) },
                     "deviceTag" => lambda {|n| @device_tag = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -155,7 +135,6 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_enum_value("clientAppName", @client_app_name)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_object_value("device", @device)
                 writer.write_string_value("deviceTag", @device_tag)
                 writer.write_string_value("displayName", @display_name)

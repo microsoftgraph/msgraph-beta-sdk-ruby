@@ -7,6 +7,7 @@ module MicrosoftGraphBeta
             Saml20: :Saml20,
             UnknownFutureValue: :UnknownFutureValue,
             RemoteDesktopToken: :RemoteDesktopToken,
+            RefreshToken: :RefreshToken,
         }
     end
 end

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CloudPcBulkTroubleshoot < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new cloudPcBulkTroubleshoot and sets the default values.
+            ## Instantiates a new CloudPcBulkTroubleshoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

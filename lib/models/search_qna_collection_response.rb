@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new searchQnaCollectionResponse and sets the default values.
+            ## Instantiates a new SearchQnaCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

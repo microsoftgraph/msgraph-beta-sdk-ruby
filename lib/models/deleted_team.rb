@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @channels = value
             end
             ## 
-            ## Instantiates a new deletedTeam and sets the default values.
+            ## Instantiates a new DeletedTeam and sets the default values.
             ## @return a void
             ## 
             def initialize()

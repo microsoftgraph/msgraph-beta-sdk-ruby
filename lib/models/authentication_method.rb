@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -7,11 +8,29 @@ module MicrosoftGraphBeta
         class AuthenticationMethod < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new authenticationMethod and sets the default values.
+            # The createdDateTime property
+            @created_date_time
+            ## 
+            ## Instantiates a new AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The createdDateTime property
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The createdDateTime property
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +55,8 @@ module MicrosoftGraphBeta
                             return PasswordlessMicrosoftAuthenticatorAuthenticationMethod.new
                         when "#microsoft.graph.phoneAuthenticationMethod"
                             return PhoneAuthenticationMethod.new
+                        when "#microsoft.graph.platformCredentialAuthenticationMethod"
+                            return PlatformCredentialAuthenticationMethod.new
                         when "#microsoft.graph.softwareOathAuthenticationMethod"
                             return SoftwareOathAuthenticationMethod.new
                         when "#microsoft.graph.temporaryAccessPassAuthenticationMethod"
@@ -52,6 +73,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                 })
             end
             ## 
@@ -62,6 +84,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("createdDateTime", @created_date_time)
             end
         end
     end

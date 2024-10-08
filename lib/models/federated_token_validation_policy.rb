@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The validatingDomains property
             @validating_domains
             ## 
-            ## Instantiates a new federatedTokenValidationPolicy and sets the default values.
+            ## Instantiates a new FederatedTokenValidationPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

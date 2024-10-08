@@ -13,31 +13,31 @@ module MicrosoftGraphBeta
             # The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
             @event
             ## 
-            # The isAllDay property
+            # Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.
             @is_all_day
             ## 
-            # The isDelegated property
+            # True if this meeting request is accessible to a delegate, false otherwise. Default is false.
             @is_delegated
             ## 
-            # The isOutOfDate property
+            # Indicates whether this meeting request has been made out-of-date by a more recent request.
             @is_out_of_date
             ## 
-            # The location property
+            # The location of the requested meeting.
             @location
             ## 
-            # The meetingMessageType property
+            # The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.
             @meeting_message_type
             ## 
-            # The recurrence property
+            # The recurrence pattern of the requested meeting.
             @recurrence
             ## 
-            # The startDateTime property
+            # The start time of the requested meeting.
             @start_date_time
             ## 
-            # The type property
+            # The type of requested meeting: singleInstance, occurence, exception, seriesMaster.
             @type
             ## 
-            ## Instantiates a new eventMessage and sets the default values.
+            ## Instantiates a new EventMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -112,14 +112,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isAllDay property value. The isAllDay property
+            ## Gets the isAllDay property value. Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.
             ## @return a boolean
             ## 
             def is_all_day
                 return @is_all_day
             end
             ## 
-            ## Sets the isAllDay property value. The isAllDay property
+            ## Sets the isAllDay property value. Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.
             ## @param value Value to set for the isAllDay property.
             ## @return a void
             ## 
@@ -127,14 +127,14 @@ module MicrosoftGraphBeta
                 @is_all_day = value
             end
             ## 
-            ## Gets the isDelegated property value. The isDelegated property
+            ## Gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
             ## @return a boolean
             ## 
             def is_delegated
                 return @is_delegated
             end
             ## 
-            ## Sets the isDelegated property value. The isDelegated property
+            ## Sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
             ## @param value Value to set for the isDelegated property.
             ## @return a void
             ## 
@@ -142,14 +142,14 @@ module MicrosoftGraphBeta
                 @is_delegated = value
             end
             ## 
-            ## Gets the isOutOfDate property value. The isOutOfDate property
+            ## Gets the isOutOfDate property value. Indicates whether this meeting request has been made out-of-date by a more recent request.
             ## @return a boolean
             ## 
             def is_out_of_date
                 return @is_out_of_date
             end
             ## 
-            ## Sets the isOutOfDate property value. The isOutOfDate property
+            ## Sets the isOutOfDate property value. Indicates whether this meeting request has been made out-of-date by a more recent request.
             ## @param value Value to set for the isOutOfDate property.
             ## @return a void
             ## 
@@ -157,14 +157,14 @@ module MicrosoftGraphBeta
                 @is_out_of_date = value
             end
             ## 
-            ## Gets the location property value. The location property
+            ## Gets the location property value. The location of the requested meeting.
             ## @return a location
             ## 
             def location
                 return @location
             end
             ## 
-            ## Sets the location property value. The location property
+            ## Sets the location property value. The location of the requested meeting.
             ## @param value Value to set for the location property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the meetingMessageType property value. The meetingMessageType property
+            ## Gets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.
             ## @return a meeting_message_type
             ## 
             def meeting_message_type
                 return @meeting_message_type
             end
             ## 
-            ## Sets the meetingMessageType property value. The meetingMessageType property
+            ## Sets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.
             ## @param value Value to set for the meetingMessageType property.
             ## @return a void
             ## 
@@ -187,14 +187,14 @@ module MicrosoftGraphBeta
                 @meeting_message_type = value
             end
             ## 
-            ## Gets the recurrence property value. The recurrence property
+            ## Gets the recurrence property value. The recurrence pattern of the requested meeting.
             ## @return a patterned_recurrence
             ## 
             def recurrence
                 return @recurrence
             end
             ## 
-            ## Sets the recurrence property value. The recurrence property
+            ## Sets the recurrence property value. The recurrence pattern of the requested meeting.
             ## @param value Value to set for the recurrence property.
             ## @return a void
             ## 
@@ -221,14 +221,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("type", @type)
             end
             ## 
-            ## Gets the startDateTime property value. The startDateTime property
+            ## Gets the startDateTime property value. The start time of the requested meeting.
             ## @return a date_time_time_zone
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The startDateTime property
+            ## Sets the startDateTime property value. The start time of the requested meeting.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -236,14 +236,14 @@ module MicrosoftGraphBeta
                 @start_date_time = value
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The type of requested meeting: singleInstance, occurence, exception, seriesMaster.
             ## @return a event_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The type of requested meeting: singleInstance, occurence, exception, seriesMaster.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

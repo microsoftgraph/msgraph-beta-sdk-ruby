@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # List of definition IDs for all possible implementations of this abstract complex setting
             @implementations
             ## 
-            ## Instantiates a new deviceManagementAbstractComplexSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementAbstractComplexSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
