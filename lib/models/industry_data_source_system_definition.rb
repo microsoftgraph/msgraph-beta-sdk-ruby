@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The name of the vendor who supplies the source system. Maximum supported length is 100 characters.
             @vendor
             ## 
-            ## Instantiates a new industryDataSourceSystemDefinition and sets the default values.
+            ## Instantiates a new IndustryDataSourceSystemDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

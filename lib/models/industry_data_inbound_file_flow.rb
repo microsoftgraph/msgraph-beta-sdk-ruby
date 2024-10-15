@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class IndustryDataInboundFileFlow < MicrosoftGraphBeta::Models::IndustryDataInboundFlow
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new industryDataInboundFileFlow and sets the default values.
+            ## Instantiates a new IndustryDataInboundFileFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()

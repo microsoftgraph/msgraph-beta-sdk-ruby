@@ -121,7 +121,7 @@ module MicrosoftGraphBeta
                 @category_id = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -192,7 +192,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessTypes" => lambda {|n| @access_types = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
+                    "accessTypes" => lambda {|n| @access_types = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
                     "applicability" => lambda {|n| @applicability = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingApplicability.create_from_discriminator_value(pn) }) },
                     "baseUri" => lambda {|n| @base_uri = n.get_string_value() },
                     "categoryId" => lambda {|n| @category_id = n.get_string_value() },
@@ -206,10 +206,10 @@ module MicrosoftGraphBeta
                     "offsetUri" => lambda {|n| @offset_uri = n.get_string_value() },
                     "referredSettingInformationList" => lambda {|n| @referred_setting_information_list = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationReferredSettingInformation.create_from_discriminator_value(pn) }) },
                     "rootDefinitionId" => lambda {|n| @root_definition_id = n.get_string_value() },
-                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
+                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
                     "uxBehavior" => lambda {|n| @ux_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationControlType) },
                     "version" => lambda {|n| @version = n.get_string_value() },
-                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
+                    "visibility" => lambda {|n| @visibility = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
                 })
             end
             ## 

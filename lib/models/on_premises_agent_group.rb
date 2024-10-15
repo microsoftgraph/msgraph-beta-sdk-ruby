@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
                 @agents = value
             end
             ## 
-            ## Instantiates a new onPremisesAgentGroup and sets the default values.
+            ## Instantiates a new OnPremisesAgentGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

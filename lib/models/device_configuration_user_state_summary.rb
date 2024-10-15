@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                 @conflict_user_count = value
             end
             ## 
-            ## Instantiates a new deviceConfigurationUserStateSummary and sets the default values.
+            ## Instantiates a new DeviceConfigurationUserStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

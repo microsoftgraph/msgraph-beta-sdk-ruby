@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class WindowsInformationProtectionStoreApp < MicrosoftGraphBeta::Models::WindowsInformationProtectionApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new windowsInformationProtectionStoreApp and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

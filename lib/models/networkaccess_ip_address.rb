@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Defines the IP address used in a destination for a rule.
             @value
             ## 
-            ## Instantiates a new networkaccessIpAddress and sets the default values.
+            ## Instantiates a new NetworkaccessIpAddress and sets the default values.
             ## @return a void
             ## 
             def initialize()

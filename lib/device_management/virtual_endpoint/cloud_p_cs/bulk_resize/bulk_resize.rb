@@ -1,2 +1,2 @@
 require_relative 'bulk_resize_post_request_body'
-require_relative 'bulk_resize_response'
+require_relative 'bulk_resize_post_response'

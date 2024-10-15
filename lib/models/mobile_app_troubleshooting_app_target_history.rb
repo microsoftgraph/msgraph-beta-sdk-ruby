@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # AAD security group id to which it was targeted.
             @security_group_id
             ## 
-            ## Instantiates a new mobileAppTroubleshootingAppTargetHistory and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingAppTargetHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

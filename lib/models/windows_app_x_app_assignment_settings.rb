@@ -9,10 +9,10 @@ module MicrosoftGraphBeta
         class WindowsAppXAppAssignmentSettings < MicrosoftGraphBeta::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+            # Whether or not to use device execution context for Windows AppX mobile app.
             @use_device_context
             ## 
-            ## Instantiates a new windowsAppXAppAssignmentSettings and sets the default values.
+            ## Instantiates a new WindowsAppXAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +48,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("useDeviceContext", @use_device_context)
             end
             ## 
-            ## Gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+            ## Gets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
             ## @return a boolean
             ## 
             def use_device_context
                 return @use_device_context
             end
             ## 
-            ## Sets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+            ## Sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
             ## @param value Value to set for the useDeviceContext property.
             ## @return a void
             ## 

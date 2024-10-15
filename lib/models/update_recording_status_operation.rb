@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class UpdateRecordingStatusOperation < MicrosoftGraphBeta::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new updateRecordingStatusOperation and sets the default values.
+            ## Instantiates a new UpdateRecordingStatusOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

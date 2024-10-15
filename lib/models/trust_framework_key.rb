@@ -10,73 +10,76 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # RSA Key - private exponent. Field cannot be read back.
+            # RSA Key - private exponent. The field isn't readable.
             @d
             ## 
-            # RSA Key - first exponent. Field cannot be read back.
+            # RSA Key - first exponent. The field isn't readable.
             @dp
             ## 
-            # RSA Key - second exponent. Field cannot be read back.
+            # RSA Key - second exponent. The field isn't readable.
             @dq
             ## 
-            # RSA Key - public exponent
+            # RSA Key - public exponent.
             @e
             ## 
-            # This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            # This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             @exp
             ## 
-            # Symmetric Key for oct key type. Field cannot be read back.
+            # Symmetric Key for oct key type. The field isn't readable.
             @k
             ## 
             # The unique identifier for the key.
             @kid
             ## 
-            # The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+            # The kty (key type) parameter identifies the cryptographic algorithm family used with the key. The valid values are rsa, oct.
             @kty
             ## 
-            # RSA Key - modulus
+            # RSA Key - modulus.
             @n
             ## 
-            # This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            # This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             @nbf
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # RSA Key - first prime. Field cannot be read back.
+            # RSA Key - first prime. The field isn't readable.
             @p
             ## 
-            # RSA Key - second prime. Field cannot be read back.
+            # RSA Key - second prime. The field isn't readable.
             @q
             ## 
-            # RSA Key - Coefficient. Field cannot be read back.
+            # RSA Key - Coefficient. The field isn't readable.
             @qi
             ## 
-            # The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+            # Status of the key. The possible values are: enabled, disabled, unknownFutureValue.
+            @status
+            ## 
+            # The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).
             @use
             ## 
-            # The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+            # The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates. For more information, see RFC 5280.
             @x5c
             ## 
-            # The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            # The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate. For more information, see RFC 5280.
             @x5t
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new trustFrameworkKey and sets the default values.
+            ## Instantiates a new TrustFrameworkKey and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -92,14 +95,14 @@ module MicrosoftGraphBeta
                 return TrustFrameworkKey.new
             end
             ## 
-            ## Gets the d property value. RSA Key - private exponent. Field cannot be read back.
+            ## Gets the d property value. RSA Key - private exponent. The field isn't readable.
             ## @return a string
             ## 
             def d
                 return @d
             end
             ## 
-            ## Sets the d property value. RSA Key - private exponent. Field cannot be read back.
+            ## Sets the d property value. RSA Key - private exponent. The field isn't readable.
             ## @param value Value to set for the d property.
             ## @return a void
             ## 
@@ -107,14 +110,14 @@ module MicrosoftGraphBeta
                 @d = value
             end
             ## 
-            ## Gets the dp property value. RSA Key - first exponent. Field cannot be read back.
+            ## Gets the dp property value. RSA Key - first exponent. The field isn't readable.
             ## @return a string
             ## 
             def dp
                 return @dp
             end
             ## 
-            ## Sets the dp property value. RSA Key - first exponent. Field cannot be read back.
+            ## Sets the dp property value. RSA Key - first exponent. The field isn't readable.
             ## @param value Value to set for the dp property.
             ## @return a void
             ## 
@@ -122,14 +125,14 @@ module MicrosoftGraphBeta
                 @dp = value
             end
             ## 
-            ## Gets the dq property value. RSA Key - second exponent. Field cannot be read back.
+            ## Gets the dq property value. RSA Key - second exponent. The field isn't readable.
             ## @return a string
             ## 
             def dq
                 return @dq
             end
             ## 
-            ## Sets the dq property value. RSA Key - second exponent. Field cannot be read back.
+            ## Sets the dq property value. RSA Key - second exponent. The field isn't readable.
             ## @param value Value to set for the dq property.
             ## @return a void
             ## 
@@ -137,14 +140,14 @@ module MicrosoftGraphBeta
                 @dq = value
             end
             ## 
-            ## Gets the e property value. RSA Key - public exponent
+            ## Gets the e property value. RSA Key - public exponent.
             ## @return a string
             ## 
             def e
                 return @e
             end
             ## 
-            ## Sets the e property value. RSA Key - public exponent
+            ## Sets the e property value. RSA Key - public exponent.
             ## @param value Value to set for the e property.
             ## @return a void
             ## 
@@ -152,14 +155,14 @@ module MicrosoftGraphBeta
                 @e = value
             end
             ## 
-            ## Gets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            ## Gets the exp property value. This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             ## @return a int64
             ## 
             def exp
                 return @exp
             end
             ## 
-            ## Sets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            ## Sets the exp property value. This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             ## @param value Value to set for the exp property.
             ## @return a void
             ## 
@@ -186,20 +189,21 @@ module MicrosoftGraphBeta
                     "p" => lambda {|n| @p = n.get_string_value() },
                     "q" => lambda {|n| @q = n.get_string_value() },
                     "qi" => lambda {|n| @qi = n.get_string_value() },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraphBeta::Models::TrustFrameworkKeyStatus) },
                     "use" => lambda {|n| @use = n.get_string_value() },
                     "x5c" => lambda {|n| @x5c = n.get_collection_of_primitive_values(String) },
                     "x5t" => lambda {|n| @x5t = n.get_string_value() },
                 }
             end
             ## 
-            ## Gets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+            ## Gets the k property value. Symmetric Key for oct key type. The field isn't readable.
             ## @return a string
             ## 
             def k
                 return @k
             end
             ## 
-            ## Sets the k property value. Symmetric Key for oct key type. Field cannot be read back.
+            ## Sets the k property value. Symmetric Key for oct key type. The field isn't readable.
             ## @param value Value to set for the k property.
             ## @return a void
             ## 
@@ -222,14 +226,14 @@ module MicrosoftGraphBeta
                 @kid = value
             end
             ## 
-            ## Gets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+            ## Gets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key. The valid values are rsa, oct.
             ## @return a string
             ## 
             def kty
                 return @kty
             end
             ## 
-            ## Sets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+            ## Sets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key. The valid values are rsa, oct.
             ## @param value Value to set for the kty property.
             ## @return a void
             ## 
@@ -237,14 +241,14 @@ module MicrosoftGraphBeta
                 @kty = value
             end
             ## 
-            ## Gets the n property value. RSA Key - modulus
+            ## Gets the n property value. RSA Key - modulus.
             ## @return a string
             ## 
             def n
                 return @n
             end
             ## 
-            ## Sets the n property value. RSA Key - modulus
+            ## Sets the n property value. RSA Key - modulus.
             ## @param value Value to set for the n property.
             ## @return a void
             ## 
@@ -252,14 +256,14 @@ module MicrosoftGraphBeta
                 @n = value
             end
             ## 
-            ## Gets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            ## Gets the nbf property value. This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             ## @return a int64
             ## 
             def nbf
                 return @nbf
             end
             ## 
-            ## Sets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+            ## Sets the nbf property value. This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.
             ## @param value Value to set for the nbf property.
             ## @return a void
             ## 
@@ -282,14 +286,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the p property value. RSA Key - first prime. Field cannot be read back.
+            ## Gets the p property value. RSA Key - first prime. The field isn't readable.
             ## @return a string
             ## 
             def p
                 return @p
             end
             ## 
-            ## Sets the p property value. RSA Key - first prime. Field cannot be read back.
+            ## Sets the p property value. RSA Key - first prime. The field isn't readable.
             ## @param value Value to set for the p property.
             ## @return a void
             ## 
@@ -297,14 +301,14 @@ module MicrosoftGraphBeta
                 @p = value
             end
             ## 
-            ## Gets the q property value. RSA Key - second prime. Field cannot be read back.
+            ## Gets the q property value. RSA Key - second prime. The field isn't readable.
             ## @return a string
             ## 
             def q
                 return @q
             end
             ## 
-            ## Sets the q property value. RSA Key - second prime. Field cannot be read back.
+            ## Sets the q property value. RSA Key - second prime. The field isn't readable.
             ## @param value Value to set for the q property.
             ## @return a void
             ## 
@@ -312,14 +316,14 @@ module MicrosoftGraphBeta
                 @q = value
             end
             ## 
-            ## Gets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+            ## Gets the qi property value. RSA Key - Coefficient. The field isn't readable.
             ## @return a string
             ## 
             def qi
                 return @qi
             end
             ## 
-            ## Sets the qi property value. RSA Key - Coefficient. Field cannot be read back.
+            ## Sets the qi property value. RSA Key - Coefficient. The field isn't readable.
             ## @param value Value to set for the qi property.
             ## @return a void
             ## 
@@ -347,20 +351,36 @@ module MicrosoftGraphBeta
                 writer.write_string_value("p", @p)
                 writer.write_string_value("q", @q)
                 writer.write_string_value("qi", @qi)
+                writer.write_enum_value("status", @status)
                 writer.write_string_value("use", @use)
                 writer.write_collection_of_primitive_values("x5c", @x5c)
                 writer.write_string_value("x5t", @x5t)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the use property value. The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+            ## Gets the status property value. Status of the key. The possible values are: enabled, disabled, unknownFutureValue.
+            ## @return a trust_framework_key_status
+            ## 
+            def status
+                return @status
+            end
+            ## 
+            ## Sets the status property value. Status of the key. The possible values are: enabled, disabled, unknownFutureValue.
+            ## @param value Value to set for the status property.
+            ## @return a void
+            ## 
+            def status=(value)
+                @status = value
+            end
+            ## 
+            ## Gets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).
             ## @return a string
             ## 
             def use
                 return @use
             end
             ## 
-            ## Sets the use property value. The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+            ## Sets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).
             ## @param value Value to set for the use property.
             ## @return a void
             ## 
@@ -368,14 +388,14 @@ module MicrosoftGraphBeta
                 @use = value
             end
             ## 
-            ## Gets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+            ## Gets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates. For more information, see RFC 5280.
             ## @return a string
             ## 
             def x5c
                 return @x5c
             end
             ## 
-            ## Sets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+            ## Sets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates. For more information, see RFC 5280.
             ## @param value Value to set for the x5c property.
             ## @return a void
             ## 
@@ -383,14 +403,14 @@ module MicrosoftGraphBeta
                 @x5c = value
             end
             ## 
-            ## Gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            ## Gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate. For more information, see RFC 5280.
             ## @return a string
             ## 
             def x5t
                 return @x5t
             end
             ## 
-            ## Sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
+            ## Sets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate. For more information, see RFC 5280.
             ## @param value Value to set for the x5t property.
             ## @return a void
             ## 

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AppleAppListItem < MicrosoftGraphBeta::Models::AppListItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new appleAppListItem and sets the default values.
+            ## Instantiates a new AppleAppListItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

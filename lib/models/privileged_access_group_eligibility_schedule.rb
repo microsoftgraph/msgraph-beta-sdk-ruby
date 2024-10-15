@@ -7,32 +7,32 @@ module MicrosoftGraphBeta
         class PrivilegedAccessGroupEligibilitySchedule < MicrosoftGraphBeta::Models::PrivilegedAccessSchedule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member.
+            # The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).
             @access_id
             ## 
             # References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
             @group
             ## 
-            # The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.
+            # The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
             @group_id
             ## 
-            # Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue.
+            # Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
             @member_type
             ## 
             # References the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
             @principal
             ## 
-            # The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.
+            # The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
             @principal_id
             ## 
-            ## Gets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member.
+            ## Gets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).
             ## @return a privileged_access_group_relationships
             ## 
             def access_id
                 return @access_id
             end
             ## 
-            ## Sets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member.
+            ## Sets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).
             ## @param value Value to set for the accessId property.
             ## @return a void
             ## 
@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @access_id = value
             end
             ## 
-            ## Instantiates a new privilegedAccessGroupEligibilitySchedule and sets the default values.
+            ## Instantiates a new PrivilegedAccessGroupEligibilitySchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 @group = value
             end
             ## 
-            ## Gets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.
+            ## Gets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
             ## @return a string
             ## 
             def group_id
                 return @group_id
             end
             ## 
-            ## Sets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.
+            ## Sets the groupId property value. The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
             ## @param value Value to set for the groupId property.
             ## @return a void
             ## 
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 @group_id = value
             end
             ## 
-            ## Gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue.
+            ## Gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
             ## @return a privileged_access_group_member_type
             ## 
             def member_type
                 return @member_type
             end
             ## 
-            ## Sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue.
+            ## Sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the memberType property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 @principal = value
             end
             ## 
-            ## Gets the principalId property value. The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.
+            ## Gets the principalId property value. The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
             ## @return a string
             ## 
             def principal_id
                 return @principal_id
             end
             ## 
-            ## Sets the principalId property value. The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.
+            ## Sets the principalId property value. The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
             ## @param value Value to set for the principalId property.
             ## @return a void
             ## 

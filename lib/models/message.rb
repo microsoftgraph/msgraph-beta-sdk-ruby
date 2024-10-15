@@ -41,73 +41,73 @@ module MicrosoftGraphBeta
             # Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
             @has_attachments
             ## 
-            # The importance property
+            # The importance of the message. The possible values are: low, normal, and high.
             @importance
             ## 
-            # The inferenceClassification property
+            # The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.
             @inference_classification
             ## 
-            # The internetMessageHeaders property
+            # A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             @internet_message_headers
             ## 
-            # The internetMessageId property
+            # The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
             @internet_message_id
             ## 
-            # The isDeliveryReceiptRequested property
+            # Indicates whether a read receipt is requested for the message.
             @is_delivery_receipt_requested
             ## 
-            # The isDraft property
+            # Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
             @is_draft
             ## 
-            # The isRead property
+            # Indicates whether the message has been read.
             @is_read
             ## 
-            # The isReadReceiptRequested property
+            # Indicates whether a read receipt is requested for the message.
             @is_read_receipt_requested
             ## 
             # A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
             @mentions
             ## 
-            # The mentionsPreview property
+            # Information about mentions in the message. When processing a GET /messages request, the server sets this property and includes it in the response by default. The server returns null if there are no mentions in the message. Optional.
             @mentions_preview
             ## 
             # The collection of multi-value extended properties defined for the message. Nullable.
             @multi_value_extended_properties
             ## 
-            # The parentFolderId property
+            # The unique identifier for the message's parent mailFolder.
             @parent_folder_id
             ## 
-            # The receivedDateTime property
+            # The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @received_date_time
             ## 
-            # The replyTo property
+            # The email addresses to use when replying.
             @reply_to
             ## 
-            # The sender property
+            # The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
             @sender
             ## 
-            # The sentDateTime property
+            # The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @sent_date_time
             ## 
             # The collection of single-value extended properties defined for the message. Nullable.
             @single_value_extended_properties
             ## 
-            # The subject property
+            # The subject of the message.
             @subject
             ## 
-            # The toRecipients property
+            # The To: recipients for the message.
             @to_recipients
             ## 
-            # The uniqueBody property
+            # The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.
             @unique_body
             ## 
-            # The unsubscribeData property
+            # The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
             @unsubscribe_data
             ## 
-            # The unsubscribeEnabled property
+            # Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
             @unsubscribe_enabled
             ## 
-            # The webLink property
+            # The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.
             @web_link
             ## 
             ## Gets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
@@ -185,7 +185,7 @@ module MicrosoftGraphBeta
                 @cc_recipients = value
             end
             ## 
-            ## Instantiates a new message and sets the default values.
+            ## Instantiates a new Message and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -348,14 +348,14 @@ module MicrosoftGraphBeta
                 @has_attachments = value
             end
             ## 
-            ## Gets the importance property value. The importance property
+            ## Gets the importance property value. The importance of the message. The possible values are: low, normal, and high.
             ## @return a importance
             ## 
             def importance
                 return @importance
             end
             ## 
-            ## Sets the importance property value. The importance property
+            ## Sets the importance property value. The importance of the message. The possible values are: low, normal, and high.
             ## @param value Value to set for the importance property.
             ## @return a void
             ## 
@@ -363,14 +363,14 @@ module MicrosoftGraphBeta
                 @importance = value
             end
             ## 
-            ## Gets the inferenceClassification property value. The inferenceClassification property
+            ## Gets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.
             ## @return a inference_classification_type
             ## 
             def inference_classification
                 return @inference_classification
             end
             ## 
-            ## Sets the inferenceClassification property value. The inferenceClassification property
+            ## Sets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.
             ## @param value Value to set for the inferenceClassification property.
             ## @return a void
             ## 
@@ -378,14 +378,14 @@ module MicrosoftGraphBeta
                 @inference_classification = value
             end
             ## 
-            ## Gets the internetMessageHeaders property value. The internetMessageHeaders property
+            ## Gets the internetMessageHeaders property value. A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             ## @return a internet_message_header
             ## 
             def internet_message_headers
                 return @internet_message_headers
             end
             ## 
-            ## Sets the internetMessageHeaders property value. The internetMessageHeaders property
+            ## Sets the internetMessageHeaders property value. A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             ## @param value Value to set for the internetMessageHeaders property.
             ## @return a void
             ## 
@@ -393,14 +393,14 @@ module MicrosoftGraphBeta
                 @internet_message_headers = value
             end
             ## 
-            ## Gets the internetMessageId property value. The internetMessageId property
+            ## Gets the internetMessageId property value. The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
             ## @return a string
             ## 
             def internet_message_id
                 return @internet_message_id
             end
             ## 
-            ## Sets the internetMessageId property value. The internetMessageId property
+            ## Sets the internetMessageId property value. The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
             ## @param value Value to set for the internetMessageId property.
             ## @return a void
             ## 
@@ -408,14 +408,14 @@ module MicrosoftGraphBeta
                 @internet_message_id = value
             end
             ## 
-            ## Gets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
+            ## Gets the isDeliveryReceiptRequested property value. Indicates whether a read receipt is requested for the message.
             ## @return a boolean
             ## 
             def is_delivery_receipt_requested
                 return @is_delivery_receipt_requested
             end
             ## 
-            ## Sets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
+            ## Sets the isDeliveryReceiptRequested property value. Indicates whether a read receipt is requested for the message.
             ## @param value Value to set for the isDeliveryReceiptRequested property.
             ## @return a void
             ## 
@@ -423,14 +423,14 @@ module MicrosoftGraphBeta
                 @is_delivery_receipt_requested = value
             end
             ## 
-            ## Gets the isDraft property value. The isDraft property
+            ## Gets the isDraft property value. Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
             ## @return a boolean
             ## 
             def is_draft
                 return @is_draft
             end
             ## 
-            ## Sets the isDraft property value. The isDraft property
+            ## Sets the isDraft property value. Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
             ## @param value Value to set for the isDraft property.
             ## @return a void
             ## 
@@ -438,14 +438,14 @@ module MicrosoftGraphBeta
                 @is_draft = value
             end
             ## 
-            ## Gets the isRead property value. The isRead property
+            ## Gets the isRead property value. Indicates whether the message has been read.
             ## @return a boolean
             ## 
             def is_read
                 return @is_read
             end
             ## 
-            ## Sets the isRead property value. The isRead property
+            ## Sets the isRead property value. Indicates whether the message has been read.
             ## @param value Value to set for the isRead property.
             ## @return a void
             ## 
@@ -453,14 +453,14 @@ module MicrosoftGraphBeta
                 @is_read = value
             end
             ## 
-            ## Gets the isReadReceiptRequested property value. The isReadReceiptRequested property
+            ## Gets the isReadReceiptRequested property value. Indicates whether a read receipt is requested for the message.
             ## @return a boolean
             ## 
             def is_read_receipt_requested
                 return @is_read_receipt_requested
             end
             ## 
-            ## Sets the isReadReceiptRequested property value. The isReadReceiptRequested property
+            ## Sets the isReadReceiptRequested property value. Indicates whether a read receipt is requested for the message.
             ## @param value Value to set for the isReadReceiptRequested property.
             ## @return a void
             ## 
@@ -483,14 +483,14 @@ module MicrosoftGraphBeta
                 @mentions = value
             end
             ## 
-            ## Gets the mentionsPreview property value. The mentionsPreview property
+            ## Gets the mentionsPreview property value. Information about mentions in the message. When processing a GET /messages request, the server sets this property and includes it in the response by default. The server returns null if there are no mentions in the message. Optional.
             ## @return a mentions_preview
             ## 
             def mentions_preview
                 return @mentions_preview
             end
             ## 
-            ## Sets the mentionsPreview property value. The mentionsPreview property
+            ## Sets the mentionsPreview property value. Information about mentions in the message. When processing a GET /messages request, the server sets this property and includes it in the response by default. The server returns null if there are no mentions in the message. Optional.
             ## @param value Value to set for the mentionsPreview property.
             ## @return a void
             ## 
@@ -513,14 +513,14 @@ module MicrosoftGraphBeta
                 @multi_value_extended_properties = value
             end
             ## 
-            ## Gets the parentFolderId property value. The parentFolderId property
+            ## Gets the parentFolderId property value. The unique identifier for the message's parent mailFolder.
             ## @return a string
             ## 
             def parent_folder_id
                 return @parent_folder_id
             end
             ## 
-            ## Sets the parentFolderId property value. The parentFolderId property
+            ## Sets the parentFolderId property value. The unique identifier for the message's parent mailFolder.
             ## @param value Value to set for the parentFolderId property.
             ## @return a void
             ## 
@@ -528,14 +528,14 @@ module MicrosoftGraphBeta
                 @parent_folder_id = value
             end
             ## 
-            ## Gets the receivedDateTime property value. The receivedDateTime property
+            ## Gets the receivedDateTime property value. The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def received_date_time
                 return @received_date_time
             end
             ## 
-            ## Sets the receivedDateTime property value. The receivedDateTime property
+            ## Sets the receivedDateTime property value. The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the receivedDateTime property.
             ## @return a void
             ## 
@@ -543,14 +543,14 @@ module MicrosoftGraphBeta
                 @received_date_time = value
             end
             ## 
-            ## Gets the replyTo property value. The replyTo property
+            ## Gets the replyTo property value. The email addresses to use when replying.
             ## @return a recipient
             ## 
             def reply_to
                 return @reply_to
             end
             ## 
-            ## Sets the replyTo property value. The replyTo property
+            ## Sets the replyTo property value. The email addresses to use when replying.
             ## @param value Value to set for the replyTo property.
             ## @return a void
             ## 
@@ -558,14 +558,14 @@ module MicrosoftGraphBeta
                 @reply_to = value
             end
             ## 
-            ## Gets the sender property value. The sender property
+            ## Gets the sender property value. The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
             ## @return a recipient
             ## 
             def sender
                 return @sender
             end
             ## 
-            ## Sets the sender property value. The sender property
+            ## Sets the sender property value. The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
             ## @param value Value to set for the sender property.
             ## @return a void
             ## 
@@ -573,14 +573,14 @@ module MicrosoftGraphBeta
                 @sender = value
             end
             ## 
-            ## Gets the sentDateTime property value. The sentDateTime property
+            ## Gets the sentDateTime property value. The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def sent_date_time
                 return @sent_date_time
             end
             ## 
-            ## Sets the sentDateTime property value. The sentDateTime property
+            ## Sets the sentDateTime property value. The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the sentDateTime property.
             ## @return a void
             ## 
@@ -646,14 +646,14 @@ module MicrosoftGraphBeta
                 @single_value_extended_properties = value
             end
             ## 
-            ## Gets the subject property value. The subject property
+            ## Gets the subject property value. The subject of the message.
             ## @return a string
             ## 
             def subject
                 return @subject
             end
             ## 
-            ## Sets the subject property value. The subject property
+            ## Sets the subject property value. The subject of the message.
             ## @param value Value to set for the subject property.
             ## @return a void
             ## 
@@ -661,14 +661,14 @@ module MicrosoftGraphBeta
                 @subject = value
             end
             ## 
-            ## Gets the toRecipients property value. The toRecipients property
+            ## Gets the toRecipients property value. The To: recipients for the message.
             ## @return a recipient
             ## 
             def to_recipients
                 return @to_recipients
             end
             ## 
-            ## Sets the toRecipients property value. The toRecipients property
+            ## Sets the toRecipients property value. The To: recipients for the message.
             ## @param value Value to set for the toRecipients property.
             ## @return a void
             ## 
@@ -676,14 +676,14 @@ module MicrosoftGraphBeta
                 @to_recipients = value
             end
             ## 
-            ## Gets the uniqueBody property value. The uniqueBody property
+            ## Gets the uniqueBody property value. The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.
             ## @return a item_body
             ## 
             def unique_body
                 return @unique_body
             end
             ## 
-            ## Sets the uniqueBody property value. The uniqueBody property
+            ## Sets the uniqueBody property value. The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.
             ## @param value Value to set for the uniqueBody property.
             ## @return a void
             ## 
@@ -691,14 +691,14 @@ module MicrosoftGraphBeta
                 @unique_body = value
             end
             ## 
-            ## Gets the unsubscribeData property value. The unsubscribeData property
+            ## Gets the unsubscribeData property value. The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
             ## @return a string
             ## 
             def unsubscribe_data
                 return @unsubscribe_data
             end
             ## 
-            ## Sets the unsubscribeData property value. The unsubscribeData property
+            ## Sets the unsubscribeData property value. The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
             ## @param value Value to set for the unsubscribeData property.
             ## @return a void
             ## 
@@ -706,14 +706,14 @@ module MicrosoftGraphBeta
                 @unsubscribe_data = value
             end
             ## 
-            ## Gets the unsubscribeEnabled property value. The unsubscribeEnabled property
+            ## Gets the unsubscribeEnabled property value. Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
             ## @return a boolean
             ## 
             def unsubscribe_enabled
                 return @unsubscribe_enabled
             end
             ## 
-            ## Sets the unsubscribeEnabled property value. The unsubscribeEnabled property
+            ## Sets the unsubscribeEnabled property value. Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
             ## @param value Value to set for the unsubscribeEnabled property.
             ## @return a void
             ## 
@@ -721,14 +721,14 @@ module MicrosoftGraphBeta
                 @unsubscribe_enabled = value
             end
             ## 
-            ## Gets the webLink property value. The webLink property
+            ## Gets the webLink property value. The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.
             ## @return a string
             ## 
             def web_link
                 return @web_link
             end
             ## 
-            ## Sets the webLink property value. The webLink property
+            ## Sets the webLink property value. The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.
             ## @param value Value to set for the webLink property.
             ## @return a void
             ## 

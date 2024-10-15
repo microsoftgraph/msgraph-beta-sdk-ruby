@@ -5,14 +5,14 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Represents an assignment to a group.
+        # The AAD Group we are deploying firmware updates to
         class GroupAssignmentTarget < MicrosoftGraphBeta::Models::DeviceAndAppManagementAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The group Id that is the target of the assignment.
             @group_id
             ## 
-            ## Instantiates a new groupAssignmentTarget and sets the default values.
+            ## Instantiates a new GroupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

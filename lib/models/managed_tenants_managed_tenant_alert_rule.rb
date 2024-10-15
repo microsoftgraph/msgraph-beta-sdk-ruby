@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
                 @alerts = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantAlertRule and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantAlertRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -189,7 +189,7 @@ module MicrosoftGraphBeta
                     "lastActionByUserId" => lambda {|n| @last_action_by_user_id = n.get_string_value() },
                     "lastActionDateTime" => lambda {|n| @last_action_date_time = n.get_date_time_value() },
                     "lastRunDateTime" => lambda {|n| @last_run_date_time = n.get_date_time_value() },
-                    "notificationFinalDestinations" => lambda {|n| @notification_final_destinations = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsNotificationDestination) },
+                    "notificationFinalDestinations" => lambda {|n| @notification_final_destinations = n.get_enum_values(MicrosoftGraphBeta::Models::ManagedTenantsNotificationDestination) },
                     "ruleDefinition" => lambda {|n| @rule_definition = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsManagedTenantAlertRuleDefinition.create_from_discriminator_value(pn) }) },
                     "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraphBeta::Models::ManagedTenantsAlertSeverity) },
                     "targets" => lambda {|n| @targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedTenantsNotificationTarget.create_from_discriminator_value(pn) }) },

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp < MicrosoftGraphBeta::Models::OnInteractiveAuthFlowStartHandler
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.
+            # Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
             @is_sign_up_allowed
             ## 
-            ## Instantiates a new onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
+            ## Instantiates a new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isSignUpAllowed property value. Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.
+            ## Gets the isSignUpAllowed property value. Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
             ## @return a boolean
             ## 
             def is_sign_up_allowed
                 return @is_sign_up_allowed
             end
             ## 
-            ## Sets the isSignUpAllowed property value. Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.
+            ## Sets the isSignUpAllowed property value. Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
             ## @param value Value to set for the isSignUpAllowed property.
             ## @return a void
             ## 

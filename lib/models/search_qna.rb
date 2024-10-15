@@ -8,41 +8,41 @@ module MicrosoftGraphBeta
         class SearchQna < MicrosoftGraphBeta::Models::SearchSearchAnswer
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            # Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @availability_end_date_time
             ## 
-            # Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            # Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @availability_start_date_time
             ## 
-            # List of security groups able to view this qna.
+            # The list of security groups that are able to view this QnA.
             @group_ids
             ## 
-            # True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            # True if a user or Microsoft suggested this QnA to the admin. Read-only.
             @is_suggested
             ## 
-            # Keywords that trigger this qna to appear in search results.
+            # Keywords that trigger this QnA to appear in search results.
             @keywords
             ## 
-            # A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
+            # A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             @language_tags
             ## 
-            # List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            # List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             @platforms
             ## 
             # The state property
             @state
             ## 
-            # Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            # Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             @targeted_variations
             ## 
-            ## Gets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            ## Gets the availabilityEndDateTime property value. Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def availability_end_date_time
                 return @availability_end_date_time
             end
             ## 
-            ## Sets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+            ## Sets the availabilityEndDateTime property value. Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the availabilityEndDateTime property.
             ## @return a void
             ## 
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @availability_end_date_time = value
             end
             ## 
-            ## Gets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            ## Gets the availabilityStartDateTime property value. Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def availability_start_date_time
                 return @availability_start_date_time
             end
             ## 
-            ## Sets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+            ## Sets the availabilityStartDateTime property value. Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the availabilityStartDateTime property.
             ## @return a void
             ## 
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
                 @availability_start_date_time = value
             end
             ## 
-            ## Instantiates a new searchQna and sets the default values.
+            ## Instantiates a new SearchQna and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -98,14 +98,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the groupIds property value. List of security groups able to view this qna.
+            ## Gets the groupIds property value. The list of security groups that are able to view this QnA.
             ## @return a string
             ## 
             def group_ids
                 return @group_ids
             end
             ## 
-            ## Sets the groupIds property value. List of security groups able to view this qna.
+            ## Sets the groupIds property value. The list of security groups that are able to view this QnA.
             ## @param value Value to set for the groupIds property.
             ## @return a void
             ## 
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 @group_ids = value
             end
             ## 
-            ## Gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Gets the isSuggested property value. True if a user or Microsoft suggested this QnA to the admin. Read-only.
             ## @return a boolean
             ## 
             def is_suggested
                 return @is_suggested
             end
             ## 
-            ## Sets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Sets the isSuggested property value. True if a user or Microsoft suggested this QnA to the admin. Read-only.
             ## @param value Value to set for the isSuggested property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @is_suggested = value
             end
             ## 
-            ## Gets the keywords property value. Keywords that trigger this qna to appear in search results.
+            ## Gets the keywords property value. Keywords that trigger this QnA to appear in search results.
             ## @return a search_answer_keyword
             ## 
             def keywords
                 return @keywords
             end
             ## 
-            ## Sets the keywords property value. Keywords that trigger this qna to appear in search results.
+            ## Sets the keywords property value. Keywords that trigger this QnA to appear in search results.
             ## @param value Value to set for the keywords property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @keywords = value
             end
             ## 
-            ## Gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
+            ## Gets the languageTags property value. A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             ## @return a string
             ## 
             def language_tags
                 return @language_tags
             end
             ## 
-            ## Sets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
+            ## Sets the languageTags property value. A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             ## @param value Value to set for the languageTags property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraphBeta
                 @language_tags = value
             end
             ## 
-            ## Gets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            ## Gets the platforms property value. List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @return a device_platform_type
             ## 
             def platforms
                 return @platforms
             end
             ## 
-            ## Sets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            ## Sets the platforms property value. List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @param value Value to set for the platforms property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Gets the targetedVariations property value. Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @return a search_answer_variant
             ## 
             def targeted_variations
                 return @targeted_variations
             end
             ## 
-            ## Sets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Sets the targetedVariations property value. Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @param value Value to set for the targetedVariations property.
             ## @return a void
             ## 

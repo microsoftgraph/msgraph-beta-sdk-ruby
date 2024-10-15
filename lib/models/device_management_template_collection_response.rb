@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new deviceManagementTemplateCollectionResponse and sets the default values.
+            ## Instantiates a new DeviceManagementTemplateCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

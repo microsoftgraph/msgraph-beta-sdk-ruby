@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The role property
             @role
             ## 
-            ## Instantiates a new plannerRelationshipBasedUserType and sets the default values.
+            ## Instantiates a new PlannerRelationshipBasedUserType and sets the default values.
             ## @return a void
             ## 
             def initialize()

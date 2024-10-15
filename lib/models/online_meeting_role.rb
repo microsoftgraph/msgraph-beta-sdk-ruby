@@ -3,8 +3,8 @@ module MicrosoftGraphBeta
         OnlineMeetingRole = {
             Attendee: :Attendee,
             Presenter: :Presenter,
-            UnknownFutureValue: :UnknownFutureValue,
             Producer: :Producer,
+            UnknownFutureValue: :UnknownFutureValue,
             Coorganizer: :Coorganizer,
         }
     end

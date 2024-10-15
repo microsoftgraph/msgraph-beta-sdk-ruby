@@ -91,6 +91,9 @@ module MicrosoftGraphBeta
             # User Principal Name.
             @user_principal_name
             ## 
+            # Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+            @userless_enrollment_status
+            ## 
             ## Gets the addressableUserName property value. Addressable user name.
             ## @return a string
             ## 
@@ -136,7 +139,7 @@ module MicrosoftGraphBeta
                 @azure_ad_device_id = value
             end
             ## 
-            ## Instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
+            ## Instantiates a new WindowsAutopilotDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -319,6 +322,7 @@ module MicrosoftGraphBeta
                     "skuNumber" => lambda {|n| @sku_number = n.get_string_value() },
                     "systemFamily" => lambda {|n| @system_family = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
+                    "userlessEnrollmentStatus" => lambda {|n| @userless_enrollment_status = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsAutopilotUserlessEnrollmentStatus) },
                 })
             end
             ## 
@@ -536,6 +540,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("skuNumber", @sku_number)
                 writer.write_string_value("systemFamily", @system_family)
                 writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_enum_value("userlessEnrollmentStatus", @userless_enrollment_status)
             end
             ## 
             ## Gets the skuNumber property value. SKU Number
@@ -581,6 +586,21 @@ module MicrosoftGraphBeta
             ## 
             def user_principal_name=(value)
                 @user_principal_name = value
+            end
+            ## 
+            ## Gets the userlessEnrollmentStatus property value. Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+            ## @return a windows_autopilot_userless_enrollment_status
+            ## 
+            def userless_enrollment_status
+                return @userless_enrollment_status
+            end
+            ## 
+            ## Sets the userlessEnrollmentStatus property value. Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+            ## @param value Value to set for the userlessEnrollmentStatus property.
+            ## @return a void
+            ## 
+            def userless_enrollment_status=(value)
+                @userless_enrollment_status = value
             end
         end
     end
