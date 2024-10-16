@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @begin_address = value
             end
             ## 
-            ## Instantiates a new networkaccessIpRange and sets the default values.
+            ## Instantiates a new NetworkaccessIpRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

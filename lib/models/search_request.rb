@@ -58,21 +58,21 @@ module MicrosoftGraphBeta
             # Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
             @sort_properties
             ## 
-            # The stored_fields property
+            # This is now replaced by the fields property.
             @stored_fields
             ## 
             # Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
             @trim_duplicates
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraphBeta
                 @collapse_properties = value
             end
             ## 
-            ## Instantiates a new searchRequest and sets the default values.
+            ## Instantiates a new SearchRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -388,14 +388,14 @@ module MicrosoftGraphBeta
                 @sort_properties = value
             end
             ## 
-            ## Gets the stored_fields property value. The stored_fields property
+            ## Gets the stored_fields property value. This is now replaced by the fields property.
             ## @return a string
             ## 
             def stored_fields
                 return @stored_fields
             end
             ## 
-            ## Sets the stored_fields property value. The stored_fields property
+            ## Sets the stored_fields property value. This is now replaced by the fields property.
             ## @param value Value to set for the stored_fields property.
             ## @return a void
             ## 

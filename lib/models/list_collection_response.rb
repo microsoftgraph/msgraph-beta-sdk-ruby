@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new listCollectionResponse and sets the default values.
+            ## Instantiates a new ListCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

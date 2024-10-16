@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class EducationSynchronizationOAuth1ConnectionSettings < MicrosoftGraphBeta::Models::EducationSynchronizationConnectionSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new educationSynchronizationOAuth1ConnectionSettings and sets the default values.
+            ## Instantiates a new EducationSynchronizationOAuth1ConnectionSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

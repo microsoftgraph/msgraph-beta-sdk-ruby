@@ -135,7 +135,7 @@ module MicrosoftGraphBeta
                 @cache_server_host_names = value
             end
             ## 
-            ## Instantiates a new windowsDeliveryOptimizationConfiguration and sets the default values.
+            ## Instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

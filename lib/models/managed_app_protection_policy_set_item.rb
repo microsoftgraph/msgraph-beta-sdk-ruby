@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # TargetedAppManagementLevels of the ManagedAppPolicySetItem.
             @targeted_app_management_levels
             ## 
-            ## Instantiates a new managedAppProtectionPolicySetItem and sets the default values.
+            ## Instantiates a new ManagedAppProtectionPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class OutlookCategory < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
+            # A preset color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more information, see the following note.
             @color
             ## 
-            # A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
+            # A unique name that identifies a category in the user's mailbox. After a category is created, the name can't be changed. Read-only.
             @display_name
             ## 
-            ## Gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
+            ## Gets the color property value. A preset color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more information, see the following note.
             ## @return a category_color
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
+            ## Sets the color property value. A preset color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more information, see the following note.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
                 @color = value
             end
             ## 
-            ## Instantiates a new outlookCategory and sets the default values.
+            ## Instantiates a new OutlookCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,14 +44,14 @@ module MicrosoftGraphBeta
                 return OutlookCategory.new
             end
             ## 
-            ## Gets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
+            ## Gets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name can't be changed. Read-only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
+            ## Sets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name can't be changed. Read-only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

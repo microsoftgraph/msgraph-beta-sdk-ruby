@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Information of the meeting attendees.
             @attendees
             ## 
-            # The contributors property
+            # For broadcast meeting only.
             @contributors
             ## 
             # The OdataType property
@@ -22,18 +22,18 @@ module MicrosoftGraphBeta
             # Information of the meeting organizer.
             @organizer
             ## 
-            # The producers property
+            # For broadcast meeting only.
             @producers
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,21 +55,21 @@ module MicrosoftGraphBeta
                 @attendees = value
             end
             ## 
-            ## Instantiates a new meetingParticipants and sets the default values.
+            ## Instantiates a new MeetingParticipants and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the contributors property value. The contributors property
+            ## Gets the contributors property value. For broadcast meeting only.
             ## @return a meeting_participant_info
             ## 
             def contributors
                 return @contributors
             end
             ## 
-            ## Sets the contributors property value. The contributors property
+            ## Sets the contributors property value. For broadcast meeting only.
             ## @param value Value to set for the contributors property.
             ## @return a void
             ## 
@@ -129,14 +129,14 @@ module MicrosoftGraphBeta
                 @organizer = value
             end
             ## 
-            ## Gets the producers property value. The producers property
+            ## Gets the producers property value. For broadcast meeting only.
             ## @return a meeting_participant_info
             ## 
             def producers
                 return @producers
             end
             ## 
-            ## Sets the producers property value. The producers property
+            ## Sets the producers property value. For broadcast meeting only.
             ## @param value Value to set for the producers property.
             ## @return a void
             ## 

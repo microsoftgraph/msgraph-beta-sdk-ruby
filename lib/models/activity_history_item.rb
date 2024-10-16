@@ -8,41 +8,41 @@ module MicrosoftGraphBeta
         class ActivityHistoryItem < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The activeDurationSeconds property
+            # Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
             @active_duration_seconds
             ## 
             # The activity property
             @activity
             ## 
-            # The createdDateTime property
+            # Set by the server. DateTime in UTC when the object was created on the server.
             @created_date_time
             ## 
-            # The expirationDateTime property
+            # Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             @expiration_date_time
             ## 
-            # The lastActiveDateTime property
+            # Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             @last_active_date_time
             ## 
-            # The lastModifiedDateTime property
+            # Set by the server. DateTime in UTC when the object was modified on the server.
             @last_modified_date_time
             ## 
-            # The startedDateTime property
+            # Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             @started_date_time
             ## 
-            # The status property
+            # Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
             @status
             ## 
-            # The userTimezone property
+            # Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
             @user_timezone
             ## 
-            ## Gets the activeDurationSeconds property value. The activeDurationSeconds property
+            ## Gets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
             ## @return a integer
             ## 
             def active_duration_seconds
                 return @active_duration_seconds
             end
             ## 
-            ## Sets the activeDurationSeconds property value. The activeDurationSeconds property
+            ## Sets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
             ## @param value Value to set for the activeDurationSeconds property.
             ## @return a void
             ## 
@@ -65,21 +65,21 @@ module MicrosoftGraphBeta
                 @activity = value
             end
             ## 
-            ## Instantiates a new activityHistoryItem and sets the default values.
+            ## Instantiates a new ActivityHistoryItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraphBeta
                 return ActivityHistoryItem.new
             end
             ## 
-            ## Gets the expirationDateTime property value. The expirationDateTime property
+            ## Gets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. The expirationDateTime property
+            ## Sets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastActiveDateTime property value. The lastActiveDateTime property
+            ## Gets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             ## @return a date_time
             ## 
             def last_active_date_time
                 return @last_active_date_time
             end
             ## 
-            ## Sets the lastActiveDateTime property value. The lastActiveDateTime property
+            ## Sets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             ## @param value Value to set for the lastActiveDateTime property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @last_active_date_time = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -176,14 +176,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userTimezone", @user_timezone)
             end
             ## 
-            ## Gets the startedDateTime property value. The startedDateTime property
+            ## Gets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             ## @return a date_time
             ## 
             def started_date_time
                 return @started_date_time
             end
             ## 
-            ## Sets the startedDateTime property value. The startedDateTime property
+            ## Sets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             ## @param value Value to set for the startedDateTime property.
             ## @return a void
             ## 
@@ -191,14 +191,14 @@ module MicrosoftGraphBeta
                 @started_date_time = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
             ## @return a status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the userTimezone property value. The userTimezone property
+            ## Gets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
             ## @return a string
             ## 
             def user_timezone
                 return @user_timezone
             end
             ## 
-            ## Sets the userTimezone property value. The userTimezone property
+            ## Sets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
             ## @param value Value to set for the userTimezone property.
             ## @return a void
             ## 

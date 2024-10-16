@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The Planner tasks for the scenario.
             @tasks
             ## 
-            ## Instantiates a new businessScenarioPlanner and sets the default values.
+            ## Instantiates a new BusinessScenarioPlanner and sets the default values.
             ## @return a void
             ## 
             def initialize()

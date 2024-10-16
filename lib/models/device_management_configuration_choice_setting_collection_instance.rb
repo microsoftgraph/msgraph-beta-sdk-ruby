@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @choice_setting_collection_value = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationChoiceSettingCollectionInstance and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationChoiceSettingCollectionInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

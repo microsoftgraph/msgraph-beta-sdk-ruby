@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @account_target_emails = value
             end
             ## 
-            ## Instantiates a new addressBookAccountTargetContent and sets the default values.
+            ## Instantiates a new AddressBookAccountTargetContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

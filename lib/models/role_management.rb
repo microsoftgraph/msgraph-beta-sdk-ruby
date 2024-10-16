@@ -13,6 +13,9 @@ module MicrosoftGraphBeta
             # The cloudPC property
             @cloud_p_c
             ## 
+            # The defender property
+            @defender
+            ## 
             # The RbacApplication for Device Management
             @device_management
             ## 
@@ -31,15 +34,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +64,7 @@ module MicrosoftGraphBeta
                 @cloud_p_c = value
             end
             ## 
-            ## Instantiates a new roleManagement and sets the default values.
+            ## Instantiates a new RoleManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,6 +78,21 @@ module MicrosoftGraphBeta
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return RoleManagement.new
+            end
+            ## 
+            ## Gets the defender property value. The defender property
+            ## @return a rbac_application_multiple
+            ## 
+            def defender
+                return @defender
+            end
+            ## 
+            ## Sets the defender property value. The defender property
+            ## @param value Value to set for the defender property.
+            ## @return a void
+            ## 
+            def defender=(value)
+                @defender = value
             end
             ## 
             ## Gets the deviceManagement property value. The RbacApplication for Device Management
@@ -158,6 +176,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "cloudPC" => lambda {|n| @cloud_p_c = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RbacApplicationMultiple.create_from_discriminator_value(pn) }) },
+                    "defender" => lambda {|n| @defender = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RbacApplicationMultiple.create_from_discriminator_value(pn) }) },
                     "deviceManagement" => lambda {|n| @device_management = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RbacApplicationMultiple.create_from_discriminator_value(pn) }) },
                     "directory" => lambda {|n| @directory = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RbacApplication.create_from_discriminator_value(pn) }) },
                     "enterpriseApps" => lambda {|n| @enterprise_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RbacApplication.create_from_discriminator_value(pn) }) },
@@ -189,6 +208,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("cloudPC", @cloud_p_c)
+                writer.write_object_value("defender", @defender)
                 writer.write_object_value("deviceManagement", @device_management)
                 writer.write_object_value("directory", @directory)
                 writer.write_collection_of_object_values("enterpriseApps", @enterprise_apps)

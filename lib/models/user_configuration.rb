@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @binary_data = value
             end
             ## 
-            ## Instantiates a new userConfiguration and sets the default values.
+            ## Instantiates a new UserConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The errors property
             @errors
             ## 
-            ## Instantiates a new serviceProvisioningResourceError and sets the default values.
+            ## Instantiates a new ServiceProvisioningResourceError and sets the default values.
             ## @return a void
             ## 
             def initialize()
