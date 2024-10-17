@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new userInstallStateSummaryCollectionResponse and sets the default values.
+            ## Instantiates a new UserInstallStateSummaryCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

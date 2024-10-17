@@ -76,7 +76,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new managedIOSLobApp and sets the default values.
+            ## Instantiates a new ManagedIOSLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # User Principal Name
             @user_principal_name
             ## 
-            ## Instantiates a new securityBaselineDeviceState and sets the default values.
+            ## Instantiates a new SecurityBaselineDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

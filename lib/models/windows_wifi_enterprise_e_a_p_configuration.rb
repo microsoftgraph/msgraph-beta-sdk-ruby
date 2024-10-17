@@ -165,7 +165,7 @@ module MicrosoftGraphBeta
                 @cache_credentials = value
             end
             ## 
-            ## Instantiates a new windowsWifiEnterpriseEAPConfiguration and sets the default values.
+            ## Instantiates a new WindowsWifiEnterpriseEAPConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

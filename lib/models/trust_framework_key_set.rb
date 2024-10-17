@@ -10,7 +10,10 @@ module MicrosoftGraphBeta
             # A collection of the keys.
             @keys
             ## 
-            ## Instantiates a new trustFrameworkKeySet and sets the default values.
+            # A collection of the keys.
+            @keys_v2
+            ## 
+            ## Instantiates a new TrustFrameworkKeySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,6 +35,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "keys" => lambda {|n| @keys = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TrustFrameworkKey.create_from_discriminator_value(pn) }) },
+                    "keys_v2" => lambda {|n| @keys_v2 = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TrustFrameworkKeyV2.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -50,6 +54,21 @@ module MicrosoftGraphBeta
                 @keys = value
             end
             ## 
+            ## Gets the keys_v2 property value. A collection of the keys.
+            ## @return a trust_framework_key_v2
+            ## 
+            def keys_v2
+                return @keys_v2
+            end
+            ## 
+            ## Sets the keys_v2 property value. A collection of the keys.
+            ## @param value Value to set for the keys_v2 property.
+            ## @return a void
+            ## 
+            def keys_v2=(value)
+                @keys_v2 = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -58,6 +77,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("keys", @keys)
+                writer.write_collection_of_object_values("keys_v2", @keys_v2)
             end
         end
     end

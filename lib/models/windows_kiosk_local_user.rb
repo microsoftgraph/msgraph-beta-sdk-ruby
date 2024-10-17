@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The local user that will be locked to this kiosk configuration
             @user_name
             ## 
-            ## Instantiates a new windowsKioskLocalUser and sets the default values.
+            ## Instantiates a new WindowsKioskLocalUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The targetType property
             @target_type
             ## 
-            ## Instantiates a new authenticationMethodTarget and sets the default values.
+            ## Instantiates a new AuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,6 +32,8 @@ module MicrosoftGraphBeta
                     case mapping_value
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget"
                             return MicrosoftAuthenticatorAuthenticationMethodTarget.new
+                        when "#microsoft.graph.passkeyAuthenticationMethodTarget"
+                            return PasskeyAuthenticationMethodTarget.new
                         when "#microsoft.graph.smsAuthenticationMethodTarget"
                             return SmsAuthenticationMethodTarget.new
                         when "#microsoft.graph.voiceAuthenticationMethodTarget"

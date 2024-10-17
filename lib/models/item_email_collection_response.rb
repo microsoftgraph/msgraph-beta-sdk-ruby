@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new itemEmailCollectionResponse and sets the default values.
+            ## Instantiates a new ItemEmailCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

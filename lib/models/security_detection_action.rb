@@ -16,21 +16,21 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The organizationalScope property
+            # Groups to which the custom detection rule applies.
             @organizational_scope
             ## 
-            # The responseActions property
+            # Actions taken on impacted assets as set in the custom detection rule.
             @response_actions
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @alert_template = value
             end
             ## 
-            ## Instantiates a new securityDetectionAction and sets the default values.
+            ## Instantiates a new SecurityDetectionAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,14 +95,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the organizationalScope property value. The organizationalScope property
+            ## Gets the organizationalScope property value. Groups to which the custom detection rule applies.
             ## @return a security_organizational_scope
             ## 
             def organizational_scope
                 return @organizational_scope
             end
             ## 
-            ## Sets the organizationalScope property value. The organizationalScope property
+            ## Sets the organizationalScope property value. Groups to which the custom detection rule applies.
             ## @param value Value to set for the organizationalScope property.
             ## @return a void
             ## 
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 @organizational_scope = value
             end
             ## 
-            ## Gets the responseActions property value. The responseActions property
+            ## Gets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
             ## @return a security_response_action
             ## 
             def response_actions
                 return @response_actions
             end
             ## 
-            ## Sets the responseActions property value. The responseActions property
+            ## Sets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
             ## @param value Value to set for the responseActions property.
             ## @return a void
             ## 

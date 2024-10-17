@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # A collection of registration count and status information for users in your tenant.
             @user_registration_counts
             ## 
-            ## Instantiates a new credentialUserRegistrationCount and sets the default values.
+            ## Instantiates a new CredentialUserRegistrationCount and sets the default values.
             ## @return a void
             ## 
             def initialize()

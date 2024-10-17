@@ -12,42 +12,42 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Report content; details vary by report type.
+            # The http content that has the data
             @content
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new report and sets the default values.
+            ## Instantiates a new Report and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the content property value. Report content; details vary by report type.
+            ## Gets the content property value. The http content that has the data
             ## @return a base64url
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. Report content; details vary by report type.
+            ## Sets the content property value. The http content that has the data
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
