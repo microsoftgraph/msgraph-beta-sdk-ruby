@@ -1,0 +1,1 @@
+require_relative 'revoke_cloud_certification_authority_certificate_post_request_body'

@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The isBuiltIn property
             @is_built_in
             ## 
-            ## Instantiates a new servicePrincipalCreationPolicy and sets the default values.
+            ## Instantiates a new ServicePrincipalCreationPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

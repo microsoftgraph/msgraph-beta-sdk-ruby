@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Date and time when this object was deleted. Always null when the object hasn't been deleted.
             @deleted_date_time
             ## 
-            ## Instantiates a new directoryObject and sets the default values.
+            ## Instantiates a new DirectoryObject and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,8 +38,12 @@ module MicrosoftGraphBeta
                             return AppManagementPolicy.new
                         when "#microsoft.graph.authorizationPolicy"
                             return AuthorizationPolicy.new
+                        when "#microsoft.graph.certificateAuthorityDetail"
+                            return CertificateAuthorityDetail.new
                         when "#microsoft.graph.certificateBasedApplicationConfiguration"
                             return CertificateBasedApplicationConfiguration.new
+                        when "#microsoft.graph.certificateBasedAuthPki"
+                            return CertificateBasedAuthPki.new
                         when "#microsoft.graph.claimsMappingPolicy"
                             return ClaimsMappingPolicy.new
                         when "#microsoft.graph.contract"
@@ -62,6 +66,10 @@ module MicrosoftGraphBeta
                             return ExtensionProperty.new
                         when "#microsoft.graph.externalIdentitiesPolicy"
                             return ExternalIdentitiesPolicy.new
+                        when "#microsoft.graph.externalProfile"
+                            return ExternalProfile.new
+                        when "#microsoft.graph.externalUserProfile"
+                            return ExternalUserProfile.new
                         when "#microsoft.graph.federatedTokenValidationPolicy"
                             return FederatedTokenValidationPolicy.new
                         when "#microsoft.graph.group"
@@ -76,8 +84,12 @@ module MicrosoftGraphBeta
                             return Organization.new
                         when "#microsoft.graph.orgContact"
                             return OrgContact.new
+                        when "#microsoft.graph.pendingExternalUserProfile"
+                            return PendingExternalUserProfile.new
                         when "#microsoft.graph.permissionGrantPolicy"
                             return PermissionGrantPolicy.new
+                        when "#microsoft.graph.permissionGrantPreApprovalPolicy"
+                            return PermissionGrantPreApprovalPolicy.new
                         when "#microsoft.graph.policyBase"
                             return PolicyBase.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"

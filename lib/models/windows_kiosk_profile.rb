@@ -25,15 +25,15 @@ module MicrosoftGraphBeta
             # The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
             @user_accounts_configuration
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @app_configuration = value
             end
             ## 
-            ## Instantiates a new windowsKioskProfile and sets the default values.
+            ## Instantiates a new WindowsKioskProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

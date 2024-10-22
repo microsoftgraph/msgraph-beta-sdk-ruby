@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
             # The user ID.
             @user_id
             ## 
-            ## Instantiates a new macOSSoftwareUpdateCategorySummary and sets the default values.
+            ## Instantiates a new MacOSSoftwareUpdateCategorySummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

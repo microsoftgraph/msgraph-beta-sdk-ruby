@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
             @priority
             ## 
-            ## Instantiates a new windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
+            ## Instantiates a new Windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -126,7 +126,7 @@ module MicrosoftGraphBeta
                 @await_device_configured_confirmation = value
             end
             ## 
-            ## Instantiates a new depEnrollmentProfile and sets the default values.
+            ## Instantiates a new DepEnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

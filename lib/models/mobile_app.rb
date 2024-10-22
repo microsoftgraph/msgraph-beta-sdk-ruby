@@ -67,10 +67,10 @@ module MicrosoftGraphBeta
             # List of scope tag ids for this mobile app.
             @role_scope_tag_ids
             ## 
-            # The total number of apps this app is directly or indirectly superseded by.
+            # The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             @superseded_app_count
             ## 
-            # The total number of apps this app directly or indirectly supersedes.
+            # The total number of apps this app directly or indirectly supersedes. This property is read-only.
             @superseding_app_count
             ## 
             # The upload state.
@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new mobileApp and sets the default values.
+            ## Instantiates a new MobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -192,6 +192,8 @@ module MicrosoftGraphBeta
                             return OfficeSuiteApp.new
                         when "#microsoft.graph.webApp"
                             return WebApp.new
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
                         when "#microsoft.graph.win32LobApp"
                             return Win32LobApp.new
                         when "#microsoft.graph.windowsAppX"
@@ -500,16 +502,12 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_collection_of_object_values("categories", @categories)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_number_value("dependentAppCount", @dependent_app_count)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("developer", @developer)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("informationUrl", @information_url)
-                writer.write_boolean_value("isAssigned", @is_assigned)
                 writer.write_boolean_value("isFeatured", @is_featured)
                 writer.write_object_value("largeIcon", @large_icon)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("notes", @notes)
                 writer.write_string_value("owner", @owner)
                 writer.write_string_value("privacyInformationUrl", @privacy_information_url)
@@ -517,19 +515,16 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("publishingState", @publishing_state)
                 writer.write_collection_of_object_values("relationships", @relationships)
                 writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
-                writer.write_number_value("supersededAppCount", @superseded_app_count)
-                writer.write_number_value("supersedingAppCount", @superseding_app_count)
-                writer.write_number_value("uploadState", @upload_state)
             end
             ## 
-            ## Gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+            ## Gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             ## @return a integer
             ## 
             def superseded_app_count
                 return @superseded_app_count
             end
             ## 
-            ## Sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+            ## Sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             ## @param value Value to set for the supersededAppCount property.
             ## @return a void
             ## 
@@ -537,14 +532,14 @@ module MicrosoftGraphBeta
                 @superseded_app_count = value
             end
             ## 
-            ## Gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+            ## Gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
             ## @return a integer
             ## 
             def superseding_app_count
                 return @superseding_app_count
             end
             ## 
-            ## Sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+            ## Sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
             ## @param value Value to set for the supersedingAppCount property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The proofupTime property
             @proofup_time
             ## 
-            ## Instantiates a new strongAuthenticationDetail and sets the default values.
+            ## Instantiates a new StrongAuthenticationDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

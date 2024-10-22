@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class MobileAppTroubleshootingAppUpdateHistory < MicrosoftGraphBeta::Models::MobileAppTroubleshootingHistoryItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new mobileAppTroubleshootingAppUpdateHistory and sets the default values.
+            ## Instantiates a new MobileAppTroubleshootingAppUpdateHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

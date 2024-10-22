@@ -21,6 +21,15 @@ module MicrosoftGraphBeta
             # When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v11_0
             ## 
+            # When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            @v12_0
+            ## 
+            # When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            @v13_0
+            ## 
+            # When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            @v14_0
+            ## 
             # When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v4_0
             ## 
@@ -63,22 +72,22 @@ module MicrosoftGraphBeta
             # When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
             @v9_0
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new androidMinimumOperatingSystem and sets the default values.
+            ## Instantiates a new AndroidMinimumOperatingSystem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -102,6 +111,9 @@ module MicrosoftGraphBeta
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "v10_0" => lambda {|n| @v10_0 = n.get_boolean_value() },
                     "v11_0" => lambda {|n| @v11_0 = n.get_boolean_value() },
+                    "v12_0" => lambda {|n| @v12_0 = n.get_boolean_value() },
+                    "v13_0" => lambda {|n| @v13_0 = n.get_boolean_value() },
+                    "v14_0" => lambda {|n| @v14_0 = n.get_boolean_value() },
                     "v4_0" => lambda {|n| @v4_0 = n.get_boolean_value() },
                     "v4_0_3" => lambda {|n| @v4_0_3 = n.get_boolean_value() },
                     "v4_1" => lambda {|n| @v4_1 = n.get_boolean_value() },
@@ -143,6 +155,9 @@ module MicrosoftGraphBeta
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_boolean_value("v10_0", @v10_0)
                 writer.write_boolean_value("v11_0", @v11_0)
+                writer.write_boolean_value("v12_0", @v12_0)
+                writer.write_boolean_value("v13_0", @v13_0)
+                writer.write_boolean_value("v14_0", @v14_0)
                 writer.write_boolean_value("v4_0", @v4_0)
                 writer.write_boolean_value("v4_0_3", @v4_0_3)
                 writer.write_boolean_value("v4_1", @v4_1)
@@ -188,6 +203,51 @@ module MicrosoftGraphBeta
             ## 
             def v11_0=(value)
                 @v11_0 = value
+            end
+            ## 
+            ## Gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @return a boolean
+            ## 
+            def v12_0
+                return @v12_0
+            end
+            ## 
+            ## Sets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @param value Value to set for the v12_0 property.
+            ## @return a void
+            ## 
+            def v12_0=(value)
+                @v12_0 = value
+            end
+            ## 
+            ## Gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @return a boolean
+            ## 
+            def v13_0
+                return @v13_0
+            end
+            ## 
+            ## Sets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @param value Value to set for the v13_0 property.
+            ## @return a void
+            ## 
+            def v13_0=(value)
+                @v13_0 = value
+            end
+            ## 
+            ## Gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @return a boolean
+            ## 
+            def v14_0
+                return @v14_0
+            end
+            ## 
+            ## Sets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+            ## @param value Value to set for the v14_0 property.
+            ## @return a void
+            ## 
+            def v14_0=(value)
+                @v14_0 = value
             end
             ## 
             ## Gets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
