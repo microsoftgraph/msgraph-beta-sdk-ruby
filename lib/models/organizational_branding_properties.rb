@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
             @background_color
             ## 
-            # Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+            # Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
             @background_image
             ## 
             # A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
             @cdn_list
             ## 
-            # Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+            # Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers' tenants only.
             @content_customization
             ## 
             # A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
             # A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
             @custom_terms_of_use_url
             ## 
-            # A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            # A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             @favicon
             ## 
             # A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @background_color = value
             end
             ## 
-            ## Gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+            ## Gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
             ## @return a base64url
             ## 
             def background_image
                 return @background_image
             end
             ## 
-            ## Sets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+            ## Sets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.
             ## @param value Value to set for the backgroundImage property.
             ## @return a void
             ## 
@@ -190,21 +190,21 @@ module MicrosoftGraphBeta
                 @cdn_list = value
             end
             ## 
-            ## Instantiates a new organizationalBrandingProperties and sets the default values.
+            ## Instantiates a new OrganizationalBrandingProperties and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+            ## Gets the contentCustomization property value. Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers' tenants only.
             ## @return a content_customization
             ## 
             def content_customization
                 return @content_customization
             end
             ## 
-            ## Sets the contentCustomization property value. Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+            ## Sets the contentCustomization property value. Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers' tenants only.
             ## @param value Value to set for the contentCustomization property.
             ## @return a void
             ## 
@@ -396,14 +396,14 @@ module MicrosoftGraphBeta
                 @custom_terms_of_use_url = value
             end
             ## 
-            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @return a base64url
             ## 
             def favicon
                 return @favicon
             end
             ## 
-            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @param value Value to set for the favicon property.
             ## @return a void
             ## 

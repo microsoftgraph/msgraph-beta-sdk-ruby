@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @additional_information = value
             end
             ## 
-            ## Instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
+            ## Instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

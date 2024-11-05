@@ -38,25 +38,28 @@ module MicrosoftGraphBeta
                     # The skip property
                     @skip
                     ## 
+                    # The skiptoken property
+                    @skiptoken
+                    ## 
                     # The top property
                     @top
                     ## 
-                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                     ## @return a i_dictionary
                     ## 
                     def additional_data
                         return @additional_data
                     end
                     ## 
-                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the additionalData property.
+                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## @param value Value to set for the AdditionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
                         @additional_data = value
                     end
                     ## 
-                    ## Instantiates a new getGroupPolicySettingsDeviceSettingsReportPostRequestBody and sets the default values.
+                    ## Instantiates a new GetGroupPolicySettingsDeviceSettingsReportPostRequestBody and sets the default values.
                     ## @return a void
                     ## 
                     def initialize()
@@ -100,6 +103,7 @@ module MicrosoftGraphBeta
                             "select" => lambda {|n| @select = n.get_collection_of_primitive_values(String) },
                             "sessionId" => lambda {|n| @session_id = n.get_string_value() },
                             "skip" => lambda {|n| @skip = n.get_number_value() },
+                            "skiptoken" => lambda {|n| @skiptoken = n.get_string_value() },
                             "top" => lambda {|n| @top = n.get_number_value() },
                         }
                     end
@@ -193,6 +197,7 @@ module MicrosoftGraphBeta
                         writer.write_collection_of_primitive_values("select", @select)
                         writer.write_string_value("sessionId", @session_id)
                         writer.write_number_value("skip", @skip)
+                        writer.write_string_value("skiptoken", @skiptoken)
                         writer.write_number_value("top", @top)
                         writer.write_additional_data(@additional_data)
                     end
@@ -225,6 +230,21 @@ module MicrosoftGraphBeta
                     ## 
                     def skip=(value)
                         @skip = value
+                    end
+                    ## 
+                    ## Gets the skiptoken property value. The skiptoken property
+                    ## @return a string
+                    ## 
+                    def skiptoken
+                        return @skiptoken
+                    end
+                    ## 
+                    ## Sets the skiptoken property value. The skiptoken property
+                    ## @param value Value to set for the skiptoken property.
+                    ## @return a void
+                    ## 
+                    def skiptoken=(value)
+                        @skiptoken = value
                     end
                     ## 
                     ## Gets the top property value. The top property

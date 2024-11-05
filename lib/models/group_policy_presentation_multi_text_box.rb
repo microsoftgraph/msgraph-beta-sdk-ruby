@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Requirement to enter a value in the text box. Default value is false.
             @required
             ## 
-            ## Instantiates a new groupPolicyPresentationMultiTextBox and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationMultiTextBox and sets the default values.
             ## @return a void
             ## 
             def initialize()

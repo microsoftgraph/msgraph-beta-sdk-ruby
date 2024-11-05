@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The Product Identifier.
             @product_identifier
             ## 
-            ## Instantiates a new windowsPhoneXAP and sets the default values.
+            ## Instantiates a new WindowsPhoneXAP and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,22 +25,22 @@ module MicrosoftGraphBeta
             # Describes which technology this setting can be deployed with
             @technologies
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingApplicability and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -106,8 +106,8 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "deviceMode" => lambda {|n| @device_mode = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationDeviceMode) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "platform" => lambda {|n| @platform = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
-                    "technologies" => lambda {|n| @technologies = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
+                    "platform" => lambda {|n| @platform = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationPlatforms) },
+                    "technologies" => lambda {|n| @technologies = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationTechnologies) },
                 }
             end
             ## 

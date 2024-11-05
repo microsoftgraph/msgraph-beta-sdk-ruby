@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Minimum number of choices in the collection. Valid values 1 to 100
             @minimum_count
             ## 
-            ## Instantiates a new deviceManagementConfigurationChoiceSettingCollectionDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationChoiceSettingCollectionDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
