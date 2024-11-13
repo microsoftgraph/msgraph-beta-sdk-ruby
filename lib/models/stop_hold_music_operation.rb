@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class StopHoldMusicOperation < MicrosoftGraphBeta::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new stopHoldMusicOperation and sets the default values.
+            ## Instantiates a new StopHoldMusicOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DeviceManagementConfigurationApplicationSettingApplicability < MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingApplicability
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceManagementConfigurationApplicationSettingApplicability and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationApplicationSettingApplicability and sets the default values.
             ## @return a void
             ## 
             def initialize()

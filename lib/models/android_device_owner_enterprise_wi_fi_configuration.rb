@@ -33,6 +33,9 @@ module MicrosoftGraphBeta
             # Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
             @root_certificate_for_server_validation
             ## 
+            # Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.
+            @root_certificates_for_server_validation
+            ## 
             # Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
             @trusted_server_certificate_names
             ## 
@@ -51,7 +54,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -111,6 +114,7 @@ module MicrosoftGraphBeta
                     "innerAuthenticationProtocolForPeap" => lambda {|n| @inner_authentication_protocol_for_peap = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForPeap) },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
                     "rootCertificateForServerValidation" => lambda {|n| @root_certificate_for_server_validation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerTrustedRootCertificate.create_from_discriminator_value(pn) }) },
+                    "rootCertificatesForServerValidation" => lambda {|n| @root_certificates_for_server_validation = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AndroidDeviceOwnerTrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "trustedServerCertificateNames" => lambda {|n| @trusted_server_certificate_names = n.get_collection_of_primitive_values(String) },
                 })
             end
@@ -190,6 +194,21 @@ module MicrosoftGraphBeta
                 @root_certificate_for_server_validation = value
             end
             ## 
+            ## Gets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.
+            ## @return a android_device_owner_trusted_root_certificate
+            ## 
+            def root_certificates_for_server_validation
+                return @root_certificates_for_server_validation
+            end
+            ## 
+            ## Sets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.
+            ## @param value Value to set for the rootCertificatesForServerValidation property.
+            ## @return a void
+            ## 
+            def root_certificates_for_server_validation=(value)
+                @root_certificates_for_server_validation = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -205,6 +224,7 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("innerAuthenticationProtocolForPeap", @inner_authentication_protocol_for_peap)
                 writer.write_string_value("outerIdentityPrivacyTemporaryValue", @outer_identity_privacy_temporary_value)
                 writer.write_object_value("rootCertificateForServerValidation", @root_certificate_for_server_validation)
+                writer.write_collection_of_object_values("rootCertificatesForServerValidation", @root_certificates_for_server_validation)
                 writer.write_collection_of_primitive_values("trustedServerCertificateNames", @trusted_server_certificate_names)
             end
             ## 

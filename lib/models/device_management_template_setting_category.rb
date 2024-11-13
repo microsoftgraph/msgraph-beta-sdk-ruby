@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The settings this category contains
             @recommended_settings
             ## 
-            ## Instantiates a new deviceManagementTemplateSettingCategory and sets the default values.
+            ## Instantiates a new DeviceManagementTemplateSettingCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

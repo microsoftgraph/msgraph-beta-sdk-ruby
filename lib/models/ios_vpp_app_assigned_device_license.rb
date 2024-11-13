@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The managed device ID.
             @managed_device_id
             ## 
-            ## Instantiates a new iosVppAppAssignedDeviceLicense and sets the default values.
+            ## Instantiates a new IosVppAppAssignedDeviceLicense and sets the default values.
             ## @return a void
             ## 
             def initialize()

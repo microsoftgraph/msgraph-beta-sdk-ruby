@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # Indicates if the device is deleted from Apple Business Manager
             @is_deleted
             ## 
-            # Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+            # Indicates if the Apple device is supervised.
             @is_supervised
             ## 
             # Last Contacted Date Time of the device
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # Device serial number
             @serial_number
             ## 
-            ## Instantiates a new importedAppleDeviceIdentity and sets the default values.
+            ## Instantiates a new ImportedAppleDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -161,14 +161,14 @@ module MicrosoftGraphBeta
                 @is_deleted = value
             end
             ## 
-            ## Gets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+            ## Gets the isSupervised property value. Indicates if the Apple device is supervised.
             ## @return a boolean
             ## 
             def is_supervised
                 return @is_supervised
             end
             ## 
-            ## Sets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
+            ## Sets the isSupervised property value. Indicates if the Apple device is supervised.
             ## @param value Value to set for the isSupervised property.
             ## @return a void
             ## 

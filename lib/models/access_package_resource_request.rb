@@ -20,13 +20,13 @@ module MicrosoftGraphBeta
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @expiration_date_time
             ## 
-            # If set, does not add the resource.
+            # If set, doesn't add the resource.
             @is_validation_only
             ## 
             # The requestor's justification for adding or removing the resource.
             @justification
             ## 
-            # The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+            # The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.
             @request_state
             ## 
             # The requestStatus property
@@ -68,7 +68,7 @@ module MicrosoftGraphBeta
                 @catalog_id = value
             end
             ## 
-            ## Instantiates a new accessPackageResourceRequest and sets the default values.
+            ## Instantiates a new AccessPackageResourceRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -132,14 +132,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isValidationOnly property value. If set, does not add the resource.
+            ## Gets the isValidationOnly property value. If set, doesn't add the resource.
             ## @return a boolean
             ## 
             def is_validation_only
                 return @is_validation_only
             end
             ## 
-            ## Sets the isValidationOnly property value. If set, does not add the resource.
+            ## Sets the isValidationOnly property value. If set, doesn't add the resource.
             ## @param value Value to set for the isValidationOnly property.
             ## @return a void
             ## 
@@ -162,14 +162,14 @@ module MicrosoftGraphBeta
                 @justification = value
             end
             ## 
-            ## Gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+            ## Gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.
             ## @return a string
             ## 
             def request_state
                 return @request_state
             end
             ## 
-            ## Sets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+            ## Sets the requestState property value. The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.
             ## @param value Value to set for the requestState property.
             ## @return a void
             ## 

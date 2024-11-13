@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class WindowsUpdatesCatalogEntry < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            # The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @deployable_until_date_time
             ## 
             # The display name of the content. Read-only.
@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @release_date_time
             ## 
-            ## Instantiates a new windowsUpdatesCatalogEntry and sets the default values.
+            ## Instantiates a new WindowsUpdatesCatalogEntry and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,14 +47,14 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesCatalogEntry.new
             end
             ## 
-            ## Gets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Gets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def deployable_until_date_time
                 return @deployable_until_date_time
             end
             ## 
-            ## Sets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Sets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the deployableUntilDateTime property.
             ## @return a void
             ## 

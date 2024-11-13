@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
             # The SKU associated with this subscription.
             @sku_part_number
             ## 
-            # The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+            # The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
             @status
             ## 
             # The number of seats included in this subscription.
@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                 @commerce_subscription_id = value
             end
             ## 
-            ## Instantiates a new companySubscription and sets the default values.
+            ## Instantiates a new CompanySubscription and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -271,14 +271,14 @@ module MicrosoftGraphBeta
                 @sku_part_number = value
             end
             ## 
-            ## Gets the status property value. The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+            ## Gets the status property value. The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
             ## @return a string
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+            ## Sets the status property value. The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

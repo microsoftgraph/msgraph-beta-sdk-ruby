@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # The subject of the meeting.
             @subject
             ## 
-            ## Instantiates a new meetingRegistration and sets the default values.
+            ## Instantiates a new MeetingRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

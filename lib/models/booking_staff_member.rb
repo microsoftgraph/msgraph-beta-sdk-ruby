@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -15,8 +16,14 @@ module MicrosoftGraphBeta
             # Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
             @color_index
             ## 
-            # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            # The date, time and timezone when the staff member was created.
+            @created_date_time
+            ## 
+            # Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
             @is_email_notification_enabled
+            ## 
+            # The date, time and timezone when the staff member was last updated.
+            @last_updated_date_time
             ## 
             # The membershipStatus property
             @membership_status
@@ -30,7 +37,7 @@ module MicrosoftGraphBeta
             # True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
             @use_business_hours
             ## 
-            # The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            # The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             @working_hours
             ## 
             ## Gets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
@@ -63,11 +70,26 @@ module MicrosoftGraphBeta
                 @color_index = value
             end
             ## 
-            ## Instantiates a new bookingStaffMember and sets the default values.
+            ## Instantiates a new BookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time and timezone when the staff member was created.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time and timezone when the staff member was created.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -86,7 +108,9 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "availabilityIsAffectedByPersonalCalendar" => lambda {|n| @availability_is_affected_by_personal_calendar = n.get_boolean_value() },
                     "colorIndex" => lambda {|n| @color_index = n.get_number_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "isEmailNotificationEnabled" => lambda {|n| @is_email_notification_enabled = n.get_boolean_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "membershipStatus" => lambda {|n| @membership_status = n.get_enum_value(MicrosoftGraphBeta::Models::BookingStaffMembershipStatus) },
                     "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraphBeta::Models::BookingStaffRole) },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
@@ -95,19 +119,34 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            ## Gets the isEmailNotificationEnabled property value. Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
             ## @return a boolean
             ## 
             def is_email_notification_enabled
                 return @is_email_notification_enabled
             end
             ## 
-            ## Sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            ## Sets the isEmailNotificationEnabled property value. Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
             ## @param value Value to set for the isEmailNotificationEnabled property.
             ## @return a void
             ## 
             def is_email_notification_enabled=(value)
                 @is_email_notification_enabled = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time and timezone when the staff member was last updated.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time and timezone when the staff member was last updated.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the membershipStatus property value. The membershipStatus property
@@ -149,7 +188,9 @@ module MicrosoftGraphBeta
                 super
                 writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar)
                 writer.write_number_value("colorIndex", @color_index)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_enum_value("membershipStatus", @membership_status)
                 writer.write_enum_value("role", @role)
                 writer.write_string_value("timeZone", @time_zone)
@@ -187,14 +228,14 @@ module MicrosoftGraphBeta
                 @use_business_hours = value
             end
             ## 
-            ## Gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            ## Gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             ## @return a booking_work_hours
             ## 
             def working_hours
                 return @working_hours
             end
             ## 
-            ## Sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            ## Sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             ## @param value Value to set for the workingHours property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The name of the storage account.
             @storage_account_name
             ## 
-            ## Instantiates a new cloudPcForensicStorageAccount and sets the default values.
+            ## Instantiates a new CloudPcForensicStorageAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()

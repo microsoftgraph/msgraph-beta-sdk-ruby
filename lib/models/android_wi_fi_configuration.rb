@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # This is the name of the Wi-Fi network that is broadcast to all devices.
             @ssid
             ## 
-            # Wi-Fi Security Types for Android.
+            # The possible security types for Android Wi-Fi profiles. Default value 'Open', indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. 'WpaEnterprise' and 'Wpa2Enterprise' options are available for Enterprise Wi-Fi profiles. 'Wep' and 'WpaPersonal' (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.
             @wi_fi_security_type
             ## 
             ## Gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @connect_when_network_name_is_hidden = value
             end
             ## 
-            ## Instantiates a new androidWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -136,14 +136,14 @@ module MicrosoftGraphBeta
                 @ssid = value
             end
             ## 
-            ## Gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
+            ## Gets the wiFiSecurityType property value. The possible security types for Android Wi-Fi profiles. Default value 'Open', indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. 'WpaEnterprise' and 'Wpa2Enterprise' options are available for Enterprise Wi-Fi profiles. 'Wep' and 'WpaPersonal' (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.
             ## @return a android_wi_fi_security_type
             ## 
             def wi_fi_security_type
                 return @wi_fi_security_type
             end
             ## 
-            ## Sets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
+            ## Sets the wiFiSecurityType property value. The possible security types for Android Wi-Fi profiles. Default value 'Open', indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. 'WpaEnterprise' and 'Wpa2Enterprise' options are available for Enterprise Wi-Fi profiles. 'Wep' and 'WpaPersonal' (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.
             ## @param value Value to set for the wiFiSecurityType property.
             ## @return a void
             ## 

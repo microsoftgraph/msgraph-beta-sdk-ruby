@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityArticleIndicator < MicrosoftGraphBeta::Models::SecurityIndicator
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityArticleIndicator and sets the default values.
+            ## Instantiates a new SecurityArticleIndicator and sets the default values.
             ## @return a void
             ## 
             def initialize()

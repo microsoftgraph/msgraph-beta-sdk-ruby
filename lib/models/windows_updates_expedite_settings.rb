@@ -13,25 +13,28 @@ module MicrosoftGraphBeta
             # True indicates that the deployment of the content is expedited.
             @is_expedited
             ## 
+            # True indicates that the deployment is an expedite readiness test.
+            @is_readiness_test
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new windowsUpdatesExpediteSettings and sets the default values.
+            ## Instantiates a new WindowsUpdatesExpediteSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,6 +56,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return {
                     "isExpedited" => lambda {|n| @is_expedited = n.get_boolean_value() },
+                    "isReadinessTest" => lambda {|n| @is_readiness_test = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -70,6 +74,21 @@ module MicrosoftGraphBeta
             ## 
             def is_expedited=(value)
                 @is_expedited = value
+            end
+            ## 
+            ## Gets the isReadinessTest property value. True indicates that the deployment is an expedite readiness test.
+            ## @return a boolean
+            ## 
+            def is_readiness_test
+                return @is_readiness_test
+            end
+            ## 
+            ## Sets the isReadinessTest property value. True indicates that the deployment is an expedite readiness test.
+            ## @param value Value to set for the isReadinessTest property.
+            ## @return a void
+            ## 
+            def is_readiness_test=(value)
+                @is_readiness_test = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -94,6 +113,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("isExpedited", @is_expedited)
+                writer.write_boolean_value("isReadinessTest", @is_readiness_test)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end
