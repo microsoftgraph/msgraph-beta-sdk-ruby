@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                 @alert = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantApiNotification and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantApiNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()

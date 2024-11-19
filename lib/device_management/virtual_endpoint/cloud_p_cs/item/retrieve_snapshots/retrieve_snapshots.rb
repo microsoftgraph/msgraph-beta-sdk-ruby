@@ -1,0 +1,1 @@
+require_relative 'retrieve_snapshots_get_response'

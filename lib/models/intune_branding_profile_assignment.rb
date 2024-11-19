@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Assignment target that the branding profile is assigned to.
             @target
             ## 
-            ## Instantiates a new intuneBrandingProfileAssignment and sets the default values.
+            ## Instantiates a new IntuneBrandingProfileAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

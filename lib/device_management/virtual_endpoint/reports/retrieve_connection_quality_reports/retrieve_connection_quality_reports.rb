@@ -1,0 +1,1 @@
+require_relative 'retrieve_connection_quality_reports_post_request_body'

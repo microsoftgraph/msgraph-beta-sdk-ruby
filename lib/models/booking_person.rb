@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The email address of the person.
             @email_address
             ## 
-            ## Instantiates a new bookingPerson and sets the default values.
+            ## Instantiates a new BookingPerson and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # Possible values are: notStarted, running, completed, failed. Read-only.
             @status
             ## 
-            ## Instantiates a new operation and sets the default values.
+            ## Instantiates a new Operation and sets the default values.
             ## @return a void
             ## 
             def initialize()

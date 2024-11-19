@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class WindowsDeviceAzureADAccount < MicrosoftGraphBeta::Models::WindowsDeviceAccount
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Not yet documented
+            # The userPrincipalName property
             @user_principal_name
             ## 
-            ## Instantiates a new windowsDeviceAzureADAccount and sets the default values.
+            ## Instantiates a new WindowsDeviceAzureADAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userPrincipalName", @user_principal_name)
             end
             ## 
-            ## Gets the userPrincipalName property value. Not yet documented
+            ## Gets the userPrincipalName property value. The userPrincipalName property
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. Not yet documented
+            ## Sets the userPrincipalName property value. The userPrincipalName property
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

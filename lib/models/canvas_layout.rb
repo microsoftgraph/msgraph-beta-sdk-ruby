@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Vertical section on the SharePoint page.
             @vertical_section
             ## 
-            ## Instantiates a new canvasLayout and sets the default values.
+            ## Instantiates a new CanvasLayout and sets the default values.
             ## @return a void
             ## 
             def initialize()

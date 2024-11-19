@@ -16,8 +16,11 @@ module MicrosoftGraphBeta
             # Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
             @identity
             ## 
-            # Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            # Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             @registrant_id
+            ## 
+            # Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
+            @registration_id
             ## 
             # Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
             @role
@@ -40,7 +43,7 @@ module MicrosoftGraphBeta
                 @attendance_intervals = value
             end
             ## 
-            ## Instantiates a new attendanceRecord and sets the default values.
+            ## Instantiates a new AttendanceRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,6 +83,7 @@ module MicrosoftGraphBeta
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::Identity.create_from_discriminator_value(pn) }) },
                     "registrantId" => lambda {|n| @registrant_id = n.get_string_value() },
+                    "registrationId" => lambda {|n| @registration_id = n.get_string_value() },
                     "role" => lambda {|n| @role = n.get_string_value() },
                     "totalAttendanceInSeconds" => lambda {|n| @total_attendance_in_seconds = n.get_number_value() },
                 })
@@ -100,19 +104,34 @@ module MicrosoftGraphBeta
                 @identity = value
             end
             ## 
-            ## Gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            ## Gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             ## @return a string
             ## 
             def registrant_id
                 return @registrant_id
             end
             ## 
-            ## Sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+            ## Sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
             ## @param value Value to set for the registrantId property.
             ## @return a void
             ## 
             def registrant_id=(value)
                 @registrant_id = value
+            end
+            ## 
+            ## Gets the registrationId property value. Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
+            ## @return a string
+            ## 
+            def registration_id
+                return @registration_id
+            end
+            ## 
+            ## Sets the registrationId property value. Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
+            ## @param value Value to set for the registrationId property.
+            ## @return a void
+            ## 
+            def registration_id=(value)
+                @registration_id = value
             end
             ## 
             ## Gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
@@ -141,6 +160,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("emailAddress", @email_address)
                 writer.write_object_value("identity", @identity)
                 writer.write_string_value("registrantId", @registrant_id)
+                writer.write_string_value("registrationId", @registration_id)
                 writer.write_string_value("role", @role)
                 writer.write_number_value("totalAttendanceInSeconds", @total_attendance_in_seconds)
             end

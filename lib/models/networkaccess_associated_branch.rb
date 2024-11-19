@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @branch_id = value
             end
             ## 
-            ## Instantiates a new networkaccessAssociatedBranch and sets the default values.
+            ## Instantiates a new NetworkaccessAssociatedBranch and sets the default values.
             ## @return a void
             ## 
             def initialize()

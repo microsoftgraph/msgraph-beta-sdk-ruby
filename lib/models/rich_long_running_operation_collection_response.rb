@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new richLongRunningOperationCollectionResponse and sets the default values.
+            ## Instantiates a new RichLongRunningOperationCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

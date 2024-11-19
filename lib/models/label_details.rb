@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class LabelDetails < MicrosoftGraphBeta::Models::ParentLabelDetails
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new labelDetails and sets the default values.
+            ## Instantiates a new LabelDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
