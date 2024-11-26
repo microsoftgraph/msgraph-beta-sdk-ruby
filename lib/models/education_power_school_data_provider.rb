@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @connection_url = value
             end
             ## 
-            ## Instantiates a new educationPowerSchoolDataProvider and sets the default values.
+            ## Instantiates a new EducationPowerSchoolDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

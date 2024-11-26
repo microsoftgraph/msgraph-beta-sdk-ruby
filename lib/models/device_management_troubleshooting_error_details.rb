@@ -12,10 +12,10 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Not yet documented
+            # The context property
             @context
             ## 
-            # Not yet documented
+            # The failure property
             @failure
             ## 
             # The detailed description of what went wrong.
@@ -30,36 +30,36 @@ module MicrosoftGraphBeta
             # Links to helpful documentation about this failure.
             @resources
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
+            ## Instantiates a new DeviceManagementTroubleshootingErrorDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the context property value. Not yet documented
+            ## Gets the context property value. The context property
             ## @return a string
             ## 
             def context
                 return @context
             end
             ## 
-            ## Sets the context property value. Not yet documented
+            ## Sets the context property value. The context property
             ## @param value Value to set for the context property.
             ## @return a void
             ## 
@@ -76,14 +76,14 @@ module MicrosoftGraphBeta
                 return DeviceManagementTroubleshootingErrorDetails.new
             end
             ## 
-            ## Gets the failure property value. Not yet documented
+            ## Gets the failure property value. The failure property
             ## @return a string
             ## 
             def failure
                 return @failure
             end
             ## 
-            ## Sets the failure property value. Not yet documented
+            ## Sets the failure property value. The failure property
             ## @param value Value to set for the failure property.
             ## @return a void
             ## 

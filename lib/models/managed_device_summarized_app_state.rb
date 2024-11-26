@@ -5,38 +5,38 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Event representing a user's devices with failed or pending apps.
+        # The summarized information associated with managed device app installation status.
         class ManagedDeviceSummarizedAppState
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # DeviceId of device represented by this object
+            # The unique identifier (DeviceId) associated with the device.
             @device_id
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Indicates the type of execution status of the device management script.
+            # Indicates the type of execution status of the device management script. This status provides insights into whether the script has been successfully executed, encountered errors, or is pending execution.
             @summarized_app_state
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new managedDeviceSummarizedAppState and sets the default values.
+            ## Instantiates a new ManagedDeviceSummarizedAppState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,14 +52,14 @@ module MicrosoftGraphBeta
                 return ManagedDeviceSummarizedAppState.new
             end
             ## 
-            ## Gets the deviceId property value. DeviceId of device represented by this object
+            ## Gets the deviceId property value. The unique identifier (DeviceId) associated with the device.
             ## @return a string
             ## 
             def device_id
                 return @device_id
             end
             ## 
-            ## Sets the deviceId property value. DeviceId of device represented by this object
+            ## Sets the deviceId property value. The unique identifier (DeviceId) associated with the device.
             ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 
@@ -74,7 +74,7 @@ module MicrosoftGraphBeta
                 return {
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "summarizedAppState" => lambda {|n| @summarized_app_state = n.get_enum_value(MicrosoftGraphBeta::Models::RunState) },
+                    "summarizedAppState" => lambda {|n| @summarized_app_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementScriptRunState) },
                 }
             end
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the summarizedAppState property value. Indicates the type of execution status of the device management script.
-            ## @return a run_state
+            ## Gets the summarizedAppState property value. Indicates the type of execution status of the device management script. This status provides insights into whether the script has been successfully executed, encountered errors, or is pending execution.
+            ## @return a device_management_script_run_state
             ## 
             def summarized_app_state
                 return @summarized_app_state
             end
             ## 
-            ## Sets the summarizedAppState property value. Indicates the type of execution status of the device management script.
+            ## Sets the summarizedAppState property value. Indicates the type of execution status of the device management script. This status provides insights into whether the script has been successfully executed, encountered errors, or is pending execution.
             ## @param value Value to set for the summarizedAppState property.
             ## @return a void
             ## 

@@ -5,11 +5,11 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Represents a group that should be excluded from an assignment.
+        # The AAD Group we are deploying firmware updates to
         class ExclusionGroupAssignmentTarget < MicrosoftGraphBeta::Models::GroupAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new exclusionGroupAssignmentTarget and sets the default values.
+            ## Instantiates a new ExclusionGroupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

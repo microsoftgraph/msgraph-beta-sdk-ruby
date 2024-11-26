@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class IosEducationDeviceConfiguration < MicrosoftGraphBeta::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosEducationDeviceConfiguration and sets the default values.
+            ## Instantiates a new IosEducationDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

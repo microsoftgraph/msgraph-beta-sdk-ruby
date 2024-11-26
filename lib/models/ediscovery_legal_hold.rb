@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
             # Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
             @user_sources
             ## 
-            ## Instantiates a new ediscoveryLegalHold and sets the default values.
+            ## Instantiates a new EdiscoveryLegalHold and sets the default values.
             ## @return a void
             ## 
             def initialize()

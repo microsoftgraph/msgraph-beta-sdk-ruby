@@ -1,0 +1,1 @@
+require_relative 'download_powerlift_app_diagnostic_post_request_body'

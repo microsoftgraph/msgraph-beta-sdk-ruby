@@ -1,1 +1,0 @@
-require_relative 'send_custom_notification_to_company_portal_post_request_body'

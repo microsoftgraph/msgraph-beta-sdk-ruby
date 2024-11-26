@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class IosVppAppAssignedUserLicense < MicrosoftGraphBeta::Models::IosVppAppAssignedLicense
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosVppAppAssignedUserLicense and sets the default values.
+            ## Instantiates a new IosVppAppAssignedUserLicense and sets the default values.
             ## @return a void
             ## 
             def initialize()

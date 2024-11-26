@@ -11,6 +11,8 @@ module MicrosoftGraphBeta
             Windows10: :Windows10,
             Linux: :Linux,
             UnknownFutureValue: :UnknownFutureValue,
+            AndroidEnterprise: :AndroidEnterprise,
+            Aosp: :Aosp,
         }
     end
 end

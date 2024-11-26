@@ -93,7 +93,7 @@ module MicrosoftGraphBeta
                 @certificate_validity_period_value = value
             end
             ## 
-            ## Instantiates a new windows10XSCEPCertificateProfile and sets the default values.
+            ## Instantiates a new Windows10XSCEPCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -137,7 +137,7 @@ module MicrosoftGraphBeta
                     "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::HashAlgorithms.create_from_discriminator_value(pn) }) },
                     "keySize" => lambda {|n| @key_size = n.get_enum_value(MicrosoftGraphBeta::Models::KeySize) },
                     "keyStorageProvider" => lambda {|n| @key_storage_provider = n.get_enum_value(MicrosoftGraphBeta::Models::KeyStorageProviderOption) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "renewalThresholdPercentage" => lambda {|n| @renewal_threshold_percentage = n.get_number_value() },
                     "rootCertificateId" => lambda {|n| @root_certificate_id = n.get_guid_value() },
                     "scepServerUrls" => lambda {|n| @scep_server_urls = n.get_collection_of_primitive_values(String) },

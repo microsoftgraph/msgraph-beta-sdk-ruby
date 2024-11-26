@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Acceptable file extensions to upload for this setting
             @supported_extensions
             ## 
-            ## Instantiates a new deviceManagementSettingFileConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingFileConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

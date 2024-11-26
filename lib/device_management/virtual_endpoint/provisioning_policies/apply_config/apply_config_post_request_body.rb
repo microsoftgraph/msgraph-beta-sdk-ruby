@@ -23,15 +23,15 @@ module MicrosoftGraphBeta
                         # The policySettings property
                         @policy_settings
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                             @cloud_pc_ids = value
                         end
                         ## 
-                        ## Instantiates a new applyConfigPostRequestBody and sets the default values.
+                        ## Instantiates a new ApplyConfigPostRequestBody and sets the default values.
                         ## @return a void
                         ## 
                         def initialize()
@@ -75,7 +75,7 @@ module MicrosoftGraphBeta
                         def get_field_deserializers()
                             return {
                                 "cloudPcIds" => lambda {|n| @cloud_pc_ids = n.get_collection_of_primitive_values(String) },
-                                "policySettings" => lambda {|n| @policy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
+                                "policySettings" => lambda {|n| @policy_settings = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
                             }
                         end
                         ## 

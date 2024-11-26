@@ -10,51 +10,51 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The controlCategory property
+            # Control action category (Identity, Data, Device, Apps, Infrastructure).
             @control_category
             ## 
-            # The controlName property
+            # Control unique name
             @control_name
             ## 
-            # The description property
+            # Description of the control.
             @description
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The score property
+            # Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
             @score
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new controlScore and sets the default values.
+            ## Instantiates a new ControlScore and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the controlCategory property value. The controlCategory property
+            ## Gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
             ## @return a string
             ## 
             def control_category
                 return @control_category
             end
             ## 
-            ## Sets the controlCategory property value. The controlCategory property
+            ## Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
             ## @param value Value to set for the controlCategory property.
             ## @return a void
             ## 
@@ -62,14 +62,14 @@ module MicrosoftGraphBeta
                 @control_category = value
             end
             ## 
-            ## Gets the controlName property value. The controlName property
+            ## Gets the controlName property value. Control unique name
             ## @return a string
             ## 
             def control_name
                 return @control_name
             end
             ## 
-            ## Sets the controlName property value. The controlName property
+            ## Sets the controlName property value. Control unique name
             ## @param value Value to set for the controlName property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 return ControlScore.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description of the control.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description of the control.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -129,14 +129,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the score property value. The score property
+            ## Gets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
             ## @return a double
             ## 
             def score
                 return @score
             end
             ## 
-            ## Sets the score property value. The score property
+            ## Sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
             ## @param value Value to set for the score property.
             ## @return a void
             ## 
