@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Default value for the check box. The default value is false.
             @default_checked
             ## 
-            ## Instantiates a new groupPolicyPresentationCheckBox and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
             ## @return a void
             ## 
             def initialize()

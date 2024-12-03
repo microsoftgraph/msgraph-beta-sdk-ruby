@@ -9,22 +9,22 @@ module MicrosoftGraphBeta
         class MacOSDmgApp < MicrosoftGraphBeta::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
+            # When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             @ignore_version_detection
             ## 
-            # The list of apps expected to be installed by the DMG.
+            # The list of .apps expected to be installed by the DMG (Apple Disk Image). This collection can contain a maximum of 500 elements.
             @included_apps
             ## 
-            # The value for the minimum applicable operating system.
+            # ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             @minimum_supported_operating_system
             ## 
-            # The primary CFBundleIdentifier of the DMG.
+            # The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.
             @primary_bundle_id
             ## 
-            # The primary CFBundleVersion of the DMG.
+            # The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.
             @primary_bundle_version
             ## 
-            ## Instantiates a new macOSDmgApp and sets the default values.
+            ## Instantiates a new MacOSDmgApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,14 +54,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
+            ## Gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             ## @return a boolean
             ## 
             def ignore_version_detection
                 return @ignore_version_detection
             end
             ## 
-            ## Sets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
+            ## Sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
             ## @param value Value to set for the ignoreVersionDetection property.
             ## @return a void
             ## 
@@ -69,14 +69,14 @@ module MicrosoftGraphBeta
                 @ignore_version_detection = value
             end
             ## 
-            ## Gets the includedApps property value. The list of apps expected to be installed by the DMG.
+            ## Gets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image). This collection can contain a maximum of 500 elements.
             ## @return a mac_o_s_included_app
             ## 
             def included_apps
                 return @included_apps
             end
             ## 
-            ## Sets the includedApps property value. The list of apps expected to be installed by the DMG.
+            ## Sets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image). This collection can contain a maximum of 500 elements.
             ## @param value Value to set for the includedApps property.
             ## @return a void
             ## 
@@ -84,14 +84,14 @@ module MicrosoftGraphBeta
                 @included_apps = value
             end
             ## 
-            ## Gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+            ## Gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             ## @return a mac_o_s_minimum_operating_system
             ## 
             def minimum_supported_operating_system
                 return @minimum_supported_operating_system
             end
             ## 
-            ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+            ## Sets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
             ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 @minimum_supported_operating_system = value
             end
             ## 
-            ## Gets the primaryBundleId property value. The primary CFBundleIdentifier of the DMG.
+            ## Gets the primaryBundleId property value. The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @return a string
             ## 
             def primary_bundle_id
                 return @primary_bundle_id
             end
             ## 
-            ## Sets the primaryBundleId property value. The primary CFBundleIdentifier of the DMG.
+            ## Sets the primaryBundleId property value. The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.
             ## @param value Value to set for the primaryBundleId property.
             ## @return a void
             ## 
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @primary_bundle_id = value
             end
             ## 
-            ## Gets the primaryBundleVersion property value. The primary CFBundleVersion of the DMG.
+            ## Gets the primaryBundleVersion property value. The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @return a string
             ## 
             def primary_bundle_version
                 return @primary_bundle_version
             end
             ## 
-            ## Sets the primaryBundleVersion property value. The primary CFBundleVersion of the DMG.
+            ## Sets the primaryBundleVersion property value. The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.
             ## @param value Value to set for the primaryBundleVersion property.
             ## @return a void
             ## 

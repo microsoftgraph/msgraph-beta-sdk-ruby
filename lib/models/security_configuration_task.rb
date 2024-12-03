@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
             # The intended settings and their values.
             @intended_settings
             ## 
-            # The number of vulnerable devices. Valid values 0 to 65536
+            # The number of vulnerable devices.
             @managed_device_count
             ## 
             # The vulnerable managed devices.
@@ -45,7 +45,7 @@ module MicrosoftGraphBeta
                 @applicable_platform = value
             end
             ## 
-            ## Instantiates a new securityConfigurationTask and sets the default values.
+            ## Instantiates a new SecurityConfigurationTask and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -137,14 +137,14 @@ module MicrosoftGraphBeta
                 @intended_settings = value
             end
             ## 
-            ## Gets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
+            ## Gets the managedDeviceCount property value. The number of vulnerable devices.
             ## @return a integer
             ## 
             def managed_device_count
                 return @managed_device_count
             end
             ## 
-            ## Sets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
+            ## Sets the managedDeviceCount property value. The number of vulnerable devices.
             ## @param value Value to set for the managedDeviceCount property.
             ## @return a void
             ## 

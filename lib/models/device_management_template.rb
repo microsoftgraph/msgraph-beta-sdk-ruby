@@ -61,7 +61,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new deviceManagementTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

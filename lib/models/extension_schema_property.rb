@@ -16,25 +16,25 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
+            # The type of the property that is defined as part of a schema extension. Allowed values are Binary, Boolean, DateTime, Integer, or String. For more information, see Supported property data types.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new extensionSchemaProperty and sets the default values.
+            ## Instantiates a new ExtensionSchemaProperty and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
+            ## Gets the type property value. The type of the property that is defined as part of a schema extension. Allowed values are Binary, Boolean, DateTime, Integer, or String. For more information, see Supported property data types.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
+            ## Sets the type property value. The type of the property that is defined as part of a schema extension. Allowed values are Binary, Boolean, DateTime, Integer, or String. For more information, see Supported property data types.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

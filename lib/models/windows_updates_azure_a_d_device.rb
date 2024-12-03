@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class WindowsUpdatesAzureADDevice < MicrosoftGraphBeta::Models::WindowsUpdatesUpdatableAsset
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+            # Specifies areas in which the device is enrolled. Read-only. Returned by default.
             @enrollments
             ## 
             # Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
             @errors
             ## 
-            ## Instantiates a new windowsUpdatesAzureADDevice and sets the default values.
+            ## Instantiates a new WindowsUpdatesAzureADDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,14 +30,14 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesAzureADDevice.new
             end
             ## 
-            ## Gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+            ## Gets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
             ## @return a windows_updates_updatable_asset_enrollment
             ## 
             def enrollments
                 return @enrollments
             end
             ## 
-            ## Sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+            ## Sets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
             ## @param value Value to set for the enrollments property.
             ## @return a void
             ## 

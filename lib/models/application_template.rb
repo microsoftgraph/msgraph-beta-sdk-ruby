@@ -10,6 +10,9 @@ module MicrosoftGraphBeta
             # The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
             @categories
             ## 
+            # The URIs required for the single sign-on configuration of a preintegrated application.
+            @configuration_uris
+            ## 
             # A description of the application.
             @description
             ## 
@@ -52,7 +55,22 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new applicationTemplate and sets the default values.
+            ## Gets the configurationUris property value. The URIs required for the single sign-on configuration of a preintegrated application.
+            ## @return a configuration_uri
+            ## 
+            def configuration_uris
+                return @configuration_uris
+            end
+            ## 
+            ## Sets the configurationUris property value. The URIs required for the single sign-on configuration of a preintegrated application.
+            ## @param value Value to set for the configurationUris property.
+            ## @return a void
+            ## 
+            def configuration_uris=(value)
+                @configuration_uris = value
+            end
+            ## 
+            ## Instantiates a new ApplicationTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -104,6 +122,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "categories" => lambda {|n| @categories = n.get_collection_of_primitive_values(String) },
+                    "configurationUris" => lambda {|n| @configuration_uris = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConfigurationUri.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "homePageUrl" => lambda {|n| @home_page_url = n.get_string_value() },
@@ -184,6 +203,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_primitive_values("categories", @categories)
+                writer.write_collection_of_object_values("configurationUris", @configuration_uris)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("homePageUrl", @home_page_url)

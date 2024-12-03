@@ -7,17 +7,17 @@ module MicrosoftGraphBeta
         class AzureADAuthentication < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A list of monthly serviceLevelAgreementAttainment objects.
+            # SLA data for a Microsoft Entra tenant for a calendar month.
             @attainments
             ## 
-            ## Gets the attainments property value. A list of monthly serviceLevelAgreementAttainment objects.
+            ## Gets the attainments property value. SLA data for a Microsoft Entra tenant for a calendar month.
             ## @return a service_level_agreement_attainment
             ## 
             def attainments
                 return @attainments
             end
             ## 
-            ## Sets the attainments property value. A list of monthly serviceLevelAgreementAttainment objects.
+            ## Sets the attainments property value. SLA data for a Microsoft Entra tenant for a calendar month.
             ## @param value Value to set for the attainments property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @attainments = value
             end
             ## 
-            ## Instantiates a new azureADAuthentication and sets the default values.
+            ## Instantiates a new AzureADAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

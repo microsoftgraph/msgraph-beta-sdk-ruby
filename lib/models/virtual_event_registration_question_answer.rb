@@ -10,47 +10,47 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+            # Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
             @boolean_value
             ## 
             # Display name of the registration question.
             @display_name
             ## 
-            # Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+            # A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
             @multi_choice_values
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # id of the virtualEventRegistrationQuestion.
+            # The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
             @question_id
             ## 
-            # Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+            # Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the booleanValue property value. Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+            ## Gets the booleanValue property value. Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
             ## @return a boolean
             ## 
             def boolean_value
                 return @boolean_value
             end
             ## 
-            ## Sets the booleanValue property value. Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+            ## Sets the booleanValue property value. Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
             ## @param value Value to set for the booleanValue property.
             ## @return a void
             ## 
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                 @boolean_value = value
             end
             ## 
-            ## Instantiates a new virtualEventRegistrationQuestionAnswer and sets the default values.
+            ## Instantiates a new VirtualEventRegistrationQuestionAnswer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the multiChoiceValues property value. Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+            ## Gets the multiChoiceValues property value. A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
             ## @return a string
             ## 
             def multi_choice_values
                 return @multi_choice_values
             end
             ## 
-            ## Sets the multiChoiceValues property value. Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+            ## Sets the multiChoiceValues property value. A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
             ## @param value Value to set for the multiChoiceValues property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the questionId property value. id of the virtualEventRegistrationQuestion.
+            ## Gets the questionId property value. The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
             ## @return a string
             ## 
             def question_id
                 return @question_id
             end
             ## 
-            ## Sets the questionId property value. id of the virtualEventRegistrationQuestion.
+            ## Sets the questionId property value. The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
             ## @param value Value to set for the questionId property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the value property value. Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+            ## Gets the value property value. Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.
             ## @return a string
             ## 
             def value
                 return @value
             end
             ## 
-            ## Sets the value property value. Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+            ## Sets the value property value. Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.
             ## @param value Value to set for the value property.
             ## @return a void
             ## 

@@ -8,8 +8,22 @@ module MicrosoftGraphBeta
             SharedUseLicenseUsageRealTimeReport: :SharedUseLicenseUsageRealTimeReport,
             UnknownFutureValue: :UnknownFutureValue,
             NoLicenseAvailableConnectivityFailureReport: :NoLicenseAvailableConnectivityFailureReport,
+            FrontlineLicenseUsageReport: :FrontlineLicenseUsageReport,
+            FrontlineLicenseUsageRealTimeReport: :FrontlineLicenseUsageRealTimeReport,
             RemoteConnectionQualityReports: :RemoteConnectionQualityReports,
             InaccessibleCloudPcReports: :InaccessibleCloudPcReports,
+            ActionStatusReport: :ActionStatusReport,
+            RawRemoteConnectionReports: :RawRemoteConnectionReports,
+            CloudPcUsageCategoryReports: :CloudPcUsageCategoryReports,
+            CrossRegionDisasterRecoveryReport: :CrossRegionDisasterRecoveryReport,
+            PerformanceTrendReport: :PerformanceTrendReport,
+            InaccessibleCloudPcTrendReport: :InaccessibleCloudPcTrendReport,
+            RegionalConnectionQualityTrendReport: :RegionalConnectionQualityTrendReport,
+            RegionalConnectionQualityInsightsReport: :RegionalConnectionQualityInsightsReport,
+            RemoteConnectionQualityReport: :RemoteConnectionQualityReport,
+            FrontlineLicenseHourlyUsageReport: :FrontlineLicenseHourlyUsageReport,
+            FrontlineRealtimeUserConnectionsReport: :FrontlineRealtimeUserConnectionsReport,
+            BulkActionStatusReport: :BulkActionStatusReport,
         }
     end
 end

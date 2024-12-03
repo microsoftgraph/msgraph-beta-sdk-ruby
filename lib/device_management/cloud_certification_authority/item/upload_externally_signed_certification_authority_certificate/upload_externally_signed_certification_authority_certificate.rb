@@ -1,0 +1,1 @@
+require_relative 'upload_externally_signed_certification_authority_certificate_post_request_body'

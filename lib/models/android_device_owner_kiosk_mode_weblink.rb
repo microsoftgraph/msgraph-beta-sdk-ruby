@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Link for weblink
             @link
             ## 
-            ## Instantiates a new androidDeviceOwnerKioskModeWeblink and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerKioskModeWeblink and sets the default values.
             ## @return a void
             ## 
             def initialize()

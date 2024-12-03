@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
             # Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.
             @system_extensions_block_override
             ## 
-            ## Instantiates a new macOSExtensionsConfiguration and sets the default values.
+            ## Instantiates a new MacOSExtensionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
