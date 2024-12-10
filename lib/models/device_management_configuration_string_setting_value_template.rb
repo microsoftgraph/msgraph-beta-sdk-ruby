@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # String Setting Value Default Template.
             @default_value
             ## 
-            ## Instantiates a new deviceManagementConfigurationStringSettingValueTemplate and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationStringSettingValueTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

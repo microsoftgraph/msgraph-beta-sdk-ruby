@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                 @configuration = value
             end
             ## 
-            ## Instantiates a new printDocument and sets the default values.
+            ## Instantiates a new PrintDocument and sets the default values.
             ## @return a void
             ## 
             def initialize()

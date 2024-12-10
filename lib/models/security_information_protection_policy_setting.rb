@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Exposes the more information URL that can be configured by the administrator.
             @more_info_url
             ## 
-            ## Instantiates a new securityInformationProtectionPolicySetting and sets the default values.
+            ## Instantiates a new SecurityInformationProtectionPolicySetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

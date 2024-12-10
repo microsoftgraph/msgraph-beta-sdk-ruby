@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class ItemAttachment < MicrosoftGraphBeta::Models::Attachment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The attached contact, message or event. Navigation property.
+            # The attached contact, message, or event. Navigation property.
             @item
             ## 
-            ## Instantiates a new itemAttachment and sets the default values.
+            ## Instantiates a new ItemAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the item property value. The attached contact, message or event. Navigation property.
+            ## Gets the item property value. The attached contact, message, or event. Navigation property.
             ## @return a outlook_item
             ## 
             def item
                 return @item
             end
             ## 
-            ## Sets the item property value. The attached contact, message or event. Navigation property.
+            ## Sets the item property value. The attached contact, message, or event. Navigation property.
             ## @param value Value to set for the item property.
             ## @return a void
             ## 

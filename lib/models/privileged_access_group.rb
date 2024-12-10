@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @assignment_schedules = value
             end
             ## 
-            ## Instantiates a new privilegedAccessGroup and sets the default values.
+            ## Instantiates a new PrivilegedAccessGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

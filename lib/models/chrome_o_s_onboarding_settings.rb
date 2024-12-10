@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # The ChromebookTenant's OwnerUserPrincipalName
             @owner_user_principal_name
             ## 
-            ## Instantiates a new chromeOSOnboardingSettings and sets the default values.
+            ## Instantiates a new ChromeOSOnboardingSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

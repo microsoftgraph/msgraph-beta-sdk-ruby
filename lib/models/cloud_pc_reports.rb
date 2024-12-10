@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The export jobs created for downloading reports.
             @export_jobs
             ## 
-            ## Instantiates a new cloudPcReports and sets the default values.
+            ## Instantiates a new CloudPcReports and sets the default values.
             ## @return a void
             ## 
             def initialize()

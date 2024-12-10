@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Optional customizations to be applied to the synchronization profile.
             @customizations
             ## 
-            ## Instantiates a new educationCsvDataProvider and sets the default values.
+            ## Instantiates a new EducationCsvDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

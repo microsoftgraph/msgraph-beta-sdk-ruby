@@ -10,16 +10,16 @@ module MicrosoftGraphBeta
             # The content of the comment.
             @content
             ## 
-            # Indicates the type for the comment.
+            # The content type of the comment.
             @content_type
             ## 
-            # The replies property
+            # The list of replies to the comment. Read-only. Nullable.
             @replies
             ## 
-            # The task property
+            # The task associated with the comment. Read-only. Nullable.
             @task
             ## 
-            ## Instantiates a new workbookComment and sets the default values.
+            ## Instantiates a new WorkbookComment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,14 +41,14 @@ module MicrosoftGraphBeta
                 @content = value
             end
             ## 
-            ## Gets the contentType property value. Indicates the type for the comment.
+            ## Gets the contentType property value. The content type of the comment.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Indicates the type for the comment.
+            ## Sets the contentType property value. The content type of the comment.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the replies property value. The replies property
+            ## Gets the replies property value. The list of replies to the comment. Read-only. Nullable.
             ## @return a workbook_comment_reply
             ## 
             def replies
                 return @replies
             end
             ## 
-            ## Sets the replies property value. The replies property
+            ## Sets the replies property value. The list of replies to the comment. Read-only. Nullable.
             ## @param value Value to set for the replies property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("task", @task)
             end
             ## 
-            ## Gets the task property value. The task property
+            ## Gets the task property value. The task associated with the comment. Read-only. Nullable.
             ## @return a workbook_document_task
             ## 
             def task
                 return @task
             end
             ## 
-            ## Sets the task property value. The task property
+            ## Sets the task property value. The task associated with the comment. Read-only. Nullable.
             ## @param value Value to set for the task property.
             ## @return a void
             ## 

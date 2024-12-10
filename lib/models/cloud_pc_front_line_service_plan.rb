@@ -7,16 +7,34 @@ module MicrosoftGraphBeta
         class CloudPcFrontLineServicePlan < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The displayName property
+            # The allotmentLicensesCount property
+            @allotment_licenses_count
+            ## 
+            # The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
             @display_name
             ## 
-            # The totalCount property
+            # The total number of front-line service plans purchased by the customer.
             @total_count
             ## 
-            # The usedCount property
+            # The number of service plans that have been used for the account.
             @used_count
             ## 
-            ## Instantiates a new cloudPcFrontLineServicePlan and sets the default values.
+            ## Gets the allotmentLicensesCount property value. The allotmentLicensesCount property
+            ## @return a integer
+            ## 
+            def allotment_licenses_count
+                return @allotment_licenses_count
+            end
+            ## 
+            ## Sets the allotmentLicensesCount property value. The allotmentLicensesCount property
+            ## @param value Value to set for the allotmentLicensesCount property.
+            ## @return a void
+            ## 
+            def allotment_licenses_count=(value)
+                @allotment_licenses_count = value
+            end
+            ## 
+            ## Instantiates a new CloudPcFrontLineServicePlan and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,14 +50,14 @@ module MicrosoftGraphBeta
                 return CloudPcFrontLineServicePlan.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -52,6 +70,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "allotmentLicensesCount" => lambda {|n| @allotment_licenses_count = n.get_number_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "totalCount" => lambda {|n| @total_count = n.get_number_value() },
                     "usedCount" => lambda {|n| @used_count = n.get_number_value() },
@@ -65,19 +84,20 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_number_value("allotmentLicensesCount", @allotment_licenses_count)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_number_value("totalCount", @total_count)
                 writer.write_number_value("usedCount", @used_count)
             end
             ## 
-            ## Gets the totalCount property value. The totalCount property
+            ## Gets the totalCount property value. The total number of front-line service plans purchased by the customer.
             ## @return a integer
             ## 
             def total_count
                 return @total_count
             end
             ## 
-            ## Sets the totalCount property value. The totalCount property
+            ## Sets the totalCount property value. The total number of front-line service plans purchased by the customer.
             ## @param value Value to set for the totalCount property.
             ## @return a void
             ## 
@@ -85,14 +105,14 @@ module MicrosoftGraphBeta
                 @total_count = value
             end
             ## 
-            ## Gets the usedCount property value. The usedCount property
+            ## Gets the usedCount property value. The number of service plans that have been used for the account.
             ## @return a integer
             ## 
             def used_count
                 return @used_count
             end
             ## 
-            ## Sets the usedCount property value. The usedCount property
+            ## Sets the usedCount property value. The number of service plans that have been used for the account.
             ## @param value Value to set for the usedCount property.
             ## @return a void
             ## 

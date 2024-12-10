@@ -7,7 +7,13 @@ module MicrosoftGraphBeta
         class ContentSharingSession < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new contentSharingSession and sets the default values.
+            # The pngOfCurrentSlide property
+            @png_of_current_slide
+            ## 
+            # The presenterParticipantId property
+            @presenter_participant_id
+            ## 
+            ## Instantiates a new ContentSharingSession and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -28,7 +34,39 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "pngOfCurrentSlide" => lambda {|n| @png_of_current_slide = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
+                    "presenterParticipantId" => lambda {|n| @presenter_participant_id = n.get_string_value() },
                 })
+            end
+            ## 
+            ## Gets the pngOfCurrentSlide property value. The pngOfCurrentSlide property
+            ## @return a base64url
+            ## 
+            def png_of_current_slide
+                return @png_of_current_slide
+            end
+            ## 
+            ## Sets the pngOfCurrentSlide property value. The pngOfCurrentSlide property
+            ## @param value Value to set for the pngOfCurrentSlide property.
+            ## @return a void
+            ## 
+            def png_of_current_slide=(value)
+                @png_of_current_slide = value
+            end
+            ## 
+            ## Gets the presenterParticipantId property value. The presenterParticipantId property
+            ## @return a string
+            ## 
+            def presenter_participant_id
+                return @presenter_participant_id
+            end
+            ## 
+            ## Sets the presenterParticipantId property value. The presenterParticipantId property
+            ## @param value Value to set for the presenterParticipantId property.
+            ## @return a void
+            ## 
+            def presenter_participant_id=(value)
+                @presenter_participant_id = value
             end
             ## 
             ## Serializes information the current object
@@ -38,6 +76,8 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("pngOfCurrentSlide", @png_of_current_slide)
+                writer.write_string_value("presenterParticipantId", @presenter_participant_id)
             end
         end
     end

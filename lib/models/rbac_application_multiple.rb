@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The roleDefinitions property
             @role_definitions
             ## 
-            ## Instantiates a new rbacApplicationMultiple and sets the default values.
+            ## Instantiates a new RbacApplicationMultiple and sets the default values.
             ## @return a void
             ## 
             def initialize()

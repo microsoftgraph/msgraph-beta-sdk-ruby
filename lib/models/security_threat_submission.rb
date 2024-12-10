@@ -8,16 +8,16 @@ module MicrosoftGraphBeta
         class SecurityThreatSubmission < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            # Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             @admin_review
             ## 
             # The category property
             @category
             ## 
-            # Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+            # Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
             @client_source
             ## 
-            # Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+            # Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
             @content_type
             ## 
             # Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
@@ -29,23 +29,23 @@ module MicrosoftGraphBeta
             # Specifies the result of the analysis performed by Microsoft.
             @result
             ## 
-            # Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+            # Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
             @source
             ## 
-            # Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+            # Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
             @status
             ## 
-            # Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            # Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             @tenant_id
             ## 
-            ## Gets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            ## Gets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             ## @return a security_submission_admin_review
             ## 
             def admin_review
                 return @admin_review
             end
             ## 
-            ## Sets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
+            ## Sets the adminReview property value. Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.
             ## @param value Value to set for the adminReview property.
             ## @return a void
             ## 
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 @category = value
             end
             ## 
-            ## Gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+            ## Gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
             ## @return a security_submission_client_source
             ## 
             def client_source
                 return @client_source
             end
             ## 
-            ## Sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+            ## Sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
             ## @param value Value to set for the clientSource property.
             ## @return a void
             ## 
@@ -83,21 +83,21 @@ module MicrosoftGraphBeta
                 @client_source = value
             end
             ## 
-            ## Instantiates a new securityThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+            ## Gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
             ## @return a security_submission_content_type
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+            ## Sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
@@ -216,14 +216,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("tenantId", @tenant_id)
             end
             ## 
-            ## Gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+            ## Gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
             ## @return a security_submission_source
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+            ## Sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -231,14 +231,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+            ## Gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
             ## @return a security_long_running_operation_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+            ## Sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            ## Gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+            ## Sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

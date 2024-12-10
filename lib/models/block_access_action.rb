@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class BlockAccessAction < MicrosoftGraphBeta::Models::DlpActionInfo
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new blockAccessAction and sets the default values.
+            ## Instantiates a new BlockAccessAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

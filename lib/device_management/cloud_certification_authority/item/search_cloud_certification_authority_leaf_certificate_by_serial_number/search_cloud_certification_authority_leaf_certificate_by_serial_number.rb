@@ -1,0 +1,1 @@
+require_relative 'search_cloud_certification_authority_leaf_certificate_by_serial_number_post_request_body'

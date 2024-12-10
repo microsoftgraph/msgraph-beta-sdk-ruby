@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @anomaly_id = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAnomalyCorrelationGroupOverview and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAnomalyCorrelationGroupOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()
