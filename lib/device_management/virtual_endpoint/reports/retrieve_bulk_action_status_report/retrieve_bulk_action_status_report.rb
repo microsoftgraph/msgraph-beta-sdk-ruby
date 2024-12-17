@@ -1,0 +1,1 @@
+require_relative 'retrieve_bulk_action_status_report_post_request_body'

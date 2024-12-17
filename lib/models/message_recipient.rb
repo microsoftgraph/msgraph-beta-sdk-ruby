@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The recipientEmail property
             @recipient_email
             ## 
-            ## Instantiates a new messageRecipient and sets the default values.
+            ## Instantiates a new MessageRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

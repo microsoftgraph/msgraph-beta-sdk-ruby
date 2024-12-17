@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The target property
             @target
             ## 
-            ## Instantiates a new serviceProvisioningLinkedResourceErrorDetail and sets the default values.
+            ## Instantiates a new ServiceProvisioningLinkedResourceErrorDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

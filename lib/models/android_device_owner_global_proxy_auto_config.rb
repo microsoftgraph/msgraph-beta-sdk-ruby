@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The proxy auto-config URL
             @proxy_auto_config_u_r_l
             ## 
-            ## Instantiates a new androidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
             ## @return a void
             ## 
             def initialize()

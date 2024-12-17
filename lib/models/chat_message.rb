@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
             # Locale of the chat message set by the client. Always set to en-us.
             @locale
             ## 
-            # List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+            # List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.
             @mentions
             ## 
             # List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
@@ -143,7 +143,7 @@ module MicrosoftGraphBeta
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new chatMessage and sets the default values.
+            ## Instantiates a new ChatMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -342,14 +342,14 @@ module MicrosoftGraphBeta
                 @locale = value
             end
             ## 
-            ## Gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+            ## Gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.
             ## @return a chat_message_mention
             ## 
             def mentions
                 return @mentions
             end
             ## 
-            ## Sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+            ## Sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.
             ## @param value Value to set for the mentions property.
             ## @return a void
             ## 

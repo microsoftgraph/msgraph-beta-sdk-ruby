@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Possible values of a property
             @enhanced_biometrics_state
             ## 
-            # Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+            # Setting to configure Enhanced sign-in security. Default is Not Configured
             @enhanced_sign_in_security
             ## 
             # Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
             # Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
             @unlock_with_biometrics_enabled
             ## 
-            ## Instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -83,14 +83,14 @@ module MicrosoftGraphBeta
                 @enhanced_biometrics_state = value
             end
             ## 
-            ## Gets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+            ## Gets the enhancedSignInSecurity property value. Setting to configure Enhanced sign-in security. Default is Not Configured
             ## @return a integer
             ## 
             def enhanced_sign_in_security
                 return @enhanced_sign_in_security
             end
             ## 
-            ## Sets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+            ## Sets the enhancedSignInSecurity property value. Setting to configure Enhanced sign-in security. Default is Not Configured
             ## @param value Value to set for the enhancedSignInSecurity property.
             ## @return a void
             ## 

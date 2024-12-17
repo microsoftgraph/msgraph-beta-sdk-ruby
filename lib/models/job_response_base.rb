@@ -32,7 +32,7 @@ module MicrosoftGraphBeta
             # The userId property
             @user_id
             ## 
-            ## Instantiates a new jobResponseBase and sets the default values.
+            ## Instantiates a new JobResponseBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

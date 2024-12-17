@@ -1,1 +1,1 @@
-require_relative 'find_room_lists_response'
+require_relative 'find_room_lists_get_response'

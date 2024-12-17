@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class ServicePrincipalRiskDetection < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+            # Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.
             @activity
             ## 
             # Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -20,13 +20,13 @@ module MicrosoftGraphBeta
             # The unique identifier for the associated application.
             @app_id
             ## 
-            # Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
+            # Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity.
             @correlation_id
             ## 
             # Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @detected_date_time
             ## 
-            # Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+            # Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
             @detection_timing_type
             ## 
             # Provides the IP address of the client from where the risk occurred.
@@ -41,16 +41,19 @@ module MicrosoftGraphBeta
             # Location from where the sign-in was initiated.
             @location
             ## 
-            # Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+            # The mitreTechniqueId property
+            @mitre_technique_id
+            ## 
+            # Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity. Supports $filter (eq).
             @request_id
             ## 
-            # Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+            # Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
             @risk_detail
             ## 
-            # The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
+            # The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.
             @risk_event_type
             ## 
-            # Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
+            # Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.
             @risk_level
             ## 
             # The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
@@ -68,14 +71,14 @@ module MicrosoftGraphBeta
             # Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
             @token_issuer_type
             ## 
-            ## Gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+            ## Gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.
             ## @return a activity_type
             ## 
             def activity
                 return @activity
             end
             ## 
-            ## Sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+            ## Sets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.
             ## @param value Value to set for the activity property.
             ## @return a void
             ## 
@@ -128,21 +131,21 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new servicePrincipalRiskDetection and sets the default values.
+            ## Instantiates a new ServicePrincipalRiskDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
+            ## Gets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity.
             ## @return a string
             ## 
             def correlation_id
                 return @correlation_id
             end
             ## 
-            ## Sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
+            ## Sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity.
             ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
@@ -174,14 +177,14 @@ module MicrosoftGraphBeta
                 @detected_date_time = value
             end
             ## 
-            ## Gets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+            ## Gets the detectionTimingType property value. Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
             ## @return a risk_detection_timing_type
             ## 
             def detection_timing_type
                 return @detection_timing_type
             end
             ## 
-            ## Sets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+            ## Sets the detectionTimingType property value. Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
             ## @param value Value to set for the detectionTimingType property.
             ## @return a void
             ## 
@@ -205,6 +208,7 @@ module MicrosoftGraphBeta
                     "keyIds" => lambda {|n| @key_ids = n.get_collection_of_primitive_values(String) },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInLocation.create_from_discriminator_value(pn) }) },
+                    "mitreTechniqueId" => lambda {|n| @mitre_technique_id = n.get_string_value() },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
                     "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraphBeta::Models::RiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
@@ -277,14 +281,29 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+            ## Gets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @return a string
+            ## 
+            def mitre_technique_id
+                return @mitre_technique_id
+            end
+            ## 
+            ## Sets the mitreTechniqueId property value. The mitreTechniqueId property
+            ## @param value Value to set for the mitreTechniqueId property.
+            ## @return a void
+            ## 
+            def mitre_technique_id=(value)
+                @mitre_technique_id = value
+            end
+            ## 
+            ## Gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity. Supports $filter (eq).
             ## @return a string
             ## 
             def request_id
                 return @request_id
             end
             ## 
-            ## Sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+            ## Sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity. Supports $filter (eq).
             ## @param value Value to set for the requestId property.
             ## @return a void
             ## 
@@ -292,14 +311,14 @@ module MicrosoftGraphBeta
                 @request_id = value
             end
             ## 
-            ## Gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+            ## Gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
             ## @return a risk_detail
             ## 
             def risk_detail
                 return @risk_detail
             end
             ## 
-            ## Sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+            ## Sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
             ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
@@ -307,14 +326,14 @@ module MicrosoftGraphBeta
                 @risk_detail = value
             end
             ## 
-            ## Gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
+            ## Gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.
             ## @return a string
             ## 
             def risk_event_type
                 return @risk_event_type
             end
             ## 
-            ## Sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
+            ## Sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.
             ## @param value Value to set for the riskEventType property.
             ## @return a void
             ## 
@@ -322,14 +341,14 @@ module MicrosoftGraphBeta
                 @risk_event_type = value
             end
             ## 
-            ## Gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
+            ## Gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.
             ## @return a risk_level
             ## 
             def risk_level
                 return @risk_level
             end
             ## 
-            ## Sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
+            ## Sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.
             ## @param value Value to set for the riskLevel property.
             ## @return a void
             ## 
@@ -370,6 +389,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_primitive_values("keyIds", @key_ids)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_object_value("location", @location)
+                writer.write_string_value("mitreTechniqueId", @mitre_technique_id)
                 writer.write_string_value("requestId", @request_id)
                 writer.write_enum_value("riskDetail", @risk_detail)
                 writer.write_string_value("riskEventType", @risk_event_type)

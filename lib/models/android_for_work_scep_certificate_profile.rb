@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
                 @certificate_store = value
             end
             ## 
-            ## Instantiates a new androidForWorkScepCertificateProfile and sets the default values.
+            ## Instantiates a new AndroidForWorkScepCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -90,9 +90,9 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "certificateStore" => lambda {|n| @certificate_store = n.get_enum_value(MicrosoftGraphBeta::Models::CertificateStore) },
                     "customSubjectAlternativeNames" => lambda {|n| @custom_subject_alternative_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomSubjectAlternativeName.create_from_discriminator_value(pn) }) },
-                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_value(MicrosoftGraphBeta::Models::HashAlgorithms) },
+                    "hashAlgorithm" => lambda {|n| @hash_algorithm = n.get_enum_values(MicrosoftGraphBeta::Models::HashAlgorithms) },
                     "keySize" => lambda {|n| @key_size = n.get_enum_value(MicrosoftGraphBeta::Models::KeySize) },
-                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_value(MicrosoftGraphBeta::Models::KeyUsages) },
+                    "keyUsage" => lambda {|n| @key_usage = n.get_enum_values(MicrosoftGraphBeta::Models::KeyUsages) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                     "scepServerUrls" => lambda {|n| @scep_server_urls = n.get_collection_of_primitive_values(String) },
                     "subjectAlternativeNameFormatString" => lambda {|n| @subject_alternative_name_format_string = n.get_string_value() },

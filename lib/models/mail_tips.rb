@@ -10,13 +10,13 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Mail tips for automatic reply if it has been set up by the recipient.
+            # Mailtips for an automatic reply if set up by the recipient.
             @automatic_replies
             ## 
             # A custom mail tip that can be set on the recipient's mailbox.
             @custom_mail_tip
             ## 
-            # Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+            # Whether the recipient's mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
             @delivery_restricted
             ## 
             # The email address of the recipient to get mailtips for.
@@ -28,19 +28,19 @@ module MicrosoftGraphBeta
             # The number of external members if the recipient is a distribution list.
             @external_member_count
             ## 
-            # Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+            # Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
             @is_moderated
             ## 
             # The mailbox full status of the recipient.
             @mailbox_full
             ## 
-            # The maximum message size that has been configured for the recipient's organization or mailbox.
+            # The maximum message size configured for the recipient's organization or mailbox.
             @max_message_size
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+            # The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.
             @recipient_scope
             ## 
             # Recipients suggested based on previous contexts where they appear in the same message.
@@ -49,29 +49,29 @@ module MicrosoftGraphBeta
             # The number of members if the recipient is a distribution list.
             @total_member_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
+            ## Gets the automaticReplies property value. Mailtips for an automatic reply if set up by the recipient.
             ## @return a automatic_replies_mail_tips
             ## 
             def automatic_replies
                 return @automatic_replies
             end
             ## 
-            ## Sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
+            ## Sets the automaticReplies property value. Mailtips for an automatic reply if set up by the recipient.
             ## @param value Value to set for the automaticReplies property.
             ## @return a void
             ## 
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
                 @automatic_replies = value
             end
             ## 
-            ## Instantiates a new mailTips and sets the default values.
+            ## Instantiates a new MailTips and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 @custom_mail_tip = value
             end
             ## 
-            ## Gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+            ## Gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
             ## @return a boolean
             ## 
             def delivery_restricted
                 return @delivery_restricted
             end
             ## 
-            ## Sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+            ## Sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
             ## @param value Value to set for the deliveryRestricted property.
             ## @return a void
             ## 
@@ -185,20 +185,20 @@ module MicrosoftGraphBeta
                     "mailboxFull" => lambda {|n| @mailbox_full = n.get_boolean_value() },
                     "maxMessageSize" => lambda {|n| @max_message_size = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_value(MicrosoftGraphBeta::Models::RecipientScopeType) },
+                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_values(MicrosoftGraphBeta::Models::RecipientScopeType) },
                     "recipientSuggestions" => lambda {|n| @recipient_suggestions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "totalMemberCount" => lambda {|n| @total_member_count = n.get_number_value() },
                 }
             end
             ## 
-            ## Gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+            ## Gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
             ## @return a boolean
             ## 
             def is_moderated
                 return @is_moderated
             end
             ## 
-            ## Sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+            ## Sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
             ## @param value Value to set for the isModerated property.
             ## @return a void
             ## 
@@ -221,14 +221,14 @@ module MicrosoftGraphBeta
                 @mailbox_full = value
             end
             ## 
-            ## Gets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
+            ## Gets the maxMessageSize property value. The maximum message size configured for the recipient's organization or mailbox.
             ## @return a integer
             ## 
             def max_message_size
                 return @max_message_size
             end
             ## 
-            ## Sets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
+            ## Sets the maxMessageSize property value. The maximum message size configured for the recipient's organization or mailbox.
             ## @param value Value to set for the maxMessageSize property.
             ## @return a void
             ## 
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+            ## Gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.
             ## @return a recipient_scope_type
             ## 
             def recipient_scope
                 return @recipient_scope
             end
             ## 
-            ## Sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+            ## Sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.
             ## @param value Value to set for the recipientScope property.
             ## @return a void
             ## 

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The patch version for the current android app registration
             @patch_version
             ## 
-            ## Instantiates a new androidManagedAppRegistration and sets the default values.
+            ## Instantiates a new AndroidManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

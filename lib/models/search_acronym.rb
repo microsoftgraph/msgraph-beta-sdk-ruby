@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The state property
             @state
             ## 
-            ## Instantiates a new searchAcronym and sets the default values.
+            ## Instantiates a new SearchAcronym and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # Number of devices for which remediation was skipped
             @remediation_skipped_device_count
             ## 
-            ## Instantiates a new deviceHealthScriptRunSummary and sets the default values.
+            ## Instantiates a new DeviceHealthScriptRunSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -5,6 +5,7 @@ require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../directory'
 require_relative './certificate_based_application_configurations/certificate_based_application_configurations_request_builder'
 require_relative './certificate_authorities'
+require_relative './mutual_tls_oauth_configurations/mutual_tls_oauth_configurations_request_builder'
 
 module MicrosoftGraphBeta
     module Directory
@@ -19,13 +20,18 @@ module MicrosoftGraphBeta
                     return MicrosoftGraphBeta::Directory::CertificateAuthorities::CertificateBasedApplicationConfigurations::CertificateBasedApplicationConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the mutualTlsOauthConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
+                def mutual_tls_oauth_configurations()
+                    return MicrosoftGraphBeta::Directory::CertificateAuthorities::MutualTlsOauthConfigurations::MutualTlsOauthConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new CertificateAuthoritiesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/directory/certificateAuthorities{?%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/directory/certificateAuthorities{?%24expand,%24select}")
                 end
                 ## 
                 ## Delete navigation property certificateAuthorities for directory
@@ -37,8 +43,7 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
@@ -51,8 +56,7 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CertificateAuthorityPath.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -67,8 +71,7 @@ module MicrosoftGraphBeta
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::CertificateAuthorityPath.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -78,13 +81,14 @@ module MicrosoftGraphBeta
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -94,15 +98,15 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -114,16 +118,25 @@ module MicrosoftGraphBeta
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a certificate_authorities_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return CertificateAuthoritiesRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 
