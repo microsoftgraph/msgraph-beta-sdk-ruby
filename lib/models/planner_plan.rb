@@ -8,13 +8,16 @@ module MicrosoftGraphBeta
         class PlannerPlan < MicrosoftGraphBeta::Models::PlannerDelta
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Read-only. Nullable. Contains information about who archived or unarchived the plan and why.
+            @archival_info
+            ## 
             # Collection of buckets in the plan. Read-only. Nullable.
             @buckets
             ## 
-            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            # Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             @container
             ## 
-            # Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            # Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             @contexts
             ## 
             # Read-only. The user who created the plan.
@@ -26,10 +29,13 @@ module MicrosoftGraphBeta
             # Contains information about the origin of the plan.
             @creation_source
             ## 
-            # Additional details about the plan. Read-only. Nullable.
+            # Extra details about the plan. Read-only. Nullable.
             @details
             ## 
-            # The owner property
+            # Read-only. If set to true, the plan is archived. An archived plan is read-only.
+            @is_archived
+            ## 
+            # Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property doesn't return a valid group ID if the container of the plan isn't a group.
             @owner
             ## 
             # List of containers the plan is shared with.
@@ -40,6 +46,21 @@ module MicrosoftGraphBeta
             ## 
             # Required. Title of the plan.
             @title
+            ## 
+            ## Gets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the plan and why.
+            ## @return a planner_archival_info
+            ## 
+            def archival_info
+                return @archival_info
+            end
+            ## 
+            ## Sets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the plan and why.
+            ## @param value Value to set for the archivalInfo property.
+            ## @return a void
+            ## 
+            def archival_info=(value)
+                @archival_info = value
+            end
             ## 
             ## Gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
             ## @return a planner_bucket
@@ -56,21 +77,21 @@ module MicrosoftGraphBeta
                 @buckets = value
             end
             ## 
-            ## Instantiates a new plannerPlan and sets the default values.
+            ## Instantiates a new PlannerPlan and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Gets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             ## @return a planner_plan_container
             ## 
             def container
                 return @container
             end
             ## 
-            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Sets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
             ## @param value Value to set for the container property.
             ## @return a void
             ## 
@@ -78,14 +99,14 @@ module MicrosoftGraphBeta
                 @container = value
             end
             ## 
-            ## Gets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            ## Gets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             ## @return a planner_plan_context_collection
             ## 
             def contexts
                 return @contexts
             end
             ## 
-            ## Sets the contexts property value. Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.
+            ## Sets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
             ## @param value Value to set for the contexts property.
             ## @return a void
             ## 
@@ -147,14 +168,14 @@ module MicrosoftGraphBeta
                 @creation_source = value
             end
             ## 
-            ## Gets the details property value. Additional details about the plan. Read-only. Nullable.
+            ## Gets the details property value. Extra details about the plan. Read-only. Nullable.
             ## @return a planner_plan_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Additional details about the plan. Read-only. Nullable.
+            ## Sets the details property value. Extra details about the plan. Read-only. Nullable.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -167,6 +188,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "archivalInfo" => lambda {|n| @archival_info = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerArchivalInfo.create_from_discriminator_value(pn) }) },
                     "buckets" => lambda {|n| @buckets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerBucket.create_from_discriminator_value(pn) }) },
                     "container" => lambda {|n| @container = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlanContainer.create_from_discriminator_value(pn) }) },
                     "contexts" => lambda {|n| @contexts = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlanContextCollection.create_from_discriminator_value(pn) }) },
@@ -174,6 +196,7 @@ module MicrosoftGraphBeta
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "creationSource" => lambda {|n| @creation_source = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlanCreation.create_from_discriminator_value(pn) }) },
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerPlanDetails.create_from_discriminator_value(pn) }) },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
                     "owner" => lambda {|n| @owner = n.get_string_value() },
                     "sharedWithContainers" => lambda {|n| @shared_with_containers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerSharedWithContainer.create_from_discriminator_value(pn) }) },
                     "tasks" => lambda {|n| @tasks = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlannerTask.create_from_discriminator_value(pn) }) },
@@ -181,14 +204,29 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the owner property value. The owner property
+            ## Gets the isArchived property value. Read-only. If set to true, the plan is archived. An archived plan is read-only.
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. Read-only. If set to true, the plan is archived. An archived plan is read-only.
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
+            end
+            ## 
+            ## Gets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property doesn't return a valid group ID if the container of the plan isn't a group.
             ## @return a string
             ## 
             def owner
                 return @owner
             end
             ## 
-            ## Sets the owner property value. The owner property
+            ## Sets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property doesn't return a valid group ID if the container of the plan isn't a group.
             ## @param value Value to set for the owner property.
             ## @return a void
             ## 
@@ -203,6 +241,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("archivalInfo", @archival_info)
                 writer.write_collection_of_object_values("buckets", @buckets)
                 writer.write_object_value("container", @container)
                 writer.write_object_value("contexts", @contexts)
@@ -210,6 +249,7 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_object_value("creationSource", @creation_source)
                 writer.write_object_value("details", @details)
+                writer.write_boolean_value("isArchived", @is_archived)
                 writer.write_string_value("owner", @owner)
                 writer.write_collection_of_object_values("sharedWithContainers", @shared_with_containers)
                 writer.write_collection_of_object_values("tasks", @tasks)

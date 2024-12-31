@@ -24,6 +24,9 @@ module MicrosoftGraphBeta
             # The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
             @manufacturer
             ## 
+            # Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            @mean_resource_spike_time_score
+            ## 
             # The model name of the device. Supports: $select, $OrderBy. Read-only.
             @model
             ## 
@@ -66,7 +69,7 @@ module MicrosoftGraphBeta
                 @battery_health_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsModelScores and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsModelScores and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +110,7 @@ module MicrosoftGraphBeta
                     "endpointAnalyticsScore" => lambda {|n| @endpoint_analytics_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraphBeta::Models::UserExperienceAnalyticsHealthState) },
                     "manufacturer" => lambda {|n| @manufacturer = n.get_string_value() },
+                    "meanResourceSpikeTimeScore" => lambda {|n| @mean_resource_spike_time_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "model" => lambda {|n| @model = n.get_string_value() },
                     "modelDeviceCount" => lambda {|n| @model_device_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "startupPerformanceScore" => lambda {|n| @startup_performance_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
@@ -142,6 +146,21 @@ module MicrosoftGraphBeta
             ## 
             def manufacturer=(value)
                 @manufacturer = value
+            end
+            ## 
+            ## Gets the meanResourceSpikeTimeScore property value. Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## @return a double
+            ## 
+            def mean_resource_spike_time_score
+                return @mean_resource_spike_time_score
+            end
+            ## 
+            ## Sets the meanResourceSpikeTimeScore property value. Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## @param value Value to set for the meanResourceSpikeTimeScore property.
+            ## @return a void
+            ## 
+            def mean_resource_spike_time_score=(value)
+                @mean_resource_spike_time_score = value
             end
             ## 
             ## Gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
@@ -186,6 +205,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("endpointAnalyticsScore", @endpoint_analytics_score)
                 writer.write_enum_value("healthStatus", @health_status)
                 writer.write_string_value("manufacturer", @manufacturer)
+                writer.write_object_value("meanResourceSpikeTimeScore", @mean_resource_spike_time_score)
                 writer.write_string_value("model", @model)
                 writer.write_object_value("modelDeviceCount", @model_device_count)
                 writer.write_object_value("startupPerformanceScore", @startup_performance_score)

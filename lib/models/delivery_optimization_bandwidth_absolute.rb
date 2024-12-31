@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Specifies the maximum upload bandwidth in KiloBytes/second that a device will use across all concurrent upload activity using Delivery Optimization (0-4000000). Valid values 0 to 4000000
             @maximum_upload_bandwidth_in_kilobytes_per_second
             ## 
-            ## Instantiates a new deliveryOptimizationBandwidthAbsolute and sets the default values.
+            ## Instantiates a new DeliveryOptimizationBandwidthAbsolute and sets the default values.
             ## @return a void
             ## 
             def initialize()

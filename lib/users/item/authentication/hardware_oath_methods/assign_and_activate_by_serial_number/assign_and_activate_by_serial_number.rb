@@ -1,0 +1,1 @@
+require_relative 'assign_and_activate_by_serial_number_post_request_body'

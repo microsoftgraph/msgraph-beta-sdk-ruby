@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                 @config_data_update_behavior = value
             end
             ## 
-            ## Instantiates a new macOSSoftwareUpdateConfiguration and sets the default values.
+            ## Instantiates a new MacOSSoftwareUpdateConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

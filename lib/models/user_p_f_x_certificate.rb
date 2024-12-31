@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
             # User Principal Name of the PFX certificate.
             @user_principal_name
             ## 
-            ## Instantiates a new userPFXCertificate and sets the default values.
+            ## Instantiates a new UserPFXCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

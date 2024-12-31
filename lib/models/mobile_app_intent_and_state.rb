@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Identifier for the user that tried to enroll the device.
             @user_id
             ## 
-            ## Instantiates a new mobileAppIntentAndState and sets the default values.
+            ## Instantiates a new MobileAppIntentAndState and sets the default values.
             ## @return a void
             ## 
             def initialize()

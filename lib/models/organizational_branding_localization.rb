@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class OrganizationalBrandingLocalization < MicrosoftGraphBeta::Models::OrganizationalBrandingProperties
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new organizationalBrandingLocalization and sets the default values.
+            ## Instantiates a new OrganizationalBrandingLocalization and sets the default values.
             ## @return a void
             ## 
             def initialize()

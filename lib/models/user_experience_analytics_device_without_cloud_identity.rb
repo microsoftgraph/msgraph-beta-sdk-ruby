@@ -30,7 +30,7 @@ module MicrosoftGraphBeta
                 @azure_ad_device_id = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
             # List of Scope Tags for this Entity instance.
             @role_scope_tag_ids
             ## 
-            ## Instantiates a new roleDefinition and sets the default values.
+            ## Instantiates a new RoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

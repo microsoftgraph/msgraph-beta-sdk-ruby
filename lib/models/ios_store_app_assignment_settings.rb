@@ -15,13 +15,13 @@ module MicrosoftGraphBeta
             # When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
             @prevent_managed_app_backup
             ## 
-            # Whether or not to uninstall the app when device is removed from Intune.
+            # When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
             @uninstall_on_device_removal
             ## 
-            # The VPN Configuration Id to apply for this app.
+            # This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new iosStoreAppAssignmentSettings and sets the default values.
+            ## Instantiates a new IosStoreAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("vpnConfigurationId", @vpn_configuration_id)
             end
             ## 
-            ## Gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+            ## Gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
             ## @return a boolean
             ## 
             def uninstall_on_device_removal
                 return @uninstall_on_device_removal
             end
             ## 
-            ## Sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+            ## Sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
             ## @param value Value to set for the uninstallOnDeviceRemoval property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 @uninstall_on_device_removal = value
             end
             ## 
-            ## Gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+            ## Gets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             ## @return a string
             ## 
             def vpn_configuration_id
                 return @vpn_configuration_id
             end
             ## 
-            ## Sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+            ## Sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             ## @param value Value to set for the vpnConfigurationId property.
             ## @return a void
             ## 

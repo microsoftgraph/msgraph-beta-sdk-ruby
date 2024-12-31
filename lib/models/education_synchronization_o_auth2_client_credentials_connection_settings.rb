@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The URL to get access tokens for the data provider.
             @token_url
             ## 
-            ## Instantiates a new educationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
+            ## Instantiates a new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

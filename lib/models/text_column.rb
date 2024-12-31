@@ -25,18 +25,18 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The type of text being stored. Must be one of plain or richText
+            # The type of text being stored. Must be one of plain or richText.
             @text_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraphBeta
                 @append_changes_to_existing_text = value
             end
             ## 
-            ## Instantiates a new textColumn and sets the default values.
+            ## Instantiates a new TextColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -163,14 +163,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the textType property value. The type of text being stored. Must be one of plain or richText
+            ## Gets the textType property value. The type of text being stored. Must be one of plain or richText.
             ## @return a string
             ## 
             def text_type
                 return @text_type
             end
             ## 
-            ## Sets the textType property value. The type of text being stored. Must be one of plain or richText
+            ## Sets the textType property value. The type of text being stored. Must be one of plain or richText.
             ## @param value Value to set for the textType property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # List of members who joined the chat.
             @members
             ## 
-            ## Instantiates a new membersJoinedEventMessageDetail and sets the default values.
+            ## Instantiates a new MembersJoinedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
