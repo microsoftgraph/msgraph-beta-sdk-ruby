@@ -9,6 +9,7 @@ module MicrosoftGraphBeta
             DeviceCode: :DeviceCode,
             UnknownFutureValue: :UnknownFutureValue,
             AuthenticationTransfer: :AuthenticationTransfer,
+            NativeAuth: :NativeAuth,
         }
     end
 end

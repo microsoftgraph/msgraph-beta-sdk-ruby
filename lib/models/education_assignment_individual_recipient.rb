@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A collection of ids of the recipients.
             @recipients
             ## 
-            ## Instantiates a new educationAssignmentIndividualRecipient and sets the default values.
+            ## Instantiates a new EducationAssignmentIndividualRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

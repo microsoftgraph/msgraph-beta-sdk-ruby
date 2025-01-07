@@ -10,29 +10,29 @@ module MicrosoftGraphBeta
         class ManagedAppPolicyDeploymentSummary < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Not yet documented
+            # The configurationDeployedUserCount property
             @configuration_deployed_user_count
             ## 
-            # Not yet documented
+            # The configurationDeploymentSummaryPerApp property
             @configuration_deployment_summary_per_app
             ## 
-            # Not yet documented
+            # The displayName property
             @display_name
             ## 
-            # Not yet documented
+            # The lastRefreshTime property
             @last_refresh_time
             ## 
             # Version of the entity.
             @version
             ## 
-            ## Gets the configurationDeployedUserCount property value. Not yet documented
+            ## Gets the configurationDeployedUserCount property value. The configurationDeployedUserCount property
             ## @return a integer
             ## 
             def configuration_deployed_user_count
                 return @configuration_deployed_user_count
             end
             ## 
-            ## Sets the configurationDeployedUserCount property value. Not yet documented
+            ## Sets the configurationDeployedUserCount property value. The configurationDeployedUserCount property
             ## @param value Value to set for the configurationDeployedUserCount property.
             ## @return a void
             ## 
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 @configuration_deployed_user_count = value
             end
             ## 
-            ## Gets the configurationDeploymentSummaryPerApp property value. Not yet documented
+            ## Gets the configurationDeploymentSummaryPerApp property value. The configurationDeploymentSummaryPerApp property
             ## @return a managed_app_policy_deployment_summary_per_app
             ## 
             def configuration_deployment_summary_per_app
                 return @configuration_deployment_summary_per_app
             end
             ## 
-            ## Sets the configurationDeploymentSummaryPerApp property value. Not yet documented
+            ## Sets the configurationDeploymentSummaryPerApp property value. The configurationDeploymentSummaryPerApp property
             ## @param value Value to set for the configurationDeploymentSummaryPerApp property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @configuration_deployment_summary_per_app = value
             end
             ## 
-            ## Instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
+            ## Instantiates a new ManagedAppPolicyDeploymentSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 return ManagedAppPolicyDeploymentSummary.new
             end
             ## 
-            ## Gets the displayName property value. Not yet documented
+            ## Gets the displayName property value. The displayName property
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Not yet documented
+            ## Sets the displayName property value. The displayName property
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastRefreshTime property value. Not yet documented
+            ## Gets the lastRefreshTime property value. The lastRefreshTime property
             ## @return a date_time
             ## 
             def last_refresh_time
                 return @last_refresh_time
             end
             ## 
-            ## Sets the lastRefreshTime property value. Not yet documented
+            ## Sets the lastRefreshTime property value. The lastRefreshTime property
             ## @param value Value to set for the lastRefreshTime property.
             ## @return a void
             ## 

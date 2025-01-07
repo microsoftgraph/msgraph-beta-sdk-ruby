@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new iosMobileAppIdentifier and sets the default values.
+            ## Instantiates a new IosMobileAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -6,6 +6,7 @@ module MicrosoftGraphBeta
             Block: :Block,
             Wipe: :Wipe,
             Warn: :Warn,
+            BlockWhenSettingIsSupported: :BlockWhenSettingIsSupported,
         }
     end
 end

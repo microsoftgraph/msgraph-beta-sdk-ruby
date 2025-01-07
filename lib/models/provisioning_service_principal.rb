@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ProvisioningServicePrincipal < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new provisioningServicePrincipal and sets the default values.
+            ## Instantiates a new ProvisioningServicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()

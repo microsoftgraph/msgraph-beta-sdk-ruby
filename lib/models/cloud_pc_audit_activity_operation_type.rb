@@ -4,7 +4,7 @@ module MicrosoftGraphBeta
             Create: :Create,
             Delete: :Delete,
             Patch: :Patch,
-            Other: :Other,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

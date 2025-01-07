@@ -22,6 +22,8 @@ module MicrosoftGraphBeta
             Norway: :Norway,
             Switzerland: :Switzerland,
             SouthKorea: :SouthKorea,
+            MiddleEast: :MiddleEast,
+            Mexico: :Mexico,
         }
     end
 end

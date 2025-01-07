@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @block_execution_notifications = value
             end
             ## 
-            ## Instantiates a new deviceShellScript and sets the default values.
+            ## Instantiates a new DeviceShellScript and sets the default values.
             ## @return a void
             ## 
             def initialize()

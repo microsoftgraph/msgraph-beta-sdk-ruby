@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Represents the current status of a user's response to a company's customizable terms of use agreement.
             @agreement_acceptances
             ## 
-            # Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            # Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID.
             @agreements
             ## 
             ## Gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -28,14 +28,14 @@ module MicrosoftGraphBeta
                 @agreement_acceptances = value
             end
             ## 
-            ## Gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            ## Gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID.
             ## @return a agreement
             ## 
             def agreements
                 return @agreements
             end
             ## 
-            ## Sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            ## Sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID.
             ## @param value Value to set for the agreements property.
             ## @return a void
             ## 
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @agreements = value
             end
             ## 
-            ## Instantiates a new termsOfUseContainer and sets the default values.
+            ## Instantiates a new TermsOfUseContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

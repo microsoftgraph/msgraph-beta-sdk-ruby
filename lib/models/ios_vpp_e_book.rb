@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
                 @apple_id = value
             end
             ## 
-            ## Instantiates a new iosVppEBook and sets the default values.
+            ## Instantiates a new IosVppEBook and sets the default values.
             ## @return a void
             ## 
             def initialize()

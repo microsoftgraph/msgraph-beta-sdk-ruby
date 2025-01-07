@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # The ThumbnailSet resource is a keyed collection of thumbnail resources.
         class ThumbnailSet < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraphBeta
             # A custom thumbnail image or the original image used to generate other thumbnails.
             @source
             ## 
-            ## Instantiates a new thumbnailSet and sets the default values.
+            ## Instantiates a new ThumbnailSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

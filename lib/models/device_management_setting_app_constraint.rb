@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Acceptable app types to allow for this setting
             @supported_types
             ## 
-            ## Instantiates a new deviceManagementSettingAppConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingAppConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

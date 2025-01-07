@@ -37,7 +37,7 @@ module MicrosoftGraphBeta
             # List of Scope Tags for this Entity instance.
             @role_scope_tag_ids
             ## 
-            # The list of scheduled action for this rule
+            # The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
             @scheduled_actions_for_rule
             ## 
             # Device compliance users status overview
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceCompliancePolicy and sets the default values.
+            ## Instantiates a new DeviceCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -251,14 +251,14 @@ module MicrosoftGraphBeta
                 @role_scope_tag_ids = value
             end
             ## 
-            ## Gets the scheduledActionsForRule property value. The list of scheduled action for this rule
+            ## Gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
             ## @return a device_compliance_scheduled_action_for_rule
             ## 
             def scheduled_actions_for_rule
                 return @scheduled_actions_for_rule
             end
             ## 
-            ## Sets the scheduledActionsForRule property value. The list of scheduled action for this rule
+            ## Sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
             ## @param value Value to set for the scheduledActionsForRule property.
             ## @return a void
             ## 

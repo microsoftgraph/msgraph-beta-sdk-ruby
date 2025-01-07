@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
         MobileAppSupersedenceType = {
             Update: :Update,
             Replace: :Replace,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

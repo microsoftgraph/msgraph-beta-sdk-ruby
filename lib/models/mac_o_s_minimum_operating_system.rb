@@ -51,22 +51,25 @@ module MicrosoftGraphBeta
             # When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
             @v13_0
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+            @v14_0
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new macOSMinimumOperatingSystem and sets the default values.
+            ## Instantiates a new MacOSMinimumOperatingSystem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,6 +103,7 @@ module MicrosoftGraphBeta
                     "v11_0" => lambda {|n| @v11_0 = n.get_boolean_value() },
                     "v12_0" => lambda {|n| @v12_0 = n.get_boolean_value() },
                     "v13_0" => lambda {|n| @v13_0 = n.get_boolean_value() },
+                    "v14_0" => lambda {|n| @v14_0 = n.get_boolean_value() },
                 }
             end
             ## 
@@ -137,6 +141,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("v11_0", @v11_0)
                 writer.write_boolean_value("v12_0", @v12_0)
                 writer.write_boolean_value("v13_0", @v13_0)
+                writer.write_boolean_value("v14_0", @v14_0)
                 writer.write_additional_data(@additional_data)
             end
             ## 
@@ -318,6 +323,21 @@ module MicrosoftGraphBeta
             ## 
             def v13_0=(value)
                 @v13_0 = value
+            end
+            ## 
+            ## Gets the v14_0 property value. When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+            ## @return a boolean
+            ## 
+            def v14_0
+                return @v14_0
+            end
+            ## 
+            ## Sets the v14_0 property value. When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+            ## @param value Value to set for the v14_0 property.
+            ## @return a void
+            ## 
+            def v14_0=(value)
+                @v14_0 = value
             end
         end
     end
