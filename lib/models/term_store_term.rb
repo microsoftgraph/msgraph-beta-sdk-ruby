@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                 @children = value
             end
             ## 
-            ## Instantiates a new termStoreTerm and sets the default values.
+            ## Instantiates a new TermStoreTerm and sets the default values.
             ## @return a void
             ## 
             def initialize()

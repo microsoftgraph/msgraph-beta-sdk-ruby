@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class SecurityRetentionDurationForever < MicrosoftGraphBeta::Models::SecurityRetentionDuration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityRetentionDurationForever and sets the default values.
+            ## Instantiates a new SecurityRetentionDurationForever and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -14,7 +14,10 @@ module MicrosoftGraphBeta
             # The date and time when the definition was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # Indicates whether the definition has been disabled.
+            # A human-readable representation of the reference code value for display in a user interface.
+            @display_name
+            ## 
+            # Indicates whether the definition is disabled.
             @is_disabled
             ## 
             # The date and time when the definition was most recently changed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -23,7 +26,7 @@ module MicrosoftGraphBeta
             # The categorical type for a collection of enumerated values.
             @reference_type
             ## 
-            # The ordering index to present the definitions within a type consistently in user interfaces.
+            # The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
             @sort_index
             ## 
             # The standards body or organization source which defined the code.
@@ -44,7 +47,7 @@ module MicrosoftGraphBeta
                 @code = value
             end
             ## 
-            ## Instantiates a new industryDataReferenceDefinition and sets the default values.
+            ## Instantiates a new IndustryDataReferenceDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,6 +78,21 @@ module MicrosoftGraphBeta
                 return IndustryDataReferenceDefinition.new
             end
             ## 
+            ## Gets the displayName property value. A human-readable representation of the reference code value for display in a user interface.
+            ## @return a string
+            ## 
+            def display_name
+                return @display_name
+            end
+            ## 
+            ## Sets the displayName property value. A human-readable representation of the reference code value for display in a user interface.
+            ## @param value Value to set for the displayName property.
+            ## @return a void
+            ## 
+            def display_name=(value)
+                @display_name = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -82,6 +100,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "code" => lambda {|n| @code = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isDisabled" => lambda {|n| @is_disabled = n.get_boolean_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "referenceType" => lambda {|n| @reference_type = n.get_string_value() },
@@ -90,14 +109,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isDisabled property value. Indicates whether the definition has been disabled.
+            ## Gets the isDisabled property value. Indicates whether the definition is disabled.
             ## @return a boolean
             ## 
             def is_disabled
                 return @is_disabled
             end
             ## 
-            ## Sets the isDisabled property value. Indicates whether the definition has been disabled.
+            ## Sets the isDisabled property value. Indicates whether the definition is disabled.
             ## @param value Value to set for the isDisabled property.
             ## @return a void
             ## 
@@ -143,19 +162,20 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("code", @code)
+                writer.write_string_value("displayName", @display_name)
                 writer.write_boolean_value("isDisabled", @is_disabled)
                 writer.write_string_value("referenceType", @reference_type)
                 writer.write_number_value("sortIndex", @sort_index)
             end
             ## 
-            ## Gets the sortIndex property value. The ordering index to present the definitions within a type consistently in user interfaces.
+            ## Gets the sortIndex property value. The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
             ## @return a integer
             ## 
             def sort_index
                 return @sort_index
             end
             ## 
-            ## Sets the sortIndex property value. The ordering index to present the definitions within a type consistently in user interfaces.
+            ## Sets the sortIndex property value. The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
             ## @param value Value to set for the sortIndex property.
             ## @return a void
             ## 

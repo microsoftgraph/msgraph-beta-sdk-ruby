@@ -83,7 +83,7 @@ module MicrosoftGraphBeta
                 @authenticator_flavor = value
             end
             ## 
-            ## Instantiates a new strongAuthenticationPhoneAppDetail and sets the default values.
+            ## Instantiates a new StrongAuthenticationPhoneAppDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

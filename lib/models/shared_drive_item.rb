@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             # Used to access the underlying site
             @site
             ## 
-            ## Instantiates a new sharedDriveItem and sets the default values.
+            ## Instantiates a new SharedDriveItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

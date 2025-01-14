@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # Username which the subscription was provisioned to e.g. joe@contoso.com
             @user_name
             ## 
-            ## Instantiates a new embeddedSIMDeviceState and sets the default values.
+            ## Instantiates a new EmbeddedSIMDeviceState and sets the default values.
             ## @return a void
             ## 
             def initialize()

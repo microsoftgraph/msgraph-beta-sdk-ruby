@@ -22,7 +22,7 @@ module MicrosoftGraphBeta
             # Data sources that represent Exchange mailboxes.
             @user_sources
             ## 
-            ## Instantiates a new securityEdiscoveryHoldPolicy and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryHoldPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

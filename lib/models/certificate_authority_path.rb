@@ -7,17 +7,20 @@ module MicrosoftGraphBeta
         class CertificateAuthorityPath < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The certificateBasedApplicationConfigurations property
+            # Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
             @certificate_based_application_configurations
             ## 
-            ## Gets the certificateBasedApplicationConfigurations property value. The certificateBasedApplicationConfigurations property
+            # Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
+            @mutual_tls_oauth_configurations
+            ## 
+            ## Gets the certificateBasedApplicationConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
             ## @return a certificate_based_application_configuration
             ## 
             def certificate_based_application_configurations
                 return @certificate_based_application_configurations
             end
             ## 
-            ## Sets the certificateBasedApplicationConfigurations property value. The certificateBasedApplicationConfigurations property
+            ## Sets the certificateBasedApplicationConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
             ## @param value Value to set for the certificateBasedApplicationConfigurations property.
             ## @return a void
             ## 
@@ -25,7 +28,7 @@ module MicrosoftGraphBeta
                 @certificate_based_application_configurations = value
             end
             ## 
-            ## Instantiates a new certificateAuthorityPath and sets the default values.
+            ## Instantiates a new CertificateAuthorityPath and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,7 +50,23 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "certificateBasedApplicationConfigurations" => lambda {|n| @certificate_based_application_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CertificateBasedApplicationConfiguration.create_from_discriminator_value(pn) }) },
+                    "mutualTlsOauthConfigurations" => lambda {|n| @mutual_tls_oauth_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MutualTlsOauthConfiguration.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the mutualTlsOauthConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
+            ## @return a mutual_tls_oauth_configuration
+            ## 
+            def mutual_tls_oauth_configurations
+                return @mutual_tls_oauth_configurations
+            end
+            ## 
+            ## Sets the mutualTlsOauthConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
+            ## @param value Value to set for the mutualTlsOauthConfigurations property.
+            ## @return a void
+            ## 
+            def mutual_tls_oauth_configurations=(value)
+                @mutual_tls_oauth_configurations = value
             end
             ## 
             ## Serializes information the current object
@@ -58,6 +77,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("certificateBasedApplicationConfigurations", @certificate_based_application_configurations)
+                writer.write_collection_of_object_values("mutualTlsOauthConfigurations", @mutual_tls_oauth_configurations)
             end
         end
     end

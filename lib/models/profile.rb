@@ -139,7 +139,7 @@ module MicrosoftGraphBeta
                 @certifications = value
             end
             ## 
-            ## Instantiates a new profile and sets the default values.
+            ## Instantiates a new Profile and sets the default values.
             ## @return a void
             ## 
             def initialize()

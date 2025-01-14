@@ -91,7 +91,7 @@ module MicrosoftGraphBeta
             # Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
             @device_health_script_states
             ## 
-            # Name of the device. This property is read-only.
+            # Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
             @device_name
             ## 
             # Device registration status.
@@ -111,6 +111,9 @@ module MicrosoftGraphBeta
             ## 
             # Email(s) for the user associated with the device. This property is read-only.
             @email_address
+            ## 
+            # The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.
+            @enrolled_by_user_principal_name
             ## 
             # Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
             @enrolled_date_time
@@ -544,7 +547,7 @@ module MicrosoftGraphBeta
                 @configuration_manager_client_information = value
             end
             ## 
-            ## Instantiates a new managedDevice and sets the default values.
+            ## Instantiates a new ManagedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -718,14 +721,14 @@ module MicrosoftGraphBeta
                 @device_health_script_states = value
             end
             ## 
-            ## Gets the deviceName property value. Name of the device. This property is read-only.
+            ## Gets the deviceName property value. Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
             ## @return a string
             ## 
             def device_name
                 return @device_name
             end
             ## 
-            ## Sets the deviceName property value. Name of the device. This property is read-only.
+            ## Sets the deviceName property value. Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
             ## @param value Value to set for the deviceName property.
             ## @return a void
             ## 
@@ -821,6 +824,21 @@ module MicrosoftGraphBeta
             ## 
             def email_address=(value)
                 @email_address = value
+            end
+            ## 
+            ## Gets the enrolledByUserPrincipalName property value. The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.
+            ## @return a string
+            ## 
+            def enrolled_by_user_principal_name
+                return @enrolled_by_user_principal_name
+            end
+            ## 
+            ## Sets the enrolledByUserPrincipalName property value. The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.
+            ## @param value Value to set for the enrolledByUserPrincipalName property.
+            ## @return a void
+            ## 
+            def enrolled_by_user_principal_name=(value)
+                @enrolled_by_user_principal_name = value
             end
             ## 
             ## Gets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
@@ -967,6 +985,7 @@ module MicrosoftGraphBeta
                     "easActivationDateTime" => lambda {|n| @eas_activation_date_time = n.get_date_time_value() },
                     "easDeviceId" => lambda {|n| @eas_device_id = n.get_string_value() },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
+                    "enrolledByUserPrincipalName" => lambda {|n| @enrolled_by_user_principal_name = n.get_string_value() },
                     "enrolledDateTime" => lambda {|n| @enrolled_date_time = n.get_date_time_value() },
                     "enrollmentProfileName" => lambda {|n| @enrollment_profile_name = n.get_string_value() },
                     "ethernetMacAddress" => lambda {|n| @ethernet_mac_address = n.get_string_value() },

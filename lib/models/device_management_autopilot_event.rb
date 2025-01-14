@@ -34,9 +34,6 @@ module MicrosoftGraphBeta
             # Device id associated with the object
             @device_id
             ## 
-            # Time spent in device enrollment.
-            @device_preparation_duration
-            ## 
             # Device registration date.
             @device_registered_date_time
             ## 
@@ -70,14 +67,8 @@ module MicrosoftGraphBeta
             # Device operating system version.
             @os_version
             ## 
-            # Policy and application status details for this device.
-            @policy_status_details
-            ## 
-            # Count of applications targeted.
-            @targeted_app_count
-            ## 
-            # Count of policies targeted.
-            @targeted_policy_count
+            # UserId id associated with the object
+            @user_id
             ## 
             # User principal name used to enroll the device.
             @user_principal_name
@@ -121,7 +112,7 @@ module MicrosoftGraphBeta
                 @account_setup_status = value
             end
             ## 
-            ## Instantiates a new deviceManagementAutopilotEvent and sets the default values.
+            ## Instantiates a new DeviceManagementAutopilotEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -225,21 +216,6 @@ module MicrosoftGraphBeta
             ## 
             def device_id=(value)
                 @device_id = value
-            end
-            ## 
-            ## Gets the devicePreparationDuration property value. Time spent in device enrollment.
-            ## @return a microsoft_kiota_abstractions::_i_s_o_duration
-            ## 
-            def device_preparation_duration
-                return @device_preparation_duration
-            end
-            ## 
-            ## Sets the devicePreparationDuration property value. Time spent in device enrollment.
-            ## @param value Value to set for the devicePreparationDuration property.
-            ## @return a void
-            ## 
-            def device_preparation_duration=(value)
-                @device_preparation_duration = value
             end
             ## 
             ## Gets the deviceRegisteredDateTime property value. Device registration date.
@@ -390,7 +366,6 @@ module MicrosoftGraphBeta
                     "deploymentState" => lambda {|n| @deployment_state = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsAutopilotDeploymentState) },
                     "deploymentTotalDuration" => lambda {|n| @deployment_total_duration = n.get_duration_value() },
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
-                    "devicePreparationDuration" => lambda {|n| @device_preparation_duration = n.get_duration_value() },
                     "deviceRegisteredDateTime" => lambda {|n| @device_registered_date_time = n.get_date_time_value() },
                     "deviceSerialNumber" => lambda {|n| @device_serial_number = n.get_string_value() },
                     "deviceSetupDuration" => lambda {|n| @device_setup_duration = n.get_duration_value() },
@@ -402,9 +377,7 @@ module MicrosoftGraphBeta
                     "eventDateTime" => lambda {|n| @event_date_time = n.get_date_time_value() },
                     "managedDeviceName" => lambda {|n| @managed_device_name = n.get_string_value() },
                     "osVersion" => lambda {|n| @os_version = n.get_string_value() },
-                    "policyStatusDetails" => lambda {|n| @policy_status_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementAutopilotPolicyStatusDetail.create_from_discriminator_value(pn) }) },
-                    "targetedAppCount" => lambda {|n| @targeted_app_count = n.get_number_value() },
-                    "targetedPolicyCount" => lambda {|n| @targeted_policy_count = n.get_number_value() },
+                    "userId" => lambda {|n| @user_id = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                     "windowsAutopilotDeploymentProfileDisplayName" => lambda {|n| @windows_autopilot_deployment_profile_display_name = n.get_string_value() },
                     "windows10EnrollmentCompletionPageConfigurationDisplayName" => lambda {|n| @windows10_enrollment_completion_page_configuration_display_name = n.get_string_value() },
@@ -442,21 +415,6 @@ module MicrosoftGraphBeta
                 @os_version = value
             end
             ## 
-            ## Gets the policyStatusDetails property value. Policy and application status details for this device.
-            ## @return a device_management_autopilot_policy_status_detail
-            ## 
-            def policy_status_details
-                return @policy_status_details
-            end
-            ## 
-            ## Sets the policyStatusDetails property value. Policy and application status details for this device.
-            ## @param value Value to set for the policyStatusDetails property.
-            ## @return a void
-            ## 
-            def policy_status_details=(value)
-                @policy_status_details = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -472,7 +430,6 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("deploymentState", @deployment_state)
                 writer.write_duration_value("deploymentTotalDuration", @deployment_total_duration)
                 writer.write_string_value("deviceId", @device_id)
-                writer.write_duration_value("devicePreparationDuration", @device_preparation_duration)
                 writer.write_date_time_value("deviceRegisteredDateTime", @device_registered_date_time)
                 writer.write_string_value("deviceSerialNumber", @device_serial_number)
                 writer.write_duration_value("deviceSetupDuration", @device_setup_duration)
@@ -484,43 +441,26 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("eventDateTime", @event_date_time)
                 writer.write_string_value("managedDeviceName", @managed_device_name)
                 writer.write_string_value("osVersion", @os_version)
-                writer.write_collection_of_object_values("policyStatusDetails", @policy_status_details)
-                writer.write_number_value("targetedAppCount", @targeted_app_count)
-                writer.write_number_value("targetedPolicyCount", @targeted_policy_count)
+                writer.write_string_value("userId", @user_id)
                 writer.write_string_value("userPrincipalName", @user_principal_name)
                 writer.write_string_value("windowsAutopilotDeploymentProfileDisplayName", @windows_autopilot_deployment_profile_display_name)
                 writer.write_string_value("windows10EnrollmentCompletionPageConfigurationDisplayName", @windows10_enrollment_completion_page_configuration_display_name)
                 writer.write_string_value("windows10EnrollmentCompletionPageConfigurationId", @windows10_enrollment_completion_page_configuration_id)
             end
             ## 
-            ## Gets the targetedAppCount property value. Count of applications targeted.
-            ## @return a integer
+            ## Gets the userId property value. UserId id associated with the object
+            ## @return a string
             ## 
-            def targeted_app_count
-                return @targeted_app_count
+            def user_id
+                return @user_id
             end
             ## 
-            ## Sets the targetedAppCount property value. Count of applications targeted.
-            ## @param value Value to set for the targetedAppCount property.
+            ## Sets the userId property value. UserId id associated with the object
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
-            def targeted_app_count=(value)
-                @targeted_app_count = value
-            end
-            ## 
-            ## Gets the targetedPolicyCount property value. Count of policies targeted.
-            ## @return a integer
-            ## 
-            def targeted_policy_count
-                return @targeted_policy_count
-            end
-            ## 
-            ## Sets the targetedPolicyCount property value. Count of policies targeted.
-            ## @param value Value to set for the targetedPolicyCount property.
-            ## @return a void
-            ## 
-            def targeted_policy_count=(value)
-                @targeted_policy_count = value
+            def user_id=(value)
+                @user_id = value
             end
             ## 
             ## Gets the userPrincipalName property value. User principal name used to enroll the device.

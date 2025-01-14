@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # User principle name of specific user.
             @user_principal_name
             ## 
-            ## Instantiates a new deviceManagementScriptUserState and sets the default values.
+            ## Instantiates a new DeviceManagementScriptUserState and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # The Type of the CodeSigning Cert as Symantec Cert.
             @upload_date_time
             ## 
-            ## Instantiates a new symantecCodeSigningCertificate and sets the default values.
+            ## Instantiates a new SymantecCodeSigningCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

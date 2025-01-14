@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The setting definitions this category contains
             @setting_definitions
             ## 
-            ## Instantiates a new deviceManagementSettingCategory and sets the default values.
+            ## Instantiates a new DeviceManagementSettingCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

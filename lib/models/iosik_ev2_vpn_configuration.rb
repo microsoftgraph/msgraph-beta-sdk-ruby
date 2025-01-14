@@ -153,7 +153,7 @@ module MicrosoftGraphBeta
                 @client_authentication_type = value
             end
             ## 
-            ## Instantiates a new iosikEv2VpnConfiguration and sets the default values.
+            ## Instantiates a new IosikEv2VpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -11,17 +11,23 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Detail about the company or employer.
+            # Information about the company or employer.
             @company
             ## 
-            # Description of the position in question.
+            # A description for the position in question.
             @description
             ## 
-            # When the position ended.
+            # The date when the position ended.
             @end_month_year
             ## 
-            # The title held when in that position.
+            # The title of the position.
             @job_title
+            ## 
+            # The place where the employee is within the organizational hierarchy.
+            @layer
+            ## 
+            # The employee’s experience or management level.
+            @level
             ## 
             # The OdataType property
             @odata_type
@@ -29,35 +35,41 @@ module MicrosoftGraphBeta
             # The role the position entailed.
             @role
             ## 
-            # The start month and year of the position.
+            # An optional job title for the position.
+            @secondary_job_title
+            ## 
+            # An optional role for the position entailed.
+            @secondary_role
+            ## 
+            # The start date of the position.
             @start_month_year
             ## 
-            # Short summary of the position.
+            # The summary of the position.
             @summary
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the company property value. Detail about the company or employer.
+            ## Gets the company property value. Information about the company or employer.
             ## @return a company_detail
             ## 
             def company
                 return @company
             end
             ## 
-            ## Sets the company property value. Detail about the company or employer.
+            ## Sets the company property value. Information about the company or employer.
             ## @param value Value to set for the company property.
             ## @return a void
             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraphBeta
                 @company = value
             end
             ## 
-            ## Instantiates a new positionDetail and sets the default values.
+            ## Instantiates a new PositionDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +93,14 @@ module MicrosoftGraphBeta
                 return PositionDetail.new
             end
             ## 
-            ## Gets the description property value. Description of the position in question.
+            ## Gets the description property value. A description for the position in question.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Description of the position in question.
+            ## Sets the description property value. A description for the position in question.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -96,14 +108,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the endMonthYear property value. When the position ended.
+            ## Gets the endMonthYear property value. The date when the position ended.
             ## @return a date
             ## 
             def end_month_year
                 return @end_month_year
             end
             ## 
-            ## Sets the endMonthYear property value. When the position ended.
+            ## Sets the endMonthYear property value. The date when the position ended.
             ## @param value Value to set for the endMonthYear property.
             ## @return a void
             ## 
@@ -120,26 +132,60 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "endMonthYear" => lambda {|n| @end_month_year = n.get_date_value() },
                     "jobTitle" => lambda {|n| @job_title = n.get_string_value() },
+                    "layer" => lambda {|n| @layer = n.get_number_value() },
+                    "level" => lambda {|n| @level = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "role" => lambda {|n| @role = n.get_string_value() },
+                    "secondaryJobTitle" => lambda {|n| @secondary_job_title = n.get_string_value() },
+                    "secondaryRole" => lambda {|n| @secondary_role = n.get_string_value() },
                     "startMonthYear" => lambda {|n| @start_month_year = n.get_date_value() },
                     "summary" => lambda {|n| @summary = n.get_string_value() },
                 }
             end
             ## 
-            ## Gets the jobTitle property value. The title held when in that position.
+            ## Gets the jobTitle property value. The title of the position.
             ## @return a string
             ## 
             def job_title
                 return @job_title
             end
             ## 
-            ## Sets the jobTitle property value. The title held when in that position.
+            ## Sets the jobTitle property value. The title of the position.
             ## @param value Value to set for the jobTitle property.
             ## @return a void
             ## 
             def job_title=(value)
                 @job_title = value
+            end
+            ## 
+            ## Gets the layer property value. The place where the employee is within the organizational hierarchy.
+            ## @return a integer
+            ## 
+            def layer
+                return @layer
+            end
+            ## 
+            ## Sets the layer property value. The place where the employee is within the organizational hierarchy.
+            ## @param value Value to set for the layer property.
+            ## @return a void
+            ## 
+            def layer=(value)
+                @layer = value
+            end
+            ## 
+            ## Gets the level property value. The employee’s experience or management level.
+            ## @return a string
+            ## 
+            def level
+                return @level
+            end
+            ## 
+            ## Sets the level property value. The employee’s experience or management level.
+            ## @param value Value to set for the level property.
+            ## @return a void
+            ## 
+            def level=(value)
+                @level = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -172,6 +218,36 @@ module MicrosoftGraphBeta
                 @role = value
             end
             ## 
+            ## Gets the secondaryJobTitle property value. An optional job title for the position.
+            ## @return a string
+            ## 
+            def secondary_job_title
+                return @secondary_job_title
+            end
+            ## 
+            ## Sets the secondaryJobTitle property value. An optional job title for the position.
+            ## @param value Value to set for the secondaryJobTitle property.
+            ## @return a void
+            ## 
+            def secondary_job_title=(value)
+                @secondary_job_title = value
+            end
+            ## 
+            ## Gets the secondaryRole property value. An optional role for the position entailed.
+            ## @return a string
+            ## 
+            def secondary_role
+                return @secondary_role
+            end
+            ## 
+            ## Sets the secondaryRole property value. An optional role for the position entailed.
+            ## @param value Value to set for the secondaryRole property.
+            ## @return a void
+            ## 
+            def secondary_role=(value)
+                @secondary_role = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -182,21 +258,25 @@ module MicrosoftGraphBeta
                 writer.write_string_value("description", @description)
                 writer.write_date_value("endMonthYear", @end_month_year)
                 writer.write_string_value("jobTitle", @job_title)
+                writer.write_number_value("layer", @layer)
+                writer.write_string_value("level", @level)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("role", @role)
+                writer.write_string_value("secondaryJobTitle", @secondary_job_title)
+                writer.write_string_value("secondaryRole", @secondary_role)
                 writer.write_date_value("startMonthYear", @start_month_year)
                 writer.write_string_value("summary", @summary)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the startMonthYear property value. The start month and year of the position.
+            ## Gets the startMonthYear property value. The start date of the position.
             ## @return a date
             ## 
             def start_month_year
                 return @start_month_year
             end
             ## 
-            ## Sets the startMonthYear property value. The start month and year of the position.
+            ## Sets the startMonthYear property value. The start date of the position.
             ## @param value Value to set for the startMonthYear property.
             ## @return a void
             ## 
@@ -204,14 +284,14 @@ module MicrosoftGraphBeta
                 @start_month_year = value
             end
             ## 
-            ## Gets the summary property value. Short summary of the position.
+            ## Gets the summary property value. The summary of the position.
             ## @return a string
             ## 
             def summary
                 return @summary
             end
             ## 
-            ## Sets the summary property value. Short summary of the position.
+            ## Sets the summary property value. The summary of the position.
             ## @param value Value to set for the summary property.
             ## @return a void
             ## 

@@ -1,1 +1,1 @@
-require_relative 'generate_download_url_response'
+require_relative 'generate_download_url_post_response'
