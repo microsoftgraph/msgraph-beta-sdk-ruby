@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @classification_method = value
             end
             ## 
-            ## Instantiates a new detectedSensitiveContent and sets the default values.
+            ## Instantiates a new DetectedSensitiveContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraphBeta
                     "classificationAttributes" => lambda {|n| @classification_attributes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ClassificationAttribute.create_from_discriminator_value(pn) }) },
                     "classificationMethod" => lambda {|n| @classification_method = n.get_enum_value(MicrosoftGraphBeta::Models::ClassificationMethod) },
                     "matches" => lambda {|n| @matches = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SensitiveContentLocation.create_from_discriminator_value(pn) }) },
-                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
+                    "scope" => lambda {|n| @scope = n.get_enum_values(MicrosoftGraphBeta::Models::SensitiveTypeScope) },
                     "sensitiveTypeSource" => lambda {|n| @sensitive_type_source = n.get_enum_value(MicrosoftGraphBeta::Models::SensitiveTypeSource) },
                 })
             end

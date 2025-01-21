@@ -10,38 +10,38 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Client ID used to connect to the provider.
+            # The clientId property
             @client_id
             ## 
-            # Client secret to authenticate the connection to the provider.
+            # The clientSecret property
             @client_secret
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the clientId property value. Client ID used to connect to the provider.
+            ## Gets the clientId property value. The clientId property
             ## @return a string
             ## 
             def client_id
                 return @client_id
             end
             ## 
-            ## Sets the clientId property value. Client ID used to connect to the provider.
+            ## Sets the clientId property value. The clientId property
             ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
@@ -49,14 +49,14 @@ module MicrosoftGraphBeta
                 @client_id = value
             end
             ## 
-            ## Gets the clientSecret property value. Client secret to authenticate the connection to the provider.
+            ## Gets the clientSecret property value. The clientSecret property
             ## @return a string
             ## 
             def client_secret
                 return @client_secret
             end
             ## 
-            ## Sets the clientSecret property value. Client secret to authenticate the connection to the provider.
+            ## Sets the clientSecret property value. The clientSecret property
             ## @param value Value to set for the clientSecret property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new educationSynchronizationConnectionSettings and sets the default values.
+            ## Instantiates a new EducationSynchronizationConnectionSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Detailed information about the message type.
+            # The description property
             @description
             ## 
             # The fileName property
@@ -19,25 +19,25 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # Type of the message. Possible values are: error, warning, information.
+            # The type property
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new educationFileSynchronizationVerificationMessage and sets the default values.
+            ## Instantiates a new EducationFileSynchronizationVerificationMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,14 +53,14 @@ module MicrosoftGraphBeta
                 return EducationFileSynchronizationVerificationMessage.new
             end
             ## 
-            ## Gets the description property value. Detailed information about the message type.
+            ## Gets the description property value. The description property
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Detailed information about the message type.
+            ## Sets the description property value. The description property
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. Type of the message. Possible values are: error, warning, information.
+            ## Gets the type property value. The type property
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Type of the message. Possible values are: error, warning, information.
+            ## Sets the type property value. The type property
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

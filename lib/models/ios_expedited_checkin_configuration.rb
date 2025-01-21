@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class IosExpeditedCheckinConfiguration < MicrosoftGraphBeta::Models::AppleExpeditedCheckinConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosExpeditedCheckinConfiguration and sets the default values.
+            ## Instantiates a new IosExpeditedCheckinConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

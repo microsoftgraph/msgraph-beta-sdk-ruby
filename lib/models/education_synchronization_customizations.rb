@@ -7,25 +7,25 @@ module MicrosoftGraphBeta
         class EducationSynchronizationCustomizations < MicrosoftGraphBeta::Models::EducationSynchronizationCustomizationsBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Customizations for School entities.
+            # The school property
             @school
             ## 
-            # Customizations for Section entities.
+            # The section property
             @section
             ## 
-            # Customizations for Student entities.
+            # The student property
             @student
             ## 
-            # Customizations for Student Enrollments.
+            # The studentEnrollment property
             @student_enrollment
             ## 
-            # Customizations for Teacher entities.
+            # The teacher property
             @teacher
             ## 
-            # Customizations for Teacher Rosters.
+            # The teacherRoster property
             @teacher_roster
             ## 
-            ## Instantiates a new educationSynchronizationCustomizations and sets the default values.
+            ## Instantiates a new EducationSynchronizationCustomizations and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the school property value. Customizations for School entities.
+            ## Gets the school property value. The school property
             ## @return a education_synchronization_customization
             ## 
             def school
                 return @school
             end
             ## 
-            ## Sets the school property value. Customizations for School entities.
+            ## Sets the school property value. The school property
             ## @param value Value to set for the school property.
             ## @return a void
             ## 
@@ -71,14 +71,14 @@ module MicrosoftGraphBeta
                 @school = value
             end
             ## 
-            ## Gets the section property value. Customizations for Section entities.
+            ## Gets the section property value. The section property
             ## @return a education_synchronization_customization
             ## 
             def section
                 return @section
             end
             ## 
-            ## Sets the section property value. Customizations for Section entities.
+            ## Sets the section property value. The section property
             ## @param value Value to set for the section property.
             ## @return a void
             ## 
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("teacherRoster", @teacher_roster)
             end
             ## 
-            ## Gets the student property value. Customizations for Student entities.
+            ## Gets the student property value. The student property
             ## @return a education_synchronization_customization
             ## 
             def student
                 return @student
             end
             ## 
-            ## Sets the student property value. Customizations for Student entities.
+            ## Sets the student property value. The student property
             ## @param value Value to set for the student property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 @student = value
             end
             ## 
-            ## Gets the studentEnrollment property value. Customizations for Student Enrollments.
+            ## Gets the studentEnrollment property value. The studentEnrollment property
             ## @return a education_synchronization_customization
             ## 
             def student_enrollment
                 return @student_enrollment
             end
             ## 
-            ## Sets the studentEnrollment property value. Customizations for Student Enrollments.
+            ## Sets the studentEnrollment property value. The studentEnrollment property
             ## @param value Value to set for the studentEnrollment property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 @student_enrollment = value
             end
             ## 
-            ## Gets the teacher property value. Customizations for Teacher entities.
+            ## Gets the teacher property value. The teacher property
             ## @return a education_synchronization_customization
             ## 
             def teacher
                 return @teacher
             end
             ## 
-            ## Sets the teacher property value. Customizations for Teacher entities.
+            ## Sets the teacher property value. The teacher property
             ## @param value Value to set for the teacher property.
             ## @return a void
             ## 
@@ -146,14 +146,14 @@ module MicrosoftGraphBeta
                 @teacher = value
             end
             ## 
-            ## Gets the teacherRoster property value. Customizations for Teacher Rosters.
+            ## Gets the teacherRoster property value. The teacherRoster property
             ## @return a education_synchronization_customization
             ## 
             def teacher_roster
                 return @teacher_roster
             end
             ## 
-            ## Sets the teacherRoster property value. Customizations for Teacher Rosters.
+            ## Sets the teacherRoster property value. The teacherRoster property
             ## @param value Value to set for the teacherRoster property.
             ## @return a void
             ## 

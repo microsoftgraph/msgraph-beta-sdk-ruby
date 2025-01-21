@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ServicePrincipalSignInActivity < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The application ID of the resource.
+            # The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
             @app_id
             ## 
             # The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.
@@ -25,14 +25,14 @@ module MicrosoftGraphBeta
             # The most recent sign-in activity of the application across delegated or app-only flows where the application is used either as a client or resource.
             @last_sign_in_activity
             ## 
-            ## Gets the appId property value. The application ID of the resource.
+            ## Gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The application ID of the resource.
+            ## Sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -70,7 +70,7 @@ module MicrosoftGraphBeta
                 @application_authentication_resource_sign_in_activity = value
             end
             ## 
-            ## Instantiates a new servicePrincipalSignInActivity and sets the default values.
+            ## Instantiates a new ServicePrincipalSignInActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

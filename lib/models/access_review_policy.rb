@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # If true, group owners can create and manage access reviews on groups they own.
             @is_group_owner_management_enabled
             ## 
-            ## Instantiates a new accessReviewPolicy and sets the default values.
+            ## Instantiates a new AccessReviewPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

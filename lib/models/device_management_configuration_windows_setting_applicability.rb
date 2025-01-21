@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @configuration_service_provider_version = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationWindowsSettingApplicability and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationWindowsSettingApplicability and sets the default values.
             ## @return a void
             ## 
             def initialize()

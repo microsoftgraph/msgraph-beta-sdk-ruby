@@ -11,7 +11,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether the entry was recorded at the approved location.
+            # Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             @at_approved_location
             ## 
             # The time the entry is recorded.
@@ -23,29 +23,29 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+            ## Gets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             ## @return a boolean
             ## 
             def at_approved_location
                 return @at_approved_location
             end
             ## 
-            ## Sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+            ## Sets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             ## @param value Value to set for the atApprovedLocation property.
             ## @return a void
             ## 
@@ -53,7 +53,7 @@ module MicrosoftGraphBeta
                 @at_approved_location = value
             end
             ## 
-            ## Instantiates a new timeCardEvent and sets the default values.
+            ## Instantiates a new TimeCardEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

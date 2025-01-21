@@ -10,38 +10,38 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The user role type to assign to license. Possible values are: student, teacher, faculty.
+            # The appliesTo property
             @applies_to
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Represents the SKU identifiers of the licenses to assign.
+            # The skuIds property
             @sku_ids
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
+            ## Gets the appliesTo property value. The appliesTo property
             ## @return a education_user_role
             ## 
             def applies_to
                 return @applies_to
             end
             ## 
-            ## Sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
+            ## Sets the appliesTo property value. The appliesTo property
             ## @param value Value to set for the appliesTo property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new educationSynchronizationLicenseAssignment and sets the default values.
+            ## Instantiates a new EducationSynchronizationLicenseAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
+            ## Gets the skuIds property value. The skuIds property
             ## @return a string
             ## 
             def sku_ids
                 return @sku_ids
             end
             ## 
-            ## Sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
+            ## Sets the skuIds property value. The skuIds property
             ## @param value Value to set for the skuIds property.
             ## @return a void
             ## 

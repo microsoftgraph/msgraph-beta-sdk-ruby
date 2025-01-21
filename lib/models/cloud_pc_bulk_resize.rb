@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class CloudPcBulkResize < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The targetServicePlanId property
+            # The target service plan ID of the resize configuration with new vCPU and storage size.
             @target_service_plan_id
             ## 
-            ## Instantiates a new cloudPcBulkResize and sets the default values.
+            ## Instantiates a new CloudPcBulkResize and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("targetServicePlanId", @target_service_plan_id)
             end
             ## 
-            ## Gets the targetServicePlanId property value. The targetServicePlanId property
+            ## Gets the targetServicePlanId property value. The target service plan ID of the resize configuration with new vCPU and storage size.
             ## @return a string
             ## 
             def target_service_plan_id
                 return @target_service_plan_id
             end
             ## 
-            ## Sets the targetServicePlanId property value. The targetServicePlanId property
+            ## Sets the targetServicePlanId property value. The target service plan ID of the resize configuration with new vCPU and storage size.
             ## @param value Value to set for the targetServicePlanId property.
             ## @return a void
             ## 

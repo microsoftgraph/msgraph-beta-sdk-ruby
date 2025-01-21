@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings < MicrosoftGraphBeta::Models::EducationSynchronizationConnectionSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The scope of the access request (see RFC6749).
+            # The scope property
             @scope
             ## 
-            # The URL to get access tokens for the data provider.
+            # The tokenUrl property
             @token_url
             ## 
-            ## Instantiates a new educationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
+            ## Instantiates a new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the scope property value. The scope of the access request (see RFC6749).
+            ## Gets the scope property value. The scope property
             ## @return a string
             ## 
             def scope
                 return @scope
             end
             ## 
-            ## Sets the scope property value. The scope of the access request (see RFC6749).
+            ## Sets the scope property value. The scope property
             ## @param value Value to set for the scope property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("tokenUrl", @token_url)
             end
             ## 
-            ## Gets the tokenUrl property value. The URL to get access tokens for the data provider.
+            ## Gets the tokenUrl property value. The tokenUrl property
             ## @return a string
             ## 
             def token_url
                 return @token_url
             end
             ## 
-            ## Sets the tokenUrl property value. The URL to get access tokens for the data provider.
+            ## Sets the tokenUrl property value. The tokenUrl property
             ## @param value Value to set for the tokenUrl property.
             ## @return a void
             ## 

@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class CloudPcBulkRestart < MicrosoftGraphBeta::Models::CloudPcBulkAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new cloudPcBulkRestart and sets the default values.
+            ## Instantiates a new CloudPcBulkRestart and sets the default values.
             ## @return a void
             ## 
             def initialize()

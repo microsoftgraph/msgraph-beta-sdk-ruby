@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class BaseSitePage < MicrosoftGraphBeta::Models::BaseItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+            # The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.
             @page_layout
             ## 
             # The publishing status and the MM.mm version of the page.
@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Title of the sitePage.
             @title
             ## 
-            ## Instantiates a new baseSitePage and sets the default values.
+            ## Instantiates a new BaseSitePage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,8 +34,14 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.newsLinkPage"
+                            return NewsLinkPage.new
+                        when "#microsoft.graph.pageTemplate"
+                            return PageTemplate.new
                         when "#microsoft.graph.sitePage"
                             return SitePage.new
+                        when "#microsoft.graph.videoNewsLinkPage"
+                            return VideoNewsLinkPage.new
                     end
                 end
                 return BaseSitePage.new
@@ -52,14 +58,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+            ## Gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.
             ## @return a page_layout_type
             ## 
             def page_layout
                 return @page_layout
             end
             ## 
-            ## Sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+            ## Sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.
             ## @param value Value to set for the pageLayout property.
             ## @return a void
             ## 

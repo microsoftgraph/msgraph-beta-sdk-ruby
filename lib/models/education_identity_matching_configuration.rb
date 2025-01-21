@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class EducationIdentityMatchingConfiguration < MicrosoftGraphBeta::Models::EducationIdentitySynchronizationConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Mapping between the user account and the options to use to uniquely identify the user to update.
+            # The matchingOptions property
             @matching_options
             ## 
-            ## Instantiates a new educationIdentityMatchingConfiguration and sets the default values.
+            ## Instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
+            ## Gets the matchingOptions property value. The matchingOptions property
             ## @return a education_identity_matching_options
             ## 
             def matching_options
                 return @matching_options
             end
             ## 
-            ## Sets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
+            ## Sets the matchingOptions property value. The matchingOptions property
             ## @param value Value to set for the matchingOptions property.
             ## @return a void
             ## 

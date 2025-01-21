@@ -2,8 +2,8 @@ module MicrosoftGraphBeta
     module Models
         SecurityPurgeType = {
             Recoverable: :Recoverable,
-            PermanentlyDeleted: :PermanentlyDeleted,
             UnknownFutureValue: :UnknownFutureValue,
+            PermanentlyDelete: :PermanentlyDelete,
         }
     end
 end

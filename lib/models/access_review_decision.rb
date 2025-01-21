@@ -8,19 +8,19 @@ module MicrosoftGraphBeta
         class AccessReviewDecision < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+            # The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
             @access_recommendation
             ## 
-            # The feature-generated id of the access review.
+            # The feature-generated ID of the access review.
             @access_review_id
             ## 
-            # When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
+            # When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
             @applied_by
             ## 
             # The date and time when the review decision was applied.
             @applied_date_time
             ## 
-            # The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+            # The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
             @apply_result
             ## 
             # The reviewer's business justification, if supplied.
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
             # The reviewedDateTime property
             @reviewed_date_time
             ## 
-            ## Gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+            ## Gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
             ## @return a string
             ## 
             def access_recommendation
                 return @access_recommendation
             end
             ## 
-            ## Sets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+            ## Sets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
             ## @param value Value to set for the accessRecommendation property.
             ## @return a void
             ## 
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @access_recommendation = value
             end
             ## 
-            ## Gets the accessReviewId property value. The feature-generated id of the access review.
+            ## Gets the accessReviewId property value. The feature-generated ID of the access review.
             ## @return a string
             ## 
             def access_review_id
                 return @access_review_id
             end
             ## 
-            ## Sets the accessReviewId property value. The feature-generated id of the access review.
+            ## Sets the accessReviewId property value. The feature-generated ID of the access review.
             ## @param value Value to set for the accessReviewId property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 @access_review_id = value
             end
             ## 
-            ## Gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
+            ## Gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
             ## @return a user_identity
             ## 
             def applied_by
                 return @applied_by
             end
             ## 
-            ## Sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
+            ## Sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
             ## @param value Value to set for the appliedBy property.
             ## @return a void
             ## 
@@ -95,14 +95,14 @@ module MicrosoftGraphBeta
                 @applied_date_time = value
             end
             ## 
-            ## Gets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+            ## Gets the applyResult property value. The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
             ## @return a string
             ## 
             def apply_result
                 return @apply_result
             end
             ## 
-            ## Sets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+            ## Sets the applyResult property value. The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
             ## @param value Value to set for the applyResult property.
             ## @return a void
             ## 
@@ -110,7 +110,7 @@ module MicrosoftGraphBeta
                 @apply_result = value
             end
             ## 
-            ## Instantiates a new accessReviewDecision and sets the default values.
+            ## Instantiates a new AccessReviewDecision and sets the default values.
             ## @return a void
             ## 
             def initialize()

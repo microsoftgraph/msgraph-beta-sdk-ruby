@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # Represents a container that exposes navigation properties for employee experience user resources.
         class EmployeeExperienceUser < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The learningCourseActivities property
             @learning_course_activities
             ## 
-            ## Instantiates a new employeeExperienceUser and sets the default values.
+            ## Instantiates a new EmployeeExperienceUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

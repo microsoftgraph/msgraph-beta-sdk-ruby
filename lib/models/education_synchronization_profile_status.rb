@@ -8,22 +8,22 @@ module MicrosoftGraphBeta
         class EducationSynchronizationProfileStatus < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of errors during synchronization.
+            # The errorCount property
             @error_count
             ## 
-            # Date and time when most recent changes were observed in the profile.
+            # The lastActivityDateTime property
             @last_activity_date_time
             ## 
-            # Date and time of the most recent successful synchronization.
+            # The lastSynchronizationDateTime property
             @last_synchronization_date_time
             ## 
-            # The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+            # The status property
             @status
             ## 
-            # Status message for the synchronization stage of the current profile.
+            # The statusMessage property
             @status_message
             ## 
-            ## Instantiates a new educationSynchronizationProfileStatus and sets the default values.
+            ## Instantiates a new EducationSynchronizationProfileStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 return EducationSynchronizationProfileStatus.new
             end
             ## 
-            ## Gets the errorCount property value. Number of errors during synchronization.
+            ## Gets the errorCount property value. The errorCount property
             ## @return a int64
             ## 
             def error_count
                 return @error_count
             end
             ## 
-            ## Sets the errorCount property value. Number of errors during synchronization.
+            ## Sets the errorCount property value. The errorCount property
             ## @param value Value to set for the errorCount property.
             ## @return a void
             ## 
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastActivityDateTime property value. Date and time when most recent changes were observed in the profile.
+            ## Gets the lastActivityDateTime property value. The lastActivityDateTime property
             ## @return a date_time
             ## 
             def last_activity_date_time
                 return @last_activity_date_time
             end
             ## 
-            ## Sets the lastActivityDateTime property value. Date and time when most recent changes were observed in the profile.
+            ## Sets the lastActivityDateTime property value. The lastActivityDateTime property
             ## @param value Value to set for the lastActivityDateTime property.
             ## @return a void
             ## 
@@ -82,14 +82,14 @@ module MicrosoftGraphBeta
                 @last_activity_date_time = value
             end
             ## 
-            ## Gets the lastSynchronizationDateTime property value. Date and time of the most recent successful synchronization.
+            ## Gets the lastSynchronizationDateTime property value. The lastSynchronizationDateTime property
             ## @return a date_time
             ## 
             def last_synchronization_date_time
                 return @last_synchronization_date_time
             end
             ## 
-            ## Sets the lastSynchronizationDateTime property value. Date and time of the most recent successful synchronization.
+            ## Sets the lastSynchronizationDateTime property value. The lastSynchronizationDateTime property
             ## @param value Value to set for the lastSynchronizationDateTime property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("statusMessage", @status_message)
             end
             ## 
-            ## Gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+            ## Gets the status property value. The status property
             ## @return a education_synchronization_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+            ## Sets the status property value. The status property
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 @status = value
             end
             ## 
-            ## Gets the statusMessage property value. Status message for the synchronization stage of the current profile.
+            ## Gets the statusMessage property value. The statusMessage property
             ## @return a string
             ## 
             def status_message
                 return @status_message
             end
             ## 
-            ## Sets the statusMessage property value. Status message for the synchronization stage of the current profile.
+            ## Sets the statusMessage property value. The statusMessage property
             ## @param value Value to set for the statusMessage property.
             ## @return a void
             ## 

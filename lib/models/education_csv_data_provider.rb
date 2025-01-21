@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class EducationCsvDataProvider < MicrosoftGraphBeta::Models::EducationSynchronizationDataProvider
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Optional customizations to be applied to the synchronization profile.
+            # The customizations property
             @customizations
             ## 
-            ## Instantiates a new educationCsvDataProvider and sets the default values.
+            ## Instantiates a new EducationCsvDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -27,14 +27,14 @@ module MicrosoftGraphBeta
                 return EducationCsvDataProvider.new
             end
             ## 
-            ## Gets the customizations property value. Optional customizations to be applied to the synchronization profile.
+            ## Gets the customizations property value. The customizations property
             ## @return a education_synchronization_customizations
             ## 
             def customizations
                 return @customizations
             end
             ## 
-            ## Sets the customizations property value. Optional customizations to be applied to the synchronization profile.
+            ## Sets the customizations property value. The customizations property
             ## @param value Value to set for the customizations property.
             ## @return a void
             ## 

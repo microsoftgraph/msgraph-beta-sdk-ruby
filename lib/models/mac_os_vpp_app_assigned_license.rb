@@ -21,7 +21,7 @@ module MicrosoftGraphBeta
             # The user principal name.
             @user_principal_name
             ## 
-            ## Instantiates a new macOsVppAppAssignedLicense and sets the default values.
+            ## Instantiates a new MacOsVppAppAssignedLicense and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -11,44 +11,44 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether the display name of the resource can be overwritten by the sync.
+            # The allowDisplayNameUpdate property
             @allow_display_name_update
             ## 
-            # Indicates whether synchronization of the parent entity is deferred to a later date.
+            # The isSyncDeferred property
             @is_sync_deferred
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
+            # The optionalPropertiesToSync property
             @optional_properties_to_sync
             ## 
-            # The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
+            # The synchronizationStartDate property
             @synchronization_start_date
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
+            ## Gets the allowDisplayNameUpdate property value. The allowDisplayNameUpdate property
             ## @return a boolean
             ## 
             def allow_display_name_update
                 return @allow_display_name_update
             end
             ## 
-            ## Sets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
+            ## Sets the allowDisplayNameUpdate property value. The allowDisplayNameUpdate property
             ## @param value Value to set for the allowDisplayNameUpdate property.
             ## @return a void
             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraphBeta
                 @allow_display_name_update = value
             end
             ## 
-            ## Instantiates a new educationSynchronizationCustomization and sets the default values.
+            ## Instantiates a new EducationSynchronizationCustomization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
+            ## Gets the isSyncDeferred property value. The isSyncDeferred property
             ## @return a boolean
             ## 
             def is_sync_deferred
                 return @is_sync_deferred
             end
             ## 
-            ## Sets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
+            ## Sets the isSyncDeferred property value. The isSyncDeferred property
             ## @param value Value to set for the isSyncDeferred property.
             ## @return a void
             ## 
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
+            ## Gets the optionalPropertiesToSync property value. The optionalPropertiesToSync property
             ## @return a string
             ## 
             def optional_properties_to_sync
                 return @optional_properties_to_sync
             end
             ## 
-            ## Sets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
+            ## Sets the optionalPropertiesToSync property value. The optionalPropertiesToSync property
             ## @param value Value to set for the optionalPropertiesToSync property.
             ## @return a void
             ## 
@@ -144,14 +144,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
+            ## Gets the synchronizationStartDate property value. The synchronizationStartDate property
             ## @return a date_time
             ## 
             def synchronization_start_date
                 return @synchronization_start_date
             end
             ## 
-            ## Sets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
+            ## Sets the synchronizationStartDate property value. The synchronizationStartDate property
             ## @param value Value to set for the synchronizationStartDate property.
             ## @return a void
             ## 
