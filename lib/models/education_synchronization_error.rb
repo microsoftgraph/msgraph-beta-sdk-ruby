@@ -8,25 +8,25 @@ module MicrosoftGraphBeta
         class EducationSynchronizationError < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the sync entity (school, section, student, teacher).
+            # The entryType property
             @entry_type
             ## 
-            # Represents the error code for this error.
+            # The errorCode property
             @error_code
             ## 
-            # Contains a description of the error.
+            # The errorMessage property
             @error_message
             ## 
-            # The unique identifier for the entry.
+            # The joiningValue property
             @joining_value
             ## 
-            # The time of occurrence of this error.
+            # The recordedDateTime property
             @recorded_date_time
             ## 
-            # The identifier of this error entry.
+            # The reportableIdentifier property
             @reportable_identifier
             ## 
-            ## Instantiates a new educationSynchronizationError and sets the default values.
+            ## Instantiates a new EducationSynchronizationError and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -42,14 +42,14 @@ module MicrosoftGraphBeta
                 return EducationSynchronizationError.new
             end
             ## 
-            ## Gets the entryType property value. Represents the sync entity (school, section, student, teacher).
+            ## Gets the entryType property value. The entryType property
             ## @return a string
             ## 
             def entry_type
                 return @entry_type
             end
             ## 
-            ## Sets the entryType property value. Represents the sync entity (school, section, student, teacher).
+            ## Sets the entryType property value. The entryType property
             ## @param value Value to set for the entryType property.
             ## @return a void
             ## 
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 @entry_type = value
             end
             ## 
-            ## Gets the errorCode property value. Represents the error code for this error.
+            ## Gets the errorCode property value. The errorCode property
             ## @return a string
             ## 
             def error_code
                 return @error_code
             end
             ## 
-            ## Sets the errorCode property value. Represents the error code for this error.
+            ## Sets the errorCode property value. The errorCode property
             ## @param value Value to set for the errorCode property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraphBeta
                 @error_code = value
             end
             ## 
-            ## Gets the errorMessage property value. Contains a description of the error.
+            ## Gets the errorMessage property value. The errorMessage property
             ## @return a string
             ## 
             def error_message
                 return @error_message
             end
             ## 
-            ## Sets the errorMessage property value. Contains a description of the error.
+            ## Sets the errorMessage property value. The errorMessage property
             ## @param value Value to set for the errorMessage property.
             ## @return a void
             ## 
@@ -101,14 +101,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the joiningValue property value. The unique identifier for the entry.
+            ## Gets the joiningValue property value. The joiningValue property
             ## @return a string
             ## 
             def joining_value
                 return @joining_value
             end
             ## 
-            ## Sets the joiningValue property value. The unique identifier for the entry.
+            ## Sets the joiningValue property value. The joiningValue property
             ## @param value Value to set for the joiningValue property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraphBeta
                 @joining_value = value
             end
             ## 
-            ## Gets the recordedDateTime property value. The time of occurrence of this error.
+            ## Gets the recordedDateTime property value. The recordedDateTime property
             ## @return a date_time
             ## 
             def recorded_date_time
                 return @recorded_date_time
             end
             ## 
-            ## Sets the recordedDateTime property value. The time of occurrence of this error.
+            ## Sets the recordedDateTime property value. The recordedDateTime property
             ## @param value Value to set for the recordedDateTime property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 @recorded_date_time = value
             end
             ## 
-            ## Gets the reportableIdentifier property value. The identifier of this error entry.
+            ## Gets the reportableIdentifier property value. The reportableIdentifier property
             ## @return a string
             ## 
             def reportable_identifier
                 return @reportable_identifier
             end
             ## 
-            ## Sets the reportableIdentifier property value. The identifier of this error entry.
+            ## Sets the reportableIdentifier property value. The reportableIdentifier property
             ## @param value Value to set for the reportableIdentifier property.
             ## @return a void
             ## 

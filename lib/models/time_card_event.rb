@@ -11,11 +11,14 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether the entry was recorded at the approved location.
+            # Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             @at_approved_location
             ## 
             # The time the entry is recorded.
             @date_time
+            ## 
+            # Indicates whether this action happens at an approved location.
+            @is_at_approved_location
             ## 
             # Notes about the timeCardEvent.
             @notes
@@ -23,29 +26,29 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+            ## Gets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             ## @return a boolean
             ## 
             def at_approved_location
                 return @at_approved_location
             end
             ## 
-            ## Sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+            ## Sets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
             ## @param value Value to set for the atApprovedLocation property.
             ## @return a void
             ## 
@@ -53,7 +56,7 @@ module MicrosoftGraphBeta
                 @at_approved_location = value
             end
             ## 
-            ## Instantiates a new timeCardEvent and sets the default values.
+            ## Instantiates a new TimeCardEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -91,9 +94,25 @@ module MicrosoftGraphBeta
                 return {
                     "atApprovedLocation" => lambda {|n| @at_approved_location = n.get_boolean_value() },
                     "dateTime" => lambda {|n| @date_time = n.get_date_time_value() },
+                    "isAtApprovedLocation" => lambda {|n| @is_at_approved_location = n.get_boolean_value() },
                     "notes" => lambda {|n| @notes = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the isAtApprovedLocation property value. Indicates whether this action happens at an approved location.
+            ## @return a boolean
+            ## 
+            def is_at_approved_location
+                return @is_at_approved_location
+            end
+            ## 
+            ## Sets the isAtApprovedLocation property value. Indicates whether this action happens at an approved location.
+            ## @param value Value to set for the isAtApprovedLocation property.
+            ## @return a void
+            ## 
+            def is_at_approved_location=(value)
+                @is_at_approved_location = value
             end
             ## 
             ## Gets the notes property value. Notes about the timeCardEvent.
@@ -134,6 +153,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("atApprovedLocation", @at_approved_location)
                 writer.write_date_time_value("dateTime", @date_time)
+                writer.write_boolean_value("isAtApprovedLocation", @is_at_approved_location)
                 writer.write_object_value("notes", @notes)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

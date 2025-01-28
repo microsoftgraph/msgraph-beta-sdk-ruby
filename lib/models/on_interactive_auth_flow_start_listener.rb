@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class OnInteractiveAuthFlowStartListener < MicrosoftGraphBeta::Models::AuthenticationEventListener
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            # Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.
             @handler
             ## 
-            ## Instantiates a new onInteractiveAuthFlowStartListener and sets the default values.
+            ## Instantiates a new OnInteractiveAuthFlowStartListener and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            ## Gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.
             ## @return a on_interactive_auth_flow_start_handler
             ## 
             def handler
                 return @handler
             end
             ## 
-            ## Sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+            ## Sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.
             ## @param value Value to set for the handler property.
             ## @return a void
             ## 

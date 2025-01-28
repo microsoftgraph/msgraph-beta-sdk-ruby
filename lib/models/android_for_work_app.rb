@@ -9,13 +9,13 @@ module MicrosoftGraphBeta
         class AndroidForWorkApp < MicrosoftGraphBeta::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Identity Name.
+            # The Identity Name. This property is read-only.
             @app_identifier
             ## 
             # The Play for Work Store app URL.
             @app_store_url
             ## 
-            # The package identifier.
+            # The package identifier. This property is read-only.
             @package_id
             ## 
             # The total number of VPP licenses.
@@ -24,14 +24,14 @@ module MicrosoftGraphBeta
             # The number of VPP licenses in use.
             @used_license_count
             ## 
-            ## Gets the appIdentifier property value. The Identity Name.
+            ## Gets the appIdentifier property value. The Identity Name. This property is read-only.
             ## @return a string
             ## 
             def app_identifier
                 return @app_identifier
             end
             ## 
-            ## Sets the appIdentifier property value. The Identity Name.
+            ## Sets the appIdentifier property value. The Identity Name. This property is read-only.
             ## @param value Value to set for the appIdentifier property.
             ## @return a void
             ## 
@@ -54,7 +54,7 @@ module MicrosoftGraphBeta
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new androidForWorkApp and sets the default values.
+            ## Instantiates a new AndroidForWorkApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the packageId property value. The package identifier.
+            ## Gets the packageId property value. The package identifier. This property is read-only.
             ## @return a string
             ## 
             def package_id
                 return @package_id
             end
             ## 
-            ## Sets the packageId property value. The package identifier.
+            ## Sets the packageId property value. The package identifier. This property is read-only.
             ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
@@ -106,9 +106,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appIdentifier", @app_identifier)
                 writer.write_string_value("appStoreUrl", @app_store_url)
-                writer.write_string_value("packageId", @package_id)
                 writer.write_number_value("totalLicenseCount", @total_license_count)
                 writer.write_number_value("usedLicenseCount", @used_license_count)
             end

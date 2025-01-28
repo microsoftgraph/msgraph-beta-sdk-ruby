@@ -57,7 +57,7 @@ module MicrosoftGraphBeta
                 @constraints = value
             end
             ## 
-            ## Instantiates a new deviceManagementSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

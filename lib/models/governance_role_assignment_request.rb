@@ -62,7 +62,7 @@ module MicrosoftGraphBeta
                 @assignment_state = value
             end
             ## 
-            ## Instantiates a new governanceRoleAssignmentRequest and sets the default values.
+            ## Instantiates a new GovernanceRoleAssignmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The default value of boolean param
             @default_value
             ## 
-            ## Instantiates a new deviceHealthScriptBooleanParameter and sets the default values.
+            ## Instantiates a new DeviceHealthScriptBooleanParameter and sets the default values.
             ## @return a void
             ## 
             def initialize()

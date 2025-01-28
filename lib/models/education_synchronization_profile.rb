@@ -11,31 +11,31 @@ module MicrosoftGraphBeta
             # The dataProvider property
             @data_provider
             ## 
-            # Name of the configuration profile for syncing identities.
+            # The displayName property
             @display_name
             ## 
-            # All errors associated with this synchronization profile.
+            # The errors property
             @errors
             ## 
-            # The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
+            # The expirationDate property
             @expiration_date
             ## 
-            # Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
+            # The handleSpecialCharacterConstraint property
             @handle_special_character_constraint
             ## 
             # The identitySynchronizationConfiguration property
             @identity_synchronization_configuration
             ## 
-            # License setup configuration.
+            # The licensesToAssign property
             @licenses_to_assign
             ## 
-            # The synchronization status.
+            # The profileStatus property
             @profile_status
             ## 
-            # The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
+            # The state property
             @state
             ## 
-            ## Instantiates a new educationSynchronizationProfile and sets the default values.
+            ## Instantiates a new EducationSynchronizationProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 @data_provider = value
             end
             ## 
-            ## Gets the displayName property value. Name of the configuration profile for syncing identities.
+            ## Gets the displayName property value. The displayName property
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Name of the configuration profile for syncing identities.
+            ## Sets the displayName property value. The displayName property
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -81,14 +81,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the errors property value. All errors associated with this synchronization profile.
+            ## Gets the errors property value. The errors property
             ## @return a education_synchronization_error
             ## 
             def errors
                 return @errors
             end
             ## 
-            ## Sets the errors property value. All errors associated with this synchronization profile.
+            ## Sets the errors property value. The errors property
             ## @param value Value to set for the errors property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraphBeta
                 @errors = value
             end
             ## 
-            ## Gets the expirationDate property value. The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
+            ## Gets the expirationDate property value. The expirationDate property
             ## @return a date
             ## 
             def expiration_date
                 return @expiration_date
             end
             ## 
-            ## Sets the expirationDate property value. The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
+            ## Sets the expirationDate property value. The expirationDate property
             ## @param value Value to set for the expirationDate property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the handleSpecialCharacterConstraint property value. Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
+            ## Gets the handleSpecialCharacterConstraint property value. The handleSpecialCharacterConstraint property
             ## @return a boolean
             ## 
             def handle_special_character_constraint
                 return @handle_special_character_constraint
             end
             ## 
-            ## Sets the handleSpecialCharacterConstraint property value. Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
+            ## Sets the handleSpecialCharacterConstraint property value. The handleSpecialCharacterConstraint property
             ## @param value Value to set for the handleSpecialCharacterConstraint property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraphBeta
                 @identity_synchronization_configuration = value
             end
             ## 
-            ## Gets the licensesToAssign property value. License setup configuration.
+            ## Gets the licensesToAssign property value. The licensesToAssign property
             ## @return a education_synchronization_license_assignment
             ## 
             def licenses_to_assign
                 return @licenses_to_assign
             end
             ## 
-            ## Sets the licensesToAssign property value. License setup configuration.
+            ## Sets the licensesToAssign property value. The licensesToAssign property
             ## @param value Value to set for the licensesToAssign property.
             ## @return a void
             ## 
@@ -173,14 +173,14 @@ module MicrosoftGraphBeta
                 @licenses_to_assign = value
             end
             ## 
-            ## Gets the profileStatus property value. The synchronization status.
+            ## Gets the profileStatus property value. The profileStatus property
             ## @return a education_synchronization_profile_status
             ## 
             def profile_status
                 return @profile_status
             end
             ## 
-            ## Sets the profileStatus property value. The synchronization status.
+            ## Sets the profileStatus property value. The profileStatus property
             ## @param value Value to set for the profileStatus property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("state", @state)
             end
             ## 
-            ## Gets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
+            ## Gets the state property value. The state property
             ## @return a education_synchronization_profile_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
+            ## Sets the state property value. The state property
             ## @param value Value to set for the state property.
             ## @return a void
             ## 

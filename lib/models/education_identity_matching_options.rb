@@ -16,24 +16,24 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+            # The sourcePropertyName property
             @source_property_name
             ## 
-            # The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+            # The targetDomain property
             @target_domain
             ## 
-            # The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            # The targetPropertyName property
             @target_property_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraphBeta
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new educationIdentityMatchingOptions and sets the default values.
+            ## Instantiates a new EducationIdentityMatchingOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,14 +113,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+            ## Gets the sourcePropertyName property value. The sourcePropertyName property
             ## @return a string
             ## 
             def source_property_name
                 return @source_property_name
             end
             ## 
-            ## Sets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+            ## Sets the sourcePropertyName property value. The sourcePropertyName property
             ## @param value Value to set for the sourcePropertyName property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @source_property_name = value
             end
             ## 
-            ## Gets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+            ## Gets the targetDomain property value. The targetDomain property
             ## @return a string
             ## 
             def target_domain
                 return @target_domain
             end
             ## 
-            ## Sets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+            ## Sets the targetDomain property value. The targetDomain property
             ## @param value Value to set for the targetDomain property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @target_domain = value
             end
             ## 
-            ## Gets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            ## Gets the targetPropertyName property value. The targetPropertyName property
             ## @return a string
             ## 
             def target_property_name
                 return @target_property_name
             end
             ## 
-            ## Sets the targetPropertyName property value. The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.
+            ## Sets the targetPropertyName property value. The targetPropertyName property
             ## @param value Value to set for the targetPropertyName property.
             ## @return a void
             ## 

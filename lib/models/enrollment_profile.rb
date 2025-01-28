@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @configuration_endpoint_url = value
             end
             ## 
-            ## Instantiates a new enrollmentProfile and sets the default values.
+            ## Instantiates a new EnrollmentProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,6 +67,10 @@ module MicrosoftGraphBeta
                             return DepIOSEnrollmentProfile.new
                         when "#microsoft.graph.depMacOSEnrollmentProfile"
                             return DepMacOSEnrollmentProfile.new
+                        when "#microsoft.graph.depTvOSEnrollmentProfile"
+                            return DepTvOSEnrollmentProfile.new
+                        when "#microsoft.graph.depVisionOSEnrollmentProfile"
+                            return DepVisionOSEnrollmentProfile.new
                     end
                 end
                 return EnrollmentProfile.new

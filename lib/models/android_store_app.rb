@@ -9,32 +9,14 @@ module MicrosoftGraphBeta
         class AndroidStoreApp < MicrosoftGraphBeta::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Identity Name.
-            @app_identifier
-            ## 
             # The Android app store URL.
             @app_store_url
             ## 
             # The value for the minimum applicable operating system.
             @minimum_supported_operating_system
             ## 
-            # The package identifier.
+            # The package identifier. This property is read-only.
             @package_id
-            ## 
-            ## Gets the appIdentifier property value. The Identity Name.
-            ## @return a string
-            ## 
-            def app_identifier
-                return @app_identifier
-            end
-            ## 
-            ## Sets the appIdentifier property value. The Identity Name.
-            ## @param value Value to set for the appIdentifier property.
-            ## @return a void
-            ## 
-            def app_identifier=(value)
-                @app_identifier = value
-            end
             ## 
             ## Gets the appStoreUrl property value. The Android app store URL.
             ## @return a string
@@ -51,7 +33,7 @@ module MicrosoftGraphBeta
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new androidStoreApp and sets the default values.
+            ## Instantiates a new AndroidStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,7 +55,6 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "appIdentifier" => lambda {|n| @app_identifier = n.get_string_value() },
                     "appStoreUrl" => lambda {|n| @app_store_url = n.get_string_value() },
                     "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
                     "packageId" => lambda {|n| @package_id = n.get_string_value() },
@@ -95,14 +76,14 @@ module MicrosoftGraphBeta
                 @minimum_supported_operating_system = value
             end
             ## 
-            ## Gets the packageId property value. The package identifier.
+            ## Gets the packageId property value. The package identifier. This property is read-only.
             ## @return a string
             ## 
             def package_id
                 return @package_id
             end
             ## 
-            ## Sets the packageId property value. The package identifier.
+            ## Sets the packageId property value. The package identifier. This property is read-only.
             ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
@@ -117,10 +98,8 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appIdentifier", @app_identifier)
                 writer.write_string_value("appStoreUrl", @app_store_url)
                 writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("packageId", @package_id)
             end
         end
     end

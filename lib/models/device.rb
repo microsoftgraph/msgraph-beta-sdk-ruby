@@ -8,13 +8,16 @@ module MicrosoftGraphBeta
         class Device < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+            # true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.
             @account_enabled
+            ## 
+            # List of alternative names for the device.
+            @alternative_names
             ## 
             # For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
             @alternative_security_ids
             ## 
-            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             @approximate_last_sign_in_date_time
             ## 
             # Set of commands sent to this device.
@@ -26,37 +29,40 @@ module MicrosoftGraphBeta
             # User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
             @device_category
             ## 
-            # Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
+            # Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).
             @device_id
             ## 
             # For internal use only. Set to null.
             @device_metadata
             ## 
-            # Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+            # Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
             @device_ownership
+            ## 
+            # Device template used to instantiate this device. Nullable. Read-only.
+            @device_template
             ## 
             # For internal use only.
             @device_version
             ## 
-            # The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
-            # The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+            # The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.
             @domain_name
             ## 
-            # Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+            # Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.
             @enrollment_profile_name
             ## 
-            # Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
+            # Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
             @enrollment_type
             ## 
-            # Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
+            # Contains extension attributes 1-15 for the device. The individual extension attributes aren't selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).
             @extension_attributes
             ## 
             # The collection of open extensions defined for the device. Read-only. Nullable.
             @extensions
             ## 
-            # List of hostNames for the device.
+            # List of host names for the device.
             @hostnames
             ## 
             # true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
@@ -65,16 +71,16 @@ module MicrosoftGraphBeta
             # true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
             @is_managed
             ## 
-            # true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            # Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.
             @is_management_restricted
             ## 
-            # true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+            # true if the device is rooted or jail-broken. This property can only be updated by Intune.
             @is_rooted
             ## 
-            # Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            # Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             @kind
             ## 
-            # Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+            # Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
             @management_type
             ## 
             # Manufacturer of the device. Read-only.
@@ -89,11 +95,14 @@ module MicrosoftGraphBeta
             # Model of the device. Read-only.
             @model
             ## 
-            # Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            # Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             @name
             ## 
             # The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
             @on_premises_last_sync_date_time
+            ## 
+            # The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+            @on_premises_security_identifier
             ## 
             # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             @on_premises_sync_enabled
@@ -107,7 +116,7 @@ module MicrosoftGraphBeta
             # For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
             @physical_ids
             ## 
-            # Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            # Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             @platform
             ## 
             # The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
@@ -131,25 +140,40 @@ module MicrosoftGraphBeta
             # Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
             @transitive_member_of
             ## 
-            # Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            # Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
             @trust_type
             ## 
             # Represents the usage rights a device has been granted.
             @usage_rights
             ## 
-            ## Gets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+            ## Gets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.
             ## @return a boolean
             ## 
             def account_enabled
                 return @account_enabled
             end
             ## 
-            ## Sets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+            ## Sets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.
             ## @param value Value to set for the accountEnabled property.
             ## @return a void
             ## 
             def account_enabled=(value)
                 @account_enabled = value
+            end
+            ## 
+            ## Gets the alternativeNames property value. List of alternative names for the device.
+            ## @return a string
+            ## 
+            def alternative_names
+                return @alternative_names
+            end
+            ## 
+            ## Sets the alternativeNames property value. List of alternative names for the device.
+            ## @param value Value to set for the alternativeNames property.
+            ## @return a void
+            ## 
+            def alternative_names=(value)
+                @alternative_names = value
             end
             ## 
             ## Gets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -167,14 +191,14 @@ module MicrosoftGraphBeta
                 @alternative_security_ids = value
             end
             ## 
-            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @return a date_time
             ## 
             def approximate_last_sign_in_date_time
                 return @approximate_last_sign_in_date_time
             end
             ## 
-            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @param value Value to set for the approximateLastSignInDateTime property.
             ## @return a void
             ## 
@@ -212,7 +236,7 @@ module MicrosoftGraphBeta
                 @compliance_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new device and sets the default values.
+            ## Instantiates a new Device and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -244,14 +268,14 @@ module MicrosoftGraphBeta
                 @device_category = value
             end
             ## 
-            ## Gets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
+            ## Gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).
             ## @return a string
             ## 
             def device_id
                 return @device_id
             end
             ## 
-            ## Sets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
+            ## Sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).
             ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 
@@ -274,19 +298,34 @@ module MicrosoftGraphBeta
                 @device_metadata = value
             end
             ## 
-            ## Gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+            ## Gets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
             ## @return a string
             ## 
             def device_ownership
                 return @device_ownership
             end
             ## 
-            ## Sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+            ## Sets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
             ## @param value Value to set for the deviceOwnership property.
             ## @return a void
             ## 
             def device_ownership=(value)
                 @device_ownership = value
+            end
+            ## 
+            ## Gets the deviceTemplate property value. Device template used to instantiate this device. Nullable. Read-only.
+            ## @return a device_template
+            ## 
+            def device_template
+                return @device_template
+            end
+            ## 
+            ## Sets the deviceTemplate property value. Device template used to instantiate this device. Nullable. Read-only.
+            ## @param value Value to set for the deviceTemplate property.
+            ## @return a void
+            ## 
+            def device_template=(value)
+                @device_template = value
             end
             ## 
             ## Gets the deviceVersion property value. For internal use only.
@@ -304,14 +343,14 @@ module MicrosoftGraphBeta
                 @device_version = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -319,14 +358,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+            ## Gets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.
             ## @return a string
             ## 
             def domain_name
                 return @domain_name
             end
             ## 
-            ## Sets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+            ## Sets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.
             ## @param value Value to set for the domainName property.
             ## @return a void
             ## 
@@ -334,14 +373,14 @@ module MicrosoftGraphBeta
                 @domain_name = value
             end
             ## 
-            ## Gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+            ## Gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.
             ## @return a string
             ## 
             def enrollment_profile_name
                 return @enrollment_profile_name
             end
             ## 
-            ## Sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+            ## Sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.
             ## @param value Value to set for the enrollmentProfileName property.
             ## @return a void
             ## 
@@ -349,14 +388,14 @@ module MicrosoftGraphBeta
                 @enrollment_profile_name = value
             end
             ## 
-            ## Gets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
+            ## Gets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
             ## @return a string
             ## 
             def enrollment_type
                 return @enrollment_type
             end
             ## 
-            ## Sets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
+            ## Sets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
             ## @param value Value to set for the enrollmentType property.
             ## @return a void
             ## 
@@ -364,14 +403,14 @@ module MicrosoftGraphBeta
                 @enrollment_type = value
             end
             ## 
-            ## Gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
+            ## Gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes aren't selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).
             ## @return a on_premises_extension_attributes
             ## 
             def extension_attributes
                 return @extension_attributes
             end
             ## 
-            ## Sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
+            ## Sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes aren't selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).
             ## @param value Value to set for the extensionAttributes property.
             ## @return a void
             ## 
@@ -400,6 +439,7 @@ module MicrosoftGraphBeta
             def get_field_deserializers()
                 return super.merge({
                     "accountEnabled" => lambda {|n| @account_enabled = n.get_boolean_value() },
+                    "alternativeNames" => lambda {|n| @alternative_names = n.get_collection_of_primitive_values(String) },
                     "alternativeSecurityIds" => lambda {|n| @alternative_security_ids = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AlternativeSecurityId.create_from_discriminator_value(pn) }) },
                     "approximateLastSignInDateTime" => lambda {|n| @approximate_last_sign_in_date_time = n.get_date_time_value() },
                     "commands" => lambda {|n| @commands = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Command.create_from_discriminator_value(pn) }) },
@@ -408,6 +448,7 @@ module MicrosoftGraphBeta
                     "deviceId" => lambda {|n| @device_id = n.get_string_value() },
                     "deviceMetadata" => lambda {|n| @device_metadata = n.get_string_value() },
                     "deviceOwnership" => lambda {|n| @device_ownership = n.get_string_value() },
+                    "deviceTemplate" => lambda {|n| @device_template = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceTemplate.create_from_discriminator_value(pn) }) },
                     "deviceVersion" => lambda {|n| @device_version = n.get_number_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "domainName" => lambda {|n| @domain_name = n.get_string_value() },
@@ -428,6 +469,7 @@ module MicrosoftGraphBeta
                     "model" => lambda {|n| @model = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
+                    "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "operatingSystem" => lambda {|n| @operating_system = n.get_string_value() },
                     "operatingSystemVersion" => lambda {|n| @operating_system_version = n.get_string_value() },
@@ -445,14 +487,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the hostnames property value. List of hostNames for the device.
+            ## Gets the hostnames property value. List of host names for the device.
             ## @return a string
             ## 
             def hostnames
                 return @hostnames
             end
             ## 
-            ## Sets the hostnames property value. List of hostNames for the device.
+            ## Sets the hostnames property value. List of host names for the device.
             ## @param value Value to set for the hostnames property.
             ## @return a void
             ## 
@@ -490,14 +532,14 @@ module MicrosoftGraphBeta
                 @is_managed = value
             end
             ## 
-            ## Gets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            ## Gets the isManagementRestricted property value. Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.
             ## @return a boolean
             ## 
             def is_management_restricted
                 return @is_management_restricted
             end
             ## 
-            ## Sets the isManagementRestricted property value. true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            ## Sets the isManagementRestricted property value. Indicates whether the device is a member of a restricted management administrative unit. The default value is false. Read-only.  To manage a device that's a member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.
             ## @param value Value to set for the isManagementRestricted property.
             ## @return a void
             ## 
@@ -505,14 +547,14 @@ module MicrosoftGraphBeta
                 @is_management_restricted = value
             end
             ## 
-            ## Gets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+            ## Gets the isRooted property value. true if the device is rooted or jail-broken. This property can only be updated by Intune.
             ## @return a boolean
             ## 
             def is_rooted
                 return @is_rooted
             end
             ## 
-            ## Sets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
+            ## Sets the isRooted property value. true if the device is rooted or jail-broken. This property can only be updated by Intune.
             ## @param value Value to set for the isRooted property.
             ## @return a void
             ## 
@@ -520,14 +562,14 @@ module MicrosoftGraphBeta
                 @is_rooted = value
             end
             ## 
-            ## Gets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Gets the kind property value. Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             ## @return a string
             ## 
             def kind
                 return @kind
             end
             ## 
-            ## Sets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Sets the kind property value. Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             ## @param value Value to set for the kind property.
             ## @return a void
             ## 
@@ -535,14 +577,14 @@ module MicrosoftGraphBeta
                 @kind = value
             end
             ## 
-            ## Gets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+            ## Gets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
             ## @return a string
             ## 
             def management_type
                 return @management_type
             end
             ## 
-            ## Sets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+            ## Sets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
             ## @param value Value to set for the managementType property.
             ## @return a void
             ## 
@@ -610,14 +652,14 @@ module MicrosoftGraphBeta
                 @model = value
             end
             ## 
-            ## Gets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Gets the name property value. Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Sets the name property value. Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -638,6 +680,21 @@ module MicrosoftGraphBeta
             ## 
             def on_premises_last_sync_date_time=(value)
                 @on_premises_last_sync_date_time = value
+            end
+            ## 
+            ## Gets the onPremisesSecurityIdentifier property value. The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+            ## @return a string
+            ## 
+            def on_premises_security_identifier
+                return @on_premises_security_identifier
+            end
+            ## 
+            ## Sets the onPremisesSecurityIdentifier property value. The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
+            ## @return a void
+            ## 
+            def on_premises_security_identifier=(value)
+                @on_premises_security_identifier = value
             end
             ## 
             ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
@@ -700,14 +757,14 @@ module MicrosoftGraphBeta
                 @physical_ids = value
             end
             ## 
-            ## Gets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Gets the platform property value. Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             ## @return a string
             ## 
             def platform
                 return @platform
             end
             ## 
-            ## Sets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            ## Sets the platform property value. Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             ## @param value Value to set for the platform property.
             ## @return a void
             ## 
@@ -783,6 +840,7 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("accountEnabled", @account_enabled)
+                writer.write_collection_of_primitive_values("alternativeNames", @alternative_names)
                 writer.write_collection_of_object_values("alternativeSecurityIds", @alternative_security_ids)
                 writer.write_date_time_value("approximateLastSignInDateTime", @approximate_last_sign_in_date_time)
                 writer.write_collection_of_object_values("commands", @commands)
@@ -791,6 +849,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("deviceId", @device_id)
                 writer.write_string_value("deviceMetadata", @device_metadata)
                 writer.write_string_value("deviceOwnership", @device_ownership)
+                writer.write_collection_of_object_values("deviceTemplate", @device_template)
                 writer.write_number_value("deviceVersion", @device_version)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("domainName", @domain_name)
@@ -811,6 +870,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("model", @model)
                 writer.write_string_value("name", @name)
                 writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
                 writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
                 writer.write_string_value("operatingSystem", @operating_system)
                 writer.write_string_value("operatingSystemVersion", @operating_system_version)
@@ -872,14 +932,14 @@ module MicrosoftGraphBeta
                 @transitive_member_of = value
             end
             ## 
-            ## Gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            ## Gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
             ## @return a string
             ## 
             def trust_type
                 return @trust_type
             end
             ## 
-            ## Sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            ## Sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
             ## @param value Value to set for the trustType property.
             ## @return a void
             ## 

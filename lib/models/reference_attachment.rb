@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ReferenceAttachment < MicrosoftGraphBeta::Models::Attachment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+            # Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.
             @is_folder
             ## 
             # Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
@@ -19,13 +19,13 @@ module MicrosoftGraphBeta
             # The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
             @provider_type
             ## 
-            # URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+            # URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
             @source_url
             ## 
             # Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
             @thumbnail_url
             ## 
-            ## Instantiates a new referenceAttachment and sets the default values.
+            ## Instantiates a new ReferenceAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+            ## Gets the isFolder property value. Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.
             ## @return a boolean
             ## 
             def is_folder
                 return @is_folder
             end
             ## 
-            ## Sets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+            ## Sets the isFolder property value. Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.
             ## @param value Value to set for the isFolder property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("thumbnailUrl", @thumbnail_url)
             end
             ## 
-            ## Gets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+            ## Gets the sourceUrl property value. URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
             ## @return a string
             ## 
             def source_url
                 return @source_url
             end
             ## 
-            ## Sets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+            ## Sets the sourceUrl property value. URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
             ## @param value Value to set for the sourceUrl property.
             ## @return a void
             ## 

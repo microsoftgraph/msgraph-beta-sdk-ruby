@@ -28,13 +28,16 @@ module MicrosoftGraphBeta
             # The DNS servers that will be used by the clients
             @dns_servers
             ## 
+            # The IPv6 subnet that will be used to allocate virtual address for the clients
+            @ipv6_network
+            ## 
             # When the configuration was last updated
             @last_update_date_time
             ## 
             # The port that both TCP and UPD will listen over on the server
             @listen_port
             ## 
-            # The subnet that will be used to allocate virtual address for the clients
+            # The IPv4 subnet that will be used to allocate virtual address for the clients
             @network
             ## 
             # List of Scope Tags for this Entity instance
@@ -70,7 +73,7 @@ module MicrosoftGraphBeta
                 @advanced_settings = value
             end
             ## 
-            ## Instantiates a new microsoftTunnelConfiguration and sets the default values.
+            ## Instantiates a new MicrosoftTunnelConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -172,6 +175,7 @@ module MicrosoftGraphBeta
                     "disableUdpConnections" => lambda {|n| @disable_udp_connections = n.get_boolean_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "dnsServers" => lambda {|n| @dns_servers = n.get_collection_of_primitive_values(String) },
+                    "ipv6Network" => lambda {|n| @ipv6_network = n.get_string_value() },
                     "lastUpdateDateTime" => lambda {|n| @last_update_date_time = n.get_date_time_value() },
                     "listenPort" => lambda {|n| @listen_port = n.get_number_value() },
                     "network" => lambda {|n| @network = n.get_string_value() },
@@ -182,6 +186,21 @@ module MicrosoftGraphBeta
                     "routesInclude" => lambda {|n| @routes_include = n.get_collection_of_primitive_values(String) },
                     "splitDNS" => lambda {|n| @split_d_n_s = n.get_collection_of_primitive_values(String) },
                 })
+            end
+            ## 
+            ## Gets the ipv6Network property value. The IPv6 subnet that will be used to allocate virtual address for the clients
+            ## @return a string
+            ## 
+            def ipv6_network
+                return @ipv6_network
+            end
+            ## 
+            ## Sets the ipv6Network property value. The IPv6 subnet that will be used to allocate virtual address for the clients
+            ## @param value Value to set for the ipv6Network property.
+            ## @return a void
+            ## 
+            def ipv6_network=(value)
+                @ipv6_network = value
             end
             ## 
             ## Gets the lastUpdateDateTime property value. When the configuration was last updated
@@ -214,14 +233,14 @@ module MicrosoftGraphBeta
                 @listen_port = value
             end
             ## 
-            ## Gets the network property value. The subnet that will be used to allocate virtual address for the clients
+            ## Gets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
             ## @return a string
             ## 
             def network
                 return @network
             end
             ## 
-            ## Sets the network property value. The subnet that will be used to allocate virtual address for the clients
+            ## Sets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
             ## @param value Value to set for the network property.
             ## @return a void
             ## 
@@ -317,6 +336,7 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("disableUdpConnections", @disable_udp_connections)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_collection_of_primitive_values("dnsServers", @dns_servers)
+                writer.write_string_value("ipv6Network", @ipv6_network)
                 writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time)
                 writer.write_number_value("listenPort", @listen_port)
                 writer.write_string_value("network", @network)

@@ -5,7 +5,7 @@ module MicrosoftGraphBeta
             ClientError: :ClientError,
             Failure: :Failure,
             Timeout: :Timeout,
-            Other: :Other,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
             @type
             ## 
-            ## Instantiates a new typedEmailAddress and sets the default values.
+            ## Instantiates a new TypedEmailAddress and sets the default values.
             ## @return a void
             ## 
             def initialize()

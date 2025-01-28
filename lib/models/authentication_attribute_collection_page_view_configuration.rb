@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The description of the page.
             @description
             ## 
-            # The display configuration of attributes being collected on the attribute collection page.
+            # The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they're removed from the user flow.
             @inputs
             ## 
             # The OdataType property
@@ -22,22 +22,22 @@ module MicrosoftGraphBeta
             # The title of the attribute collection page.
             @title
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new authenticationAttributeCollectionPageViewConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationAttributeCollectionPageViewConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,14 +80,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the inputs property value. The display configuration of attributes being collected on the attribute collection page.
+            ## Gets the inputs property value. The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they're removed from the user flow.
             ## @return a authentication_attribute_collection_input_configuration
             ## 
             def inputs
                 return @inputs
             end
             ## 
-            ## Sets the inputs property value. The display configuration of attributes being collected on the attribute collection page.
+            ## Sets the inputs property value. The display configuration of attributes being collected on the attribute collection page. You must specify all attributes that you want to retain, otherwise they're removed from the user flow.
             ## @param value Value to set for the inputs property.
             ## @return a void
             ## 

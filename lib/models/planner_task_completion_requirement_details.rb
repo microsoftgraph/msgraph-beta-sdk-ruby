@@ -10,25 +10,46 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # Information about the requirements of an approval.
+            @approval_requirement
+            ## 
             # Information about the requirements for completing the checklist.
             @checklist_requirement
+            ## 
+            # Information about the requirements for completing the forms.
+            @forms_requirement
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the approvalRequirement property value. Information about the requirements of an approval.
+            ## @return a planner_approval_requirement
+            ## 
+            def approval_requirement
+                return @approval_requirement
+            end
+            ## 
+            ## Sets the approvalRequirement property value. Information about the requirements of an approval.
+            ## @param value Value to set for the approvalRequirement property.
+            ## @return a void
+            ## 
+            def approval_requirement=(value)
+                @approval_requirement = value
             end
             ## 
             ## Gets the checklistRequirement property value. Information about the requirements for completing the checklist.
@@ -46,7 +67,7 @@ module MicrosoftGraphBeta
                 @checklist_requirement = value
             end
             ## 
-            ## Instantiates a new plannerTaskCompletionRequirementDetails and sets the default values.
+            ## Instantiates a new PlannerTaskCompletionRequirementDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,12 +83,29 @@ module MicrosoftGraphBeta
                 return PlannerTaskCompletionRequirementDetails.new
             end
             ## 
+            ## Gets the formsRequirement property value. Information about the requirements for completing the forms.
+            ## @return a planner_forms_requirement
+            ## 
+            def forms_requirement
+                return @forms_requirement
+            end
+            ## 
+            ## Sets the formsRequirement property value. Information about the requirements for completing the forms.
+            ## @param value Value to set for the formsRequirement property.
+            ## @return a void
+            ## 
+            def forms_requirement=(value)
+                @forms_requirement = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
+                    "approvalRequirement" => lambda {|n| @approval_requirement = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerApprovalRequirement.create_from_discriminator_value(pn) }) },
                     "checklistRequirement" => lambda {|n| @checklist_requirement = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerChecklistRequirement.create_from_discriminator_value(pn) }) },
+                    "formsRequirement" => lambda {|n| @forms_requirement = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PlannerFormsRequirement.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -93,7 +131,9 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("approvalRequirement", @approval_requirement)
                 writer.write_object_value("checklistRequirement", @checklist_requirement)
+                writer.write_object_value("formsRequirement", @forms_requirement)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

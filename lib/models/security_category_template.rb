@@ -8,9 +8,9 @@ module MicrosoftGraphBeta
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Represents all subcategories under a particular category.
-            @sub_categories
+            @subcategories
             ## 
-            ## Instantiates a new securityCategoryTemplate and sets the default values.
+            ## Instantiates a new SecurityCategoryTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "subCategories" => lambda {|n| @sub_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubCategoryTemplate.create_from_discriminator_value(pn) }) },
+                    "subcategories" => lambda {|n| @subcategories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecuritySubcategoryTemplate.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -42,22 +42,22 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("subCategories", @sub_categories)
+                writer.write_collection_of_object_values("subcategories", @subcategories)
             end
             ## 
-            ## Gets the subCategories property value. Represents all subcategories under a particular category.
-            ## @return a security_sub_category_template
+            ## Gets the subcategories property value. Represents all subcategories under a particular category.
+            ## @return a security_subcategory_template
             ## 
-            def sub_categories
-                return @sub_categories
+            def subcategories
+                return @subcategories
             end
             ## 
-            ## Sets the subCategories property value. Represents all subcategories under a particular category.
-            ## @param value Value to set for the subCategories property.
+            ## Sets the subcategories property value. Represents all subcategories under a particular category.
+            ## @param value Value to set for the subcategories property.
             ## @return a void
             ## 
-            def sub_categories=(value)
-                @sub_categories = value
+            def subcategories=(value)
+                @subcategories = value
             end
         end
     end

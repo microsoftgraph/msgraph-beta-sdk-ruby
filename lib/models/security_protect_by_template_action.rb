@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
             @template_id
             ## 
-            ## Instantiates a new securityProtectByTemplateAction and sets the default values.
+            ## Instantiates a new SecurityProtectByTemplateAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

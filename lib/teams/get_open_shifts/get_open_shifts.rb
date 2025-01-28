@@ -1,0 +1,1 @@
+require_relative 'get_open_shifts_get_response'

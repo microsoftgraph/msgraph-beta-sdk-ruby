@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
         class CloudPcReviewStatus
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.
+            @access_tier
+            ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
@@ -41,15 +44,30 @@ module MicrosoftGraphBeta
             # The userAccessLevel property
             @user_access_level
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the accessTier property value. The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.
+            ## @return a cloud_pc_blob_access_tier
+            ## 
+            def access_tier
+                return @access_tier
+            end
+            ## 
+            ## Sets the accessTier property value. The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.
+            ## @param value Value to set for the accessTier property.
+            ## @return a void
+            ## 
+            def access_tier=(value)
+                @access_tier = value
+            end
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -101,7 +119,7 @@ module MicrosoftGraphBeta
                 @azure_storage_container_name = value
             end
             ## 
-            ## Instantiates a new cloudPcReviewStatus and sets the default values.
+            ## Instantiates a new CloudPcReviewStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -122,6 +140,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "accessTier" => lambda {|n| @access_tier = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcBlobAccessTier) },
                     "azureStorageAccountId" => lambda {|n| @azure_storage_account_id = n.get_string_value() },
                     "azureStorageAccountName" => lambda {|n| @azure_storage_account_name = n.get_string_value() },
                     "azureStorageContainerName" => lambda {|n| @azure_storage_container_name = n.get_string_value() },
@@ -201,6 +220,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_enum_value("accessTier", @access_tier)
                 writer.write_string_value("azureStorageAccountId", @azure_storage_account_id)
                 writer.write_string_value("azureStorageAccountName", @azure_storage_account_name)
                 writer.write_string_value("azureStorageContainerName", @azure_storage_container_name)

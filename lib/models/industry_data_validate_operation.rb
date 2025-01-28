@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # The status of a long-running operation.
         class IndustryDataValidateOperation < MicrosoftGraphBeta::Models::LongRunningOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraphBeta
             # Set of warnings discovered through validation.
             @warnings
             ## 
-            ## Instantiates a new industryDataValidateOperation and sets the default values.
+            ## Instantiates a new IndustryDataValidateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

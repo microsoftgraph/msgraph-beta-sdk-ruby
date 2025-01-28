@@ -7,35 +7,35 @@ module MicrosoftGraphBeta
         class EducationPowerSchoolDataProvider < MicrosoftGraphBeta::Models::EducationSynchronizationDataProvider
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates whether the source has multiple identifiers for a single student or teacher.
+            # The allowTeachersInMultipleSchools property
             @allow_teachers_in_multiple_schools
             ## 
-            # The client ID used to connect to PowerSchool.
+            # The clientId property
             @client_id
             ## 
-            # The client secret to authenticate the connection to the PowerSchool instance.
+            # The clientSecret property
             @client_secret
             ## 
-            # The connection URL to the PowerSchool instance.
+            # The connectionUrl property
             @connection_url
             ## 
-            # Optional customization to be applied to the synchronization profile.
+            # The customizations property
             @customizations
             ## 
-            # The school year to sync.
+            # The schoolYear property
             @school_year
             ## 
-            # The list of schools to sync.
+            # The schoolsIds property
             @schools_ids
             ## 
-            ## Gets the allowTeachersInMultipleSchools property value. Indicates whether the source has multiple identifiers for a single student or teacher.
+            ## Gets the allowTeachersInMultipleSchools property value. The allowTeachersInMultipleSchools property
             ## @return a boolean
             ## 
             def allow_teachers_in_multiple_schools
                 return @allow_teachers_in_multiple_schools
             end
             ## 
-            ## Sets the allowTeachersInMultipleSchools property value. Indicates whether the source has multiple identifiers for a single student or teacher.
+            ## Sets the allowTeachersInMultipleSchools property value. The allowTeachersInMultipleSchools property
             ## @param value Value to set for the allowTeachersInMultipleSchools property.
             ## @return a void
             ## 
@@ -43,14 +43,14 @@ module MicrosoftGraphBeta
                 @allow_teachers_in_multiple_schools = value
             end
             ## 
-            ## Gets the clientId property value. The client ID used to connect to PowerSchool.
+            ## Gets the clientId property value. The clientId property
             ## @return a string
             ## 
             def client_id
                 return @client_id
             end
             ## 
-            ## Sets the clientId property value. The client ID used to connect to PowerSchool.
+            ## Sets the clientId property value. The clientId property
             ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraphBeta
                 @client_id = value
             end
             ## 
-            ## Gets the clientSecret property value. The client secret to authenticate the connection to the PowerSchool instance.
+            ## Gets the clientSecret property value. The clientSecret property
             ## @return a string
             ## 
             def client_secret
                 return @client_secret
             end
             ## 
-            ## Sets the clientSecret property value. The client secret to authenticate the connection to the PowerSchool instance.
+            ## Sets the clientSecret property value. The clientSecret property
             ## @param value Value to set for the clientSecret property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 @client_secret = value
             end
             ## 
-            ## Gets the connectionUrl property value. The connection URL to the PowerSchool instance.
+            ## Gets the connectionUrl property value. The connectionUrl property
             ## @return a string
             ## 
             def connection_url
                 return @connection_url
             end
             ## 
-            ## Sets the connectionUrl property value. The connection URL to the PowerSchool instance.
+            ## Sets the connectionUrl property value. The connectionUrl property
             ## @param value Value to set for the connectionUrl property.
             ## @return a void
             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraphBeta
                 @connection_url = value
             end
             ## 
-            ## Instantiates a new educationPowerSchoolDataProvider and sets the default values.
+            ## Instantiates a new EducationPowerSchoolDataProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraphBeta
                 return EducationPowerSchoolDataProvider.new
             end
             ## 
-            ## Gets the customizations property value. Optional customization to be applied to the synchronization profile.
+            ## Gets the customizations property value. The customizations property
             ## @return a education_synchronization_customizations
             ## 
             def customizations
                 return @customizations
             end
             ## 
-            ## Sets the customizations property value. Optional customization to be applied to the synchronization profile.
+            ## Sets the customizations property value. The customizations property
             ## @param value Value to set for the customizations property.
             ## @return a void
             ## 
@@ -135,14 +135,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the schoolYear property value. The school year to sync.
+            ## Gets the schoolYear property value. The schoolYear property
             ## @return a string
             ## 
             def school_year
                 return @school_year
             end
             ## 
-            ## Sets the schoolYear property value. The school year to sync.
+            ## Sets the schoolYear property value. The schoolYear property
             ## @param value Value to set for the schoolYear property.
             ## @return a void
             ## 
@@ -150,14 +150,14 @@ module MicrosoftGraphBeta
                 @school_year = value
             end
             ## 
-            ## Gets the schoolsIds property value. The list of schools to sync.
+            ## Gets the schoolsIds property value. The schoolsIds property
             ## @return a string
             ## 
             def schools_ids
                 return @schools_ids
             end
             ## 
-            ## Sets the schoolsIds property value. The list of schools to sync.
+            ## Sets the schoolsIds property value. The schoolsIds property
             ## @param value Value to set for the schoolsIds property.
             ## @return a void
             ## 

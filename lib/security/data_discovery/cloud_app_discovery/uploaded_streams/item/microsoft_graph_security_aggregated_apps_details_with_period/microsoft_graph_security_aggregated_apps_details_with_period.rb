@@ -1,0 +1,1 @@
+require_relative 'aggregated_apps_details_with_period_get_response'

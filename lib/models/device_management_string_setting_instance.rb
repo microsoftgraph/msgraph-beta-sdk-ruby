@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The string value
             @value
             ## 
-            ## Instantiates a new deviceManagementStringSettingInstance and sets the default values.
+            ## Instantiates a new DeviceManagementStringSettingInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()
