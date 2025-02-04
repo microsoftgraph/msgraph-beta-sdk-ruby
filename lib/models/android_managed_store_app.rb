@@ -12,28 +12,28 @@ module MicrosoftGraphBeta
             # The Identity Name.
             @app_identifier
             ## 
-            # The Play for Work Store app URL.
+            # The Play for Work Store app URL. This property is read-only.
             @app_store_url
             ## 
-            # The tracks that are visible to this enterprise.
+            # The tracks that are visible to this enterprise. This property is read-only.
             @app_tracks
             ## 
-            # Indicates whether the app is only available to a given enterprise's users.
+            # Indicates whether the app is only available to a given enterprise's users. This property is read-only.
             @is_private
             ## 
             # Indicates whether the app is a preinstalled system app.
             @is_system_app
             ## 
-            # The package identifier.
+            # The package identifier. This property is read-only.
             @package_id
             ## 
-            # Whether this app supports OEMConfig policy.
+            # Whether this app supports OEMConfig policy. This property is read-only.
             @supports_oem_config
             ## 
-            # The total number of VPP licenses.
+            # The total number of VPP licenses. This property is read-only.
             @total_license_count
             ## 
-            # The number of VPP licenses in use.
+            # The number of VPP licenses in use. This property is read-only.
             @used_license_count
             ## 
             ## Gets the appIdentifier property value. The Identity Name.
@@ -51,14 +51,14 @@ module MicrosoftGraphBeta
                 @app_identifier = value
             end
             ## 
-            ## Gets the appStoreUrl property value. The Play for Work Store app URL.
+            ## Gets the appStoreUrl property value. The Play for Work Store app URL. This property is read-only.
             ## @return a string
             ## 
             def app_store_url
                 return @app_store_url
             end
             ## 
-            ## Sets the appStoreUrl property value. The Play for Work Store app URL.
+            ## Sets the appStoreUrl property value. The Play for Work Store app URL. This property is read-only.
             ## @param value Value to set for the appStoreUrl property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraphBeta
                 @app_store_url = value
             end
             ## 
-            ## Gets the appTracks property value. The tracks that are visible to this enterprise.
+            ## Gets the appTracks property value. The tracks that are visible to this enterprise. This property is read-only.
             ## @return a android_managed_store_app_track
             ## 
             def app_tracks
                 return @app_tracks
             end
             ## 
-            ## Sets the appTracks property value. The tracks that are visible to this enterprise.
+            ## Sets the appTracks property value. The tracks that are visible to this enterprise. This property is read-only.
             ## @param value Value to set for the appTracks property.
             ## @return a void
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 @app_tracks = value
             end
             ## 
-            ## Instantiates a new androidManagedStoreApp and sets the default values.
+            ## Instantiates a new AndroidManagedStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
+            ## Gets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users. This property is read-only.
             ## @return a boolean
             ## 
             def is_private
                 return @is_private
             end
             ## 
-            ## Sets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users.
+            ## Sets the isPrivate property value. Indicates whether the app is only available to a given enterprise's users. This property is read-only.
             ## @param value Value to set for the isPrivate property.
             ## @return a void
             ## 
@@ -153,14 +153,14 @@ module MicrosoftGraphBeta
                 @is_system_app = value
             end
             ## 
-            ## Gets the packageId property value. The package identifier.
+            ## Gets the packageId property value. The package identifier. This property is read-only.
             ## @return a string
             ## 
             def package_id
                 return @package_id
             end
             ## 
-            ## Sets the packageId property value. The package identifier.
+            ## Sets the packageId property value. The package identifier. This property is read-only.
             ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
@@ -176,24 +176,17 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("appIdentifier", @app_identifier)
-                writer.write_string_value("appStoreUrl", @app_store_url)
-                writer.write_collection_of_object_values("appTracks", @app_tracks)
-                writer.write_boolean_value("isPrivate", @is_private)
                 writer.write_boolean_value("isSystemApp", @is_system_app)
-                writer.write_string_value("packageId", @package_id)
-                writer.write_boolean_value("supportsOemConfig", @supports_oem_config)
-                writer.write_number_value("totalLicenseCount", @total_license_count)
-                writer.write_number_value("usedLicenseCount", @used_license_count)
             end
             ## 
-            ## Gets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
+            ## Gets the supportsOemConfig property value. Whether this app supports OEMConfig policy. This property is read-only.
             ## @return a boolean
             ## 
             def supports_oem_config
                 return @supports_oem_config
             end
             ## 
-            ## Sets the supportsOemConfig property value. Whether this app supports OEMConfig policy.
+            ## Sets the supportsOemConfig property value. Whether this app supports OEMConfig policy. This property is read-only.
             ## @param value Value to set for the supportsOemConfig property.
             ## @return a void
             ## 
@@ -201,14 +194,14 @@ module MicrosoftGraphBeta
                 @supports_oem_config = value
             end
             ## 
-            ## Gets the totalLicenseCount property value. The total number of VPP licenses.
+            ## Gets the totalLicenseCount property value. The total number of VPP licenses. This property is read-only.
             ## @return a integer
             ## 
             def total_license_count
                 return @total_license_count
             end
             ## 
-            ## Sets the totalLicenseCount property value. The total number of VPP licenses.
+            ## Sets the totalLicenseCount property value. The total number of VPP licenses. This property is read-only.
             ## @param value Value to set for the totalLicenseCount property.
             ## @return a void
             ## 
@@ -216,14 +209,14 @@ module MicrosoftGraphBeta
                 @total_license_count = value
             end
             ## 
-            ## Gets the usedLicenseCount property value. The number of VPP licenses in use.
+            ## Gets the usedLicenseCount property value. The number of VPP licenses in use. This property is read-only.
             ## @return a integer
             ## 
             def used_license_count
                 return @used_license_count
             end
             ## 
-            ## Sets the usedLicenseCount property value. The number of VPP licenses in use.
+            ## Sets the usedLicenseCount property value. The number of VPP licenses in use. This property is read-only.
             ## @param value Value to set for the usedLicenseCount property.
             ## @return a void
             ## 

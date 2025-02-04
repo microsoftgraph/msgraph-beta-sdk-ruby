@@ -1,0 +1,1 @@
+require_relative 'retrieve_powerlift_app_diagnostics_details_with_user_principal_name_get_response'

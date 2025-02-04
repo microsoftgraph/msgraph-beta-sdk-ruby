@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class AdvancedThreatProtectionOnboardingStateSummary < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Not yet documented
+            # The advancedThreatProtectionOnboardingDeviceSettingStates property
             @advanced_threat_protection_onboarding_device_setting_states
             ## 
             # Number of compliant devices
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
             # Number of unknown devices
             @unknown_device_count
             ## 
-            ## Gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
+            ## Gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. The advancedThreatProtectionOnboardingDeviceSettingStates property
             ## @return a advanced_threat_protection_onboarding_device_setting_state
             ## 
             def advanced_threat_protection_onboarding_device_setting_states
                 return @advanced_threat_protection_onboarding_device_setting_states
             end
             ## 
-            ## Sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
+            ## Sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. The advancedThreatProtectionOnboardingDeviceSettingStates property
             ## @param value Value to set for the advancedThreatProtectionOnboardingDeviceSettingStates property.
             ## @return a void
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 @conflict_device_count = value
             end
             ## 
-            ## Instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
+            ## Instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

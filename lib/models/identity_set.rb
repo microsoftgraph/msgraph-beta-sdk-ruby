@@ -22,15 +22,15 @@ module MicrosoftGraphBeta
             # Optional. The user associated with this action.
             @user
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @application = value
             end
             ## 
-            ## Instantiates a new identitySet and sets the default values.
+            ## Instantiates a new IdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -69,6 +69,10 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.aiInteractionMentionedIdentitySet"
+                            return AiInteractionMentionedIdentitySet.new
+                        when "#microsoft.graph.approvalIdentitySet"
+                            return ApprovalIdentitySet.new
                         when "#microsoft.graph.chatMessageFromIdentitySet"
                             return ChatMessageFromIdentitySet.new
                         when "#microsoft.graph.chatMessageMentionedIdentitySet"

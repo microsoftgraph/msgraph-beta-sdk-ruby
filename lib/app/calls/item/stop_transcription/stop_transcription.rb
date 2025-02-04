@@ -1,0 +1,1 @@
+require_relative 'stop_transcription_post_request_body'

@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class PrinterShare < MicrosoftGraphBeta::Models::PrinterBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+            # If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.
             @allow_all_users
             ## 
             # The groups whose users have access to print using the printer.
@@ -23,17 +23,17 @@ module MicrosoftGraphBeta
             # The printer that this printer share is related to.
             @printer
             ## 
-            # Additional data for a printer share as viewed by the signed-in user.
+            # More data for a printer share as viewed by the signed-in user.
             @view_point
             ## 
-            ## Gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+            ## Gets the allowAllUsers property value. If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.
             ## @return a boolean
             ## 
             def allow_all_users
                 return @allow_all_users
             end
             ## 
-            ## Sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+            ## Sets the allowAllUsers property value. If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.
             ## @param value Value to set for the allowAllUsers property.
             ## @return a void
             ## 
@@ -71,7 +71,7 @@ module MicrosoftGraphBeta
                 @allowed_users = value
             end
             ## 
-            ## Instantiates a new printerShare and sets the default values.
+            ## Instantiates a new PrinterShare and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -147,14 +147,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("viewPoint", @view_point)
             end
             ## 
-            ## Gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+            ## Gets the viewPoint property value. More data for a printer share as viewed by the signed-in user.
             ## @return a printer_share_viewpoint
             ## 
             def view_point
                 return @view_point
             end
             ## 
-            ## Sets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+            ## Sets the viewPoint property value. More data for a printer share as viewed by the signed-in user.
             ## @param value Value to set for the viewPoint property.
             ## @return a void
             ## 

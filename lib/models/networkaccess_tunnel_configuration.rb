@@ -16,22 +16,25 @@ module MicrosoftGraphBeta
             # A key to establish secure connection between the link and VPN tunnel on the edge.
             @pre_shared_key
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
+            @zone_redundancy_pre_shared_key
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new networkaccessTunnelConfiguration and sets the default values.
+            ## Instantiates a new NetworkaccessTunnelConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -64,6 +67,7 @@ module MicrosoftGraphBeta
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "preSharedKey" => lambda {|n| @pre_shared_key = n.get_string_value() },
+                    "zoneRedundancyPreSharedKey" => lambda {|n| @zone_redundancy_pre_shared_key = n.get_string_value() },
                 }
             end
             ## 
@@ -105,7 +109,23 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("preSharedKey", @pre_shared_key)
+                writer.write_string_value("zoneRedundancyPreSharedKey", @zone_redundancy_pre_shared_key)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the zoneRedundancyPreSharedKey property value. Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
+            ## @return a string
+            ## 
+            def zone_redundancy_pre_shared_key
+                return @zone_redundancy_pre_shared_key
+            end
+            ## 
+            ## Sets the zoneRedundancyPreSharedKey property value. Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
+            ## @param value Value to set for the zoneRedundancyPreSharedKey property.
+            ## @return a void
+            ## 
+            def zone_redundancy_pre_shared_key=(value)
+                @zone_redundancy_pre_shared_key = value
             end
         end
     end

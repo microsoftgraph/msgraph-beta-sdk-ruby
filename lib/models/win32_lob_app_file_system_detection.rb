@@ -42,7 +42,7 @@ module MicrosoftGraphBeta
                 @check32_bit_on64_system = value
             end
             ## 
-            ## Instantiates a new win32LobAppFileSystemDetection and sets the default values.
+            ## Instantiates a new Win32LobAppFileSystemDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,7 +113,7 @@ module MicrosoftGraphBeta
                     "detectionType" => lambda {|n| @detection_type = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppFileSystemDetectionType) },
                     "detectionValue" => lambda {|n| @detection_value = n.get_string_value() },
                     "fileOrFolderName" => lambda {|n| @file_or_folder_name = n.get_string_value() },
-                    "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
+                    "operator" => lambda {|n| @operator = n.get_enum_values(MicrosoftGraphBeta::Models::Win32LobAppDetectionOperator) },
                     "path" => lambda {|n| @path = n.get_string_value() },
                 })
             end

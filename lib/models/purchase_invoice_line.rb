@@ -137,7 +137,7 @@ module MicrosoftGraphBeta
                 @amount_including_tax = value
             end
             ## 
-            ## Instantiates a new purchaseInvoiceLine and sets the default values.
+            ## Instantiates a new PurchaseInvoiceLine and sets the default values.
             ## @return a void
             ## 
             def initialize()

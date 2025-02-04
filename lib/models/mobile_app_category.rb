@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # The name of the app category.
             @display_name
             ## 
-            # The date and time the mobileAppCategory was last modified.
+            # The date and time the mobileAppCategory was last modified. This property is read-only.
             @last_modified_date_time
             ## 
-            ## Instantiates a new mobileAppCategory and sets the default values.
+            ## Instantiates a new MobileAppCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+            ## Gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified. This property is read-only.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+            ## Sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified. This property is read-only.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -80,7 +80,6 @@ module MicrosoftGraphBeta
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
             end
         end
     end

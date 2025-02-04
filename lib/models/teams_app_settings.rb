@@ -10,10 +10,10 @@ module MicrosoftGraphBeta
             # Indicates whether users are allowed to request access to the unavailable Teams apps.
             @allow_user_requests_for_app_access
             ## 
-            # Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
+            # Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
             @is_chat_resource_specific_consent_enabled
             ## 
-            # The isUserPersonalScopeResourceSpecificConsentEnabled property
+            # Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
             @is_user_personal_scope_resource_specific_consent_enabled
             ## 
             ## Gets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @allow_user_requests_for_app_access = value
             end
             ## 
-            ## Instantiates a new teamsAppSettings and sets the default values.
+            ## Instantiates a new TeamsAppSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,14 +58,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
+            ## Gets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
             ## @return a boolean
             ## 
             def is_chat_resource_specific_consent_enabled
                 return @is_chat_resource_specific_consent_enabled
             end
             ## 
-            ## Sets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
+            ## Sets the isChatResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
             ## @param value Value to set for the isChatResourceSpecificConsentEnabled property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraphBeta
                 @is_chat_resource_specific_consent_enabled = value
             end
             ## 
-            ## Gets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+            ## Gets the isUserPersonalScopeResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
             ## @return a boolean
             ## 
             def is_user_personal_scope_resource_specific_consent_enabled
                 return @is_user_personal_scope_resource_specific_consent_enabled
             end
             ## 
-            ## Sets the isUserPersonalScopeResourceSpecificConsentEnabled property value. The isUserPersonalScopeResourceSpecificConsentEnabled property
+            ## Sets the isUserPersonalScopeResourceSpecificConsentEnabled property value. Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
             ## @param value Value to set for the isUserPersonalScopeResourceSpecificConsentEnabled property.
             ## @return a void
             ## 

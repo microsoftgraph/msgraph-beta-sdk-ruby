@@ -1,1 +1,1 @@
-require_relative 'get_managed_app_blocked_users_response'
+require_relative 'get_managed_app_blocked_users_get_response'

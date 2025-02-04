@@ -33,7 +33,7 @@ module MicrosoftGraphBeta
                 @action_failure_reason = value
             end
             ## 
-            ## Instantiates a new vppTokenRevokeLicensesActionResult and sets the default values.
+            ## Instantiates a new VppTokenRevokeLicensesActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

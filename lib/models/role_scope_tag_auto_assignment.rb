@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The auto-assignment target for the specific Role Scope Tag.
             @target
             ## 
-            ## Instantiates a new roleScopeTagAutoAssignment and sets the default values.
+            ## Instantiates a new RoleScopeTagAutoAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

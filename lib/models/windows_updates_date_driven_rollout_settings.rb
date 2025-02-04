@@ -8,10 +8,10 @@ module MicrosoftGraphBeta
         class WindowsUpdatesDateDrivenRolloutSettings < MicrosoftGraphBeta::Models::WindowsUpdatesGradualRolloutSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime is not set, all devices in the deployment are offered content at the same time.
+            # Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn't set, all devices in the deployment are offered content at the same time.
             @end_date_time
             ## 
-            ## Instantiates a new windowsUpdatesDateDrivenRolloutSettings and sets the default values.
+            ## Instantiates a new WindowsUpdatesDateDrivenRolloutSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -28,14 +28,14 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesDateDrivenRolloutSettings.new
             end
             ## 
-            ## Gets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime is not set, all devices in the deployment are offered content at the same time.
+            ## Gets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn't set, all devices in the deployment are offered content at the same time.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime is not set, all devices in the deployment are offered content at the same time.
+            ## Sets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn't set, all devices in the deployment are offered content at the same time.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 

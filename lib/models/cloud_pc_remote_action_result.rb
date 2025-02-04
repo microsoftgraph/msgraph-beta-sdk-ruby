@@ -32,7 +32,10 @@ module MicrosoftGraphBeta
             # Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
             @start_date_time
             ## 
-            # The details of the Cloud PC status.
+            # The extended details of the action status, including error code, error message, and additional information. For example, 'statusDetail': {'code': 'internalServerError','message': 'There was an internal server error. Please contact support xxx.','additionalInformation': [ { '@odata.type':'microsoft.graph.keyValuePair','name': 'correlationId','value': '52367774-cfb7-4e9c-ab51-1b864c31f2d1'} ]}
+            @status_detail
+            ## 
+            # The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             @status_details
             ## 
             ## Gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
@@ -65,15 +68,15 @@ module MicrosoftGraphBeta
                 @action_state = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -95,7 +98,7 @@ module MicrosoftGraphBeta
                 @cloud_pc_id = value
             end
             ## 
-            ## Instantiates a new cloudPcRemoteActionResult and sets the default values.
+            ## Instantiates a new CloudPcRemoteActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,6 +126,7 @@ module MicrosoftGraphBeta
                     "managedDeviceId" => lambda {|n| @managed_device_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
+                    "statusDetail" => lambda {|n| @status_detail = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcStatusDetail.create_from_discriminator_value(pn) }) },
                     "statusDetails" => lambda {|n| @status_details = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CloudPcStatusDetails.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -185,6 +189,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("managedDeviceId", @managed_device_id)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_date_time_value("startDateTime", @start_date_time)
+                writer.write_object_value("statusDetail", @status_detail)
                 writer.write_object_value("statusDetails", @status_details)
                 writer.write_additional_data(@additional_data)
             end
@@ -204,14 +209,29 @@ module MicrosoftGraphBeta
                 @start_date_time = value
             end
             ## 
-            ## Gets the statusDetails property value. The details of the Cloud PC status.
+            ## Gets the statusDetail property value. The extended details of the action status, including error code, error message, and additional information. For example, 'statusDetail': {'code': 'internalServerError','message': 'There was an internal server error. Please contact support xxx.','additionalInformation': [ { '@odata.type':'microsoft.graph.keyValuePair','name': 'correlationId','value': '52367774-cfb7-4e9c-ab51-1b864c31f2d1'} ]}
+            ## @return a cloud_pc_status_detail
+            ## 
+            def status_detail
+                return @status_detail
+            end
+            ## 
+            ## Sets the statusDetail property value. The extended details of the action status, including error code, error message, and additional information. For example, 'statusDetail': {'code': 'internalServerError','message': 'There was an internal server error. Please contact support xxx.','additionalInformation': [ { '@odata.type':'microsoft.graph.keyValuePair','name': 'correlationId','value': '52367774-cfb7-4e9c-ab51-1b864c31f2d1'} ]}
+            ## @param value Value to set for the statusDetail property.
+            ## @return a void
+            ## 
+            def status_detail=(value)
+                @status_detail = value
+            end
+            ## 
+            ## Gets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             ## @return a cloud_pc_status_details
             ## 
             def status_details
                 return @status_details
             end
             ## 
-            ## Sets the statusDetails property value. The details of the Cloud PC status.
+            ## Sets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
             ## @param value Value to set for the statusDetails property.
             ## @return a void
             ## 

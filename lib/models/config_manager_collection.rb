@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @collection_identifier = value
             end
             ## 
-            ## Instantiates a new configManagerCollection and sets the default values.
+            ## Instantiates a new ConfigManagerCollection and sets the default values.
             ## @return a void
             ## 
             def initialize()

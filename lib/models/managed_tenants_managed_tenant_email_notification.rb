@@ -47,7 +47,7 @@ module MicrosoftGraphBeta
                 @alert = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantEmailNotification and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantEmailNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()

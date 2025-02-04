@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Indicate if the time is Utc or client local time.
             @use_utc
             ## 
-            ## Instantiates a new deviceHealthScriptTimeSchedule and sets the default values.
+            ## Instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

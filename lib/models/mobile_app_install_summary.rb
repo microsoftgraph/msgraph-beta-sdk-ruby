@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
             # Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
             @pending_install_user_count
             ## 
-            ## Instantiates a new mobileAppInstallSummary and sets the default values.
+            ## Instantiates a new MobileAppInstallSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -230,16 +230,6 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("failedDeviceCount", @failed_device_count)
-                writer.write_number_value("failedUserCount", @failed_user_count)
-                writer.write_number_value("installedDeviceCount", @installed_device_count)
-                writer.write_number_value("installedUserCount", @installed_user_count)
-                writer.write_number_value("notApplicableDeviceCount", @not_applicable_device_count)
-                writer.write_number_value("notApplicableUserCount", @not_applicable_user_count)
-                writer.write_number_value("notInstalledDeviceCount", @not_installed_device_count)
-                writer.write_number_value("notInstalledUserCount", @not_installed_user_count)
-                writer.write_number_value("pendingInstallDeviceCount", @pending_install_device_count)
-                writer.write_number_value("pendingInstallUserCount", @pending_install_user_count)
             end
         end
     end

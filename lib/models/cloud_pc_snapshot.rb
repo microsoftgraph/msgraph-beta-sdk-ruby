@@ -41,7 +41,7 @@ module MicrosoftGraphBeta
                 @cloud_pc_id = value
             end
             ## 
-            ## Instantiates a new cloudPcSnapshot and sets the default values.
+            ## Instantiates a new CloudPcSnapshot and sets the default values.
             ## @return a void
             ## 
             def initialize()
