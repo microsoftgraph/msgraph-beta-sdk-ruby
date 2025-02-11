@@ -69,7 +69,7 @@ module MicrosoftGraphBeta
                 @apply_only_to_windows_phone81 = value
             end
             ## 
-            ## Instantiates a new windowsPhoneEASEmailProfileConfiguration and sets the default values.
+            ## Instantiates a new WindowsPhoneEASEmailProfileConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

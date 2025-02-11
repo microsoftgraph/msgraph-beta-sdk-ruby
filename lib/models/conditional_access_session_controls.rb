@@ -19,7 +19,7 @@ module MicrosoftGraphBeta
             # Session control for continuous access evaluation settings.
             @continuous_access_evaluation
             ## 
-            # Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            # Session control that determines whether it's acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             @disable_resilience_defaults
             ## 
             # The OdataType property
@@ -28,21 +28,21 @@ module MicrosoftGraphBeta
             # Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
             @persistent_browser
             ## 
-            # The secureSignInSession property
+            # Session control to require sign in sessions to be bound to a device.
             @secure_sign_in_session
             ## 
             # Session control to enforce signin frequency.
             @sign_in_frequency
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraphBeta
                 @cloud_app_security = value
             end
             ## 
-            ## Instantiates a new conditionalAccessSessionControls and sets the default values.
+            ## Instantiates a new ConditionalAccessSessionControls and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,14 +110,14 @@ module MicrosoftGraphBeta
                 return ConditionalAccessSessionControls.new
             end
             ## 
-            ## Gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            ## Gets the disableResilienceDefaults property value. Session control that determines whether it's acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             ## @return a boolean
             ## 
             def disable_resilience_defaults
                 return @disable_resilience_defaults
             end
             ## 
-            ## Sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            ## Sets the disableResilienceDefaults property value. Session control that determines whether it's acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             ## @param value Value to set for the disableResilienceDefaults property.
             ## @return a void
             ## 
@@ -171,14 +171,14 @@ module MicrosoftGraphBeta
                 @persistent_browser = value
             end
             ## 
-            ## Gets the secureSignInSession property value. The secureSignInSession property
+            ## Gets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
             ## @return a secure_sign_in_session_control
             ## 
             def secure_sign_in_session
                 return @secure_sign_in_session
             end
             ## 
-            ## Sets the secureSignInSession property value. The secureSignInSession property
+            ## Sets the secureSignInSession property value. Session control to require sign in sessions to be bound to a device.
             ## @param value Value to set for the secureSignInSession property.
             ## @return a void
             ## 

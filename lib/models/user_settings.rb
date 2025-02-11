@@ -16,6 +16,9 @@ module MicrosoftGraphBeta
             # When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
             @contribution_to_content_discovery_disabled
             ## 
+            # The Exchange settings for mailbox discovery.
+            @exchange
+            ## 
             # The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
             @item_insights
             ## 
@@ -25,7 +28,13 @@ module MicrosoftGraphBeta
             # The shift preferences for the user.
             @shift_preferences
             ## 
-            ## Instantiates a new userSettings and sets the default values.
+            # The storage property
+            @storage
+            ## 
+            # The Windows settings of the user stored in the cloud.
+            @windows
+            ## 
+            ## Instantiates a new UserSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,6 +95,21 @@ module MicrosoftGraphBeta
                 return UserSettings.new
             end
             ## 
+            ## Gets the exchange property value. The Exchange settings for mailbox discovery.
+            ## @return a exchange_settings
+            ## 
+            def exchange
+                return @exchange
+            end
+            ## 
+            ## Sets the exchange property value. The Exchange settings for mailbox discovery.
+            ## @param value Value to set for the exchange property.
+            ## @return a void
+            ## 
+            def exchange=(value)
+                @exchange = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -94,9 +118,12 @@ module MicrosoftGraphBeta
                     "contactMergeSuggestions" => lambda {|n| @contact_merge_suggestions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ContactMergeSuggestions.create_from_discriminator_value(pn) }) },
                     "contributionToContentDiscoveryAsOrganizationDisabled" => lambda {|n| @contribution_to_content_discovery_as_organization_disabled = n.get_boolean_value() },
                     "contributionToContentDiscoveryDisabled" => lambda {|n| @contribution_to_content_discovery_disabled = n.get_boolean_value() },
+                    "exchange" => lambda {|n| @exchange = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ExchangeSettings.create_from_discriminator_value(pn) }) },
                     "itemInsights" => lambda {|n| @item_insights = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::UserInsightsSettings.create_from_discriminator_value(pn) }) },
                     "regionalAndLanguageSettings" => lambda {|n| @regional_and_language_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::RegionalAndLanguageSettings.create_from_discriminator_value(pn) }) },
                     "shiftPreferences" => lambda {|n| @shift_preferences = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ShiftPreferences.create_from_discriminator_value(pn) }) },
+                    "storage" => lambda {|n| @storage = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::UserStorage.create_from_discriminator_value(pn) }) },
+                    "windows" => lambda {|n| @windows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsSetting.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -140,9 +167,12 @@ module MicrosoftGraphBeta
                 writer.write_object_value("contactMergeSuggestions", @contact_merge_suggestions)
                 writer.write_boolean_value("contributionToContentDiscoveryAsOrganizationDisabled", @contribution_to_content_discovery_as_organization_disabled)
                 writer.write_boolean_value("contributionToContentDiscoveryDisabled", @contribution_to_content_discovery_disabled)
+                writer.write_object_value("exchange", @exchange)
                 writer.write_object_value("itemInsights", @item_insights)
                 writer.write_object_value("regionalAndLanguageSettings", @regional_and_language_settings)
                 writer.write_object_value("shiftPreferences", @shift_preferences)
+                writer.write_object_value("storage", @storage)
+                writer.write_collection_of_object_values("windows", @windows)
             end
             ## 
             ## Gets the shiftPreferences property value. The shift preferences for the user.
@@ -158,6 +188,36 @@ module MicrosoftGraphBeta
             ## 
             def shift_preferences=(value)
                 @shift_preferences = value
+            end
+            ## 
+            ## Gets the storage property value. The storage property
+            ## @return a user_storage
+            ## 
+            def storage
+                return @storage
+            end
+            ## 
+            ## Sets the storage property value. The storage property
+            ## @param value Value to set for the storage property.
+            ## @return a void
+            ## 
+            def storage=(value)
+                @storage = value
+            end
+            ## 
+            ## Gets the windows property value. The Windows settings of the user stored in the cloud.
+            ## @return a windows_setting
+            ## 
+            def windows
+                return @windows
+            end
+            ## 
+            ## Sets the windows property value. The Windows settings of the user stored in the cloud.
+            ## @param value Value to set for the windows property.
+            ## @return a void
+            ## 
+            def windows=(value)
+                @windows = value
             end
         end
     end

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # List of enrollment types
             @enrollment_types
             ## 
-            ## Instantiates a new deviceManagementSettingEnrollmentTypeConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingEnrollmentTypeConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -36,7 +36,7 @@ module MicrosoftGraphBeta
                 @available_version = value
             end
             ## 
-            ## Instantiates a new windowsManagementApp and sets the default values.
+            ## Instantiates a new WindowsManagementApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

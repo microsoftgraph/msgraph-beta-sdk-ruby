@@ -61,11 +61,17 @@ module MicrosoftGraphBeta
             # Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
             @microsoft_store_for_business_portal_selection
             ## 
+            # MobileAppCatalogPackage entities.
+            @mobile_app_catalog_packages
+            ## 
             # The mobile app categories.
             @mobile_app_categories
             ## 
             # The Managed Device Mobile Application Configurations.
             @mobile_app_configurations
+            ## 
+            # List mobileAppRelationship objects for mobile applications.
+            @mobile_app_relationships
             ## 
             # The mobile apps.
             @mobile_apps
@@ -115,7 +121,7 @@ module MicrosoftGraphBeta
                 @android_managed_app_protections = value
             end
             ## 
-            ## Instantiates a new deviceAppManagement and sets the default values.
+            ## Instantiates a new DeviceAppManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -197,9 +203,11 @@ module MicrosoftGraphBeta
                     "microsoftStoreForBusinessLanguage" => lambda {|n| @microsoft_store_for_business_language = n.get_string_value() },
                     "microsoftStoreForBusinessLastCompletedApplicationSyncTime" => lambda {|n| @microsoft_store_for_business_last_completed_application_sync_time = n.get_date_time_value() },
                     "microsoftStoreForBusinessLastSuccessfulSyncDateTime" => lambda {|n| @microsoft_store_for_business_last_successful_sync_date_time = n.get_date_time_value() },
-                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_value(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
+                    "microsoftStoreForBusinessPortalSelection" => lambda {|n| @microsoft_store_for_business_portal_selection = n.get_enum_values(MicrosoftGraphBeta::Models::MicrosoftStoreForBusinessPortalSelectionOptions) },
+                    "mobileAppCatalogPackages" => lambda {|n| @mobile_app_catalog_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppCatalogPackage.create_from_discriminator_value(pn) }) },
                     "mobileAppCategories" => lambda {|n| @mobile_app_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppCategory.create_from_discriminator_value(pn) }) },
                     "mobileAppConfigurations" => lambda {|n| @mobile_app_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceMobileAppConfiguration.create_from_discriminator_value(pn) }) },
+                    "mobileAppRelationships" => lambda {|n| @mobile_app_relationships = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileAppRelationship.create_from_discriminator_value(pn) }) },
                     "mobileApps" => lambda {|n| @mobile_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MobileApp.create_from_discriminator_value(pn) }) },
                     "policySets" => lambda {|n| @policy_sets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PolicySet.create_from_discriminator_value(pn) }) },
                     "symantecCodeSigningCertificate" => lambda {|n| @symantec_code_signing_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SymantecCodeSigningCertificate.create_from_discriminator_value(pn) }) },
@@ -409,6 +417,21 @@ module MicrosoftGraphBeta
                 @microsoft_store_for_business_portal_selection = value
             end
             ## 
+            ## Gets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+            ## @return a mobile_app_catalog_package
+            ## 
+            def mobile_app_catalog_packages
+                return @mobile_app_catalog_packages
+            end
+            ## 
+            ## Sets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+            ## @param value Value to set for the mobileAppCatalogPackages property.
+            ## @return a void
+            ## 
+            def mobile_app_catalog_packages=(value)
+                @mobile_app_catalog_packages = value
+            end
+            ## 
             ## Gets the mobileAppCategories property value. The mobile app categories.
             ## @return a mobile_app_category
             ## 
@@ -437,6 +460,21 @@ module MicrosoftGraphBeta
             ## 
             def mobile_app_configurations=(value)
                 @mobile_app_configurations = value
+            end
+            ## 
+            ## Gets the mobileAppRelationships property value. List mobileAppRelationship objects for mobile applications.
+            ## @return a mobile_app_relationship
+            ## 
+            def mobile_app_relationships
+                return @mobile_app_relationships
+            end
+            ## 
+            ## Sets the mobileAppRelationships property value. List mobileAppRelationship objects for mobile applications.
+            ## @param value Value to set for the mobileAppRelationships property.
+            ## @return a void
+            ## 
+            def mobile_app_relationships=(value)
+                @mobile_app_relationships = value
             end
             ## 
             ## Gets the mobileApps property value. The mobile apps.
@@ -493,8 +531,10 @@ module MicrosoftGraphBeta
                 writer.write_date_time_value("microsoftStoreForBusinessLastCompletedApplicationSyncTime", @microsoft_store_for_business_last_completed_application_sync_time)
                 writer.write_date_time_value("microsoftStoreForBusinessLastSuccessfulSyncDateTime", @microsoft_store_for_business_last_successful_sync_date_time)
                 writer.write_enum_value("microsoftStoreForBusinessPortalSelection", @microsoft_store_for_business_portal_selection)
+                writer.write_collection_of_object_values("mobileAppCatalogPackages", @mobile_app_catalog_packages)
                 writer.write_collection_of_object_values("mobileAppCategories", @mobile_app_categories)
                 writer.write_collection_of_object_values("mobileAppConfigurations", @mobile_app_configurations)
+                writer.write_collection_of_object_values("mobileAppRelationships", @mobile_app_relationships)
                 writer.write_collection_of_object_values("mobileApps", @mobile_apps)
                 writer.write_collection_of_object_values("policySets", @policy_sets)
                 writer.write_object_value("symantecCodeSigningCertificate", @symantec_code_signing_certificate)

@@ -1,0 +1,1 @@
+require_relative 'retrieve_managed_devices_with_app_installation_issues_get_response'

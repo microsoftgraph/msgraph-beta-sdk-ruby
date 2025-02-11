@@ -9,13 +9,16 @@ module MicrosoftGraphBeta
         class MacOSImportedPFXCertificateProfile < MicrosoftGraphBeta::Models::MacOSCertificateProfileBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # PFX Import Options.
             @intended_purpose
             ## 
             # Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
             @managed_device_certificate_states
             ## 
-            ## Instantiates a new macOSImportedPFXCertificateProfile and sets the default values.
+            ## Instantiates a new MacOSImportedPFXCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,11 +35,27 @@ module MicrosoftGraphBeta
                 return MacOSImportedPFXCertificateProfile.new
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "intendedPurpose" => lambda {|n| @intended_purpose = n.get_enum_value(MicrosoftGraphBeta::Models::IntendedPurpose) },
                     "managedDeviceCertificateStates" => lambda {|n| @managed_device_certificate_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCertificateState.create_from_discriminator_value(pn) }) },
                 })
@@ -79,6 +98,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_enum_value("intendedPurpose", @intended_purpose)
                 writer.write_collection_of_object_values("managedDeviceCertificateStates", @managed_device_certificate_states)
             end

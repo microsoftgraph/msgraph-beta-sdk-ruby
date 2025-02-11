@@ -50,7 +50,7 @@ module MicrosoftGraphBeta
                 @body = value
             end
             ## 
-            ## Instantiates a new securityArticle and sets the default values.
+            ## Instantiates a new SecurityArticle and sets the default values.
             ## @return a void
             ## 
             def initialize()

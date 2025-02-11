@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityRetentionLabel < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
+            # Specifies the action to take on the labeled document after the period specified by the retentionDuration property expires. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
             @action_after_retention_period
             ## 
             # Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
@@ -59,14 +59,14 @@ module MicrosoftGraphBeta
             # Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
             @retention_trigger
             ## 
-            ## Gets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
+            ## Gets the actionAfterRetentionPeriod property value. Specifies the action to take on the labeled document after the period specified by the retentionDuration property expires. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
             ## @return a security_action_after_retention_period
             ## 
             def action_after_retention_period
                 return @action_after_retention_period
             end
             ## 
-            ## Sets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
+            ## Sets the actionAfterRetentionPeriod property value. Specifies the action to take on the labeled document after the period specified by the retentionDuration property expires. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
             ## @param value Value to set for the actionAfterRetentionPeriod property.
             ## @return a void
             ## 
@@ -89,7 +89,7 @@ module MicrosoftGraphBeta
                 @behavior_during_retention_period = value
             end
             ## 
-            ## Instantiates a new securityRetentionLabel and sets the default values.
+            ## Instantiates a new SecurityRetentionLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()

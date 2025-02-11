@@ -46,6 +46,9 @@ module MicrosoftGraphBeta
             # List of referred setting information.
             @referred_setting_information_list
             ## 
+            # Setting RiskLevel
+            @risk_level
+            ## 
             # Root setting definition if the setting is a child setting.
             @root_definition_id
             ## 
@@ -121,7 +124,7 @@ module MicrosoftGraphBeta
                 @category_id = value
             end
             ## 
-            ## Instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSettingDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -192,7 +195,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "accessTypes" => lambda {|n| @access_types = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
+                    "accessTypes" => lambda {|n| @access_types = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingAccessTypes) },
                     "applicability" => lambda {|n| @applicability = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingApplicability.create_from_discriminator_value(pn) }) },
                     "baseUri" => lambda {|n| @base_uri = n.get_string_value() },
                     "categoryId" => lambda {|n| @category_id = n.get_string_value() },
@@ -205,11 +208,12 @@ module MicrosoftGraphBeta
                     "occurrence" => lambda {|n| @occurrence = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingOccurrence.create_from_discriminator_value(pn) }) },
                     "offsetUri" => lambda {|n| @offset_uri = n.get_string_value() },
                     "referredSettingInformationList" => lambda {|n| @referred_setting_information_list = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::DeviceManagementConfigurationReferredSettingInformation.create_from_discriminator_value(pn) }) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingRiskLevel) },
                     "rootDefinitionId" => lambda {|n| @root_definition_id = n.get_string_value() },
-                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
+                    "settingUsage" => lambda {|n| @setting_usage = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingUsage) },
                     "uxBehavior" => lambda {|n| @ux_behavior = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationControlType) },
                     "version" => lambda {|n| @version = n.get_string_value() },
-                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
+                    "visibility" => lambda {|n| @visibility = n.get_enum_values(MicrosoftGraphBeta::Models::DeviceManagementConfigurationSettingVisibility) },
                 })
             end
             ## 
@@ -318,6 +322,21 @@ module MicrosoftGraphBeta
                 @referred_setting_information_list = value
             end
             ## 
+            ## Gets the riskLevel property value. Setting RiskLevel
+            ## @return a device_management_configuration_setting_risk_level
+            ## 
+            def risk_level
+                return @risk_level
+            end
+            ## 
+            ## Sets the riskLevel property value. Setting RiskLevel
+            ## @param value Value to set for the riskLevel property.
+            ## @return a void
+            ## 
+            def risk_level=(value)
+                @risk_level = value
+            end
+            ## 
             ## Gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
             ## @return a string
             ## 
@@ -353,6 +372,7 @@ module MicrosoftGraphBeta
                 writer.write_object_value("occurrence", @occurrence)
                 writer.write_string_value("offsetUri", @offset_uri)
                 writer.write_collection_of_object_values("referredSettingInformationList", @referred_setting_information_list)
+                writer.write_enum_value("riskLevel", @risk_level)
                 writer.write_string_value("rootDefinitionId", @root_definition_id)
                 writer.write_enum_value("settingUsage", @setting_usage)
                 writer.write_enum_value("uxBehavior", @ux_behavior)

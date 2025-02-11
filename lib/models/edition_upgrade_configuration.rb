@@ -24,7 +24,7 @@ module MicrosoftGraphBeta
             # The possible options to configure S mode unlock
             @windows_s_mode
             ## 
-            ## Instantiates a new editionUpgradeConfiguration and sets the default values.
+            ## Instantiates a new EditionUpgradeConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
