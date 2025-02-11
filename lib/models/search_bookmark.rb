@@ -8,47 +8,47 @@ module MicrosoftGraphBeta
         class SearchBookmark < MicrosoftGraphBeta::Models::SearchSearchAnswer
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+            # Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @availability_end_date_time
             ## 
-            # Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+            # Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @availability_start_date_time
             ## 
             # Categories commonly used to describe this bookmark. For example, IT and HR.
             @categories
             ## 
-            # List of security groups able to view this bookmark.
+            # The list of security groups that are able to view this bookmark.
             @group_ids
             ## 
-            # True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            # True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.
             @is_suggested
             ## 
             # Keywords that trigger this bookmark to appear in search results.
             @keywords
             ## 
-            # A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+            # A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             @language_tags
             ## 
-            # List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            # List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             @platforms
             ## 
-            # List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
+            # List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.
             @power_app_ids
             ## 
             # The state property
             @state
             ## 
-            # Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            # Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             @targeted_variations
             ## 
-            ## Gets the availabilityEndDateTime property value. Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+            ## Gets the availabilityEndDateTime property value. Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def availability_end_date_time
                 return @availability_end_date_time
             end
             ## 
-            ## Sets the availabilityEndDateTime property value. Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+            ## Sets the availabilityEndDateTime property value. Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the availabilityEndDateTime property.
             ## @return a void
             ## 
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 @availability_end_date_time = value
             end
             ## 
-            ## Gets the availabilityStartDateTime property value. Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+            ## Gets the availabilityStartDateTime property value. Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def availability_start_date_time
                 return @availability_start_date_time
             end
             ## 
-            ## Sets the availabilityStartDateTime property value. Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+            ## Sets the availabilityStartDateTime property value. Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the availabilityStartDateTime property.
             ## @return a void
             ## 
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new searchBookmark and sets the default values.
+            ## Instantiates a new SearchBookmark and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -121,14 +121,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the groupIds property value. List of security groups able to view this bookmark.
+            ## Gets the groupIds property value. The list of security groups that are able to view this bookmark.
             ## @return a string
             ## 
             def group_ids
                 return @group_ids
             end
             ## 
-            ## Sets the groupIds property value. List of security groups able to view this bookmark.
+            ## Sets the groupIds property value. The list of security groups that are able to view this bookmark.
             ## @param value Value to set for the groupIds property.
             ## @return a void
             ## 
@@ -136,14 +136,14 @@ module MicrosoftGraphBeta
                 @group_ids = value
             end
             ## 
-            ## Gets the isSuggested property value. True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Gets the isSuggested property value. True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.
             ## @return a boolean
             ## 
             def is_suggested
                 return @is_suggested
             end
             ## 
-            ## Sets the isSuggested property value. True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+            ## Sets the isSuggested property value. True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.
             ## @param value Value to set for the isSuggested property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraphBeta
                 @keywords = value
             end
             ## 
-            ## Gets the languageTags property value. A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+            ## Gets the languageTags property value. A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             ## @return a string
             ## 
             def language_tags
                 return @language_tags
             end
             ## 
-            ## Sets the languageTags property value. A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+            ## Sets the languageTags property value. A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
             ## @param value Value to set for the languageTags property.
             ## @return a void
             ## 
@@ -181,14 +181,14 @@ module MicrosoftGraphBeta
                 @language_tags = value
             end
             ## 
-            ## Gets the platforms property value. List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            ## Gets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @return a device_platform_type
             ## 
             def platforms
                 return @platforms
             end
             ## 
-            ## Sets the platforms property value. List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+            ## Sets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
             ## @param value Value to set for the platforms property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraphBeta
                 @platforms = value
             end
             ## 
-            ## Gets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
+            ## Gets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.
             ## @return a string
             ## 
             def power_app_ids
                 return @power_app_ids
             end
             ## 
-            ## Sets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
+            ## Sets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.
             ## @param value Value to set for the powerAppIds property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraphBeta
                 @state = value
             end
             ## 
-            ## Gets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Gets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @return a search_answer_variant
             ## 
             def targeted_variations
                 return @targeted_variations
             end
             ## 
-            ## Sets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+            ## Sets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
             ## @param value Value to set for the targetedVariations property.
             ## @return a void
             ## 

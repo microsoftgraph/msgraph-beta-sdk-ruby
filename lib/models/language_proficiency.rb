@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
             @written
             ## 
-            ## Instantiates a new languageProficiency and sets the default values.
+            ## Instantiates a new LanguageProficiency and sets the default values.
             ## @return a void
             ## 
             def initialize()

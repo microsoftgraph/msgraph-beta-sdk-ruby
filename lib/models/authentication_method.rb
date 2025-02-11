@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph_beta'
 require_relative './models'
@@ -7,11 +8,29 @@ module MicrosoftGraphBeta
         class AuthenticationMethod < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new authenticationMethod and sets the default values.
+            # The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @created_date_time
+            ## 
+            ## Instantiates a new AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -28,6 +47,8 @@ module MicrosoftGraphBeta
                             return EmailAuthenticationMethod.new
                         when "#microsoft.graph.fido2AuthenticationMethod"
                             return Fido2AuthenticationMethod.new
+                        when "#microsoft.graph.hardwareOathAuthenticationMethod"
+                            return HardwareOathAuthenticationMethod.new
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod"
                             return MicrosoftAuthenticatorAuthenticationMethod.new
                         when "#microsoft.graph.passwordAuthenticationMethod"
@@ -36,6 +57,8 @@ module MicrosoftGraphBeta
                             return PasswordlessMicrosoftAuthenticatorAuthenticationMethod.new
                         when "#microsoft.graph.phoneAuthenticationMethod"
                             return PhoneAuthenticationMethod.new
+                        when "#microsoft.graph.platformCredentialAuthenticationMethod"
+                            return PlatformCredentialAuthenticationMethod.new
                         when "#microsoft.graph.softwareOathAuthenticationMethod"
                             return SoftwareOathAuthenticationMethod.new
                         when "#microsoft.graph.temporaryAccessPassAuthenticationMethod"
@@ -52,6 +75,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                 })
             end
             ## 
@@ -62,6 +86,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("createdDateTime", @created_date_time)
             end
         end
     end

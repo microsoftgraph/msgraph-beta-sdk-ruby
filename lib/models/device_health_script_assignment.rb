@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # The Azure Active Directory group we are targeting the script to
             @target
             ## 
-            ## Instantiates a new deviceHealthScriptAssignment and sets the default values.
+            ## Instantiates a new DeviceHealthScriptAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

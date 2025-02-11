@@ -31,10 +31,10 @@ module MicrosoftGraphBeta
             # Last Modified DateTime of the description
             @last_modified_date_time
             ## 
-            # The platform property
+            # Supported platform types for policies.
             @platform
             ## 
-            ## Instantiates a new importedDeviceIdentity and sets the default values.
+            ## Instantiates a new ImportedDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -179,14 +179,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the platform property value. The platform property
+            ## Gets the platform property value. Supported platform types for policies.
             ## @return a platform
             ## 
             def platform
                 return @platform
             end
             ## 
-            ## Sets the platform property value. The platform property
+            ## Sets the platform property value. Supported platform types for policies.
             ## @param value Value to set for the platform property.
             ## @return a void
             ## 

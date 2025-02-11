@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # User principal name of the user.
             @user_principal_name
             ## 
-            ## Instantiates a new accessReviewReviewer and sets the default values.
+            ## Instantiates a new AccessReviewReviewer and sets the default values.
             ## @return a void
             ## 
             def initialize()

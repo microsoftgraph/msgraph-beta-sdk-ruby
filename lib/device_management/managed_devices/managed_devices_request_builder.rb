@@ -10,10 +10,12 @@ require_relative './bulk_restore_cloud_pc/bulk_restore_cloud_pc_request_builder'
 require_relative './bulk_set_cloud_pc_review_status/bulk_set_cloud_pc_review_status_request_builder'
 require_relative './count/count_request_builder'
 require_relative './download_app_diagnostics/download_app_diagnostics_request_builder'
+require_relative './download_powerlift_app_diagnostic/download_powerlift_app_diagnostic_request_builder'
 require_relative './execute_action/execute_action_request_builder'
 require_relative './item/managed_device_item_request_builder'
 require_relative './managed_devices'
 require_relative './move_devices_to_o_u/move_devices_to_o_u_request_builder'
+require_relative './retrieve_powerlift_app_diagnostics_details_with_user_principal_name/retrieve_powerlift_app_diagnostics_details_with_user_principal_name_request_builder'
 
 module MicrosoftGraphBeta
     module DeviceManagement
@@ -46,6 +48,11 @@ module MicrosoftGraphBeta
                 # Provides operations to call the downloadAppDiagnostics method.
                 def download_app_diagnostics()
                     return MicrosoftGraphBeta::DeviceManagement::ManagedDevices::DownloadAppDiagnostics::DownloadAppDiagnosticsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the downloadPowerliftAppDiagnostic method.
+                def download_powerlift_app_diagnostic()
+                    return MicrosoftGraphBeta::DeviceManagement::ManagedDevices::DownloadPowerliftAppDiagnostic::DownloadPowerliftAppDiagnosticRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the executeAction method.
@@ -84,7 +91,7 @@ module MicrosoftGraphBeta
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/managedDevices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                 end
                 ## 
                 ## The list of managed devices.
@@ -96,8 +103,7 @@ module MicrosoftGraphBeta
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ManagedDeviceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -112,9 +118,17 @@ module MicrosoftGraphBeta
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::ManagedDevice.create_from_discriminator_value(pn) }, error_mapping)
+                end
+                ## 
+                ## Provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+                ## @param user_principal_name Usage: userPrincipalName='{userPrincipalName}'
+                ## @return a retrieve_powerlift_app_diagnostics_details_with_user_principal_name_request_builder
+                ## 
+                def retrieve_powerlift_app_diagnostics_details_with_user_principal_name(user_principal_name)
+                    raise StandardError, 'user_principal_name cannot be null' if user_principal_name.nil?
+                    return RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter, userPrincipalName)
                 end
                 ## 
                 ## The list of managed devices.
@@ -123,15 +137,15 @@ module MicrosoftGraphBeta
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
@@ -143,16 +157,25 @@ module MicrosoftGraphBeta
                 def to_post_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :POST
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :POST
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a managed_devices_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ManagedDevicesRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

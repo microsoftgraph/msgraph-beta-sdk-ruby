@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # List of value which means not configured for the setting
             @not_configured_value
             ## 
-            ## Instantiates a new deviceManagementSettingRequiredConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingRequiredConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

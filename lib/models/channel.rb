@@ -8,13 +8,16 @@ module MicrosoftGraphBeta
         class Channel < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+            @all_members
+            ## 
             # Read only. Timestamp at which the channel was created.
             @created_date_time
             ## 
             # Optional textual description for the channel.
             @description
             ## 
-            # Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+            # Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             @display_name
             ## 
             # The email address for sending messages to the channel. Read-only.
@@ -23,16 +26,22 @@ module MicrosoftGraphBeta
             # Metadata for the location where the channel's files are stored.
             @files_folder
             ## 
-            # Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            # Indicates whether the channel is archived. Read-only.
+            @is_archived
+            ## 
+            # Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             @is_favorite_by_default
+            ## 
+            # The layoutType property
+            @layout_type
             ## 
             # A collection of membership records associated with the channel.
             @members
             ## 
-            # The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+            # The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
             @membership_type
             ## 
-            # A collection of all the messages in the channel. A navigation property. Nullable.
+            # A collection of all the messages in the channel. Nullable.
             @messages
             ## 
             # Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
@@ -41,19 +50,34 @@ module MicrosoftGraphBeta
             # A collection of teams with which a channel is shared.
             @shared_with_teams
             ## 
-            # Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            # Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.
             @summary
             ## 
-            # A collection of all the tabs in the channel. A navigation property.
+            # A collection of all the tabs in the channel.
             @tabs
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
-            # A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+            # A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
             @web_url
             ## 
-            ## Instantiates a new channel and sets the default values.
+            ## Gets the allMembers property value. A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+            ## @return a conversation_member
+            ## 
+            def all_members
+                return @all_members
+            end
+            ## 
+            ## Sets the allMembers property value. A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+            ## @param value Value to set for the allMembers property.
+            ## @return a void
+            ## 
+            def all_members=(value)
+                @all_members = value
+            end
+            ## 
+            ## Instantiates a new Channel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,14 +123,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+            ## Gets the displayName property value. Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+            ## Sets the displayName property value. Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -149,12 +173,15 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "allMembers" => lambda {|n| @all_members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "email" => lambda {|n| @email = n.get_string_value() },
                     "filesFolder" => lambda {|n| @files_folder = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }) },
+                    "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
                     "isFavoriteByDefault" => lambda {|n| @is_favorite_by_default = n.get_boolean_value() },
+                    "layoutType" => lambda {|n| @layout_type = n.get_enum_value(MicrosoftGraphBeta::Models::ChannelLayoutType) },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                     "membershipType" => lambda {|n| @membership_type = n.get_enum_value(MicrosoftGraphBeta::Models::ChannelMembershipType) },
                     "messages" => lambda {|n| @messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ChatMessage.create_from_discriminator_value(pn) }) },
@@ -167,19 +194,49 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            ## Gets the isArchived property value. Indicates whether the channel is archived. Read-only.
+            ## @return a boolean
+            ## 
+            def is_archived
+                return @is_archived
+            end
+            ## 
+            ## Sets the isArchived property value. Indicates whether the channel is archived. Read-only.
+            ## @param value Value to set for the isArchived property.
+            ## @return a void
+            ## 
+            def is_archived=(value)
+                @is_archived = value
+            end
+            ## 
+            ## Gets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             ## @return a boolean
             ## 
             def is_favorite_by_default
                 return @is_favorite_by_default
             end
             ## 
-            ## Sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            ## Sets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             ## @param value Value to set for the isFavoriteByDefault property.
             ## @return a void
             ## 
             def is_favorite_by_default=(value)
                 @is_favorite_by_default = value
+            end
+            ## 
+            ## Gets the layoutType property value. The layoutType property
+            ## @return a channel_layout_type
+            ## 
+            def layout_type
+                return @layout_type
+            end
+            ## 
+            ## Sets the layoutType property value. The layoutType property
+            ## @param value Value to set for the layoutType property.
+            ## @return a void
+            ## 
+            def layout_type=(value)
+                @layout_type = value
             end
             ## 
             ## Gets the members property value. A collection of membership records associated with the channel.
@@ -197,14 +254,14 @@ module MicrosoftGraphBeta
                 @members = value
             end
             ## 
-            ## Gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+            ## Gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
             ## @return a channel_membership_type
             ## 
             def membership_type
                 return @membership_type
             end
             ## 
-            ## Sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+            ## Sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
             ## @param value Value to set for the membershipType property.
             ## @return a void
             ## 
@@ -212,14 +269,14 @@ module MicrosoftGraphBeta
                 @membership_type = value
             end
             ## 
-            ## Gets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
+            ## Gets the messages property value. A collection of all the messages in the channel. Nullable.
             ## @return a chat_message
             ## 
             def messages
                 return @messages
             end
             ## 
-            ## Sets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
+            ## Sets the messages property value. A collection of all the messages in the channel. Nullable.
             ## @param value Value to set for the messages property.
             ## @return a void
             ## 
@@ -249,12 +306,15 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("allMembers", @all_members)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("email", @email)
                 writer.write_object_value("filesFolder", @files_folder)
+                writer.write_boolean_value("isArchived", @is_archived)
                 writer.write_boolean_value("isFavoriteByDefault", @is_favorite_by_default)
+                writer.write_enum_value("layoutType", @layout_type)
                 writer.write_collection_of_object_values("members", @members)
                 writer.write_enum_value("membershipType", @membership_type)
                 writer.write_collection_of_object_values("messages", @messages)
@@ -281,14 +341,14 @@ module MicrosoftGraphBeta
                 @shared_with_teams = value
             end
             ## 
-            ## Gets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            ## Gets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.
             ## @return a channel_summary
             ## 
             def summary
                 return @summary
             end
             ## 
-            ## Sets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            ## Sets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.
             ## @param value Value to set for the summary property.
             ## @return a void
             ## 
@@ -296,14 +356,14 @@ module MicrosoftGraphBeta
                 @summary = value
             end
             ## 
-            ## Gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
+            ## Gets the tabs property value. A collection of all the tabs in the channel.
             ## @return a teams_tab
             ## 
             def tabs
                 return @tabs
             end
             ## 
-            ## Sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
+            ## Sets the tabs property value. A collection of all the tabs in the channel.
             ## @param value Value to set for the tabs property.
             ## @return a void
             ## 
@@ -311,14 +371,14 @@ module MicrosoftGraphBeta
                 @tabs = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -326,14 +386,14 @@ module MicrosoftGraphBeta
                 @tenant_id = value
             end
             ## 
-            ## Gets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+            ## Gets the webUrl property value. A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+            ## Sets the webUrl property value. A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

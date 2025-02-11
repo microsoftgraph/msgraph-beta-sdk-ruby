@@ -1,0 +1,1 @@
+require_relative 'assign_and_activate_post_request_body'

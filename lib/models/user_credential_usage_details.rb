@@ -44,7 +44,7 @@ module MicrosoftGraphBeta
                 @auth_method = value
             end
             ## 
-            ## Instantiates a new userCredentialUsageDetails and sets the default values.
+            ## Instantiates a new UserCredentialUsageDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

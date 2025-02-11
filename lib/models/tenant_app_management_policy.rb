@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             @service_principal_restrictions
             ## 
             ## Gets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
-            ## @return a app_management_configuration
+            ## @return a app_management_application_configuration
             ## 
             def application_restrictions
                 return @application_restrictions
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @application_restrictions = value
             end
             ## 
-            ## Instantiates a new tenantAppManagementPolicy and sets the default values.
+            ## Instantiates a new TenantAppManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,9 +53,9 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicationRestrictions" => lambda {|n| @application_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AppManagementConfiguration.create_from_discriminator_value(pn) }) },
+                    "applicationRestrictions" => lambda {|n| @application_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AppManagementApplicationConfiguration.create_from_discriminator_value(pn) }) },
                     "isEnabled" => lambda {|n| @is_enabled = n.get_boolean_value() },
-                    "servicePrincipalRestrictions" => lambda {|n| @service_principal_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AppManagementConfiguration.create_from_discriminator_value(pn) }) },
+                    "servicePrincipalRestrictions" => lambda {|n| @service_principal_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AppManagementServicePrincipalConfiguration.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -87,7 +87,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
-            ## @return a app_management_configuration
+            ## @return a app_management_service_principal_configuration
             ## 
             def service_principal_restrictions
                 return @service_principal_restrictions

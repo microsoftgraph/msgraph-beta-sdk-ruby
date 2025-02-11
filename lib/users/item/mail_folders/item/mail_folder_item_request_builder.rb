@@ -11,6 +11,9 @@ require_relative './item'
 require_relative './message_rules/message_rules_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './move/move_request_builder'
+require_relative './operations/operations_request_builder'
+require_relative './permanent_delete/permanent_delete_request_builder'
+require_relative './update_all_messages_read_state/update_all_messages_read_state_request_builder'
 require_relative './user_configurations/user_configurations_request_builder'
 
 module MicrosoftGraphBeta
@@ -48,6 +51,21 @@ module MicrosoftGraphBeta
                             return MicrosoftGraphBeta::Users::Item::MailFolders::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.
+                        def operations()
+                            return MicrosoftGraphBeta::Users::Item::MailFolders::Item::Operations::OperationsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the permanentDelete method.
+                        def permanent_delete()
+                            return MicrosoftGraphBeta::Users::Item::MailFolders::Item::PermanentDelete::PermanentDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the updateAllMessagesReadState method.
+                        def update_all_messages_read_state()
+                            return MicrosoftGraphBeta::Users::Item::MailFolders::Item::UpdateAllMessagesReadState::UpdateAllMessagesReadStateRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
                         def user_configurations()
                             return MicrosoftGraphBeta::Users::Item::MailFolders::Item::UserConfigurations::UserConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -59,10 +77,10 @@ module MicrosoftGraphBeta
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?includeHiddenFolders*,%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?%24expand,%24select,includeHiddenFolders*}")
                         end
                         ## 
-                        ## Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
+                        ## Delete navigation property mailFolders for users
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -71,8 +89,7 @@ module MicrosoftGraphBeta
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
@@ -85,12 +102,11 @@ module MicrosoftGraphBeta
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the writable properties of a mailSearchFolder object.
+                        ## Update the navigation property mailFolders in users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of mail_folder
@@ -101,24 +117,24 @@ module MicrosoftGraphBeta
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
+                        ## Delete navigation property mailFolders for users
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_delete_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :DELETE
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :DELETE
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
@@ -128,19 +144,19 @@ module MicrosoftGraphBeta
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
-                        ## Update the writable properties of a mailSearchFolder object.
+                        ## Update the navigation property mailFolders in users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -148,16 +164,25 @@ module MicrosoftGraphBeta
                         def to_patch_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :PATCH
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :PATCH
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a mail_folder_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return MailFolderItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

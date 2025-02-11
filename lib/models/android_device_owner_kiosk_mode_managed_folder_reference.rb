@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Name of the folder
             @folder_name
             ## 
-            ## Instantiates a new androidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
             ## @return a void
             ## 
             def initialize()

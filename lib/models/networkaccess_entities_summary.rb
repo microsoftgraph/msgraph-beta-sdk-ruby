@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Count of unique devices that were seen.
+            # The number of unique devices that were seen.
             @device_count
             ## 
             # The OdataType property
@@ -19,28 +19,28 @@ module MicrosoftGraphBeta
             # The trafficType property
             @traffic_type
             ## 
-            # Count of unique Azure Active Directoy users that were seen.
+            # The number of unique Microsoft Entra ID users that were seen.
             @user_count
             ## 
-            # Count of unique target workloads or hosts that were seen.
+            # The number of unique target workloads/hosts that were seen.
             @workload_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new networkaccessEntitiesSummary and sets the default values.
+            ## Instantiates a new NetworkaccessEntitiesSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraphBeta
                 return NetworkaccessEntitiesSummary.new
             end
             ## 
-            ## Gets the deviceCount property value. Count of unique devices that were seen.
+            ## Gets the deviceCount property value. The number of unique devices that were seen.
             ## @return a int64
             ## 
             def device_count
                 return @device_count
             end
             ## 
-            ## Sets the deviceCount property value. Count of unique devices that were seen.
+            ## Sets the deviceCount property value. The number of unique devices that were seen.
             ## @param value Value to set for the deviceCount property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraphBeta
                 @traffic_type = value
             end
             ## 
-            ## Gets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Gets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
             ## @return a int64
             ## 
             def user_count
                 return @user_count
             end
             ## 
-            ## Sets the userCount property value. Count of unique Azure Active Directoy users that were seen.
+            ## Sets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
             ## @param value Value to set for the userCount property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraphBeta
                 @user_count = value
             end
             ## 
-            ## Gets the workloadCount property value. Count of unique target workloads or hosts that were seen.
+            ## Gets the workloadCount property value. The number of unique target workloads/hosts that were seen.
             ## @return a int64
             ## 
             def workload_count
                 return @workload_count
             end
             ## 
-            ## Sets the workloadCount property value. Count of unique target workloads or hosts that were seen.
+            ## Sets the workloadCount property value. The number of unique target workloads/hosts that were seen.
             ## @param value Value to set for the workloadCount property.
             ## @return a void
             ## 
