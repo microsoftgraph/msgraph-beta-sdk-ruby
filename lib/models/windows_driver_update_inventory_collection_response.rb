@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The value property
             @value
             ## 
-            ## Instantiates a new windowsDriverUpdateInventoryCollectionResponse and sets the default values.
+            ## Instantiates a new WindowsDriverUpdateInventoryCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

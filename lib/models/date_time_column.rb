@@ -13,28 +13,28 @@ module MicrosoftGraphBeta
             # How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
             @display_as
             ## 
-            # Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+            # Indicates whether the value should be presented as a date only or a date and time. It must be either dateOnly or dateTime.
             @format
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new dateTimeColumn and sets the default values.
+            ## Instantiates a new DateTimeColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 @display_as = value
             end
             ## 
-            ## Gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+            ## Gets the format property value. Indicates whether the value should be presented as a date only or a date and time. It must be either dateOnly or dateTime.
             ## @return a string
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+            ## Sets the format property value. Indicates whether the value should be presented as a date only or a date and time. It must be either dateOnly or dateTime.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 

@@ -170,7 +170,7 @@ module MicrosoftGraphBeta
                 @assigned_to_user_id = value
             end
             ## 
-            ## Instantiates a new managedTenantsManagedTenantAlert and sets the default values.
+            ## Instantiates a new ManagedTenantsManagedTenantAlert and sets the default values.
             ## @return a void
             ## 
             def initialize()

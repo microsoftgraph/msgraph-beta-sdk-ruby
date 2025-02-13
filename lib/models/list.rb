@@ -10,34 +10,37 @@ module MicrosoftGraphBeta
             # The recent activities that took place within this list.
             @activities
             ## 
-            # The columns property
+            # The collection of field definitions for this list.
             @columns
             ## 
-            # The contentTypes property
+            # The collection of content types present in this list.
             @content_types
             ## 
             # The displayable title of the list.
             @display_name
             ## 
-            # Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            # Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             @drive
             ## 
             # All items contained in the list.
             @items
             ## 
-            # Provides additional details about the list.
+            # Contains more details about the list.
             @list
             ## 
-            # The collection of long running operations for the list.
+            # The collection of long-running operations on the list.
             @operations
             ## 
-            # The sharepointIds property
+            # The set of permissions for the item. Read-only. Nullable.
+            @permissions
+            ## 
+            # Returns identifiers useful for SharePoint REST compatibility. Read-only.
             @sharepoint_ids
             ## 
             # The set of subscriptions on the list.
             @subscriptions
             ## 
-            # If present, indicates that this is a system-managed list. Read-only.
+            # If present, indicates that the list is system-managed. Read-only.
             @system
             ## 
             ## Gets the activities property value. The recent activities that took place within this list.
@@ -55,14 +58,14 @@ module MicrosoftGraphBeta
                 @activities = value
             end
             ## 
-            ## Gets the columns property value. The columns property
+            ## Gets the columns property value. The collection of field definitions for this list.
             ## @return a column_definition
             ## 
             def columns
                 return @columns
             end
             ## 
-            ## Sets the columns property value. The columns property
+            ## Sets the columns property value. The collection of field definitions for this list.
             ## @param value Value to set for the columns property.
             ## @return a void
             ## 
@@ -70,7 +73,7 @@ module MicrosoftGraphBeta
                 @columns = value
             end
             ## 
-            ## Instantiates a new list and sets the default values.
+            ## Instantiates a new List and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,14 +81,14 @@ module MicrosoftGraphBeta
                 @odata_type = "#microsoft.graph.list"
             end
             ## 
-            ## Gets the contentTypes property value. The contentTypes property
+            ## Gets the contentTypes property value. The collection of content types present in this list.
             ## @return a content_type
             ## 
             def content_types
                 return @content_types
             end
             ## 
-            ## Sets the contentTypes property value. The contentTypes property
+            ## Sets the contentTypes property value. The collection of content types present in this list.
             ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
@@ -117,14 +120,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            ## Gets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             ## @return a drive
             ## 
             def drive
                 return @drive
             end
             ## 
-            ## Sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            ## Sets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             ## @param value Value to set for the drive property.
             ## @return a void
             ## 
@@ -145,6 +148,7 @@ module MicrosoftGraphBeta
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ListItem.create_from_discriminator_value(pn) }) },
                     "list" => lambda {|n| @list = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ListInfo.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::RichLongRunningOperation.create_from_discriminator_value(pn) }) },
+                    "permissions" => lambda {|n| @permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Permission.create_from_discriminator_value(pn) }) },
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SharepointIds.create_from_discriminator_value(pn) }) },
                     "subscriptions" => lambda {|n| @subscriptions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Subscription.create_from_discriminator_value(pn) }) },
                     "system" => lambda {|n| @system = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SystemFacet.create_from_discriminator_value(pn) }) },
@@ -166,14 +170,14 @@ module MicrosoftGraphBeta
                 @items = value
             end
             ## 
-            ## Gets the list property value. Provides additional details about the list.
+            ## Gets the list property value. Contains more details about the list.
             ## @return a list_info
             ## 
             def list
                 return @list
             end
             ## 
-            ## Sets the list property value. Provides additional details about the list.
+            ## Sets the list property value. Contains more details about the list.
             ## @param value Value to set for the list property.
             ## @return a void
             ## 
@@ -181,19 +185,34 @@ module MicrosoftGraphBeta
                 @list = value
             end
             ## 
-            ## Gets the operations property value. The collection of long running operations for the list.
+            ## Gets the operations property value. The collection of long-running operations on the list.
             ## @return a rich_long_running_operation
             ## 
             def operations
                 return @operations
             end
             ## 
-            ## Sets the operations property value. The collection of long running operations for the list.
+            ## Sets the operations property value. The collection of long-running operations on the list.
             ## @param value Value to set for the operations property.
             ## @return a void
             ## 
             def operations=(value)
                 @operations = value
+            end
+            ## 
+            ## Gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
+            ## @return a permission
+            ## 
+            def permissions
+                return @permissions
+            end
+            ## 
+            ## Sets the permissions property value. The set of permissions for the item. Read-only. Nullable.
+            ## @param value Value to set for the permissions property.
+            ## @return a void
+            ## 
+            def permissions=(value)
+                @permissions = value
             end
             ## 
             ## Serializes information the current object
@@ -211,19 +230,20 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("items", @items)
                 writer.write_object_value("list", @list)
                 writer.write_collection_of_object_values("operations", @operations)
+                writer.write_collection_of_object_values("permissions", @permissions)
                 writer.write_object_value("sharepointIds", @sharepoint_ids)
                 writer.write_collection_of_object_values("subscriptions", @subscriptions)
                 writer.write_object_value("system", @system)
             end
             ## 
-            ## Gets the sharepointIds property value. The sharepointIds property
+            ## Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
             ## @return a sharepoint_ids
             ## 
             def sharepoint_ids
                 return @sharepoint_ids
             end
             ## 
-            ## Sets the sharepointIds property value. The sharepointIds property
+            ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
             ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
@@ -246,14 +266,14 @@ module MicrosoftGraphBeta
                 @subscriptions = value
             end
             ## 
-            ## Gets the system property value. If present, indicates that this is a system-managed list. Read-only.
+            ## Gets the system property value. If present, indicates that the list is system-managed. Read-only.
             ## @return a system_facet
             ## 
             def system
                 return @system
             end
             ## 
-            ## Sets the system property value. If present, indicates that this is a system-managed list. Read-only.
+            ## Sets the system property value. If present, indicates that the list is system-managed. Read-only.
             ## @param value Value to set for the system property.
             ## @return a void
             ## 

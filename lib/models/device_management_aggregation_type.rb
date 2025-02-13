@@ -6,6 +6,7 @@ module MicrosoftGraphBeta
             AffectedCloudPcCount: :AffectedCloudPcCount,
             AffectedCloudPcPercentage: :AffectedCloudPcPercentage,
             UnknownFutureValue: :UnknownFutureValue,
+            DurationInMinutes: :DurationInMinutes,
         }
     end
 end

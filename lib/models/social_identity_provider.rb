@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
             @client_secret
             ## 
-            # For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+            # For external and workforce tenants, possible values: Facebook, Google  For Azure AD B2C tenants, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat.
             @identity_provider_type
             ## 
             ## Gets the clientId property value. The client identifier for the application obtained when registering the application with the identity provider. Required.
@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new socialIdentityProvider and sets the default values.
+            ## Instantiates a new SocialIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+            ## Gets the identityProviderType property value. For external and workforce tenants, possible values: Facebook, Google  For Azure AD B2C tenants, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat.
             ## @return a string
             ## 
             def identity_provider_type
                 return @identity_provider_type
             end
             ## 
-            ## Sets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+            ## Sets the identityProviderType property value. For external and workforce tenants, possible values: Facebook, Google  For Azure AD B2C tenants, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat.
             ## @param value Value to set for the identityProviderType property.
             ## @return a void
             ## 

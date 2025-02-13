@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # IP range base class for representing IPV4, IPV6 address ranges
         class IPv6CidrRange < MicrosoftGraphBeta::Models::IpRange
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -25,7 +27,7 @@ module MicrosoftGraphBeta
                 @cidr_address = value
             end
             ## 
-            ## Instantiates a new iPv6CidrRange and sets the default values.
+            ## Instantiates a new IPv6CidrRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

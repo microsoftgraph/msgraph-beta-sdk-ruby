@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class WebApplicationSegment < MicrosoftGraphBeta::Models::ApplicationSegment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+            # If you're configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.
             @alternate_url
             ## 
             # A collection of CORS Rule definitions for a particular application segment.
@@ -19,14 +19,14 @@ module MicrosoftGraphBeta
             # The internal URL of the application segment; for example, https://intranet/.
             @internal_url
             ## 
-            ## Gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+            ## Gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.
             ## @return a string
             ## 
             def alternate_url
                 return @alternate_url
             end
             ## 
-            ## Sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+            ## Sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.
             ## @param value Value to set for the alternateUrl property.
             ## @return a void
             ## 
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @alternate_url = value
             end
             ## 
-            ## Instantiates a new webApplicationSegment and sets the default values.
+            ## Instantiates a new WebApplicationSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()

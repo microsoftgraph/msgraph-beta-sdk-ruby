@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new privilegedRole and sets the default values.
+            ## Instantiates a new PrivilegedRole and sets the default values.
             ## @return a void
             ## 
             def initialize()

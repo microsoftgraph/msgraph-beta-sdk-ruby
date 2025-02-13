@@ -7,28 +7,28 @@ module MicrosoftGraphBeta
         class PrinterBase < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The capabilities property
+            # The capabilities of the printer/printerShare.
             @capabilities
             ## 
-            # The defaults property
+            # The default print settings of printer/printerShare.
             @defaults
             ## 
-            # The displayName property
+            # The name of the printer/printerShare.
             @display_name
             ## 
-            # The isAcceptingJobs property
+            # Specifies whether the printer/printerShare is currently accepting new print jobs.
             @is_accepting_jobs
             ## 
-            # The jobs property
+            # The list of jobs that are queued for printing by the printer/printerShare.
             @jobs
             ## 
-            # The location property
+            # The physical and/or organizational location of the printer/printerShare.
             @location
             ## 
-            # The manufacturer property
+            # The manufacturer of the printer/printerShare.
             @manufacturer
             ## 
-            # The model property
+            # The model name of the printer/printerShare.
             @model
             ## 
             # The name property
@@ -37,14 +37,14 @@ module MicrosoftGraphBeta
             # The status property
             @status
             ## 
-            ## Gets the capabilities property value. The capabilities property
+            ## Gets the capabilities property value. The capabilities of the printer/printerShare.
             ## @return a printer_capabilities
             ## 
             def capabilities
                 return @capabilities
             end
             ## 
-            ## Sets the capabilities property value. The capabilities property
+            ## Sets the capabilities property value. The capabilities of the printer/printerShare.
             ## @param value Value to set for the capabilities property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraphBeta
                 @capabilities = value
             end
             ## 
-            ## Instantiates a new printerBase and sets the default values.
+            ## Instantiates a new PrinterBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,14 +78,14 @@ module MicrosoftGraphBeta
                 return PrinterBase.new
             end
             ## 
-            ## Gets the defaults property value. The defaults property
+            ## Gets the defaults property value. The default print settings of printer/printerShare.
             ## @return a printer_defaults
             ## 
             def defaults
                 return @defaults
             end
             ## 
-            ## Sets the defaults property value. The defaults property
+            ## Sets the defaults property value. The default print settings of printer/printerShare.
             ## @param value Value to set for the defaults property.
             ## @return a void
             ## 
@@ -93,14 +93,14 @@ module MicrosoftGraphBeta
                 @defaults = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The name of the printer/printerShare.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The name of the printer/printerShare.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isAcceptingJobs property value. The isAcceptingJobs property
+            ## Gets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
             ## @return a boolean
             ## 
             def is_accepting_jobs
                 return @is_accepting_jobs
             end
             ## 
-            ## Sets the isAcceptingJobs property value. The isAcceptingJobs property
+            ## Sets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
             ## @param value Value to set for the isAcceptingJobs property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraphBeta
                 @is_accepting_jobs = value
             end
             ## 
-            ## Gets the jobs property value. The jobs property
+            ## Gets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
             ## @return a print_job
             ## 
             def jobs
                 return @jobs
             end
             ## 
-            ## Sets the jobs property value. The jobs property
+            ## Sets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
             ## @param value Value to set for the jobs property.
             ## @return a void
             ## 
@@ -156,14 +156,14 @@ module MicrosoftGraphBeta
                 @jobs = value
             end
             ## 
-            ## Gets the location property value. The location property
+            ## Gets the location property value. The physical and/or organizational location of the printer/printerShare.
             ## @return a printer_location
             ## 
             def location
                 return @location
             end
             ## 
-            ## Sets the location property value. The location property
+            ## Sets the location property value. The physical and/or organizational location of the printer/printerShare.
             ## @param value Value to set for the location property.
             ## @return a void
             ## 
@@ -171,14 +171,14 @@ module MicrosoftGraphBeta
                 @location = value
             end
             ## 
-            ## Gets the manufacturer property value. The manufacturer property
+            ## Gets the manufacturer property value. The manufacturer of the printer/printerShare.
             ## @return a string
             ## 
             def manufacturer
                 return @manufacturer
             end
             ## 
-            ## Sets the manufacturer property value. The manufacturer property
+            ## Sets the manufacturer property value. The manufacturer of the printer/printerShare.
             ## @param value Value to set for the manufacturer property.
             ## @return a void
             ## 
@@ -186,14 +186,14 @@ module MicrosoftGraphBeta
                 @manufacturer = value
             end
             ## 
-            ## Gets the model property value. The model property
+            ## Gets the model property value. The model name of the printer/printerShare.
             ## @return a string
             ## 
             def model
                 return @model
             end
             ## 
-            ## Sets the model property value. The model property
+            ## Sets the model property value. The model name of the printer/printerShare.
             ## @param value Value to set for the model property.
             ## @return a void
             ## 

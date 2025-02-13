@@ -9,10 +9,13 @@ module MicrosoftGraphBeta
         class MacOSVpnConfiguration < MicrosoftGraphBeta::Models::AppleVpnConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # Identity certificate for client authentication when authentication method is certificate.
             @identity_certificate
             ## 
-            ## Instantiates a new macOSVpnConfiguration and sets the default values.
+            ## Instantiates a new MacOSVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -29,11 +32,27 @@ module MicrosoftGraphBeta
                 return MacOSVpnConfiguration.new
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "identityCertificate" => lambda {|n| @identity_certificate = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MacOSCertificateProfileBase.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -60,6 +79,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_object_value("identityCertificate", @identity_certificate)
             end
         end

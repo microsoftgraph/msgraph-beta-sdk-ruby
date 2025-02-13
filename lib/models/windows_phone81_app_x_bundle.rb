@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @app_x_package_information_list = value
             end
             ## 
-            ## Instantiates a new windowsPhone81AppXBundle and sets the default values.
+            ## Instantiates a new WindowsPhone81AppXBundle and sets the default values.
             ## @return a void
             ## 
             def initialize()

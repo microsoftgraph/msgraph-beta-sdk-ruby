@@ -16,10 +16,10 @@ module MicrosoftGraphBeta
             # The list of categories for this app.
             @categories
             ## 
-            # The date and time the app was created.
+            # The date and time the app was created. This property is read-only.
             @created_date_time
             ## 
-            # The total number of dependencies the child app has.
+            # The total number of dependencies the child app has. This property is read-only.
             @dependent_app_count
             ## 
             # The description of the app.
@@ -34,7 +34,7 @@ module MicrosoftGraphBeta
             # The more information Url.
             @information_url
             ## 
-            # The value indicating whether the app is assigned to at least one group.
+            # The value indicating whether the app is assigned to at least one group. This property is read-only.
             @is_assigned
             ## 
             # The value indicating whether the app is marked as featured by the admin.
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # The large icon, to be displayed in the app details and used for upload of the icon.
             @large_icon
             ## 
-            # The date and time the app was last modified.
+            # The date and time the app was last modified. This property is read-only.
             @last_modified_date_time
             ## 
             # Notes for the app.
@@ -61,19 +61,19 @@ module MicrosoftGraphBeta
             # Indicates the publishing state of an app.
             @publishing_state
             ## 
-            # List of relationships for this mobile app.
+            # The set of direct relationships for this app.
             @relationships
             ## 
             # List of scope tag ids for this mobile app.
             @role_scope_tag_ids
             ## 
-            # The total number of apps this app is directly or indirectly superseded by.
+            # The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             @superseded_app_count
             ## 
-            # The total number of apps this app directly or indirectly supersedes.
+            # The total number of apps this app directly or indirectly supersedes. This property is read-only.
             @superseding_app_count
             ## 
-            # The upload state.
+            # The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
             @upload_state
             ## 
             ## Gets the assignments property value. The list of group assignments for this mobile app.
@@ -106,21 +106,21 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new mobileApp and sets the default values.
+            ## Instantiates a new MobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time the app was created.
+            ## Gets the createdDateTime property value. The date and time the app was created. This property is read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time the app was created.
+            ## Sets the createdDateTime property value. The date and time the app was created. This property is read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -192,6 +192,8 @@ module MicrosoftGraphBeta
                             return OfficeSuiteApp.new
                         when "#microsoft.graph.webApp"
                             return WebApp.new
+                        when "#microsoft.graph.win32CatalogApp"
+                            return Win32CatalogApp.new
                         when "#microsoft.graph.win32LobApp"
                             return Win32LobApp.new
                         when "#microsoft.graph.windowsAppX"
@@ -221,14 +223,14 @@ module MicrosoftGraphBeta
                 return MobileApp.new
             end
             ## 
-            ## Gets the dependentAppCount property value. The total number of dependencies the child app has.
+            ## Gets the dependentAppCount property value. The total number of dependencies the child app has. This property is read-only.
             ## @return a integer
             ## 
             def dependent_app_count
                 return @dependent_app_count
             end
             ## 
-            ## Sets the dependentAppCount property value. The total number of dependencies the child app has.
+            ## Sets the dependentAppCount property value. The total number of dependencies the child app has. This property is read-only.
             ## @param value Value to set for the dependentAppCount property.
             ## @return a void
             ## 
@@ -326,14 +328,14 @@ module MicrosoftGraphBeta
                 @information_url = value
             end
             ## 
-            ## Gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+            ## Gets the isAssigned property value. The value indicating whether the app is assigned to at least one group. This property is read-only.
             ## @return a boolean
             ## 
             def is_assigned
                 return @is_assigned
             end
             ## 
-            ## Sets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+            ## Sets the isAssigned property value. The value indicating whether the app is assigned to at least one group. This property is read-only.
             ## @param value Value to set for the isAssigned property.
             ## @return a void
             ## 
@@ -371,14 +373,14 @@ module MicrosoftGraphBeta
                 @large_icon = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The date and time the app was last modified.
+            ## Gets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The date and time the app was last modified.
+            ## Sets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -461,14 +463,14 @@ module MicrosoftGraphBeta
                 @publishing_state = value
             end
             ## 
-            ## Gets the relationships property value. List of relationships for this mobile app.
+            ## Gets the relationships property value. The set of direct relationships for this app.
             ## @return a mobile_app_relationship
             ## 
             def relationships
                 return @relationships
             end
             ## 
-            ## Sets the relationships property value. List of relationships for this mobile app.
+            ## Sets the relationships property value. The set of direct relationships for this app.
             ## @param value Value to set for the relationships property.
             ## @return a void
             ## 
@@ -500,16 +502,12 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_collection_of_object_values("categories", @categories)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_number_value("dependentAppCount", @dependent_app_count)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("developer", @developer)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("informationUrl", @information_url)
-                writer.write_boolean_value("isAssigned", @is_assigned)
                 writer.write_boolean_value("isFeatured", @is_featured)
                 writer.write_object_value("largeIcon", @large_icon)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("notes", @notes)
                 writer.write_string_value("owner", @owner)
                 writer.write_string_value("privacyInformationUrl", @privacy_information_url)
@@ -517,19 +515,16 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("publishingState", @publishing_state)
                 writer.write_collection_of_object_values("relationships", @relationships)
                 writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
-                writer.write_number_value("supersededAppCount", @superseded_app_count)
-                writer.write_number_value("supersedingAppCount", @superseding_app_count)
-                writer.write_number_value("uploadState", @upload_state)
             end
             ## 
-            ## Gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+            ## Gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             ## @return a integer
             ## 
             def superseded_app_count
                 return @superseded_app_count
             end
             ## 
-            ## Sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+            ## Sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
             ## @param value Value to set for the supersededAppCount property.
             ## @return a void
             ## 
@@ -537,14 +532,14 @@ module MicrosoftGraphBeta
                 @superseded_app_count = value
             end
             ## 
-            ## Gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+            ## Gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
             ## @return a integer
             ## 
             def superseding_app_count
                 return @superseding_app_count
             end
             ## 
-            ## Sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+            ## Sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
             ## @param value Value to set for the supersedingAppCount property.
             ## @return a void
             ## 
@@ -552,14 +547,14 @@ module MicrosoftGraphBeta
                 @superseding_app_count = value
             end
             ## 
-            ## Gets the uploadState property value. The upload state.
+            ## Gets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
             ## @return a integer
             ## 
             def upload_state
                 return @upload_state
             end
             ## 
-            ## Sets the uploadState property value. The upload state.
+            ## Sets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
             ## @param value Value to set for the uploadState property.
             ## @return a void
             ## 

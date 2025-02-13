@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PlannerDelta < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new plannerDelta and sets the default values.
+            ## Instantiates a new PlannerDelta and sets the default values.
             ## @return a void
             ## 
             def initialize()

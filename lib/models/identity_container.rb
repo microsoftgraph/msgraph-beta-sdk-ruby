@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The authenticationEventListeners property
             @authentication_event_listeners
             ## 
-            # Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            # Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
             @authentication_events_flows
             ## 
             # Represents entry point for B2C identity userflows.
@@ -40,21 +40,24 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # Represents entry point for Microsoft Entra product changes and planned new features.
+            @product_changes
+            ## 
             # Represents entry point for identity userflow attributes.
             @user_flow_attributes
             ## 
             # The userFlows property
             @user_flows
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -91,14 +94,14 @@ module MicrosoftGraphBeta
                 @authentication_event_listeners = value
             end
             ## 
-            ## Gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            ## Gets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
             ## @return a authentication_events_flow
             ## 
             def authentication_events_flows
                 return @authentication_events_flows
             end
             ## 
-            ## Sets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+            ## Sets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
             ## @param value Value to set for the authenticationEventsFlows property.
             ## @return a void
             ## 
@@ -151,7 +154,7 @@ module MicrosoftGraphBeta
                 @conditional_access = value
             end
             ## 
-            ## Instantiates a new identityContainer and sets the default values.
+            ## Instantiates a new IdentityContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -212,6 +215,7 @@ module MicrosoftGraphBeta
                     "customAuthenticationExtensions" => lambda {|n| @custom_authentication_extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::CustomAuthenticationExtension.create_from_discriminator_value(pn) }) },
                     "identityProviders" => lambda {|n| @identity_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "productChanges" => lambda {|n| @product_changes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ChangeItemBase.create_from_discriminator_value(pn) }) },
                     "userFlowAttributes" => lambda {|n| @user_flow_attributes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IdentityUserFlowAttribute.create_from_discriminator_value(pn) }) },
                     "userFlows" => lambda {|n| @user_flows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::IdentityUserFlow.create_from_discriminator_value(pn) }) },
                 }
@@ -247,6 +251,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the productChanges property value. Represents entry point for Microsoft Entra product changes and planned new features.
+            ## @return a change_item_base
+            ## 
+            def product_changes
+                return @product_changes
+            end
+            ## 
+            ## Sets the productChanges property value. Represents entry point for Microsoft Entra product changes and planned new features.
+            ## @param value Value to set for the productChanges property.
+            ## @return a void
+            ## 
+            def product_changes=(value)
+                @product_changes = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -263,6 +282,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("customAuthenticationExtensions", @custom_authentication_extensions)
                 writer.write_collection_of_object_values("identityProviders", @identity_providers)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("productChanges", @product_changes)
                 writer.write_collection_of_object_values("userFlowAttributes", @user_flow_attributes)
                 writer.write_collection_of_object_values("userFlows", @user_flows)
                 writer.write_additional_data(@additional_data)

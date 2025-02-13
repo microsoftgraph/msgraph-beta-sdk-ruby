@@ -4,6 +4,8 @@ module MicrosoftGraphBeta
             Dedicated: :Dedicated,
             Shared: :Shared,
             UnknownFutureValue: :UnknownFutureValue,
+            SharedByUser: :SharedByUser,
+            SharedByEntraGroup: :SharedByEntraGroup,
         }
     end
 end

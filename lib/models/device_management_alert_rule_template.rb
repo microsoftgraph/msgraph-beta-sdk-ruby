@@ -7,6 +7,8 @@ module MicrosoftGraphBeta
             UnknownFutureValue: :UnknownFutureValue,
             CloudPcInGracePeriodScenario: :CloudPcInGracePeriodScenario,
             CloudPcFrontlineInsufficientLicensesScenario: :CloudPcFrontlineInsufficientLicensesScenario,
+            CloudPcInaccessibleScenario: :CloudPcInaccessibleScenario,
+            CloudPcFrontlineConcurrencyScenario: :CloudPcFrontlineConcurrencyScenario,
         }
     end
 end

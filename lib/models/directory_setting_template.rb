@@ -13,10 +13,10 @@ module MicrosoftGraphBeta
             # Display name of the template. Read-only.
             @display_name
             ## 
-            # Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+            # Collection of settingTemplateValues that list the set of available settings, defaults, and types that make up this template. Read-only.
             @values
             ## 
-            ## Instantiates a new directorySettingTemplate and sets the default values.
+            ## Instantiates a new DirectorySettingTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("values", @values)
             end
             ## 
-            ## Gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+            ## Gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults, and types that make up this template. Read-only.
             ## @return a setting_template_value
             ## 
             def values
                 return @values
             end
             ## 
-            ## Sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+            ## Sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults, and types that make up this template. Read-only.
             ## @param value Value to set for the values property.
             ## @return a void
             ## 

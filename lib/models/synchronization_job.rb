@@ -40,7 +40,7 @@ module MicrosoftGraphBeta
                 @bulk_upload = value
             end
             ## 
-            ## Instantiates a new synchronizationJob and sets the default values.
+            ## Instantiates a new SynchronizationJob and sets the default values.
             ## @return a void
             ## 
             def initialize()
