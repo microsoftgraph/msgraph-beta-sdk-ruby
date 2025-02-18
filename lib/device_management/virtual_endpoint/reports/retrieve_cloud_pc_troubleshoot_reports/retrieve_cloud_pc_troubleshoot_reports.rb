@@ -1,0 +1,1 @@
+require_relative 'retrieve_cloud_pc_troubleshoot_reports_post_request_body'

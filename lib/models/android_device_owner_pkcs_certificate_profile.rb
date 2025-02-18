@@ -132,7 +132,7 @@ module MicrosoftGraphBeta
                 @certification_authority_type = value
             end
             ## 
-            ## Instantiates a new androidDeviceOwnerPkcsCertificateProfile and sets the default values.
+            ## Instantiates a new AndroidDeviceOwnerPkcsCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -85,7 +85,7 @@ module MicrosoftGraphBeta
                 @categories = value
             end
             ## 
-            ## Instantiates a new deviceManagementIntent and sets the default values.
+            ## Instantiates a new DeviceManagementIntent and sets the default values.
             ## @return a void
             ## 
             def initialize()

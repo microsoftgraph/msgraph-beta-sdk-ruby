@@ -8,30 +8,30 @@ module MicrosoftGraphBeta
         class SecurityFilePlanDescriptorTemplate < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the user who created the filePlanDescriptorTemplate column.
+            # Represents the user who created the filePlanDescriptorTemplate column. Read-only.
             @created_by
             ## 
-            # Represents the date and time in which the filePlanDescriptorTemplate is created.
+            # Represents the date and time in which the filePlanDescriptorTemplate is created. Read-only.
             @created_date_time
             ## 
             # Unique string that defines a filePlanDescriptorTemplate name.
             @display_name
             ## 
-            ## Instantiates a new securityFilePlanDescriptorTemplate and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptorTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. Represents the user who created the filePlanDescriptorTemplate column.
+            ## Gets the createdBy property value. Represents the user who created the filePlanDescriptorTemplate column. Read-only.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Represents the user who created the filePlanDescriptorTemplate column.
+            ## Sets the createdBy property value. Represents the user who created the filePlanDescriptorTemplate column. Read-only.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. Represents the date and time in which the filePlanDescriptorTemplate is created.
+            ## Gets the createdDateTime property value. Represents the date and time in which the filePlanDescriptorTemplate is created. Read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Represents the date and time in which the filePlanDescriptorTemplate is created.
+            ## Sets the createdDateTime property value. Represents the date and time in which the filePlanDescriptorTemplate is created. Read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -74,8 +74,8 @@ module MicrosoftGraphBeta
                             return SecurityDepartmentTemplate.new
                         when "#microsoft.graph.security.filePlanReferenceTemplate"
                             return SecurityFilePlanReferenceTemplate.new
-                        when "#microsoft.graph.security.subCategoryTemplate"
-                            return SecuritySubCategoryTemplate.new
+                        when "#microsoft.graph.security.subcategoryTemplate"
+                            return SecuritySubcategoryTemplate.new
                     end
                 end
                 return SecurityFilePlanDescriptorTemplate.new

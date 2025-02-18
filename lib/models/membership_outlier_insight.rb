@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The outlierMemberType property
             @outlier_member_type
             ## 
-            ## Instantiates a new membershipOutlierInsight and sets the default values.
+            ## Instantiates a new MembershipOutlierInsight and sets the default values.
             ## @return a void
             ## 
             def initialize()

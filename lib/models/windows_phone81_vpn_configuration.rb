@@ -72,7 +72,7 @@ module MicrosoftGraphBeta
                 @bypass_vpn_on_home_wifi = value
             end
             ## 
-            ## Instantiates a new windowsPhone81VpnConfiguration and sets the default values.
+            ## Instantiates a new WindowsPhone81VpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

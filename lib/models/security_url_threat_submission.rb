@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Denotes the webUrl that needs to be submitted.
             @web_url
             ## 
-            ## Instantiates a new securityUrlThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityUrlThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()

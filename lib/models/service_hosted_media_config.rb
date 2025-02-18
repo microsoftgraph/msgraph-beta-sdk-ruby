@@ -7,10 +7,13 @@ module MicrosoftGraphBeta
         class ServiceHostedMediaConfig < MicrosoftGraphBeta::Models::MediaConfig
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The list of media to pre-fetch.
+            # The liveCaptionOptions property
+            @live_caption_options
+            ## 
+            # The list of media to prefetch.
             @pre_fetch_media
             ## 
-            ## Instantiates a new serviceHostedMediaConfig and sets the default values.
+            ## Instantiates a new ServiceHostedMediaConfig and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,18 +35,34 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "liveCaptionOptions" => lambda {|n| @live_caption_options = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::LiveCaptionOptions.create_from_discriminator_value(pn) }) },
                     "preFetchMedia" => lambda {|n| @pre_fetch_media = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MediaInfo.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the preFetchMedia property value. The list of media to pre-fetch.
+            ## Gets the liveCaptionOptions property value. The liveCaptionOptions property
+            ## @return a live_caption_options
+            ## 
+            def live_caption_options
+                return @live_caption_options
+            end
+            ## 
+            ## Sets the liveCaptionOptions property value. The liveCaptionOptions property
+            ## @param value Value to set for the liveCaptionOptions property.
+            ## @return a void
+            ## 
+            def live_caption_options=(value)
+                @live_caption_options = value
+            end
+            ## 
+            ## Gets the preFetchMedia property value. The list of media to prefetch.
             ## @return a media_info
             ## 
             def pre_fetch_media
                 return @pre_fetch_media
             end
             ## 
-            ## Sets the preFetchMedia property value. The list of media to pre-fetch.
+            ## Sets the preFetchMedia property value. The list of media to prefetch.
             ## @param value Value to set for the preFetchMedia property.
             ## @return a void
             ## 
@@ -58,6 +77,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("liveCaptionOptions", @live_caption_options)
                 writer.write_collection_of_object_values("preFetchMedia", @pre_fetch_media)
             end
         end

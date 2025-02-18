@@ -8,7 +8,7 @@ module MicrosoftGraphBeta
         class SecurityDeviceEvidence < MicrosoftGraphBeta::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            # A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             @azure_ad_device_id
             ## 
             # State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
@@ -17,14 +17,26 @@ module MicrosoftGraphBeta
             # The fully qualified domain name (FQDN) for the device.
             @device_dns_name
             ## 
+            # The DNS domain that this computer belongs to. A sequence of labels separated by dots.
+            @dns_domain
+            ## 
             # The date and time when the device was first seen.
             @first_seen_date_time
             ## 
-            # The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            # The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             @health_status
+            ## 
+            # The hostname without the domain suffix.
+            @host_name
             ## 
             # Ip interfaces of the device during the time of the alert.
             @ip_interfaces
+            ## 
+            # The lastExternalIpAddress property
+            @last_external_ip_address
+            ## 
+            # The lastIpAddress property
+            @last_ip_address
             ## 
             # Users that were logged on the machine during the time of the alert.
             @logged_on_users
@@ -32,7 +44,10 @@ module MicrosoftGraphBeta
             # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
             @mde_device_id
             ## 
-            # The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            # A logical grouping of computers within a Microsoft Windows network.
+            @nt_domain
+            ## 
+            # The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             @onboarding_status
             ## 
             # The build version for the operating system the device is running.
@@ -41,10 +56,10 @@ module MicrosoftGraphBeta
             # The operating system platform the device is running.
             @os_platform
             ## 
-            # The ID of the role-based access control (RBAC) device group.
+            # The ID of the role-based access control device group.
             @rbac_group_id
             ## 
-            # The name of the RBAC device group.
+            # The name of the role-based access control device group.
             @rbac_group_name
             ## 
             # Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
@@ -56,14 +71,14 @@ module MicrosoftGraphBeta
             # Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
             @vm_metadata
             ## 
-            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @return a string
             ## 
             def azure_ad_device_id
                 return @azure_ad_device_id
             end
             ## 
-            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @param value Value to set for the azureAdDeviceId property.
             ## @return a void
             ## 
@@ -71,7 +86,7 @@ module MicrosoftGraphBeta
                 @azure_ad_device_id = value
             end
             ## 
-            ## Instantiates a new securityDeviceEvidence and sets the default values.
+            ## Instantiates a new SecurityDeviceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -118,6 +133,21 @@ module MicrosoftGraphBeta
                 @device_dns_name = value
             end
             ## 
+            ## Gets the dnsDomain property value. The DNS domain that this computer belongs to. A sequence of labels separated by dots.
+            ## @return a string
+            ## 
+            def dns_domain
+                return @dns_domain
+            end
+            ## 
+            ## Sets the dnsDomain property value. The DNS domain that this computer belongs to. A sequence of labels separated by dots.
+            ## @param value Value to set for the dnsDomain property.
+            ## @return a void
+            ## 
+            def dns_domain=(value)
+                @dns_domain = value
+            end
+            ## 
             ## Gets the firstSeenDateTime property value. The date and time when the device was first seen.
             ## @return a date_time
             ## 
@@ -141,11 +171,16 @@ module MicrosoftGraphBeta
                     "azureAdDeviceId" => lambda {|n| @azure_ad_device_id = n.get_string_value() },
                     "defenderAvStatus" => lambda {|n| @defender_av_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDefenderAvStatus) },
                     "deviceDnsName" => lambda {|n| @device_dns_name = n.get_string_value() },
+                    "dnsDomain" => lambda {|n| @dns_domain = n.get_string_value() },
                     "firstSeenDateTime" => lambda {|n| @first_seen_date_time = n.get_date_time_value() },
                     "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityDeviceHealthStatus) },
+                    "hostName" => lambda {|n| @host_name = n.get_string_value() },
                     "ipInterfaces" => lambda {|n| @ip_interfaces = n.get_collection_of_primitive_values(String) },
+                    "lastExternalIpAddress" => lambda {|n| @last_external_ip_address = n.get_string_value() },
+                    "lastIpAddress" => lambda {|n| @last_ip_address = n.get_string_value() },
                     "loggedOnUsers" => lambda {|n| @logged_on_users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityLoggedOnUser.create_from_discriminator_value(pn) }) },
                     "mdeDeviceId" => lambda {|n| @mde_device_id = n.get_string_value() },
+                    "ntDomain" => lambda {|n| @nt_domain = n.get_string_value() },
                     "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraphBeta::Models::SecurityOnboardingStatus) },
                     "osBuild" => lambda {|n| @os_build = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "osPlatform" => lambda {|n| @os_platform = n.get_string_value() },
@@ -157,19 +192,34 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## Gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             ## @return a security_device_health_status
             ## 
             def health_status
                 return @health_status
             end
             ## 
-            ## Sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## Sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             ## @param value Value to set for the healthStatus property.
             ## @return a void
             ## 
             def health_status=(value)
                 @health_status = value
+            end
+            ## 
+            ## Gets the hostName property value. The hostname without the domain suffix.
+            ## @return a string
+            ## 
+            def host_name
+                return @host_name
+            end
+            ## 
+            ## Sets the hostName property value. The hostname without the domain suffix.
+            ## @param value Value to set for the hostName property.
+            ## @return a void
+            ## 
+            def host_name=(value)
+                @host_name = value
             end
             ## 
             ## Gets the ipInterfaces property value. Ip interfaces of the device during the time of the alert.
@@ -185,6 +235,36 @@ module MicrosoftGraphBeta
             ## 
             def ip_interfaces=(value)
                 @ip_interfaces = value
+            end
+            ## 
+            ## Gets the lastExternalIpAddress property value. The lastExternalIpAddress property
+            ## @return a string
+            ## 
+            def last_external_ip_address
+                return @last_external_ip_address
+            end
+            ## 
+            ## Sets the lastExternalIpAddress property value. The lastExternalIpAddress property
+            ## @param value Value to set for the lastExternalIpAddress property.
+            ## @return a void
+            ## 
+            def last_external_ip_address=(value)
+                @last_external_ip_address = value
+            end
+            ## 
+            ## Gets the lastIpAddress property value. The lastIpAddress property
+            ## @return a string
+            ## 
+            def last_ip_address
+                return @last_ip_address
+            end
+            ## 
+            ## Sets the lastIpAddress property value. The lastIpAddress property
+            ## @param value Value to set for the lastIpAddress property.
+            ## @return a void
+            ## 
+            def last_ip_address=(value)
+                @last_ip_address = value
             end
             ## 
             ## Gets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
@@ -217,14 +297,29 @@ module MicrosoftGraphBeta
                 @mde_device_id = value
             end
             ## 
-            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## Gets the ntDomain property value. A logical grouping of computers within a Microsoft Windows network.
+            ## @return a string
+            ## 
+            def nt_domain
+                return @nt_domain
+            end
+            ## 
+            ## Sets the ntDomain property value. A logical grouping of computers within a Microsoft Windows network.
+            ## @param value Value to set for the ntDomain property.
+            ## @return a void
+            ## 
+            def nt_domain=(value)
+                @nt_domain = value
+            end
+            ## 
+            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             ## @return a security_onboarding_status
             ## 
             def onboarding_status
                 return @onboarding_status
             end
             ## 
-            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             ## @param value Value to set for the onboardingStatus property.
             ## @return a void
             ## 
@@ -262,14 +357,14 @@ module MicrosoftGraphBeta
                 @os_platform = value
             end
             ## 
-            ## Gets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+            ## Gets the rbacGroupId property value. The ID of the role-based access control device group.
             ## @return a integer
             ## 
             def rbac_group_id
                 return @rbac_group_id
             end
             ## 
-            ## Sets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+            ## Sets the rbacGroupId property value. The ID of the role-based access control device group.
             ## @param value Value to set for the rbacGroupId property.
             ## @return a void
             ## 
@@ -277,14 +372,14 @@ module MicrosoftGraphBeta
                 @rbac_group_id = value
             end
             ## 
-            ## Gets the rbacGroupName property value. The name of the RBAC device group.
+            ## Gets the rbacGroupName property value. The name of the role-based access control device group.
             ## @return a string
             ## 
             def rbac_group_name
                 return @rbac_group_name
             end
             ## 
-            ## Sets the rbacGroupName property value. The name of the RBAC device group.
+            ## Sets the rbacGroupName property value. The name of the role-based access control device group.
             ## @param value Value to set for the rbacGroupName property.
             ## @return a void
             ## 
@@ -317,11 +412,16 @@ module MicrosoftGraphBeta
                 writer.write_string_value("azureAdDeviceId", @azure_ad_device_id)
                 writer.write_enum_value("defenderAvStatus", @defender_av_status)
                 writer.write_string_value("deviceDnsName", @device_dns_name)
+                writer.write_string_value("dnsDomain", @dns_domain)
                 writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
                 writer.write_enum_value("healthStatus", @health_status)
+                writer.write_string_value("hostName", @host_name)
                 writer.write_collection_of_primitive_values("ipInterfaces", @ip_interfaces)
+                writer.write_string_value("lastExternalIpAddress", @last_external_ip_address)
+                writer.write_string_value("lastIpAddress", @last_ip_address)
                 writer.write_collection_of_object_values("loggedOnUsers", @logged_on_users)
                 writer.write_string_value("mdeDeviceId", @mde_device_id)
+                writer.write_string_value("ntDomain", @nt_domain)
                 writer.write_enum_value("onboardingStatus", @onboarding_status)
                 writer.write_object_value("osBuild", @os_build)
                 writer.write_string_value("osPlatform", @os_platform)

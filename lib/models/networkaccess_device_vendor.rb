@@ -16,6 +16,7 @@ module MicrosoftGraphBeta
             VmWareSdWan: :VmWareSdWan,
             Versa: :Versa,
             Other: :Other,
+            CiscoCatalyst: :CiscoCatalyst,
             UnknownFutureValue: :UnknownFutureValue,
         }
     end

@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @classify_text_jobs = value
             end
             ## 
-            ## Instantiates a new dataClassificationService and sets the default values.
+            ## Instantiates a new DataClassificationService and sets the default values.
             ## @return a void
             ## 
             def initialize()

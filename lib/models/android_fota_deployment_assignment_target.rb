@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # AAD Group Id.
             @group_id
             ## 
-            ## Instantiates a new androidFotaDeploymentAssignmentTarget and sets the default values.
+            ## Instantiates a new AndroidFotaDeploymentAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

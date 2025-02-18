@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # Identifier of the user.
             @user_id
             ## 
-            ## Instantiates a new plannerRosterMember and sets the default values.
+            ## Instantiates a new PlannerRosterMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

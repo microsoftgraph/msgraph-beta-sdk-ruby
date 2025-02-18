@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class DefaultDeviceCompliancePolicy < MicrosoftGraphBeta::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new defaultDeviceCompliancePolicy and sets the default values.
+            ## Instantiates a new DefaultDeviceCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

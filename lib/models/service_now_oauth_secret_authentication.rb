@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new serviceNowOauthSecretAuthentication and sets the default values.
+            ## Instantiates a new ServiceNowOauthSecretAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
