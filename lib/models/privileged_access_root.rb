@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # A group that's governed through Privileged Identity Management (PIM).
             @group
             ## 
-            ## Instantiates a new privilegedAccessRoot and sets the default values.
+            ## Instantiates a new PrivilegedAccessRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

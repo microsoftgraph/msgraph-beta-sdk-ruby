@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class WindowsUpdatesAzureADDevice < MicrosoftGraphBeta::Models::WindowsUpdatesUpdatableAsset
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
-            @enrollments
+            # The enrollment property
+            @enrollment
             ## 
             # Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
             @errors
             ## 
-            ## Instantiates a new windowsUpdatesAzureADDevice and sets the default values.
+            ## Instantiates a new WindowsUpdatesAzureADDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,19 +30,19 @@ module MicrosoftGraphBeta
                 return WindowsUpdatesAzureADDevice.new
             end
             ## 
-            ## Gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
-            ## @return a windows_updates_updatable_asset_enrollment
+            ## Gets the enrollment property value. The enrollment property
+            ## @return a windows_updates_update_management_enrollment
             ## 
-            def enrollments
-                return @enrollments
+            def enrollment
+                return @enrollment
             end
             ## 
-            ## Sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
-            ## @param value Value to set for the enrollments property.
+            ## Sets the enrollment property value. The enrollment property
+            ## @param value Value to set for the enrollment property.
             ## @return a void
             ## 
-            def enrollments=(value)
-                @enrollments = value
+            def enrollment=(value)
+                @enrollment = value
             end
             ## 
             ## Gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
@@ -65,7 +65,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "enrollments" => lambda {|n| @enrollments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesUpdatableAssetEnrollment.create_from_discriminator_value(pn) }) },
+                    "enrollment" => lambda {|n| @enrollment = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesUpdateManagementEnrollment.create_from_discriminator_value(pn) }) },
                     "errors" => lambda {|n| @errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsUpdatesUpdatableAssetError.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -77,7 +77,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("enrollments", @enrollments)
+                writer.write_object_value("enrollment", @enrollment)
                 writer.write_collection_of_object_values("errors", @errors)
             end
         end

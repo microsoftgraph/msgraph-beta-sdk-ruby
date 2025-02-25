@@ -14,7 +14,7 @@ module MicrosoftGraphBeta
             # The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
             @target
             ## 
-            ## Instantiates a new cloudPcUserSettingAssignment and sets the default values.
+            ## Instantiates a new CloudPcUserSettingAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

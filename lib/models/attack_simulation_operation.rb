@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # The status of a long-running operation.
         class AttackSimulationOperation < MicrosoftGraphBeta::Models::LongRunningOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraphBeta
             # The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
             @type
             ## 
-            ## Instantiates a new attackSimulationOperation and sets the default values.
+            ## Instantiates a new AttackSimulationOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

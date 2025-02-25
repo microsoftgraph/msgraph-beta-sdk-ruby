@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
             # The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
             @external_source
             ## 
-            # The name of the external source this resources was generated from.
+            # The name of the external source from which this resource was generated.
             @external_source_detail
             ## 
             # Grade level of the class.
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
             # All users in the class. Nullable.
             @members
             ## 
-            # The modules property
+            # All modules in the class. Nullable.
             @modules
             ## 
             # All schools that this class is associated with. Nullable.
@@ -145,7 +145,7 @@ module MicrosoftGraphBeta
                 @class_code = value
             end
             ## 
-            ## Instantiates a new educationClass and sets the default values.
+            ## Instantiates a new EducationClass and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -266,14 +266,14 @@ module MicrosoftGraphBeta
                 @external_source = value
             end
             ## 
-            ## Gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Gets the externalSourceDetail property value. The name of the external source from which this resource was generated.
             ## @return a string
             ## 
             def external_source_detail
                 return @external_source_detail
             end
             ## 
-            ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Sets the externalSourceDetail property value. The name of the external source from which this resource was generated.
             ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 
@@ -370,14 +370,14 @@ module MicrosoftGraphBeta
                 @members = value
             end
             ## 
-            ## Gets the modules property value. The modules property
+            ## Gets the modules property value. All modules in the class. Nullable.
             ## @return a education_module
             ## 
             def modules
                 return @modules
             end
             ## 
-            ## Sets the modules property value. The modules property
+            ## Sets the modules property value. All modules in the class. Nullable.
             ## @param value Value to set for the modules property.
             ## @return a void
             ## 

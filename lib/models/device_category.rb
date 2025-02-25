@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Optional role scope tags for the device category.
             @role_scope_tag_ids
             ## 
-            ## Instantiates a new deviceCategory and sets the default values.
+            ## Instantiates a new DeviceCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

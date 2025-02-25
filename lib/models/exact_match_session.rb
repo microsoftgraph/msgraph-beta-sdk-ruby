@@ -46,7 +46,7 @@ module MicrosoftGraphBeta
                 @checksum = value
             end
             ## 
-            ## Instantiates a new exactMatchSession and sets the default values.
+            ## Instantiates a new ExactMatchSession and sets the default values.
             ## @return a void
             ## 
             def initialize()

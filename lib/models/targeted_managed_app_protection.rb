@@ -51,7 +51,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new targetedManagedAppProtection and sets the default values.
+            ## Instantiates a new TargetedManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
                     "appGroupType" => lambda {|n| @app_group_type = n.get_enum_value(MicrosoftGraphBeta::Models::TargetedManagedAppGroupType) },
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TargetedManagedAppPolicyAssignment.create_from_discriminator_value(pn) }) },
                     "isAssigned" => lambda {|n| @is_assigned = n.get_boolean_value() },
-                    "targetedAppManagementLevels" => lambda {|n| @targeted_app_management_levels = n.get_enum_value(MicrosoftGraphBeta::Models::AppManagementLevel) },
+                    "targetedAppManagementLevels" => lambda {|n| @targeted_app_management_levels = n.get_enum_values(MicrosoftGraphBeta::Models::AppManagementLevel) },
                 })
             end
             ## 

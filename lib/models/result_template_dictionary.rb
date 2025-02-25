@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ResultTemplateDictionary < MicrosoftGraphBeta::Models::Dictionary
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new resultTemplateDictionary and sets the default values.
+            ## Instantiates a new ResultTemplateDictionary and sets the default values.
             ## @return a void
             ## 
             def initialize()

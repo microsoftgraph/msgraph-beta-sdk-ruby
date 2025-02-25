@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
             @date
             ## 
-            ## Instantiates a new deviceHealthScriptRunOnceSchedule and sets the default values.
+            ## Instantiates a new DeviceHealthScriptRunOnceSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

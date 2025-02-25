@@ -28,7 +28,7 @@ module MicrosoftGraphBeta
             # The source of the event. Examples include: Intune, Sccm.
             @event_source
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceTimelineEvent and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceTimelineEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

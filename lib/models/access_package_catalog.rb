@@ -53,6 +53,9 @@ module MicrosoftGraphBeta
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
             ## 
+            # The uniqueName property
+            @unique_name
+            ## 
             ## Gets the accessPackageCustomWorkflowExtensions property value. The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
             ## @return a custom_callout_extension
             ## 
@@ -158,7 +161,7 @@ module MicrosoftGraphBeta
                 @catalog_type = value
             end
             ## 
-            ## Instantiates a new accessPackageCatalog and sets the default values.
+            ## Instantiates a new AccessPackageCatalog and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -269,6 +272,7 @@ module MicrosoftGraphBeta
                     "isExternallyVisible" => lambda {|n| @is_externally_visible = n.get_boolean_value() },
                     "modifiedBy" => lambda {|n| @modified_by = n.get_string_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "uniqueName" => lambda {|n| @unique_name = n.get_string_value() },
                 })
             end
             ## 
@@ -339,6 +343,22 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("isExternallyVisible", @is_externally_visible)
                 writer.write_string_value("modifiedBy", @modified_by)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_string_value("uniqueName", @unique_name)
+            end
+            ## 
+            ## Gets the uniqueName property value. The uniqueName property
+            ## @return a string
+            ## 
+            def unique_name
+                return @unique_name
+            end
+            ## 
+            ## Sets the uniqueName property value. The uniqueName property
+            ## @param value Value to set for the uniqueName property.
+            ## @return a void
+            ## 
+            def unique_name=(value)
+                @unique_name = value
             end
         end
     end

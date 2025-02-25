@@ -19,24 +19,24 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
+            # The reports property
+            @reports
+            ## 
             # The schools property
             @schools
-            ## 
-            # The synchronizationProfiles property
-            @synchronization_profiles
             ## 
             # The users property
             @users
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraphBeta
                 @classes = value
             end
             ## 
-            ## Instantiates a new educationRoot and sets the default values.
+            ## Instantiates a new EducationRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -82,8 +82,8 @@ module MicrosoftGraphBeta
                     "classes" => lambda {|n| @classes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationClass.create_from_discriminator_value(pn) }) },
                     "me" => lambda {|n| @me = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::EducationUser.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "reports" => lambda {|n| @reports = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ReportsRoot.create_from_discriminator_value(pn) }) },
                     "schools" => lambda {|n| @schools = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationSchool.create_from_discriminator_value(pn) }) },
-                    "synchronizationProfiles" => lambda {|n| @synchronization_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationSynchronizationProfile.create_from_discriminator_value(pn) }) },
                     "users" => lambda {|n| @users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EducationUser.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -118,6 +118,21 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
+            ## Gets the reports property value. The reports property
+            ## @return a reports_root
+            ## 
+            def reports
+                return @reports
+            end
+            ## 
+            ## Sets the reports property value. The reports property
+            ## @param value Value to set for the reports property.
+            ## @return a void
+            ## 
+            def reports=(value)
+                @reports = value
+            end
+            ## 
             ## Gets the schools property value. The schools property
             ## @return a education_school
             ## 
@@ -142,25 +157,10 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("classes", @classes)
                 writer.write_object_value("me", @me)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("reports", @reports)
                 writer.write_collection_of_object_values("schools", @schools)
-                writer.write_collection_of_object_values("synchronizationProfiles", @synchronization_profiles)
                 writer.write_collection_of_object_values("users", @users)
                 writer.write_additional_data(@additional_data)
-            end
-            ## 
-            ## Gets the synchronizationProfiles property value. The synchronizationProfiles property
-            ## @return a education_synchronization_profile
-            ## 
-            def synchronization_profiles
-                return @synchronization_profiles
-            end
-            ## 
-            ## Sets the synchronizationProfiles property value. The synchronizationProfiles property
-            ## @param value Value to set for the synchronizationProfiles property.
-            ## @return a void
-            ## 
-            def synchronization_profiles=(value)
-                @synchronization_profiles = value
             end
             ## 
             ## Gets the users property value. The users property

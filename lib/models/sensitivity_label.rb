@@ -106,7 +106,7 @@ module MicrosoftGraphBeta
                 @auto_labeling = value
             end
             ## 
-            ## Instantiates a new sensitivityLabel and sets the default values.
+            ## Instantiates a new SensitivityLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -157,7 +157,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_value(MicrosoftGraphBeta::Models::SensitivityLabelTarget) },
+                    "applicableTo" => lambda {|n| @applicable_to = n.get_enum_values(MicrosoftGraphBeta::Models::SensitivityLabelTarget) },
                     "applicationMode" => lambda {|n| @application_mode = n.get_enum_value(MicrosoftGraphBeta::Models::ApplicationMode) },
                     "assignedPolicies" => lambda {|n| @assigned_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LabelPolicy.create_from_discriminator_value(pn) }) },
                     "autoLabeling" => lambda {|n| @auto_labeling = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AutoLabeling.create_from_discriminator_value(pn) }) },

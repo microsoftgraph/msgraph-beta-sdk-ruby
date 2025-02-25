@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The display name of the service principal whose access is being reviewed.
             @service_principal_display_name
             ## 
-            # The servicePrincipalId property
+            # The identifier of the service principal whose access is being reviewed.
             @service_principal_id
             ## 
             ## Gets the appId property value. The appId for the service principal entity being reviewed.
@@ -31,7 +31,7 @@ module MicrosoftGraphBeta
                 @app_id = value
             end
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraphBeta
                 @service_principal_display_name = value
             end
             ## 
-            ## Gets the servicePrincipalId property value. The servicePrincipalId property
+            ## Gets the servicePrincipalId property value. The identifier of the service principal whose access is being reviewed.
             ## @return a string
             ## 
             def service_principal_id
                 return @service_principal_id
             end
             ## 
-            ## Sets the servicePrincipalId property value. The servicePrincipalId property
+            ## Sets the servicePrincipalId property value. The identifier of the service principal whose access is being reviewed.
             ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 

@@ -8,22 +8,22 @@ module MicrosoftGraphBeta
         class SecurityHostSslCertificate < MicrosoftGraphBeta::Models::SecurityArtifact
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The firstSeenDateTime property
+            # The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @first_seen_date_time
             ## 
-            # The host property
+            # The host for this hostSslCertificate.
             @host
             ## 
-            # The lastSeenDateTime property
+            # The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_seen_date_time
             ## 
-            # The ports property
+            # The ports related with this hostSslCertificate.
             @ports
             ## 
-            # The sslCertificate property
+            # The sslCertificate for this hostSslCertificate.
             @ssl_certificate
             ## 
-            ## Instantiates a new securityHostSslCertificate and sets the default values.
+            ## Instantiates a new SecurityHostSslCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraphBeta
                 return SecurityHostSslCertificate.new
             end
             ## 
-            ## Gets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Gets the firstSeenDateTime property value. The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def first_seen_date_time
                 return @first_seen_date_time
             end
             ## 
-            ## Sets the firstSeenDateTime property value. The firstSeenDateTime property
+            ## Sets the firstSeenDateTime property value. The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the firstSeenDateTime property.
             ## @return a void
             ## 
@@ -68,14 +68,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the host property value. The host property
+            ## Gets the host property value. The host for this hostSslCertificate.
             ## @return a security_host
             ## 
             def host
                 return @host
             end
             ## 
-            ## Sets the host property value. The host property
+            ## Sets the host property value. The host for this hostSslCertificate.
             ## @param value Value to set for the host property.
             ## @return a void
             ## 
@@ -83,14 +83,14 @@ module MicrosoftGraphBeta
                 @host = value
             end
             ## 
-            ## Gets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Gets the lastSeenDateTime property value. The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_seen_date_time
                 return @last_seen_date_time
             end
             ## 
-            ## Sets the lastSeenDateTime property value. The lastSeenDateTime property
+            ## Sets the lastSeenDateTime property value. The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastSeenDateTime property.
             ## @return a void
             ## 
@@ -98,14 +98,14 @@ module MicrosoftGraphBeta
                 @last_seen_date_time = value
             end
             ## 
-            ## Gets the ports property value. The ports property
+            ## Gets the ports property value. The ports related with this hostSslCertificate.
             ## @return a security_host_ssl_certificate_port
             ## 
             def ports
                 return @ports
             end
             ## 
-            ## Sets the ports property value. The ports property
+            ## Sets the ports property value. The ports related with this hostSslCertificate.
             ## @param value Value to set for the ports property.
             ## @return a void
             ## 
@@ -127,14 +127,14 @@ module MicrosoftGraphBeta
                 writer.write_object_value("sslCertificate", @ssl_certificate)
             end
             ## 
-            ## Gets the sslCertificate property value. The sslCertificate property
+            ## Gets the sslCertificate property value. The sslCertificate for this hostSslCertificate.
             ## @return a security_ssl_certificate
             ## 
             def ssl_certificate
                 return @ssl_certificate
             end
             ## 
-            ## Sets the sslCertificate property value. The sslCertificate property
+            ## Sets the sslCertificate property value. The sslCertificate for this hostSslCertificate.
             ## @param value Value to set for the sslCertificate property.
             ## @return a void
             ## 

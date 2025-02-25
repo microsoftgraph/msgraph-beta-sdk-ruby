@@ -1,0 +1,111 @@
+require 'microsoft_kiota_abstractions'
+require_relative '../../../../microsoft_graph_beta'
+require_relative '../../../app'
+require_relative '../../calls'
+require_relative '../item'
+require_relative './stop_transcription'
+
+module MicrosoftGraphBeta
+    module App
+        module Calls
+            module Item
+                module StopTranscription
+                    class StopTranscriptionPostRequestBody
+                        include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
+                        ## 
+                        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        @additional_data
+                        ## 
+                        # The clientContext property
+                        @client_context
+                        ## 
+                        # The language property
+                        @language
+                        ## 
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @return a i_dictionary
+                        ## 
+                        def additional_data
+                            return @additional_data
+                        end
+                        ## 
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
+                        ## @return a void
+                        ## 
+                        def additional_data=(value)
+                            @additional_data = value
+                        end
+                        ## 
+                        ## Gets the clientContext property value. The clientContext property
+                        ## @return a string
+                        ## 
+                        def client_context
+                            return @client_context
+                        end
+                        ## 
+                        ## Sets the clientContext property value. The clientContext property
+                        ## @param value Value to set for the clientContext property.
+                        ## @return a void
+                        ## 
+                        def client_context=(value)
+                            @client_context = value
+                        end
+                        ## 
+                        ## Instantiates a new StopTranscriptionPostRequestBody and sets the default values.
+                        ## @return a void
+                        ## 
+                        def initialize()
+                            @additional_data = Hash.new
+                        end
+                        ## 
+                        ## Creates a new instance of the appropriate class based on discriminator value
+                        ## @param parse_node The parse node to use to read the discriminator value and create the object
+                        ## @return a stop_transcription_post_request_body
+                        ## 
+                        def self.create_from_discriminator_value(parse_node)
+                            raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                            return StopTranscriptionPostRequestBody.new
+                        end
+                        ## 
+                        ## The deserialization information for the current model
+                        ## @return a i_dictionary
+                        ## 
+                        def get_field_deserializers()
+                            return {
+                                "clientContext" => lambda {|n| @client_context = n.get_string_value() },
+                                "language" => lambda {|n| @language = n.get_string_value() },
+                            }
+                        end
+                        ## 
+                        ## Gets the language property value. The language property
+                        ## @return a string
+                        ## 
+                        def language
+                            return @language
+                        end
+                        ## 
+                        ## Sets the language property value. The language property
+                        ## @param value Value to set for the language property.
+                        ## @return a void
+                        ## 
+                        def language=(value)
+                            @language = value
+                        end
+                        ## 
+                        ## Serializes information the current object
+                        ## @param writer Serialization writer to use to serialize this model
+                        ## @return a void
+                        ## 
+                        def serialize(writer)
+                            raise StandardError, 'writer cannot be null' if writer.nil?
+                            writer.write_string_value("clientContext", @client_context)
+                            writer.write_string_value("language", @language)
+                            writer.write_additional_data(@additional_data)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end

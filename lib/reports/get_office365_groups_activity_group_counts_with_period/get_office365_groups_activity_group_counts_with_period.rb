@@ -1,1 +1,1 @@
-require_relative 'get_office365_groups_activity_group_counts_with_period_response'
+require_relative 'get_office365_groups_activity_group_counts_with_period_get_response'

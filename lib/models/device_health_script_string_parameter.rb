@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The default value of string param
             @default_value
             ## 
-            ## Instantiates a new deviceHealthScriptStringParameter and sets the default values.
+            ## Instantiates a new DeviceHealthScriptStringParameter and sets the default values.
             ## @return a void
             ## 
             def initialize()

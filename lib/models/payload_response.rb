@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class PayloadResponse < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new payloadResponse and sets the default values.
+            ## Instantiates a new PayloadResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

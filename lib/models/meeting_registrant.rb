@@ -17,7 +17,7 @@ module MicrosoftGraphBeta
             # The first name of the registrant.
             @first_name
             ## 
-            # The last name of the registrant.
+            # The family name of the registrant.
             @last_name
             ## 
             # Time in UTC when the registrant registers for the meeting. Read-only.
@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # The registration status of the registrant. Read-only.
             @status
             ## 
-            ## Instantiates a new meetingRegistrant and sets the default values.
+            ## Instantiates a new MeetingRegistrant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -102,14 +102,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastName property value. The last name of the registrant.
+            ## Gets the lastName property value. The family name of the registrant.
             ## @return a string
             ## 
             def last_name
                 return @last_name
             end
             ## 
-            ## Sets the lastName property value. The last name of the registrant.
+            ## Sets the lastName property value. The family name of the registrant.
             ## @param value Value to set for the lastName property.
             ## @return a void
             ## 

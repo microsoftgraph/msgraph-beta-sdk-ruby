@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ChatMessageFromIdentitySet < MicrosoftGraphBeta::Models::IdentitySet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new chatMessageFromIdentitySet and sets the default values.
+            ## Instantiates a new ChatMessageFromIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
