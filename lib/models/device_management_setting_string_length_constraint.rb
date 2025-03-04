@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # The minimum permitted string length
             @minimum_length
             ## 
-            ## Instantiates a new deviceManagementSettingStringLengthConstraint and sets the default values.
+            ## Instantiates a new DeviceManagementSettingStringLengthConstraint and sets the default values.
             ## @return a void
             ## 
             def initialize()

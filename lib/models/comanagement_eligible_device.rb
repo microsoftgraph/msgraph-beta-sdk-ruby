@@ -81,7 +81,7 @@ module MicrosoftGraphBeta
                 @client_registration_status = value
             end
             ## 
-            ## Instantiates a new comanagementEligibleDevice and sets the default values.
+            ## Instantiates a new ComanagementEligibleDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -6,7 +6,7 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS LOB App Provisioning Configuration resource.
         class IosLobAppProvisioningConfiguration < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
+            ## Instantiates a new IosLobAppProvisioningConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

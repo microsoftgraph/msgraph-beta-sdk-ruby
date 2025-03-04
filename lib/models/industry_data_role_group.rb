@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The set of roles included in the role group.
             @roles
             ## 
-            ## Instantiates a new industryDataRoleGroup and sets the default values.
+            ## Instantiates a new IndustryDataRoleGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

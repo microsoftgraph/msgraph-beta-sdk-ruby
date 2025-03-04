@@ -5,16 +5,16 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
-        class AppRoleAssignment < MicrosoftGraphBeta::Models::Entity
+        class AppRoleAssignment < MicrosoftGraphBeta::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            # The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             @app_role_id
             ## 
             # The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @creation_timestamp
             ## 
-            # The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+            # The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).
             @principal_display_name
             ## 
             # The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
@@ -23,20 +23,20 @@ module MicrosoftGraphBeta
             # The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
             @principal_type
             ## 
-            # The display name of the resource app's service principal to which the assignment is made.
+            # The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
             @resource_display_name
             ## 
             # The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
             @resource_id
             ## 
-            ## Gets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            ## Gets the appRoleId property value. The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             ## @return a guid
             ## 
             def app_role_id
                 return @app_role_id
             end
             ## 
-            ## Sets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            ## Sets the appRoleId property value. The identifier (id) for the app role that is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             ## @param value Value to set for the appRoleId property.
             ## @return a void
             ## 
@@ -44,11 +44,12 @@ module MicrosoftGraphBeta
                 @app_role_id = value
             end
             ## 
-            ## Instantiates a new appRoleAssignment and sets the default values.
+            ## Instantiates a new AppRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+                @odata_type = "#microsoft.graph.appRoleAssignment"
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -90,14 +91,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+            ## Gets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).
             ## @return a string
             ## 
             def principal_display_name
                 return @principal_display_name
             end
             ## 
-            ## Sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+            ## Sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).
             ## @param value Value to set for the principalDisplayName property.
             ## @return a void
             ## 
@@ -135,14 +136,14 @@ module MicrosoftGraphBeta
                 @principal_type = value
             end
             ## 
-            ## Gets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
+            ## Gets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
             ## @return a string
             ## 
             def resource_display_name
                 return @resource_display_name
             end
             ## 
-            ## Sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
+            ## Sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
             ## @param value Value to set for the resourceDisplayName property.
             ## @return a void
             ## 

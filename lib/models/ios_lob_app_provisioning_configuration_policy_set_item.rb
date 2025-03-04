@@ -5,11 +5,11 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # A class containing the properties used for iOS lob app provisioning configuration PolicySetItem.
+        # A class containing the properties used for iOS LOB app provisioning configuration PolicySetItem.
         class IosLobAppProvisioningConfigurationPolicySetItem < MicrosoftGraphBeta::Models::PolicySetItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
+            ## Instantiates a new IosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

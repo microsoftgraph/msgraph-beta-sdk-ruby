@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The displayName property
             @display_name
             ## 
-            ## Instantiates a new externalGroup and sets the default values.
+            ## Instantiates a new ExternalGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

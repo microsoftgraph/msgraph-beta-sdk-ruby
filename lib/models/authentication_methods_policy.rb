@@ -20,7 +20,10 @@ module MicrosoftGraphBeta
             # The date and time of the last update to the policy.
             @last_modified_date_time
             ## 
-            # The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+            # The microsoftAuthenticatorPlatformSettings property
+            @microsoft_authenticator_platform_settings
+            ## 
+            # The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
             @policy_migration_state
             ## 
             # The version of the policy in use.
@@ -53,7 +56,7 @@ module MicrosoftGraphBeta
                 @authentication_method_configurations = value
             end
             ## 
-            ## Instantiates a new authenticationMethodsPolicy and sets the default values.
+            ## Instantiates a new AuthenticationMethodsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -108,6 +111,7 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
+                    "microsoftAuthenticatorPlatformSettings" => lambda {|n| @microsoft_authenticator_platform_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftAuthenticatorPlatformSettings.create_from_discriminator_value(pn) }) },
                     "policyMigrationState" => lambda {|n| @policy_migration_state = n.get_enum_value(MicrosoftGraphBeta::Models::AuthenticationMethodsPolicyMigrationState) },
                     "policyVersion" => lambda {|n| @policy_version = n.get_string_value() },
                     "reconfirmationInDays" => lambda {|n| @reconfirmation_in_days = n.get_number_value() },
@@ -132,14 +136,29 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+            ## Gets the microsoftAuthenticatorPlatformSettings property value. The microsoftAuthenticatorPlatformSettings property
+            ## @return a microsoft_authenticator_platform_settings
+            ## 
+            def microsoft_authenticator_platform_settings
+                return @microsoft_authenticator_platform_settings
+            end
+            ## 
+            ## Sets the microsoftAuthenticatorPlatformSettings property value. The microsoftAuthenticatorPlatformSettings property
+            ## @param value Value to set for the microsoftAuthenticatorPlatformSettings property.
+            ## @return a void
+            ## 
+            def microsoft_authenticator_platform_settings=(value)
+                @microsoft_authenticator_platform_settings = value
+            end
+            ## 
+            ## Gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
             ## @return a authentication_methods_policy_migration_state
             ## 
             def policy_migration_state
                 return @policy_migration_state
             end
             ## 
-            ## Sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+            ## Sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
             ## @param value Value to set for the policyMigrationState property.
             ## @return a void
             ## 
@@ -218,6 +237,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
+                writer.write_object_value("microsoftAuthenticatorPlatformSettings", @microsoft_authenticator_platform_settings)
                 writer.write_enum_value("policyMigrationState", @policy_migration_state)
                 writer.write_string_value("policyVersion", @policy_version)
                 writer.write_number_value("reconfirmationInDays", @reconfirmation_in_days)

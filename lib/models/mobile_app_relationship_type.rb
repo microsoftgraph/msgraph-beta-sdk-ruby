@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
         MobileAppRelationshipType = {
             Child: :Child,
             Parent: :Parent,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

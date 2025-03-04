@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraphBeta
     module Models
+        ## 
+        # The status of a long-running operation.
         class IndustryDataFileValidateOperation < MicrosoftGraphBeta::Models::IndustryDataValidateOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Set of files validated by the validate operation.
             @validated_files
             ## 
-            ## Instantiates a new industryDataFileValidateOperation and sets the default values.
+            ## Instantiates a new IndustryDataFileValidateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

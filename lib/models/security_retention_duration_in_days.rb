@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Specifies the time period in days for which an item with the applied retention label will be retained for.
             @days
             ## 
-            ## Instantiates a new securityRetentionDurationInDays and sets the default values.
+            ## Instantiates a new SecurityRetentionDurationInDays and sets the default values.
             ## @return a void
             ## 
             def initialize()

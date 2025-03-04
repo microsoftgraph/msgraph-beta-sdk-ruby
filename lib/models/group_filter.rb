@@ -10,28 +10,28 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The includedGroups property
+            # Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
             @included_groups
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new groupFilter and sets the default values.
+            ## Instantiates a new GroupFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the includedGroups property value. The includedGroups property
+            ## Gets the includedGroups property value. Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
             ## @return a string
             ## 
             def included_groups
                 return @included_groups
             end
             ## 
-            ## Sets the includedGroups property value. The includedGroups property
+            ## Sets the includedGroups property value. Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
             ## @param value Value to set for the includedGroups property.
             ## @return a void
             ## 

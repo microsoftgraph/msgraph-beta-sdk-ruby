@@ -10,31 +10,31 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Contains the name of the field that a value is associated with.
+            # Key.
             @key
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Contains the corresponding value for the specified key.
+            # Value.
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new keyValue and sets the default values.
+            ## Instantiates a new KeyValue and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,14 +61,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the key property value. Contains the name of the field that a value is associated with.
+            ## Gets the key property value. Key.
             ## @return a string
             ## 
             def key
                 return @key
             end
             ## 
-            ## Sets the key property value. Contains the name of the field that a value is associated with.
+            ## Sets the key property value. Key.
             ## @param value Value to set for the key property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the value property value. Contains the corresponding value for the specified key.
+            ## Gets the value property value. Value.
             ## @return a string
             ## 
             def value
                 return @value
             end
             ## 
-            ## Sets the value property value. Contains the corresponding value for the specified key.
+            ## Sets the value property value. Value.
             ## @param value Value to set for the value property.
             ## @return a void
             ## 

@@ -4,6 +4,8 @@ module MicrosoftGraphBeta
             Pending: :Pending,
             Ready: :Ready,
             Failed: :Failed,
+            UnknownFutureValue: :UnknownFutureValue,
+            Warning: :Warning,
         }
     end
 end

@@ -6,6 +6,8 @@ module MicrosoftGraphBeta
             Roster: :Roster,
             Project: :Project,
             DriveItem: :DriveItem,
+            User: :User,
+            TeamsChannel: :TeamsChannel,
         }
     end
 end

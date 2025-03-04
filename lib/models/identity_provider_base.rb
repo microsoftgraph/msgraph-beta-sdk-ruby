@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The display name of the identity provider.
             @display_name
             ## 
-            ## Instantiates a new identityProviderBase and sets the default values.
+            ## Instantiates a new IdentityProviderBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,6 +33,8 @@ module MicrosoftGraphBeta
                             return BuiltInIdentityProvider.new
                         when "#microsoft.graph.internalDomainFederation"
                             return InternalDomainFederation.new
+                        when "#microsoft.graph.oidcIdentityProvider"
+                            return OidcIdentityProvider.new
                         when "#microsoft.graph.openIdConnectIdentityProvider"
                             return OpenIdConnectIdentityProvider.new
                         when "#microsoft.graph.samlOrWsFedExternalDomainFederation"

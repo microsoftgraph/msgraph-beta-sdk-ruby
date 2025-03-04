@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # URL Address
             @value
             ## 
-            ## Instantiates a new networkaccessUrl and sets the default values.
+            ## Instantiates a new NetworkaccessUrl and sets the default values.
             ## @return a void
             ## 
             def initialize()

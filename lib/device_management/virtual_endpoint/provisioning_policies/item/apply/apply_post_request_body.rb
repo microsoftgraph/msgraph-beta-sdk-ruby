@@ -22,22 +22,25 @@ module MicrosoftGraphBeta
                             # The policySettings property
                             @policy_settings
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            # The reservePercentage property
+                            @reserve_percentage
+                            ## 
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
                                 @additional_data = value
                             end
                             ## 
-                            ## Instantiates a new applyPostRequestBody and sets the default values.
+                            ## Instantiates a new ApplyPostRequestBody and sets the default values.
                             ## @return a void
                             ## 
                             def initialize()
@@ -58,7 +61,8 @@ module MicrosoftGraphBeta
                             ## 
                             def get_field_deserializers()
                                 return {
-                                    "policySettings" => lambda {|n| @policy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
+                                    "policySettings" => lambda {|n| @policy_settings = n.get_enum_values(MicrosoftGraphBeta::Models::CloudPcPolicySettingType) },
+                                    "reservePercentage" => lambda {|n| @reserve_percentage = n.get_number_value() },
                                 }
                             end
                             ## 
@@ -77,6 +81,21 @@ module MicrosoftGraphBeta
                                 @policy_settings = value
                             end
                             ## 
+                            ## Gets the reservePercentage property value. The reservePercentage property
+                            ## @return a integer
+                            ## 
+                            def reserve_percentage
+                                return @reserve_percentage
+                            end
+                            ## 
+                            ## Sets the reservePercentage property value. The reservePercentage property
+                            ## @param value Value to set for the reservePercentage property.
+                            ## @return a void
+                            ## 
+                            def reserve_percentage=(value)
+                                @reserve_percentage = value
+                            end
+                            ## 
                             ## Serializes information the current object
                             ## @param writer Serialization writer to use to serialize this model
                             ## @return a void
@@ -84,6 +103,7 @@ module MicrosoftGraphBeta
                             def serialize(writer)
                                 raise StandardError, 'writer cannot be null' if writer.nil?
                                 writer.write_enum_value("policySettings", @policy_settings)
+                                writer.write_number_value("reservePercentage", @reserve_percentage)
                                 writer.write_additional_data(@additional_data)
                             end
                         end

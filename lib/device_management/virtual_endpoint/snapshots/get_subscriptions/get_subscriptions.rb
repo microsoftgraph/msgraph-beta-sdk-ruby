@@ -1,1 +1,1 @@
-require_relative 'get_subscriptions_response'
+require_relative 'get_subscriptions_get_response'
