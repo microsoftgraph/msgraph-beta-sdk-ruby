@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The informationProtection property
             @information_protection
             ## 
-            ## Instantiates a new securitySecurity and sets the default values.
+            ## Instantiates a new SecuritySecurity and sets the default values.
             ## @return a void
             ## 
             def initialize()

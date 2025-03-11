@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @application_segments = value
             end
             ## 
-            ## Instantiates a new ipSegmentConfiguration and sets the default values.
+            ## Instantiates a new IpSegmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

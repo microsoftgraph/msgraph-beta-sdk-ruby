@@ -1,1 +1,0 @@
-require_relative 'get_managed_devices_with_failed_or_pending_apps_response'

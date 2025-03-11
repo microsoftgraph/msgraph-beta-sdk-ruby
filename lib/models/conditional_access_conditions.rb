@@ -17,6 +17,8 @@ module MicrosoftGraphBeta
             UnknownFutureValue: :UnknownFutureValue,
             ServicePrincipals: :ServicePrincipals,
             ServicePrincipalRisk: :ServicePrincipalRisk,
+            AuthenticationFlows: :AuthenticationFlows,
+            InsiderRisk: :InsiderRisk,
         }
     end
 end

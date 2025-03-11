@@ -38,19 +38,19 @@ module MicrosoftGraphBeta
             # The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
             @external_source
             ## 
-            # The name of the external source this resources was generated from.
+            # The name of the external source this resource was generated from.
             @external_source_detail
             ## 
             # The given name (first name) of the user. Supports /$filter.
             @given_name
             ## 
-            # The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+            # The SMTP address for the user; for example, 'jeff@contoso.com'. Read-Only. Supports /$filter.
             @mail
             ## 
             # The mail alias for the user. This property must be specified when a user is created. Supports /$filter.
             @mail_nickname
             ## 
-            # Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+            # Mail address of user. Note: type and postOfficeBox aren't supported for educationUser resources.
             @mailing_address
             ## 
             # The middle name of user.
@@ -59,16 +59,16 @@ module MicrosoftGraphBeta
             # The primary cellular telephone number for the user.
             @mobile_phone
             ## 
-            # The officeLocation property
+            # The office location for the user.
             @office_location
             ## 
-            # Additional information used to associate the AAD user with it's Active Directory counterpart.
+            # Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             @on_premises_info
             ## 
-            # Specifies password policies for the user. See standard [user] resource for additional details.
+            # Specifies password policies for the user. For more details, see the standard [user] resource.
             @password_policies
             ## 
-            # Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+            # Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. For more details, see the standard [user] resource.
             @password_profile
             ## 
             # The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
@@ -86,7 +86,7 @@ module MicrosoftGraphBeta
             # Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
             @related_contacts
             ## 
-            # Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+            # Address where user lives. Note: type and postOfficeBox aren't supported for educationUser resources.
             @residence_address
             ## 
             # When set, the grading rubric attached to the assignment.
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
             # The showInAddressList property
             @show_in_address_list
             ## 
-            # If the primary role is student, this block will contain student specific data.
+            # If the primary role is student, this block contains student specific data.
             @student
             ## 
             # The user's surname (family name or last name). Supports /$filter.
@@ -107,16 +107,16 @@ module MicrosoftGraphBeta
             # Classes for which the user is a teacher.
             @taught_classes
             ## 
-            # If the primary role is teacher, this block will contain teacher specific data.
+            # If the primary role is teacher, this block contains teacher specific data.
             @teacher
             ## 
-            # A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+            # A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.
             @usage_location
             ## 
             # The user property
             @user
             ## 
-            # The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+            # The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.
             @user_principal_name
             ## 
             # A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
@@ -212,7 +212,7 @@ module MicrosoftGraphBeta
                 @classes = value
             end
             ## 
-            ## Instantiates a new educationUser and sets the default values.
+            ## Instantiates a new EducationUser and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -288,14 +288,14 @@ module MicrosoftGraphBeta
                 @external_source = value
             end
             ## 
-            ## Gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Gets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @return a string
             ## 
             def external_source_detail
                 return @external_source_detail
             end
             ## 
-            ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Sets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 
@@ -364,14 +364,14 @@ module MicrosoftGraphBeta
                 @given_name = value
             end
             ## 
-            ## Gets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+            ## Gets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.com'. Read-Only. Supports /$filter.
             ## @return a string
             ## 
             def mail
                 return @mail
             end
             ## 
-            ## Sets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.onmicrosoft.com'. Read-Only. Supports /$filter.
+            ## Sets the mail property value. The SMTP address for the user; for example, 'jeff@contoso.com'. Read-Only. Supports /$filter.
             ## @param value Value to set for the mail property.
             ## @return a void
             ## 
@@ -394,14 +394,14 @@ module MicrosoftGraphBeta
                 @mail_nickname = value
             end
             ## 
-            ## Gets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+            ## Gets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox aren't supported for educationUser resources.
             ## @return a physical_address
             ## 
             def mailing_address
                 return @mailing_address
             end
             ## 
-            ## Sets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.
+            ## Sets the mailingAddress property value. Mail address of user. Note: type and postOfficeBox aren't supported for educationUser resources.
             ## @param value Value to set for the mailingAddress property.
             ## @return a void
             ## 
@@ -439,14 +439,14 @@ module MicrosoftGraphBeta
                 @mobile_phone = value
             end
             ## 
-            ## Gets the officeLocation property value. The officeLocation property
+            ## Gets the officeLocation property value. The office location for the user.
             ## @return a string
             ## 
             def office_location
                 return @office_location
             end
             ## 
-            ## Sets the officeLocation property value. The officeLocation property
+            ## Sets the officeLocation property value. The office location for the user.
             ## @param value Value to set for the officeLocation property.
             ## @return a void
             ## 
@@ -454,14 +454,14 @@ module MicrosoftGraphBeta
                 @office_location = value
             end
             ## 
-            ## Gets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+            ## Gets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @return a education_on_premises_info
             ## 
             def on_premises_info
                 return @on_premises_info
             end
             ## 
-            ## Sets the onPremisesInfo property value. Additional information used to associate the AAD user with it's Active Directory counterpart.
+            ## Sets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @param value Value to set for the onPremisesInfo property.
             ## @return a void
             ## 
@@ -469,14 +469,14 @@ module MicrosoftGraphBeta
                 @on_premises_info = value
             end
             ## 
-            ## Gets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+            ## Gets the passwordPolicies property value. Specifies password policies for the user. For more details, see the standard [user] resource.
             ## @return a string
             ## 
             def password_policies
                 return @password_policies
             end
             ## 
-            ## Sets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for additional details.
+            ## Sets the passwordPolicies property value. Specifies password policies for the user. For more details, see the standard [user] resource.
             ## @param value Value to set for the passwordPolicies property.
             ## @return a void
             ## 
@@ -484,14 +484,14 @@ module MicrosoftGraphBeta
                 @password_policies = value
             end
             ## 
-            ## Gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+            ## Gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. For more details, see the standard [user] resource.
             ## @return a password_profile
             ## 
             def password_profile
                 return @password_profile
             end
             ## 
-            ## Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for additional details.
+            ## Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. For more details, see the standard [user] resource.
             ## @param value Value to set for the passwordProfile property.
             ## @return a void
             ## 
@@ -574,14 +574,14 @@ module MicrosoftGraphBeta
                 @related_contacts = value
             end
             ## 
-            ## Gets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+            ## Gets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox aren't supported for educationUser resources.
             ## @return a physical_address
             ## 
             def residence_address
                 return @residence_address
             end
             ## 
-            ## Sets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.
+            ## Sets the residenceAddress property value. Address where user lives. Note: type and postOfficeBox aren't supported for educationUser resources.
             ## @param value Value to set for the residenceAddress property.
             ## @return a void
             ## 
@@ -681,14 +681,14 @@ module MicrosoftGraphBeta
                 @show_in_address_list = value
             end
             ## 
-            ## Gets the student property value. If the primary role is student, this block will contain student specific data.
+            ## Gets the student property value. If the primary role is student, this block contains student specific data.
             ## @return a education_student
             ## 
             def student
                 return @student
             end
             ## 
-            ## Sets the student property value. If the primary role is student, this block will contain student specific data.
+            ## Sets the student property value. If the primary role is student, this block contains student specific data.
             ## @param value Value to set for the student property.
             ## @return a void
             ## 
@@ -726,14 +726,14 @@ module MicrosoftGraphBeta
                 @taught_classes = value
             end
             ## 
-            ## Gets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
+            ## Gets the teacher property value. If the primary role is teacher, this block contains teacher specific data.
             ## @return a education_teacher
             ## 
             def teacher
                 return @teacher
             end
             ## 
-            ## Sets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
+            ## Sets the teacher property value. If the primary role is teacher, this block contains teacher specific data.
             ## @param value Value to set for the teacher property.
             ## @return a void
             ## 
@@ -741,14 +741,14 @@ module MicrosoftGraphBeta
                 @teacher = value
             end
             ## 
-            ## Gets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+            ## Gets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.
             ## @return a string
             ## 
             def usage_location
                 return @usage_location
             end
             ## 
-            ## Sets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+            ## Sets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.
             ## @param value Value to set for the usageLocation property.
             ## @return a void
             ## 
@@ -771,14 +771,14 @@ module MicrosoftGraphBeta
                 @user = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+            ## Gets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+            ## Sets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

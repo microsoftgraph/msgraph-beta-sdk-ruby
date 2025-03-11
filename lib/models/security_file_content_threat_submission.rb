@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # It specifies the file content in base 64 format.
             @file_content
             ## 
-            ## Instantiates a new securityFileContentThreatSubmission and sets the default values.
+            ## Instantiates a new SecurityFileContentThreatSubmission and sets the default values.
             ## @return a void
             ## 
             def initialize()

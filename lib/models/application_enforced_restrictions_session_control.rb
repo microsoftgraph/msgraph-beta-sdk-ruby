@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class ApplicationEnforcedRestrictionsSessionControl < MicrosoftGraphBeta::Models::ConditionalAccessSessionControl
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new applicationEnforcedRestrictionsSessionControl and sets the default values.
+            ## Instantiates a new ApplicationEnforcedRestrictionsSessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class IdentityProvider < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+            # The client ID for the application obtained when registering the application with the identity provider. This is a required field. Required. Not nullable.
             @client_id
             ## 
-            # The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return . This is a required field. Required. Not nullable.
+            # The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation returns . This is a required field. Required. Not nullable.
             @client_secret
             ## 
             # The display name of the identity provider. Not nullable.
@@ -19,14 +19,14 @@ module MicrosoftGraphBeta
             # The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
             @type
             ## 
-            ## Gets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+            ## Gets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field. Required. Not nullable.
             ## @return a string
             ## 
             def client_id
                 return @client_id
             end
             ## 
-            ## Sets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+            ## Sets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field. Required. Not nullable.
             ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
@@ -34,14 +34,14 @@ module MicrosoftGraphBeta
                 @client_id = value
             end
             ## 
-            ## Gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return . This is a required field. Required. Not nullable.
+            ## Gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation returns . This is a required field. Required. Not nullable.
             ## @return a string
             ## 
             def client_secret
                 return @client_secret
             end
             ## 
-            ## Sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return . This is a required field. Required. Not nullable.
+            ## Sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation returns . This is a required field. Required. Not nullable.
             ## @param value Value to set for the clientSecret property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraphBeta
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new identityProvider and sets the default values.
+            ## Instantiates a new IdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

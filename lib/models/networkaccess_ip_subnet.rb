@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Defines the IP address of the subset used in a destination for a rule.
             @value
             ## 
-            ## Instantiates a new networkaccessIpSubnet and sets the default values.
+            ## Instantiates a new NetworkaccessIpSubnet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The specific URL to load.
             @home_button_custom_u_r_l
             ## 
-            ## Instantiates a new edgeHomeButtonOpensCustomURL and sets the default values.
+            ## Instantiates a new EdgeHomeButtonOpensCustomURL and sets the default values.
             ## @return a void
             ## 
             def initialize()

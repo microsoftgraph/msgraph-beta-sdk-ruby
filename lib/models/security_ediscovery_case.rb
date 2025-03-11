@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
         class SecurityEdiscoveryCase < MicrosoftGraphBeta::Models::SecurityCase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Returns a list of ediscoveryCaseMember objects associated to this case.
+            @case_members
+            ## 
             # The user who closed the case.
             @closed_by
             ## 
@@ -41,6 +44,21 @@ module MicrosoftGraphBeta
             # Returns a list of ediscoveryReviewTag objects associated to this case.
             @tags
             ## 
+            ## Gets the caseMembers property value. Returns a list of ediscoveryCaseMember objects associated to this case.
+            ## @return a security_ediscovery_case_member
+            ## 
+            def case_members
+                return @case_members
+            end
+            ## 
+            ## Sets the caseMembers property value. Returns a list of ediscoveryCaseMember objects associated to this case.
+            ## @param value Value to set for the caseMembers property.
+            ## @return a void
+            ## 
+            def case_members=(value)
+                @case_members = value
+            end
+            ## 
             ## Gets the closedBy property value. The user who closed the case.
             ## @return a identity_set
             ## 
@@ -71,7 +89,7 @@ module MicrosoftGraphBeta
                 @closed_date_time = value
             end
             ## 
-            ## Instantiates a new securityEdiscoveryCase and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryCase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,6 +141,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "caseMembers" => lambda {|n| @case_members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityEdiscoveryCaseMember.create_from_discriminator_value(pn) }) },
                     "closedBy" => lambda {|n| @closed_by = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "closedDateTime" => lambda {|n| @closed_date_time = n.get_date_time_value() },
                     "custodians" => lambda {|n| @custodians = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SecurityEdiscoveryCustodian.create_from_discriminator_value(pn) }) },
@@ -219,6 +238,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("caseMembers", @case_members)
                 writer.write_object_value("closedBy", @closed_by)
                 writer.write_date_time_value("closedDateTime", @closed_date_time)
                 writer.write_collection_of_object_values("custodians", @custodians)

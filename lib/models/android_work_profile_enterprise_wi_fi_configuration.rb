@@ -27,12 +27,6 @@ module MicrosoftGraphBeta
             # Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
             @outer_identity_privacy_temporary_value
             ## 
-            # URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-            @proxy_automatic_configuration_url
-            ## 
-            # Wi-Fi Proxy Settings.
-            @proxy_settings
-            ## 
             # Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
             @root_certificate_for_server_validation
             ## 
@@ -54,7 +48,7 @@ module MicrosoftGraphBeta
                 @authentication_method = value
             end
             ## 
-            ## Instantiates a new androidWorkProfileEnterpriseWiFiConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileEnterpriseWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,8 +91,6 @@ module MicrosoftGraphBeta
                     "innerAuthenticationProtocolForEapTtls" => lambda {|n| @inner_authentication_protocol_for_eap_ttls = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForEapTtlsType) },
                     "innerAuthenticationProtocolForPeap" => lambda {|n| @inner_authentication_protocol_for_peap = n.get_enum_value(MicrosoftGraphBeta::Models::NonEapAuthenticationMethodForPeap) },
                     "outerIdentityPrivacyTemporaryValue" => lambda {|n| @outer_identity_privacy_temporary_value = n.get_string_value() },
-                    "proxyAutomaticConfigurationUrl" => lambda {|n| @proxy_automatic_configuration_url = n.get_string_value() },
-                    "proxySettings" => lambda {|n| @proxy_settings = n.get_enum_value(MicrosoftGraphBeta::Models::WiFiProxySetting) },
                     "rootCertificateForServerValidation" => lambda {|n| @root_certificate_for_server_validation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::AndroidWorkProfileTrustedRootCertificate.create_from_discriminator_value(pn) }) },
                     "trustedServerCertificateNames" => lambda {|n| @trusted_server_certificate_names = n.get_collection_of_primitive_values(String) },
                 })
@@ -164,36 +156,6 @@ module MicrosoftGraphBeta
                 @outer_identity_privacy_temporary_value = value
             end
             ## 
-            ## Gets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-            ## @return a string
-            ## 
-            def proxy_automatic_configuration_url
-                return @proxy_automatic_configuration_url
-            end
-            ## 
-            ## Sets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-            ## @param value Value to set for the proxyAutomaticConfigurationUrl property.
-            ## @return a void
-            ## 
-            def proxy_automatic_configuration_url=(value)
-                @proxy_automatic_configuration_url = value
-            end
-            ## 
-            ## Gets the proxySettings property value. Wi-Fi Proxy Settings.
-            ## @return a wi_fi_proxy_setting
-            ## 
-            def proxy_settings
-                return @proxy_settings
-            end
-            ## 
-            ## Sets the proxySettings property value. Wi-Fi Proxy Settings.
-            ## @param value Value to set for the proxySettings property.
-            ## @return a void
-            ## 
-            def proxy_settings=(value)
-                @proxy_settings = value
-            end
-            ## 
             ## Gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
             ## @return a android_work_profile_trusted_root_certificate
             ## 
@@ -222,8 +184,6 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("innerAuthenticationProtocolForEapTtls", @inner_authentication_protocol_for_eap_ttls)
                 writer.write_enum_value("innerAuthenticationProtocolForPeap", @inner_authentication_protocol_for_peap)
                 writer.write_string_value("outerIdentityPrivacyTemporaryValue", @outer_identity_privacy_temporary_value)
-                writer.write_string_value("proxyAutomaticConfigurationUrl", @proxy_automatic_configuration_url)
-                writer.write_enum_value("proxySettings", @proxy_settings)
                 writer.write_object_value("rootCertificateForServerValidation", @root_certificate_for_server_validation)
                 writer.write_collection_of_primitive_values("trustedServerCertificateNames", @trusted_server_certificate_names)
             end

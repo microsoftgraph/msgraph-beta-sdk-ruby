@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Unknown device count.
             @unknown_device_count
             ## 
-            ## Instantiates a new windowsManagementAppHealthSummary and sets the default values.
+            ## Instantiates a new WindowsManagementAppHealthSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

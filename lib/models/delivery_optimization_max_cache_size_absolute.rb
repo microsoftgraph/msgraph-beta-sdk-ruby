@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295
             @maximum_cache_size_in_gigabytes
             ## 
-            ## Instantiates a new deliveryOptimizationMaxCacheSizeAbsolute and sets the default values.
+            ## Instantiates a new DeliveryOptimizationMaxCacheSizeAbsolute and sets the default values.
             ## @return a void
             ## 
             def initialize()

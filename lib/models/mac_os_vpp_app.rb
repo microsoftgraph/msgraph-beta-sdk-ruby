@@ -40,6 +40,9 @@ module MicrosoftGraphBeta
             # The Apple Id associated with the given Apple Volume Purchase Program Token.
             @vpp_token_apple_id
             ## 
+            # Display name of the VPP token associated with this app.
+            @vpp_token_display_name
+            ## 
             # Identifier of the VPP token associated with this app.
             @vpp_token_id
             ## 
@@ -91,7 +94,7 @@ module MicrosoftGraphBeta
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new macOsVppApp and sets the default values.
+            ## Instantiates a new MacOsVppApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,6 +126,7 @@ module MicrosoftGraphBeta
                     "usedLicenseCount" => lambda {|n| @used_license_count = n.get_number_value() },
                     "vppTokenAccountType" => lambda {|n| @vpp_token_account_type = n.get_enum_value(MicrosoftGraphBeta::Models::VppTokenAccountType) },
                     "vppTokenAppleId" => lambda {|n| @vpp_token_apple_id = n.get_string_value() },
+                    "vppTokenDisplayName" => lambda {|n| @vpp_token_display_name = n.get_string_value() },
                     "vppTokenId" => lambda {|n| @vpp_token_id = n.get_string_value() },
                     "vppTokenOrganizationName" => lambda {|n| @vpp_token_organization_name = n.get_string_value() },
                 })
@@ -190,6 +194,7 @@ module MicrosoftGraphBeta
                 writer.write_number_value("usedLicenseCount", @used_license_count)
                 writer.write_enum_value("vppTokenAccountType", @vpp_token_account_type)
                 writer.write_string_value("vppTokenAppleId", @vpp_token_apple_id)
+                writer.write_string_value("vppTokenDisplayName", @vpp_token_display_name)
                 writer.write_string_value("vppTokenId", @vpp_token_id)
                 writer.write_string_value("vppTokenOrganizationName", @vpp_token_organization_name)
             end
@@ -252,6 +257,21 @@ module MicrosoftGraphBeta
             ## 
             def vpp_token_apple_id=(value)
                 @vpp_token_apple_id = value
+            end
+            ## 
+            ## Gets the vppTokenDisplayName property value. Display name of the VPP token associated with this app.
+            ## @return a string
+            ## 
+            def vpp_token_display_name
+                return @vpp_token_display_name
+            end
+            ## 
+            ## Sets the vppTokenDisplayName property value. Display name of the VPP token associated with this app.
+            ## @param value Value to set for the vppTokenDisplayName property.
+            ## @return a void
+            ## 
+            def vpp_token_display_name=(value)
+                @vpp_token_display_name = value
             end
             ## 
             ## Gets the vppTokenId property value. Identifier of the VPP token associated with this app.

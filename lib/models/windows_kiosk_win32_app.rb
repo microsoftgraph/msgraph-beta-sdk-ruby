@@ -39,7 +39,7 @@ module MicrosoftGraphBeta
                 @classic_app_path = value
             end
             ## 
-            ## Instantiates a new windowsKioskWin32App and sets the default values.
+            ## Instantiates a new WindowsKioskWin32App and sets the default values.
             ## @return a void
             ## 
             def initialize()

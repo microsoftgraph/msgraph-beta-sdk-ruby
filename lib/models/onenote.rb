@@ -7,25 +7,25 @@ module MicrosoftGraphBeta
         class Onenote < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+            # The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
             @notebooks
             ## 
-            # The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+            # The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
             @operations
             ## 
-            # The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            # The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             @pages
             ## 
-            # The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+            # The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
             @resources
             ## 
-            # The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            # The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             @section_groups
             ## 
-            # The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            # The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             @sections
             ## 
-            ## Instantiates a new onenote and sets the default values.
+            ## Instantiates a new Onenote and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,14 +55,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+            ## Gets the notebooks property value. The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @return a notebook
             ## 
             def notebooks
                 return @notebooks
             end
             ## 
-            ## Sets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+            ## Sets the notebooks property value. The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @param value Value to set for the notebooks property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraphBeta
                 @notebooks = value
             end
             ## 
-            ## Gets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+            ## Gets the operations property value. The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
             ## @return a onenote_operation
             ## 
             def operations
                 return @operations
             end
             ## 
-            ## Sets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+            ## Sets the operations property value. The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
             ## @param value Value to set for the operations property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraphBeta
                 @operations = value
             end
             ## 
-            ## Gets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Gets the pages property value. The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @return a onenote_page
             ## 
             def pages
                 return @pages
             end
             ## 
-            ## Sets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Sets the pages property value. The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @param value Value to set for the pages property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraphBeta
                 @pages = value
             end
             ## 
-            ## Gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+            ## Gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
             ## @return a onenote_resource
             ## 
             def resources
                 return @resources
             end
             ## 
-            ## Sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+            ## Sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
             ## @param value Value to set for the resources property.
             ## @return a void
             ## 
@@ -115,14 +115,14 @@ module MicrosoftGraphBeta
                 @resources = value
             end
             ## 
-            ## Gets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Gets the sectionGroups property value. The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @return a section_group
             ## 
             def section_groups
                 return @section_groups
             end
             ## 
-            ## Sets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Sets the sectionGroups property value. The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @param value Value to set for the sectionGroups property.
             ## @return a void
             ## 
@@ -130,14 +130,14 @@ module MicrosoftGraphBeta
                 @section_groups = value
             end
             ## 
-            ## Gets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Gets the sections property value. The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @return a onenote_section
             ## 
             def sections
                 return @sections
             end
             ## 
-            ## Sets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+            ## Sets the sections property value. The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
             ## @param value Value to set for the sections property.
             ## @return a void
             ## 

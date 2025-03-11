@@ -8,51 +8,51 @@ module MicrosoftGraphBeta
         class LoginPage < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content property
+            # The HTML content of the login page.
             @content
             ## 
-            # The createdBy property
+            # Identity of the user who created the login page.
             @created_by
             ## 
-            # The createdDateTime property
+            # Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
-            # The description property
+            # Description about the login page.
             @description
             ## 
-            # The displayName property
+            # Display name of the login page.
             @display_name
             ## 
-            # The language property
+            # The content language of the login page.
             @language
             ## 
-            # The lastModifiedBy property
+            # Identity of the user who last modified the login page.
             @last_modified_by
             ## 
-            # The lastModifiedDateTime property
+            # Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The source property
+            # The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             @source
             ## 
-            # The status property
+            # The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             @status
             ## 
-            ## Instantiates a new loginPage and sets the default values.
+            ## Instantiates a new LoginPage and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the content property value. The content property
+            ## Gets the content property value. The HTML content of the login page.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content property
+            ## Sets the content property value. The HTML content of the login page.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -60,14 +60,14 @@ module MicrosoftGraphBeta
                 @content = value
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. Identity of the user who created the login page.
             ## @return a email_identity
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. Identity of the user who created the login page.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraphBeta
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraphBeta
                 return LoginPage.new
             end
             ## 
-            ## Gets the description property value. The description property
+            ## Gets the description property value. Description about the login page.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description property
+            ## Sets the description property value. Description about the login page.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -114,14 +114,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. Display name of the login page.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. Display name of the login page.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -147,14 +147,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the language property value. The language property
+            ## Gets the language property value. The content language of the login page.
             ## @return a string
             ## 
             def language
                 return @language
             end
             ## 
-            ## Sets the language property value. The language property
+            ## Sets the language property value. The content language of the login page.
             ## @param value Value to set for the language property.
             ## @return a void
             ## 
@@ -162,14 +162,14 @@ module MicrosoftGraphBeta
                 @language = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The lastModifiedBy property
+            ## Gets the lastModifiedBy property value. Identity of the user who last modified the login page.
             ## @return a email_identity
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The lastModifiedBy property
+            ## Sets the lastModifiedBy property value. Identity of the user who last modified the login page.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -177,14 +177,14 @@ module MicrosoftGraphBeta
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -211,14 +211,14 @@ module MicrosoftGraphBeta
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the source property value. The source property
+            ## Gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @return a simulation_content_source
             ## 
             def source
                 return @source
             end
             ## 
-            ## Sets the source property value. The source property
+            ## Sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
             ## @param value Value to set for the source property.
             ## @return a void
             ## 
@@ -226,14 +226,14 @@ module MicrosoftGraphBeta
                 @source = value
             end
             ## 
-            ## Gets the status property value. The status property
+            ## Gets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @return a simulation_content_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status property
+            ## Sets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

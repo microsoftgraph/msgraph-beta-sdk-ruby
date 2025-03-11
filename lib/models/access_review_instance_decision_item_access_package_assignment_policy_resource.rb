@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource < MicrosoftGraphBeta::Models::AccessReviewInstanceDecisionItemResource
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Display name of the access package to which access has been granted.
+            # Display name of the access package to which access is granted.
             @access_package_display_name
             ## 
-            # Identifier of the access package to which access has been granted.
+            # Identifier of the access package to which access is granted.
             @access_package_id
             ## 
-            ## Gets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
+            ## Gets the accessPackageDisplayName property value. Display name of the access package to which access is granted.
             ## @return a string
             ## 
             def access_package_display_name
                 return @access_package_display_name
             end
             ## 
-            ## Sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
+            ## Sets the accessPackageDisplayName property value. Display name of the access package to which access is granted.
             ## @param value Value to set for the accessPackageDisplayName property.
             ## @return a void
             ## 
@@ -28,14 +28,14 @@ module MicrosoftGraphBeta
                 @access_package_display_name = value
             end
             ## 
-            ## Gets the accessPackageId property value. Identifier of the access package to which access has been granted.
+            ## Gets the accessPackageId property value. Identifier of the access package to which access is granted.
             ## @return a string
             ## 
             def access_package_id
                 return @access_package_id
             end
             ## 
-            ## Sets the accessPackageId property value. Identifier of the access package to which access has been granted.
+            ## Sets the accessPackageId property value. Identifier of the access package to which access is granted.
             ## @param value Value to set for the accessPackageId property.
             ## @return a void
             ## 
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @access_package_id = value
             end
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

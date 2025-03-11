@@ -5,7 +5,7 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Device Enrollment Configuration that restricts the types of devices a user can enroll
+        # Default Device Enrollment Platform Restrictions Configuration that restricts the types of devices a user can enroll
         class DeviceEnrollmentPlatformRestrictionsConfiguration < MicrosoftGraphBeta::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -23,6 +23,12 @@ module MicrosoftGraphBeta
             ## 
             # Mac restrictions based on platform, platform operating system version, and device ownership
             @mac_restriction
+            ## 
+            # Indicates restrictions for TvOS platform.
+            @tvos_restriction
+            ## 
+            # Indicates restrictions for VisionOS platform.
+            @vision_o_s_restriction
             ## 
             # Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
             @windows_home_sku_restriction
@@ -63,7 +69,7 @@ module MicrosoftGraphBeta
                 @android_restriction = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -90,6 +96,8 @@ module MicrosoftGraphBeta
                     "iosRestriction" => lambda {|n| @ios_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "macOSRestriction" => lambda {|n| @mac_o_s_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "macRestriction" => lambda {|n| @mac_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
+                    "tvosRestriction" => lambda {|n| @tvos_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
+                    "visionOSRestriction" => lambda {|n| @vision_o_s_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsHomeSkuRestriction" => lambda {|n| @windows_home_sku_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsMobileRestriction" => lambda {|n| @windows_mobile_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsRestriction" => lambda {|n| @windows_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
@@ -153,9 +161,41 @@ module MicrosoftGraphBeta
                 writer.write_object_value("iosRestriction", @ios_restriction)
                 writer.write_object_value("macOSRestriction", @mac_o_s_restriction)
                 writer.write_object_value("macRestriction", @mac_restriction)
+                writer.write_object_value("tvosRestriction", @tvos_restriction)
+                writer.write_object_value("visionOSRestriction", @vision_o_s_restriction)
                 writer.write_object_value("windowsHomeSkuRestriction", @windows_home_sku_restriction)
                 writer.write_object_value("windowsMobileRestriction", @windows_mobile_restriction)
                 writer.write_object_value("windowsRestriction", @windows_restriction)
+            end
+            ## 
+            ## Gets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+            ## @return a device_enrollment_platform_restriction
+            ## 
+            def tvos_restriction
+                return @tvos_restriction
+            end
+            ## 
+            ## Sets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+            ## @param value Value to set for the tvosRestriction property.
+            ## @return a void
+            ## 
+            def tvos_restriction=(value)
+                @tvos_restriction = value
+            end
+            ## 
+            ## Gets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+            ## @return a device_enrollment_platform_restriction
+            ## 
+            def vision_o_s_restriction
+                return @vision_o_s_restriction
+            end
+            ## 
+            ## Sets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+            ## @param value Value to set for the visionOSRestriction property.
+            ## @return a void
+            ## 
+            def vision_o_s_restriction=(value)
+                @vision_o_s_restriction = value
             end
             ## 
             ## Gets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership

@@ -1,0 +1,1 @@
+require_relative 'retrieve_cloud_pc_tenant_metrics_report_post_request_body'

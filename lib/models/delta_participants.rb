@@ -7,13 +7,13 @@ module MicrosoftGraphBeta
         class DeltaParticipants < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The participants property
+            # The collection of participants that were updated since the last roster update.
             @participants
             ## 
             # The sequence number for the roster update that is used to identify the notification order.
             @sequence_number
             ## 
-            ## Instantiates a new deltaParticipants and sets the default values.
+            ## Instantiates a new DeltaParticipants and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the participants property value. The participants property
+            ## Gets the participants property value. The collection of participants that were updated since the last roster update.
             ## @return a participant
             ## 
             def participants
                 return @participants
             end
             ## 
-            ## Sets the participants property value. The participants property
+            ## Sets the participants property value. The collection of participants that were updated since the last roster update.
             ## @param value Value to set for the participants property.
             ## @return a void
             ## 

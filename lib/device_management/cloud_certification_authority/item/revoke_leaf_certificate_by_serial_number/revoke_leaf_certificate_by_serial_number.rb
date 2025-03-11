@@ -1,0 +1,1 @@
+require_relative 'revoke_leaf_certificate_by_serial_number_post_request_body'
