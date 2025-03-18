@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
                 @azure_communication_services_resource_id = value
             end
             ## 
-            ## Instantiates a new azureCommunicationServicesUserIdentity and sets the default values.
+            ## Instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

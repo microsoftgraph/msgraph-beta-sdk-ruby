@@ -1,7 +1,7 @@
 module MicrosoftGraphBeta
     module Models
         ## 
-        # An enum representing the Android SafetyNet attestation evaluation types.
+        # An enum representing the Android Play Integrity API evaluation types.
         AndroidSafetyNetEvaluationType = {
             Basic: :Basic,
             HardwareBacked: :HardwareBacked,

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
             @authority_template
             ## 
-            # The category property
+            # Represents the file plan descriptor of type category applied to a particular retention label.
             @category
             ## 
             # Specifies a group of similar types of content in a particular department.
@@ -38,7 +38,7 @@ module MicrosoftGraphBeta
             @file_plan_reference_template
             ## 
             ## Gets the authority property value. Represents the file plan descriptor of type authority applied to a particular retention label.
-            ## @return a security_authority
+            ## @return a security_file_plan_authority
             ## 
             def authority
                 return @authority
@@ -67,14 +67,14 @@ module MicrosoftGraphBeta
                 @authority_template = value
             end
             ## 
-            ## Gets the category property value. The category property
-            ## @return a security_applied_category
+            ## Gets the category property value. Represents the file plan descriptor of type category applied to a particular retention label.
+            ## @return a security_file_plan_applied_category
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. The category property
+            ## Sets the category property value. Represents the file plan descriptor of type category applied to a particular retention label.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 
@@ -98,7 +98,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the citation property value. Represents the file plan descriptor of type citation applied to a particular retention label.
-            ## @return a security_citation
+            ## @return a security_file_plan_citation
             ## 
             def citation
                 return @citation
@@ -127,7 +127,7 @@ module MicrosoftGraphBeta
                 @citation_template = value
             end
             ## 
-            ## Instantiates a new securityFilePlanDescriptor and sets the default values.
+            ## Instantiates a new SecurityFilePlanDescriptor and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -144,7 +144,7 @@ module MicrosoftGraphBeta
             end
             ## 
             ## Gets the department property value. Represents the file plan descriptor of type department applied to a particular retention label.
-            ## @return a security_department
+            ## @return a security_file_plan_department
             ## 
             def department
                 return @department
@@ -208,13 +208,13 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "authority" => lambda {|n| @authority = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAuthority.create_from_discriminator_value(pn) }) },
+                    "authority" => lambda {|n| @authority = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanAuthority.create_from_discriminator_value(pn) }) },
                     "authorityTemplate" => lambda {|n| @authority_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAuthorityTemplate.create_from_discriminator_value(pn) }) },
-                    "category" => lambda {|n| @category = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityAppliedCategory.create_from_discriminator_value(pn) }) },
+                    "category" => lambda {|n| @category = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanAppliedCategory.create_from_discriminator_value(pn) }) },
                     "categoryTemplate" => lambda {|n| @category_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCategoryTemplate.create_from_discriminator_value(pn) }) },
-                    "citation" => lambda {|n| @citation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCitation.create_from_discriminator_value(pn) }) },
+                    "citation" => lambda {|n| @citation = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanCitation.create_from_discriminator_value(pn) }) },
                     "citationTemplate" => lambda {|n| @citation_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityCitationTemplate.create_from_discriminator_value(pn) }) },
-                    "department" => lambda {|n| @department = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityDepartment.create_from_discriminator_value(pn) }) },
+                    "department" => lambda {|n| @department = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanDepartment.create_from_discriminator_value(pn) }) },
                     "departmentTemplate" => lambda {|n| @department_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityDepartmentTemplate.create_from_discriminator_value(pn) }) },
                     "filePlanReference" => lambda {|n| @file_plan_reference = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanReference.create_from_discriminator_value(pn) }) },
                     "filePlanReferenceTemplate" => lambda {|n| @file_plan_reference_template = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SecurityFilePlanReferenceTemplate.create_from_discriminator_value(pn) }) },

@@ -9,7 +9,7 @@ module MicrosoftGraphBeta
         class UserExperienceAnalyticsBatteryHealthAppImpact < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            # Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             @active_devices
             ## 
             # User friendly display name for the app. Eg: Outlook
@@ -21,20 +21,20 @@ module MicrosoftGraphBeta
             # App publisher. Eg: Microsoft Corporation
             @app_publisher
             ## 
-            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            # The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             @battery_usage_percentage
             ## 
             # true if the user had active interaction with the app.
             @is_foreground_app
             ## 
-            ## Gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            ## Gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             ## @return a integer
             ## 
             def active_devices
                 return @active_devices
             end
             ## 
-            ## Sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+            ## Sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
             ## @param value Value to set for the activeDevices property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraphBeta
                 @app_publisher = value
             end
             ## 
-            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             ## @return a double
             ## 
             def battery_usage_percentage
                 return @battery_usage_percentage
             end
             ## 
-            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+            ## Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
             ## @param value Value to set for the batteryUsagePercentage property.
             ## @return a void
             ## 
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
                 @battery_usage_percentage = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
             ## @return a void
             ## 
             def initialize()

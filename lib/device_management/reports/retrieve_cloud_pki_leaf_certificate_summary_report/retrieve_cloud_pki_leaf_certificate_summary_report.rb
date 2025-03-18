@@ -1,0 +1,1 @@
+require_relative 'retrieve_cloud_pki_leaf_certificate_summary_report_post_request_body'

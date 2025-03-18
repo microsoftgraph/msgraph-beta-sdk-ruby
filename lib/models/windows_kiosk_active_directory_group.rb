@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # The name of the AD group that will be locked to this kiosk configuration
             @group_name
             ## 
-            ## Instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
+            ## Instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

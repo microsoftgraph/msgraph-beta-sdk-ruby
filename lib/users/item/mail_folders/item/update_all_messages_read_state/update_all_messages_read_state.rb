@@ -1,0 +1,1 @@
+require_relative 'update_all_messages_read_state_post_request_body'

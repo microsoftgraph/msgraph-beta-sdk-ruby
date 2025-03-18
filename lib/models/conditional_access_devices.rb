@@ -13,37 +13,37 @@ module MicrosoftGraphBeta
             # Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.
             @device_filter
             ## 
-            # The excludeDeviceStates property
+            # States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
             @exclude_device_states
             ## 
             # States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
             @exclude_devices
             ## 
-            # The includeDeviceStates property
+            # States in the scope of the policy. All is the only allowed value.
             @include_device_states
             ## 
-            # States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            # States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             @include_devices
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new conditionalAccessDevices and sets the default values.
+            ## Instantiates a new ConditionalAccessDevices and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,14 +74,14 @@ module MicrosoftGraphBeta
                 @device_filter = value
             end
             ## 
-            ## Gets the excludeDeviceStates property value. The excludeDeviceStates property
+            ## Gets the excludeDeviceStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
             ## @return a string
             ## 
             def exclude_device_states
                 return @exclude_device_states
             end
             ## 
-            ## Sets the excludeDeviceStates property value. The excludeDeviceStates property
+            ## Sets the excludeDeviceStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
             ## @param value Value to set for the excludeDeviceStates property.
             ## @return a void
             ## 
@@ -118,14 +118,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the includeDeviceStates property value. The includeDeviceStates property
+            ## Gets the includeDeviceStates property value. States in the scope of the policy. All is the only allowed value.
             ## @return a string
             ## 
             def include_device_states
                 return @include_device_states
             end
             ## 
-            ## Sets the includeDeviceStates property value. The includeDeviceStates property
+            ## Sets the includeDeviceStates property value. States in the scope of the policy. All is the only allowed value.
             ## @param value Value to set for the includeDeviceStates property.
             ## @return a void
             ## 
@@ -133,14 +133,14 @@ module MicrosoftGraphBeta
                 @include_device_states = value
             end
             ## 
-            ## Gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            ## Gets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             ## @return a string
             ## 
             def include_devices
                 return @include_devices
             end
             ## 
-            ## Sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+            ## Sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
             ## @param value Value to set for the includeDevices property.
             ## @return a void
             ## 

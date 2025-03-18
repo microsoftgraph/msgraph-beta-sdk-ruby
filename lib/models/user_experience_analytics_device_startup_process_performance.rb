@@ -27,7 +27,7 @@ module MicrosoftGraphBeta
             # The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
             @total_impact_in_ms
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

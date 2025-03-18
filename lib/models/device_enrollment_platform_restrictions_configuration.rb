@@ -5,42 +5,48 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Device Enrollment Configuration that restricts the types of devices a user can enroll
+        # Default Device Enrollment Platform Restrictions Configuration that restricts the types of devices a user can enroll
         class DeviceEnrollmentPlatformRestrictionsConfiguration < MicrosoftGraphBeta::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Android for work restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for Android For Work platform.
             @android_for_work_restriction
             ## 
-            # Android restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for Android platform.
             @android_restriction
             ## 
-            # Ios restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for IOS platform.
             @ios_restriction
             ## 
-            # Mac restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for MacOS platform.
             @mac_o_s_restriction
             ## 
-            # Mac restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for Mac platform.
             @mac_restriction
             ## 
-            # Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for TvOS platform.
+            @tvos_restriction
+            ## 
+            # Indicates restrictions for VisionOS platform.
+            @vision_o_s_restriction
+            ## 
+            # Indicates restrictions for Windows HomeSku platform.
             @windows_home_sku_restriction
             ## 
-            # Windows mobile restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for Windows Mobile platform.
             @windows_mobile_restriction
             ## 
-            # Windows restrictions based on platform, platform operating system version, and device ownership
+            # Indicates restrictions for Windows platform.
             @windows_restriction
             ## 
-            ## Gets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the androidForWorkRestriction property value. Indicates restrictions for Android For Work platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def android_for_work_restriction
                 return @android_for_work_restriction
             end
             ## 
-            ## Sets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the androidForWorkRestriction property value. Indicates restrictions for Android For Work platform.
             ## @param value Value to set for the androidForWorkRestriction property.
             ## @return a void
             ## 
@@ -48,14 +54,14 @@ module MicrosoftGraphBeta
                 @android_for_work_restriction = value
             end
             ## 
-            ## Gets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the androidRestriction property value. Indicates restrictions for Android platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def android_restriction
                 return @android_restriction
             end
             ## 
-            ## Sets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the androidRestriction property value. Indicates restrictions for Android platform.
             ## @param value Value to set for the androidRestriction property.
             ## @return a void
             ## 
@@ -63,7 +69,7 @@ module MicrosoftGraphBeta
                 @android_restriction = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -90,20 +96,22 @@ module MicrosoftGraphBeta
                     "iosRestriction" => lambda {|n| @ios_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "macOSRestriction" => lambda {|n| @mac_o_s_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "macRestriction" => lambda {|n| @mac_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
+                    "tvosRestriction" => lambda {|n| @tvos_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
+                    "visionOSRestriction" => lambda {|n| @vision_o_s_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsHomeSkuRestriction" => lambda {|n| @windows_home_sku_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsMobileRestriction" => lambda {|n| @windows_mobile_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                     "windowsRestriction" => lambda {|n| @windows_restriction = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DeviceEnrollmentPlatformRestriction.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the iosRestriction property value. Indicates restrictions for IOS platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def ios_restriction
                 return @ios_restriction
             end
             ## 
-            ## Sets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the iosRestriction property value. Indicates restrictions for IOS platform.
             ## @param value Value to set for the iosRestriction property.
             ## @return a void
             ## 
@@ -111,14 +119,14 @@ module MicrosoftGraphBeta
                 @ios_restriction = value
             end
             ## 
-            ## Gets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the macOSRestriction property value. Indicates restrictions for MacOS platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def mac_o_s_restriction
                 return @mac_o_s_restriction
             end
             ## 
-            ## Sets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the macOSRestriction property value. Indicates restrictions for MacOS platform.
             ## @param value Value to set for the macOSRestriction property.
             ## @return a void
             ## 
@@ -126,14 +134,14 @@ module MicrosoftGraphBeta
                 @mac_o_s_restriction = value
             end
             ## 
-            ## Gets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the macRestriction property value. Indicates restrictions for Mac platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def mac_restriction
                 return @mac_restriction
             end
             ## 
-            ## Sets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the macRestriction property value. Indicates restrictions for Mac platform.
             ## @param value Value to set for the macRestriction property.
             ## @return a void
             ## 
@@ -153,19 +161,51 @@ module MicrosoftGraphBeta
                 writer.write_object_value("iosRestriction", @ios_restriction)
                 writer.write_object_value("macOSRestriction", @mac_o_s_restriction)
                 writer.write_object_value("macRestriction", @mac_restriction)
+                writer.write_object_value("tvosRestriction", @tvos_restriction)
+                writer.write_object_value("visionOSRestriction", @vision_o_s_restriction)
                 writer.write_object_value("windowsHomeSkuRestriction", @windows_home_sku_restriction)
                 writer.write_object_value("windowsMobileRestriction", @windows_mobile_restriction)
                 writer.write_object_value("windowsRestriction", @windows_restriction)
             end
             ## 
-            ## Gets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+            ## @return a device_enrollment_platform_restriction
+            ## 
+            def tvos_restriction
+                return @tvos_restriction
+            end
+            ## 
+            ## Sets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+            ## @param value Value to set for the tvosRestriction property.
+            ## @return a void
+            ## 
+            def tvos_restriction=(value)
+                @tvos_restriction = value
+            end
+            ## 
+            ## Gets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+            ## @return a device_enrollment_platform_restriction
+            ## 
+            def vision_o_s_restriction
+                return @vision_o_s_restriction
+            end
+            ## 
+            ## Sets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+            ## @param value Value to set for the visionOSRestriction property.
+            ## @return a void
+            ## 
+            def vision_o_s_restriction=(value)
+                @vision_o_s_restriction = value
+            end
+            ## 
+            ## Gets the windowsHomeSkuRestriction property value. Indicates restrictions for Windows HomeSku platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def windows_home_sku_restriction
                 return @windows_home_sku_restriction
             end
             ## 
-            ## Sets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the windowsHomeSkuRestriction property value. Indicates restrictions for Windows HomeSku platform.
             ## @param value Value to set for the windowsHomeSkuRestriction property.
             ## @return a void
             ## 
@@ -173,14 +213,14 @@ module MicrosoftGraphBeta
                 @windows_home_sku_restriction = value
             end
             ## 
-            ## Gets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the windowsMobileRestriction property value. Indicates restrictions for Windows Mobile platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def windows_mobile_restriction
                 return @windows_mobile_restriction
             end
             ## 
-            ## Sets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the windowsMobileRestriction property value. Indicates restrictions for Windows Mobile platform.
             ## @param value Value to set for the windowsMobileRestriction property.
             ## @return a void
             ## 
@@ -188,14 +228,14 @@ module MicrosoftGraphBeta
                 @windows_mobile_restriction = value
             end
             ## 
-            ## Gets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
+            ## Gets the windowsRestriction property value. Indicates restrictions for Windows platform.
             ## @return a device_enrollment_platform_restriction
             ## 
             def windows_restriction
                 return @windows_restriction
             end
             ## 
-            ## Sets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
+            ## Sets the windowsRestriction property value. Indicates restrictions for Windows platform.
             ## @param value Value to set for the windowsRestriction property.
             ## @return a void
             ## 

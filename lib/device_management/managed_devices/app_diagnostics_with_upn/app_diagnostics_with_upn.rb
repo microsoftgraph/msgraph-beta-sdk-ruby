@@ -1,1 +1,1 @@
-require_relative 'app_diagnostics_with_upn_response'
+require_relative 'app_diagnostics_with_upn_get_response'

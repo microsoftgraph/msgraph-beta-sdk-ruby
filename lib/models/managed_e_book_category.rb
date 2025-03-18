@@ -16,7 +16,7 @@ module MicrosoftGraphBeta
             # The date and time the ManagedEBookCategory was last modified.
             @last_modified_date_time
             ## 
-            ## Instantiates a new managedEBookCategory and sets the default values.
+            ## Instantiates a new ManagedEBookCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,1 +1,1 @@
-require_relative 'get_global_script_highest_available_version_response'
+require_relative 'get_global_script_highest_available_version_post_response'

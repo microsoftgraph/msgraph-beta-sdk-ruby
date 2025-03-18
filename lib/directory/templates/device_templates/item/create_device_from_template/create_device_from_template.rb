@@ -1,0 +1,1 @@
+require_relative 'create_device_from_template_post_request_body'

@@ -7,26 +7,29 @@ module MicrosoftGraphBeta
         class Presence < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
+            # The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
             @activity
             ## 
-            # The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+            # The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.
             @availability
             ## 
             # The out of office settings for a user.
             @out_of_office_settings
             ## 
+            # The sequenceNumber property
+            @sequence_number
+            ## 
             # The presence status message of a user.
             @status_message
             ## 
-            ## Gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
+            ## Gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
             ## @return a string
             ## 
             def activity
                 return @activity
             end
             ## 
-            ## Sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
+            ## Sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
             ## @param value Value to set for the activity property.
             ## @return a void
             ## 
@@ -34,14 +37,14 @@ module MicrosoftGraphBeta
                 @activity = value
             end
             ## 
-            ## Gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+            ## Gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.
             ## @return a string
             ## 
             def availability
                 return @availability
             end
             ## 
-            ## Sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+            ## Sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.
             ## @param value Value to set for the availability property.
             ## @return a void
             ## 
@@ -49,7 +52,7 @@ module MicrosoftGraphBeta
                 @availability = value
             end
             ## 
-            ## Instantiates a new presence and sets the default values.
+            ## Instantiates a new Presence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,6 +76,7 @@ module MicrosoftGraphBeta
                     "activity" => lambda {|n| @activity = n.get_string_value() },
                     "availability" => lambda {|n| @availability = n.get_string_value() },
                     "outOfOfficeSettings" => lambda {|n| @out_of_office_settings = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::OutOfOfficeSettings.create_from_discriminator_value(pn) }) },
+                    "sequenceNumber" => lambda {|n| @sequence_number = n.get_string_value() },
                     "statusMessage" => lambda {|n| @status_message = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::PresenceStatusMessage.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -90,6 +94,21 @@ module MicrosoftGraphBeta
             ## 
             def out_of_office_settings=(value)
                 @out_of_office_settings = value
+            end
+            ## 
+            ## Gets the sequenceNumber property value. The sequenceNumber property
+            ## @return a string
+            ## 
+            def sequence_number
+                return @sequence_number
+            end
+            ## 
+            ## Sets the sequenceNumber property value. The sequenceNumber property
+            ## @param value Value to set for the sequenceNumber property.
+            ## @return a void
+            ## 
+            def sequence_number=(value)
+                @sequence_number = value
             end
             ## 
             ## Serializes information the current object

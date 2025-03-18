@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
             @maximum_foreground_bandwidth_percentage
             ## 
-            ## Instantiates a new deliveryOptimizationBandwidthPercentage and sets the default values.
+            ## Instantiates a new DeliveryOptimizationBandwidthPercentage and sets the default values.
             ## @return a void
             ## 
             def initialize()
