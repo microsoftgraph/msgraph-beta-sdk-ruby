@@ -22,16 +22,16 @@ module MicrosoftGraphBeta
             # Short description of the program provided by the user.
             @description
             ## 
-            # Long-form name of the program that the user has provided.
+            # Long-form name of the program that the user provided.
             @display_name
             ## 
             # Majors and minors associated with the program. (if applicable)
             @fields_of_study
             ## 
-            # The final grade, class, GPA or score.
+            # The final grade, class, GPA, or score.
             @grade
             ## 
-            # Additional notes the user has provided.
+            # More notes the user provided.
             @notes
             ## 
             # The OdataType property
@@ -70,15 +70,15 @@ module MicrosoftGraphBeta
                 @activities = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraphBeta
                 @awards = value
             end
             ## 
-            ## Instantiates a new educationalActivityDetail and sets the default values.
+            ## Instantiates a new EducationalActivityDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -131,14 +131,14 @@ module MicrosoftGraphBeta
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Long-form name of the program that the user has provided.
+            ## Gets the displayName property value. Long-form name of the program that the user provided.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Long-form name of the program that the user has provided.
+            ## Sets the displayName property value. Long-form name of the program that the user provided.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -179,14 +179,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the grade property value. The final grade, class, GPA or score.
+            ## Gets the grade property value. The final grade, class, GPA, or score.
             ## @return a string
             ## 
             def grade
                 return @grade
             end
             ## 
-            ## Sets the grade property value. The final grade, class, GPA or score.
+            ## Sets the grade property value. The final grade, class, GPA, or score.
             ## @param value Value to set for the grade property.
             ## @return a void
             ## 
@@ -194,14 +194,14 @@ module MicrosoftGraphBeta
                 @grade = value
             end
             ## 
-            ## Gets the notes property value. Additional notes the user has provided.
+            ## Gets the notes property value. More notes the user provided.
             ## @return a string
             ## 
             def notes
                 return @notes
             end
             ## 
-            ## Sets the notes property value. Additional notes the user has provided.
+            ## Sets the notes property value. More notes the user provided.
             ## @param value Value to set for the notes property.
             ## @return a void
             ## 

@@ -18,7 +18,7 @@ module MicrosoftGraphBeta
             # Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
             @schema_items
             ## 
-            ## Instantiates a new androidManagedStoreAppConfigurationSchema and sets the default values.
+            ## Instantiates a new AndroidManagedStoreAppConfigurationSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

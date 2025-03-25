@@ -21,6 +21,9 @@ module MicrosoftGraphBeta
             # Description of the Role Scope Tag. This property is read-only.
             @is_built_in
             ## 
+            # Permissions associated with the Role Scope Tag. This property is read-only.
+            @permissions
+            ## 
             ## Gets the assignments property value. The list of assignments for this Role Scope Tag.
             ## @return a role_scope_tag_auto_assignment
             ## 
@@ -36,7 +39,7 @@ module MicrosoftGraphBeta
                 @assignments = value
             end
             ## 
-            ## Instantiates a new roleScopeTag and sets the default values.
+            ## Instantiates a new RoleScopeTag and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -91,6 +94,7 @@ module MicrosoftGraphBeta
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isBuiltIn" => lambda {|n| @is_built_in = n.get_boolean_value() },
+                    "permissions" => lambda {|n| @permissions = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
@@ -107,6 +111,21 @@ module MicrosoftGraphBeta
             ## 
             def is_built_in=(value)
                 @is_built_in = value
+            end
+            ## 
+            ## Gets the permissions property value. Permissions associated with the Role Scope Tag. This property is read-only.
+            ## @return a string
+            ## 
+            def permissions
+                return @permissions
+            end
+            ## 
+            ## Sets the permissions property value. Permissions associated with the Role Scope Tag. This property is read-only.
+            ## @param value Value to set for the permissions property.
+            ## @return a void
+            ## 
+            def permissions=(value)
+                @permissions = value
             end
             ## 
             ## Serializes information the current object

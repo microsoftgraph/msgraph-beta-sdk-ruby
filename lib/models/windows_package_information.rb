@@ -5,7 +5,7 @@ require_relative './models'
 module MicrosoftGraphBeta
     module Models
         ## 
-        # Contains properties for the package information for a Windows line of business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
+        # Contains properties for the package information for a Windows line-of-business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
         class WindowsPackageInformation
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -36,15 +36,15 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraphBeta
                 @applicable_architecture = value
             end
             ## 
-            ## Instantiates a new windowsPackageInformation and sets the default values.
+            ## Instantiates a new WindowsPackageInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -102,7 +102,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
-                    "applicableArchitecture" => lambda {|n| @applicable_architecture = n.get_enum_value(MicrosoftGraphBeta::Models::WindowsArchitecture) },
+                    "applicableArchitecture" => lambda {|n| @applicable_architecture = n.get_enum_values(MicrosoftGraphBeta::Models::WindowsArchitecture) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisher" => lambda {|n| @identity_publisher = n.get_string_value() },

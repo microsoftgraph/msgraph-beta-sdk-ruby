@@ -142,7 +142,7 @@ module MicrosoftGraphBeta
                 @company_portal_blocked_actions = value
             end
             ## 
-            ## Instantiates a new intuneBrandingProfile and sets the default values.
+            ## Instantiates a new IntuneBrandingProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -84,7 +84,7 @@ module MicrosoftGraphBeta
                 @connection_type = value
             end
             ## 
-            ## Instantiates a new androidVpnConfiguration and sets the default values.
+            ## Instantiates a new AndroidVpnConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

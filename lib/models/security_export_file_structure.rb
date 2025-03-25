@@ -5,6 +5,7 @@ module MicrosoftGraphBeta
             Directory: :Directory,
             Pst: :Pst,
             UnknownFutureValue: :UnknownFutureValue,
+            Msg: :Msg,
         }
     end
 end

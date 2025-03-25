@@ -7,6 +7,11 @@ module MicrosoftGraphBeta
             FileInfo: :FileInfo,
             Tags: :Tags,
             UnknownFutureValue: :UnknownFutureValue,
+            SplitSource: :SplitSource,
+            IncludeFolderAndPath: :IncludeFolderAndPath,
+            FriendlyName: :FriendlyName,
+            CondensePaths: :CondensePaths,
+            OptimizedPartitionSize: :OptimizedPartitionSize,
         }
     end
 end

@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
             @default_language_tag
             ## 
-            # The identityProviders property
+            # The identity providers included in the user flow.
             @identity_providers
             ## 
             # The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The user attribute assignments included in the user flow.
             @user_attribute_assignments
             ## 
-            # The userFlowIdentityProviders property
+            # The identity providers included in the user flow.
             @user_flow_identity_providers
             ## 
             ## Gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @api_connector_configuration = value
             end
             ## 
-            ## Instantiates a new b2cIdentityUserFlow and sets the default values.
+            ## Instantiates a new B2cIdentityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -89,14 +89,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the identityProviders property value. The identityProviders property
+            ## Gets the identityProviders property value. The identity providers included in the user flow.
             ## @return a identity_provider
             ## 
             def identity_providers
                 return @identity_providers
             end
             ## 
-            ## Sets the identityProviders property value. The identityProviders property
+            ## Sets the identityProviders property value. The identity providers included in the user flow.
             ## @param value Value to set for the identityProviders property.
             ## @return a void
             ## 
@@ -165,14 +165,14 @@ module MicrosoftGraphBeta
                 @user_attribute_assignments = value
             end
             ## 
-            ## Gets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+            ## Gets the userFlowIdentityProviders property value. The identity providers included in the user flow.
             ## @return a identity_provider_base
             ## 
             def user_flow_identity_providers
                 return @user_flow_identity_providers
             end
             ## 
-            ## Sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+            ## Sets the userFlowIdentityProviders property value. The identity providers included in the user flow.
             ## @param value Value to set for the userFlowIdentityProviders property.
             ## @return a void
             ## 

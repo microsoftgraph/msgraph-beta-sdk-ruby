@@ -7,16 +7,25 @@ module MicrosoftGraphBeta
         class NetworkaccessNetworkAccessRoot < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The alerts property
+            @alerts
+            ## 
             # Connectivity represents all the connectivity components in Global Secure Access.
             @connectivity
             ## 
-            # A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            # A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+            @filtering_policies
+            ## 
+            # A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+            @filtering_profiles
+            ## 
+            # A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             @forwarding_policies
             ## 
             # A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
             @forwarding_profiles
             ## 
-            # Represnts network connections that are routed through Global Secure Access.
+            # Represents network connections that are routed through Global Secure Access.
             @logs
             ## 
             # Represents the status of the Global Secure Access services for the tenant.
@@ -27,6 +36,21 @@ module MicrosoftGraphBeta
             ## 
             # Represents the status of the Global Secure Access services for the tenant.
             @tenant_status
+            ## 
+            ## Gets the alerts property value. The alerts property
+            ## @return a networkaccess_alert
+            ## 
+            def alerts
+                return @alerts
+            end
+            ## 
+            ## Sets the alerts property value. The alerts property
+            ## @param value Value to set for the alerts property.
+            ## @return a void
+            ## 
+            def alerts=(value)
+                @alerts = value
+            end
             ## 
             ## Gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
             ## @return a networkaccess_connectivity
@@ -43,7 +67,7 @@ module MicrosoftGraphBeta
                 @connectivity = value
             end
             ## 
-            ## Instantiates a new networkaccessNetworkAccessRoot and sets the default values.
+            ## Instantiates a new NetworkaccessNetworkAccessRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +83,44 @@ module MicrosoftGraphBeta
                 return NetworkaccessNetworkAccessRoot.new
             end
             ## 
-            ## Gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            ## Gets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+            ## @return a networkaccess_filtering_policy
+            ## 
+            def filtering_policies
+                return @filtering_policies
+            end
+            ## 
+            ## Sets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+            ## @param value Value to set for the filteringPolicies property.
+            ## @return a void
+            ## 
+            def filtering_policies=(value)
+                @filtering_policies = value
+            end
+            ## 
+            ## Gets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+            ## @return a networkaccess_filtering_profile
+            ## 
+            def filtering_profiles
+                return @filtering_profiles
+            end
+            ## 
+            ## Sets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+            ## @param value Value to set for the filteringProfiles property.
+            ## @return a void
+            ## 
+            def filtering_profiles=(value)
+                @filtering_profiles = value
+            end
+            ## 
+            ## Gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             ## @return a networkaccess_forwarding_policy
             ## 
             def forwarding_policies
                 return @forwarding_policies
             end
             ## 
-            ## Sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.
+            ## Sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
             ## @param value Value to set for the forwardingPolicies property.
             ## @return a void
             ## 
@@ -94,7 +148,10 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "alerts" => lambda {|n| @alerts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessAlert.create_from_discriminator_value(pn) }) },
                     "connectivity" => lambda {|n| @connectivity = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessConnectivity.create_from_discriminator_value(pn) }) },
+                    "filteringPolicies" => lambda {|n| @filtering_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessFilteringPolicy.create_from_discriminator_value(pn) }) },
+                    "filteringProfiles" => lambda {|n| @filtering_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessFilteringProfile.create_from_discriminator_value(pn) }) },
                     "forwardingPolicies" => lambda {|n| @forwarding_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessForwardingPolicy.create_from_discriminator_value(pn) }) },
                     "forwardingProfiles" => lambda {|n| @forwarding_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessForwardingProfile.create_from_discriminator_value(pn) }) },
                     "logs" => lambda {|n| @logs = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::NetworkaccessLogs.create_from_discriminator_value(pn) }) },
@@ -104,14 +161,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the logs property value. Represnts network connections that are routed through Global Secure Access.
+            ## Gets the logs property value. Represents network connections that are routed through Global Secure Access.
             ## @return a networkaccess_logs
             ## 
             def logs
                 return @logs
             end
             ## 
-            ## Sets the logs property value. Represnts network connections that are routed through Global Secure Access.
+            ## Sets the logs property value. Represents network connections that are routed through Global Secure Access.
             ## @param value Value to set for the logs property.
             ## @return a void
             ## 
@@ -141,7 +198,10 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("alerts", @alerts)
                 writer.write_object_value("connectivity", @connectivity)
+                writer.write_collection_of_object_values("filteringPolicies", @filtering_policies)
+                writer.write_collection_of_object_values("filteringProfiles", @filtering_profiles)
                 writer.write_collection_of_object_values("forwardingPolicies", @forwarding_policies)
                 writer.write_collection_of_object_values("forwardingProfiles", @forwarding_profiles)
                 writer.write_object_value("logs", @logs)

@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class AadUserConversationMemberResult < MicrosoftGraphBeta::Models::ActionResultPart
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The user object ID of the Azure AD user that was being added as part of the bulk operation.
+            # The user object ID of the Microsoft Entra user that was being added as part of the bulk operation.
             @user_id
             ## 
-            ## Instantiates a new aadUserConversationMemberResult and sets the default values.
+            ## Instantiates a new AadUserConversationMemberResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraphBeta
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+            ## Gets the userId property value. The user object ID of the Microsoft Entra user that was being added as part of the bulk operation.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The user object ID of the Azure AD user that was being added as part of the bulk operation.
+            ## Sets the userId property value. The user object ID of the Microsoft Entra user that was being added as part of the bulk operation.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

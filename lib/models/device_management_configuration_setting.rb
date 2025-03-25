@@ -15,7 +15,7 @@ module MicrosoftGraphBeta
             # Setting instance within policy
             @setting_instance
             ## 
-            ## Instantiates a new deviceManagementConfigurationSetting and sets the default values.
+            ## Instantiates a new DeviceManagementConfigurationSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()

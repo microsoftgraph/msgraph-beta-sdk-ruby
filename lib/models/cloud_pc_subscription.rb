@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # The name of the subscription.
             @subscription_name
             ## 
-            ## Instantiates a new cloudPcSubscription and sets the default values.
+            ## Instantiates a new CloudPcSubscription and sets the default values.
             ## @return a void
             ## 
             def initialize()

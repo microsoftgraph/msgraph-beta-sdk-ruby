@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The result property
             @result
             ## 
-            ## Instantiates a new dlpEvaluatePoliciesJobResponse and sets the default values.
+            ## Instantiates a new DlpEvaluatePoliciesJobResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

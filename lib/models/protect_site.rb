@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @conditional_access_protection_level_id = value
             end
             ## 
-            ## Instantiates a new protectSite and sets the default values.
+            ## Instantiates a new ProtectSite and sets the default values.
             ## @return a void
             ## 
             def initialize()

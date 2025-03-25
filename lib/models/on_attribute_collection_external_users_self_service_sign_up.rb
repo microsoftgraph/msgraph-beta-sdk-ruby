@@ -7,20 +7,20 @@ module MicrosoftGraphBeta
         class OnAttributeCollectionExternalUsersSelfServiceSignUp < MicrosoftGraphBeta::Models::OnAttributeCollectionHandler
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+            # Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
             @attribute_collection_page
             ## 
             # The attributes property
             @attributes
             ## 
-            ## Gets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+            ## Gets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
             ## @return a authentication_attribute_collection_page
             ## 
             def attribute_collection_page
                 return @attribute_collection_page
             end
             ## 
-            ## Sets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+            ## Sets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
             ## @param value Value to set for the attributeCollectionPage property.
             ## @return a void
             ## 
@@ -43,7 +43,7 @@ module MicrosoftGraphBeta
                 @attributes = value
             end
             ## 
-            ## Instantiates a new onAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
+            ## Instantiates a new OnAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
             ## @return a void
             ## 
             def initialize()

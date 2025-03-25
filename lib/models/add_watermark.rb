@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The orientation property
             @orientation
             ## 
-            ## Instantiates a new addWatermark and sets the default values.
+            ## Instantiates a new AddWatermark and sets the default values.
             ## @return a void
             ## 
             def initialize()

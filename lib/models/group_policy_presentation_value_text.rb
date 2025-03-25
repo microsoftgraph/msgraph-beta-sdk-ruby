@@ -12,7 +12,7 @@ module MicrosoftGraphBeta
             # A string value for the associated presentation.
             @value
             ## 
-            ## Instantiates a new groupPolicyPresentationValueText and sets the default values.
+            ## Instantiates a new GroupPolicyPresentationValueText and sets the default values.
             ## @return a void
             ## 
             def initialize()

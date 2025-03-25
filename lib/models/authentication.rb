@@ -13,13 +13,16 @@ module MicrosoftGraphBeta
             # Represents the FIDO2 security keys registered to a user for authentication.
             @fido2_methods
             ## 
+            # The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
+            @hardware_oath_methods
+            ## 
             # Represents all authentication methods registered to a user.
             @methods
             ## 
             # The details of the Microsoft Authenticator app registered to a user for authentication.
             @microsoft_authenticator_methods
             ## 
-            # The operations property
+            # Represents the status of a long-running operation, such as a password reset operation.
             @operations
             ## 
             # Represents the details of the password authentication method registered to a user for authentication.
@@ -31,10 +34,16 @@ module MicrosoftGraphBeta
             # Represents the phone registered to a user for authentication.
             @phone_methods
             ## 
-            # The settings and preferences for to the sign-in experience of a user.
+            # The platformCredentialMethods property
+            @platform_credential_methods
+            ## 
+            # The settings and preferences for per-user Microsoft Entra multifactor authentication.
+            @requirements
+            ## 
+            # The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
             @sign_in_preferences
             ## 
-            # The softwareOathMethods property
+            # The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             @software_oath_methods
             ## 
             # Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -43,7 +52,7 @@ module MicrosoftGraphBeta
             # Represents the Windows Hello for Business authentication method registered to a user for authentication.
             @windows_hello_for_business_methods
             ## 
-            ## Instantiates a new authentication and sets the default values.
+            ## Instantiates a new Authentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -96,17 +105,35 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "emailMethods" => lambda {|n| @email_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EmailAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "fido2Methods" => lambda {|n| @fido2_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Fido2AuthenticationMethod.create_from_discriminator_value(pn) }) },
+                    "hardwareOathMethods" => lambda {|n| @hardware_oath_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::HardwareOathAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "methods" => lambda {|n| @methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::AuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "microsoftAuthenticatorMethods" => lambda {|n| @microsoft_authenticator_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MicrosoftAuthenticatorAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::LongRunningOperation.create_from_discriminator_value(pn) }) },
                     "passwordMethods" => lambda {|n| @password_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PasswordAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "passwordlessMicrosoftAuthenticatorMethods" => lambda {|n| @passwordless_microsoft_authenticator_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PasswordlessMicrosoftAuthenticatorAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "phoneMethods" => lambda {|n| @phone_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PhoneAuthenticationMethod.create_from_discriminator_value(pn) }) },
+                    "platformCredentialMethods" => lambda {|n| @platform_credential_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::PlatformCredentialAuthenticationMethod.create_from_discriminator_value(pn) }) },
+                    "requirements" => lambda {|n| @requirements = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::StrongAuthenticationRequirements.create_from_discriminator_value(pn) }) },
                     "signInPreferences" => lambda {|n| @sign_in_preferences = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::SignInPreferences.create_from_discriminator_value(pn) }) },
                     "softwareOathMethods" => lambda {|n| @software_oath_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SoftwareOathAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "temporaryAccessPassMethods" => lambda {|n| @temporary_access_pass_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::TemporaryAccessPassAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "windowsHelloForBusinessMethods" => lambda {|n| @windows_hello_for_business_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::WindowsHelloForBusinessAuthenticationMethod.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the hardwareOathMethods property value. The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
+            ## @return a hardware_oath_authentication_method
+            ## 
+            def hardware_oath_methods
+                return @hardware_oath_methods
+            end
+            ## 
+            ## Sets the hardwareOathMethods property value. The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
+            ## @param value Value to set for the hardwareOathMethods property.
+            ## @return a void
+            ## 
+            def hardware_oath_methods=(value)
+                @hardware_oath_methods = value
             end
             ## 
             ## Gets the methods property value. Represents all authentication methods registered to a user.
@@ -139,14 +166,14 @@ module MicrosoftGraphBeta
                 @microsoft_authenticator_methods = value
             end
             ## 
-            ## Gets the operations property value. The operations property
+            ## Gets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
             ## @return a long_running_operation
             ## 
             def operations
                 return @operations
             end
             ## 
-            ## Sets the operations property value. The operations property
+            ## Sets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
             ## @param value Value to set for the operations property.
             ## @return a void
             ## 
@@ -199,6 +226,36 @@ module MicrosoftGraphBeta
                 @phone_methods = value
             end
             ## 
+            ## Gets the platformCredentialMethods property value. The platformCredentialMethods property
+            ## @return a platform_credential_authentication_method
+            ## 
+            def platform_credential_methods
+                return @platform_credential_methods
+            end
+            ## 
+            ## Sets the platformCredentialMethods property value. The platformCredentialMethods property
+            ## @param value Value to set for the platformCredentialMethods property.
+            ## @return a void
+            ## 
+            def platform_credential_methods=(value)
+                @platform_credential_methods = value
+            end
+            ## 
+            ## Gets the requirements property value. The settings and preferences for per-user Microsoft Entra multifactor authentication.
+            ## @return a strong_authentication_requirements
+            ## 
+            def requirements
+                return @requirements
+            end
+            ## 
+            ## Sets the requirements property value. The settings and preferences for per-user Microsoft Entra multifactor authentication.
+            ## @param value Value to set for the requirements property.
+            ## @return a void
+            ## 
+            def requirements=(value)
+                @requirements = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -208,26 +265,29 @@ module MicrosoftGraphBeta
                 super
                 writer.write_collection_of_object_values("emailMethods", @email_methods)
                 writer.write_collection_of_object_values("fido2Methods", @fido2_methods)
+                writer.write_collection_of_object_values("hardwareOathMethods", @hardware_oath_methods)
                 writer.write_collection_of_object_values("methods", @methods)
                 writer.write_collection_of_object_values("microsoftAuthenticatorMethods", @microsoft_authenticator_methods)
                 writer.write_collection_of_object_values("operations", @operations)
                 writer.write_collection_of_object_values("passwordMethods", @password_methods)
                 writer.write_collection_of_object_values("passwordlessMicrosoftAuthenticatorMethods", @passwordless_microsoft_authenticator_methods)
                 writer.write_collection_of_object_values("phoneMethods", @phone_methods)
+                writer.write_collection_of_object_values("platformCredentialMethods", @platform_credential_methods)
+                writer.write_object_value("requirements", @requirements)
                 writer.write_object_value("signInPreferences", @sign_in_preferences)
                 writer.write_collection_of_object_values("softwareOathMethods", @software_oath_methods)
                 writer.write_collection_of_object_values("temporaryAccessPassMethods", @temporary_access_pass_methods)
                 writer.write_collection_of_object_values("windowsHelloForBusinessMethods", @windows_hello_for_business_methods)
             end
             ## 
-            ## Gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+            ## Gets the signInPreferences property value. The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
             ## @return a sign_in_preferences
             ## 
             def sign_in_preferences
                 return @sign_in_preferences
             end
             ## 
-            ## Sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user.
+            ## Sets the signInPreferences property value. The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
             ## @param value Value to set for the signInPreferences property.
             ## @return a void
             ## 
@@ -235,14 +295,14 @@ module MicrosoftGraphBeta
                 @sign_in_preferences = value
             end
             ## 
-            ## Gets the softwareOathMethods property value. The softwareOathMethods property
+            ## Gets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @return a software_oath_authentication_method
             ## 
             def software_oath_methods
                 return @software_oath_methods
             end
             ## 
-            ## Sets the softwareOathMethods property value. The softwareOathMethods property
+            ## Sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @param value Value to set for the softwareOathMethods property.
             ## @return a void
             ## 

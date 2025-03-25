@@ -12,12 +12,14 @@ require_relative './checkin/checkin_request_builder'
 require_relative './checkout/checkout_request_builder'
 require_relative './children/children_request_builder'
 require_relative './content/content_request_builder'
+require_relative './content_stream/content_stream_request_builder'
 require_relative './copy/copy_request_builder'
 require_relative './created_by_user/created_by_user_request_builder'
 require_relative './create_link/create_link_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './delta_with_token/delta_with_token_request_builder'
+require_relative './discard_checkout/discard_checkout_request_builder'
 require_relative './extract_sensitivity_labels/extract_sensitivity_labels_request_builder'
 require_relative './follow/follow_request_builder'
 require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
@@ -83,6 +85,11 @@ module MicrosoftGraphBeta
                             return MicrosoftGraphBeta::Drives::Item::Items::Item::Content::ContentRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the media for the drive entity.
+                        def content_stream()
+                            return MicrosoftGraphBeta::Drives::Item::Items::Item::ContentStream::ContentStreamRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to call the copy method.
                         def copy()
                             return MicrosoftGraphBeta::Drives::Item::Items::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
@@ -106,6 +113,11 @@ module MicrosoftGraphBeta
                         # Provides operations to call the delta method.
                         def delta()
                             return MicrosoftGraphBeta::Drives::Item::Items::Item::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the discardCheckout method.
+                        def discard_checkout()
+                            return MicrosoftGraphBeta::Drives::Item::Items::Item::DiscardCheckout::DiscardCheckoutRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to call the extractSensitivityLabels method.
@@ -194,10 +206,10 @@ module MicrosoftGraphBeta
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24expand,%24select}")
                         end
                         ## 
-                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+                        ## Delete navigation property items for drives
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -206,8 +218,7 @@ module MicrosoftGraphBeta
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
@@ -229,8 +240,7 @@ module MicrosoftGraphBeta
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -247,7 +257,7 @@ module MicrosoftGraphBeta
                             return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
                         end
                         ## 
-                        ## To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+                        ## Update the navigation property items in drives
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of drive_item
@@ -258,8 +268,7 @@ module MicrosoftGraphBeta
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraphBeta::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraphBeta::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -272,19 +281,20 @@ module MicrosoftGraphBeta
                             return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
                         end
                         ## 
-                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+                        ## Delete navigation property items for drives
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_delete_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :DELETE
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :DELETE
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
@@ -294,19 +304,19 @@ module MicrosoftGraphBeta
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
-                        ## To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+                        ## Update the navigation property items in drives
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -314,16 +324,25 @@ module MicrosoftGraphBeta
                         def to_patch_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :PATCH
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :PATCH
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a drive_item_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return DriveItemItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

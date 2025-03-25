@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class Initiator < MicrosoftGraphBeta::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+            # The type of the initiator. Possible values are: user, application, system, unknownFutureValue.
             @initiator_type
             ## 
-            ## Instantiates a new initiator and sets the default values.
+            ## Instantiates a new Initiator and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+            ## Gets the initiatorType property value. The type of the initiator. Possible values are: user, application, system, unknownFutureValue.
             ## @return a initiator_type
             ## 
             def initiator_type
                 return @initiator_type
             end
             ## 
-            ## Sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+            ## Sets the initiatorType property value. The type of the initiator. Possible values are: user, application, system, unknownFutureValue.
             ## @param value Value to set for the initiatorType property.
             ## @return a void
             ## 

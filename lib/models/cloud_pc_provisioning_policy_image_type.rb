@@ -3,6 +3,7 @@ module MicrosoftGraphBeta
         CloudPcProvisioningPolicyImageType = {
             Gallery: :Gallery,
             Custom: :Custom,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

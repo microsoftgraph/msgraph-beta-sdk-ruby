@@ -25,7 +25,7 @@ module MicrosoftGraphBeta
             # The name of the UI element where the watermark should be placed.
             @ui_element_name
             ## 
-            ## Instantiates a new securityAddWatermarkAction and sets the default values.
+            ## Instantiates a new SecurityAddWatermarkAction and sets the default values.
             ## @return a void
             ## 
             def initialize()
