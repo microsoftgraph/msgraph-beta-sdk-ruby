@@ -66,10 +66,10 @@ module MicrosoftGraphBeta
             # Require Google Play Services to be installed and enabled on the device.
             @security_require_google_play_services
             ## 
-            # Require the device to pass the SafetyNet basic integrity check.
+            # Require the device to pass the Play Integrity basic integrity check.
             @security_require_safety_net_attestation_basic_integrity
             ## 
-            # Require the device to pass the SafetyNet certified device check.
+            # Require the device to pass the Play Integrity device integrity check.
             @security_require_safety_net_attestation_certified_device
             ## 
             # Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
@@ -78,11 +78,32 @@ module MicrosoftGraphBeta
             # Require the Android Verify apps feature is turned on.
             @security_require_verify_apps
             ## 
-            # An enum representing the Android SafetyNet attestation evaluation types.
+            # An enum representing the Android Play Integrity API evaluation types.
             @security_required_android_safety_net_evaluation_type
             ## 
             # Require encryption on Android devices.
             @storage_require_encryption
+            ## 
+            # Minutes of inactivity before the screen times out.
+            @work_profile_inactive_before_screen_lock_in_minutes
+            ## 
+            # Number of days before the work profile password expires. Valid values 1 to 365
+            @work_profile_password_expiration_in_days
+            ## 
+            # Minimum length of work profile password. Valid values 4 to 16
+            @work_profile_password_minimum_length
+            ## 
+            # Android Work Profile required password type.
+            @work_profile_password_required_type
+            ## 
+            # Number of previous work profile passwords to block. Valid values 0 to 24
+            @work_profile_previous_password_block_count
+            ## 
+            # Password is required or not for work profile
+            @work_profile_require_password
+            ## 
+            # The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+            @work_profile_required_password_complexity
             ## 
             ## Gets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
             ## @return a device_threat_protection_level
@@ -99,7 +120,7 @@ module MicrosoftGraphBeta
                 @advanced_threat_protection_required_security_level = value
             end
             ## 
-            ## Instantiates a new androidWorkProfileCompliancePolicy and sets the default values.
+            ## Instantiates a new AndroidWorkProfileCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -176,6 +197,13 @@ module MicrosoftGraphBeta
                     "securityRequireVerifyApps" => lambda {|n| @security_require_verify_apps = n.get_boolean_value() },
                     "securityRequiredAndroidSafetyNetEvaluationType" => lambda {|n| @security_required_android_safety_net_evaluation_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidSafetyNetEvaluationType) },
                     "storageRequireEncryption" => lambda {|n| @storage_require_encryption = n.get_boolean_value() },
+                    "workProfileInactiveBeforeScreenLockInMinutes" => lambda {|n| @work_profile_inactive_before_screen_lock_in_minutes = n.get_number_value() },
+                    "workProfilePasswordExpirationInDays" => lambda {|n| @work_profile_password_expiration_in_days = n.get_number_value() },
+                    "workProfilePasswordMinimumLength" => lambda {|n| @work_profile_password_minimum_length = n.get_number_value() },
+                    "workProfilePasswordRequiredType" => lambda {|n| @work_profile_password_required_type = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidWorkProfileRequiredPasswordType) },
+                    "workProfilePreviousPasswordBlockCount" => lambda {|n| @work_profile_previous_password_block_count = n.get_number_value() },
+                    "workProfileRequirePassword" => lambda {|n| @work_profile_require_password = n.get_boolean_value() },
+                    "workProfileRequiredPasswordComplexity" => lambda {|n| @work_profile_required_password_complexity = n.get_enum_value(MicrosoftGraphBeta::Models::AndroidRequiredPasswordComplexity) },
                 })
             end
             ## 
@@ -419,14 +447,14 @@ module MicrosoftGraphBeta
                 @security_require_google_play_services = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_basic_integrity
                 return @security_require_safety_net_attestation_basic_integrity
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
+            ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationBasicIntegrity property.
             ## @return a void
             ## 
@@ -434,14 +462,14 @@ module MicrosoftGraphBeta
                 @security_require_safety_net_attestation_basic_integrity = value
             end
             ## 
-            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @return a boolean
             ## 
             def security_require_safety_net_attestation_certified_device
                 return @security_require_safety_net_attestation_certified_device
             end
             ## 
-            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
+            ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
             ## @param value Value to set for the securityRequireSafetyNetAttestationCertifiedDevice property.
             ## @return a void
             ## 
@@ -479,14 +507,14 @@ module MicrosoftGraphBeta
                 @security_require_verify_apps = value
             end
             ## 
-            ## Gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+            ## Gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
             ## @return a android_safety_net_evaluation_type
             ## 
             def security_required_android_safety_net_evaluation_type
                 return @security_required_android_safety_net_evaluation_type
             end
             ## 
-            ## Sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
+            ## Sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
             ## @param value Value to set for the securityRequiredAndroidSafetyNetEvaluationType property.
             ## @return a void
             ## 
@@ -526,6 +554,13 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
                 writer.write_enum_value("securityRequiredAndroidSafetyNetEvaluationType", @security_required_android_safety_net_evaluation_type)
                 writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
+                writer.write_number_value("workProfileInactiveBeforeScreenLockInMinutes", @work_profile_inactive_before_screen_lock_in_minutes)
+                writer.write_number_value("workProfilePasswordExpirationInDays", @work_profile_password_expiration_in_days)
+                writer.write_number_value("workProfilePasswordMinimumLength", @work_profile_password_minimum_length)
+                writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type)
+                writer.write_number_value("workProfilePreviousPasswordBlockCount", @work_profile_previous_password_block_count)
+                writer.write_boolean_value("workProfileRequirePassword", @work_profile_require_password)
+                writer.write_enum_value("workProfileRequiredPasswordComplexity", @work_profile_required_password_complexity)
             end
             ## 
             ## Gets the storageRequireEncryption property value. Require encryption on Android devices.
@@ -541,6 +576,111 @@ module MicrosoftGraphBeta
             ## 
             def storage_require_encryption=(value)
                 @storage_require_encryption = value
+            end
+            ## 
+            ## Gets the workProfileInactiveBeforeScreenLockInMinutes property value. Minutes of inactivity before the screen times out.
+            ## @return a integer
+            ## 
+            def work_profile_inactive_before_screen_lock_in_minutes
+                return @work_profile_inactive_before_screen_lock_in_minutes
+            end
+            ## 
+            ## Sets the workProfileInactiveBeforeScreenLockInMinutes property value. Minutes of inactivity before the screen times out.
+            ## @param value Value to set for the workProfileInactiveBeforeScreenLockInMinutes property.
+            ## @return a void
+            ## 
+            def work_profile_inactive_before_screen_lock_in_minutes=(value)
+                @work_profile_inactive_before_screen_lock_in_minutes = value
+            end
+            ## 
+            ## Gets the workProfilePasswordExpirationInDays property value. Number of days before the work profile password expires. Valid values 1 to 365
+            ## @return a integer
+            ## 
+            def work_profile_password_expiration_in_days
+                return @work_profile_password_expiration_in_days
+            end
+            ## 
+            ## Sets the workProfilePasswordExpirationInDays property value. Number of days before the work profile password expires. Valid values 1 to 365
+            ## @param value Value to set for the workProfilePasswordExpirationInDays property.
+            ## @return a void
+            ## 
+            def work_profile_password_expiration_in_days=(value)
+                @work_profile_password_expiration_in_days = value
+            end
+            ## 
+            ## Gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+            ## @return a integer
+            ## 
+            def work_profile_password_minimum_length
+                return @work_profile_password_minimum_length
+            end
+            ## 
+            ## Sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+            ## @param value Value to set for the workProfilePasswordMinimumLength property.
+            ## @return a void
+            ## 
+            def work_profile_password_minimum_length=(value)
+                @work_profile_password_minimum_length = value
+            end
+            ## 
+            ## Gets the workProfilePasswordRequiredType property value. Android Work Profile required password type.
+            ## @return a android_work_profile_required_password_type
+            ## 
+            def work_profile_password_required_type
+                return @work_profile_password_required_type
+            end
+            ## 
+            ## Sets the workProfilePasswordRequiredType property value. Android Work Profile required password type.
+            ## @param value Value to set for the workProfilePasswordRequiredType property.
+            ## @return a void
+            ## 
+            def work_profile_password_required_type=(value)
+                @work_profile_password_required_type = value
+            end
+            ## 
+            ## Gets the workProfilePreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
+            ## @return a integer
+            ## 
+            def work_profile_previous_password_block_count
+                return @work_profile_previous_password_block_count
+            end
+            ## 
+            ## Sets the workProfilePreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
+            ## @param value Value to set for the workProfilePreviousPasswordBlockCount property.
+            ## @return a void
+            ## 
+            def work_profile_previous_password_block_count=(value)
+                @work_profile_previous_password_block_count = value
+            end
+            ## 
+            ## Gets the workProfileRequirePassword property value. Password is required or not for work profile
+            ## @return a boolean
+            ## 
+            def work_profile_require_password
+                return @work_profile_require_password
+            end
+            ## 
+            ## Sets the workProfileRequirePassword property value. Password is required or not for work profile
+            ## @param value Value to set for the workProfileRequirePassword property.
+            ## @return a void
+            ## 
+            def work_profile_require_password=(value)
+                @work_profile_require_password = value
+            end
+            ## 
+            ## Gets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+            ## @return a android_required_password_complexity
+            ## 
+            def work_profile_required_password_complexity
+                return @work_profile_required_password_complexity
+            end
+            ## 
+            ## Sets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+            ## @param value Value to set for the workProfileRequiredPasswordComplexity property.
+            ## @return a void
+            ## 
+            def work_profile_required_password_complexity=(value)
+                @work_profile_required_password_complexity = value
             end
         end
     end

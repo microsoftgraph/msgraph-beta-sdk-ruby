@@ -22,6 +22,12 @@ module MicrosoftGraphBeta
             # Default MacOs Enrollment Profile
             @default_mac_os_enrollment_profile
             ## 
+            # Default TvOS Enrollment Profile
+            @default_tv_o_s_enrollment_profile
+            ## 
+            # Default VisionOS Enrollment Profile
+            @default_vision_o_s_enrollment_profile
+            ## 
             # The enrollment profiles.
             @enrollment_profiles
             ## 
@@ -73,7 +79,7 @@ module MicrosoftGraphBeta
                 @apple_identifier = value
             end
             ## 
-            ## Instantiates a new depOnboardingSetting and sets the default values.
+            ## Instantiates a new DepOnboardingSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -134,6 +140,36 @@ module MicrosoftGraphBeta
                 @default_mac_os_enrollment_profile = value
             end
             ## 
+            ## Gets the defaultTvOSEnrollmentProfile property value. Default TvOS Enrollment Profile
+            ## @return a dep_tv_o_s_enrollment_profile
+            ## 
+            def default_tv_o_s_enrollment_profile
+                return @default_tv_o_s_enrollment_profile
+            end
+            ## 
+            ## Sets the defaultTvOSEnrollmentProfile property value. Default TvOS Enrollment Profile
+            ## @param value Value to set for the defaultTvOSEnrollmentProfile property.
+            ## @return a void
+            ## 
+            def default_tv_o_s_enrollment_profile=(value)
+                @default_tv_o_s_enrollment_profile = value
+            end
+            ## 
+            ## Gets the defaultVisionOSEnrollmentProfile property value. Default VisionOS Enrollment Profile
+            ## @return a dep_vision_o_s_enrollment_profile
+            ## 
+            def default_vision_o_s_enrollment_profile
+                return @default_vision_o_s_enrollment_profile
+            end
+            ## 
+            ## Sets the defaultVisionOSEnrollmentProfile property value. Default VisionOS Enrollment Profile
+            ## @param value Value to set for the defaultVisionOSEnrollmentProfile property.
+            ## @return a void
+            ## 
+            def default_vision_o_s_enrollment_profile=(value)
+                @default_vision_o_s_enrollment_profile = value
+            end
+            ## 
             ## Gets the enrollmentProfiles property value. The enrollment profiles.
             ## @return a enrollment_profile
             ## 
@@ -158,6 +194,8 @@ module MicrosoftGraphBeta
                     "dataSharingConsentGranted" => lambda {|n| @data_sharing_consent_granted = n.get_boolean_value() },
                     "defaultIosEnrollmentProfile" => lambda {|n| @default_ios_enrollment_profile = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DepIOSEnrollmentProfile.create_from_discriminator_value(pn) }) },
                     "defaultMacOsEnrollmentProfile" => lambda {|n| @default_mac_os_enrollment_profile = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DepMacOSEnrollmentProfile.create_from_discriminator_value(pn) }) },
+                    "defaultTvOSEnrollmentProfile" => lambda {|n| @default_tv_o_s_enrollment_profile = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DepTvOSEnrollmentProfile.create_from_discriminator_value(pn) }) },
+                    "defaultVisionOSEnrollmentProfile" => lambda {|n| @default_vision_o_s_enrollment_profile = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::DepVisionOSEnrollmentProfile.create_from_discriminator_value(pn) }) },
                     "enrollmentProfiles" => lambda {|n| @enrollment_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::EnrollmentProfile.create_from_discriminator_value(pn) }) },
                     "importedAppleDeviceIdentities" => lambda {|n| @imported_apple_device_identities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ImportedAppleDeviceIdentity.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
@@ -274,6 +312,8 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("dataSharingConsentGranted", @data_sharing_consent_granted)
                 writer.write_object_value("defaultIosEnrollmentProfile", @default_ios_enrollment_profile)
                 writer.write_object_value("defaultMacOsEnrollmentProfile", @default_mac_os_enrollment_profile)
+                writer.write_object_value("defaultTvOSEnrollmentProfile", @default_tv_o_s_enrollment_profile)
+                writer.write_object_value("defaultVisionOSEnrollmentProfile", @default_vision_o_s_enrollment_profile)
                 writer.write_collection_of_object_values("enrollmentProfiles", @enrollment_profiles)
                 writer.write_collection_of_object_values("importedAppleDeviceIdentities", @imported_apple_device_identities)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)

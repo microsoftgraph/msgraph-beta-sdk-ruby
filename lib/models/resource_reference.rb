@@ -10,34 +10,34 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The item's unique identifier.
+            # The id property
             @id
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
+            # The type property
             @type
             ## 
-            # A URL leading to the referenced item.
+            # The webUrl property
             @web_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new resourceReference and sets the default values.
+            ## Instantiates a new ResourceReference and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,14 +65,14 @@ module MicrosoftGraphBeta
                 }
             end
             ## 
-            ## Gets the id property value. The item's unique identifier.
+            ## Gets the id property value. The id property
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The item's unique identifier.
+            ## Sets the id property value. The id property
             ## @param value Value to set for the id property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraphBeta
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
+            ## Gets the type property value. The type property
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
+            ## Sets the type property value. The type property
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraphBeta
                 @type = value
             end
             ## 
-            ## Gets the webUrl property value. A URL leading to the referenced item.
+            ## Gets the webUrl property value. The webUrl property
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. A URL leading to the referenced item.
+            ## Sets the webUrl property value. The webUrl property
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

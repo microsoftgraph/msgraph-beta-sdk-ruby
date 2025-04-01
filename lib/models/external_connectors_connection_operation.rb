@@ -13,7 +13,7 @@ module MicrosoftGraphBeta
             # Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
             @status
             ## 
-            ## Instantiates a new externalConnectorsConnectionOperation and sets the default values.
+            ## Instantiates a new ExternalConnectorsConnectionOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -5,6 +5,7 @@ require_relative '../../../../item'
 require_relative '../../../devices'
 require_relative '../../item'
 require_relative '../registered_users'
+require_relative './graph_app_role_assignment/graph_app_role_assignment_request_builder'
 require_relative './graph_endpoint/graph_endpoint_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
@@ -22,6 +23,11 @@ module MicrosoftGraphBeta
                             # Builds and executes requests for operations under \users\{user-id}\devices\{device-id}\registeredUsers\{directoryObject-id}
                             class DirectoryObjectItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
+                                ## 
+                                # Casts the previous resource to appRoleAssignment.
+                                def graph_app_role_assignment()
+                                    return MicrosoftGraphBeta::Users::Item::Devices::Item::RegisteredUsers::Item::GraphAppRoleAssignment::GraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Casts the previous resource to endpoint.
                                 def graph_endpoint()

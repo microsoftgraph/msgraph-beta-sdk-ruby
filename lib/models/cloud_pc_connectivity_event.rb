@@ -8,6 +8,9 @@ module MicrosoftGraphBeta
         class CloudPcConnectivityEvent
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.
+            @activity_id
+            ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
@@ -29,22 +32,37 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the activityId property value. The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.
+            ## @return a string
+            ## 
+            def activity_id
+                return @activity_id
+            end
+            ## 
+            ## Sets the activityId property value. The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.
+            ## @param value Value to set for the activityId property.
+            ## @return a void
+            ## 
+            def activity_id=(value)
+                @activity_id = value
+            end
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new cloudPcConnectivityEvent and sets the default values.
+            ## Instantiates a new CloudPcConnectivityEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,6 +143,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return {
+                    "activityId" => lambda {|n| @activity_id = n.get_string_value() },
                     "eventDateTime" => lambda {|n| @event_date_time = n.get_date_time_value() },
                     "eventName" => lambda {|n| @event_name = n.get_string_value() },
                     "eventResult" => lambda {|n| @event_result = n.get_enum_value(MicrosoftGraphBeta::Models::CloudPcConnectivityEventResult) },
@@ -170,6 +189,7 @@ module MicrosoftGraphBeta
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_string_value("activityId", @activity_id)
                 writer.write_date_time_value("eventDateTime", @event_date_time)
                 writer.write_string_value("eventName", @event_name)
                 writer.write_enum_value("eventResult", @event_result)

@@ -28,6 +28,12 @@ module MicrosoftGraphBeta
             # Timestamp of last heartbeat after admin onboarded to the compliance management partner
             @last_heartbeat_date_time
             ## 
+            # User groups which enroll Linux devices through partner.
+            @linux_enrollment_assignments
+            ## 
+            # Partner onboarded for Linux devices.
+            @linux_onboarded
+            ## 
             # User groups which enroll Mac devices through partner.
             @mac_os_enrollment_assignments
             ## 
@@ -67,7 +73,7 @@ module MicrosoftGraphBeta
                 @android_onboarded = value
             end
             ## 
-            ## Instantiates a new complianceManagementPartner and sets the default values.
+            ## Instantiates a new ComplianceManagementPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -109,6 +115,8 @@ module MicrosoftGraphBeta
                     "iosEnrollmentAssignments" => lambda {|n| @ios_enrollment_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ComplianceManagementPartnerAssignment.create_from_discriminator_value(pn) }) },
                     "iosOnboarded" => lambda {|n| @ios_onboarded = n.get_boolean_value() },
                     "lastHeartbeatDateTime" => lambda {|n| @last_heartbeat_date_time = n.get_date_time_value() },
+                    "linuxEnrollmentAssignments" => lambda {|n| @linux_enrollment_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ComplianceManagementPartnerAssignment.create_from_discriminator_value(pn) }) },
+                    "linuxOnboarded" => lambda {|n| @linux_onboarded = n.get_boolean_value() },
                     "macOsEnrollmentAssignments" => lambda {|n| @mac_os_enrollment_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ComplianceManagementPartnerAssignment.create_from_discriminator_value(pn) }) },
                     "macOsOnboarded" => lambda {|n| @mac_os_onboarded = n.get_boolean_value() },
                     "partnerState" => lambda {|n| @partner_state = n.get_enum_value(MicrosoftGraphBeta::Models::DeviceManagementPartnerTenantState) },
@@ -158,6 +166,36 @@ module MicrosoftGraphBeta
             ## 
             def last_heartbeat_date_time=(value)
                 @last_heartbeat_date_time = value
+            end
+            ## 
+            ## Gets the linuxEnrollmentAssignments property value. User groups which enroll Linux devices through partner.
+            ## @return a compliance_management_partner_assignment
+            ## 
+            def linux_enrollment_assignments
+                return @linux_enrollment_assignments
+            end
+            ## 
+            ## Sets the linuxEnrollmentAssignments property value. User groups which enroll Linux devices through partner.
+            ## @param value Value to set for the linuxEnrollmentAssignments property.
+            ## @return a void
+            ## 
+            def linux_enrollment_assignments=(value)
+                @linux_enrollment_assignments = value
+            end
+            ## 
+            ## Gets the linuxOnboarded property value. Partner onboarded for Linux devices.
+            ## @return a boolean
+            ## 
+            def linux_onboarded
+                return @linux_onboarded
+            end
+            ## 
+            ## Sets the linuxOnboarded property value. Partner onboarded for Linux devices.
+            ## @param value Value to set for the linuxOnboarded property.
+            ## @return a void
+            ## 
+            def linux_onboarded=(value)
+                @linux_onboarded = value
             end
             ## 
             ## Gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
@@ -218,6 +256,8 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("iosEnrollmentAssignments", @ios_enrollment_assignments)
                 writer.write_boolean_value("iosOnboarded", @ios_onboarded)
                 writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
+                writer.write_collection_of_object_values("linuxEnrollmentAssignments", @linux_enrollment_assignments)
+                writer.write_boolean_value("linuxOnboarded", @linux_onboarded)
                 writer.write_collection_of_object_values("macOsEnrollmentAssignments", @mac_os_enrollment_assignments)
                 writer.write_boolean_value("macOsOnboarded", @mac_os_onboarded)
                 writer.write_enum_value("partnerState", @partner_state)

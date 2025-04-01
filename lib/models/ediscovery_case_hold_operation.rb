@@ -7,7 +7,7 @@ module MicrosoftGraphBeta
         class EdiscoveryCaseHoldOperation < MicrosoftGraphBeta::Models::EdiscoveryCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ediscoveryCaseHoldOperation and sets the default values.
+            ## Instantiates a new EdiscoveryCaseHoldOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

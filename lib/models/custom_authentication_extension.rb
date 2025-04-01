@@ -7,7 +7,25 @@ module MicrosoftGraphBeta
         class CustomAuthenticationExtension < MicrosoftGraphBeta::Models::CustomCalloutExtension
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new customAuthenticationExtension and sets the default values.
+            # The behaviour on error for the custom authentication extension.
+            @behavior_on_error
+            ## 
+            ## Gets the behaviorOnError property value. The behaviour on error for the custom authentication extension.
+            ## @return a custom_extension_behavior_on_error
+            ## 
+            def behavior_on_error
+                return @behavior_on_error
+            end
+            ## 
+            ## Sets the behaviorOnError property value. The behaviour on error for the custom authentication extension.
+            ## @param value Value to set for the behaviorOnError property.
+            ## @return a void
+            ## 
+            def behavior_on_error=(value)
+                @behavior_on_error = value
+            end
+            ## 
+            ## Instantiates a new CustomAuthenticationExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -25,6 +43,12 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.onAttributeCollectionStartCustomExtension"
+                            return OnAttributeCollectionStartCustomExtension.new
+                        when "#microsoft.graph.onAttributeCollectionSubmitCustomExtension"
+                            return OnAttributeCollectionSubmitCustomExtension.new
+                        when "#microsoft.graph.onOtpSendCustomExtension"
+                            return OnOtpSendCustomExtension.new
                         when "#microsoft.graph.onTokenIssuanceStartCustomExtension"
                             return OnTokenIssuanceStartCustomExtension.new
                     end
@@ -37,6 +61,7 @@ module MicrosoftGraphBeta
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "behaviorOnError" => lambda {|n| @behavior_on_error = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::CustomExtensionBehaviorOnError.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -47,6 +72,7 @@ module MicrosoftGraphBeta
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("behaviorOnError", @behavior_on_error)
             end
         end
     end

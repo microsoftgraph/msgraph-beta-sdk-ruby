@@ -24,18 +24,21 @@ module MicrosoftGraphBeta
                                 # The atApprovedLocation property
                                 @at_approved_location
                                 ## 
+                                # The isAtApprovedLocation property
+                                @is_at_approved_location
+                                ## 
                                 # The notes property
                                 @notes
                                 ## 
-                                ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                 ## @return a i_dictionary
                                 ## 
                                 def additional_data
                                     return @additional_data
                                 end
                                 ## 
-                                ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                ## @param value Value to set for the additionalData property.
+                                ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                ## @param value Value to set for the AdditionalData property.
                                 ## @return a void
                                 ## 
                                 def additional_data=(value)
@@ -57,7 +60,7 @@ module MicrosoftGraphBeta
                                     @at_approved_location = value
                                 end
                                 ## 
-                                ## Instantiates a new endBreakPostRequestBody and sets the default values.
+                                ## Instantiates a new EndBreakPostRequestBody and sets the default values.
                                 ## @return a void
                                 ## 
                                 def initialize()
@@ -79,8 +82,24 @@ module MicrosoftGraphBeta
                                 def get_field_deserializers()
                                     return {
                                         "atApprovedLocation" => lambda {|n| @at_approved_location = n.get_boolean_value() },
+                                        "isAtApprovedLocation" => lambda {|n| @is_at_approved_location = n.get_boolean_value() },
                                         "notes" => lambda {|n| @notes = n.get_object_value(lambda {|pn| MicrosoftGraphBeta::Models::ItemBody.create_from_discriminator_value(pn) }) },
                                     }
+                                end
+                                ## 
+                                ## Gets the isAtApprovedLocation property value. The isAtApprovedLocation property
+                                ## @return a boolean
+                                ## 
+                                def is_at_approved_location
+                                    return @is_at_approved_location
+                                end
+                                ## 
+                                ## Sets the isAtApprovedLocation property value. The isAtApprovedLocation property
+                                ## @param value Value to set for the isAtApprovedLocation property.
+                                ## @return a void
+                                ## 
+                                def is_at_approved_location=(value)
+                                    @is_at_approved_location = value
                                 end
                                 ## 
                                 ## Gets the notes property value. The notes property
@@ -105,6 +124,7 @@ module MicrosoftGraphBeta
                                 def serialize(writer)
                                     raise StandardError, 'writer cannot be null' if writer.nil?
                                     writer.write_boolean_value("atApprovedLocation", @at_approved_location)
+                                    writer.write_boolean_value("isAtApprovedLocation", @is_at_approved_location)
                                     writer.write_object_value("notes", @notes)
                                     writer.write_additional_data(@additional_data)
                                 end

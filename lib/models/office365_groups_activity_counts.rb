@@ -35,7 +35,7 @@ module MicrosoftGraphBeta
             # The number of messages read in Yammer groups.
             @yammer_messages_read
             ## 
-            ## Instantiates a new office365GroupsActivityCounts and sets the default values.
+            ## Instantiates a new Office365GroupsActivityCounts and sets the default values.
             ## @return a void
             ## 
             def initialize()

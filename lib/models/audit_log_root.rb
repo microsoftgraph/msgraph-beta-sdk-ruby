@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The customSecurityAttributeAudits property
+            # Represents a custom security attribute audit log.
             @custom_security_attribute_audits
             ## 
             # The directoryAudits property
@@ -22,28 +22,31 @@ module MicrosoftGraphBeta
             # The OdataType property
             @odata_type
             ## 
-            # The provisioning property
+            # Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             @provisioning
             ## 
             # The signIns property
             @sign_ins
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The signUps property
+            @sign_ups
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new auditLogRoot and sets the default values.
+            ## Instantiates a new AuditLogRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +62,14 @@ module MicrosoftGraphBeta
                 return AuditLogRoot.new
             end
             ## 
-            ## Gets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+            ## Gets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
             ## @return a custom_security_attribute_audit
             ## 
             def custom_security_attribute_audits
                 return @custom_security_attribute_audits
             end
             ## 
-            ## Sets the customSecurityAttributeAudits property value. The customSecurityAttributeAudits property
+            ## Sets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
             ## @param value Value to set for the customSecurityAttributeAudits property.
             ## @return a void
             ## 
@@ -115,6 +118,7 @@ module MicrosoftGraphBeta
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "provisioning" => lambda {|n| @provisioning = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::ProvisioningObjectSummary.create_from_discriminator_value(pn) }) },
                     "signIns" => lambda {|n| @sign_ins = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SignIn.create_from_discriminator_value(pn) }) },
+                    "signUps" => lambda {|n| @sign_ups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SelfServiceSignUp.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -133,14 +137,14 @@ module MicrosoftGraphBeta
                 @odata_type = value
             end
             ## 
-            ## Gets the provisioning property value. The provisioning property
+            ## Gets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             ## @return a provisioning_object_summary
             ## 
             def provisioning
                 return @provisioning
             end
             ## 
-            ## Sets the provisioning property value. The provisioning property
+            ## Sets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
             ## @param value Value to set for the provisioning property.
             ## @return a void
             ## 
@@ -160,6 +164,7 @@ module MicrosoftGraphBeta
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("provisioning", @provisioning)
                 writer.write_collection_of_object_values("signIns", @sign_ins)
+                writer.write_collection_of_object_values("signUps", @sign_ups)
                 writer.write_additional_data(@additional_data)
             end
             ## 
@@ -176,6 +181,21 @@ module MicrosoftGraphBeta
             ## 
             def sign_ins=(value)
                 @sign_ins = value
+            end
+            ## 
+            ## Gets the signUps property value. The signUps property
+            ## @return a self_service_sign_up
+            ## 
+            def sign_ups
+                return @sign_ups
+            end
+            ## 
+            ## Sets the signUps property value. The signUps property
+            ## @param value Value to set for the signUps property.
+            ## @return a void
+            ## 
+            def sign_ups=(value)
+                @sign_ups = value
             end
         end
     end

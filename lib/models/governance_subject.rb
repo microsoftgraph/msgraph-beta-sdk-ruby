@@ -10,16 +10,16 @@ module MicrosoftGraphBeta
             # The display name of the subject.
             @display_name
             ## 
-            # The email address of the user subject. If the subject is in other types, it is empty.
+            # The email address of the user subject. If the subject is in other types, it's empty.
             @email
             ## 
-            # The principal name of the user subject. If the subject is in other types, it is empty.
+            # The principal name of the user subject. If the subject is in other types, it's empty.
             @principal_name
             ## 
             # The type of the subject. The value can be User, Group, and ServicePrincipal.
             @type
             ## 
-            ## Instantiates a new governanceSubject and sets the default values.
+            ## Instantiates a new GovernanceSubject and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,14 +50,14 @@ module MicrosoftGraphBeta
                 @display_name = value
             end
             ## 
-            ## Gets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
+            ## Gets the email property value. The email address of the user subject. If the subject is in other types, it's empty.
             ## @return a string
             ## 
             def email
                 return @email
             end
             ## 
-            ## Sets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
+            ## Sets the email property value. The email address of the user subject. If the subject is in other types, it's empty.
             ## @param value Value to set for the email property.
             ## @return a void
             ## 
@@ -77,14 +77,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
+            ## Gets the principalName property value. The principal name of the user subject. If the subject is in other types, it's empty.
             ## @return a string
             ## 
             def principal_name
                 return @principal_name
             end
             ## 
-            ## Sets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
+            ## Sets the principalName property value. The principal name of the user subject. If the subject is in other types, it's empty.
             ## @param value Value to set for the principalName property.
             ## @return a void
             ## 

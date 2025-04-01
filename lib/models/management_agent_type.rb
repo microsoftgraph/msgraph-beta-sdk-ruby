@@ -17,6 +17,8 @@ module MicrosoftGraphBeta
             Microsoft365ManagedMdm: :Microsoft365ManagedMdm,
             MsSense: :MsSense,
             IntuneAosp: :IntuneAosp,
+            Google: :Google,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

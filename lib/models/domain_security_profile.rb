@@ -95,7 +95,7 @@ module MicrosoftGraphBeta
                 @azure_tenant_id = value
             end
             ## 
-            ## Instantiates a new domainSecurityProfile and sets the default values.
+            ## Instantiates a new DomainSecurityProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

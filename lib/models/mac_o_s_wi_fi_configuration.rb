@@ -15,6 +15,9 @@ module MicrosoftGraphBeta
             # Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
             @connect_when_network_name_is_hidden
             ## 
+            # Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            @deployment_channel
+            ## 
             # Network Name
             @network_name
             ## 
@@ -69,7 +72,7 @@ module MicrosoftGraphBeta
                 @connect_when_network_name_is_hidden = value
             end
             ## 
-            ## Instantiates a new macOSWiFiConfiguration and sets the default values.
+            ## Instantiates a new MacOSWiFiConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,6 +97,21 @@ module MicrosoftGraphBeta
                 return MacOSWiFiConfiguration.new
             end
             ## 
+            ## Gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @return a apple_deployment_channel
+            ## 
+            def deployment_channel
+                return @deployment_channel
+            end
+            ## 
+            ## Sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+            ## @param value Value to set for the deploymentChannel property.
+            ## @return a void
+            ## 
+            def deployment_channel=(value)
+                @deployment_channel = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -101,6 +119,7 @@ module MicrosoftGraphBeta
                 return super.merge({
                     "connectAutomatically" => lambda {|n| @connect_automatically = n.get_boolean_value() },
                     "connectWhenNetworkNameIsHidden" => lambda {|n| @connect_when_network_name_is_hidden = n.get_boolean_value() },
+                    "deploymentChannel" => lambda {|n| @deployment_channel = n.get_enum_value(MicrosoftGraphBeta::Models::AppleDeploymentChannel) },
                     "networkName" => lambda {|n| @network_name = n.get_string_value() },
                     "preSharedKey" => lambda {|n| @pre_shared_key = n.get_string_value() },
                     "proxyAutomaticConfigurationUrl" => lambda {|n| @proxy_automatic_configuration_url = n.get_string_value() },
@@ -211,6 +230,7 @@ module MicrosoftGraphBeta
                 super
                 writer.write_boolean_value("connectAutomatically", @connect_automatically)
                 writer.write_boolean_value("connectWhenNetworkNameIsHidden", @connect_when_network_name_is_hidden)
+                writer.write_enum_value("deploymentChannel", @deployment_channel)
                 writer.write_string_value("networkName", @network_name)
                 writer.write_string_value("preSharedKey", @pre_shared_key)
                 writer.write_string_value("proxyAutomaticConfigurationUrl", @proxy_automatic_configuration_url)

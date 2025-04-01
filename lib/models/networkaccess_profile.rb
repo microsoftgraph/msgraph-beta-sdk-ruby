@@ -11,13 +11,13 @@ module MicrosoftGraphBeta
             # Description.
             @description
             ## 
-            # Profile last modified time.
+            # The date and time when the profile was last modified.
             @last_modified_date_time
             ## 
-            # Profile name.
+            # The name of the profile.
             @name
             ## 
-            # Traffic forwarding policies associated with this profile.
+            # The traffic forwarding policies associated with this profile.
             @policies
             ## 
             # The state property
@@ -26,7 +26,7 @@ module MicrosoftGraphBeta
             # Profile version.
             @version
             ## 
-            ## Instantiates a new networkaccessProfile and sets the default values.
+            ## Instantiates a new NetworkaccessProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -43,6 +43,8 @@ module MicrosoftGraphBeta
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.networkaccess.filteringProfile"
+                            return NetworkaccessFilteringProfile.new
                         when "#microsoft.graph.networkaccess.forwardingProfile"
                             return NetworkaccessForwardingProfile.new
                     end
@@ -79,14 +81,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. Profile last modified time.
+            ## Gets the lastModifiedDateTime property value. The date and time when the profile was last modified.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. Profile last modified time.
+            ## Sets the lastModifiedDateTime property value. The date and time when the profile was last modified.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
@@ -94,14 +96,14 @@ module MicrosoftGraphBeta
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the name property value. Profile name.
+            ## Gets the name property value. The name of the profile.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Profile name.
+            ## Sets the name property value. The name of the profile.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -109,14 +111,14 @@ module MicrosoftGraphBeta
                 @name = value
             end
             ## 
-            ## Gets the policies property value. Traffic forwarding policies associated with this profile.
+            ## Gets the policies property value. The traffic forwarding policies associated with this profile.
             ## @return a networkaccess_policy_link
             ## 
             def policies
                 return @policies
             end
             ## 
-            ## Sets the policies property value. Traffic forwarding policies associated with this profile.
+            ## Sets the policies property value. The traffic forwarding policies associated with this profile.
             ## @param value Value to set for the policies property.
             ## @return a void
             ## 

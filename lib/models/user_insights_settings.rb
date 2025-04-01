@@ -7,10 +7,10 @@ module MicrosoftGraphBeta
         class UserInsightsSettings < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+            # True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
             @is_enabled
             ## 
-            ## Instantiates a new userInsightsSettings and sets the default values.
+            ## Instantiates a new UserInsightsSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+            ## Gets the isEnabled property value. True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+            ## Sets the isEnabled property value. True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 

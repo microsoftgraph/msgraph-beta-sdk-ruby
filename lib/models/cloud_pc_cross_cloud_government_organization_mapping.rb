@@ -10,7 +10,7 @@ module MicrosoftGraphBeta
             # The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
             @organization_ids_in_u_s_gov_cloud
             ## 
-            ## Instantiates a new cloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
+            ## Instantiates a new CloudPcCrossCloudGovernmentOrganizationMapping and sets the default values.
             ## @return a void
             ## 
             def initialize()

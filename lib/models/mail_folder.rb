@@ -28,6 +28,9 @@ module MicrosoftGraphBeta
             # The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
             @multi_value_extended_properties
             ## 
+            # The collection of long-running operations in the mailFolder.
+            @operations
+            ## 
             # The unique identifier for the mailFolder's parent mailFolder.
             @parent_folder_id
             ## 
@@ -76,7 +79,7 @@ module MicrosoftGraphBeta
                 @child_folders = value
             end
             ## 
-            ## Instantiates a new mailFolder and sets the default values.
+            ## Instantiates a new MailFolder and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -127,6 +130,7 @@ module MicrosoftGraphBeta
                     "messageRules" => lambda {|n| @message_rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MessageRule.create_from_discriminator_value(pn) }) },
                     "messages" => lambda {|n| @messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::Message.create_from_discriminator_value(pn) }) },
                     "multiValueExtendedProperties" => lambda {|n| @multi_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MultiValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
+                    "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::MailFolderOperation.create_from_discriminator_value(pn) }) },
                     "parentFolderId" => lambda {|n| @parent_folder_id = n.get_string_value() },
                     "singleValueExtendedProperties" => lambda {|n| @single_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraphBeta::Models::SingleValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "totalItemCount" => lambda {|n| @total_item_count = n.get_number_value() },
@@ -196,6 +200,21 @@ module MicrosoftGraphBeta
                 @multi_value_extended_properties = value
             end
             ## 
+            ## Gets the operations property value. The collection of long-running operations in the mailFolder.
+            ## @return a mail_folder_operation
+            ## 
+            def operations
+                return @operations
+            end
+            ## 
+            ## Sets the operations property value. The collection of long-running operations in the mailFolder.
+            ## @param value Value to set for the operations property.
+            ## @return a void
+            ## 
+            def operations=(value)
+                @operations = value
+            end
+            ## 
             ## Gets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
             ## @return a string
             ## 
@@ -225,6 +244,7 @@ module MicrosoftGraphBeta
                 writer.write_collection_of_object_values("messageRules", @message_rules)
                 writer.write_collection_of_object_values("messages", @messages)
                 writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
+                writer.write_collection_of_object_values("operations", @operations)
                 writer.write_string_value("parentFolderId", @parent_folder_id)
                 writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
                 writer.write_number_value("totalItemCount", @total_item_count)

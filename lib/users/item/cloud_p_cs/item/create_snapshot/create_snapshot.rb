@@ -1,0 +1,1 @@
+require_relative 'create_snapshot_post_request_body'

@@ -10,37 +10,37 @@ module MicrosoftGraphBeta
         class MobileThreatDefenseConnector < MicrosoftGraphBeta::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+            # When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.
             @allow_partner_to_collect_i_o_s_application_metadata
             ## 
-            # When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+            # When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
             @allow_partner_to_collect_i_o_s_personal_application_metadata
             ## 
-            # For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            # When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.
             @android_device_blocked_on_missing_partner_data
             ## 
-            # For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            # When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.
             @android_enabled
             ## 
             # When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             @android_mobile_application_management_enabled
             ## 
-            # For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            # When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
             @ios_device_blocked_on_missing_partner_data
             ## 
-            # For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            # When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.
             @ios_enabled
             ## 
-            # When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+            # When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             @ios_mobile_application_management_enabled
             ## 
             # DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
             @last_heartbeat_date_time
             ## 
-            # For Mac, get or set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            # When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.
             @mac_device_blocked_on_missing_partner_data
             ## 
-            # For Mac, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            # When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Mac devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Mac devices. Default value is FALSE.
             @mac_enabled
             ## 
             # When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
@@ -49,29 +49,29 @@ module MicrosoftGraphBeta
             # Partner state of this tenant.
             @partner_state
             ## 
-            # Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+            # Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.
             @partner_unresponsiveness_threshold_in_days
             ## 
-            # Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
+            # When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.
             @partner_unsupported_os_version_blocked
             ## 
-            # When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
+            # When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
             @windows_device_blocked_on_missing_partner_data
             ## 
-            # When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+            # When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.
             @windows_enabled
             ## 
-            # When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+            # When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             @windows_mobile_application_management_enabled
             ## 
-            ## Gets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+            ## Gets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.
             ## @return a boolean
             ## 
             def allow_partner_to_collect_i_o_s_application_metadata
                 return @allow_partner_to_collect_i_o_s_application_metadata
             end
             ## 
-            ## Sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+            ## Sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.
             ## @param value Value to set for the allowPartnerToCollectIOSApplicationMetadata property.
             ## @return a void
             ## 
@@ -79,14 +79,14 @@ module MicrosoftGraphBeta
                 @allow_partner_to_collect_i_o_s_application_metadata = value
             end
             ## 
-            ## Gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+            ## Gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
             ## @return a boolean
             ## 
             def allow_partner_to_collect_i_o_s_personal_application_metadata
                 return @allow_partner_to_collect_i_o_s_personal_application_metadata
             end
             ## 
-            ## Sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+            ## Sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
             ## @param value Value to set for the allowPartnerToCollectIOSPersonalApplicationMetadata property.
             ## @return a void
             ## 
@@ -94,14 +94,14 @@ module MicrosoftGraphBeta
                 @allow_partner_to_collect_i_o_s_personal_application_metadata = value
             end
             ## 
-            ## Gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Gets the androidDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.
             ## @return a boolean
             ## 
             def android_device_blocked_on_missing_partner_data
                 return @android_device_blocked_on_missing_partner_data
             end
             ## 
-            ## Sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Sets the androidDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.
             ## @param value Value to set for the androidDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
@@ -109,14 +109,14 @@ module MicrosoftGraphBeta
                 @android_device_blocked_on_missing_partner_data = value
             end
             ## 
-            ## Gets the androidEnabled property value. For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Gets the androidEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.
             ## @return a boolean
             ## 
             def android_enabled
                 return @android_enabled
             end
             ## 
-            ## Sets the androidEnabled property value. For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Sets the androidEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.
             ## @param value Value to set for the androidEnabled property.
             ## @return a void
             ## 
@@ -139,7 +139,7 @@ module MicrosoftGraphBeta
                 @android_mobile_application_management_enabled = value
             end
             ## 
-            ## Instantiates a new mobileThreatDefenseConnector and sets the default values.
+            ## Instantiates a new MobileThreatDefenseConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -181,14 +181,14 @@ module MicrosoftGraphBeta
                 })
             end
             ## 
-            ## Gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Gets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
             ## @return a boolean
             ## 
             def ios_device_blocked_on_missing_partner_data
                 return @ios_device_blocked_on_missing_partner_data
             end
             ## 
-            ## Sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Sets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
             ## @param value Value to set for the iosDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraphBeta
                 @ios_device_blocked_on_missing_partner_data = value
             end
             ## 
-            ## Gets the iosEnabled property value. For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Gets the iosEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.
             ## @return a boolean
             ## 
             def ios_enabled
                 return @ios_enabled
             end
             ## 
-            ## Sets the iosEnabled property value. For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Sets the iosEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.
             ## @param value Value to set for the iosEnabled property.
             ## @return a void
             ## 
@@ -211,14 +211,14 @@ module MicrosoftGraphBeta
                 @ios_enabled = value
             end
             ## 
-            ## Gets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+            ## Gets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             ## @return a boolean
             ## 
             def ios_mobile_application_management_enabled
                 return @ios_mobile_application_management_enabled
             end
             ## 
-            ## Sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+            ## Sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             ## @param value Value to set for the iosMobileApplicationManagementEnabled property.
             ## @return a void
             ## 
@@ -241,14 +241,14 @@ module MicrosoftGraphBeta
                 @last_heartbeat_date_time = value
             end
             ## 
-            ## Gets the macDeviceBlockedOnMissingPartnerData property value. For Mac, get or set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Gets the macDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.
             ## @return a boolean
             ## 
             def mac_device_blocked_on_missing_partner_data
                 return @mac_device_blocked_on_missing_partner_data
             end
             ## 
-            ## Sets the macDeviceBlockedOnMissingPartnerData property value. For Mac, get or set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
+            ## Sets the macDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.
             ## @param value Value to set for the macDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
@@ -256,14 +256,14 @@ module MicrosoftGraphBeta
                 @mac_device_blocked_on_missing_partner_data = value
             end
             ## 
-            ## Gets the macEnabled property value. For Mac, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Gets the macEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Mac devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Mac devices. Default value is FALSE.
             ## @return a boolean
             ## 
             def mac_enabled
                 return @mac_enabled
             end
             ## 
-            ## Sets the macEnabled property value. For Mac, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+            ## Sets the macEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Mac devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Mac devices. Default value is FALSE.
             ## @param value Value to set for the macEnabled property.
             ## @return a void
             ## 
@@ -301,14 +301,14 @@ module MicrosoftGraphBeta
                 @partner_state = value
             end
             ## 
-            ## Gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+            ## Gets the partnerUnresponsivenessThresholdInDays property value. Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.
             ## @return a integer
             ## 
             def partner_unresponsiveness_threshold_in_days
                 return @partner_unresponsiveness_threshold_in_days
             end
             ## 
-            ## Sets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+            ## Sets the partnerUnresponsivenessThresholdInDays property value. Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.
             ## @param value Value to set for the partnerUnresponsivenessThresholdInDays property.
             ## @return a void
             ## 
@@ -316,14 +316,14 @@ module MicrosoftGraphBeta
                 @partner_unresponsiveness_threshold_in_days = value
             end
             ## 
-            ## Gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
+            ## Gets the partnerUnsupportedOsVersionBlocked property value. When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.
             ## @return a boolean
             ## 
             def partner_unsupported_os_version_blocked
                 return @partner_unsupported_os_version_blocked
             end
             ## 
-            ## Sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
+            ## Sets the partnerUnsupportedOsVersionBlocked property value. When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.
             ## @param value Value to set for the partnerUnsupportedOsVersionBlocked property.
             ## @return a void
             ## 
@@ -358,14 +358,14 @@ module MicrosoftGraphBeta
                 writer.write_boolean_value("windowsMobileApplicationManagementEnabled", @windows_mobile_application_management_enabled)
             end
             ## 
-            ## Gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
+            ## Gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
             ## @return a boolean
             ## 
             def windows_device_blocked_on_missing_partner_data
                 return @windows_device_blocked_on_missing_partner_data
             end
             ## 
-            ## Sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
+            ## Sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
             ## @param value Value to set for the windowsDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
@@ -373,14 +373,14 @@ module MicrosoftGraphBeta
                 @windows_device_blocked_on_missing_partner_data = value
             end
             ## 
-            ## Gets the windowsEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+            ## Gets the windowsEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.
             ## @return a boolean
             ## 
             def windows_enabled
                 return @windows_enabled
             end
             ## 
-            ## Sets the windowsEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+            ## Sets the windowsEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.
             ## @param value Value to set for the windowsEnabled property.
             ## @return a void
             ## 
@@ -388,14 +388,14 @@ module MicrosoftGraphBeta
                 @windows_enabled = value
             end
             ## 
-            ## Gets the windowsMobileApplicationManagementEnabled property value. When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+            ## Gets the windowsMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             ## @return a boolean
             ## 
             def windows_mobile_application_management_enabled
                 return @windows_mobile_application_management_enabled
             end
             ## 
-            ## Sets the windowsMobileApplicationManagementEnabled property value. When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+            ## Sets the windowsMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
             ## @param value Value to set for the windowsMobileApplicationManagementEnabled property.
             ## @return a void
             ## 

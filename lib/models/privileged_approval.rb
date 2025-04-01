@@ -101,7 +101,7 @@ module MicrosoftGraphBeta
                 @approver_reason = value
             end
             ## 
-            ## Instantiates a new privilegedApproval and sets the default values.
+            ## Instantiates a new PrivilegedApproval and sets the default values.
             ## @return a void
             ## 
             def initialize()
